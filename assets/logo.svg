@@ -26,6 +26,6 @@
     <path d="M92 118 v10 a36 36 0 0 0 72 0 v-10" fill="none" stroke="#152238" stroke-width="8" stroke-linecap="round"/>
     <rect x="124" y="164" width="8" height="22" fill="#152238"/>
   </g>
-  <!-- ğ -->
-  <text x="128" y="238" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#F4EFE3">ğ</text>
+  <!-- ayak -->
+  <rect x="100" y="184" width="56" height="10" rx="5" fill="#152238"/>
 </svg>
