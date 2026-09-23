@@ -1,0 +1,366 @@
+{
+  "kaynak": "TDK Yazım Kılavuzu ve Güncel Türkçe Sözlük; derleme: turkish-writer",
+  "yanlis": {
+    "yanlız": "yalnız",
+    "yanlızca": "yalnızca",
+    "yalnış": "yanlış",
+    "herkez": "herkes",
+    "herkezin": "herkesin",
+    "orjinal": "orijinal",
+    "orjinali": "orijinali",
+    "herşey": "her şey",
+    "herşeyi": "her şeyi",
+    "herşeyin": "her şeyin",
+    "birşey": "bir şey",
+    "birşeyler": "bir şeyler",
+    "hiçbirşey": "hiçbir şey",
+    "hergün": "her gün",
+    "herzaman": "her zaman",
+    "herbiri": "her biri",
+    "herhangibir": "herhangi bir",
+    "birgün": "bir gün",
+    "birsürü": "bir sürü",
+    "pekçok": "pek çok",
+    "şuan": "şu an",
+    "şuanda": "şu anda",
+    "yanısıra": "yanı sıra",
+    "yada": "ya da",
+    "veyahutta": "veyahut",
+    "neyseki": "neyse ki",
+    "öyleki": "öyle ki",
+    "iyiki": "iyi ki",
+    "belkide": "belki de",
+    "bazende": "bazen de",
+    "tabiki": "tabii ki",
+    "tabiiki": "tabii ki",
+    "hoşgeldiniz": "hoş geldiniz",
+    "hoşbulduk": "hoş bulduk",
+    "sağol": "sağ ol",
+    "sağolun": "sağ olun",
+    "yanyana": "yan yana",
+    "artarda": "art arda",
+    "peşpeşe": "peş peşe",
+    "üstüste": "üst üste",
+    "içiçe": "iç içe",
+    "elele": "el ele",
+    "başbaşa": "baş başa",
+    "karşıkarşıya": "karşı karşıya",
+    "farketmek": "fark etmek",
+    "farkettim": "fark ettim",
+    "farketti": "fark etti",
+    "farkeder": "fark eder",
+    "farketmez": "fark etmez",
+    "değilmi": "değil mi",
+    "varmı": "var mı",
+    "yapabilirmisiniz": "yapabilir misiniz",
+    "biliyormusunuz": "biliyor musunuz",
+    "heralde": "herhâlde",
+    "herhalde": "herhâlde",
+    "halbuki": "hâlbuki",
+    "süpriz": "sürpriz",
+    "sürpiz": "sürpriz",
+    "ekzersiz": "egzersiz",
+    "eşortman": "eşofman",
+    "şarz": "şarj",
+    "şarzı": "şarjı",
+    "traş": "tıraş",
+    "klavuz": "kılavuz",
+    "klavuzu": "kılavuzu",
+    "pantalon": "pantolon",
+    "pogaça": "poğaça",
+    "röpörtaj": "röportaj",
+    "muhattap": "muhatap",
+    "meyva": "meyve",
+    "antreman": "antrenman",
+    "ambülans": "ambulans",
+    "döküman": "doküman",
+    "dökümanı": "dokümanı",
+    "dökümanlar": "dokümanlar",
+    "dökümantasyon": "dokümantasyon",
+    "kordinasyon": "koordinasyon",
+    "kordinatör": "koordinatör",
+    "laboratuar": "laboratuvar",
+    "mütahit": "müteahhit",
+    "mahçup": "mahcup",
+    "tesbit": "tespit",
+    "tesbiti": "tespiti",
+    "müsade": "müsaade",
+    "insiyatif": "inisiyatif",
+    "rasgele": "rastgele",
+    "şöför": "şoför",
+    "motorsiklet": "motosiklet",
+    "egsoz": "egzoz",
+    "eksoz": "egzoz",
+    "espiri": "espri",
+    "kolestrol": "kolesterol",
+    "vejeteryan": "vejetaryen",
+    "stajer": "stajyer",
+    "dialog": "diyalog",
+    "orginizasyon": "organizasyon",
+    "restorant": "restoran",
+    "kolleksiyon": "koleksiyon",
+    "kütüpane": "kütüphane",
+    "teşekür": "teşekkür",
+    "teşekürler": "teşekkürler",
+    "mükkemmel": "mükemmel",
+    "mükemel": "mükemmel",
+    "malesef": "maalesef",
+    "dolayısiyle": "dolayısıyla",
+    "vasıtasiyle": "vasıtasıyla",
+    "aşcı": "aşçı",
+    "hastahane": "hastane",
+    "aşşağı": "aşağı",
+    "veritabanı": "veri tabanı",
+    "yapayzeka": "yapay zekâ",
+    "hikaye": "hikâye",
+    "hikayesi": "hikâyesi",
+    "hikayeler": "hikâyeler",
+    "zeka": "zekâ",
+    "zekası": "zekâsı",
+    "imkan": "imkân",
+    "imkanı": "imkânı",
+    "imkansız": "imkânsız",
+    "mekan": "mekân",
+    "mekanı": "mekânı",
+    "dükkan": "dükkân",
+    "dükkanı": "dükkânı",
+    "rüzgar": "rüzgâr",
+    "rüzgarı": "rüzgârı",
+    "kağıt": "kâğıt",
+    "kağıdı": "kâğıdı",
+    "şikayet": "şikâyet",
+    "şikayeti": "şikâyeti",
+    "şikayetler": "şikâyetler",
+    "mahkum": "mahkûm",
+    "hükümet": "hükûmet",
+    "inşaallah": "inşallah",
+    "proffesyonel": "profesyonel",
+    "süprizi": "sürprizi",
+    "traşı": "tıraşı",
+    "restorantı": "restoranı",
+    "yukarda": "yukarıda",
+    "şuana": "şu ana",
+    "yinede": "yine de",
+    "hemde": "hem de",
+    "birdaha": "bir daha",
+    "sezeryan": "sezaryen",
+    "kitapda": "kitapta",
+    "işden": "işten",
+    "sınıfda": "sınıfta",
+    "başlıyacak": "başlayacak",
+    "gelmiyecek": "gelmeyecek",
+    "şehirin": "şehrin",
+    "hukuğu": "hukuku",
+    "hukuğun": "hukukun",
+    "evrağı": "evrakı",
+    "ahlağı": "ahlakı",
+    "saatı": "saati",
+    "dikkatı": "dikkati",
+    "hakikatı": "hakikati",
+    "menfaatı": "menfaati",
+    "usulu": "usulü",
+    "kabulu": "kabulü",
+    "rolu": "rolü",
+    "alkolu": "alkolü",
+    "petrolu": "petrolü",
+    "kontrolu": "kontrolü",
+    "kontrolda": "kontrolde"
+  },
+  "esdizim": [
+    {
+      "kalip": "karar yapt",
+      "dogru": "karar vermek",
+      "not": "make a decision"
+    },
+    {
+      "kalip": "karar yapma",
+      "dogru": "karar vermek",
+      "not": "make a decision"
+    },
+    {
+      "kalip": "karar yapıl",
+      "dogru": "karar verilmek",
+      "not": "make a decision"
+    },
+    {
+      "kalip": "karar yapac",
+      "dogru": "karar vermek",
+      "not": "make a decision"
+    },
+    {
+      "kalip": "karar yapıyor",
+      "dogru": "karar vermek",
+      "not": "make a decision"
+    },
+    {
+      "kalip": "karar yapar",
+      "dogru": "karar vermek",
+      "not": "make a decision"
+    },
+    {
+      "kalip": "sunum verd",
+      "dogru": "sunum yapmak",
+      "not": "give a presentation"
+    },
+    {
+      "kalip": "sunum verm",
+      "dogru": "sunum yapmak",
+      "not": "give a presentation"
+    },
+    {
+      "kalip": "sunum verec",
+      "dogru": "sunum yapmak",
+      "not": "give a presentation"
+    },
+    {
+      "kalip": "sunum veriyor",
+      "dogru": "sunum yapmak",
+      "not": "give a presentation"
+    },
+    {
+      "kalip": "konuşma verd",
+      "dogru": "konuşma yapmak",
+      "not": "give a speech"
+    },
+    {
+      "kalip": "konuşma verm",
+      "dogru": "konuşma yapmak",
+      "not": "give a speech"
+    },
+    {
+      "kalip": "konuşma veriyor",
+      "dogru": "konuşma yapmak",
+      "not": "give a speech"
+    },
+    {
+      "kalip": "anlam yapıyor",
+      "dogru": "anlamlı olmak / akla yatmak",
+      "not": "make sense"
+    },
+    {
+      "kalip": "anlam yapm",
+      "dogru": "anlamlı olmak / akla yatmak",
+      "not": "make sense"
+    },
+    {
+      "kalip": "anlam yapt",
+      "dogru": "anlamlı olmak / akla yatmak",
+      "not": "make sense"
+    },
+    {
+      "kalip": "mantık yapıyor",
+      "dogru": "mantıklı olmak / akla yatmak",
+      "not": "make sense"
+    },
+    {
+      "kalip": "mantık yapm",
+      "dogru": "mantıklı olmak / akla yatmak",
+      "not": "make sense"
+    },
+    {
+      "kalip": "mantık yapar",
+      "dogru": "mantıklı olmak / akla yatmak",
+      "not": "make sense"
+    },
+    {
+      "kalip": "randevu yap",
+      "dogru": "randevu almak",
+      "not": "make an appointment"
+    },
+    {
+      "kalip": "mola ald",
+      "dogru": "mola vermek",
+      "not": "take a break"
+    },
+    {
+      "kalip": "mola alm",
+      "dogru": "mola vermek",
+      "not": "take a break"
+    },
+    {
+      "kalip": "mola alab",
+      "dogru": "mola vermek",
+      "not": "take a break"
+    },
+    {
+      "kalip": "mola alın",
+      "dogru": "mola verin",
+      "not": "take a break"
+    },
+    {
+      "kalip": "adım ald",
+      "dogru": "adım atmak",
+      "not": "take a step"
+    },
+    {
+      "kalip": "adım alm",
+      "dogru": "adım atmak",
+      "not": "take a step"
+    },
+    {
+      "kalip": "ilerleme yap",
+      "dogru": "ilerleme kaydetmek",
+      "not": "make progress"
+    },
+    {
+      "kalip": "dikkat öde",
+      "dogru": "dikkat etmek",
+      "not": "pay attention"
+    },
+    {
+      "kalip": "ziyaret öde",
+      "dogru": "ziyaret etmek",
+      "not": "pay a visit"
+    },
+    {
+      "kalip": "iltifat öde",
+      "dogru": "iltifat etmek",
+      "not": "pay a compliment"
+    },
+    {
+      "kalip": "göz kontağı",
+      "dogru": "göz teması",
+      "not": "eye contact"
+    },
+    {
+      "kalip": "sonuç teslim etmek",
+      "dogru": "sonuç almak / sonuç vermek",
+      "not": "deliver results"
+    },
+    {
+      "kalip": "sonuçlar teslim ediyor",
+      "dogru": "sonuç alıyor / sonuç veriyor",
+      "not": "deliver results"
+    },
+    {
+      "kalip": "değer teslim et",
+      "dogru": "değer sunmak / katkı sağlamak",
+      "not": "deliver value"
+    },
+    {
+      "kalip": "riske koy",
+      "dogru": "riske atmak / tehlikeye atmak",
+      "not": "put at risk"
+    },
+    {
+      "kalip": "vurgu koy",
+      "dogru": "vurgulamak / üzerinde durmak",
+      "not": "put emphasis on"
+    },
+    {
+      "kalip": "dikişsiz deneyim",
+      "dogru": "sorunsuz / kesintisiz deneyim",
+      "not": "seamless experience"
+    },
+    {
+      "kalip": "oyun değiştirici",
+      "dogru": "çığır açan / dengeleri değiştiren",
+      "not": "game changer"
+    },
+    {
+      "kalip": "potansiyelin kilidini",
+      "dogru": "potansiyeli ortaya çıkarmak",
+      "not": "unlock potential"
+    }
+  ]
+}

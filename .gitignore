@@ -1,0 +1,44 @@
+# Telifli kaynak kitaplar: yalnız kural çıkarmak için yerelde kullanıldı
+pdf/
+*.pdf
+*.epub
+
+# Araştırma dökümleri ve ham kaynaklar (başka projelerin ve TDK'nın metinleri)
+_kaynak/
+
+# Kalibrasyon derlemi: haber metinleri ve üretilmiş metinler, yeniden üretilebilir
+tests/kalibrasyon/derlem/
+tests/kalibrasyon/derlem-site/
+
+# İlk taslaklar: LLM görüşleri (_kaynak'a taşındı)
+chatgpt.md
+deepseek.md
+gemini.md
+grok.md
+z-ai.md
+New Text Document.txt
+
+# Araç dizinleri
+.vexp/
+node_modules/
+.env
+.env.*
+
+# TDK dizininden yerelde derlenen sözlük (TDK verisi, dağıtılmaz)
+skills/turkish-writer/scripts/data/tdk-dizin.json
+
+# Kullanıcının kendi ses örnekleri (telifli olabilir)
+skills/turkish-writer/references/ornekler/yerel/
+
+# Kör test derlemi: insan metinleri telifli
+tests/kalibrasyon/derlem-beceri/
+
+# OSCAR 2019'dan yerelde sayılan eş dizim verisi ve indirme önbelleği (dağıtılmaz)
+skills/turkish-writer/scripts/data/esdizim.json
+skills/turkish-writer/scripts/data/esdizim-onbellek/
+
+# Fark derlemi: insan metinleri telifli
+tests/kalibrasyon/derlem-fark/
+
+# Yarışma (kör karşılaştırma): insan metinleri telifli
+tests/kalibrasyon/yarisma/

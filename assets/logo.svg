@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="t">
+  <title id="t">turkish-writer: Sanat Güneşi'ne selam, güneş ve eski tip mikrofon</title>
+  <rect width="256" height="256" rx="48" fill="#152238"/>
+  <!-- güneş ışınları -->
+  <g stroke="#F2B233" stroke-width="7" stroke-linecap="round" opacity="0.9">
+    <line x1="128" y1="22" x2="128" y2="40"/>
+    <line x1="68" y1="44" x2="78" y2="59"/>
+    <line x1="188" y1="44" x2="178" y2="59"/>
+    <line x1="34" y1="92" x2="51" y2="99"/>
+    <line x1="222" y1="92" x2="205" y2="99"/>
+    <line x1="26" y1="146" x2="44" y2="146"/>
+    <line x1="230" y1="146" x2="212" y2="146"/>
+  </g>
+  <!-- güneş -->
+  <circle cx="128" cy="130" r="72" fill="#F2B233"/>
+  <!-- eski tip mikrofon: kapsül, ızgara, askı -->
+  <g>
+    <rect x="102" y="70" width="52" height="84" rx="26" fill="#152238"/>
+    <g stroke="#F2B233" stroke-width="3" opacity="0.85">
+      <line x1="108" y1="88" x2="148" y2="88"/>
+      <line x1="106" y1="100" x2="150" y2="100"/>
+      <line x1="106" y1="112" x2="150" y2="112"/>
+      <line x1="106" y1="124" x2="150" y2="124"/>
+      <line x1="108" y1="136" x2="148" y2="136"/>
+    </g>
+    <path d="M92 118 v10 a36 36 0 0 0 72 0 v-10" fill="none" stroke="#152238" stroke-width="8" stroke-linecap="round"/>
+    <rect x="124" y="164" width="8" height="22" fill="#152238"/>
+  </g>
+  <!-- ğ -->
+  <text x="128" y="238" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="46" font-weight="700" fill="#F4EFE3">ğ</text>
+</svg>

@@ -1,0 +1,8 @@
+{
+  "hero": { "baslik": "Dijital Dönüşümün Önemi Ve Avantajları", "alt": "Sadece bir yazılım değil, aynı zamanda bir çözüm ortağı.", "buton": "Keşfedin", "gorsel": "/img/hero.webp" },
+  "sss": [
+    { "soru": "Kurulum ücretlimi?", "cevap": "Kurulum ücretsizdir ve herşey dahil fiyata eklenmiştir." },
+    { "soru": "Ne kadar sürer?", "cevap": "Kurulum iki iş gününde biter." }
+  ],
+  "iletisim": "https://ornek.com/iletisim"
+}
