@@ -51,7 +51,27 @@ değişkeniyle değişir. Bu model, altı adaya aynı iki brif yazdırılıp son
 
 ```bash
 node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --out taslak.md
+node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur blog --out taslak.md   # çıpalı
+node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --katı --out taslak.md       # ad hatası = çıkış kodu 4
 ```
+
+Taslak betiğinin yaptıkları:
+
+- **Brif:** sayfa türü, okur, hitap, olgu listesi ve uzunluk aralığı ("Uzunluk: 400-480
+  kelime"). Kurum, hizmet ve duyuru metninde olgunun altına "Okur için anlamı", "Nasıl işler",
+  "Ne yapması gerekir" alt maddeleri yazılabilir; model olguyu bunlarla açar, yeni olgu eklemez.
+  Metin hedefin %70'inin altında kalırsa betik "brifte olgu az" uyarısı verir; dolguyla uzatmaz.
+- **Ritim:** sistem istemi editörden geçmiş Türkçe dergi ve kurum metninin ritmini ister
+  (cümle ortalaması 17-21 kelime, uzun ve kısa cümle karışık, "ve" doğal sıklıkta), dolguyu,
+  özet cümlesini ve "fazla düzgün" paragraf kalıbını yasaklar.
+- **Çıpa:** `--tur <site|blog|reklam|whatsapp|teklif|hukuk>` ile o türden en çok 3 gerçek
+  insan metni ses örneği olarak girer (`skills/turkish-writer/cipa/`, açık lisanslı; teklif
+  boş). `--cipa <yol>` projenin kendi örneklerini önce koyar.
+- **Olgu sadakati:** taslaktaki özel adlar brifle karşılaştırılır; bozuk yazım ("Süyman" /
+  brifte "Süleyman") ya da brifte olmayan ad stderr'e `UYARI` yazar, `--katı` ile çıkış kodu 4.
+- **Hakem döngüsü (deneysel):** `scripts/hakem-dongusu.mjs` taslağı bir LLM hakemine okutup
+  işaretlediği cümleleri yeniden yazdırır. Ölçümde kendi hakemine aşırı uyum gösterdi, ayrı bir
+  hakemi yanıltmadı; varsayılan yol değildir.
 
 İsteğe bağlı, resmî TDK dizin denetimi için bir kez:
 
@@ -87,7 +107,10 @@ node skills/turkish-writer/scripts/tr-scan.mjs icerik.json   # JSON: her metin a
 
 Çıktı üç bölümdür: **iz skoru** (0-100, bantlı), skoru etkilemeyen **üslup notları** ve
 **TDK hataları** (birleşik/ayrı yazım, düzeltme işareti, kesme, "mi"/"ki", ses uyumu,
-sık yanlışlar, eş dizim).
+sık yanlışlar, eş dizim). Skoru etkilemeyen iki bölüm daha vardır: **söz dizimi kapısı**
+(İngilizce iskeletin Türkçeye sızdığı dört yer: bağlaçsız biten sıralama, kısa cümlede özneden
+sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama) ve **ritim bilgisi**
+(cümle boyu sapması, kısa cümle, "ve" yoğunluğu; JSON'da `bilgi` alanı).
 
 ## Ne kadar güvenilir
 
@@ -105,6 +128,23 @@ demek bu izi gidermiyor. Sık sanılan bazı izler (ulaç azlığı, `-maktadır
 "bir" yoğunluğu) bağımsız derlemde ayırmadı. Bunlar skordan çıkarıldı, üslup notu
 olarak kaldı. Ayrıntılar: [`tests/kalibrasyon/SONUC.md`](tests/kalibrasyon/SONUC.md),
 [`tests/kalibrasyon/SONUC-SITE.md`](tests/kalibrasyon/SONUC-SITE.md).
+
+2026-09'da referans, editörden geçmiş Türkçeye (62 metinlik nitelikli derlem: dergi, kurum
+sitesi, kurum duyurusu) taşındı. Taslak betiğinin çıktısı bu derlemle ve bağımsız brifle
+yazılmış 36 metinle ölçüldü (`tests/kalibrasyon/SONUC-NITELIKLI.md`, `docs/V1-OLCUTLER.md`):
+
+| ölçüm | sonuç |
+|---|---|
+| brifte olmayan rakam | 4 ölçüm turunda 0 |
+| özel ad hatası | otomatik denetim; son turun 108 taslağında bozuk ad 0 |
+| uzunluk (hedefin %70-110'u) | olgusu yeterli brifte 33/36; kısa olgulu kurum ve duyuru brifinde 14/24 |
+| tr-scan, nitelikli insanı ≤ 80'e düşürme (yanlış pozitif) | 2/31 (%6,5) |
+| cümle ritmi, 8 ölçümde insan dağılımına yakınlık (AUC 0,35-0,65) | 5/8; cümle boyu çeşitliliği ve "bir" sıklığı hâlâ insandan az |
+| güçlü LLM hakemi (tek metin, "insan mı yapay mı") | **ayırıyor**: 2025+ yayımlanmış insan metinlerine karşı AUC 0,87-1,00 |
+
+Son satır açık bir sınırdır: beceri taslağı hedef okurun gözünde iyi durabilir (kurucunun kör
+testinde 13 çiftin 9'unda beceri metni insan sanıldı; tek okur, küçük örneklem), ama güçlü bir
+dil modeli onu hâlâ tanıyor.
 
 **Sınırlar.**
 - Ölçümler yalnız OpenAI modelleriyle yapıldı.
@@ -148,7 +188,13 @@ panel, entegrasyon, çok dilli site ve otomasyon işleri yapıyor. Hata ya da ö
 
 ## Lisans
 
-MIT. `references/evrensel-izler.md` içindeki Wikipedia kaynaklı bölümler CC BY-SA 4.0'dır.
+MIT. İstisnalar: `references/evrensel-izler.md` içindeki Wikipedia kaynaklı bölümler CC BY-SA
+4.0'dır. `skills/turkish-writer/cipa/` altındaki çıpa metinleri her dosyanın başındaki lisansla
+dağıtılır (Creative Commons Türkiye metinleri CC BY 4.0, Türkçe Vikipedi metinleri CC BY-SA 4.0,
+yasa metinleri ve Sabahattin Ali kamu malı). `tests/ornekler/nitelikli-insan.md` Türkçe Vikipedi
+kaynaklıdır, CC BY-SA 3.0.
+
+Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
 ---
 

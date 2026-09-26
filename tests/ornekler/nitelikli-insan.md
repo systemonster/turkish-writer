@@ -1,0 +1,9 @@
+---
+kaynak: Türkçe Vikipedi, "Sabahattin Ali" maddesi, giriş bölümünün ilk iki paragrafı (seçkin madde; 2022 Wayback Machine görüntüsü)
+lisans: CC BY-SA 3.0, Vikipedi katkıcıları; metne dokunulmadı
+amac: tr-scan regresyon fikstürü, editörlü (nitelikli) insan Türkçesi
+---
+
+Sabahattin Ali (25 Şubat 1907, Eğridere - 2 Nisan 1948, Kırklareli), Türk yazar ve şair. Edebî kişiliğini toplumcu gerçekçi bir düzleme oturtarak yaşamındaki deneyimlerini okuyucusuna yansıttı ve kendisinden sonraki Cumhuriyet dönemi Türk edebiyatını etkileyen bir figür hâline geldi. Daha çok öykü türünde eserler verse de romanlarıyla ön plana çıktı; romanlarında uzun tasvirlerle ele aldığı sevgi ve aşk temasını, zaman zaman siyasi tartışmalarına gönderme yapan anlatılarla zaman zaman da toplumsal aksaklıklara yönelttiği eleştirilerle destekledi. Kuyucaklı Yusuf (1937), İçimizdeki Şeytan (1940) ve Kürk Mantolu Madonna (1943) romanları Türkiye'deki edebiyat çevrelerinin takdirini toplayarak hem 20. yüzyılda hem 21. yüzyılda etkisini sürdürdü.
+
+Eğridere'de doğan Sabahattin Ali, ilk hikâye ve şiir denemelerine Balıkesir'de başladıktan sonra İstanbul'daki edebiyat öğretmeni Ali Canip Yöntem'in desteğiyle ilk kez Akbaba ve Çağlayan dergilerinde şiirlerini yayımladı. Anadolu'da kısa süre öğretmenlik yaptıktan sonra Türk devleti tarafından dil eğitimi için Almanya'ya gönderildi. Türkiye'ye döndüğünde Almanca öğretmeni olarak göreve başlasa da önce komünizm propagandası yaptığı iddiasıyla bir süre tutuklandı, ardından ise Türk devlet yöneticilerini eleştirdiği iddiasıyla tekrar tutuklandı. Bu dönemde memurluktan ihraç edildi ancak Atatürk hakkında yazdığı bir şiirden dolayı yeniden devlet kurumlarında görevlendirildi. Ayrıca kendisine yüklenen sosyalist algısını kırmak için de Esirler adlı bir oyun kaleme aldı.

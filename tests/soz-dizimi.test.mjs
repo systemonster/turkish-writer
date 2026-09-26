@@ -16,7 +16,7 @@ for (const [i, c] of ciftler.entries()) {
 }
 
 test('her kural en az bir yanlış örnekle sınanıyor', () => {
-  for (const k of ['liste-ve', 'ozne-virgul', 'eksiltili-yuklem', 'tamlama-eki'])
+  for (const k of ['liste-ve', 'liste-iki', 'ozne-virgul', 'eksiltili-yuklem', 'tamlama-eki'])
     assert.ok(ciftler.some((c) => c.kural === k && !c.yalnizDogru), k)
 })
 

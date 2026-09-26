@@ -126,3 +126,35 @@ Her metinden sonra tek satır tut:
 ```
 
 Son üç satır aynı müdahaleyi gösteriyorsa **başka bir müdahale seç.**
+
+### Kural defteri (söz dizimi, `soz-dizimi.mjs`)
+
+Kural değişikliği de bir müdahaledir; ölçüm insan derleminde (`tests/kalibrasyon/derlem*/insan/`, 6.271 cümle).
+
+```
+2026-09-26 | ozne-virgul | sayım virgülü susar ("Kapsam, SKU sayısı ve …"): çok kelimeli öge yalın hâldeyse | not: belirtme kesin değilse özne + sıralama sayılmaz
+2026-09-26 | ozne-virgul | sıfat ve sıfat-fiil sıralaması susar ("Yönetim panelli, veri tabanlı", "Arayan soran, …") | not: "-lı/-sız"da virgülden sonra ikinci sıfat aranır ("egzersiz" ad kalır)
+2026-09-26 | ozne-virgul | yüklem 1./2. kişi ya da emirse susar ("Bedeli, … ödersiniz", "Hocam, … misiniz?") | not: 3. kişi ad özne olamaz
+2026-09-26 | ozne-virgul | yüklemden uzak özne susar: virgülden sonra 8+ kelime (TDK 8.2/3) | not: eski ölçüt yalnız cümle boyu (20) idi
+2026-09-26 | ozne-virgul | yüklemli yan cümle, "…ki", ara söz, alıntı, koşut öbek, varlık cümlesi ("var/yok") susar | not: geçmiş zaman ünsüz kümesinden sonra tanınır ("alındı", "etti")
+2026-09-26 | liste-ve | "gibi / vb. / derken" örnek sayımı, "ne … ne" tekrarı, sıfat-fiil zinciri, alıntı susar | not: "Sipariş girişi, …, raporlama gibi" fikstürü yalnız-doğruya çevrildi
+2026-09-26 | liste-ve | hâl uyumu: ögeler ortak hâlde buluşmazsa sıralama değil ("Günay, … çalışmalara, … üyelerinin") | not: uymayan ilk parça özne sayılıp atılır ("Keşif, ne yapılacağını, …")
+2026-09-26 | liste-iki (yeni) | iki ögeli bağlaçsız sıralama: iki öge de kesin aynı hâlde ya da koşut "-ları/-leri" | not: yan cümle zinciri, ilgi hâli, sıfat-fiil öbeği susar; "A ve B, C" ayrı notla
+2026-09-26 | ad-ad-belirsizlik | EKLENMEDİ | not: 6.540 insan cümlesinde aday 12 kez, gerçek belirsizlik 1 ("Caz yaşanılan müzik…"); süzgeçten sonra da isabet ~1/3. Belirsizlik anlamsal: "cevap bulunan metinler" dil bilgisi olarak doğru, yazarın niyetini kural bilemez
+```
+
+### İstem ve tarayıcı defteri (`openai-taslak.mjs`, `tr-scan.mjs`)
+
+Ölçüm nitelikli derlemde (`tests/kalibrasyon/SONUC-NITELIKLI.md`); her satır bir test adı taşır.
+
+```
+2026-09-26 | openai-taslak istemi | "ve'yi azalt" ve kısa cümle yönlendirmesi kaldırıldı; nitelikli ritim (ort. 17-21, her paragrafta 25+ cümle, "ve" 3-5/100), dolgu yasağı, esnek uzunluk, fazla düzgünlük kuralları | not: ritim ölçümlerinden 5'i [0,35; 0,65] bandında (önce 3); metinler çok kısaldı (hedefin %15'i, medyan 3 cümle) | test: cipa.test "istem: … geriye uyum" (hash 4beee8889dfb851b)
+2026-09-26 | tr-scan | aşırı düzeltme izi: dar-sapma (12), kisa-cumle (4), ve-seyrek (4), uzun-cumle-yok oran < %8, ve-yogunlugu 2,7 → 4,5 | not: sınama yarısında AUC 0,47 → 0,83; nitelikli insan ≤80 2/31 → 7/31; 2018 OSCAR insan medyanı 94 → 84,5 | test: tr-scan.test "nitelikli kalibrasyon: …", "aşırı düzeltme izleri: eşikler iki yönlü"; fikstür ornekler/nitelikli-insan.md, ornekler/beceri-asiri-duzeltme.md
+2026-09-26 | tr-scan (tur 3) | dar-sapma, kisa-cumle, uzun-cumle-yok oran eşiği, ve-yogunlugu → bilgi (RITIM_BILGI, skor ve çıkış kodu dışı); ve-seyrek < 1,0 ağırlık 8 | not: sınama insan ≤80 7/31 → 2/31, AUC 0,83 → 0,65; lovefengis site kapısı 26/26; dar-sapma eşikleri ayar→sınama genellenmedi (1 → 4 insan), temiz eşik site metnini düşürüyor | test: tr-scan.test "tur 3: ritim bilgisi skoru ve JSON bulgularını etkilemez", "aşırı düzeltme izleri: eşikler iki yönlü"
+2026-09-26 | openai-taslak istemi (tur 3) | uzunluk hedef aralık, olguyu açarak uzama; "brifte olgu az" uyarısı | not: dolgun brifle %70-110 bandında 32/36 (tur 2: 1/36); bağımsız kısa-olgulu kurum/duyuru brifinde 15/36, uyarı 19 | test: cipa.test "istem: … geriye uyum" (hash 0a1c94dc7545a80d), "uzunlukUyarisi: …"
+2026-09-26 | SKILL.md hakem döngüsü | varsayılan → deneysel | not: SONUC-HAKEM.md aşırı uyum; bağımsız tekli saklı hakem AUC 1,00 | test: yok (belge)
+2026-09-26 | openai-taslak istemi (tur 4, A) | brifteki girintili olgu açılımı ("Okur için anlamı / Nasıl işler / Ne yapması gerekir") kurum ve duyuru metninde olguyu açmak için kullanılır | not: bağımsız sette kurum+duyuru bantta 4/24 → 21/24 (tekrarlı açılım, dolgulu) / 14/24 (tekrarsız açılım); ritim türetilmiş sette değişmedi (5/8); brifte olmayan rakam 0 | test: cipa.test "istem: … geriye uyum" (hash e09e6d4d16538e61), "brifOlcu: girintili alt madde …"
+2026-09-26 | openai-taslak istemi (tur 4, B) | GERİ ALINDI: cümle boyu yayılımı (30+ ve 4-8 kelimelik cümleler), "ve" 3-4, "bir" 1-2/100 | not: türetilmiş sette bantta 5/8 → 5/8; CV 0,24 → 0,27, bir100 0,67 → 0,77 (insan 1,68), ve100 4,32 → 4,72 (hedeften uzaklaştı), ozne-virgul 2 → 4 metin | test: hash testi A'da kaldı
+2026-09-26 | özel ad sadakati (openai-taslak, hakem-dongusu) | bozuk yazım ve brifte olmayan yeni ad → stderr UYARI; --katı → çıkış kodu 4 | not: tur 3'ün 72 taslağında 1 gerçek hata ("Süyman"), 1 yeni terim ("DNA"), yanlış alarm 0 (ek değişen kurum adı, 4 harfli kelime ve COVID/Covid susturuldu) | test: cipa.test "ad sadakati: …" (8), "uçtan uca: bozuk ad …", hakem-dongusu.test "uçtan uca: döngü çıktısındaki bozuk ad …"
+2026-09-26 | brif şablonu (SKILL.md, kalibre-tekli acilim) | olgu açılımı; açılım olguyu tekrar ederse yazılmaz (tekrar süzgeci: 4+ harfli kelimelerin %60'ı olguda) | not: tekrarlı açılımın metni "09.00'da başlayıp 20.00'de bitirdiğimiz için…" türü dolgu üretti | test: yok (ölçüm betiği)
+```

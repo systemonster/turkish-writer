@@ -40,8 +40,9 @@
     {
       "kural": "liste-ve",
       "yanlis": "Sipariş girişi, belge okuma, onay, raporlama gibi işleri otomatikleştiriyoruz.",
-      "dogru": "Sipariş girişi, belge okuma, onay ve raporlama gibi işleri otomatikleştiriyoruz.",
-      "kaynak": "lovefengis anasayfa kapilar[1].tanim kalıbı"
+      "dogru": "Sipariş girişi, belge okuma, onay, raporlama gibi işleri otomatikleştiriyoruz.",
+      "kaynak": "örnek sayımı: \"… gibi\" açık uçlu sayımdır, son iki öge bağlaç istemez (yalnız doğru yanı sınanır; 2026-09-26 v1.0 kural kolu)",
+      "yalnizDogru": true
     },
     {
       "kural": "liste-ve",
@@ -126,6 +127,134 @@
       "yanlis": "Kaynak kod ve veriler kime ait?",
       "dogru": "Kaynak kodu ve veriler kime ait? Kaynak kodunu devrederiz, kaynak kodları sizde kalır.",
       "kaynak": "lovefengis anasayfa sss[4].q"
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Logo, Mikro, Netsis gibi ERP yazılımlarıyla çalışırız. Taze meyve suları, sebze püresi, çorba derken denemediğimiz yiyecek kalmadı.",
+      "dogru": "Logo, Mikro, Netsis gibi ERP yazılımlarıyla çalışırız. Taze meyve suları, sebze püresi, çorba derken denemediğimiz yiyecek kalmadı.",
+      "kaynak": "örnek sayımı: gibi / derken (insan derlemi)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Ufkunuzu genişleten, enerjinizi yükselten, yaratıcılığınızı geliştiren küçük yenilikler yapın.",
+      "dogru": "Ufkunuzu genişleten, enerjinizi yükselten, yaratıcılığınızı geliştiren küçük yenilikler yapın.",
+      "kaynak": "sıfat-fiil zinciri tek bir adı niteler (insan derlemi)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Kronotrop, Beyoğlu'nun bir yan sokağında, küçük bir kahve dükkânı olarak başladı. Günay, bakanlıkların titizlikle yaptığı çalışmalara, komisyon üyelerinin katkısına teşekkür etti.",
+      "dogru": "Kronotrop, Beyoğlu'nun bir yan sokağında, küçük bir kahve dükkânı olarak başladı. Günay, bakanlıkların titizlikle yaptığı çalışmalara, komisyon üyelerinin katkısına teşekkür etti.",
+      "kaynak": "ayrı hâl ekli ögeler sıralama değildir: özne + yer tamlayıcısı (insan derlemi)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Olamadım bencil, ne geçmişte, ne şimdi, ne gelecekte.",
+      "dogru": "Olamadım bencil, ne geçmişte, ne şimdi, ne gelecekte.",
+      "kaynak": "tekrarlı bağlaç ne … ne (TDK 8.2)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Kapsam, SKU sayısı ve entegrasyon sayısı fiyatı belirler.",
+      "dogru": "Kapsam, SKU sayısı ve entegrasyon sayısı fiyatı belirler.",
+      "kaynak": "sayım virgülü: virgülden sonra aynı hâlde ad ve \"ve\" geliyor",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Yönetim panelli, veri tabanlı bir sistem kuruyoruz.",
+      "dogru": "Yönetim panelli, veri tabanlı bir sistem kuruyoruz.",
+      "kaynak": "iki sıfatın sıralaması (TDK 8.2/1)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Bedeli, teslimden sonra ödersiniz.",
+      "dogru": "Bedeli, teslimden sonra ödersiniz.",
+      "kaynak": "belirtili nesne: yüklem 2. kişi, öge özne olamaz",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Sunucu, gelen talepleri otuz gün sakladıktan sonra eski kayıtları kendiliğinden siler.",
+      "dogru": "Sunucu, gelen talepleri otuz gün sakladıktan sonra eski kayıtları kendiliğinden siler.",
+      "kaynak": "TDK 8.2/3: yüklemden uzak düşen özne",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Siparişiniz alındı, kargoya hazırlanıyor. Dayım vefat etti, çok üzgünüz.",
+      "dogru": "Siparişiniz alındı, kargoya hazırlanıyor. Dayım vefat etti, çok üzgünüz.",
+      "kaynak": "yüklemli yan cümle (TDK 8.2/2)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Hocam, bu raporu yarına yetiştirebilir misiniz? Anladım ki, süre yetmeyecek. Nasıl desem, iş uzadı. Misal, rapor gecikti.",
+      "dogru": "Hocam, bu raporu yarına yetiştirebilir misiniz? Anladım ki, süre yetmeyecek. Nasıl desem, iş uzadı. Misal, rapor gecikti.",
+      "kaynak": "seslenme ve ara söz (TDK 8.2/4, 8.2/11)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Arayan soran, ilgi gösteren tüm arkadaşlara teşekkür ederim. Her zaman, her yerde insanlar siyaset konuşuyor.",
+      "dogru": "Arayan soran, ilgi gösteren tüm arkadaşlara teşekkür ederim. Her zaman, her yerde insanlar siyaset konuşuyor.",
+      "kaynak": "sıfat-fiil sıralaması; koşut zarf öbeği",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Düzenli egzersiz, bağışıklığı güçlendirir.",
+      "dogru": "Düzenli egzersiz bağışıklığı güçlendirir.",
+      "kaynak": "TDK 8.2/3: kısa cümlede özne virgülü (insan derlemi)"
+    },
+    {
+      "kural": "liste-iki",
+      "yanlis": "Toplantıda sorunları, çözümleri tartışırız.",
+      "dogru": "Toplantıda sorunları ve çözümleri tartışırız.",
+      "kaynak": "TDK 8.2/1: iki ögeli sıralama bağlaçla kurulur"
+    },
+    {
+      "kural": "liste-iki",
+      "yanlis": "Rapor süreyi, bütçeyi açıkça gösterir.",
+      "dogru": "Rapor süreyi ve bütçeyi açıkça gösterir.",
+      "kaynak": "TDK 8.2/1"
+    },
+    {
+      "kural": "liste-iki",
+      "yanlis": "Belgeleri e-postadan, WhatsApp'tan toplarız.",
+      "dogru": "Belgeleri e-postadan ve WhatsApp'tan toplarız.",
+      "kaynak": "TDK 8.2/1: ayrılma hâlinde iki öge"
+    },
+    {
+      "kural": "liste-iki",
+      "yanlis": "Kurulumu bitirip, testleri çalıştırıyoruz. Raporu hazırladık, sonucu gönderdik. Siparişi aldık, faturayı kestik.",
+      "dogru": "Kurulumu bitirip, testleri çalıştırıyoruz. Raporu hazırladık, sonucu gönderdik. Siparişi aldık, faturayı kestik.",
+      "kaynak": "yan cümle zinciri sıralama değildir (TDK 8.2/2, 8.2/13)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-iki",
+      "yanlis": "Keşif, maliyeti ve süreyi yazar. Kronotrop, Beyoğlu'nda başladı.",
+      "dogru": "Keşif, maliyeti ve süreyi yazar. Kronotrop, Beyoğlu'nda başladı.",
+      "kaynak": "özne virgülü ya da bağlaçlı sıralama: liste-iki değil",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Röportaj bakan, gören, yansıtan bir yazıdır. Savaştan çıkan bir halk, köylerde okul azlığı, köye hizmet götürmenin zorluğu gibi etkenler bu girişimi başlattı.",
+      "dogru": "Röportaj bakan, gören, yansıtan bir yazıdır. Savaştan çıkan bir halk, köylerde okul azlığı, köye hizmet götürmenin zorluğu gibi etkenler bu girişimi başlattı.",
+      "kaynak": "nitelikli insan derlemi: tek kelimelik sıfat-fiil zinciri; son ögenin beşinci kelimesindeki gibi",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-iki",
+      "yanlis": "Keşfi teklif ve sözleşmeyle, havaleyle satın alırsınız.",
+      "dogru": "Keşfi teklif, sözleşme ve havaleyle satın alırsınız.",
+      "kaynak": "lovefengis content/guven-copy.json odeme_items[2]: A ve B, C (bağlaç yanlış yerde)"
     }
   ]
 }

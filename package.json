@@ -1,14 +1,26 @@
 {
   "name": "turkish-writer",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Türkçe site içeriği ve blog yazısı için doğallık ve TDK becerisi (Claude Code / Agent Skills)",
   "type": "module",
   "license": "MIT",
-  "bin": { "tr-scan": "skills/turkish-writer/scripts/tr-scan.mjs" },
+  "bin": {
+    "tr-scan": "skills/turkish-writer/scripts/tr-scan.mjs"
+  },
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "scan": "node skills/turkish-writer/scripts/tr-scan.mjs"
   },
-  "engines": { "node": ">=18" },
-  "keywords": ["turkish", "türkçe", "tdk", "humanizer", "ai-writing", "claude-skill", "agent-skills"]
+  "engines": {
+    "node": ">=18"
+  },
+  "keywords": [
+    "turkish",
+    "türkçe",
+    "tdk",
+    "humanizer",
+    "ai-writing",
+    "claude-skill",
+    "agent-skills"
+  ]
 }

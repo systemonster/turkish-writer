@@ -69,3 +69,15 @@ bulunamadı. Bu becerinin Türkçe ölçümleri kendi kalibrasyonuna dayanır.
 Derlemler telif nedeniyle yayınlanmaz. `tests/kalibrasyon/kalibre.mjs` ve
 `kalibre-site.mjs` onları yeniden üretir (OpenAI anahtarı gerekir). Sonuçlar
 `SONUC.md` ve `SONUC-SITE.md` dosyalarındadır.
+
+## Çıpa derlemi (`cipa/`)
+
+Yaz kipinde few-shot örnek olarak kullanılan kısa insan metinleri. Her dosyanın başında
+kaynak, tarih ve lisans cümlesi aynen yazılıdır.
+
+| Kaynak | Lisans | Tür |
+|---|---|---|
+| [Creative Commons Türkiye](https://creativecommons.org.tr/) | CC BY 4.0 | site, blog, reklam |
+| [Türkçe Vikipedi](https://tr.wikipedia.org/) (Köy çeşmesi, Danışma masası, karşılama şablonu, anı defteri) | CC BY-SA 4.0 (bu dosyalar aynı lisansla paylaşılır) | reklam, whatsapp |
+| Sabahattin Ali, *Kürk Mantolu Madonna*, 1943 ([Vikikaynak](https://tr.wikisource.org/wiki/K%C3%BCrk_Mantolu_Madonna)) | kamu malı (FSEK md. 27) | blog |
+| 6698 sayılı KVKK md. 10, 13; 6502 sayılı TKHK md. 48 ([mevzuat.gov.tr](https://www.mevzuat.gov.tr/)) | FSEK md. 31 | hukuk |

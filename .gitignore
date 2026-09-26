@@ -42,3 +42,24 @@ tests/kalibrasyon/derlem-fark/
 
 # Yarışma (kör karşılaştırma): insan metinleri telifli
 tests/kalibrasyon/yarisma/
+
+# Nitelikli insan derlemi ve üretilmiş karşılıkları: insan metinleri telifli olabilir, yalnız istatistik
+tests/kalibrasyon/derlem-nitelikli/
+
+# Model kör testi: anahtar ve ham üretim önbelleği git dışı (set kör kalsın)
+tests/kalibrasyon/kor-test/model-anahtar-*.json
+tests/kalibrasyon/kor-test/model-ham-*.json
+
+# İnsan mı beceri mi kör testi: anahtar ve hakem sonuçları git dışı (set kör kalsın).
+# set-1.json da git dışı: insan parçaları CC BY-NC-ND kaynaklı, derlem "dağıtılmıyor" dayanağıyla alındı.
+tests/kalibrasyon/kor-test/cevap-anahtari-*.json
+tests/kalibrasyon/kor-test/set-*.json
+
+# Kör test 2 kaynakları: seçim/brif dosyaları, Journo ham metinleri, döngü kayıtları (set kör kalsın)
+tests/kalibrasyon/kor-test/set-2-kaynak/
+
+# Bağımsız tekli hakem derlemi (tur 3): üretilmiş metin ve hakem önbelleği, yeniden üretilebilir
+tests/kalibrasyon/derlem-tekli/
+
+# Tanıma kontrolü (tur 4): 2025+ yayımlanmış insan metinleri, yalnız iç ölçüm
+tests/kalibrasyon/derlem-yeni-insan/

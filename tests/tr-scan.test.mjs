@@ -2,7 +2,7 @@
 import { test } from 'node:test'
 import assert from 'node:assert/strict'
 import { readFileSync } from 'node:fs'
-import { denetle, cumleler } from '../skills/turkish-writer/scripts/tr-scan.mjs'
+import { denetle, cumleler, RITIM_BILGI } from '../skills/turkish-writer/scripts/tr-scan.mjs'
 
 const turler = (metin, secenek) => denetle(metin, secenek).bulgular.map((b) => b.tur)
 const var_ = (metin, tur, secenek) => assert.ok(turler(metin, secenek).includes(tur), `"${tur}" bekleniyordu: ${metin}`)
@@ -171,12 +171,60 @@ test('cümle bölme sayı ve kısaltmada bölmez', () => {
 // Uçtan uca örnekler
 // ---------------------------------------------------------------------------
 
+const ornek = (ad) => denetle(readFileSync(new URL(`./ornekler/${ad}`, import.meta.url), 'utf8'))
+
 test('yapay metin düşük, insan metni yüksek skor alır', () => {
-  const ai = denetle(readFileSync(new URL('./ornekler/ai-metin.md', import.meta.url), 'utf8'))
-  const insan = denetle(readFileSync(new URL('./ornekler/insan-metin.md', import.meta.url), 'utf8'))
-  assert.ok(ai.skor < 30, `yapay metin skoru ${ai.skor}`)
-  assert.ok(insan.skor > 85, `insan metni skoru ${insan.skor}`)
+  const ai = ornek('ai-metin.md')
+  const insan = ornek('insan-metin.md')
+  // Tur 3'ten beri ve-yogunlugu yalnız bilgi (SONUC-NITELIKLI.md "Tur 3"); skor 32.
+  assert.ok(ai.skor < 35, `yapay metin skoru ${ai.skor}`)
+  // 2026-09-26 nitelikli kalibrasyonundan beri bu elle yazılmış kısa örnek (ortalama cümle 7,8
+  // kelime, hiç "ve" yok) aşırı düzeltme izi taşır: tur 2'de 78, tur 3'te (ritim izleri bilgi) 94. Referans artık
+  // nitelikli-insan.md.
+  assert.ok(insan.skor > 72 && insan.skor > ai.skor + 40, `insan metni skoru ${insan.skor}`)
   assert.equal(insan.bulgular.filter((b) => b.tur.startsWith('tdk-')).length, 0)
+})
+
+test('nitelikli kalibrasyon: editörlü insan Türkçesi yüksek, aşırı düzeltilmiş taslak düşük', () => {
+  const nitelikli = ornek('nitelikli-insan.md')
+  const beceri = ornek('beceri-asiri-duzeltme.md')
+  assert.ok(nitelikli.skor >= 95, `nitelikli insan skoru ${nitelikli.skor}`)
+  // Tur 3: ritim izleri bilgi; skor yalnız "hiç uzun cümle yok" izinden düşer (6 puan).
+  assert.ok(beceri.skor < nitelikli.skor, `aşırı düzeltilmiş taslak skoru ${beceri.skor}`)
+  assert.ok(beceri.bulgular.some((b) => b.tur === 'uzun-cumle-yok'))
+  const bilgi = beceri.bilgi.map((b) => b.tur)
+  for (const t of ['dar-sapma', 'kisa-cumle']) assert.ok(bilgi.includes(t), t)
+  assert.equal(nitelikli.bilgi.length, 0)
+})
+
+test('aşırı düzeltme izleri: eşikler iki yönlü', () => {
+  // 8 kısa, eşit boylu cümle; hiç uzun cümle yok; hiç "ve" yok (≥150 kelime için tekrarlanır).
+  const kesik = Array.from({ length: 5 }, () =>
+    'Kurum dosyaları her sabah kontrol eder. Eksik belge olursa sahibine yazılır. Yanıt gelmezse ikinci bir hatırlatma gider. Sonra dosya kapanır. Raporlar ay sonunda toplanır. Müdür onaylar. Onaydan sonra arşive girer. Arşiv yıl boyunca açık kalır.',
+  ).join('\n\n')
+  const k = denetle(kesik)
+  for (const t of ['uzun-cumle-yok', 've-seyrek']) assert.ok(k.bulgular.some((b) => b.tur === t), t)
+  for (const t of ['dar-sapma', 'kisa-cumle']) assert.ok(k.bilgi.some((b) => b.tur === t) && !k.bulgular.some((b) => b.tur === t), t)
+  // Aynı olgular, uzun ve kısa cümle karışık, "ve" doğal: bu izlerin hiçbiri çıkmaz.
+  const akici = Array.from({ length: 3 }, () =>
+    'Kurum dosyaları her sabah kontrol eder ve eksik belge çıkarsa sahibine yazar; yanıt gelmezse ikinci bir hatırlatma gönderir, o da sonuçsuz kalırsa dosyayı kapatıp durumu bir sonraki haftanın listesine ekler. Raporlar ay sonunda toplanır. Müdür bunları tek tek okuyup onayladıktan sonra dosyalar arşive girer; arşiv, yıl boyunca hem kurum çalışanlarına hem de dosya sahiplerine açık kalır. İşin en uzun kısmı bu okuma ve onay adımıdır.',
+  ).join('\n\n')
+  const a = denetle(akici)
+  for (const t of ['dar-sapma', 'kisa-cumle', 'uzun-cumle-yok', 've-seyrek', 've-yogunlugu']) assert.ok(![...a.bulgular, ...a.bilgi].some((b) => b.tur === t), `${t}: ${a.olcum.cumleOrt}`)
+})
+
+test('tur 3: ritim bilgisi skoru ve JSON bulgularını etkilemez', () => {
+  // Kısa, eşit boylu cümleler (site metni gibi) ama en az bir 25+ kelimelik cümle: yalnız bilgi.
+  const metin = Array.from({ length: 4 }, () =>
+    'Formu doldurursunuz. Aynı gün döneriz. Keşif iki hafta sürer. Sonunda yazılı bir plan alırsınız. Plan işi, maliyeti, süreyi ve iş sırasını, ekibinizin hangi adımda neye onay vereceğini ve teslimden sonraki ilk ay boyunca sistemi kimin, hangi sırayla ve hangi yetkiyle yöneteceğini tek bir belgede toplar.',
+  ).join('\n\n')
+  const d = denetle(metin)
+  assert.ok(d.bilgi.some((b) => b.tur === 'kisa-cumle'), 'kisa-cumle bilgi olarak raporlanır')
+  assert.ok(!d.bulgular.some((b) => RITIM_BILGI.has(b.tur)))
+  assert.ok(d.bilgi.every((b) => b.agirlik === 0))
+  const [j] = jsonDenetle('x.json', JSON.stringify({ govde: metin.split('\n\n') }))
+  assert.ok(!j.butunBulgular.some((b) => RITIM_BILGI.has(b.tur)))
+  assert.ok(j.bilgi.length > 0)
 })
 
 // ---------------------------------------------------------------------------

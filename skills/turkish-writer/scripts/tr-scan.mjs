@@ -333,14 +333,39 @@ function sapma(a) {
 const ESIK = {
   cumleCVGuclu: 0.3, // bunun altı güçlü iz (20 puan), 0,30-0,37 zayıf (8 puan)
   cumleCV: 0.37, //     (0,93) cümle uzunluğu değişim katsayısı; LLM düşük
-  veYuzde: 2.7, //      (0,72) serbest metinde güçlü, haberde zayıf
   birYuzde: 2.75, //    (0,70)
   hafifFiil200: 1, //   (0,66) sınırda
-  uzunCumleYokMin: 8, // (0,76) 8+ cümlelik metinde hiç 25+ kelimelik cümle yoksa
+  uzunCumleYokMin: 8, // en az bu kadar cümlesi olan metinde uzun cümle oranı ölçülür
+  // 2026-09-26 nitelikli derlem kalibrasyonu (SONUC-NITELIKLI.md "tr-scan kalibrasyonu"):
+  // referans editörden geçmiş kurum/dergi Türkçesi (62 metin), karşı taraf eski istemle yazılmış
+  // beceri taslağı (36). Eşik, derlemin ayar yarısında Youden J ile (ve100'de insan yanlış
+  // pozitifi ≤ %10 şartıyla) seçildi; sonuçlar sınama yarısında raporlandı. Aşırı düzeltme izi:
+  // kısa ve eşit boylu cümle, uzun cümle yokluğu, "ve"den kaçış.
+  cumleSapmaDar: 6.8, //    nitelikli insan medyanı 9,0; eski beceri 5,7 (J 0,88)
+  cumleOrtKisa: 13.5, //    nitelikli insan 19,5; eski beceri 13,3
+  uzunCumleOranMin: 0.08, // 25+ kelimelik cümle oranı; nitelikli insan %23, eski beceri %3 (J 0,85)
+  // Tur 3: 2,0 → 1,0. Ayar yarısında seçildi (insanda en çok 1/31 bulgu, site kapısında 0 bulgu,
+  // 2018 OSCAR/gpt-4o ayrımında AUC en çok 0,03 düşüş); sınamada nitelikli insan ≤80 2/31.
+  veSeyrek: 1.0, //         100 kelimede "ve"; nitelikli insan 3,9, eski beceri 1,8
+  // Eski eşik 2,7 (2018 OSCAR'a karşı gpt-4o) nitelikli insanın %40'ını işaretliyordu; yeni eşik
+  // nitelikli insanın ~%90. yüzdeliği. Varsayılan GPT'yi bu ölçü artık zayıf ayırıyor (ayırıcı ritim).
+  veYuzde: 4.5,
 }
+// Tur 3 (2026-09-26): tur 2'nin ritim izleri nitelikli insanın sınama yarısında %23'ünü 80'in
+// altına düşürüyor ve lovefengis site kapısını 26/26'dan 1/26'ya indiriyordu. Yanlış pozitif
+// sınama yarısında ≤ %10 olana kadar bu izler yalnız bilgidir: raporda "bilgi" bölümünde
+// görünür, skoru, çıkış kodunu ve JSON'daki bulgu listesini etkilemez (JSON'da `bilgi` alanı).
+// Eşik araması ve gerekçe: tests/kalibrasyon/SONUC-NITELIKLI.md "Tur 3".
+// Arama sonunda yalnız "ve-seyrek" (eşik 1,0, ağırlık 8) puana döndü; diğerleri bilgi kaldı.
+export const RITIM_BILGI = new Set(['dar-sapma', 'kisa-cumle', 'uzun-cumle-yok', 've-yogunlugu'])
 // Ölçülüp AYIRT ETMEDİĞİ görülenler (AUC 0,50–0,57): cümle başına ulaç,
 // -maktadır, -DIr oranı, edilgen, ortalama cümle uzunluğu. Bunlar skoru
 // etkilemez; site metninde üslup sorunu oldukları için "üslup" olarak raporlanır.
+// Geriye uyum (2026-09-26): ortalama cümle uzunluğu 2018 derleminde (insan ve varsayılan GPT
+// ikisi de ~14,5 kelime) ayırmıyordu; nitelikli derlemde aşırı düzeltmiş taslağı ayırıyor
+// (AUC 0,09) ve düşük ağırlıkla skora girdi. Yeni izler 2018 OSCAR insanını da cezalandırır
+// (medyan skor 94 → 86); o derlem artık referans değil, yalnız varsayılan GPT'yi ayırma
+// ölçüsü olarak izlenir (AUC 0,93 → 0,90).
 
 // Sıralamanın son iki ögesini bağlayan "ve" ("A, B ve C"): TDK 8.2/1 gereği zorunludur, iz değildir.
 // Sayılırsa "ve" yoğunluğu izi düzeltme geçişini bu bağlacı silmeye iter ve bağlaçsız sıralama
@@ -410,6 +435,8 @@ function acilisTekrari(cum) {
 function olcumBulgulari(o) {
   const b = []
   const yaz = (tur, not, agirlik) => b.push({ satir: 0, tur, not, parca: '', ...(agirlik !== undefined && { agirlik }) })
+  // Bilgi: raporda görünür, skoru ve çıkış kodunu etkilemez (RITIM_BILGI).
+  const bilgi = (tur, not) => { if (RITIM_BILGI.has(tur)) b.push({ satir: 0, tur, not, parca: '', agirlik: 0, bilgi: true }); else yaz(tur, not) }
   if (o.kelime < 60) return b // kısa metinde oran ölçümü anlamsız
 
   // Kademeli: insan site metninin medyanı 0,38, yani 0,30-0,37 arası gri bölge (SONUC-SITE.md).
@@ -417,11 +444,16 @@ function olcumBulgulari(o) {
     const guclu = o.cumleCV < ESIK.cumleCVGuclu
     yaz('duz-ritim', `cümle uzunluğu değişim katsayısı ${o.cumleCV.toFixed(2)} (insan medyanı 0,51, LLM 0,29). Cümleler aynı boyda; kısa ve uzun cümleyi anlamın gerektirdiği yerde karıştır.`, guclu ? 20 : 8)
   }
-  if (o.cumle >= ESIK.uzunCumleYokMin && o.uzunCumle === 0) yaz('uzun-cumle-yok', `${o.cumle} cümlenin hiçbiri 25 kelimeyi geçmiyor. İnsan metinlerinin çoğunda en az bir uzun cümle var.`)
+  // "uzun-cumle-yok": hiç 25+ kelimelik cümle yoksa puanlı iz (0.1.0'dan beri). Tur 2'nin oran
+  // eşiği (%8'in altı) yalnız bilgi olarak raporlanır.
+  if (o.cumle >= ESIK.uzunCumleYokMin && o.uzunCumle === 0) yaz('uzun-cumle-yok', `${o.cumle} cümlenin hiçbiri 25 kelimeyi geçmiyor; editörlü Türkçede bu oran %23. Birbirine bağlı olguları yan cümle, ulaç ve "ve" ile tek cümlede topla.`)
+  else if (o.cumle >= ESIK.uzunCumleYokMin && o.uzunCumle / o.cumle < ESIK.uzunCumleOranMin) bilgi('uzun-cumle-yok', `${o.cumle} cümlenin ${o.uzunCumle}'i 25 kelimeyi geçiyor (%${Math.round((100 * o.uzunCumle) / o.cumle)}); editörlü Türkçede bu oran %23.`)
+  if (o.cumle >= 6 && o.cumleSapma < ESIK.cumleSapmaDar) bilgi('dar-sapma', `cümle boylarının sapması ${o.cumleSapma.toFixed(1)} kelime (editörlü Türkçede 9, eşik ${ESIK.cumleSapmaDar}). Cümleler aynı boyda; kısa cümlenin yanına 25 kelimeyi aşan cümle koy.`)
+  if (o.cumle >= 6 && o.cumleOrt < ESIK.cumleOrtKisa) bilgi('kisa-cumle', `ortalama cümle ${o.cumleOrt.toFixed(1)} kelime (editörlü Türkçede 19,5, eşik ${ESIK.cumleOrtKisa}). Kesik cümle dizisi aşırı düzeltme izidir.`)
   if (o.acilisTekrari) yaz('acilis-tekrari', `art arda 3 cümle "${o.acilisTekrari}" ile başlıyor.`)
-  // Aşırı düzeltme: kör testte becerili metinde 1,7, insanda 3,4 (SONUC-BECERI.md).
-  if (o.kelime >= 150 && o.ve100 < 1.2) yaz('ve-seyrek', `100 kelimede ${o.ve100.toFixed(1)} "ve"; insan metninde 2-3,5. "ve"yi tümden silmek de bir izdir.`, 0)
-  if (o.veIz100 > ESIK.veYuzde) yaz('ve-yogunlugu', `100 kelimede ${o.veIz100.toFixed(1)} "ve" (eşik ${ESIK.veYuzde}; sıralamanın son iki ögesini bağlayan ${o.veSiralama} "ve" sayılmadı). Cümle bağlayan "ve"yi ulaçla bağla ya da cümleyi böl; sıralamadaki "ve"yi silme.`)
+  // Aşırı düzeltme: "ve"den kaçış (eski beceri 1,8, nitelikli insan 3,9; SONUC-NITELIKLI.md).
+  if (o.kelime >= 150 && o.ve100 < ESIK.veSeyrek) bilgi('ve-seyrek', `100 kelimede ${o.ve100.toFixed(1)} "ve" (editörlü Türkçede 3,9, eşik ${ESIK.veSeyrek}). "ve"yi silmek de bir izdir; iki eylemi ya da ögeyi bağlarken kullan.`)
+  if (o.veIz100 > ESIK.veYuzde) bilgi('ve-yogunlugu', `100 kelimede ${o.veIz100.toFixed(1)} "ve" (eşik ${ESIK.veYuzde}; sıralamanın son iki ögesini bağlayan ${o.veSiralama} "ve" sayılmadı). Cümle bağlayan "ve"yi ulaçla bağla ya da cümleyi böl; sıralamadaki "ve"yi silme.`)
   if (o.bir100 > ESIK.birYuzde) yaz('bir-enflasyonu', `100 kelimede ${o.bir100.toFixed(1)} "bir" (eşik ${ESIK.birYuzde}). Sayı/vurgu taşımayanları sil.`)
   if (o.hafifFiil200 > ESIK.hafifFiil200) yaz('hafif-fiil', `200 kelimede ${o.hafifFiil200.toFixed(1)} hafif fiil (gerçekleştir/sağla/oluştur...). Somut fiil kullan.`)
   return b
@@ -580,7 +612,8 @@ function denetle(src, secenek = {}) {
     return true
   })
 
-  return { olcum, bulgular: tekil.sort((a, b) => a.satir - b.satir), skor: skorla(tekil, olcum) }
+  const puanli = tekil.filter((b) => !b.bilgi).sort((a, b) => a.satir - b.satir)
+  return { olcum, bulgular: puanli, bilgi: tekil.filter((b) => b.bilgi), skor: skorla(puanli, olcum) }
 }
 
 // Skor: 100'den düşülür. Ağırlıklar, turkce-parmak-izi.md ve denetleyici.md'deki
@@ -594,6 +627,10 @@ const AGIRLIK = {
   // bir-enflasyonu, hafif-fiil, giris-klisesi: bağımsız site/blog derleminde ayırmadı (bir: site AUC 0,54, blog
   // 0,43; hafif-fiil %57/%60; giriş klişesi insan sitelerinde daha sık). Üslup notu olarak kalır.
   'duz-ritim': 20, 'uzun-cumle-yok': 6, 've-yogunlugu': 6, 'bir-enflasyonu': 0, 'hafif-fiil': 0,
+  // Aşırı düzeltme izleri (2026-09-26, nitelikli derlem ayar yarısı): ağırlık, insan yanlış
+  // pozitifini (≤80) ayar yarısında 3/31'den 4/31'e çıkaran en yüksek beceri yakalamasıyla seçildi.
+  // Tur 3: dar-sapma, kisa-cumle ve ve-yogunlugu RITIM_BILGI'de (ağırlık fiilen 0); ve-seyrek 8.
+  'dar-sapma': 0, 'kisa-cumle': 0, 've-seyrek': 8,
   'kapanis-klisesi': 8, 'olumsuz-kosutluk': 8, 'bos-vurgu': 6, 'giris-klisesi': 0, 'meta': 15,
   'hype': 3, 'ceviri-kokusu': 3, 'esdizim': 3,
   'uzun-tire': 3, 'etiketli-liste': 4, 'baslik-buyuk': 2, 'emoji': 2, 'kalin-yogun': 2, 'unlem': 0, 'en-tire': 2, 'bosluklu-tire': 0,
@@ -664,6 +701,10 @@ function rapor(ad, s) {
   if (tdk.length) {
     satirlar.push('  TDK:')
     for (const b of tdk) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.parca} → ${b.not}`)
+  }
+  if (s.bilgi?.length) {
+    satirlar.push('  bilgi (ritim; skoru etkilemez, kalibrasyon bekliyor):')
+    for (const b of s.bilgi) satirlar.push(`      --: [${b.tur}] ${b.not}`)
   }
   if (!iz.length && !tdk.length && !uslup.length && !soz.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
   return satirlar.join('\n')
@@ -751,13 +792,14 @@ function jsonDenetle(dosya, src, secenek) {
     return { yol, metin, bulgular }
   })
   const butun = denetle(alanlar.map((a) => a.metin).join('\n\n'), secenek)
-  return [{ dosya, alanlar, skor: butun.skor, olcum: butun.olcum, bulgular: alanlar.flatMap((a) => a.bulgular), butunBulgular: butun.bulgular.filter((b) => b.satir === 0) }]
+  return [{ dosya, alanlar, skor: butun.skor, olcum: butun.olcum, bulgular: alanlar.flatMap((a) => a.bulgular), butunBulgular: butun.bulgular.filter((b) => b.satir === 0), bilgi: butun.bilgi }]
 }
 
 function jsonRapor(s) {
   const satirlar = [`\n${s.dosya}`]
   satirlar.push(`  ${s.alanlar.length} metin alanı · bütün metin iz skoru ${s.skor}/100 (${bant(s.skor, s.olcum.kelime)}) · ${s.olcum.kelime} kelime`)
   for (const b of s.butunBulgular) satirlar.push(`    [bütün] [${b.tur}] ${b.not}`)
+  for (const b of s.bilgi ?? []) satirlar.push(`    [bütün, bilgi] [${b.tur}] ${b.not}`)
   for (const a of s.alanlar) {
     if (!a.bulgular.length) continue
     satirlar.push(`  ${a.yol}: "${a.metin.slice(0, 70)}${a.metin.length > 70 ? '…' : ''}"`)
