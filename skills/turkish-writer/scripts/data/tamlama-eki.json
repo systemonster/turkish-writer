@@ -1,0 +1,16 @@
+{
+  "_aciklama": "Belirtisiz ad tamlamasında tamlananın iyelik ekini (-ı/-i/-u/-ü, -sı/-si) düşürdüğü yaygın yanlışlar. tr-scan 'tamlama-eki' kuralı bu listeyi kullanır: kalıp, arkasından harf gelmiyorsa (ek almamışsa) işaretlenir; 'kaynak kodu', 'kaynak kodunu', 'kaynak kodları' işaretlenmez. Yalnız kesin olanlar girer.",
+  "kaynak": "Kural: belirtisiz isim tamlamasında tamlayan ek almaz, tamlanan 3. kişi iyelik eki alır (TDK Yazım Kılavuzu, 'İsim tamlaması' ve Güncel Türkçe Sözlük örnekleri: kapı kolu, ders kitabı, yönetim kurulu; Muharrem Ergin, Türk Dil Bilgisi, İsim Tamlaması). 'kaynak kod' bilişim argosunda yaygındır; kurucu kararıyla (lovefengis, 2026-09-26) yanlış sayılır, TDK Güncel Türkçe Sözlük'te 'kaynak kod' maddesi yoktur.",
+  "kaliplar": [
+    { "kalip": "kaynak kod", "dogru": "kaynak kodu", "not": "vaat cümlesinde: \"kaynak kodu sizindir\" / \"kaynak kodu size ait olur\"" },
+    { "kalip": "yönetim panel", "dogru": "yönetim paneli" },
+    { "kalip": "yönetici panel", "dogru": "yönetici paneli" },
+    { "kalip": "kontrol panel", "dogru": "kontrol paneli" },
+    { "kalip": "iş takip panel", "dogru": "iş takip paneli" },
+    { "kalip": "müşteri portal", "dogru": "müşteri portalı" },
+    { "kalip": "bayi portal", "dogru": "bayi portalı" },
+    { "kalip": "iletişim form", "dogru": "iletişim formu" },
+    { "kalip": "teklif form", "dogru": "teklif formu" },
+    { "kalip": "başvuru form", "dogru": "başvuru formu" }
+  ]
+}

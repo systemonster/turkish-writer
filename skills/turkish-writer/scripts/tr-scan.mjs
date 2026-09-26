@@ -6,6 +6,8 @@
 //   node tr-scan.mjs a.md b.txt --json      # makine okunur
 //   cat metin.txt | node tr-scan.mjs -      # stdin
 //   --tipografi                             # düz kesme (') yerine ’ iste
+//   --etiket                                # girdi başlık/düğme/etiket: eksiltili yapı serbest
+//   --etiket-alan <regex> / --govde-alan <regex>   # JSON'da alan yoluna göre türü zorla
 //
 // Tarayıcı yalnızca ölçülebilir olanı yakalar. Ritim, yapı, boş cümle, üçlü
 // liste gibi izler regexle güvenilir biçimde yakalanamaz; onlar SKILL.md'deki
@@ -28,6 +30,7 @@ const anaModulMu = () => {
   }
 }
 import { esdizimDenetle } from './esdizim.mjs'
+import { sozDizimiDenetle, SOZ_DIZIMI_TURLERI } from './soz-dizimi.mjs'
 
 // Sözlük: sık yazım yanlışları ve bozuk eş dizimler. Dosya yoksa bu denetim
 // sessizce atlanır; tarayıcı yine çalışır.
@@ -339,6 +342,26 @@ const ESIK = {
 // -maktadır, -DIr oranı, edilgen, ortalama cümle uzunluğu. Bunlar skoru
 // etkilemez; site metninde üslup sorunu oldukları için "üslup" olarak raporlanır.
 
+// Sıralamanın son iki ögesini bağlayan "ve" ("A, B ve C"): TDK 8.2/1 gereği zorunludur, iz değildir.
+// Sayılırsa "ve" yoğunluğu izi düzeltme geçişini bu bağlacı silmeye iter ve bağlaçsız sıralama
+// doğar (lovefengis 04fc3a9: 99 "A ve B" → "A, B" dönüşümü). Bu yüzden yoğunluktan düşülür.
+// Kalibrasyon (SONUC.md) bu ayrım olmadan yapıldı; eşik yeniden ölçülene kadar ayarlama budur.
+function siralamaVeSay(cum) {
+  let n = 0
+  for (const c of cum) {
+    for (const birim of c.split(/[;:]/)) {
+      for (const m of birim.matchAll(/(?<=\s)ve(?=\s)/gu)) {
+        const once = birim.slice(0, m.index)
+        const virgul = once.lastIndexOf(',')
+        if (virgul === -1) continue
+        const oge = kelimeler(once.slice(virgul + 1)).length
+        if (oge >= 1 && oge <= 4 && !/,\s*$/.test(once)) n++
+      }
+    }
+  }
+  return n
+}
+
 function olc(temiz) {
   const kel = kelimeler(temiz)
   const kucuk = kel.map(kucult)
@@ -358,6 +381,8 @@ function olc(temiz) {
     cumle: cum.length,
     bir100: (say('bir') / n) * 100,
     ve100: (say('ve') / n) * 100,
+    veIz100: (Math.max(0, say('ve') - siralamaVeSay(cum)) / n) * 100, // iz ölçüsü: sıralama bağlacı hariç
+    veSiralama: siralamaVeSay(cum),
     ulac: ulaclar.length,
     ulacCumle: cum.length ? ulaclar.length / cum.length : 0,
     maktadir: (kucukMetin.match(tr(/\p{L}+(maktadır|mektedir|makta|mekte)\b/)) || []).length,
@@ -396,7 +421,7 @@ function olcumBulgulari(o) {
   if (o.acilisTekrari) yaz('acilis-tekrari', `art arda 3 cümle "${o.acilisTekrari}" ile başlıyor.`)
   // Aşırı düzeltme: kör testte becerili metinde 1,7, insanda 3,4 (SONUC-BECERI.md).
   if (o.kelime >= 150 && o.ve100 < 1.2) yaz('ve-seyrek', `100 kelimede ${o.ve100.toFixed(1)} "ve"; insan metninde 2-3,5. "ve"yi tümden silmek de bir izdir.`, 0)
-  if (o.ve100 > ESIK.veYuzde) yaz('ve-yogunlugu', `100 kelimede ${o.ve100.toFixed(1)} "ve" (eşik ${ESIK.veYuzde}). Bir kısmını ulaçla bağla ya da cümleyi böl.`)
+  if (o.veIz100 > ESIK.veYuzde) yaz('ve-yogunlugu', `100 kelimede ${o.veIz100.toFixed(1)} "ve" (eşik ${ESIK.veYuzde}; sıralamanın son iki ögesini bağlayan ${o.veSiralama} "ve" sayılmadı). Cümle bağlayan "ve"yi ulaçla bağla ya da cümleyi böl; sıralamadaki "ve"yi silme.`)
   if (o.bir100 > ESIK.birYuzde) yaz('bir-enflasyonu', `100 kelimede ${o.bir100.toFixed(1)} "bir" (eşik ${ESIK.birYuzde}). Sayı/vurgu taşımayanları sil.`)
   if (o.hafifFiil200 > ESIK.hafifFiil200) yaz('hafif-fiil', `200 kelimede ${o.hafifFiil200.toFixed(1)} hafif fiil (gerçekleştir/sağla/oluştur...). Somut fiil kullan.`)
   return b
@@ -539,6 +564,9 @@ function denetle(src, secenek = {}) {
     bulgular.push({ satir: i === -1 ? 0 : satirNo(src, i), tur: 'esdizim-derlem', not: e.mesaj, parca: e.ifade })
   }
 
+  // Söz dizimi (liste-ve, ozne-virgul, eksiltili-yuklem, tamlama-eki): yazım hatası, iz değil.
+  bulgular.push(...sozDizimiDenetle(temiz, secenek, (i) => satirNo(src, i)))
+
   bulgular.push(...bicimIzleri(src, temiz))
   const olcum = olc(temiz)
   bulgular.push(...olcumBulgulari(olcum))
@@ -577,7 +605,11 @@ const AGIRLIK = {
   'retorik-soru': 3, 'saga-dallanma': 2, 'yapi-nakli': 3, 'aforizma': 3, 'anons': 3, 'sahte-samimi': 2,
   'bos-dogru': 3, 'relatif-ki': 2, 'gpt-sozlugu': 3, 'yer-tutucu-ek': 0, 'acilis-tekrari': 0,
   'burokratik': 0, 'tipografi-kesme': 0, 'esdizim-derlem': 0,
+  // Söz dizimi hataları (soz-dizimi.mjs): yapay zekâ izi olarak ölçülmedi, skoru etkilemez;
+  // raporda ayrı bölümde durur, site kapısı her birini sayar.
+  ...Object.fromEntries(SOZ_DIZIMI_TURLERI.map((t) => [t, 0])),
 }
+const sozDizimiMi = (b) => SOZ_DIZIMI_TURLERI.includes(b.tur)
 const agirlik = (tur) => (tur.startsWith('tdk-') ? 0 : AGIRLIK[tur] ?? 1)
 
 function skorla(bulgular, olcum) {
@@ -608,7 +640,8 @@ function rapor(ad, s) {
   const tdk = s.bulgular.filter((b) => b.tur.startsWith('tdk-'))
   const agr = (b) => b.agirlik ?? agirlik(b.tur)
   const iz = s.bulgular.filter((b) => agr(b) > 0)
-  const uslup = s.bulgular.filter((b) => !b.tur.startsWith('tdk-') && agr(b) === 0)
+  const uslup = s.bulgular.filter((b) => !b.tur.startsWith('tdk-') && !sozDizimiMi(b) && agr(b) === 0)
+  const soz = s.bulgular.filter(sozDizimiMi)
   const satirlar = []
   satirlar.push(`\n${ad}`)
   satirlar.push(`  iz skoru ${s.skor}/100 (${bant(s.skor, o.kelime)}) · TDK hatası ${tdk.length} · ${o.kelime} kelime, ${o.cumle} cümle`)
@@ -624,11 +657,15 @@ function rapor(ad, s) {
     satirlar.push('  üslup (skoru etkilemez, site metninde yine de düzelt):')
     for (const b of uslup) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 80) : ''}`)
   }
+  if (soz.length) {
+    satirlar.push('  söz dizimi (skoru etkilemez, yazım hatasıdır):')
+    for (const b of soz) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.parca} → ${b.not}`)
+  }
   if (tdk.length) {
     satirlar.push('  TDK:')
     for (const b of tdk) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.parca} → ${b.not}`)
   }
-  if (!iz.length && !tdk.length && !uslup.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
+  if (!iz.length && !tdk.length && !uslup.length && !soz.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
   return satirlar.join('\n')
 }
 
@@ -636,7 +673,11 @@ function main() {
   const argv = process.argv.slice(2)
   const json = argv.includes('--json')
   const tipografi = argv.includes('--tipografi')
-  const dosyalar = argv.filter((a) => !a.startsWith('--'))
+  const etiket = argv.includes('--etiket')
+  const deger = (ad) => { const i = argv.indexOf(ad); return i > -1 ? argv[i + 1] : undefined }
+  const etiketAlan = deger('--etiket-alan') && new RegExp(deger('--etiket-alan'))
+  const govdeAlan = deger('--govde-alan') && new RegExp(deger('--govde-alan'))
+  const dosyalar = argv.filter((a, i) => !a.startsWith('--') && !['--etiket-alan', '--govde-alan'].includes(argv[i - 1]))
   if (!dosyalar.length) {
     console.error('kullanım: node tr-scan.mjs <dosya...> [--json]   (stdin için: -)')
     process.exit(2)
@@ -644,8 +685,8 @@ function main() {
 
   const sonuc = dosyalar.flatMap((f) => {
     const src = (f === '-' ? readFileSync(0, 'utf8') : readFileSync(f, 'utf8')).replace(/\r\n/g, '\n')
-    if (f.endsWith('.json')) return jsonDenetle(f, src, { tipografi })
-    return [{ dosya: f, ...denetle(src, { tipografi }) }]
+    if (f.endsWith('.json')) return jsonDenetle(f, src, { tipografi, etiketAlan, govdeAlan })
+    return [{ dosya: f, ...denetle(src, { tipografi, etiket }) }]
   })
 
   if (json) console.log(JSON.stringify(sonuc, null, 2))
@@ -672,6 +713,19 @@ function metinAlanlari(deger, yol = '$', cikti = []) {
   return cikti
 }
 
+// Alan türü: başlık, düğme, etiket, rozet gibi alanlarda eksiltili yapı Türkçede de olağandır
+// ("Ücretsiz, 15 dakika"); orada liste-ve, ozne-virgul ve eksiltili-yuklem denetlenmez.
+// Tür, alan yolunun son anahtarından çıkar (dizi öğesinde üst anahtar). Kural adla işler:
+// cümle taşıyan alanlara (lead, aciklama, tanim, satir, q, a...) etiket adı verme.
+// Proje kendi istisnasını --etiket-alan / --govde-alan (alan yolu regex'i) ile verir; govde kazanır.
+const ETIKET_ANAHTAR = /^(baslik|başlık|title|heading|h[1-6]|headlines?|eyebrow|kicker|etiket|etiketi|label|cta|buton|button|link|tag|rozet|badge|chip|pill|bedel|durum|durumlar|olcutler|secenekler|sutunlar|menu|nav|placeholder|isim|name)$|(_|^)(etiket|etiketi|cta|link|baslik|label)$|^(cta|buton|button|durum)_/i
+function alanTuru(yol, secenek = {}) {
+  if (secenek.govdeAlan?.test(yol)) return 'govde'
+  if (secenek.etiketAlan?.test(yol)) return 'etiket'
+  const anahtar = yol.replace(/(\[\d+\])+$/, '').split('.').at(-1)
+  return ETIKET_ANAHTAR.test(anahtar) ? 'etiket' : 'govde'
+}
+
 function jsonDenetle(dosya, src, secenek) {
   let veri
   try {
@@ -681,8 +735,9 @@ function jsonDenetle(dosya, src, secenek) {
   }
   const alanlar = metinAlanlari(veri).map(({ yol, metin }) => {
     // Başlık alanı markdown "#" taşımaz: başlık denetimi için başına ekle.
-    const baslikMi = /(baslik|başlık|title|heading|h[1-3]|headline)$/i.test(yol)
-    const d = denetle(baslikMi ? '# ' + metin : metin, secenek)
+    const etiket = alanTuru(yol, secenek) === 'etiket'
+    const baslikMi = etiket && /(baslik|başlık|title|heading|h[1-3]|headline)$/i.test(yol)
+    const d = denetle(baslikMi ? '# ' + metin : metin, { ...secenek, etiket })
     // Kısa alanda ölçüm bulguları (ritim, yoğunluk) anlamsız: yalnız kalıp ve TDK.
     // Aynı kelime iki TDK kuralından gelirse bir kez yaz.
     const gorulen = new Set()
@@ -716,7 +771,7 @@ function jsonRapor(s) {
   return satirlar.join('\n')
 }
 
-export { denetle, olc, cumleler, kelimeler, bant, jsonDenetle, metinAlanlari }
+export { denetle, olc, cumleler, kelimeler, bant, jsonDenetle, metinAlanlari, alanTuru }
 
 // Doğrudan çalıştırıldı mı, yoksa import mu edildi? node -e ve REPL'de argv[1] yoktur.
 if (anaModulMu()) main()

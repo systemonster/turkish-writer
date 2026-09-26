@@ -143,7 +143,13 @@ biçimde daha çok kusur yakalar.
 ```bash
 node scripts/tr-scan.mjs metin.md          # iz skoru + TDK hataları + ölçümler
 node scripts/tr-scan.mjs metin.md --json   # makine okunur
+node scripts/tr-scan.mjs baslik.txt --etiket   # başlık/düğme/etiket: eksiltili yapı serbest
 ```
+
+JSON içerik dosyasında alan türü anahtar adından çıkar: `baslik`, `title`, `eyebrow`, `cta`,
+`buton`, `etiket`, `label`, `*_etiket`, `*_link`, `durum_*` gibi alanlar etikettir; `lead`,
+`aciklama`, `tanim`, `satir`, `q`, `a` gibi alanlar cümledir. Projeye özgü istisna
+`--etiket-alan <regex>` ve `--govde-alan <regex>` ile alan yoluna göre verilir.
 
 Tarayıcı üç şey raporlar:
 
@@ -159,6 +165,9 @@ Tarayıcı üç şey raporlar:
   zayıfsa işaretlenir ve Türkçede o ismin en çok hangi fiillerle geçtiği önerilir.
   Bunun için bir kez `node scripts/esdizim-derle.mjs` çalıştır (uzun sürer, derlemi
   kendi makinende indirip sayar).
+- **Söz dizimi.** Bağlaçsız sıralama, kısa cümlede özne virgülü, gövdede yüklemsiz başlık
+  dili, iyeliksiz tamlama (`liste-ve`, `ozne-virgul`, `eksiltili-yuklem`, `tamlama-eki`).
+  Skoru etkilemez, yazım hatasıdır; ayrıntı 2. geçişte.
 - **TDK.** Birleşik/ayrı yazım, düzeltme işareti, kesme, "mi"/"ki", ses uyumu, sık yazım
   yanlışları. Resmî dizin denetimi için bir kez `node scripts/tdk-dizin-derle.mjs`
   çalıştır (TDK'nın verisini kendi makinende indirir).
@@ -225,6 +234,21 @@ bulunur. Skor bir tahmindir, karar değil. Temiz tarama "iş bitti" demek değil
 - **Devrik cümle.** Kurumsal sitede yok ya da sayfada bir; blogda yazı başına iki üç.
   Yalnız bilinçli vurgu için. İngilizce sıradan artakalan devrik cümle kusurdur.
 - **Terim tutarlılığı.** Bir kavram, bir kelime. Gerekirse tekrar et.
+- **Dört söz dizimi denetimi** (tarayıcı `liste-ve`, `ozne-virgul`, `eksiltili-yuklem`,
+  `tamlama-eki` olarak işaretler; hepsi İngilizce iskeletten sızar, dil modeli geçişi
+  bunları kaçırdığı için her metinde tek tek bak):
+  - [ ] Sıralamada son iki öge "ve / ile / ya da" ile bağlı mı? "maliyeti, süreyi, iş
+    sırasını getirir" → "maliyeti, süreyi ve iş sırasını getirir" (TDK 8.2/1). Ayrı
+    yüklemli sıralı cümleler (8.2/2) ve art arda ulaçlar (8.2/13) virgülle kalır.
+  - [ ] Kısa cümlede özneden sonra virgül var mı? "Keşif, kapsamı yazar." → "Keşif
+    kapsamı yazar." Virgül yalnız yüklemden uzak düşen öznede (8.2/3); bağlaç, kabul sözü,
+    hitap ve "bu/şu/o" zamirinden sonra kalır (8.2/9, 11, 14). Açıklama gerekiyorsa iki
+    nokta ya da noktalı virgülle ayrı yapı kur.
+  - [ ] Gövde metninde yüklemsiz başlık dili var mı? "Ödeme teslimata bağlı, kaynak kod
+    sizin" → "Ödeme teslimata bağlıdır; iş bitince kaynak kodu size ait olur." Eksiltili
+    yapı yalnız başlık, düğme ve etikette kalır (`tr-scan --etiket`; JSON'da alan adına göre).
+  - [ ] Belirtisiz ad tamlamasında iyelik eki düşmüş mü? "kaynak kod" → "kaynak kodu",
+    "yönetim panel" → "yönetim paneli" (liste: `scripts/data/tamlama-eki.json`).
 
 ### 3. Yapısal geçiş: metin başına bir iki müdahale
 
@@ -369,5 +393,6 @@ kullanıcının asıl şikâyetinden ya da kaynak literatürden gelir.
 | `references/kaynaklar.md` | Bütün kaynaklar ve lisansları |
 | `scripts/openai-taslak.mjs` | Yaz kipinin taslak motoru (OpenAI; bağımlılıksız) |
 | `scripts/tr-scan.mjs` | Tarayıcı |
+| `scripts/soz-dizimi.mjs`, `scripts/data/tamlama-eki.json` | Söz dizimi kuralları ve tamlama sözlüğü |
 | `scripts/tdk-dizin-derle.mjs` | TDK dizinini yerelde indirip tarayıcıya derler |
 | `scripts/esdizim-derle.mjs`, `scripts/esdizim.mjs` | Derlem eş dizim istatistiği ve denetimi |

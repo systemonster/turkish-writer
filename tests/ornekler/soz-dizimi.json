@@ -1,0 +1,131 @@
+{
+  "_aciklama": "Söz dizimi kuralları için doğru/yanlış çiftleri (tests/soz-dizimi.test.mjs). 'yanlis' kuralı tetiklemeli, 'dogru' tetiklememeli. 'kaynak' çiftin nereden geldiğini söyler; kurucu örnekleri lovefengis sitesinin gerçek metnidir (2026-09-26).",
+  "ciftler": [
+    {
+      "kural": "liste-ve",
+      "yanlis": "Keşif, ne yapılacağını, maliyeti, süreyi, iş sırasını yazılı hâle getirir.",
+      "dogru": "Keşif ne yapılacağını, maliyeti, süreyi ve iş sırasını yazılı hâle getirir.",
+      "kaynak": "kurucu: lovefengis content/kesif-v2-copy.json hero.lead"
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Keşif, ne yapılacağını, maliyeti, süreyi, iş sırasını yazılı hâle getirir.",
+      "dogru": "Keşif ne yapılacağını, maliyeti, süreyi ve iş sırasını yazılı hâle getirir.",
+      "kaynak": "kurucu: lovefengis content/kesif-v2-copy.json hero.lead; TDK 8.2/3"
+    },
+    {
+      "kural": "eksiltili-yuklem",
+      "yanlis": "Ödeme teslimata bağlı, kaynak kod sizin.",
+      "dogru": "Ödeme teslimata bağlıdır; iş bitince kaynak kodu size ait olur.",
+      "kaynak": "kurucu: lovefengis content/anasayfa-v2-copy.json guven.satir"
+    },
+    {
+      "kural": "tamlama-eki",
+      "yanlis": "Ödeme teslimata bağlı, kaynak kod sizin.",
+      "dogru": "Ödeme teslimata bağlıdır; iş bitince kaynak kodu size ait olur.",
+      "kaynak": "kurucu: lovefengis content/anasayfa-v2-copy.json guven.satir"
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Kurumsal özel yazılım, sistem entegrasyonu, süreç otomasyonu, güvenlik denetimi yapıyoruz.",
+      "dogru": "Kurumsal özel yazılım, sistem entegrasyonu, süreç otomasyonu ve güvenlik denetimi yapıyoruz.",
+      "kaynak": "lovefengis anasayfa hero.lead kalıbı"
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Alan adı, barındırma, e-posta hesabı size aittir.",
+      "dogru": "Alan adı, barındırma ve e-posta hesabı size aittir.",
+      "kaynak": "TDK 8.2/1: son iki öge bağlaçla bağlanır"
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Sipariş girişi, belge okuma, onay, raporlama gibi işleri otomatikleştiriyoruz.",
+      "dogru": "Sipariş girişi, belge okuma, onay ve raporlama gibi işleri otomatikleştiriyoruz.",
+      "kaynak": "lovefengis anasayfa kapilar[1].tanim kalıbı"
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Uygulama denetimi, bulgu raporu, öneriler, KVKK teknik gözden geçirmesi, düzeltme sonrası doğrulama yapıyoruz.",
+      "dogru": "Uygulama denetimi, bulgu raporu, öneriler, KVKK teknik gözden geçirmesi ve düzeltme sonrası doğrulama yapıyoruz.",
+      "kaynak": "lovefengis anasayfa kapilar[2].tanim: uzun son ögede bağlaç dördüncü kelimeden sonra"
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Umduk, bekledik, düşündük.",
+      "dogru": "Umduk, bekledik, düşündük.",
+      "kaynak": "TDK 8.2/2: sıralı cümleler virgülle ayrılır (yalnız doğru yanı sınanır)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Kurulumu bitirip, testleri çalıştırıp, raporu gönderiyoruz.",
+      "dogru": "Kurulumu bitirip, testleri çalıştırıp, raporu gönderiyoruz.",
+      "kaynak": "TDK 8.2/13: art arda zarf-fiiller (yalnız doğru yanı sınanır)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "liste-ve",
+      "yanlis": "Kültür Mah. 1375 Sok. No 5, Alsancak, Konak, İzmir adresindeyiz.",
+      "dogru": "Kültür Mah. 1375 Sok. No 5, Alsancak, Konak, İzmir adresindeyiz.",
+      "kaynak": "adres yanlış pozitifi (yalnız doğru yanı sınanır)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Panel, siparişleri tek ekranda gösterir.",
+      "dogru": "Panel siparişleri tek ekranda gösterir.",
+      "kaynak": "TDK 8.2/3: virgül yalnız yüklemden uzak düşen özneden sonra"
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Keşif, işin kapsamını yazılı hâle getirir.",
+      "dogru": "Keşif işin kapsamını yazılı hâle getirir.",
+      "kaynak": "TDK 8.2/3"
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Ancak, bu süre uzayabilir. Bu, kolay olmaz. Evet, kurulumu biz yaparız. Sayın Başkan, toplantı başladı.",
+      "dogru": "Ancak, bu süre uzayabilir. Bu, kolay olmaz. Evet, kurulumu biz yaparız. Sayın Başkan, toplantı başladı.",
+      "kaynak": "TDK 8.2/9, 8.2/11, 8.2/14: bağlaç, kabul sözü, hitap ve bu/şu/o zamiri (yalnız doğru yanı sınanır)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "ozne-virgul",
+      "yanlis": "Web sitesi, mobil uygulama ve panel yapıyoruz.",
+      "dogru": "Web sitesi, mobil uygulama ve panel yapıyoruz.",
+      "kaynak": "sıralamanın ilk ögesi özne değildir (yalnız doğru yanı sınanır)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "eksiltili-yuklem",
+      "yanlis": "Fiyat sabit, teslim tarihi belli.",
+      "dogru": "Fiyat sabittir, teslim tarihi de bellidir.",
+      "kaynak": "İngilizce başlık dili: 'Price fixed, delivery date set'"
+    },
+    {
+      "kural": "eksiltili-yuklem",
+      "yanlis": "Taahhüt yok, fiyat sabit.",
+      "dogru": "Taahhüt yok, fiyat sabit.",
+      "kaynak": "var/yok kendi başına yüklemdir; tek eksiltili yan cümle işaretlenmez (yalnız doğru yanı sınanır)",
+      "yalnizDogru": true
+    },
+    {
+      "kural": "tamlama-eki",
+      "yanlis": "Şirkete özel yönetim panel geliştiriyoruz.",
+      "dogru": "Şirkete özel yönetim paneli geliştiriyoruz.",
+      "kaynak": "belirtisiz ad tamlaması: tamlanan iyelik eki alır"
+    },
+    {
+      "kural": "tamlama-eki",
+      "yanlis": "Bayi müşteri portal üzerinden sipariş verir.",
+      "dogru": "Bayi müşteri portalı üzerinden sipariş verir.",
+      "kaynak": "belirtisiz ad tamlaması"
+    },
+    {
+      "kural": "tamlama-eki",
+      "yanlis": "Kaynak kod ve veriler kime ait?",
+      "dogru": "Kaynak kodu ve veriler kime ait? Kaynak kodunu devrederiz, kaynak kodları sizde kalır.",
+      "kaynak": "lovefengis anasayfa sss[4].q"
+    }
+  ]
+}
