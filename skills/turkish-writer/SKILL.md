@@ -204,7 +204,7 @@ JSON içerik dosyasında alan türü anahtar adından çıkar: `baslik`, `title`
 `aciklama`, `tanim`, `satir`, `q`, `a` gibi alanlar cümledir. Projeye özgü istisna
 `--etiket-alan <regex>` ve `--govde-alan <regex>` ile alan yoluna göre verilir.
 
-Tarayıcı üç şey raporlar:
+Tarayıcı şunları raporlar:
 
 - **İz skoru (0-100) ve bandı.** 65 ve altı güçlü iz, 66-80 gri bölge, 80 üstü zayıf iz.
   İki derlemde sınandı: bağımsız site/blog derleminde 80 eşiği GPT metinlerinin %79'unu
@@ -221,6 +221,10 @@ Tarayıcı üç şey raporlar:
 - **Söz dizimi.** Bağlaçsız sıralama, kısa cümlede özne virgülü, gövdede yüklemsiz başlık
   dili, iyeliksiz tamlama (`liste-ve`, `ozne-virgul`, `eksiltili-yuklem`, `tamlama-eki`).
   Skoru etkilemez, yazım hatasıdır; ayrıntı 2. geçişte.
+- **Yineleme.** Paragrafın son cümlesi önceki cümlelerini yeni sayı, ad ya da kaynak eklemeden
+  başka kelimelerle tekrar ediyorsa (`yineleme`) işaretlenir. Uzunluk baskısının izidir: model
+  yeni olgu bulamayınca paragrafı özetle kapatır. Skoru etkilemez; bulgu "bu cümleyi sil"
+  demektir. Çok paragraflı metin için ayarlandı, JSON alan kipinde `--yineleme` ile açılır.
 - **TDK.** Birleşik/ayrı yazım, düzeltme işareti, kesme, "mi"/"ki", ses uyumu, sık yazım
   yanlışları. Resmî dizin denetimi için bir kez `node scripts/tdk-dizin-derle.mjs`
   çalıştır (TDK'nın verisini kendi makinende indirir).
@@ -329,6 +333,11 @@ yaz.
 - "Bu", "o", "söz konusu" neyi gösterdiği okur geri dönmeden anlaşılıyor.
 - Metin içinde çelişki yok: sayı, süre, koşul çapraz denetlendi.
 - **Silme testi:** cümleyi silsem ne kaybolur? Cevap "hiçbir şey" ise cümle gider.
+- **Paragraf sonu yinelemesi:** paragrafın son cümlesi, paragrafın söylediğini yeni olgu
+  eklemeden yeniden mi söylüyor ("Girdi ve çıktı, aynı kullanım sırasında ayrı ayrı kişisel
+  veri içerebilir.", "Bu nedenle … ayrıca değerlendirilmelidir.")? Sil; yerine başka bir
+  özet koyma. Paragraf son olguda biter. Silince metin kısalıyorsa kısalır: uzunluk hedefi
+  yeni olguyla tutturulur, olgu yoksa metin kısa kalır. Tarayıcı bunu `yineleme` olarak işaretler.
 - **Taşınabilirlik testi:** cümle değiştirilmeden başka bir şirkete, ürüne, kişiye
   taşınabiliyorsa dolgudur. Sil ya da bu konuya özgü bir olguyla değiştir.
 - **Kaynak testi:** her sayı, oran, süre, fiyat, deneyim iddiası olgu listesinde var mı?
@@ -368,8 +377,9 @@ düzeltme işareti (yapay zekâ, dâhil, hâlâ, resmî, millî).
      "ve" yoğunluğu GPT'de fazladır ama insan da kullanır; hedef 2-3,5 aralığı, sıfır değil.
    - **Uzun cümle bırak.** Becerili metinlerin 30'da 26'sında 25 kelimeyi aşan cümle
      yoktu; insanda 30'da 19'unda vardı. Blogda en az bir uzun, akan cümle olsun.
-   - **Uzunluğu koru.** Becerili metinler istenenden %27 kısa kaldı. Kısaltmak
-     düzeltme değildir; istenen uzunluğa somut bilgiyle ulaş, dolguyla değil.
+   - **Olguyu koru, dolguyu koruma.** Becerili metinler istenenden %27 kısa kaldı; düşen şey
+     olguysa bu hatadır. Ama uzunluğu tutturmak için paragraf sonuna yineleme cümlesi ekleme
+     ve "mevcut paragrafı uzat" talimatını dolguyla karşılama: yeni olgu yoksa metin kısa kalır.
    - **Fazla düzgün iskelet.** Blogda en az bir yapısal müdahale uygula
      (`references/mudahale-defteri.md`): açık uç, yan kol, sonuçla başlama.
 7. Tarayıcıyı yeniden çalıştır.
@@ -450,5 +460,6 @@ kullanıcının asıl şikâyetinden ya da kaynak literatürden gelir.
 | `scripts/openai-taslak.mjs` | Yaz kipinin taslak motoru (OpenAI; bağımlılıksız) |
 | `scripts/tr-scan.mjs` | Tarayıcı |
 | `scripts/soz-dizimi.mjs`, `scripts/data/tamlama-eki.json` | Söz dizimi kuralları ve tamlama sözlüğü |
+| `scripts/yineleme.mjs` | Paragraf sonu yinelemesi (silme testinin ölçülebilir hâli) |
 | `scripts/tdk-dizin-derle.mjs` | TDK dizinini yerelde indirip tarayıcıya derler |
 | `scripts/esdizim-derle.mjs`, `scripts/esdizim.mjs` | Derlem eş dizim istatistiği ve denetimi |

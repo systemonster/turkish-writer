@@ -7,6 +7,22 @@ değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör*
 
 ## [Unreleased]
 
+### Eklendi
+
+- **Paragraf sonu yinelemesi** (`scripts/yineleme.mjs`, tr-scan türü `yineleme`): paragrafın son
+  cümlesi, önceki cümlelerini yeni sayı, özel ad ya da bağlantı eklemeden tekrar ediyorsa
+  işaretlenir (içerik köklerinin ≥%55'i önceki cümlelerde; "Bu nedenle…", "…ayrıca
+  değerlendir-" kalıbında ≥%40; en az 6 içerik kökü). Uzunluk baskısıyla yazılmış iki blog
+  taslağında elle işaretlenen 17 dolgu cümlesinin 16'sını yakalar; insan derlemlerinde ölçülen
+  paragrafların %1-5'inde bulgu verir. Skoru etkilemez, raporda ayrı bölüm. JSON alan kipinde
+  varsayılan kapalı (`--yineleme` ile açılır).
+
+### Değişti
+
+- SKILL.md: tarayıcı listesine yineleme, mantık kapısına "paragraf sonu yinelemesi" maddesi;
+  son okumadaki "Uzunluğu koru" maddesi "Olguyu koru, dolguyu koruma" oldu: uzunluk hedefi
+  için yineleme cümlesi eklenmez, yeni olgu yoksa metin kısa kalır.
+
 ## [1.0.0] - 2026-09-26 
 
 İlk kararlı sürüm. Kapsam ve ölçütlerin son durumu `docs/V1-OLCUTLER.md`'de; ölçümler

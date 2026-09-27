@@ -8,6 +8,7 @@
 //   --tipografi                             # düz kesme (') yerine ’ iste
 //   --etiket                                # girdi başlık/düğme/etiket: eksiltili yapı serbest
 //   --etiket-alan <regex> / --govde-alan <regex>   # JSON'da alan yoluna göre türü zorla
+//   --yineleme                              # JSON alanlarında da paragraf sonu yinelemesine bak
 //
 // Tarayıcı yalnızca ölçülebilir olanı yakalar. Ritim, yapı, boş cümle, üçlü
 // liste gibi izler regexle güvenilir biçimde yakalanamaz; onlar SKILL.md'deki
@@ -31,6 +32,7 @@ const anaModulMu = () => {
 }
 import { esdizimDenetle } from './esdizim.mjs'
 import { sozDizimiDenetle, SOZ_DIZIMI_TURLERI } from './soz-dizimi.mjs'
+import { yinelemeDenetle } from './yineleme.mjs'
 
 // Sözlük: sık yazım yanlışları ve bozuk eş dizimler. Dosya yoksa bu denetim
 // sessizce atlanır; tarayıcı yine çalışır.
@@ -599,6 +601,14 @@ function denetle(src, secenek = {}) {
   // Söz dizimi (liste-ve, ozne-virgul, eksiltili-yuklem, tamlama-eki): yazım hatası, iz değil.
   bulgular.push(...sozDizimiDenetle(temiz, secenek, (i) => satirNo(src, i)))
 
+  // Paragraf sonu yinelemesi (yineleme.mjs): iz değil, silme testi bulgusu; skoru etkilemez.
+  // Bağlantıları görmesi için ham metne bakar. Çok paragraflı düzyazı için ayarlandı: JSON alan
+  // kipinde (kısa site/reklam alanı) kapalıdır, --yineleme ile açılır.
+  for (const y of secenek.yineleme === false ? [] : yinelemeDenetle(src)) {
+    const i = src.indexOf(y.parca.slice(0, 40))
+    bulgular.push({ satir: i === -1 ? 0 : satirNo(src, i), tur: y.tur, not: y.not, parca: y.parca })
+  }
+
   bulgular.push(...bicimIzleri(src, temiz))
   const olcum = olc(temiz)
   bulgular.push(...olcumBulgulari(olcum))
@@ -642,6 +652,8 @@ const AGIRLIK = {
   'retorik-soru': 3, 'saga-dallanma': 2, 'yapi-nakli': 3, 'aforizma': 3, 'anons': 3, 'sahte-samimi': 2,
   'bos-dogru': 3, 'relatif-ki': 2, 'gpt-sozlugu': 3, 'yer-tutucu-ek': 0, 'acilis-tekrari': 0,
   'burokratik': 0, 'tipografi-kesme': 0, 'esdizim-derlem': 0,
+  // Uzunluk baskısının izi; insan metninde de paragrafların %1-5'inde çıkar (yineleme.mjs).
+  'yineleme': 0,
   // Söz dizimi hataları (soz-dizimi.mjs): yapay zekâ izi olarak ölçülmedi, skoru etkilemez;
   // raporda ayrı bölümde durur, site kapısı her birini sayar.
   ...Object.fromEntries(SOZ_DIZIMI_TURLERI.map((t) => [t, 0])),
@@ -677,7 +689,8 @@ function rapor(ad, s) {
   const tdk = s.bulgular.filter((b) => b.tur.startsWith('tdk-'))
   const agr = (b) => b.agirlik ?? agirlik(b.tur)
   const iz = s.bulgular.filter((b) => agr(b) > 0)
-  const uslup = s.bulgular.filter((b) => !b.tur.startsWith('tdk-') && !sozDizimiMi(b) && agr(b) === 0)
+  const yin = s.bulgular.filter((b) => b.tur === 'yineleme')
+  const uslup = s.bulgular.filter((b) => !b.tur.startsWith('tdk-') && !sozDizimiMi(b) && b.tur !== 'yineleme' && agr(b) === 0)
   const soz = s.bulgular.filter(sozDizimiMi)
   const satirlar = []
   satirlar.push(`\n${ad}`)
@@ -694,6 +707,10 @@ function rapor(ad, s) {
     satirlar.push('  üslup (skoru etkilemez, site metninde yine de düzelt):')
     for (const b of uslup) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 80) : ''}`)
   }
+  if (yin.length) {
+    satirlar.push('  yineleme (skoru etkilemez; silme testi: cümle silinince bilgi kaybolmuyorsa sil):')
+    for (const b of yin) satirlar.push(`    ${String(b.satir).padStart(4)}: "${b.parca.slice(0, 90)}${b.parca.length > 90 ? '…' : ''}" → ${b.not}`)
+  }
   if (soz.length) {
     satirlar.push('  söz dizimi (skoru etkilemez, yazım hatasıdır):')
     for (const b of soz) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.parca} → ${b.not}`)
@@ -706,7 +723,7 @@ function rapor(ad, s) {
     satirlar.push('  bilgi (ritim; skoru etkilemez, kalibrasyon bekliyor):')
     for (const b of s.bilgi) satirlar.push(`      --: [${b.tur}] ${b.not}`)
   }
-  if (!iz.length && !tdk.length && !uslup.length && !soz.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
+  if (!iz.length && !tdk.length && !uslup.length && !soz.length && !yin.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
   return satirlar.join('\n')
 }
 
@@ -715,6 +732,7 @@ function main() {
   const json = argv.includes('--json')
   const tipografi = argv.includes('--tipografi')
   const etiket = argv.includes('--etiket')
+  const yineleme = argv.includes('--yineleme')
   const deger = (ad) => { const i = argv.indexOf(ad); return i > -1 ? argv[i + 1] : undefined }
   const etiketAlan = deger('--etiket-alan') && new RegExp(deger('--etiket-alan'))
   const govdeAlan = deger('--govde-alan') && new RegExp(deger('--govde-alan'))
@@ -726,7 +744,7 @@ function main() {
 
   const sonuc = dosyalar.flatMap((f) => {
     const src = (f === '-' ? readFileSync(0, 'utf8') : readFileSync(f, 'utf8')).replace(/\r\n/g, '\n')
-    if (f.endsWith('.json')) return jsonDenetle(f, src, { tipografi, etiketAlan, govdeAlan })
+    if (f.endsWith('.json')) return jsonDenetle(f, src, { tipografi, etiketAlan, govdeAlan, yineleme })
     return [{ dosya: f, ...denetle(src, { tipografi, etiket }) }]
   })
 
@@ -768,6 +786,7 @@ function alanTuru(yol, secenek = {}) {
 }
 
 function jsonDenetle(dosya, src, secenek) {
+  secenek = { ...secenek, yineleme: secenek?.yineleme === true }
   let veri
   try {
     veri = JSON.parse(src)

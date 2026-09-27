@@ -327,3 +327,34 @@ test('GPT sözlüğü ve selamlı açılış (SONUC-FARK)', () => {
   yok('Otobüsle 16 USD’ye geldim, yol dört saat sürdü.', 'gpt-sozlugu')
   var_('Merhaba sevgili okurlar! Bugün sizi Lviv’e götüreceğim.', 'giris-klisesi')
 })
+
+// ---------------------------------------------------------------------------
+// Paragraf sonu yinelemesi (yineleme.mjs)
+// ---------------------------------------------------------------------------
+
+import { yinelemeDenetle } from '../skills/turkish-writer/scripts/yineleme.mjs'
+test('yineleme: son cümle önceki cümleleri yeni bilgi eklemeden tekrar ederse bulgu', () => {
+  const dolgu = 'Mikro tarafında sipariş oluşturma, güncelleme ve silme işlemleri için ayrı uçlar bulunur. ' +
+    'Taslağın hazırlanması ile sipariş kaydının oluşturulması bu nedenle aynı işlem sayılmaz. ' +
+    'Oluşturma, güncelleme ve silme işlemlerinin ayrı uçlarda bulunması, taslağın hangi işlem için gönderildiğinin de ayrılmasını sağlar.'
+  const b = yinelemeDenetle(dolgu)
+  assert.equal(b.length, 1)
+  assert.equal(b[0].tur, 'yineleme')
+  var_(dolgu, 'yineleme')
+})
+
+test('yineleme: yeni sayı, özel ad ya da bağlantı taşıyan son cümle bulgu değildir', () => {
+  const on = 'Meta webhook isteğini işletmenin belirlediği sunucuya gönderir. Sunucu isteği karşılar ve siparişi sıraya alır. '
+  assert.equal(yinelemeDenetle(on + 'Meta webhook isteğini teslim edemezse sunucuya gönderimi 7 güne kadar yeniden dener.').length, 0)
+  assert.equal(yinelemeDenetle(on + 'Webhook isteğini sunucuya gönderen Meta, [belgesinde](https://ornek.org/a) sırayı açıklar ve siparişi sunucuya bırakır.').length, 0)
+  // Tek cümlelik paragraf ve başlık ölçülmez.
+  assert.equal(yinelemeDenetle('## Başlık\n\nMeta webhook isteğini sunucuya gönderir.').length, 0)
+})
+
+test('yineleme: JSON alan kipinde varsayılan kapalı, --yineleme ile açık', () => {
+  const metin = 'Mikro tarafında sipariş oluşturma, güncelleme ve silme işlemleri için ayrı uçlar bulunur. ' +
+    'Oluşturma, güncelleme ve silme işlemlerinin ayrı uçlarda bulunması, sipariş işlemlerinin ayrı uçlardan yürümesini sağlar.'
+  const src = JSON.stringify({ aciklama: metin })
+  assert.ok(!jsonDenetle('a.json', src, {})[0].bulgular.some((b) => b.tur === 'yineleme'))
+  assert.ok(jsonDenetle('a.json', src, { yineleme: true })[0].bulgular.some((b) => b.tur === 'yineleme'))
+})
