@@ -271,7 +271,7 @@ async function ana() {
   const key = anahtar();
   if (!key) { console.error('OPENAI_API_KEY bulunamadı. Metin üretilemedi; metni Claude kendisi yazmamalı.'); process.exit(3); }
   const sayac = tokenSayaci();
-  const taslakModel = s.model || process.env.TW_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-5.6-sol';
+  const taslakModel = s.model || process.env.TW_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-6.1-sol';
   const cipalar = s.cipaYok ? [] : cipaSec({ tur: s.tur, yollar: s.cipa });
   const brif = readFileSync(s.brifYolu, 'utf8');
   const api = openaiApi({ key, taslakModel, hakemModel: s.hakem || HAKEM_MODEL, cipalar });

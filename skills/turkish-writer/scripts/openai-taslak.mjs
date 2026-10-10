@@ -19,7 +19,7 @@
 // "Süleyman") ya da brifte olmayan yeni ad stderr'e UYARI yazar. --katı ile çıkış kodu 4 olur
 // (taslak yine yazılır).
 // Anahtar: OPENAI_API_KEY ortam değişkeni; yoksa çalışılan dizindeki .env.local, sonra .env.
-// Model: --model > TW_OPENAI_MODEL > OPENAI_MODEL > gpt-5.6-sol
+// Model: --model > TW_OPENAI_MODEL > OPENAI_MODEL > gpt-6.1-sol
 // (2026-09-23 karşılaştırmasında 6 model arasında tr-scan'de en az iz, uzunluk hedefine en iyi uyum.)
 // Bağımlılık yok (Node 18+ fetch).
 
@@ -316,7 +316,7 @@ async function ana() {
     console.error('OPENAI_API_KEY bulunamadı. Taslak üretilemedi; metni Claude kendisi yazmamalı.');
     process.exit(3);
   }
-  const model = s.model || process.env.TW_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-5.6-sol';
+  const model = s.model || process.env.TW_OPENAI_MODEL || process.env.OPENAI_MODEL || 'gpt-6.1-sol';
   const cipalar = s.cipaYok ? [] : cipaSec({ tur: s.tur, yollar: s.cipa });
   if (s.tur && !s.cipaYok) {
     console.error(cipalar.length
