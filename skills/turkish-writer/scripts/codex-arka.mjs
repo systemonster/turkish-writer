@@ -3,6 +3,7 @@
 // Açma: TW_SAGLAYICI=codex ortam değişkeni ya da openai-taslak.mjs / hakem-dongusu.mjs'e `--codex` bayrağı.
 // Ayarlar: TW_CODEX_PARALEL (aynı süreçte en çok eşzamanlı çağrı, varsayılan 4), TW_CODEX_EFFORT (low|medium|high,
 // varsayılan low). Model `-m` ile verilir (abonelikte olmayan modelde çağrı hata verir).
+// TW_CODEX_HOME: sade bir CODEX_HOME (yalnız auth.json + model satırlı config.toml); MCP sunucuları ve bildirim kancaları açılmaz, çağrı ~2 kat hızlanır.
 // Sınır (429/usage limit) çıkarsa bekleyip yeniden dener; API'ye dönmez. Kişisel veri ve sır bu yola da gönderilmez.
 import { execFile } from 'node:child_process';
 import { mkdtempSync, readFileSync, rmSync } from 'node:fs';
@@ -40,7 +41,7 @@ export async function codexSor({ sistem, kullanici, model, effort = process.env.
   try {
     for (let d = 1; d <= deneme; d++) {
       const sonuc = await new Promise((coz) => {
-        const p = execFile(process.platform === 'win32' ? 'codex.cmd' : 'codex', args, { timeout: zaman, maxBuffer: 1 << 24, shell: process.platform === 'win32', windowsHide: true }, (e, _o, err) => coz({ e, err: String(err || '') }));
+        const p = execFile(process.platform === 'win32' ? 'codex.cmd' : 'codex', args, { timeout: zaman, maxBuffer: 1 << 24, shell: process.platform === 'win32', windowsHide: true, env: process.env.TW_CODEX_HOME ? { ...process.env, CODEX_HOME: process.env.TW_CODEX_HOME } : process.env }, (e, _o, err) => coz({ e, err: String(err || '') }));
         p.stdin.end(girdi);
       });
       let metin = '';

@@ -27,6 +27,10 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { adDenetle, anahtar, kelimeler } from '../../skills/turkish-writer/scripts/openai-taslak.mjs';
 import { jsonSor, sakliSor } from '../../skills/turkish-writer/scripts/hakem-dongusu.mjs';
+import { codexAc, codexAcik } from '../../skills/turkish-writer/scripts/codex-arka.mjs';
+// v1.1: --codex (ya da TW_SAGLAYICI=codex) ile bütün model çağrıları abonelik yolundan gider; olgu modeli TW_OLGU_MODEL (varsayılan gpt-5.5).
+if (process.argv.includes('--codex')) codexAc();
+const OLGU_MODEL = process.env.TW_OLGU_MODEL || 'gpt-5.5';
 
 const K = dirname(fileURLToPath(import.meta.url));
 const bayrakErken = (ad) => { const i = process.argv.indexOf(ad); return i > -1 ? process.argv[i + 1] : undefined; };
@@ -108,7 +112,7 @@ Kurallar:
 - Blog türünde 2-3 madde yazarın görüşü olabilir ("Görüş:" diye başlat).
 - Metnin nasıl yazılacağına dair talimat, sayfa ya da metin hakkında madde yazma; yalnız konunun bilgisi.
 Yalnız JSON: {"olgular": ["...", "..."]}`;
-    const { json } = await jsonSor({ key, model: 'gpt-5.5', istem });
+    const { json } = await jsonSor({ key, model: OLGU_MODEL, istem });
     if (Array.isArray(json.olgular) && json.olgular.length) kayit[k.id] = json.olgular.map(String);
     yazJ(yol, kayit);
     console.error(`${k.id}: ${kayit[k.id]?.length ?? 0} olgu`);
@@ -153,7 +157,7 @@ Yalnız JSON: {"acilim": [{"no": 1, "okur": "...", "isleyis": "...", "yapmasi": 
 
 OLGULAR:
 ${liste.map((o, i) => `${i + 1}. ${o}`).join('\n')}`;
-    const { json } = await jsonSor({ key, model: 'gpt-5.5', istem });
+    const { json } = await jsonSor({ key, model: OLGU_MODEL, istem });
     const olguMetni = liste.join('\n');
     kayit[k.id] = liste.map((_, i) => {
       const a = (Array.isArray(json.acilim) ? json.acilim : []).find((x) => Number(x?.no) === i + 1) || {};
@@ -270,14 +274,15 @@ async function hakem(key) {
   const isler = [...kumeler.flatMap(([ad, dir]) => txt(dir, ad)), ...txt(join(DY, 'insan'), 'yeni-insan')];
   await hakemCalistir(key, isler, kayit, yol);
   const insanKayit = okuJ(join(DN, 'hakem.json'), {});
-  const eski = Object.entries(insanKayit).filter(([k, v]) => k.startsWith('insan/') && Number.isFinite(v.p_sakli)).map(([, v]) => v.p_sakli);
+  // codex kipinde eski (≤ 2022) havuzun API puanları karıştırılmaz: yalnız yeni insan havuzu.
+  const eski = codexAcik() ? [] : Object.entries(insanKayit).filter(([k, v]) => k.startsWith('insan/') && Number.isFinite(v.p_sakli)).map(([, v]) => v.p_sakli);
   const yeniMeta = okuJ(join(DY, 'meta.json'), {});
   const yeniG = Object.entries(kayit).filter(([k, v]) => k.startsWith('yeni-insan/') && Number.isFinite(v.p_sakli));
   const yeni = yeniG.map(([, v]) => v.p_sakli);
   const grup = (on) => Object.entries(kayit).filter(([k, v]) => k.startsWith(on) && Number.isFinite(v.p_sakli));
   const sonuc = {
     tarih: new Date().toISOString().slice(0, 10), hakem: 'gpt-6-astra (saklı, editör istemi)',
-    insan_eski: { n: eski.length, med: med(eski), not: 'nitelikli derlem, yayın ≤ 2022' },
+    insan_eski: eski.length ? { n: eski.length, med: med(eski), not: 'nitelikli derlem, yayın ≤ 2022' } : null,
     insan_yeni: yeni.length ? {
       n: yeni.length, med: med(yeni), not: 'derlem-yeni-insan, yayın 2025+',
       p_ust_0_5: yeni.filter((p) => p > 0.5).length,
@@ -285,7 +290,7 @@ async function hakem(key) {
         const pt = yeniG.filter(([k]) => yeniMeta[k.split('/')[1].slice(0, -4)]?.tur === t).map(([, v]) => v.p_sakli);
         return [t, pt.length ? { n: pt.length, med: med(pt) } : null];
       })),
-      auc_yeni_gt_eski: +auc(eski, yeni).toFixed(3),
+      ...(eski.length ? { auc_yeni_gt_eski: +auc(eski, yeni).toFixed(3) } : {}),
     } : null,
   };
   for (const [ad] of kumeler) {
@@ -293,11 +298,11 @@ async function hakem(key) {
     if (!g.length) continue;
     const p = g.map(([, v]) => v.p_sakli);
     const olc = (ins) => ({ auc: +auc(ins, p).toFixed(3), ga: aucGA(ins, p).map((x) => +x.toFixed(3)) });
-    sonuc[ad] = { n: p.length, med: med(p), eski: olc(eski), ...(yeni.length ? { yeni: olc(yeni) } : {}) };
+    sonuc[ad] = { n: p.length, med: med(p), ...(eski.length ? { eski: olc(eski) } : {}), ...(yeni.length ? { yeni: olc(yeni) } : {}) };
     if (ad.startsWith('tekli')) {
       sonuc[ad].tur = Object.fromEntries(['blog', 'kurumsal', 'duyuru'].map((t) => {
         const pt = g.filter(([k]) => turu[k.split('/')[1].slice(0, -4)] === t).map(([, v]) => v.p_sakli);
-        return [t, pt.length ? { n: pt.length, eski: +auc(eski, pt).toFixed(3), ...(yeni.length ? { yeni: +auc(yeni, pt).toFixed(3) } : {}) } : null];
+        return [t, pt.length ? { n: pt.length, ...(eski.length ? { eski: +auc(eski, pt).toFixed(3) } : {}), ...(yeni.length ? { yeni: +auc(yeni, pt).toFixed(3) } : {}) } : null];
       }));
     }
   }
