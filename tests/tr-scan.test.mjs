@@ -375,3 +375,14 @@ test('kendini tanıtma: ad ve unvan olmayan "ben" cümleleri bulgu vermez', () =
   yok('Yöntemi anlattım. Ben ölçümü ilk haftada yaptım, sonuç düzgündü.', 'kendini-tanitma')
   yok('Fiyatı sordum. Müşteri olarak beklentim netti.', 'kendini-tanitma')
 })
+
+test('paragraf-esit: eşit boylu paragraflar bilgi olarak raporlanır, skoru etkilemez', () => {
+  const p = 'Kurulum iki iş gününde biter ve her adım yazılı olarak size iletilir. Ödeme teslimata bağlıdır; iş bitince kaynak kodu size ait olur.'
+  const esit = [p, p, p, p, p].join('\n\n')
+  const r = denetle(esit)
+  assert.ok(r.bilgi.some((b) => b.tur === 'paragraf-esit'), 'bilgi bekleniyordu')
+  assert.ok(!r.bulgular.some((b) => b.tur === 'paragraf-esit'), 'bulgu olmamalı')
+  const karisik = [p, 'Tek cümle.', `${p} ${p} ${p}`, p, 'İki kısa cümle. Hepsi bu.'].join('\n\n')
+  assert.ok(!denetle(karisik).bilgi.some((b) => b.tur === 'paragraf-esit'), 'karışık boy bilgi vermemeli')
+  assert.ok(RITIM_BILGI.has('paragraf-esit'))
+})
