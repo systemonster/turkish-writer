@@ -22,6 +22,7 @@ import { resolve } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { AD_HATA_KODU, SISTEM, adDenetle, adUyarilari, anahtar, bayraklariAyristir, cipaSec, kelimeler, sistemIstemi, taslakUret } from './openai-taslak.mjs';
 import { denetle } from './tr-scan.mjs';
+import { codexAc, codexAcik, codexSor, jsonAyikla } from './codex-arka.mjs';
 import { SOZ_DIZIMI_TURLERI } from './soz-dizimi.mjs';
 
 export const HAKEM_MODEL = 'gpt-6-sol';
@@ -180,6 +181,11 @@ export async function dongu({ brif, api, esik = ESIK, turSayisi = TUR_SAYISI, il
 
 // ---- OpenAI ----
 export async function jsonSor({ key, model, istem, sistem, yedek = [] }) {
+  if (codexAcik()) {
+    for (let d = 1; d <= 3; d++) {
+      try { return { json: jsonAyikla(await codexSor({ sistem, kullanici: `${istem}\n\nYalnız tek bir JSON nesnesi döndür.`, model })), model }; } catch (e) { if (d === 3) throw e; }
+    }
+  }
   for (const m of [model, ...yedek]) {
     const messages = sistem ? [{ role: 'system', content: sistem }, { role: 'user', content: istem }] : [{ role: 'user', content: istem }];
     const govde = { model: m, messages, response_format: { type: 'json_object' } };
@@ -240,6 +246,7 @@ export function openaiApi({ key, taslakModel, hakemModel = HAKEM_MODEL, cipalar 
   };
 }
 
+const OZEL_BAYRAK_CODEX = '--codex';
 const OZEL = { '--tur-sayisi': 'turSayisi', '--esik': 'esik', '--kayit': 'kayit', '--hakem': 'hakem', '--taslak-dosyasi': 'taslakDosyasi' };
 
 export function argumanlar(argv) {
@@ -251,6 +258,7 @@ export function argumanlar(argv) {
       if (v === undefined || v.startsWith('--')) return { hata: `${argv[i - 1]} bir değer ister` };
       ozel[OZEL[argv[i - 1]]] = v;
     } else if (argv[i] === '--sakli') ozel.sakli = true;
+    else if (argv[i] === OZEL_BAYRAK_CODEX) codexAc();
     else kalan.push(argv[i]);
   }
   const s = bayraklariAyristir(kalan);

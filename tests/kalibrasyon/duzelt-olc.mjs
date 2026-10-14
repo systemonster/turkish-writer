@@ -9,14 +9,16 @@ import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 
 import { join } from 'node:path';
 import { anahtar, adDenetle } from '../../skills/turkish-writer/scripts/openai-taslak.mjs';
 import { denetle } from '../../skills/turkish-writer/scripts/tr-scan.mjs';
+import { codexAc, codexAcik, codexSor, jsonAyikla } from '../../skills/turkish-writer/scripts/codex-arka.mjs';
 
 const a = process.argv.slice(2);
 const al = (ad, v) => { const i = a.indexOf(ad); return i > -1 ? a.splice(i, 2)[1] : v; };
 const model = al('--model', 'gpt-6.1-sol'), n = Number(al('--n', 6));
+if (a.includes('--codex')) { a.splice(a.indexOf('--codex'), 1); codexAc(); } // abonelik (codex exec), API yok
 const [metinD, brifD, talimatYol, cikD] = a;
 if (!cikD) { console.error('kullanım: duzelt-olc.mjs <metin-dizini> <brif-dizini> <talimat.md> <çıktı-dizini>'); process.exit(2); }
 const key = anahtar();
-if (!key) { console.error('OPENAI_API_KEY yok'); process.exit(3); }
+if (!key) { console.error('OPENAI_API_KEY yok (codex için --codex)'); process.exit(3); }
 
 const SARMALAYICI = `Türkçe bir metnin son okumasını yapan editörsün. turkish-writer becerisinin Düzelt kipindesin: metin verildi, doğallaştırılacak. Aşağıdaki talimatın geçişlerini (0-6) ve değişmez kurallarını uygula; betik komutlarını çalıştıramazsın, tarama sonucu kullanıcı mesajında verilir.
 
@@ -49,6 +51,15 @@ async function calis() {
     const kullanici = `Brif (olgular dışında bilgi yok):\n${brif}\n\nTarama sonucu (tr-scan):\n${rapor(metin)}\n\nDüzeltilecek metin:\n${metin}`;
     for (let deneme = 0; deneme < 3; deneme++) {
       try {
+        if (codexAcik()) {
+          const c = jsonAyikla(await codexSor({ sistem: SARMALAYICI, kullanici, model }));
+          if (typeof c.metin !== 'string' || !c.metin.trim()) throw new Error('boş metin');
+          sayac.cagri++;
+          const ad = adDenetle(brif, c.metin);
+          writeFileSync(join(cikD, `${id}.txt`), c.metin.trim() + '\n');
+          writeFileSync(join(cikD, `${id}.degisen.json`), JSON.stringify({ degisenler: c.degisenler || [], ad: { bozuk: ad.bozuk, yeni: ad.yeni } }));
+          break;
+        }
         const res = await fetch('https://api.openai.com/v1/chat/completions', { method: 'POST', headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' }, body: JSON.stringify({ model, response_format: { type: 'json_object' }, messages: [{ role: 'system', content: SARMALAYICI }, { role: 'user', content: kullanici }] }), signal: AbortSignal.timeout(240000) });
         if (!res.ok) throw new Error(`${res.status} ${(await res.text()).slice(0, 120)}`);
         const j = await res.json();

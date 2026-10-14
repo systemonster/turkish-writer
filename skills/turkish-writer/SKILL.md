@@ -80,6 +80,8 @@ baştan kurman gerektiğinde taslak OpenAI'dan alınır:
    dizimi ve TDK düzeltmesi senin işindir; yeni olgu ya da yeni paragraf eklemek değildir.
    Bir paragraf geçişlerle kurtarılamıyorsa brifi düzeltip o paragrafı yeniden ürettir.
 
+**Elle yapılan işte API değil Codex aboneliği:** `node scripts/openai-taslak.mjs brif.md --codex` (ya da `TW_SAGLAYICI=codex`) istemi aynen `codex exec`e gönderir (`-m` ile model, `TW_CODEX_EFFORT`, `TW_CODEX_PARALEL`); API anahtarı okunmaz, ücret yok. `hakem-dongusu.mjs` için de geçerlidir. API yolu varsayılan kalır ve yalnız otomasyonda (günlük blog, ilan hattı) kullanılır. Abonelik sınırında betik bekler, API'ye dönmez.
+
 `OPENAI_API_KEY` bulunamazsa **dur**: metni kendin yazma, kullanıcıya anahtarın gerektiğini
 söyle. Denetle kipi ve küçük düzeltmeler bu kuralın dışındadır.
 

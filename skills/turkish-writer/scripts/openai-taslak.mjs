@@ -26,6 +26,7 @@
 import { existsSync, readFileSync, readdirSync, realpathSync, statSync, writeFileSync } from 'node:fs';
 import { basename, dirname, join, resolve } from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { codexAc, codexAcik, codexSor } from './codex-arka.mjs';
 
 export const TURLER = ['site', 'blog', 'reklam', 'whatsapp', 'teklif', 'hukuk'];
 export const GENEL_CIPA = resolve(dirname(fileURLToPath(import.meta.url)), '..', 'cipa');
@@ -35,7 +36,7 @@ export const KOPYA_ESIGI = 6;
 const DEGERLI = ['--out', '--model', '--tur', '--cipa'];
 
 export function bayraklariAyristir(argv) {
-  const s = { brifYolu: undefined, out: undefined, model: undefined, tur: undefined, cipa: [], cipaYok: false, kati: false, hata: undefined };
+  const s = { brifYolu: undefined, out: undefined, model: undefined, tur: undefined, cipa: [], cipaYok: false, kati: false, codex: false, hata: undefined };
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (DEGERLI.includes(a)) {
@@ -44,6 +45,7 @@ export function bayraklariAyristir(argv) {
       if (a === '--cipa') s.cipa.push(v);
       else s[a.slice(2)] = v;
     } else if (a === '--cipa-yok') s.cipaYok = true;
+    else if (a === '--codex') s.codex = true;
     else if (a === '--katı' || a === '--kati') s.kati = true;
     else if (a.startsWith('--')) { s.hata = `bilinmeyen bayrak: ${a}`; return s; }
     else if (!s.brifYolu) s.brifYolu = a;
@@ -282,6 +284,7 @@ export const adUyarilari = (r) => [
 export const AD_HATA_KODU = 4;
 
 export function anahtar(dizin = process.cwd()) {
+  if (codexAcik()) return 'codex-abonelik'; // codex kipinde API anahtarı okunmaz, hiçbir istek API'ye gitmez
   if (process.env.OPENAI_API_KEY) return process.env.OPENAI_API_KEY.trim();
   for (const dosya of ['.env.local', '.env']) {
     const yol = resolve(dizin, dosya);
@@ -293,6 +296,7 @@ export function anahtar(dizin = process.cwd()) {
 }
 
 export async function taslakUret({ brif, model, cipalar = [], key }) {
+  if (codexAcik()) return codexSor({ sistem: sistemIstemi(cipalar), kullanici: brif, model });
   const res = await fetch('https://api.openai.com/v1/chat/completions', {
     method: 'POST',
     headers: { Authorization: `Bearer ${key}`, 'Content-Type': 'application/json' },
@@ -311,6 +315,7 @@ async function ana() {
     console.error(`${s.hata}\nKullanım: node scripts/openai-taslak.mjs brif.md [--out taslak.md] [--model ad] [--tur ${TURLER.join('|')}] [--cipa yol]... [--cipa-yok]`);
     process.exit(2);
   }
+  if (s.codex) codexAc();
   const key = anahtar();
   if (!key) {
     // Kural gereği bu durumda Claude metni kendisi yazmaz; kullanıcıya anahtar gerektiğini söyler.
