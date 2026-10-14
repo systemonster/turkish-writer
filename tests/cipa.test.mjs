@@ -159,7 +159,9 @@ test('istem: çıpa yoksa sistem istemi eskisiyle birebir aynı (geriye uyum)', 
   // (okur için anlamı, işleyişi, adımı), yeni olgu ve dolgu yine yasak. SONUC-NITELIKLI.md "Tur 3".
   // 0a1c94dc7545a80d → e09e6d4d16538e61 (tur 4, adım A): brifteki girintili olgu açılımı (okur için anlamı /
   // nasıl işler / ne yapması gerekir) kurum ve duyuru metninde olguyu açmak için kullanılır. SONUC-NITELIKLI.md "Tur 4".
-  assert.equal(createHash('sha256').update(SISTEM).digest('hex').slice(0, 16), 'e09e6d4d16538e61')
+  // e09e6d4d16538e61 → 1d53b858bc536d5d (v1.1): paragraf boyu çeşitliliği kuralı (en az bir tek cümlelik, en az bir 5+ cümlelik
+  // paragraf, art arda eşit boy yok). Paragraf boyu CV 0,15 → 0,34 (insan 0,44); SONUC-V11.md.
+  assert.equal(createHash('sha256').update(SISTEM).digest('hex').slice(0, 16), '1d53b858bc536d5d')
 })
 
 test('istem: çıpalar taklit talimatı ve içerik kopyalama yasağıyla girer', () => {

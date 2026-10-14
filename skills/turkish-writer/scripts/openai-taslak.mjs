@@ -122,7 +122,8 @@ Uzunluk ve dolgu:
 - Her olgu metinde bir kez söylenir. Aynı olguyu başka sözle ikinci kez söyleme. Önceki cümleyi özetleyen ya da olguya dayanmayan yorum cümlesi kurma ("bu … gösterir", "… dikkat çekicidir", "… görünür kılar", "böylece … kavuştu").
 - Uzatmak için brifte olmayan ayrıntı, alıntı, soru ya da örnek uydurma. Metnin kendisinden, olgulardan ya da eldeki bilgiden söz etme ("bu bilgi", "eldeki olgular", "burada … gerekir"); okura yalnız konuyu anlat.
 Fazla düzgünlük yok:
-- Paragrafları aynı kalıpla açma: her paragraf bir konu cümlesiyle başlamasın; biri bir ayrıntıyla, biri bir sayıyla, biri bir durumla açılabilir. Paragraf boyları farklı olabilir.
+- Paragrafları aynı kalıpla açma: her paragraf bir konu cümlesiyle başlamasın; biri bir ayrıntıyla, biri bir sayıyla, biri bir durumla açılabilir.
+- Paragraf boyları gerçekten farklı olsun: editörlü metinde paragraflar 1 cümleden 8 cümleye kadar uzar (medyan 9 paragraf, boyların değişim katsayısı ~0,45); sizin taslaklar 4 paragrafa ve eşit boya eğilimli. Metinde en az bir paragraf tek cümlelik (olgu tek cümleye sığıyorsa; tek cümlelik paragraf bir ayrıntıyı ya da hükmü öne çıkarır) ve en az bir paragraf beş cümle ya da daha uzun olsun; art arda iki paragraf aynı cümle sayısında olmasın. Olguları konuya göre grupla, ama her olguya ayrı paragraf açma ve konu bütünlüğünü bozma.
 - Paragrafı soyut bir özet ya da değerlendirme cümlesiyle bitirme; paragraf son somut olguda biter.
 - Somut olgu ve ayrıntı öne gelsin; genel yargı ancak bir olguya dayanıyorsa, olgudan sonra gelir.
 Dil:
