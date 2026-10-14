@@ -9,6 +9,16 @@ değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör*
 
 ### Eklendi
 
+- **Codex arka ucu** (`scripts/codex-arka.mjs`): `openai-taslak.mjs` ve `hakem-dongusu.mjs` için `--codex` bayrağı ya da
+  `TW_SAGLAYICI=codex`; istem aynen `codex exec`e (ChatGPT/Codex aboneliği, API anahtarı ve ücret yok) gider, çıktı aynı JSON
+  akışından geçer, `-m` ile model seçilir. `TW_CODEX_PARALEL` (varsayılan 4), `TW_CODEX_EFFORT` (varsayılan low), `TW_CODEX_HOME`
+  (sade CODEX_HOME: MCP ve bildirim yükü yok). Abonelik sınırında bekler, API'ye dönmez; kipte API anahtarı okunmaz. API yolu varsayılan
+  kalır (günlük blog, ilan hattı gibi otomasyonlar). 8 yeni test (sahte codex).
+- **Yönerge yığını** (`yonerge-yigini`), **cümle içi kök tekrarı** (`kok-tekrar`), **"-ken" yığını** (`ken-yigini`) bilgileri (tr-scan):
+  taslaklarda sık, insan derleminde (136 metin) yanlış pozitif %5 / %6 / %8. Skoru etkilemez. Dedektörlerin cümle düzeyi çözümlemesinden çıktı.
+- `tests/kalibrasyon/`: `dedektor-cumle.py` (cümle düzeyi yerel dedektör: BERTurk + Qwen3-1.7B nll/Binoculars), `dedektor-cozum.mjs`,
+  `dedektor-zerogpt-cozum.mjs`. SONUC-V11.md "Dedektörler neyi yakalıyor": BERTurk dedektörü cümle uzunluğunu ölçüyor, Qwen3 insanı daha
+  tahmin edilebilir buluyor, ZeroGPT resmî haber dilini işaretliyor; Türkçede güvenilir ücretsiz dedektör yok.
 - **Kendini adla tanıtma** (`kendini-tanitma`, tr-scan): "Ben Ulaş Saraç'ım", "Adım X", paragraf başı "Ben X olarak …",
   "Ben bir …cıyım" açılışları (kurucu kuralı 2026-09-27). Kesme işaretli ad + ek ayrımı sayesinde insan derleminde
   (131 metin) ve beceri çıktılarında bulgu yok. Skoru etkilemez. SKILL.md 1. geçiş ve hızlı liste.
@@ -30,7 +40,16 @@ değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör*
 - Varsayılan taslak modeli gpt-6.1-sol (v1.0 ölçümleri gpt-5.6-sol ile yapılmıştı); bu modelle tr-scan taslağı ayıramıyor
   (medyan 100) ve blogda olguları sıkıştırıyor (hedefin %26-53'ü). v1.1 sonucu: a2 hedefi (≤ 0,70) yine karşılanmadı.
 
+### Değişti (Codex ölçümü)
+
+- SKILL.md Düzelt: "Düzelt'in sınırı: ritmi bozma" bölümü (cümle bölme yok, silme yalnız işaretli yerde, önce/sonra ölçüm). Codex, taze set:
+  cümle ortalaması 9,0 → 11,0, sapma 3,2 → 5,6; saklı hakem AUC 0,98 (değişmedi). Taslak istemi paragraf kuralı taze sette doğrulandı:
+  paragraf CV 0,13 → 0,36, saklı hakem AUC 0,998 → 0,998 (**a2 hedefi yine karşılanmadı**).
+
 ### Geri alındı
+
+- İstemde yönerge cümlesini %5'e sınırlama (codex, Set A): yönerge bayrağı 24 → 7/36 ama uzunluk bandı 17 → 9/36, saklı hakem değişmedi. Brif
+  şablonunda "Ne yapması gerekir" satırlarını atma: aynı sonuç.
 
 - İstemde "okur ne yapmalı" yönergesini azaltma ve "Görüş:" maddesini olguya bağlama denemesi: a2 değişmedi, türetilmiş
   sette ve uzunlukta kötüleşti.

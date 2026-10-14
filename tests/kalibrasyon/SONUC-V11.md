@@ -162,3 +162,122 @@ node $K/dedektor-ozet.mjs cikti.json insan-yeni B-taban d1,bino,fdg
 ```
 `konular-b.json`: 36 yeni konu (blog 12: bl13-24; kurumsal 12: ku13-24; duyuru 12: du13-24), bu belgenin yanında saklanmadı
 (konu listesi `derlem-tekli-b/` ile birlikte git dışı); biçim `[id, tür, hedef kelime, konu]`.
+
+---
+
+# 2. ölçüm: Codex aboneliği (API'siz), dedektörlerin çözümlemesi (2026-10-14, akşam)
+
+Kurucu kararıyla elle yapılan ölçüm OpenAI API'siyle değil `codex exec` ile (ChatGPT/Codex aboneliği, **API harcaması 0 $**)
+yapıldı. Yukarıdaki 1. ölçüm (API) olduğu gibi duruyor; bu bölüm aynı soruyu abonelik yolundan, genişletilmiş havuzla ve
+taze bir sette yeniden sorar. **Sonuç aynı: saklı hakemde iniş yok.**
+
+## 8. Düzenek (Codex)
+
+- **Taslak modeli:** `gpt-6.1-sol` (abonelikte var), taban ve son aynı model, `model_reasoning_effort=low`.
+  **Saklı hakem:** `gpt-6-astra` (abonelikte var; taslak modelinden farklı, döngüde hiç kullanılmadı), editör istemi, tek metin.
+  Düzelt ölçümü de `gpt-6.1-sol` (codex). `codex exec -s read-only --ephemeral`, sade `CODEX_HOME` (yalnız auth + model satırı),
+  paralel en çok 4. Codex bir ajan kabuğudur: aynı istem API'ye göre ek bir sistem istemiyle çalışır (çağrı başına ~7 bin
+  token); taban ve son aynı yoldan geçtiği için karşılaştırma tutarlıdır, API ile mutlak sayılar birebir aynı değildir.
+- **İnsan havuzu 74** (2025+; blog 34, duyuru 29, **kurumsal 11**: +5 TÜBİTAK 2026 sitesi sayfası; hedef 12'ye 1 eksik).
+  Eski (≤ 2022) havuzun puanları API'den geldiği için bu ölçümde karıştırılmadı. İnsan hakem puanı: medyan 0,12; p > 0,5 olan 14/74.
+- **Set A** (v1.0'ın 36 bağımsız briffi; tur denemeleri burada) ve **Set C = taze 36 konu** (12 blog, 12 kurumsal, 12
+  duyuru; olgu ve açılım da codex ile üretildi, olgu modeli `gpt-6.1-sol`; hiç görülmemiş, son karar yalnız bunda).
+
+## 9. Sonuç (Set C, taze, Codex)
+
+| ölçüt | taban (v1.0 istem) | son (v1.1 istem) | taban + Düzelt v1.0 | son + Düzelt v1.1 (`dnew`) | son + Düzelt (sınırsız, `dcur`) |
+|---|---|---|---|---|---|
+| **a2 AUC, yeni insan 74 [%95 GA]** | 0,998 [0,994–1,00] | **0,998** [0,993–1,00] | 0,980 [0,957–0,995] | 0,983 [0,964–0,997] | 0,984 [0,963–0,996] |
+| a2 blog / kurumsal / duyuru | 0,995 / 1,00 / 0,999 | 0,996 / 0,998 / 1,00 | 0,964 / 0,984 / 0,992 | 0,974 / 0,981 / 0,995 | 0,964 / 0,988 / 0,999 |
+| beceri medyan p; en düşük p; p < 0,7 olan | 0,92; 0,75; 0 | 0,92; 0,75; 0 | 0,85; 0,65; 3 | 0,88; 0,70; 0 | 0,85; 0,65; 2 |
+| uzunluk %70-110 bandında (medyan oran) | 0/36 (0,39) | 2/36 (0,40) | 0/36 (0,28) | 0/36 (0,30) | 0/36 (0,29) |
+| paragraf boyu CV (insan 0,41) | 0,13 | **0,36** | 0,21 | 0,37 | 0,37 |
+| b: 8 ölçümde [0,40; 0,60] | 3/8 | 3/8 | 0/8 | 1/8 | 0/8 |
+| cümle ortalaması (insan 18,5) / sapma (8,8) | 15,3 / 8,3 | 15,5 / 8,4 | 9,0 / 3,2 | **11,0 / 5,6** | 9,4 / 4,2 |
+| tr-scan medyan; ≤ 80 olan | 100; 0/36 | 100; 0/36 | 94; 4/36 | 94; 1/36 | 94; 5/36 |
+| `yonerge-yigini` / `ken-yigini` / `kok-tekrar` bayrağı (insan 136 metinde 7 / 11 / 8) | 15 / 20 / 17 | 14 / 14 / 17 | 10 / 2 / 1 | 8 / 2 / 1 | 8 / 3 / 4 |
+
+(Set A, aynı yöntem: taban 1,000, son 1,000 [0,998–1,00]; Düzelt sonrası 0,997 / 0,999; paragraf CV 0,14 → 0,34; b 4/8 → 5/8;
+uzunluk 16 → 17/36.)
+
+**Okuma.**
+- **a2 yine oynamadı:** 0,998 → 0,998. Hiçbir koşulda saklı hakem beceri metinlerini yeni insanın altına indirmedi; Düzelt adımı
+  (hangi talimatla olursa olsun) yalnız marjinal bir iniş veriyor (AUC 0,98, medyan p 0,92 → 0,85-0,88). Düzelt'in v1.1 sınırı
+  (`dnew`) ritmi kısmen koruyor (cümle ortalaması 9,0 → 11,0; sapma 3,2 → 5,6; b 0/8 → 1/8) ama hakeme yansımıyor; hakem
+  medyanı sınırsız Düzelt'ten biraz **yüksek** (0,88 vs 0,85): uzun cümle bırakınca hakem biraz daha "yapay" diyor, yani ritim ile
+  hakem puanı aynı yönde hareket etmiyor.
+- **İz kayması gerçek:** paragraf boyu 0,13 → 0,36, `ken-yigini` 20 → 14 (taslak). Düzelt, tr-scan raporundaki `ken`, `kok`
+  ve yönerge bilgilerini büyük oranda temizliyor (ken 20 → 2, kök 17 → 1, yönerge 15 → 8-10).
+- **Bütün bunlar a2'yi oynatmıyor:** hakemin gerekçelerinde adı geçen izleri (yönerge, yineleme, paragraf eşitliği) ölçülebilir
+  biçimde azaltmak, saklı hakemin p'sini düşürmüyor. Hakemin sinyali bu adı konabilen izlerden başka bir şeyde.
+
+## 10. Denenen ek değişiklikler (Codex, Set A)
+
+| # | değişiklik | etki | karar |
+|---|---|---|---|
+| 9 | Taslak istemine "okura yönerge cümlesi cümlelerin en çok %5'i; art arda iki olgu aynı kalıpla bitmez; aynı kök bir cümlede iki kez geçmez" | `yonerge-yigini` bayrağı 24 → 7/36 (insan %5); **a2 1,000 (değişmedi), uzunluk bandı 17 → 9/36, metin kısaldı** | **geri alındı** |
+| 10 | Brif şablonunda "Ne yapması gerekir" açılım satırlarını atmak | yönerge 24 → 17/36, `kok-tekrar` 12 → 20/36; a2 0,999; uzunluk 17 → 9/36 | **geri alındı** |
+| 11 | SKILL.md Düzelt: "ritmi bozma" bölümü (cümle bölme yok, silme yalnız işaretli yerde, önce/sonra ölçüm) | Set A cümle ort. 10,3 → 11,8; Set C 9,0-9,4 → 11,0; a2 0,997 → 0,999; hakem p aynı ya da biraz yüksek | **kabul** (ritim ölçümleri, hakem nötr) |
+| 12 | tr-scan `yonerge-yigini`, `kok-tekrar`, `ken-yigini` (bilgi) | İnsan 136 metinde yanlış pozitif %5 / %6 / %8 (nitelikli 62'de 6 / 4 / 4); taslak yakalama %50-67 / %30 / %70 | **kabul** |
+
+## 11. Dedektörler neyi yakalıyor
+
+Üç düzeyde baktım: (a) cümle düzeyi yerel modeller, (b) ZeroGPT'nin web vurguları, (c) hakem gerekçeleri. Cümle özellikleri tr-scan
+benzeri ölçümlerle (kelime sayısı, virgül, "ve", rakam, özel ad, yönerge, "siz", kök tekrarı, açılış/kapanış, paragraf konumu) çıkarıldı;
+araçlar `dedektor-cumle.py`, `dedektor-cozum.mjs`, `dedektor-zerogpt-cozum.mjs`. Çözümleme havuzu: insan 74 metin (2.006 cümle), beceri (Set A taban + son,
+1.072 cümle).
+
+**Dedektör grupları (aşırı uyuma karşı).**
+
+| grup | dedektör | rol |
+|---|---|---|
+| **ayar** (iz çıkarmak ve kural kurmak için bakıldı) | `ads2009/turkish-ai-text-detector-berturk-v10` (d1), Qwen3-1.7B-Base/Qwen3-1.7B (nll, Binoculars tarzı oran), Qwen2.5-3B çifti (1. ölçüm), Fast-DetectGPT, ZeroGPT (web), `bibbbu` XLM-R | kural kurmada kullanıldı; "iyileşme var mı" kararına **girmez** |
+| **saklı** (ayar sırasında hiç bakılmadı, yalnız son ölçümde bir kez çalıştırıldı) | `ads2009/turkish-ai-text-detector-convbert-v8-balanced` (cb8), `…-berturk-v8-balanced` (bt8) + **gpt-6-astra hakemi** | karar yalnız bunlarla; yönleri eski (≤ 2022, Set C dışı) veriyle sabitlendi (sınıf 1 = yapay, AUC 0,55-0,62) |
+
+**Saklı dedektörler ne dedi (Set C, taze).** cb8 AUC 0,57 / 0,54 / 0,36 / 0,49 / 0,38; bt8 AUC 0,49 / 0,49 / 0,51 / 0,54 / 0,53 (taban, son,
+taban+Düzelt, son+Düzelt `dnew`, `dcur`). İki dedektör de her metne ~0,997-0,999 veriyor (doymuş); ayrım gücü yok. Yani
+yalnız saklı hakem anlamlı bir ölçüdür ve o iyileşme göstermiyor. Ayar grubunda d1 taslakta 0,977 → 0,987, Düzelt sonrası 0,934-0,965
+(d1'in cümle boyuna bağlı olmasındandır, aşağıya bak).
+
+**Ne yakalıyorlar (bulgular).**
+
+1. **BERTurk dedektörü (d1) bir uzunluk dedektörüdür.** Cümle düzeyi puanıyla cümle uzunluğu arasında Spearman ρ = 0,80; virgül 0,45, "ve" 0,44,
+   kök tekrarı 0,43. **Cümle boyu sabit tutulunca** insan/beceri ayrımı kayboluyor: AUC 5-11 kelimede 0,48, 12-18'de 0,50, 19-26'da 0,41,
+   27+'da 0,49. Metin düzeyindeki yüksek AUC (0,85-0,98), parça ortalaması ve beceri metinlerinin biçim tekdüzeliğinden geliyor.
+2. **Yerel açık model (Qwen3-1.7B) ters yönde:** insan cümleleri **daha tahmin edilebilir** (nll insan 2,00, beceri 2,15-2,17; metin düzeyinde
+   AUC(−nll) 0,32-0,35, Binoculars oranı 0,39-0,47). Cümle boyu sabitken uzun cümlelerde (19+ kelime) becerinin nll'i insandan yüksek
+   (AUC 0,64-0,73): beceri metni resmî, birleşik adlı, kurallı Türkçe; insan haberi (TCMB, Journo, TÜBİTAK) kalıp ve özel ad bakımından
+   daha öngörülebilir. Yani "fazla tahmin edilebilir = yapay" varsayımı bu Türkçe derlemde tutmuyor; Binoculars tarzı oran hiç sinyal vermiyor (≈ 0,5).
+3. **ZeroGPT cümle vurguları** (55 metin, 555 insan + 530 beceri cümlesi): insan cümlelerinin %30'u, beceri cümlelerinin %43'ü işaretli;
+   metin yüzdesi insan 0,69, beceri 0,51 (ters). İnsanda işaretlenenler **özel ad yoğun** (3,3 vs 1,3), **rakamlı** (%42 vs %22), ilk cümle
+   (%8 vs %1) ve uzun cümleler; yani resmî haber dili. Beceride işaretlenenler **yönerge** (%31 vs %20) ve **"siz" hitabı** (%24 vs %10) taşıyor.
+   ZeroGPT yapay zekâyı değil resmî ve kalıplı kayıtı (haber/kurum) işaretliyor.
+4. **Becerinin insandan gerçekten ayrıldığı cümle özellikleri** (insan 2.006 / beceri 1.072 cümle): okura yönerge ("…malısınız", "…gerekir")
+   cümlelerin %21'i, insanda %0,4; "siz" hitabı %20 vs %1; cümle içi kök tekrarı 0,072 vs 0,038; virgül 0,42 vs 0,99 cümle başına;
+   özel ad 0,79 vs 2,4; rakam %17 vs %27. Kelime düzeyi (1000 kelimede beceri / insan): "gerekir" 8,1 / 0,13 (62×), "önce" 3,9 / 0,56 (7×),
+   "alır" 2,4 / 0,08, "dikkate" 5×, "hangi" 6×; son ekler: "-niz/-nız/-ınız" 14-18× (ikinci çoğul hitap), "-ken/-rken" 4,7-5,1× ("planlarken"),
+   "-acak/-ecek" 5×. Tür karışıklığı var (insan haber/kurum, beceri hizmet sayfası); bu yüzden kurallar yalnız insan derleminde
+   yanlış pozitif < %10 olanlardan alındı.
+5. **Hakem gerekçeleri** (gpt-6-sol, 36 taban metin, p 0,68-0,99): "aynı bilgiyi başka sözle tekrar", "her bilgiyi okura yönergeyle bitirme" ve blogda
+   "düzenli, kronolojik şablon". İlk ikisi yukarıdaki yönerge ve kök tekrarı özellikleriyle örtüşüyor; üçüncüsü paragraf eşitliğiyle (CV 0,13 vs 0,41).
+
+**Kurala çevrilenler** (yalnız insanda yanlış pozitif < %10): `yonerge-yigini` (%5), `kok-tekrar` (%6), `ken-yigini` (%8), `paragraf-esit` (%9). Hepsi
+bilgi, skora girmez. **Kurala çevrilmeyenler:** "siz" hitabı ve "-nız" ekleri (brif hitabı ve tür belirliyor; insan kurumsalında da var), özel ad ve rakam yokluğu
+(brif olgusuna bağlı), nll/Binoculars (ters yönde). Bu izlerin giderilmesi saklı hakemi oynatmadı (bkz. § 9, #9-#10).
+
+## 12. Harcama ve sınırlar (Codex turu)
+
+- **OpenAI API harcaması bu turda 0 $.** Önceki (API) turdan kalan tahmin 11-20 $ (§ 7). Codex: ~1.100 `codex exec` çağrısı (Set A taslak
+  ve Düzelt denemeleri, Set C olgu/açılım/taslak/Düzelt, hakem ~600), çağrı başına ~7-9 bin token; abonelik sınırına (429) takılma olmadı, bekleme gerekmedi.
+- **Sınırlar:** (1) Hakem ve taslak aynı ailede (OpenAI), bağımsız aile (Anthropic) yok. (2) Codex ajan kabuğu ek bir sistem istemi getiriyor; mutlak puanlar API
+  ölçümünden farklı (örn. taban medyan p 0,975 Set A, 0,92 Set C); karşılaştırma aynı yolda. (3) Saklı dedektörler doymuş, ayrım gücü yok; karar fiilen tek saklı
+  ölçüye (hakem) dayanıyor. (4) Düzelt ölçümü gpt-6.1-sol ile, Claude'un Düzelt'i değil. (5) ZeroGPT yalnız Set A'da çalıştırıldı (kota davranışı); Set C'de çalıştırılmadı.
+  (6) Kurumsal insan metni 11 (hedef 12); TÜBİTAK 2026 sitesi tek kurum, liste ve mevzuat alıntısı payı yüksek. (7) Tur denemeleri Set A'da görüldü; Set C yalnız bir kez ölçüldü.
+- **Yer:** HF modelleri ve sanal ortam D:\hf altında (venv 4,6 GB, Qwen3-1.7B çifti 7,1 GB, dedektör modelleri ~1,3 GB); C:'ye indirilmiş Qwen2.5-3B çifti, XLM-R ve eski venv silindi.
+  Sade CODEX_HOME (kimlik bilgisi kopyası) iş sonunda silindi.
+
+## Durma ölçütü (ikinci kez)
+
+Codex turunda da iki ardışık tur (paragraf kuralı tekrarı + yönerge/brif denemeleri; Düzelt sınırı) a2'yi (0,998), saklı dedektörleri (doymuş) ve
+tr-scan'i (taslağı görmüyor) oynatmadı. **Dur.** Sonraki adımlar yine istem katmanının dışında: gerçek malzemeli brif (kişisel gözlem, adlandırılmış örnek),
+blogda olgu sıkışması (brif şablonu), Düzelt sonrası ritmi geri alan bir **kod kapısı** (tr-scan önce/sonra karşılaştırması).
