@@ -193,6 +193,18 @@ brifle OpenAI'a yeniden kurdur.
 Her geçiş **tek bir konuya** bakar. Tek büyük geçiş yerine konu konu gitmek belirgin
 biçimde daha çok kusur yakalar.
 
+### Düzelt'in sınırı: ritmi bozma
+
+Ölçüm (tests/kalibrasyon/SONUC-V11.md): Düzelt adımı dolguyu siler ama cümleleri de böler ve kısaltır; taslağın
+ortalama cümlesi 15-16 kelimeden 10'a, cümle sapması 8'den 4,5'e düşüyor ve ritim ölçümlerinin hepsi bandın dışına
+çıkıyor. Bu yüzden:
+- **Cümle bölme.** Uzun cümleyi bölmezsin; `ve` yoğunluğunu ulaçla, yan cümleyle bağlayarak azaltırsın.
+- **Silme yalnız işaretli yerde.** Cümle ancak tarayıcı (`yineleme`, `yonerge-yigini`, `kok-tekrar`) ya da silme testi
+  işaretliyorsa silinir; "daha kısa olsun" diye silinmez, kalan cümleler birleştirilmez ya da kısaltılmaz.
+- **Önce/sonra ölçüm.** Düzeltmeden sonra `tr-scan --json` ile ortalama cümle uzunluğu, cümle sapması ve 25+ kelimelik
+  cümle sayısını taslakla karşılaştır; üçünden biri düştüyse o paragrafı taslağın cümle yapısıyla geri al, yalnız
+  işaretli kelime ve cümleyi düzelt.
+
 ### 0. Tara
 
 ```bash
