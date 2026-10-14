@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // Tek metin hakeminin kalibrasyonu (hakem-dongusu.mjs). Döngü hakemi (gpt-6-sol) ve saklı hakem
 // (gpt-6-astra, editör istemi) nitelikli insan derleminde ve beceri çıktılarında çalışır.
 // Eşik: insan metinlerinin en fazla %10'u "yapay" (p > eşik) çıkacak en küçük değer.
@@ -6,6 +7,7 @@
 // Kullanım (lovefengis klasöründen, anahtar .env'de):
 //   node <turkish-writer>/tests/kalibrasyon/kalibre-hakem.mjs          # ölç + tablo
 //   node <turkish-writer>/tests/kalibrasyon/kalibre-hakem.mjs tablo    # yalnız tablo
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';

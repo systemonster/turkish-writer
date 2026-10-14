@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // tr-scan eşik kalibrasyonu: LLM öncesi insan metni ile LLM metnini karşılaştırır.
 //
 //   node tests/kalibrasyon/kalibre.mjs topla            # insan derlemini indir
@@ -9,6 +10,7 @@
 // ile gösterilen .env dosyası. Anahtar hiçbir yere yazılmaz.
 // Derlem: tests/kalibrasyon/derlem/{insan,llm}/ (yayına girmez, telif).
 
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'

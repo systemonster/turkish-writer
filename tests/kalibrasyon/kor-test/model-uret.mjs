@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import '../api-kilidi.mjs';
 // Model kör testi 1: aynı 5 lovefengis brifini birkaç OpenAI modeline, yalnız Yaz kipiyle
 // (openai-taslak.mjs'in sistem istemi, Düzelt geçişi yok) çıpasız ve genel çıpalı yazdırır.
 //
@@ -10,6 +11,7 @@
 //   model-anahtar-1.json  anahtar (git dışı): id → model, koşul, çıpalar, tr-scan puanı
 // Anahtar: OPENAI_API_KEY ya da çalışılan dizindeki .env.local / .env.
 
+import '../saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import { existsSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';

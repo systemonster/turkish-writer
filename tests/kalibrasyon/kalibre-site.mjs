@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // tr-scan bağımsız sınaması: site içeriği ve blog yazısı.
 // Önceki kalibrasyon (kalibre.mjs, haber + forum) ile ağırlıklar seçildi;
 // bu betik başka bir derlemle, örneklem dışı ölçer.
@@ -13,6 +14,7 @@
 // .env dosyası. Anahtar hiçbir yere yazılmaz, loglanmaz.
 // Derlem: tests/kalibrasyon/derlem-site/{insan,llm,llm-dogal}/ (yayına girmez).
 
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import '../api-kilidi.mjs';
 // Kör test (insan mı, beceri mi): LLM hakem ölçümü.
 // Her çift iki sırayla (a-b, b-a) sorulur; soru kalibre-beceri.mjs'deki eşli istemle aynıdır.
 // "sakli" = saklı hakem: gpt-6-astra, editör çerçeveli başka bir istem (hakem-dongusu.mjs döngüsüne girmez).
@@ -7,6 +8,7 @@
 //   node tests/kalibrasyon/kor-test/hakem-esli.mjs gpt-4.1 gpt-6-sol sakli            # set-1
 //   node tests/kalibrasyon/kor-test/hakem-esli.mjs --set 2 gpt-4.1 gpt-6-sol sakli    # set-2, döngü sonrası
 //   node tests/kalibrasyon/kor-test/hakem-esli.mjs --set 2 --once gpt-6-sol sakli     # set-2, döngü öncesi taslak
+import '../saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import { readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';

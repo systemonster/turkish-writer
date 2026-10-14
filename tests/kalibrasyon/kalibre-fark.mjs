@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // İnsan ↔ GPT fark derlemi: aynı içeriği iyi bir insan yazarı ve GPT nasıl yazıyor?
 //
 //   node tests/kalibrasyon/kalibre-fark.mjs topla              # OSCAR 2019 adayları
@@ -14,6 +15,7 @@
 // yazılmaz, loglanmaz; hata iletilerinde maskelenir. Her adım kaldığı yerden devam eder.
 // Derlem: tests/kalibrasyon/derlem-fark/ (insan metinleri telifli, yayına girmez).
 
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'

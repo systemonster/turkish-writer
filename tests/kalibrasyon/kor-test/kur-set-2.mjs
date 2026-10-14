@@ -8,6 +8,7 @@
 //   node <tw>/tests/kalibrasyon/kor-test/kur-set-2.mjs --secim a.json --secim b.json --journo <klasör> --is <çalışma klasörü>
 //   ... --yeniden     (önbellekteki beceri metinlerini atıp yeniden üretir; istem değişince)
 // Çıktı (git dışı): set-2.json, cevap-anahtari-2.json. Çalışma klasöründe brif ve döngü kayıtları.
+import '../saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import { spawn } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';

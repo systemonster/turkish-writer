@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // Kör test: turkish-writer becerisi insan yazısından ayırt edilemeyen Türkçe üretiyor mu?
 // Kullanım: node tests/kalibrasyon/kalibre-beceri.mjs <adim> [--env <.env yolu>] [--model <ad>]
 //   topla   OSCAR'dan aday insan metinleri (önceki derlemlerin bölgeleri hariç)
@@ -8,6 +9,7 @@
 //   esli    eşli kör karşılaştırma (insan vs becerili / becerisiz)
 //   anlam   GPT özgün vs düzeltilmiş anlam koruma
 // Anahtar yalnız OPENAI_API_KEY ortam değişkeninden ya da --env dosyasından okunur; hiçbir yere yazılmaz.
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import fs from 'node:fs'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'

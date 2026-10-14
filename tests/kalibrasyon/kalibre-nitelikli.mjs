@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // Nitelikli insan derlemi: beceri çıktısı editörden geçmiş profesyonel Türkçeden ayrışıyor mu?
 // Kullanım: node tests/kalibrasyon/kalibre-nitelikli.mjs <adim> [--env <.env yolu>] [--n <tür başına>]
 //   olgu   (tur 3) seçilen insan metinlerinden olgu listesini yeniden çıkar (OpenAI, ~30 kelimeye bir
@@ -11,6 +12,7 @@
 // --surum <ad> (ör. t3): brif-<ad>/ ve beceri-<ad>/ dizinleri; olgu listesi olgu-<ad>.json'dan,
 // uzunluk hedef aralığı (%90-105) olarak yazılır. Sürümsüz çağrı tur 1-2 dosyalarını kullanır.
 // Anahtar yalnız OPENAI_API_KEY ortam değişkeninden ya da --env dosyasından okunur; hiçbir yere yazılmaz.
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import fs from 'node:fs'
 import path from 'node:path'
 import { execFileSync } from 'node:child_process'

@@ -1,4 +1,5 @@
 #!/usr/bin/env node
+import './api-kilidi.mjs';
 // V1 ölçütü (a2), tur 3: bağımsız tekli hakem. Beceri metinleri insan derleminden TÜRETİLMEZ:
 // derlemde olmayan konularda, bağımsız brifle yazılır; saklı hakem (gpt-6-astra, döngüde hiç
 // kullanılmadı) her metne tek başına p(yapay zekâ) verir. İnsan havuzu: nitelikli derlemin 62 tam
@@ -21,6 +22,7 @@
 //                                       # yeni insan (2025+, derlem-yeni-insan/) havuzlarıyla ayrı AUC
 //                                       # (sonuc-<surum>.json)
 // Dosyalar git dışı: tests/kalibrasyon/derlem-tekli/, derlem-yeni-insan/.
+import './saglayici.mjs'; // kalibrasyon koruması: --api verilmedikçe API yok, codex
 import { execFileSync } from 'node:child_process';
 import { existsSync, mkdirSync, readFileSync, readdirSync, writeFileSync } from 'node:fs';
 import { dirname, join } from 'node:path';
