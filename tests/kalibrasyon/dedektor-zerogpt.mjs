@@ -22,7 +22,8 @@ for (const [id, yol] of Object.entries(girdi)) {
     await p.waitForFunction(() => /\d+(?:[.,]\d+)?\s*%\s*\n?\s*AI GPT/i.test(document.body.innerText), null, { timeout: 40000 });
     const g = (await p.locator('body').innerText());
     const m = g.match(/(\d+(?:[.,]\d+)?)\s*%\s*\n?\s*AI GPT/i);
-    cikti[id] = { zerogpt: Number(m[1].replace(',', '.')) / 100 };
+    const isaretli = await p.locator('mark.highlight').allTextContents(); // ZeroGPT'nin "yapay" diye vurguladığı cümleler
+    cikti[id] = { zerogpt: Number(m[1].replace(',', '.')) / 100, isaretli: isaretli.map((x) => x.trim()).filter(Boolean) };
     ardisikHata = 0;
     writeFileSync(ciktiYol, JSON.stringify(cikti, null, 1));
     console.error(id, cikti[id].zerogpt);

@@ -46,6 +46,9 @@ def binoculars(obs='Qwen/Qwen2.5-3B', per='Qwen/Qwen2.5-3B-Instruct', ust=1024):
     del a, b; torch.cuda.empty_cache()
 
 if 'd1' in secim: siniflayici('ads2009/turkish-ai-text-detector-berturk-v10', 'd1')
+# SAKLI dedektörler (v1.1): ayar sırasında hiç bakılmadı, yalnız son ölçümde çalıştırılır
+if 'cb8' in secim: siniflayici('ads2009/turkish-ai-text-detector-convbert-v8-balanced', 'cb8')
+if 'bt8' in secim: siniflayici('ads2009/turkish-ai-text-detector-berturk-v8-balanced', 'bt8')
 if 'd2' in secim: siniflayici('bibbbu/multilingual-ai-human-detector_xlm-roberta-base', 'd2')
 if 'bino' in secim or 'fdg' in secim: binoculars()
 json.dump(sonuc, open(yol, 'w', encoding='utf8'), indent=1)
