@@ -337,6 +337,7 @@ function sapma(a) {
 // blog/forum) ile 100 gpt-4o / gpt-4o-mini metni karşılaştırıldı, her eşik
 // Youden J'yi en büyük yapan değer. Parantez içi AUC'nin ayırma gücü.
 const ESIK = {
+  kenYogunluk: 6, //    1000 kelimede -ken zarf-fiili; insan %93'ü ≤ 6, taslak medyanı ~9
   yonerge: 0.06, //     okura yönerge cümlesi oranı; insan (136 metin) %95'i ≤ 0,06, taslak medyanı 0,10-0,17
   kokTekrar: 0.09, //   cümle içi kök tekrarı; insan %93'ü ≤ 0,09, taslak %30
   paragrafCV: 0.25, //  paragraf boylarının değişim katsayısı; nitelikli+yeni insan medyanı 0,44 (%9'u <0,25), taslak 0,15 (%83-86'sı <0,25)
@@ -366,7 +367,7 @@ const ESIK = {
 // görünür, skoru, çıkış kodunu ve JSON'daki bulgu listesini etkilemez (JSON'da `bilgi` alanı).
 // Eşik araması ve gerekçe: tests/kalibrasyon/SONUC-NITELIKLI.md "Tur 3".
 // Arama sonunda yalnız "ve-seyrek" (eşik 1,0, ağırlık 8) puana döndü; diğerleri bilgi kaldı.
-export const RITIM_BILGI = new Set(['dar-sapma', 'kisa-cumle', 'uzun-cumle-yok', 've-yogunlugu', 'paragraf-esit', 'yonerge-yigini', 'kok-tekrar'])
+export const RITIM_BILGI = new Set(['dar-sapma', 'kisa-cumle', 'uzun-cumle-yok', 've-yogunlugu', 'paragraf-esit', 'yonerge-yigini', 'kok-tekrar', 'ken-yigini'])
 // Ölçülüp AYIRT ETMEDİĞİ görülenler (AUC 0,50–0,57): cümle başına ulaç,
 // -maktadır, -DIr oranı, edilgen, ortalama cümle uzunluğu. Bunlar skoru
 // etkilemez; site metninde üslup sorunu oldukları için "üslup" olarak raporlanır.
@@ -403,6 +404,11 @@ const kokTekrarOrani = (c) => {
   const k = kucult(c).match(/\p{L}{5,}/gu) || []
   return k.length ? 1 - new Set(k.map((x) => x.slice(0, 5))).size / k.length : 0
 }
+
+// "-ken / -rken" zarf-fiili ("ziyaretinizi planlarken …", "seçerken …"): 1000 kelimede insan medyanı 1,6, taslak medyanı ~9
+// (v1.1, SONUC-V11.md); insan metninin %93'ü ≤ 6, taslakların %70'i üstünde.
+const KEN_FIILI = /(rken|[aeıioöuü]ken)$/
+const KEN_DEGIL = new Set(['erken', 'iken', 'şeken', 'keken', 'dikken', 'ken'])
 
 function olc(temiz) {
   const kel = kelimeler(temiz)
@@ -445,6 +451,7 @@ function olc(temiz) {
     acilisTekrari: acilisTekrari(cum),
     yonerge,
     kokTekrar,
+    kenYogunluk: (kucuk.filter((w) => KEN_FIILI.test(w) && !KEN_DEGIL.has(w)).length / n) * 1000,
     paragraf: paragrafBoy.length,
     paragrafCV: ortalama(paragrafBoy) ? sapma(paragrafBoy) / ortalama(paragrafBoy) : 0,
   }
@@ -480,6 +487,7 @@ function olcumBulgulari(o) {
   if (o.paragraf >= 4 && o.paragrafCV < ESIK.paragrafCV) bilgi('paragraf-esit', `${o.paragraf} paragrafın boyları birbirine yakın (değişim katsayısı ${o.paragrafCV.toFixed(2)}; editörlü Türkçede medyan 0,44, eşik ${ESIK.paragrafCV}). Bir paragrafı tek cümleye indir ya da iki kısa paragrafı birleştir; olguyu bozma.`)
   if (o.yonerge > ESIK.yonerge) bilgi('yonerge-yigini', `cümlelerin %${Math.round(o.yonerge * 100)}'i okura yönerge veriyor ("…malısınız", "…gerekir"; editörlü Türkçede %0-3, eşik %${Math.round(ESIK.yonerge * 100)}). Olguyu söyle, okurun adımını yalnız gerçekten bir şey değiştiriyorsa ekle; art arda yönerge cümlesini sil.`)
   if (o.kokTekrar > ESIK.kokTekrar) bilgi('kok-tekrar', `cümle içinde aynı kök tekrar ediyor (ortalama ${o.kokTekrar.toFixed(2)}, eşik ${ESIK.kokTekrar}): aynı bilgiyi aynı cümlede iki kez söylüyor olabilirsin ("planlarken … planlayarak"). İkincisini sil.`)
+  if (o.kenYogunluk > ESIK.kenYogunluk) bilgi('ken-yigini', `1000 kelimede ${o.kenYogunluk.toFixed(1)} "-ken" zarf-fiili ("planlarken", "seçerken"; editörlü Türkçede medyan 1,6, eşik ${ESIK.kenYogunluk}). "X-ken Y yapmalısınız" kalıbını düz bildirime çevir: olguyu söyle, okurun adımını yalnız gerçekten gerekiyorsa ekle.`)
   if (o.acilisTekrari) yaz('acilis-tekrari', `art arda 3 cümle "${o.acilisTekrari}" ile başlıyor.`)
   // Aşırı düzeltme: "ve"den kaçış (eski beceri 1,8, nitelikli insan 3,9; SONUC-NITELIKLI.md).
   if (o.kelime >= 150 && o.ve100 < ESIK.veSeyrek) bilgi('ve-seyrek', `100 kelimede ${o.ve100.toFixed(1)} "ve" (editörlü Türkçede 3,9, eşik ${ESIK.veSeyrek}). "ve"yi silmek de bir izdir; iki eylemi ya da ögeyi bağlarken kullan.`)
@@ -681,7 +689,7 @@ const AGIRLIK = {
   'bos-dogru': 3, 'relatif-ki': 2, 'gpt-sozlugu': 3, 'yer-tutucu-ek': 0, 'acilis-tekrari': 0,
   'burokratik': 0, 'tipografi-kesme': 0, 'esdizim-derlem': 0,
   // Uzunluk baskısının izi; insan metninde de paragrafların %1-5'inde çıkar (yineleme.mjs).
-  'yineleme': 0, 'paragraf-esit': 0, 'yonerge-yigini': 0, 'kok-tekrar': 0,
+  'yineleme': 0, 'paragraf-esit': 0, 'yonerge-yigini': 0, 'kok-tekrar': 0, 'ken-yigini': 0,
   // Söz dizimi hataları (soz-dizimi.mjs): yapay zekâ izi olarak ölçülmedi, skoru etkilemez;
   // raporda ayrı bölümde durur, site kapısı her birini sayar.
   ...Object.fromEntries(SOZ_DIZIMI_TURLERI.map((t) => [t, 0])),

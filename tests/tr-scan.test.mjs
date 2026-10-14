@@ -403,3 +403,13 @@ test('yonerge-yigini ve kok-tekrar: 4 cümleden kısa metinde susar', () => {
   const r = denetle('Ziyaretinizi planlamalısınız. Kaydınızı yaptırmalısınız.')
   assert.ok(!r.bilgi.some((b) => ['yonerge-yigini', 'kok-tekrar'].includes(b.tur)))
 })
+
+test('ken-yigini: "-rken" zarf-fiili yoğunluğu bilgi olarak raporlanır; erken/iken sayılmaz', () => {
+  const ken = 'Ziyaretinizi planlarken saatlere bakın. Atölye seçerken ilgi alanınızı düşünün. Kayıt yaptırırken kimliğinizi hazır tutun. Merkeze gelirken çalışma saatlerini kontrol edin. Ödeme yaparken makbuzu saklayın. Programı incelerken ön kayıt koşullarına dikkat edin. Etkinliğe katılırken davetiyenizi gösterin. Randevu alırken telefon numaranızı verin.'
+  const r = denetle(`${ken} ${ken}`)
+  assert.ok(r.bilgi.some((b) => b.tur === 'ken-yigini'), 'ken-yigini bekleniyordu')
+  assert.ok(!r.bulgular.some((b) => b.tur === 'ken-yigini'), 'skora girmemeli')
+  const erken = 'Merkez erken açılır, akşam geç kapanır. Erken gelenler kahve alır. Kütüphane pazartesi sabahı erken saatte hizmet verir. Sergi salonu yaz boyunca açıktır ve girişte bilet kontrol edilir. Çocuk bölümü hafta sonları ziyaretçilere ayrıdır. Okuma salonunda sessizlik kuralı geçerlidir. Bahçede bir çay ocağı bulunur. Satranç turnuvası ayın ilk cumartesisi yapılır. Yazar söyleşileri iki haftada bir düzenlenir. Üyelik kimlik belgesiyle yapılır.'
+  assert.ok(!denetle(`${erken} ${erken}`).bilgi.some((b) => b.tur === 'ken-yigini'))
+  assert.ok(RITIM_BILGI.has('ken-yigini'))
+})

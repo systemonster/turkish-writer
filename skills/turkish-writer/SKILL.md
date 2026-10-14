@@ -249,6 +249,9 @@ Tarayıcı şunları raporlar:
   durumunu gerçekten değiştiriyorsa tut; art arda iki yönerge cümlesinden birini sil.
 - **Cümle içi kök tekrarı** (`kok-tekrar`, bilgi). Aynı kök bir cümlede ikinci kez geçiyorsa
   ("planlarken … planlayarak") aynı bilgi iki kez söyleniyordur; ikincisini sil.
+- **"-ken" yığını** (`ken-yigini`, bilgi). 1000 kelimede 6'dan fazla "-ken/-rken" zarf-fiili ("ziyaretinizi
+  planlarken …", "seçerken …") işaretlenir; insan metninde medyan 1,6, taslaklarda ~9. "X-ken Y yapmalısınız"
+  kalıbını düz bildirime çevir.
 - **TDK.** Birleşik/ayrı yazım, düzeltme işareti, kesme, "mi"/"ki", ses uyumu, sık yazım
   yanlışları. Resmî dizin denetimi için bir kez `node scripts/tdk-dizin-derle.mjs`
   çalıştır (TDK'nın verisini kendi makinende indirir).
