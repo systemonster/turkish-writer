@@ -268,7 +268,7 @@ async function hakem(key) {
   const kayit = okuJ(yol, {});
   const turu = Object.fromEntries(KONULAR.map((k) => [k.id, k.tur]));
   // Bağımsız beceri (derlem-tekli/beceri[-surum]) ve bilgi için türetilmiş beceri (derlem-nitelikli/beceri-t3[, -surum]).
-  const kumeler = [['tekli', join(D, 'beceri')], ['turetilmis-t3', join(DN, 'beceri-t3')]];
+  const kumeler = codexAcik() ? [] : [['tekli', join(D, 'beceri')], ['turetilmis-t3', join(DN, 'beceri-t3')]];
   if (SURUM) kumeler.push([`tekli-${SURUM}`, join(D, ek('beceri'))], [`turetilmis-${SURUM}`, join(DN, ek('beceri'))]);
   // Yeni insan havuzu (2025+): tanıma kontrolü. Puanlar aynı önbellekte, "yeni-insan/" önekiyle.
   const isler = [...kumeler.flatMap(([ad, dir]) => txt(dir, ad)), ...txt(join(DY, 'insan'), 'yeni-insan')];

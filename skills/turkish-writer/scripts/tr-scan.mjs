@@ -337,6 +337,8 @@ function sapma(a) {
 // blog/forum) ile 100 gpt-4o / gpt-4o-mini metni karşılaştırıldı, her eşik
 // Youden J'yi en büyük yapan değer. Parantez içi AUC'nin ayırma gücü.
 const ESIK = {
+  yonerge: 0.06, //     okura yönerge cümlesi oranı; insan (136 metin) %95'i ≤ 0,06, taslak medyanı 0,10-0,17
+  kokTekrar: 0.09, //   cümle içi kök tekrarı; insan %93'ü ≤ 0,09, taslak %30
   paragrafCV: 0.25, //  paragraf boylarının değişim katsayısı; nitelikli+yeni insan medyanı 0,44 (%9'u <0,25), taslak 0,15 (%83-86'sı <0,25)
   cumleCVGuclu: 0.3, // bunun altı güçlü iz (20 puan), 0,30-0,37 zayıf (8 puan)
   cumleCV: 0.37, //     (0,93) cümle uzunluğu değişim katsayısı; LLM düşük
@@ -364,7 +366,7 @@ const ESIK = {
 // görünür, skoru, çıkış kodunu ve JSON'daki bulgu listesini etkilemez (JSON'da `bilgi` alanı).
 // Eşik araması ve gerekçe: tests/kalibrasyon/SONUC-NITELIKLI.md "Tur 3".
 // Arama sonunda yalnız "ve-seyrek" (eşik 1,0, ağırlık 8) puana döndü; diğerleri bilgi kaldı.
-export const RITIM_BILGI = new Set(['dar-sapma', 'kisa-cumle', 'uzun-cumle-yok', 've-yogunlugu', 'paragraf-esit'])
+export const RITIM_BILGI = new Set(['dar-sapma', 'kisa-cumle', 'uzun-cumle-yok', 've-yogunlugu', 'paragraf-esit', 'yonerge-yigini', 'kok-tekrar'])
 // Ölçülüp AYIRT ETMEDİĞİ görülenler (AUC 0,50–0,57): cümle başına ulaç,
 // -maktadır, -DIr oranı, edilgen, ortalama cümle uzunluğu. Bunlar skoru
 // etkilemez; site metninde üslup sorunu oldukları için "üslup" olarak raporlanır.
@@ -394,12 +396,24 @@ function siralamaVeSay(cum) {
   return n
 }
 
+// Okura yönerge cümlesi ("... planlamalısınız", "... kontrol etmelisiniz", "... gerekir"): taslaklarda cümlelerin %10-17'si, insan
+// metninde %0-3 (v1.1, SONUC-V11.md "Dedektörler neyi yakalıyor"). Cümle içi kök tekrarı: aynı 5 harfli kök bir cümlede ikinci kez.
+const YONERGE = /(malısınız|melisiniz|malısın|melisin|gerekir|gerekmektedir|yapmalı|\bedin\b|ediniz|unutmayın|dikkat edin|bulundurun|planlamalı|kontrol etmeli|yaptırmalı|seçmeli|belirlemeli)/
+const kokTekrarOrani = (c) => {
+  const k = kucult(c).match(/\p{L}{5,}/gu) || []
+  return k.length ? 1 - new Set(k.map((x) => x.slice(0, 5))).size / k.length : 0
+}
+
 function olc(temiz) {
   const kel = kelimeler(temiz)
   const kucuk = kel.map(kucult)
   const n = kel.length || 1
   const cum = cumleler(temiz)
   const uzunluk = cum.map((c) => kelimeler(c).length)
+  const cum5 = cum.filter((c) => kelimeler(c).length >= 5)
+  const yonergeRe = tr(YONERGE)
+  const yonerge = cum5.length >= 4 ? cum5.filter((c) => { yonergeRe.lastIndex = 0; return yonergeRe.test(kucult(c)) }).length / cum5.length : 0
+  const kokTekrar = cum5.length >= 4 ? ortalama(cum5.map(kokTekrarOrani)) : 0
   const paragrafBoy = temiz.replace(/\r/g, '').split(/\n{2,}/).map((p) => p.trim()).filter((p) => p && !/^#{1,6}\s/.test(p) && !/^[-*|>]/.test(p)).map((p) => kelimeler(p).length)
 
   const say = (k) => kucuk.filter((x) => x === k).length
@@ -429,6 +443,8 @@ function olc(temiz) {
     cumleCV: ortalama(uzunluk) ? sapma(uzunluk) / ortalama(uzunluk) : 0,
     uzunCumle: uzunluk.filter((u) => u > 25).length,
     acilisTekrari: acilisTekrari(cum),
+    yonerge,
+    kokTekrar,
     paragraf: paragrafBoy.length,
     paragrafCV: ortalama(paragrafBoy) ? sapma(paragrafBoy) / ortalama(paragrafBoy) : 0,
   }
@@ -462,6 +478,8 @@ function olcumBulgulari(o) {
   if (o.cumle >= 6 && o.cumleOrt < ESIK.cumleOrtKisa) bilgi('kisa-cumle', `ortalama cümle ${o.cumleOrt.toFixed(1)} kelime (editörlü Türkçede 19,5, eşik ${ESIK.cumleOrtKisa}). Kesik cümle dizisi aşırı düzeltme izidir.`)
   // Paragraf boyu çeşitliliği (v1.1, SONUC-V11.md): taslaklar eşit boylu 3-5 paragraf kurar; insan metni 1-8 cümlelik paragrafı karıştırır.
   if (o.paragraf >= 4 && o.paragrafCV < ESIK.paragrafCV) bilgi('paragraf-esit', `${o.paragraf} paragrafın boyları birbirine yakın (değişim katsayısı ${o.paragrafCV.toFixed(2)}; editörlü Türkçede medyan 0,44, eşik ${ESIK.paragrafCV}). Bir paragrafı tek cümleye indir ya da iki kısa paragrafı birleştir; olguyu bozma.`)
+  if (o.yonerge > ESIK.yonerge) bilgi('yonerge-yigini', `cümlelerin %${Math.round(o.yonerge * 100)}'i okura yönerge veriyor ("…malısınız", "…gerekir"; editörlü Türkçede %0-3, eşik %${Math.round(ESIK.yonerge * 100)}). Olguyu söyle, okurun adımını yalnız gerçekten bir şey değiştiriyorsa ekle; art arda yönerge cümlesini sil.`)
+  if (o.kokTekrar > ESIK.kokTekrar) bilgi('kok-tekrar', `cümle içinde aynı kök tekrar ediyor (ortalama ${o.kokTekrar.toFixed(2)}, eşik ${ESIK.kokTekrar}): aynı bilgiyi aynı cümlede iki kez söylüyor olabilirsin ("planlarken … planlayarak"). İkincisini sil.`)
   if (o.acilisTekrari) yaz('acilis-tekrari', `art arda 3 cümle "${o.acilisTekrari}" ile başlıyor.`)
   // Aşırı düzeltme: "ve"den kaçış (eski beceri 1,8, nitelikli insan 3,9; SONUC-NITELIKLI.md).
   if (o.kelime >= 150 && o.ve100 < ESIK.veSeyrek) bilgi('ve-seyrek', `100 kelimede ${o.ve100.toFixed(1)} "ve" (editörlü Türkçede 3,9, eşik ${ESIK.veSeyrek}). "ve"yi silmek de bir izdir; iki eylemi ya da ögeyi bağlarken kullan.`)
@@ -663,7 +681,7 @@ const AGIRLIK = {
   'bos-dogru': 3, 'relatif-ki': 2, 'gpt-sozlugu': 3, 'yer-tutucu-ek': 0, 'acilis-tekrari': 0,
   'burokratik': 0, 'tipografi-kesme': 0, 'esdizim-derlem': 0,
   // Uzunluk baskısının izi; insan metninde de paragrafların %1-5'inde çıkar (yineleme.mjs).
-  'yineleme': 0, 'paragraf-esit': 0,
+  'yineleme': 0, 'paragraf-esit': 0, 'yonerge-yigini': 0, 'kok-tekrar': 0,
   // Söz dizimi hataları (soz-dizimi.mjs): yapay zekâ izi olarak ölçülmedi, skoru etkilemez;
   // raporda ayrı bölümde durur, site kapısı her birini sayar.
   ...Object.fromEntries(SOZ_DIZIMI_TURLERI.map((t) => [t, 0])),

@@ -230,6 +230,13 @@ Tarayıcı şunları raporlar:
 - **Paragraf boyu** (`paragraf-esit`, bilgi). Paragrafların boyları birbirine yakınsa (değişim
   katsayısı < 0,25; insan metni medyanı 0,44, taslaklar 0,15) işaretlenir. Skoru etkilemez;
   3. geçişteki "paragraf boyunu bozdur" müdahalesinin işaretidir.
+- **Yönerge yığını** (`yonerge-yigini`, bilgi). Cümlelerin %6'sından fazlası okura ne yapacağını
+  söylüyorsa ("…planlamalısınız", "…kontrol etmelisiniz", "…gerekir") işaretlenir; insan metninde
+  bu oran %0-3, taslaklarda %10-17. Hakemlerin "her bilgiyi okura yönergeyle bitiriyor" gerekçesinin
+  ölçülebilir hâlidir. Düzelt'te olguyu söyleyen cümleyi bırak, yönerge cümlesini yalnız okurun
+  durumunu gerçekten değiştiriyorsa tut; art arda iki yönerge cümlesinden birini sil.
+- **Cümle içi kök tekrarı** (`kok-tekrar`, bilgi). Aynı kök bir cümlede ikinci kez geçiyorsa
+  ("planlarken … planlayarak") aynı bilgi iki kez söyleniyordur; ikincisini sil.
 - **TDK.** Birleşik/ayrı yazım, düzeltme işareti, kesme, "mi"/"ki", ses uyumu, sık yazım
   yanlışları. Resmî dizin denetimi için bir kez `node scripts/tdk-dizin-derle.mjs`
   çalıştır (TDK'nın verisini kendi makinende indirir).

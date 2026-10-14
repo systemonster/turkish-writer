@@ -386,3 +386,20 @@ test('paragraf-esit: eşit boylu paragraflar bilgi olarak raporlanır, skoru etk
   assert.ok(!denetle(karisik).bilgi.some((b) => b.tur === 'paragraf-esit'), 'karışık boy bilgi vermemeli')
   assert.ok(RITIM_BILGI.has('paragraf-esit'))
 })
+
+test('yonerge-yigini ve kok-tekrar: taslak kalıbı bilgi olarak raporlanır, normal metin vermez', () => {
+  const yon = 'Merkez hafta içi açıktır. Ziyaretinizi bu saatlere göre planlamalısınız. Üyelik başvurusunda kimlik belgenizi yanınızda bulundurmalısınız. Etkinliğe katılmadan önce kaydınızı yaptırmalısınız. Pazar günleri kapalıdır. Bu nedenle planınızı buna göre kurmalısınız. Atölye seçerken ilgi alanınıza dikkat etmelisiniz. Seminerlere gelirken ön kaydınızı unutmayın. Ücretli etkinliklerde ödeme koşullarını kontrol etmelisiniz. Gelmeden önce çalışma saatlerini yeniden kontrol etmelisiniz.'
+  const r = denetle(`${yon} ${yon}`) // ölçümler 60 kelimeden kısa metinde çalışmaz
+  assert.ok(r.bilgi.some((b) => b.tur === 'yonerge-yigini'), 'yönerge bekleniyordu')
+  assert.ok(!r.bulgular.some((b) => b.tur === 'yonerge-yigini'), 'skora girmemeli')
+  const duz = 'Merkez hafta içi dokuzdan yirmiye kadar açıktır. Cumartesi günleri saat onda açılır, altıda kapanır. Üyelik ücretsizdir ve kimlik belgesiyle danışmadan yapılır. Atölyeler ön kayıtla çalışır. Pazar günleri merkez kapalıdır. Bahçedeki okuma köşesi yaz boyunca ziyaretçilere açık kalır. Çocuk bölümünde haftada iki gün masal saati yapılır. Satranç turnuvası ayın ilk cumartesisi düzenlenir.'
+  assert.ok(!denetle(`${duz} ${duz}`).bilgi.some((b) => b.tur === 'yonerge-yigini'))
+  const kok = 'Ziyaretinizi planlarken ziyaret zamanınızı ziyaret saatlerine göre planlamalısınız. Atölyeye katılmak için atölye kaydını atölye öncesinde yaptırın. Seminer seçerken seminer konusunu seminer takvimine göre seçin. Kayıt tamamlanmadan kayıt onaylanmaz.'
+  assert.ok(denetle(`${kok} ${kok} ${kok}`).bilgi.some((b) => b.tur === 'kok-tekrar'), 'kök tekrarı bekleniyordu')
+  assert.ok(RITIM_BILGI.has('yonerge-yigini') && RITIM_BILGI.has('kok-tekrar'))
+})
+
+test('yonerge-yigini ve kok-tekrar: 4 cümleden kısa metinde susar', () => {
+  const r = denetle('Ziyaretinizi planlamalısınız. Kaydınızı yaptırmalısınız.')
+  assert.ok(!r.bilgi.some((b) => ['yonerge-yigini', 'kok-tekrar'].includes(b.tur)))
+})

@@ -66,3 +66,5 @@ tests/kalibrasyon/derlem-yeni-insan/
 
 # v1.1 taze bağımsız set (üretilmiş metin ve hakem önbelleği)
 tests/kalibrasyon/derlem-tekli-b/
+tests/kalibrasyon/derlem-tekli-cx/
+tests/kalibrasyon/derlem-tekli-c/
