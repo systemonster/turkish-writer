@@ -6,6 +6,7 @@ import { codexAc } from '../../skills/turkish-writer/scripts/codex-arka.mjs';
 
 const i = process.argv.indexOf('--api');
 if (i > -1) {
+  if (process.env.TW_API_ONAY !== '1') { console.error('--api için kurucu onayı gerekir: TW_API_ONAY=1 (K-0166).'); process.exit(3); }
   process.argv.splice(i, 1);
   delete process.env.TW_SAGLAYICI;
   console.error('UYARI: --api verildi, OpenAI API kullanılacak (elle yapılan işte yalnız kurucu onayıyla).');

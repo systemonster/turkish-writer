@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // Bir klasördeki brifleri openai-taslak.mjs ile paralel yazar (varsayılan 6 süreç, eksikleri tamamlar).
 // Kullanım (lovefengis klasöründen, anahtar .env'de):
 //   node <tw>/tests/kalibrasyon/uret-paralel.mjs <brif-dizini> <çıktı-dizini> [--n 6] [-- <openai-taslak bayrakları>]

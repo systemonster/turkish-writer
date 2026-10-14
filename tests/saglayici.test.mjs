@@ -11,7 +11,7 @@ const saglayici = new URL('./kalibrasyon/saglayici.mjs', import.meta.url).href
 const taslak = new URL('../skills/turkish-writer/scripts/openai-taslak.mjs', import.meta.url).href
 const dizin = mkdtempSync(join(tmpdir(), 'saglayici-'))
 const yaz = (ad, kod) => { const y = join(dizin, ad); writeFileSync(y, kod); return y }
-const calistir = (yol, ...bayrak) => JSON.parse(execFileSync(process.execPath, [yol, ...bayrak], { encoding: 'utf8', env: { ...process.env, OPENAI_API_KEY: 'sahte', TW_SAGLAYICI: '' } }))
+const calistir = (yol, ...bayrak) => JSON.parse(execFileSync(process.execPath, [yol, ...bayrak], { encoding: 'utf8', env: { ...process.env, OPENAI_API_KEY: 'sahte', TW_SAGLAYICI: '', TW_API_ONAY: bayrak.includes('--api') ? '1' : '' } }))
 
 const betik = yaz('a.mjs', `import ${JSON.stringify(saglayici)}
 const { anahtar } = await import(${JSON.stringify(taslak)})
@@ -32,4 +32,8 @@ test("--api verilirse bayrak argv'den çıkar, codex kipi açılmaz, API anahtar
   assert.equal(j.kip, null)
   assert.equal(j.anahtar, 'sahte')
   assert.deepEqual(j.argv, ['x'])
+})
+
+test('--api, TW_API_ONAY=1 olmadan durur', () => {
+  assert.throws(() => execFileSync(process.execPath, [betik, '--api'], { stdio: 'pipe', env: { ...process.env, TW_SAGLAYICI: '', TW_API_ONAY: '' } }), /Command failed/)
 })

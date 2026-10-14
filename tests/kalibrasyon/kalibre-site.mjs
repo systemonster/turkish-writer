@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // tr-scan bağımsız sınaması: site içeriği ve blog yazısı.
 // Önceki kalibrasyon (kalibre.mjs, haber + forum) ile ağırlıklar seçildi;
 // bu betik başka bir derlemle, örneklem dışı ölçer.

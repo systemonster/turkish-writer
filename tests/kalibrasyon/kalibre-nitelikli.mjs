@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // Nitelikli insan derlemi: beceri çıktısı editörden geçmiş profesyonel Türkçeden ayrışıyor mu?
 // Kullanım: node tests/kalibrasyon/kalibre-nitelikli.mjs <adim> [--env <.env yolu>] [--n <tür başına>]
 //   olgu   (tur 3) seçilen insan metinlerinden olgu listesini yeniden çıkar (OpenAI, ~30 kelimeye bir

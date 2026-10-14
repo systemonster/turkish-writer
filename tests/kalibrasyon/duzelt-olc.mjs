@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // Düzelt kipinin ölçülebilir hâli: taslak metni, SKILL.md'nin verilen sürümünü talimat alan bir OpenAI modeline
 // düzelttirir (lovefengis blog hattının Düzelt çağrısıyla aynı kurgu: talimat = SKILL.md, kesin sınırlar sarmalayıcıda).
 // Kullanıcı mesajı: brif (olgu sınırı) + metin + tr-scan raporu (Claude'un Düzelt'te yaptığı gibi tarama sonucu).

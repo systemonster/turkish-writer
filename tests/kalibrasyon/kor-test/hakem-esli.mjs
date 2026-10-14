@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import '../api-kilidi.mjs';
 // Kör test (insan mı, beceri mi): LLM hakem ölçümü.
 // Her çift iki sırayla (a-b, b-a) sorulur; soru kalibre-beceri.mjs'deki eşli istemle aynıdır.
 // "sakli" = saklı hakem: gpt-6-astra, editör çerçeveli başka bir istem (hakem-dongusu.mjs döngüsüne girmez).

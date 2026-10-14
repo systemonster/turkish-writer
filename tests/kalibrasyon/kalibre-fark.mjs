@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // İnsan ↔ GPT fark derlemi: aynı içeriği iyi bir insan yazarı ve GPT nasıl yazıyor?
 //
 //   node tests/kalibrasyon/kalibre-fark.mjs topla              # OSCAR 2019 adayları

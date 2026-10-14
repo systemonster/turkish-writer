@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import '../api-kilidi.mjs';
 // Model kör testi 1: aynı 5 lovefengis brifini birkaç OpenAI modeline, yalnız Yaz kipiyle
 // (openai-taslak.mjs'in sistem istemi, Düzelt geçişi yok) çıpasız ve genel çıpalı yazdırır.
 //

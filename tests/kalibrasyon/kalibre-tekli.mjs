@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // V1 ölçütü (a2), tur 3: bağımsız tekli hakem. Beceri metinleri insan derleminden TÜRETİLMEZ:
 // derlemde olmayan konularda, bağımsız brifle yazılır; saklı hakem (gpt-6-astra, döngüde hiç
 // kullanılmadı) her metne tek başına p(yapay zekâ) verir. İnsan havuzu: nitelikli derlemin 62 tam

@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-import './api-kilidi.mjs';
 // Kör test: turkish-writer becerisi insan yazısından ayırt edilemeyen Türkçe üretiyor mu?
 // Kullanım: node tests/kalibrasyon/kalibre-beceri.mjs <adim> [--env <.env yolu>] [--model <ad>]
 //   topla   OSCAR'dan aday insan metinleri (önceki derlemlerin bölgeleri hariç)
