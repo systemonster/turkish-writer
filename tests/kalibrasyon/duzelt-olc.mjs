@@ -22,7 +22,7 @@ const SARMALAYICI = `Türkçe bir metnin son okumasını yapan editörsün. turk
 
 Bu işte kesin sınırlar (talimatla çelişirse bunlar geçerli):
 - Yeni olgu, sayı, ad, tarih, alıntı, örnek, deneyim ya da paragraf ekleme. Brifteki olguyu silme (yalnız yineleme ve dolgu cümlesi silinir). Rakamlara, adlara ve tarihlere dokunma.
-- Markdown yapısını ve bölüm sayısını koru; hitap ve kişiyi değiştirme.
+- Markdown başlık yapısını ("## " ara başlıklar) koru; paragraf birleştirme, bölme ve kısaltma serbesttir (olgu değişmeden); hitap ve kişiyi değiştirme.
 - Uzunluk hedefi yok: silince kısalıyorsa kısalır; paragraf uzatma.
 
 Çıktı yalnız düzeltilmiş metin değil, JSON nesnesidir, öncesinde ya da sonrasında metin yok:

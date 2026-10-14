@@ -225,6 +225,9 @@ Tarayıcı şunları raporlar:
   başka kelimelerle tekrar ediyorsa (`yineleme`) işaretlenir. Uzunluk baskısının izidir: model
   yeni olgu bulamayınca paragrafı özetle kapatır. Skoru etkilemez; bulgu "bu cümleyi sil"
   demektir. Çok paragraflı metin için ayarlandı, JSON alan kipinde `--yineleme` ile açılır.
+- **Paragraf boyu** (`paragraf-esit`, bilgi). Paragrafların boyları birbirine yakınsa (değişim
+  katsayısı < 0,25; insan metni medyanı 0,44, taslaklar 0,15) işaretlenir. Skoru etkilemez;
+  3. geçişteki "paragraf boyunu bozdur" müdahalesinin işaretidir.
 - **TDK.** Birleşik/ayrı yazım, düzeltme işareti, kesme, "mi"/"ki", ses uyumu, sık yazım
   yanlışları. Resmî dizin denetimi için bir kez `node scripts/tdk-dizin-derle.mjs`
   çalıştır (TDK'nın verisini kendi makinende indirir).
@@ -275,6 +278,13 @@ bulunur. Skor bir tahmindir, karar değil. Temiz tarama "iş bitti" demek değil
 - **Ritim (ölçülen en güçlü iz).** Cümleler aynı boyda mı? Kısa cümlenin yanına uzun
   bir cümle koy; uzun cümleyi, okur takılmıyorsa bölme. Uzunluğu yapay olarak
   çeşitlendirme: anlamın gerektirdiği yerde kısa, gerektirdiği yerde uzun yaz.
+  **Tarama sonucunda `dar-sapma`, `kisa-cumle` ya da `uzun-cumle-yok` bilgisi varsa bunu bu
+  geçişin görevi say** (bilgi bölümü skora girmez ama taslakların ritim izi buradadır). Editörlü
+  Türkçede cümle boylarının sapması ~9 kelime, ortalama ~19,5; taslaklarda 7-8 ve ~16. Hedef:
+  her paragrafta bir 25+ kelimelik ve bir 8 kelimeden kısa cümle. Yöntem: birbirine bağlı iki
+  kısa olguyu yan cümleyle ya da ulaçla tek uzun cümlede topla; sonra bir cümleyi vurgu için
+  kısa bırak. Olguyu bölme, olgu ekleme. Düzeltmeden sonra taramayı yeniden çalıştır: bilgi
+  satırı kalktı mı, sapma 8'e yaklaştı mı?
 - **"ve" (iz) ve "bir" (üslup).** "ve" yoğunluğu iki derlemde de GPT'yi ayırdı: "Formu
   doldurdunuz ve gönderdiniz" → "Formu doldurup gönderdiniz" (ulaç). "bir" yoğunluğu
   bağımsız derlemde ayırmadı, yine de sayı ya da vurgu taşımayan "bir"i sil: "Size bir
@@ -324,9 +334,19 @@ ederken, profesyonel yüzey düzenlemesi bu oranı 1,6 puan düşürebilmiştir.
 Altı denetim: ders cümlesinin tekrarı, tek hatlı düzgünlük, bedenle oynanan duygu,
 üstü kapalı gönderme, okurun yok sayılması, son metinlerle aynı iskelet.
 
-**Kural:** hepsini birden uygulama. Hepsini uygulayan metinler birbirine benzer ve yeni
-bir kalıp doğar. Metin başına bir iki müdahale seç, bir öncekinden farklı olsun, deftere
-yaz.
+**Kural:** hepsini birden uygulama, ama sıfır da olmaz. Hepsini uygulayan metinler birbirine
+benzer ve yeni bir kalıp doğar; hiçbirini uygulamayan metin ise taslağın düz iskeletiyle kalır.
+Üç paragraftan uzun her metinde **en az bir, en çok iki yapısal müdahale zorunludur**; hiçbiri
+uygulanmadan Düzelt bitmez. Müdahaleyi şu menüden, olguyu bozmadan yapılabilenden seç:
+- **Paragraf boyunu bozdur.** Art arda üç paragraf aynı sayıda cümleliyse biri tek cümleye iner
+  (olgu tek cümleye sığıyorsa) ya da iki kısa paragraf birleşir. Hedef: metinde en az bir 1-2
+  cümlelik ve en az bir 4+ cümlelik paragraf.
+- **Açılışı bozdur.** Bir paragraf konu cümlesiyle değil, bir ayrıntıyla, bir sayıyla ya da bir
+  durumla başlar.
+- **Kapanışı kes.** Paragraf sonundaki özet, ders ya da genel yargı cümlesi silinir; paragraf son
+  olguda biter.
+- **Sonuçla başla.** Sıra bozulabiliyorsa paragraf sonucu önce söyler, gerekçeyi sonra verir.
+Seçtiğin müdahaleyi "Ne değişti"ye yaz. Aynı müdahaleyi her metinde seçme.
 
 ### 4. Mantık kapısı
 
@@ -375,7 +395,17 @@ düzeltme işareti (yapay zekâ, dâhil, hâlâ, resmî, millî).
    ekleme hatadır. Düşen olgu, bir kural silinmesini gerektirmiyorsa hatadır
    (`references/mantik-kapisi.md` Kapı 6).
 5. Kalıbı gerçekten kaldırdın mı, yoksa yeniden mi giydirdin? Düzeltmenin kendi izine
-   bak: her paragrafa bir parçacık, her bölüme bir kısa cümle gibi kota doldurma.
+   bak: her paragrafa bir parçacık, her bölüme bir kısa cümle gibi kota doldurma. Sahada
+   (lovefengis blog hattı, Düzelt geçişi) tekrar eden dört düzeltme hatası:
+   - **Yumuşatma ekleme.** "değerlendirebilirsiniz", "göz önünde bulundurulabilir", "olabilir"
+     olguyu yumuşatmak için eklenmez; kesinlik derecesi özgündeki gibi kalır.
+   - **Sıra ve özne düşürme.** "İlk / İkinci / Üçüncü katman" sıra bilgisi, cümlenin öznesi
+     ("ChatGPT") ritim uğruna silinmez; zamire dönüşecekse neye döndüğü açık kalır.
+   - **Bağlaçla anlam kaydırma.** Koşulları "ve / aynı zamanda" ile bağlamak "hepsi birlikte
+     gerekir" der; her biri tek başına yeterliyse "ya da", hepsi gerekiyorsa "ve" kullan.
+   - **Aynı kalıbın tekrarı.** Birinci tekil yöntem cümlesi ("…ele alırım", "…yazarım",
+     "…yapıyorum") bir metinde en çok iki kez, "X değil, Y" karşıtlığı en çok bir kez geçer;
+     fazlasını okura dönük ya da düz bildirim cümlesine çevir.
 6. **Aşırı düzeltme denetimi.** Kör testte (`tests/kalibrasyon/SONUC-BECERI.md`)
    becerinin kendi izi ölçüldü; bunlara bak:
    - **"ve"yi silip atma.** Becerili metinde 100 kelimede 1,7 "ve" vardı, insanda 3,4.
