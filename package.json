@@ -1,6 +1,6 @@
 {
   "name": "turkish-writer",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "Türkçe site içeriği ve blog yazısı için doğallık ve TDK becerisi (Claude Code / Agent Skills)",
   "type": "module",
   "license": "MIT",

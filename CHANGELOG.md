@@ -5,7 +5,7 @@ Biçim [Keep a Changelog](https://keepachangelog.com/tr-TR/1.1.0/), sürümleme
 değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör**, yalnız düzeltme
 **yama** artışıdır. `package.json` sürümü ile git etiketi aynı olur.
 
-## [Unreleased]
+## [1.1.0] - 2026-10-14
 
 ### Eklendi
 
