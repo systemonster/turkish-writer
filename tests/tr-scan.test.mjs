@@ -358,3 +358,20 @@ test('yineleme: JSON alan kipinde varsayılan kapalı, --yineleme ile açık', (
   assert.ok(!jsonDenetle('a.json', src, {})[0].bulgular.some((b) => b.tur === 'yineleme'))
   assert.ok(jsonDenetle('a.json', src, { yineleme: true })[0].bulgular.some((b) => b.tur === 'yineleme'))
 })
+
+test('kendini adla tanıtan açılış (kurucu kuralı)', () => {
+  var_("Ben Ulaş Saraç'ım. İzmir'de yazılım yazıyorum.", 'kendini-tanitma')
+  var_("Merhaba, ben Ulaş'ım ve bu yazıda hız ölçümünü anlatacağım.", 'kendini-tanitma')
+  var_('Adım Ayşe Demir, yirmi yıldır muhasebe yapıyorum.', 'kendini-tanitma')
+  var_('Hızlı bir giriş.\n\nBen yazılım geliştirici olarak sekiz yıldır çalışıyorum.', 'kendini-tanitma')
+  var_('Ben bir yazılımcıyım ve ajansı tek başıma yürütüyorum.', 'kendini-tanitma')
+  var_("Biz Lovefengis'iz. Küçük işletmelere site yapıyoruz.", 'kendini-tanitma')
+})
+
+test('kendini tanıtma: ad ve unvan olmayan "ben" cümleleri bulgu vermez', () => {
+  yok('Ben hazırım. Yarın başlayabiliriz.', 'kendini-tanitma')
+  yok('Ben bu işi sevdiğim için yapıyorum.', 'kendini-tanitma')
+  yok('Adım adım ilerliyoruz. Önce kurulum.', 'kendini-tanitma')
+  yok('Yöntemi anlattım. Ben ölçümü ilk haftada yaptım, sonuç düzgündü.', 'kendini-tanitma')
+  yok('Fiyatı sordum. Müşteri olarak beklentim netti.', 'kendini-tanitma')
+})

@@ -163,6 +163,10 @@ const KALIPLAR = [
   // adeta 1/12, macera 2/9. Tek başına kusur değil, kümelenince imza.
   ['gpt-sozlugu', /\b(adeta|macera\p{L}*|serüven\p{L}*|yelken aç\p{L}*|zamanda yolculu\p{L}*|büyülü (bir )?dünya\p{L}*|tanışma fırsatı\p{L}*|kalbimi fethet\p{L}*|deneyimi sun\p{L}*|deneyim sun\p{L}*|unutulmaz bir deneyim|paha biçilmez|kendimi \p{L}+ken buldum)\b/, 'GPT sözlüğü: olguyu düz söyle ("16 USD\'ye geldim", "yolculuk cüzdanıma yük bindirdi" değil).'],
   ['giris-klisesi', /(^|\n)\s*(merhaba|selam)(lar)?,? (sevgili|değerli) (okur|okuyucu|takipçi)\p{L}*|bugün (sizi|sizlere|sizinle) \p{L}+ (götür|anlat|paylaş)\p{L}*|hazırsanız başlayalım/, 'Selamla, anonsla açma: ilk cümle olayı ya da iddiayı versin.'],
+  // Yazar kendini adla tanıtan açılış (kurucu kuralı 2026-09-27): Türkçede kalıp değil, ilk cümleyi
+  // kimliğe harcar. Metin küçük harfe çevrilmiş taranır; özel ad ayrımı için kesme işareti şart
+  // ("ben ulaş saraç'ım" evet, "ben hazırım" hayır). Paragraf başı: "Ben X olarak ...", "Ben bir yazılımcıyım".
+  ['kendini-tanitma', /(^|[.!?]\s+|\n)\s*((merhaba|selam)(lar)?,?\s+)?(ben|biz)\s+\p{L}+(\s+\p{L}+)?['’](ım|im|um|üm|yım|yim|yum|yüm|ız|iz|uz|üz|yız|yiz|yuz|yüz)\b|(^|[.!?]\s+|\n)\s*((merhaba|selam)(lar)?,?\s+)?(benim\s+)?adım\s+(?!adım\b)\p{L}+(\s+\p{L}+)?\s*[.,;]|(^|\n)\s*(ben|biz)\s+[^.!?\n]{0,60}\solarak\b|(^|\n)\s*(ben|biz)\s+(bir\s+)?[^.!?\n]{0,60}\p{L}+(cı|ci|cu|cü|çı|çi|çu|çü)(yım|yim|yum|yüm|yız|yiz|yuz|yüz)\b/, 'Kendini adla ya da unvanla tanıtma: ilk cümle olayı ya da iddiayı versin, kimlik gerekiyorsa künyede dursun.'],
 ]
 
 // Mekanik geçişler: her biri tek başına doğru; kusur yoğunlukta.
@@ -641,7 +645,7 @@ const AGIRLIK = {
   // pozitifini (≤80) ayar yarısında 3/31'den 4/31'e çıkaran en yüksek beceri yakalamasıyla seçildi.
   // Tur 3: dar-sapma, kisa-cumle ve ve-yogunlugu RITIM_BILGI'de (ağırlık fiilen 0); ve-seyrek 8.
   'dar-sapma': 0, 'kisa-cumle': 0, 've-seyrek': 8,
-  'kapanis-klisesi': 8, 'olumsuz-kosutluk': 8, 'bos-vurgu': 6, 'giris-klisesi': 0, 'meta': 15,
+  'kapanis-klisesi': 8, 'olumsuz-kosutluk': 8, 'bos-vurgu': 6, 'giris-klisesi': 0, 'kendini-tanitma': 0, 'meta': 15,
   'hype': 3, 'ceviri-kokusu': 3, 'esdizim': 3,
   'uzun-tire': 3, 'etiketli-liste': 4, 'baslik-buyuk': 2, 'emoji': 2, 'kalin-yogun': 2, 'unlem': 0, 'en-tire': 2, 'bosluklu-tire': 0,
   // insanca / humanify kaynaklı. 200 metinlik derlemde (SONUC.md) kesik-yigin (insan %5,

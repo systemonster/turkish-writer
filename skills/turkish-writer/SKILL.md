@@ -249,7 +249,12 @@ bulunur. Skor bir tahmindir, karar değil. Temiz tarama "iş bitti" demek değil
   emir ya da olgu + tek cümle gerekçe. Emojiyi çıkar (✓ ✗ arayüz işareti kalır).
 - **İlk cümle** olayı, iddiayı ya da olguyu verir. Selam ("Merhaba sevgili okurlar"),
   konu anonsu ("Bugün sizi … götüreceğim"), genel çerçeve ("X deyince…") ya da kaynakta
-  olmayan bir sahneyle açılmaz.
+  olmayan bir sahneyle açılmaz. **Yazar kendini adla ya da unvanla tanıtmaz** ("Ben Ulaş
+  Saraç'ım", "Ben X olarak …", "Adım …", "Ben bir yazılımcıyım"): Türkçede bu kalıp değil, ilk
+  cümleyi kimliğe harcar. Kimlik gerekiyorsa künyede ya da yazar kutusunda durur; metin işe
+  girer. Tarayıcı `kendini-tanitma` olarak işaretler; çıkarınca cümlenin taşıdığı olgu
+  (deneyim süresi, uzmanlık) başka bir cümlede geçiyorsa yeterli, geçmiyorsa olguyu fiille
+  kur ("Sekiz yıldır site yazıyorum.").
 - **Son cümle testi:** son cümleyi sil. Bir olgu kayboluyor mu? Kaybolmuyorsa sil. GPT 28
   metnin 28'inde son olgudan sonra ders, dilek, çağrı ya da genel övgü ekledi ("…ruhunuza
   dokunan derin bir deneyimdi"); bunlar kalıp listesinde olmadığı için tarayıcı çoğunu
@@ -427,6 +432,7 @@ kullanıcının asıl şikâyetinden ya da kaynak literatürden gelir.
 | "büyük önem taşır", "kritik rol oynar" (%1 / %18) | önemini göster |
 | gerçekleştir/sağla/oluştur (üslup; sitede ayırmadı) | somut fiil |
 | çeviri kokan edat ve eş dizim (ölçülmedi) | "-mek için", "karar vermek" |
+| "Ben Ulaş Saraç'ım", "Ben X olarak …" açılışı (kurucu kuralı; insan derleminde 0/131 bulgu) | sil, işe gir; olgu gerekiyorsa fiille kur |
 | uzun tire, "**Etiket:** metin", Başlıkta Her Kelime Büyük | virgül/nokta, etiketi kaldır, yalnız ilk kelime |
 
 ---
