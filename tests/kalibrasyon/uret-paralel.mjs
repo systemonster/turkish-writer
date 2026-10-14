@@ -8,7 +8,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { anahtar } from '../../skills/turkish-writer/scripts/openai-taslak.mjs';
 
-const TASLAK = join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'skills', 'turkish-writer', 'scripts', 'openai-taslak.mjs');
+const TASLAK = process.env.TW_TASLAK || join(dirname(fileURLToPath(import.meta.url)), '..', '..', 'skills', 'turkish-writer', 'scripts', 'openai-taslak.mjs');
 const a = process.argv.slice(2);
 const ek = a.includes('--') ? a.splice(a.indexOf('--')).slice(1) : [];
 const n = a.includes('--n') ? Number(a.splice(a.indexOf('--n'), 2)[1]) : 6;

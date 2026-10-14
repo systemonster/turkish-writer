@@ -29,7 +29,9 @@ import { adDenetle, anahtar, kelimeler } from '../../skills/turkish-writer/scrip
 import { jsonSor, sakliSor } from '../../skills/turkish-writer/scripts/hakem-dongusu.mjs';
 
 const K = dirname(fileURLToPath(import.meta.url));
-const D = join(K, 'derlem-tekli');
+const bayrakErken = (ad) => { const i = process.argv.indexOf(ad); return i > -1 ? process.argv[i + 1] : undefined; };
+// v1.1: taze bağımsız set için --dizin <ad> (varsayılan derlem-tekli) ve --konular <json> (varsayılan KONULAR_VARSAYILAN)
+const D = join(K, bayrakErken('--dizin') || 'derlem-tekli');
 const DN = join(K, 'derlem-nitelikli');
 const DY = join(K, 'derlem-yeni-insan');
 const TASLAK = join(K, '..', '..', 'skills', 'turkish-writer', 'scripts', 'openai-taslak.mjs');
@@ -44,7 +46,7 @@ const ek = (ad, s = SURUM) => (s ? `${ad}-${s}` : ad);
 // Derlemdeki konularla örtüşmeyen 36 konu; türler ve uzunluklar derlemin dağılımına yakın
 // (blog ~600, duyuru 220-480, kurumsal 190-500). "lovefengis tarzı" kurumsal sayfaların olguları
 // karar defterindeki gerçek fiyat ve koşullardır; kurgusal kurum adı "kurgusal" diye işaretli.
-export const KONULAR = [
+export const KONULAR_VARSAYILAN = [
   ['bl01', 'blog', 600, "Rize'de çay tarımının başlangıcı ve Çaykur'un kuruluşu"],
   ['bl02', 'blog', 600, "Mimar Sinan'ın çıraklık, kalfalık ve ustalık eserleri"],
   ['bl03', 'blog', 580, "Türk kahvesinin pişirilişi, sunumu ve UNESCO somut olmayan kültürel miras listesine girişi"],
@@ -82,6 +84,8 @@ export const KONULAR = [
   ['du11', 'duyuru', 440, 'Kurgusal bir enerji kurumunun güneş enerjisi santrali protokolünü duyuran haber'],
   ['du12', 'duyuru', 360, 'Kurgusal bir meslek odasının iş sağlığı ve güvenliği semineri dizisini duyurması'],
 ].map(([id, tur, hedef, konu]) => ({ id, tur, hedef, konu }));
+const konuDosyasi = bayrakErken('--konular');
+export const KONULAR = konuDosyasi ? JSON.parse(readFileSync(konuDosyasi, 'utf8')).map(([id, tur, hedef, konu]) => ({ id, tur, hedef, konu })) : KONULAR_VARSAYILAN;
 
 // kalibre-nitelikli.mjs brif şablonuyla aynı sayfa, okur ve kişi tanımları.
 const SAYFA = {

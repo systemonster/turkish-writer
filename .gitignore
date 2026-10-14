@@ -63,3 +63,6 @@ tests/kalibrasyon/derlem-tekli/
 
 # Tanıma kontrolü (tur 4): 2025+ yayımlanmış insan metinleri, yalnız iç ölçüm
 tests/kalibrasyon/derlem-yeni-insan/
+
+# v1.1 taze bağımsız set (üretilmiş metin ve hakem önbelleği)
+tests/kalibrasyon/derlem-tekli-b/

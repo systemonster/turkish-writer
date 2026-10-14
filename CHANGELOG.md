@@ -9,6 +9,34 @@ değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör*
 
 ### Eklendi
 
+- **Kendini adla tanıtma** (`kendini-tanitma`, tr-scan): "Ben Ulaş Saraç'ım", "Adım X", paragraf başı "Ben X olarak …",
+  "Ben bir …cıyım" açılışları (kurucu kuralı 2026-09-27). Kesme işaretli ad + ek ayrımı sayesinde insan derleminde
+  (131 metin) ve beceri çıktılarında bulgu yok. Skoru etkilemez. SKILL.md 1. geçiş ve hızlı liste.
+- **Paragraf boyu** (`paragraf-esit`, tr-scan bilgisi): paragraf boylarının değişim katsayısı < 0,25 (insan medyanı 0,44,
+  insanın %9'u; taslakların %83-86'sı). Skoru etkilemez.
+- Ölçüm araçları (`tests/kalibrasyon/`): `uret-paralel.mjs`, `duzelt-olc.mjs`, `olcum-auc.mjs`, `trscan-ozet.mjs`,
+  `dedektor.py` / `dedektor-zerogpt.mjs` / `dedektor-kur.mjs` / `dedektor-ozet.mjs` (açık ve web dedektörleri);
+  `kalibre-tekli.mjs` için `--dizin` ve `--konular` (taze bağımsız set). Sonuç: `tests/kalibrasyon/SONUC-V11.md`.
+
+### Değişti (v1.1 ölçümü)
+
+- Taslak istemi: paragraf boyu çeşitliliği kuralı (en az bir tek cümlelik, en az bir 5+ cümlelik paragraf, art arda eşit boy
+  yok). Taze bağımsız sette paragraf boyu CV 0,15 → 0,36 (insan 0,41), uzunluk bandı 15 → 19/36; saklı hakem AUC
+  0,999 → 1,000 (değişmedi).
+- SKILL.md Düzelt: üç paragraftan uzun metinde zorunlu yapısal müdahale menüsü, cümle boyu dağılımını tr-scan bilgisine göre
+  açma, sahadan dört düzeltme hatası (yumuşatma ekleme, sıra/özne düşürme, bağlaçla anlam kaydırma, aynı kalıbı tekrar),
+  tarayıcı listesine paragraf boyu. Ölçüm: Düzelt adımı ritmi bozuyor (cümle ortalaması 15 → 10); v1.1 talimatı bunu
+  düzeltmedi.
+- Varsayılan taslak modeli gpt-6.1-sol (v1.0 ölçümleri gpt-5.6-sol ile yapılmıştı); bu modelle tr-scan taslağı ayıramıyor
+  (medyan 100) ve blogda olguları sıkıştırıyor (hedefin %26-53'ü). v1.1 sonucu: a2 hedefi (≤ 0,70) yine karşılanmadı.
+
+### Geri alındı
+
+- İstemde "okur ne yapmalı" yönergesini azaltma ve "Görüş:" maddesini olguya bağlama denemesi: a2 değişmedi, türetilmiş
+  sette ve uzunlukta kötüleşti.
+
+### Eklendi (v1.0 sonrası, 36ca5fd)
+
 - **Paragraf sonu yinelemesi** (`scripts/yineleme.mjs`, tr-scan türü `yineleme`): paragrafın son
   cümlesi, önceki cümlelerini yeni sayı, özel ad ya da bağlantı eklemeden tekrar ediyorsa
   işaretlenir (içerik köklerinin ≥%55'i önceki cümlelerde; "Bu nedenle…", "…ayrıca
