@@ -20,7 +20,7 @@ export function ayristir(argv) {
 }
 
 export function dogrula(ham, metin) {
-  if (!ham || !Array.isArray(ham.bulgular)) throw Error('Model geçerli bulgu JSON'u döndürmedi.');
+  if (!ham || !Array.isArray(ham.bulgular)) throw Error("Model geçerli bulgu JSON'u döndürmedi.");
   const bulgular = [], reddedilen = [];
   for (const b of ham.bulgular.slice(0, 30)) {
     if (!b || typeof b.alinti !== 'string' || !b.alinti.trim() || !metin.includes(b.alinti) ||
