@@ -24,8 +24,7 @@ katman olarak ele alıyor ve hepsini ölçüyor.
 - **Denetle:** metni değiştirmeden izleri satır satır listeler. "Bunu yapay zekâ yazdı"
   hükmü vermez.
 
-Altı geçiş sırayla uygulanır: yüzey (klişe, şişirme, noktalama), Türkçe söz dizimi (vurgu,
-ritim, "ve"/"bir", söylem parçacıkları, çeviri kokusu), yapı, mantık kapısı, TDK, son okuma.
+V2 akışı: kısa brif, tür ve ses, taslak, editör okuması, isteğe bağlı araçlar ve son kontrol.
 Ayrıntı: [`skills/turkish-writer/SKILL.md`](skills/turkish-writer/SKILL.md).
 
 ## Kurulum
@@ -41,37 +40,20 @@ Ya da yalnız bir projede kullanmak için `.claude/skills/` altına kopyalayın.
 [Agent Skills](https://agentskills.io) biçimindedir; bu biçimi okuyan başka ajanlarda da
 çalışır.
 
-Yaz kipinde beceri cümleyi kendisi kurmaz; taslağı OpenAI yazar, beceri de onu düzeltme
-geçişlerinden ve tarayıcıdan geçirir. Bu kip için `OPENAI_API_KEY` gerekir. Betik anahtarı
-önce ortam değişkeninde arar, bulamazsa çalışılan dizindeki `.env.local` ya da `.env`
-dosyasından okur. Anahtar yoksa beceri yeni metin yazmaz; düzeltme ve denetleme kipleri
-anahtarsız da çalışır. Varsayılan model `gpt-5.6-sol`, `TW_OPENAI_MODEL` ortam
-değişkeniyle değişir. Bu model, altı adaya aynı iki brif yazdırılıp sonuçlar tarayıcıyla
-ölçülerek seçildi.
+### V2 geliştirme dalı
+
+V2'de beceri, çalıştığı modelle doğrudan yazabilir; OpenAI API ve Codex taslak yolları isteğe bağlıdır. Tek yazım motoru [yazım-motoru.md](skills/turkish-writer/references/yazim-motoru.md) içinde bulunur. Sabit cümle/paragraf kotaları ve bağlamdan bağımsız sözcük yasakları yerine okur, amaç, tür, doğal söz dizimi ve olgu sadakati belirleyicidir. Eski ölçümler V1.1'e aittir; V2 başarısı henüz ölçülmemiştir. [Doğrulama planı](docs/V2-DOGRULAMA.md).
 
 ```bash
-node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --out taslak.md
-node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur blog --out taslak.md   # çıpalı
-node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --katı --out taslak.md       # ad hatası = çıkış kodu 4
+node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur site --out taslak.md
+node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur eposta --codex --out taslak.md
 ```
 
-Taslak betiğinin yaptıkları:
+İsteğe bağlı [watermarks-remover Unicode denetimi](skills/turkish-writer/references/unicode-denetimi.md) yerel ve salt okunur çalışır; yazarlık veya tespit sonucu hakkında hüküm vermez.
 
-- **Brif:** sayfa türü, okur, hitap, olgu listesi ve uzunluk aralığı ("Uzunluk: 400-480
-  kelime"). Kurum, hizmet ve duyuru metninde olgunun altına "Okur için anlamı", "Nasıl işler",
-  "Ne yapması gerekir" alt maddeleri yazılabilir; model olguyu bunlarla açar, yeni olgu eklemez.
-  Metin hedefin %70'inin altında kalırsa betik "brifte olgu az" uyarısı verir; dolguyla uzatmaz.
-- **Ritim:** sistem istemi editörden geçmiş Türkçe dergi ve kurum metninin ritmini ister
-  (cümle ortalaması 17-21 kelime, uzun ve kısa cümle karışık, "ve" doğal sıklıkta), dolguyu,
-  özet cümlesini ve "fazla düzgün" paragraf kalıbını yasaklar.
-- **Çıpa:** `--tur <site|blog|reklam|whatsapp|teklif|hukuk>` ile o türden en çok 3 gerçek
-  insan metni ses örneği olarak girer (`skills/turkish-writer/cipa/`, açık lisanslı; teklif
-  boş). `--cipa <yol>` projenin kendi örneklerini önce koyar.
-- **Olgu sadakati:** taslaktaki özel adlar brifle karşılaştırılır; bozuk yazım ("Süyman" /
-  brifte "Süleyman") ya da brifte olmayan ad stderr'e `UYARI` yazar, `--katı` ile çıkış kodu 4.
-- **Hakem döngüsü (deneysel):** `scripts/hakem-dongusu.mjs` taslağı bir LLM hakemine okutup
-  işaretlediği cümleleri yeniden yazdırır. Ölçümde kendi hakemine aşırı uyum gösterdi, ayrı bir
-  hakemi yanıltmadı; varsayılan yol değildir.
+```bash
+python3 skills/turkish-writer/scripts/unicode-denetle.py metin.txt
+```
 
 İsteğe bağlı, resmî TDK dizin denetimi için bir kez:
 
@@ -112,7 +94,7 @@ sık yanlışlar, eş dizim). Skoru etkilemeyen iki bölüm daha vardır: **söz
 sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama) ve **ritim bilgisi**
 (cümle boyu sapması, kısa cümle, "ve" yoğunluğu; JSON'da `bilgi` alanı).
 
-## Ne kadar güvenilir
+## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
 
 Tarayıcının ağırlıkları tahminle değil ölçümle seçildi. LLM öncesi yazılmış 180 Türkçe
 metin (haber, forum, şirket sitesi, blog) aynı konularda üretilmiş 180 GPT metniyle
@@ -152,14 +134,14 @@ dil modeli onu hâlâ tanıyor.
   çıkabilir.
 - İnsan metinlerinin beşte biri de gri bölgeye düşebiliyor. Skor bir işarettir, hüküm değil.
 - Hiçbir yöntem "hiçbir denetleyici anlayamaz" garantisi vermez. Bu beceri de vermiyor.
-  Hedefi, metni iyi Türkçe yazan bir insanın metninden ayırt edilemez kılmak.
+  V2 hedefi, iyi Türkçe yazmak ve metni gerçek okur için daha kullanışlı kılmaktır.
 
 ## Neyi yapmaz
 
 - Denetleyiciyi kandırmak için yazım hatası, görünmez karakter, harf benzeri Kiril
   karakteri ya da rastgele eş anlamlı değiştirme kullanmaz.
 - Uydurma deneyim, müşteri, sayı ya da alıntı eklemez.
-- Hukuki metin, akademik makale ve kurmaca için tasarlanmadı.
+- Hukuki hüküm oluşturmaz; gerekli açıklama ve atıfları kaldırmaz. Hukuki metinde yalnız yazım incelemesi veya ayrı açıklama yapar.
 
 ## Testler
 
@@ -188,7 +170,7 @@ panel, entegrasyon, çok dilli site ve otomasyon işleri yapıyor. Hata ya da ö
 
 ## Lisans
 
-MIT. İstisnalar: `references/evrensel-izler.md` içindeki Wikipedia kaynaklı bölümler CC BY-SA
+MIT. watermarks-remover'ın ayrı MIT lisansı ve atfı vendor dizinindedir. İstisnalar: `references/evrensel-izler.md` içindeki Wikipedia kaynaklı bölümler CC BY-SA
 4.0'dır. `skills/turkish-writer/cipa/` altındaki çıpa metinleri her dosyanın başındaki lisansla
 dağıtılır (Creative Commons Türkiye metinleri CC BY 4.0, Türkçe Vikipedi metinleri CC BY-SA 4.0,
 yasa metinleri ve Sabahattin Ali kamu malı). `tests/ornekler/nitelikli-insan.md` Türkçe Vikipedi
@@ -207,10 +189,7 @@ generated by an LLM. It covers Turkish-specific tells that English humanizers mi
 calqued postpositions), follows the official TDK spelling rules, and ships a
 dependency-free Node scanner. Calibrated on 180 pre-LLM Turkish texts vs 180 GPT texts;
 see `tests/kalibrasyon/`. It does not use invisible characters, homoglyphs or deliberate
-typos, and it does not invent facts. In write mode the skill does not compose sentences
-itself: it prepares a brief, gets the draft from OpenAI (`scripts/openai-taslak.mjs`,
-needs `OPENAI_API_KEY`, default model `gpt-5.6-sol`, chosen by scanning six models on
-the same briefs) and then runs its editing passes; edit and audit modes need no key.
+typos, and it does not invent facts. In V2, the active agent can write directly; OpenAI/Codex drafting is optional. The V1.1 measurements are historical and do not validate V2. Optional read-only Unicode inspection uses a vendored MIT module from watermarks-remover.
 
 Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer),
 an İzmir studio for custom panels, integrations, multilingual sites and automation.
