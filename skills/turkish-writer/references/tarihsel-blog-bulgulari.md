@@ -1,6 +1,6 @@
 # Tarihsel blog derleminden gözlemler
 
-Kaynak: [Daron Yöndem, Türkçe Blog İçeriği (2007–2018)](https://github.com/daronyondem/daron-turkce-blog/tree/e5a5885a9f70d2f30519560a80c6de622aeac945), CC BY-SA 4.0. Bu türetilmiş araştırma notu da CC BY-SA 4.0 ile sunulur. [Tam ölçüm ve yöntem](../../../corpus-lab/results/historical-blog-profile-v1.json). 1.038 Markdown dosyası tarandı; 2007–2017 tarihli, en az 200 sözcük ve üç uygun düzyazı paragrafı içeren 503 yazı seçildi. 274.756 sözcük, 5.401 paragraf ve sezgisel olarak ayrılmış 20.048 cümle. Kod, başlık, liste, görsel ve şablon kalıntıları mümkün olduğunca çıkarıldı.
+Kaynak: [Daron Yöndem, Türkçe Blog İçeriği (2007–2018)](https://github.com/daronyondem/daron-turkce-blog/tree/e5a5885a9f70d2f30519560a80c6de622aeac945), CC BY-SA 4.0. Bu türetilmiş araştırma notu da CC BY-SA 4.0 ile sunulur. [Tam ölçüm ve yöntem](https://github.com/systemonster/turkish-writer/blob/b2b8cebd9099b3eb7c0d8e802390f37940b6ea1c/corpus-lab/results/historical-blog-profile-v1.json). 1.038 Markdown dosyası tarandı; 2007–2017 tarihli, en az 200 sözcük ve üç uygun düzyazı paragrafı içeren 503 yazı seçildi. 274.756 sözcük, 5.401 paragraf ve sezgisel olarak ayrılmış 20.048 cümle. Kod, başlık, liste, görsel ve şablon kalıntıları mümkün olduğunca çıkarıldı.
 
 Bu tek bir yazarın ağırlıklı olarak teknik ve kişisel yazılarını kapsar. Profesyonel editörlük ölçümü veya tüm Türkçe blogları temsil eden istatistik değildir. Yazarı taklit etmek, bu sayılara metinleri zorlamak veya yayımlanmış yazıdaki her kullanımı doğru saymak amaç değildir.
 
@@ -13,6 +13,6 @@ Bu tek bir yazarın ağırlıklı olarak teknik ve kişisel yazılarını kapsar
 
 ## Diğer tarihsel pilotun uyarısı
 
-[2.643 gerçek Vikipedi revizyonundan seçilen 50 aday](../../../corpus-lab/results/wiki-historical-pilot-v1.json) model tarafından ön sınıflandırıldı: 14 yazım adayı, 18 vandalizm/geri alma adayı, 10 olgu veya anlam değişikliği/kararsız, 4 şüpheli veya kısmi düzeltme, 4 bağlamsal editoryal tercih. Hiçbiri bağımsız insan editör onayı almadı. Bir tarihsel metinde yapılan değişiklik, kendiliğinden başarılı düzeltme değildir. Bir sözcük değişiminin bağlamı, kip ve olgu kapsamı incelenmeden yönünü doğru kabul etme.
+[2.643 gerçek Vikipedi revizyonundan seçilen 50 aday](https://github.com/systemonster/turkish-writer/blob/b2b8cebd9099b3eb7c0d8e802390f37940b6ea1c/corpus-lab/results/wiki-historical-pilot-v1.json) model tarafından ön sınıflandırıldı: 14 yazım adayı, 18 vandalizm/geri alma adayı, 10 olgu veya anlam değişikliği/kararsız, 4 şüpheli veya kısmi düzeltme, 4 bağlamsal editoryal tercih. Hiçbiri bağımsız insan editör onayı almadı. Bir tarihsel metinde yapılan değişiklik, kendiliğinden başarılı düzeltme değildir. Bir sözcük değişiminin bağlamı, kip ve olgu kapsamı incelenmeden yönünü doğru kabul etme.
 
 Kaynak yazıları ve birebir alıntılar bu notta yeniden dağıtılmaz. Derlem ölçümleri metin üretim kotası, tespit göstergesi veya yazarlık hükmü değildir.
