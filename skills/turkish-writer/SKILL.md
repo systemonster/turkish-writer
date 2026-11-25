@@ -45,6 +45,10 @@ Blog, rehber ve analiz metninde cümleleri tek tek düzeltmeden önce paragrafı
 
 Kullanıcının izinli ses örneği varsa anlatım alışkanlıklarını öğren; konu, özel ad, ifade ve deneyim kopyalama. Örnek yoksa doğal, açık Türkiye Türkçesiyle yaz. Başka bir kişinin kimliğini taklit etme.
 
+## Yerleşik Unicode son kontrolü
+
+Yayıma hazır metinlerde, çalıştığın ortamda Python varsa son metni [paket içindeki watermarks-remover Unicode denetimi](references/unicode-denetimi.md) ile incele. Araç yoksa metni normal biçimde teslim et; kurulum, ağ veya ayrı servis isteme. Denetim salt okunurdur. Bulguyu bağlamıyla değerlendir; anlamlı Unicode, emoji, atıf ve gerekli açıklamaları koru. Yazarlık veya tespit sonucu çıkarma. Bu bileşen dağıtımın bir parçasıdır, geliştirme temizliğinde kaldırılmaz.
+
 ## İsteğe bağlı teknik araçlar
 
 Araç varsa ve gerekiyorsa kullan. Yoksa filtreyi çalıştıran modelle bitir; kurulum isteme.
