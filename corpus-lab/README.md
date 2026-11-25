@@ -17,7 +17,7 @@ CLI git blob kimliğiyle dosyanın doğru sürüm ve bölüm olduğunu doğrular
 
 ## 2. Sonraki veri kümesi: Türkçe web
 
-[TurkishFineweb2-Cleaned](https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned) kartındaki `text`, `id`, `metadata.url`, `metadata.date`, `metadata.language_score` ve `metadata.fasttext_clean_score` alanları üzerinden akış halinde seçme. Tarama tarihi yayın tarihi değildir. 2017 sonu ve öncesi taramalar bir başlangıç kohortudur, insan yazarlığı kanıtı değildir.
+[TurkishFineweb2-Cleaned](https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned) kartındaki alanlar üzerinden akış halinde seçme. Sabitlenen Parquet sürümünde `url`, `date`, `language_score`, `fasttext_clean_score` üst düzey alanlardır; seçim kodu bu biçimi de destekler. Tarama tarihi yayın tarihi değildir. 2017 sonu ve öncesi taramalar bir başlangıç kohortudur, insan yazarlığı kanıtı değildir.
 
 Geliştirici kendi ortamında çalıştırır. İlk aşamada sadece küçük, izinli örneklem: 500–1.000 belge. Tam 70,5 GB indirme yok. Önce `sources.json` içinden kaynakları ve kullanım haklarını incele. ODC-By veri tabanı lisansıdır; içindeki yazıların yeniden kullanım hakkını garanti etmez. `source-approvals.example.json` gerçek izin içermez. Kendi `work/approvals.json` dosyana yalnız doğrulanmış URL öneklerini, lisansı/izni, türü, kaynak kanıtını gir.
 
@@ -91,4 +91,17 @@ Model çıktısı her satırda `{"id":"editorial-dev-001","output":"..."}` biçi
 
 Ham korpus, üçüncü taraf yazıları ve kişisel veri depoya commit edilmez. Çıkarılan toplu bilgiler ve bağımsız örnekler ancak editör tarafından gözden geçirildikten sonra skill referansı olur. İyi Türkçe, doğruluk, anlam koruma ve editoryal fayda ölçülür. Dil dağılımları kota veya sınıflandırıcı atlatma hedefi değildir.
 
-Durum: BOUN pilotu tamamlandı. Vikipedi toplama kodu, 17 sentetik çekirdek kontrolü ve 40 editoryal geliştirme vakası eklendi. Çekirdek ve değerlendirme fonksiyonları izole JavaScript ortamında sınandı; Node CLI ve tüm npm test paketi bu geliştirme turunda çalıştırılmadı. Canlı Vikipedi taraması, geniş web derlemi, gerçek editör çiftlerinin insan onayı ve bağımsız kör değerlendirme henüz yapılmadı. Kaynak ve lisans kaydı: `sources.json`.
+## 7. 2026-11-25: çalıştırılmış araştırmalar
+
+| Deney | Gözlem | Sınır |
+|---|---|---|
+| [Fineweb üst veri pilotu](results/mogan-metadata-1m-v1.json) | 1.000.000 satır, 87.390 ön filtre adayı, 22.624 alan adı | Metinlerin tamamı okunmadı; hak ve editör onayı yok. |
+| [Tarihsel blog profili](results/historical-blog-profile-v1.json) | 1.038 dosyadan 503 yazı; 274.756 sözcük, 5.401 paragraf, yaklaşık 20.048 cümle | Daron Yöndem'in 2007–2017 yazıları; tek yazar, sezgisel sayım. |
+| [Vikipedi pilotu](results/wiki-historical-pilot-v1.json) | 2.643 revizyon, 50 aday | Model ön incelemesi; sıfır insan onayı; ham alıntı dağıtılmıyor. |
+| [Qwen3-8B A/B](results/editorial-ab-qwen-qwen3-8b.json) | 40 vaka/kol; birebir koruma 9/18 → 13/18 | Tek başına editörlük kalitesi değil; bazı düzenlemeler eksik, anlam riski mevcut. |
+| [Turkish Gemma A/B](results/editorial-ab-ytu-ce-cosmos-turkish-gemma-9b-v0-1.json) | 40 vaka/kol; çıktı biçimi karışması | JSON girdi protokolü karıştırıcı etken. |
+| [Qwen3-32B eksik A/B](results/editorial-ab-qwen-qwen3-32b-incomplete.json) | 40 temel çıktı; sonraki kol GPU bellek hatası | Kollar karşılaştırılamaz. |
+
+[Deneysel kısa editör adayı](editor-core-candidate.md) henüz varsayılan değildir. [Uzun metin geliştirme vakaları](editorial-longform-v1.jsonl) 12 yeni sentetik örnektir. Üç kollu deney aynı düz metin protokolüyle 52 vaka/model planlar. Sabit kod sürümü `40c9bce705e0985230f4ffe5b90d02f317aa182e`; [HF Job](https://huggingface.co/jobs/lovefengis/6b063f971460ffe1d5e9851e). Sonuç görülmeden adayın daha iyi olduğu iddia edilmez.
+
+Çalıştırılmış yazılım doğrulaması: npm test 167 başarılı, 7 atlanan, 0 başarısız; ayrıca Corpus Lab Node 3 ve Python 5 başarılı. Model geliştirme vakaları bağımsız kör test değildir. İnsan editör onaylı önce/sonra veri seti ve bağımsız çok yazarlı değerlendirme hâlâ eksiktir. Skill için zorunlu bulut, API ya da model yoktur.
