@@ -20,7 +20,10 @@ def pair(row,old,new):
     changed=[i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
     if len(changed)!=1:return None,"multiple_changes"
     i=changed[0];x,y=a[i],b[i]
-    if any(not 80<=len(t)<=2200 or re.search(r"[<>{}\[\]|#=*]|https?://|www\.|@|'{2,}|^[:;!]",t,re.I) or re.search(r"[\x00-\x1f\x7f]",t) for t in (x,y)):return None,"markup_or_private_data"
+    for t in (x,y):
+        if not 80<=len(t)<=2200:return None,"length"
+        if any(c in t for c in "<>{}[]|#=*@") or any(v in t.lower() for v in ("http://","https://","www.","''")) or t[0] in ":;!":return None,"markup"
+        if any(ord(c)<32 or ord(c)==127 for c in t):return None,"control_character"
     if re.findall(r"\d+",x)!=re.findall(r"\d+",y):return None,"numeric_change"
     # Reject potential personal-contact identifiers even if numbers were unchanged.
     if any(re.search(r"\b(?:\+?90[ -]?)?0?5\d{2}[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}\b|\b\d{11}\b",t) for t in (x,y)):return None,"private_data_risk"
@@ -34,10 +37,14 @@ def self_test():
     row={"source_group":"trwiki:1","previous_timestamp":"2016-01-01T00:00:00Z","revision_timestamp":"2016-01-02T00:00:00Z"}
     a={"pageid":1,"revid":2,"timestamp":row["previous_timestamp"],"title":"Sentetik","content":"Bu kayıt işleminin tamamlanmasının ardından diğer işlemlerin yapılması için gereken süre belirlenir.","tags":[]}
     b={**a,"revid":3,"parentid":2,"timestamp":row["revision_timestamp"],"content":"Bu kayıt tamamlandıktan sonra diğer işlemlerin yapılması için gereken süre ayrıca belirlenir."}
+    a["content"]+=" Bu süre daha sonra kayda geçirilir."
+    b["content"]+=" Bu süre daha sonra kayda geçirilir."
     r,reason=pair(row,a,b)
     assert r and not reason and r["before_sha256"]!=r["after_sha256"],reason
     assert pair(row,a,{**b,"parentid":99})[1]=="revision_mismatch"
-    assert pair(row,a,{**b,"content":b["content"]+" https://example.org"})[1]=="markup_or_private_data"
+    assert pair(row,a,{**b,"content":b["content"]+" https://example.org"})[1]=="markup"
+    assert pair(row,a,{**b,"content":"Kısa."})[1]=="length"
+    assert pair(row,a,{**b,"content":b["content"]+" 123"})[1]=="numeric_change"
     print("WIKI_PAIR_SELF_TEST_COMPLETE",flush=True)
 def fetch(ids):
     q=urllib.parse.urlencode({"action":"query","prop":"revisions","revids":"|".join(map(str,ids)),
