@@ -1,0 +1,52 @@
+{
+  "source": "https://github.com/UniversalDependencies/UD_Turkish-BOUN/blob/09521f40c90904df85524b8e0b43afba6e4c7823/tr_boun-ud-train.conllu",
+  "attribution": "UD Turkish BOUN / TABILAB, Boğaziçi University and contributors",
+  "license": "CC BY-SA 4.0",
+  "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+  "scope": "AI contextual review of six already retrieved train sentences, not independent human gold; no source text",
+  "source_context_sha256": "3bd615a6ac636c8da2b31e3e490dca99838081b0b11b8557c8a508fc5f814c69",
+  "rows": [
+    {
+      "id": "7df21d88f4670a07db04",
+      "sent_id": "ins_69",
+      "category": "annotated_converb",
+      "focus_sha256": "ab18d0fb76a41d0234b2b13d61ed817b3913d9ecb85ba58405cd834e9011cc49",
+      "observation": "Explicit rejection of an inference from present observation to past events; preserve negated inference scope."
+    },
+    {
+      "id": "bdbb93d9e6e440512530",
+      "sent_id": "news_656",
+      "category": "annotated_converb",
+      "focus_sha256": "413a7f6b37bf8953b87ea1b1f967a93e7f8f18db20b586634ffcd139110482f8",
+      "observation": "Consecutive questions challenge a proposed timing; subsequent explanation is not a literal answer to every question."
+    },
+    {
+      "id": "4a887d1ef1609f0e9d24",
+      "sent_id": "pop_1492",
+      "category": "annotated_converb",
+      "focus_sha256": "ce296576eea19c7f14d57854e1bb426d4887f0e09a7adffd49b416efa1ab9a4b",
+      "observation": "Quoted question embedded in a recurring reported exchange; quotation and reporting layer are distinct."
+    },
+    {
+      "id": "0169bd036ccc4d7f4713",
+      "sent_id": "ins_1295",
+      "category": "verb_dependent_obl_Dat",
+      "focus_sha256": "f1b0d1126b3afb3948f3667f65f7fbd99b7c99685dd9d288585819d46d6fbc1b",
+      "observation": "Reported future information inside direct instructions; distinguish instruction from reported event."
+    },
+    {
+      "id": "261fa904dac86f4fe08c",
+      "sent_id": "bio_773",
+      "category": "verb_dependent_obl_Abl",
+      "focus_sha256": "86e667edd03bbdf7fe112638617b6ef4e2c23c6e4c701464eed1e12901d63625",
+      "observation": "Reported speech with imperfective past reporting verb; do not flatten aspect."
+    },
+    {
+      "id": "5fa54cca1d83fe24b138",
+      "sent_id": "ess_1654",
+      "category": "verb_dependent_obl_Abl",
+      "focus_sha256": "81e244b410a68cba80785de451465cf9b7ddaff5bbe7f1cbf882b147ca6c2bf3",
+      "observation": "Narrator introduces a prior utterance containing hypothetical conditions and direct address; preserve speaker and condition scope."
+    }
+  ]
+}
