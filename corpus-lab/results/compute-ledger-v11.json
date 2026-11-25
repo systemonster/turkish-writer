@@ -6,15 +6,15 @@
     {
       "id": "6b06c542d91f621b9307756e",
       "name": "turkish-writer-v11-selection-only",
-      "stage": "RUNNING",
+      "stage": "COMPLETED",
       "hardware": "rtx-pro-6000",
       "created_at": "2026-11-25T11:23:46.651Z",
-      "finished_at": null,
-      "wall_seconds": null,
+      "finished_at": "2026-11-25T11:26:30.735Z",
+      "wall_seconds": 164.084,
       "timeout_seconds": 1200,
       "usd_per_hour": 2.75,
       "nominal_max_usd": 0.9166666666666666,
-      "wall_rate_estimate_usd": null,
+      "wall_rate_estimate_usd": 0.12534194444444444,
       "actual_billed_usd": null,
       "code_commit": "cc1c2a7a8cef4ce3182575adcd5354a260f05a04"
     },
@@ -135,8 +135,8 @@
       "known_wall_rate_usd": 2.662447222222222
     }
   ],
-  "new_known_wall_rate_usd": 2.7926993611111106,
-  "combined_known_wall_rate_usd": 9.384762869444444,
+  "new_known_wall_rate_usd": 2.918041305555555,
+  "combined_known_wall_rate_usd": 9.510104813888889,
   "actual_total_usd": null,
-  "missing_new_duration_count": 1
+  "missing_new_duration_count": 0
 }
