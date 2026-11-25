@@ -47,7 +47,37 @@
       "wall_rate_estimate_usd": null,
       "actual_billed_usd": null,
       "code_commit": "d6f61f331950a69d2c323de6affad08d57be8bbd"
+    },
+    {
+      "id": "6b06f57ad91f621b93081c11",
+      "name": "turkish-writer-full-sudo-prose-v3",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T14:49:30.020Z",
+      "finished_at": "2026-11-25T14:50:32.249Z",
+      "timeout_seconds": 480,
+      "wall_seconds": 62.229,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0013333333333333333,
+      "wall_rate_estimate_usd": 0.00017285833333333334,
+      "actual_billed_usd": null,
+      "code_commit": "4136b6f2c8c85f96fbb14059b1e9064c021027b4"
+    },
+    {
+      "id": "6b06f5aab6a90bbe997dacf9",
+      "name": "turkish-writer-fineweb-text-shard0-v3",
+      "hardware": "cpu-basic",
+      "stage": "RUNNING",
+      "created_at": "2026-11-25T14:50:18.081Z",
+      "finished_at": null,
+      "timeout_seconds": 1500,
+      "wall_seconds": null,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.004166666666666667,
+      "wall_rate_estimate_usd": null,
+      "actual_billed_usd": null,
+      "code_commit": "4136b6f2c8c85f96fbb14059b1e9064c021027b4"
     }
   ],
-  "known_wall_rate_usd": 0.00022275000000000002
+  "known_wall_rate_usd": 0.00039560833333333336
 }
