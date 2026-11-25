@@ -1,0 +1,427 @@
+{
+  "schema": 1,
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b063cdbd0582cfbbefd6544",
+  "collector_commit": "166aab3bd8da0488dafd62a595e4c4b882dbd1de",
+  "source": "Turkish Wikipedia historical revision pairs",
+  "method": "Model inspected changed word spans in all 50 and full context of selected candidates; provisional triage, not independent human annotation. No excerpts retained in this report.",
+  "pages_examined": 20,
+  "revisions_examined": 2643,
+  "requests": 55,
+  "candidate_count": 50,
+  "human_verified": 0,
+  "provisional_counts": {
+    "orthography_candidate": 14,
+    "vandalism_or_revert_candidate": 18,
+    "semantic_content_or_uncertain": 10,
+    "questionable_or_partial_correction": 4,
+    "contextual_editorial_choice": 4
+  },
+  "cases": [
+    {
+      "id": "trwiki-11729302-11729479",
+      "source_group": "trwiki:8413",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=11729479&oldid=11729302",
+      "previous_timestamp": "2012-08-25T16:20:38Z",
+      "revision_timestamp": "2012-08-25T17:08:26Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-9803272-9820818",
+      "source_group": "trwiki:6290",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=9820818&oldid=9803272",
+      "previous_timestamp": "2011-07-24T15:05:44Z",
+      "revision_timestamp": "2011-07-29T03:01:22Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-14711766-14711795",
+      "source_group": "trwiki:6290",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14711795&oldid=14711766",
+      "previous_timestamp": "2014-09-19T14:05:03Z",
+      "revision_timestamp": "2014-09-19T14:33:07Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-16391612-16802727",
+      "source_group": "trwiki:6290",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=16802727&oldid=16391612",
+      "previous_timestamp": "2015-12-18T17:24:00Z",
+      "revision_timestamp": "2016-03-15T18:46:44Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-13321667-13322298",
+      "source_group": "trwiki:6201",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13322298&oldid=13321667",
+      "previous_timestamp": "2013-05-09T08:39:42Z",
+      "revision_timestamp": "2013-05-09T12:56:19Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-17406205-17406995",
+      "source_group": "trwiki:6201",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17406995&oldid=17406205",
+      "previous_timestamp": "2016-07-27T13:52:51Z",
+      "revision_timestamp": "2016-07-27T17:54:05Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-17813309-17880754",
+      "source_group": "trwiki:6201",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17880754&oldid=17813309",
+      "previous_timestamp": "2016-11-12T16:24:32Z",
+      "revision_timestamp": "2016-11-30T18:09:19Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-17880958-17880960",
+      "source_group": "trwiki:6201",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17880960&oldid=17880958",
+      "previous_timestamp": "2016-11-30T18:48:37Z",
+      "revision_timestamp": "2016-11-30T18:48:53Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-16532311-16661414",
+      "source_group": "trwiki:1012",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=16661414&oldid=16532311",
+      "previous_timestamp": "2016-01-17T19:57:06Z",
+      "revision_timestamp": "2016-02-13T09:55:21Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-18164529-18365806",
+      "source_group": "trwiki:6244",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=18365806&oldid=18164529",
+      "previous_timestamp": "2017-02-10T18:33:34Z",
+      "revision_timestamp": "2017-03-30T18:55:39Z",
+      "provisional_label": "questionable_or_partial_correction"
+    },
+    {
+      "id": "trwiki-13828009-13846563",
+      "source_group": "trwiki:441657",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13846563&oldid=13828009",
+      "previous_timestamp": "2013-10-09T07:36:43Z",
+      "revision_timestamp": "2013-10-18T13:53:46Z",
+      "provisional_label": "questionable_or_partial_correction"
+    },
+    {
+      "id": "trwiki-14026161-14032126",
+      "source_group": "trwiki:441657",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14032126&oldid=14026161",
+      "previous_timestamp": "2013-12-24T20:25:34Z",
+      "revision_timestamp": "2013-12-27T12:53:48Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-17739882-17739898",
+      "source_group": "trwiki:441657",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17739898&oldid=17739882",
+      "previous_timestamp": "2016-10-24T15:17:06Z",
+      "revision_timestamp": "2016-10-24T15:23:11Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-16150945-16150948",
+      "source_group": "trwiki:1047",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=16150948&oldid=16150945",
+      "previous_timestamp": "2015-10-04T11:32:07Z",
+      "revision_timestamp": "2015-10-04T11:34:19Z",
+      "provisional_label": "contextual_editorial_choice"
+    },
+    {
+      "id": "trwiki-10163995-10204927",
+      "source_group": "trwiki:1607",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=10204927&oldid=10163995",
+      "previous_timestamp": "2011-10-09T05:56:03Z",
+      "revision_timestamp": "2011-10-16T14:24:03Z",
+      "provisional_label": "questionable_or_partial_correction"
+    },
+    {
+      "id": "trwiki-10892977-10900238",
+      "source_group": "trwiki:1607",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=10900238&oldid=10892977",
+      "previous_timestamp": "2012-03-12T07:53:09Z",
+      "revision_timestamp": "2012-03-13T21:40:48Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-17037635-17659437",
+      "source_group": "trwiki:1607",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17659437&oldid=17037635",
+      "previous_timestamp": "2016-05-04T16:56:40Z",
+      "revision_timestamp": "2016-10-01T08:22:23Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-17659437-17663490",
+      "source_group": "trwiki:1607",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17663490&oldid=17659437",
+      "previous_timestamp": "2016-10-01T08:22:23Z",
+      "revision_timestamp": "2016-10-02T10:02:31Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-13361529-13495388",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13495388&oldid=13361529",
+      "previous_timestamp": "2013-05-20T16:50:29Z",
+      "revision_timestamp": "2013-07-07T16:59:53Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-13824091-13824093",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13824093&oldid=13824091",
+      "previous_timestamp": "2013-10-07T08:59:11Z",
+      "revision_timestamp": "2013-10-07T08:59:56Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-14024769-14066333",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14066333&oldid=14024769",
+      "previous_timestamp": "2013-12-24T09:01:27Z",
+      "revision_timestamp": "2014-01-09T12:49:42Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-14223653-14303572",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14303572&oldid=14223653",
+      "previous_timestamp": "2014-03-12T16:50:40Z",
+      "revision_timestamp": "2014-04-14T00:12:16Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-14388891-14391887",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14391887&oldid=14388891",
+      "previous_timestamp": "2014-05-14T08:25:09Z",
+      "revision_timestamp": "2014-05-15T18:07:36Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-14497660-14604458",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14604458&oldid=14497660",
+      "previous_timestamp": "2014-06-26T14:37:30Z",
+      "revision_timestamp": "2014-08-08T16:36:28Z",
+      "provisional_label": "contextual_editorial_choice"
+    },
+    {
+      "id": "trwiki-14836669-14836677",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14836677&oldid=14836669",
+      "previous_timestamp": "2014-11-08T10:11:10Z",
+      "revision_timestamp": "2014-11-08T10:16:33Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-15574934-15574945",
+      "source_group": "trwiki:333587",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=15574945&oldid=15574934",
+      "previous_timestamp": "2015-05-24T08:59:21Z",
+      "revision_timestamp": "2015-05-24T09:02:20Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-11401262-11465005",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=11465005&oldid=11401262",
+      "previous_timestamp": "2012-06-28T14:51:23Z",
+      "revision_timestamp": "2012-07-09T20:31:20Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-11465005-11465009",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=11465009&oldid=11465005",
+      "previous_timestamp": "2012-07-09T20:31:20Z",
+      "revision_timestamp": "2012-07-09T20:31:36Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-13234271-13234282",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13234282&oldid=13234271",
+      "previous_timestamp": "2013-04-16T10:58:13Z",
+      "revision_timestamp": "2013-04-16T10:59:48Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-13944615-13946210",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13946210&oldid=13944615",
+      "previous_timestamp": "2013-11-26T17:18:34Z",
+      "revision_timestamp": "2013-11-27T12:12:26Z",
+      "provisional_label": "contextual_editorial_choice"
+    },
+    {
+      "id": "trwiki-17413228-17419230",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17419230&oldid=17413228",
+      "previous_timestamp": "2016-07-29T07:14:04Z",
+      "revision_timestamp": "2016-07-31T00:41:32Z",
+      "provisional_label": "questionable_or_partial_correction"
+    },
+    {
+      "id": "trwiki-18255991-18255999",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=18255999&oldid=18255991",
+      "previous_timestamp": "2017-03-03T07:38:20Z",
+      "revision_timestamp": "2017-03-03T07:40:58Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-19280157-19303766",
+      "source_group": "trwiki:6259",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=19303766&oldid=19280157",
+      "previous_timestamp": "2017-10-31T20:11:18Z",
+      "revision_timestamp": "2017-11-07T04:49:53Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-9523062-9526631",
+      "source_group": "trwiki:15765",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=9526631&oldid=9523062",
+      "previous_timestamp": "2011-05-19T11:16:08Z",
+      "revision_timestamp": "2011-05-20T08:47:29Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-13177190-14716938",
+      "source_group": "trwiki:15765",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14716938&oldid=13177190",
+      "previous_timestamp": "2013-04-06T14:47:05Z",
+      "revision_timestamp": "2014-09-21T18:26:30Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-14995635-15102079",
+      "source_group": "trwiki:15765",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=15102079&oldid=14995635",
+      "previous_timestamp": "2015-01-07T20:59:47Z",
+      "revision_timestamp": "2015-02-14T20:59:58Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-13912120-13912125",
+      "source_group": "trwiki:59",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13912125&oldid=13912120",
+      "previous_timestamp": "2013-11-15T13:35:35Z",
+      "revision_timestamp": "2013-11-15T13:36:36Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-14871117-14871448",
+      "source_group": "trwiki:59",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14871448&oldid=14871117",
+      "previous_timestamp": "2014-11-24T16:17:06Z",
+      "revision_timestamp": "2014-11-24T19:23:47Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-14900347-14902314",
+      "source_group": "trwiki:59",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=14902314&oldid=14900347",
+      "previous_timestamp": "2014-12-08T06:32:33Z",
+      "revision_timestamp": "2014-12-08T20:48:56Z",
+      "provisional_label": "semantic_content_or_uncertain"
+    },
+    {
+      "id": "trwiki-16292783-16292792",
+      "source_group": "trwiki:59",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=16292792&oldid=16292783",
+      "previous_timestamp": "2015-11-19T19:22:10Z",
+      "revision_timestamp": "2015-11-19T19:22:44Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-16454156-16455640",
+      "source_group": "trwiki:59",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=16455640&oldid=16454156",
+      "previous_timestamp": "2016-01-01T16:18:14Z",
+      "revision_timestamp": "2016-01-01T19:22:24Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-16658159-16675559",
+      "source_group": "trwiki:1518",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=16675559&oldid=16658159",
+      "previous_timestamp": "2016-02-12T16:48:01Z",
+      "revision_timestamp": "2016-02-14T18:45:05Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-17207501-17207515",
+      "source_group": "trwiki:1518",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17207515&oldid=17207501",
+      "previous_timestamp": "2016-06-14T21:11:47Z",
+      "revision_timestamp": "2016-06-14T21:14:44Z",
+      "provisional_label": "contextual_editorial_choice"
+    },
+    {
+      "id": "trwiki-11955127-11955165",
+      "source_group": "trwiki:47106",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=11955165&oldid=11955127",
+      "previous_timestamp": "2012-09-19T11:33:55Z",
+      "revision_timestamp": "2012-09-19T11:40:20Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-13791531-13791796",
+      "source_group": "trwiki:47106",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13791796&oldid=13791531",
+      "previous_timestamp": "2013-09-22T13:40:06Z",
+      "revision_timestamp": "2013-09-22T15:28:07Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-13848219-13848220",
+      "source_group": "trwiki:47106",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13848220&oldid=13848219",
+      "previous_timestamp": "2013-10-19T09:26:37Z",
+      "revision_timestamp": "2013-10-19T09:26:56Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-13887315-13887318",
+      "source_group": "trwiki:47106",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13887318&oldid=13887315",
+      "previous_timestamp": "2013-11-03T16:32:55Z",
+      "revision_timestamp": "2013-11-03T16:33:56Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-16842832-17033026",
+      "source_group": "trwiki:47106",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=17033026&oldid=16842832",
+      "previous_timestamp": "2016-03-25T09:24:41Z",
+      "revision_timestamp": "2016-05-03T06:38:18Z",
+      "provisional_label": "orthography_candidate"
+    },
+    {
+      "id": "trwiki-10022939-10081175",
+      "source_group": "trwiki:684",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=10081175&oldid=10022939",
+      "previous_timestamp": "2011-09-07T18:39:59Z",
+      "revision_timestamp": "2011-09-21T11:25:45Z",
+      "provisional_label": "vandalism_or_revert_candidate"
+    },
+    {
+      "id": "trwiki-13699870-13791384",
+      "source_group": "trwiki:684",
+      "source_url": "https://tr.wikipedia.org/w/index.php?diff=13791384&oldid=13699870",
+      "previous_timestamp": "2013-08-22T21:47:09Z",
+      "revision_timestamp": "2013-09-22T12:20:46Z",
+      "provisional_label": "orthography_candidate"
+    }
+  ],
+  "limitations": [
+    "Source selection is convenience sampling of general-topic encyclopedia pages, not native blog prose.",
+    "Small-edit heuristic overselects spelling and vandalism; a small change is not evidence of editorial improvement.",
+    "Revision author is unknown; later persistence is not verified.",
+    "No candidate is admitted to verified training or held-out evaluation."
+  ]
+}
