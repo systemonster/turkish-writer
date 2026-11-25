@@ -119,3 +119,17 @@ Ham korpus, üçüncü taraf yazıları ve kişisel veri depoya commit edilmez. 
 Qwen3-32B kısa çekirdeğinde 28/52 çıktı kaynak sınırı etiketlerini içerdi; etiketi temizledikten sonra 9/24 koruma vakası birebir. Bu ham çıktı hatasını sonradan başarı sayma. Bazı kollar sayı, başlık, alıntı ve korunan ifadelerde değişiklik yaptı. Mevcut skill, kısa çekirdekle değiştirilmedi. Karar kapısı ve düzenleme adımlarını ayıran deney, bu kusurları hedefliyor.
 
 **Aktif takip:** [HF Job: editor-decision-gate-v3](https://huggingface.co/jobs/lovefengis/6b0646781460ffe1d5e9916c), RTX PRO 6000, azami 60 dakika. Sabit kod commit'i `d298b2d2f0ae9abfe55f4602fbc58636ef5a42a3`. [Deney kodu](run-editor-gate.py). 3 model × 52 vaka için karar (KORU/DÜZELT), doğrudan skill, karar kapılı skill ve karar kapılı kısa edit talimatı. Modelin KORU kararı yalnız model çıktısına dayanır, referans kararı verilmez. Ham kararları, yanlış koruma/düzenleme ve biçim/olgu risklerini ayrı değerlendir. Aynı örnekler geliştirme setidir; bağımsız kalite onayı değildir. Bu deney henüz tamamlanmamıştır; önce sonucu al, aynı işi tekrar başlatma.
+
+## 9. Karar kapısı V3 ve somut bulgu V4
+
+[HF Job: V3](https://huggingface.co/jobs/lovefengis/6b0646781460ffe1d5e9916c) tamamlandı: 156 karar ve 468 çıktı. Geliştirme setinde 24 KORU ve 28 DÜZELT vakası var. Yalnız doğru karar sayısı:
+
+| Model | KORU | DÜZELT | Geçerli karar |
+|---|---:|---:|---:|
+| [Qwen3-8B](results/editorial-gate-v3-qwen-qwen3-8b.json) | 22/24 | 6/28 | 51/52 |
+| [Turkish Gemma 9B](results/editorial-gate-v3-ytu-ce-cosmos-turkish-gemma-9b-v0-1.json) | 23/24 | 5/28 | 52/52 |
+| [Qwen3-32B](results/editorial-gate-v3-qwen-qwen3-32b.json) | 23/24 | 5/28 | 52/52 |
+
+Karar kapısı gereksiz müdahaleyi azaltsa da düzenlenmesi gereken metinleri büyük oranda gözden kaçırdı. Bu haliyle kabul edilmedi. Aynı metni döndürerek literal kontrolü geçmek editoryal başarı değildir.
+
+**Aktif deney V4:** [HF Job](https://huggingface.co/jobs/lovefengis/6b064ad11460ffe1d5e99908), RTX PRO 6000, azami 90 dakika. Sabit commit `183b177e4593d4d98a01fd992a82dd7a6bca691f`, [run-editor-audit.py](run-editor-audit.py). Aynı 52 geliştirme vakası ve üç model üzerinde doğrudan düzenleme, kaynakta birebir alıntıyla kanıtlanan kusurlara göre düzenleme ve karşılaştırmalı son okuma. Karar ve biçim hataları ayrı raporlanır; referans kararları modelden saklanır. Bu deney bir bağımsız insan değerlendirmesi değildir. Tamamlanınca ham sonuçlar ve hata analizi kaydedilir. V3 ve V4 işleri tekrar başlatılmaz; diğer projelerin HF kaynaklarına dokunulmaz.
