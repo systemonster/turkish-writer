@@ -20,15 +20,15 @@
     {
       "id": "6b06629b1460ffe1d5e9bc9b",
       "name": "turkish-writer-exact-span-v5",
-      "state": "RUNNING",
+      "state": "COMPLETED",
       "hardware": "rtx-pro-6000",
       "created": "2026-11-25T04:22:51.998Z",
-      "finished": null,
-      "wall_minutes": null,
+      "finished": "2026-11-25T04:35:06.574Z",
+      "wall_minutes": 12.243,
       "usd_per_hour": 2.75,
       "timeout_seconds": 3600,
       "timeout_rate_usd": 2.75,
-      "wall_time_rate_usd": null,
+      "wall_time_rate_usd": 0.561134,
       "actual_billed_usd": null
     },
     {
@@ -172,6 +172,6 @@
       "actual_billed_usd": null
     }
   ],
-  "known_wall_time_rate_usd": 2.558437,
-  "missing_duration_count": 4
+  "known_wall_time_rate_usd": 3.119571,
+  "missing_duration_count": 3
 }
