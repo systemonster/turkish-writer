@@ -39,7 +39,7 @@ Terimi genelleştirirken nesne ve işlev ayrımını kaybetme. Bir yer imi bir b
 - “Zaten” önceden geçerli olan bir duruma veya bilinen gerekçeye işaret edebilir. “Henüz” beklenen değişikliğin gerçekleşmediğini belirtir. “Hâlâ” devamlılık taşır. Birbirleriyle mekanik olarak değiştirilemez.
 - “O da biliyordu” ile “Onu da biliyordu” arasında vurgulanan öğe farklıdır. Zamir, ek ve odak birlikte okunur.
 - “Bir ara uğrarım” belirsiz zamandır; “bir kez uğrarım” sayıyı sınırlar. “Bir”i yabancı artikel sanıp otomatik silme.
-- “Gelse de konuşmam” ödünsüzlük; “gelirse konuşurum” koşula bağlı eylemdir. Bağlaç ve kip değişince düşünce değişir.
+- “Gelse de konuşmam” ödünleme bildirir: gelmesi, konuşmama kararını değiştirmez. “Gelirse konuşurum” ise konuşmayı gelme koşuluna bağlar. Bağlaç ve kip değişince düşünce değişir.
 
 ## 4. Sıra, odak ve eksilti
 
@@ -51,17 +51,17 @@ Terimi genelleştirirken nesne ve işlev ayrımını kaybetme. Bir yer imi bir b
 
 ## 5. Tür değişince doğru ifade de değişebilir
 
-Aynı olay: Toplantı saat üçte başlayacaktı; toplantı odası hazır olmadığı için yarım saat ertelendi.
+Aynı olay: Toplantı öğleden sonra üçte başlayacaktı; toplantı odası hazır olmadığı için yarım saat ertelendi.
 
 | Tür | Uygun örnek |
 |---|---|
 | Duyuru | Saat 15.00'te başlaması planlanan toplantı, toplantı odası hazır olmadığı için 15.30'a ertelendi. |
-| E-posta | Toplantı saat üçte başlayacaktı. Toplantı odası hazır olmadığı için yarım saat ertelendi. |
+| E-posta | Toplantı öğleden sonra üçte başlayacaktı. Toplantı odası hazır olmadığı için yarım saat ertelendi. |
 | Haber | Saat 15.00'te başlaması planlanan toplantı, toplantı odasının hazır olmaması nedeniyle yarım saat ertelendi. |
-| Kişisel anlatı | Toplantı üçte başlayacaktı; toplantı odası hazır olmayınca yarım saat ertelendi. |
+| Kişisel anlatı | Toplantı öğleden sonra üçte başlayacaktı; toplantı odası hazır olmayınca yarım saat ertelendi. |
 | Kurmaca diyalog (özgün yazma) | — Üçte değil miydi toplantı? / — Oda hazır değilmiş. Üç buçuğa almışlar. |
 
-İlk dört örnekte başlangıçta planlanan saat, ertelemenin gerçekleştiği, yarım saatlik süre ve gerekçe korunur. E-posta veya kişisel anlatı üslubuna geçmek, olayın hâlâ sürdüğünü, anlatıcının toplantıya katıldığını ya da beklediğini söyleme yetkisi vermez. Son örnek ise özgün kurmaca üretimidir: konuşmacıların bilgiyi dolaylı öğrenmesi ve replikler kaynağın parçası değildir. Gerçek bir duyuruyu diyaloga dönüştürmek istendiğinde sözleri gerçek kişilere atfetme; gerekirse bunun örnek bir canlandırma olduğunu belirt.
+İlk dört örnekte başlangıçta planlanan saat (15.00), ertelemenin gerçekleştiği, yarım saatlik süre ve gerekçe korunur. E-posta veya kişisel anlatı üslubuna geçmek, olayın hâlâ sürdüğünü, anlatıcının toplantıya katıldığını ya da beklediğini söyleme yetkisi vermez. Son örnek ise özgün kurmaca üretimidir: konuşmacıların bilgiyi dolaylı öğrenmesi ve replikler kaynağın parçası değildir. Kaynak yalnız “saat üçte” diyorsa sabah/öğleden sonra ayrımı belli değilken bunu 03.00 veya 15.00 olarak kesinleştirme. Gerçek bir duyuruyu diyaloga dönüştürmek istendiğinde sözleri gerçek kişilere atfetme; gerekirse bunun örnek bir canlandırma olduğunu belirt.
 
 **Sicil değişikliği ile iletişim eylemini ayır.** Kaynağın bir olay bildirimi mi, istek mi, taahhüt mü, davet mi olduğunu belirle. E-posta dilini samimileştirirken “ertelendi”yi “erteledik” veya “başlayacağız” yapma; ilki gerçekleşmiş bir kararı bildirirken diğerleri konuşmacının katılımını ya da geleceğe dönük sözünü ekleyebilir. Şimdiki zamanla anlatmak için güncel durumun hâlâ geçerli olduğunu bilmek gerekir.
 
