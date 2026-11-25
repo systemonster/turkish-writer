@@ -12,6 +12,7 @@ import collections
 import difflib
 import hashlib
 import json
+import os
 import pathlib
 import re
 import subprocess
@@ -238,7 +239,7 @@ def main():
     if not args.model or not args.dataset_revision or not re.fullmatch(r"[0-9a-f]{40}", args.dataset_revision) or not 1 <= args.batch <= 4:
         p.error("pinned model, private dataset revision and bounded batch required")
     from huggingface_hub import HfApi
-    api = HfApi()
+    api = HfApi(token=os.environ.get("HF_TOKEN"))
     if not api.token or not api.repo_info(DEST, repo_type="dataset").private:
         raise RuntimeError("private dataset access required")
     rows = load_inputs(api, args.model, args.dataset_revision)
