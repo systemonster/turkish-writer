@@ -74,4 +74,23 @@ Düzenleme: "Dışa aktarmadan önce hesap türünü belirlemek gerekiyor. Stand
 
 Burada ikinci cümle ilkinde belirtilen gerekliliği gerekçesiz tekrar ediyordu. Çekimli yüklem ve doğal zaman ilişkisi düşünceyi açtı. Hesap türü, kapsam, olasılık/olanak ve bilgi eksikliği korundu. Bu bir şablon değil; aynı bilgiye sahip farklı türde metin başka bir anlatım isteyebilir.
 
+## 7. Gerçek düzeltme ile metin değişikliğini birbirinden ayır
+
+50 tarihsel Türkçe Vikipedi düzenleme adayı bağlamıyla yeniden incelendi. Bir değişikliğin kısa, yayımlanmış veya daha yeni olması, onun doğru düzenleme olduğunu göstermez. Kararların kaynak bağlantıları ve revizyon kimlikleri [araştırma kaydında](https://github.com/systemonster/turkish-writer/blob/5e7c8212e847c7a87ca17f78a8dbb6961db5343a/corpus-lab/results/wiki-context-review-v18.json) bulunur. Kaynak: [Türkçe Vikipedi](https://tr.wikipedia.org/) katkıcıları; makale geçmişleri ve önceki/sonraki sürüm bağlantıları kanıt kaydında, [Wikimedia kullanım koşulları](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use) ve CC BY-SA 4.0 geçerlidir. Aşağıdaki örnekler yine proje için bağımsız yazılmıştır; tarihsel alıntı değildir.
+
+**Düzeltmenin kapsamını belirle.** Yazım hatası, bitişik/ayrı yazım ve harf eksikliği yerel olarak giderilebilir. Düzenlemeden sonra paragrafta başka anlatım kusurları kalabilir. Bütün paragrafı sırf bir yazım düzeltmesi yapıldı diye kusursuz sayma. Tersine, kapsamlı düzenleme istenmediyse başka olguları sırf değişiklik yapmış olmak için elden geçirme.
+
+- "Bir çok kullanıcı aynı ayarı kullanıyor." → "Birçok kullanıcı aynı ayarı kullanıyor." Yazım düzeltildi; kullanımın gerçekten yaygın olduğu doğrulanmış olmadı.
+- "Kayıt tamamlandı.çıkmadan önce dosyayı indirmelisiniz." → "Kayıt tamamlandı. Çıkmadan önce dosyayı indirmelisiniz." İki yerel kusuru gider; koşulu, yükümlülüğü veya işlem sırasını değiştirme.
+
+**Terim, kip ve kapsam salt eş anlamlı değişimi değildir.** Teknik terimin işlevini, hedef kitlenin alışkanlığını ve aynı belgedeki kullanımını incele. Kaynağın arayüzündeki etiketi, alıntıyı veya bir ürünün resmi terimini başka sözcükle değiştirme. Bir anlatımda daha kısa sözcük ya da farklı kip seçmek bağlamsal tercih olabilir; otomatik düzeltme gerekçesi değildir.
+
+- "Giriş ekranında Şifre alanını doldurun." Arayüzdeki gerçek etiket "Şifre" ise onu "Parola" yapma.
+- "Bu davranış zaman zaman gözleniyor." → "Bu davranış gözlendi." Süreklilik, tekrar ve zaman ilişkisi değişir. Daha resmî görünen ikinci cümle kendiliğinden daha iyi değildir.
+- "Bütçeyi belirliyoruz ve izliyoruz." → "Bütçeyi planlıyor, belirliyor ve izliyoruz." Yeni bir eylem ekleniyor; kaynak bunu söylemiyorsa düzenleme değil, içerik değişikliğidir.
+
+**Yanlış düzeltmeyi de tanı.** Bir kelimeyi değiştirirken çevresindeki ekleri, cümle ilişkisini ve noktalama işlevini yeniden oku. Listeyi açan iki noktayı sırf her cümle noktayla biter diye silme. Şüpheli imla için güncel yazım kaynağına bak; doğrulanmamış tarihsel değişiklikten kural türetme. Metne ilgisiz bir eklemenin kaldırılması, temiz blog anlatımının nasıl kurulacağını gösteren bir örnek değildir.
+
+Bu revizyonların hiçbiri bağımsız editör altın standardı değildir. Başarılı düzenleme kararı, metnin türü, gerçek kusur, bağlam ve anlamın korunmasıyla gerekçelendirilir; değişiklik sayısıyla değil.
+
 **Sınır:** Derlem örnekleri farklı dönem ve türlerden gelir; tarihsel imla, teknik bilgi, mizah ve editoryal tercih her bağlamda kopyalanmaz. Bu çalışma gözleme dayalı karar kılavuzudur, bağımsız insan editör doğrulaması veya ölçülmüş kalite artışı değildir.
