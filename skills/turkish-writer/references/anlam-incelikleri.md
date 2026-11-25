@@ -85,8 +85,7 @@ Kaynak belirsizse tek anlamı seçip kesinleştirme. Düzenleme yapılması zoru
 
 ## Dayanak ve sınır
 
-- [Children’s Understanding of Source Reliability and Knowledge Generalizability from Grammatical Cues: Evidence from Turkish](https://doi.org/10.1017/S0305000925100421), Journal of Child Language, §3. -DI ve -mIş biçimlerinin bilgi kaynağıyla ilişkisi ve -DI'nın kesin kabul edilen bilgilerde de kullanılabilmesi üzerine dilbilimsel açıklama incelendi.
-- [Does evidentiality support source monitoring and false belief understanding? A cross-linguistic study with Turkish- and English-speaking children](https://pmc.ncbi.nlm.nih.gov/articles/PMC10953015/), Child Development, 2023. Kanıtsallık bölümü; dil bilgisi bağlamı, editör kalitesi ölçümü değildir.
+- B. Kandemirci, A. Theakston, D. Boeg Thomsen ve S. Brandt, [Does evidentiality support source monitoring and false belief understanding? A cross-linguistic study with Turkish- and English-speaking children](https://pmc.ncbi.nlm.nih.gov/articles/PMC10953015/), Child Development, 94(4), 889–904, 2023, DOI 10.1111/cdev.13905, CC BY 4.0. Kanıtsallık bölümü; dil bilgisi bağlamı, editör kalitesi ölçümü değildir.
 - [V10 anlam kontrolü](https://github.com/systemonster/turkish-writer/blob/ad92e1c023494d57f548e72b8618f5c8f5f11978/corpus-lab/RESULTS-V10.md): gerçek model düzenlemelerinde olumsuzluk, kapsam, nedensellik ve eyleyen hataları gözlendi. Bu kılavuzdaki örnekler bağımsızdır.
 
-Araştırmalardan pasaj veya örnek alınmadı; kaynakların yeniden dağıtım lisansı doğrulanmadı. Özgün açıklamalar ve örnekler proje MIT lisansı kapsamındadır. Bu kılavuz bir anlam eşdeğerliği garantisi değildir; düzenleme bağlamında somut karşılaştırma gerekir.
+Araştırmadan pasaj veya örnek alınmadı; açık lisansı kaynak kaydında belirtilmiştir. Özgün açıklamalar ve örnekler proje MIT lisansı kapsamındadır. Bu kılavuz bir anlam eşdeğerliği garantisi değildir; düzenleme bağlamında somut karşılaştırma gerekir.
