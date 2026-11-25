@@ -55,13 +55,29 @@ Aynı olay: Toplantı saat üçte başlayacaktı; toplantı odası hazır olmad�
 
 | Tür | Uygun örnek |
 |---|---|
-| Duyuru | Saat 15.00'te başlayacak toplantı, salon hazır olmadığı için 15.30'a ertelendi. |
-| E-posta | Salon henüz hazır değil. Toplantıya 15.30'da başlayacağız. |
-| Haber | Salonun hazır olmaması nedeniyle toplantı yarım saat ertelendi. |
-| Kişisel anlatı | Toplantı üçte başlayacaktı. Salon hazır olmayınca yarım saat daha bekledik. |
-| Kurmaca diyalog | — Üçte değil miydi toplantı? / — Salon hazır değilmiş. Üç buçuğa almışlar. |
+| Duyuru | Saat 15.00'te başlaması planlanan toplantı, toplantı odası hazır olmadığı için 15.30'a ertelendi. |
+| E-posta | Toplantı saat üçte başlayacaktı. Toplantı odası hazır olmadığı için yarım saat ertelendi. |
+| Haber | Saat 15.00'te başlaması planlanan toplantı, toplantı odasının hazır olmaması nedeniyle yarım saat ertelendi. |
+| Kişisel anlatı | Toplantı üçte başlayacaktı; toplantı odası hazır olmayınca yarım saat ertelendi. |
+| Kurmaca diyalog (özgün yazma) | — Üçte değil miydi toplantı? / — Oda hazır değilmiş. Üç buçuğa almışlar. |
 
-Son iki örnekte anlatıcının beklemesi ve konuşmacıların bilgiyi dolaylı öğrenmesi gibi ek kurmaca ayrıntıları vardır. Bunlar gerçek bir duyuruyu düzenlerken kaynağa eklenmez. Tür farkı, olguyu değiştirme izni değildir. Özgün kurmaca yazarken yazarın belirlediği kurmaca evreninde yeni olay ve replik üretilebilir.
+İlk dört örnekte başlangıçta planlanan saat, ertelemenin gerçekleştiği, yarım saatlik süre ve gerekçe korunur. E-posta veya kişisel anlatı üslubuna geçmek, olayın hâlâ sürdüğünü, anlatıcının toplantıya katıldığını ya da beklediğini söyleme yetkisi vermez. Son örnek ise özgün kurmaca üretimidir: konuşmacıların bilgiyi dolaylı öğrenmesi ve replikler kaynağın parçası değildir. Gerçek bir duyuruyu diyaloga dönüştürmek istendiğinde sözleri gerçek kişilere atfetme; gerekirse bunun örnek bir canlandırma olduğunu belirt.
+
+**Sicil değişikliği ile iletişim eylemini ayır.** Kaynağın bir olay bildirimi mi, istek mi, taahhüt mü, davet mi olduğunu belirle. E-posta dilini samimileştirirken “ertelendi”yi “erteledik” veya “başlayacağız” yapma; ilki gerçekleşmiş bir kararı bildirirken diğerleri konuşmacının katılımını ya da geleceğe dönük sözünü ekleyebilir. Şimdiki zamanla anlatmak için güncel durumun hâlâ geçerli olduğunu bilmek gerekir.
+
+Özgün geliştirme örneği (olgu ve iletişim eylemi ayrımı):
+
+> Başvuruların alınması dün sona erdi. İki formun değerlendirilmesi tamamlanmadı. Bu formlar, eksik belgeler ulaştığında incelenebilecek.
+>
+> Kalan formların incelemeye alınmasının ardından sonuçların bildirilmesi planlanıyor. Bildirim için henüz tarih belirlenmedi.
+
+Gerekçeli sadeleştirme:
+
+> Başvuru süresi dün sona erdi. İki formun değerlendirilmesi henüz tamamlanmadı. Eksik belgeler ulaşınca bu formlar incelenebilecek.
+>
+> Kalan formlar incelemeye alındıktan sonra sonuçların bildirilmesi planlanıyor. Bildirim için henüz tarih belirlenmedi.
+
+“İnceleyeceğiz” (taahhüt), “incelemeyi tamamladıktan sonra” (incelemeye alma yerine bitirme), “en kısa sürede” (yeni zaman vaadi) ya da “eksik belgeleri gönderin” (yeni talimat) kaynakta yoktur. Bu örnek bir bağımsız holdout veya insan onaylı düzenleme çifti değildir; mevcut kılavuzda tür değiştirirken saptanan anlam kaymasını yeniden sınamak için yazılmıştır.
 
 ## 6. Deyim ve sözcük seçimi
 
