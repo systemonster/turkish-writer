@@ -37,6 +37,7 @@ Blog, rehber ve analiz metninde cümleleri tek tek düzeltmeden önce paragrafı
 - [Filtre kararları](references/filtre-kararlari.md): doğru, gereksiz ve zararlı müdahalelerin karşılaştırmaları.
 - [Blog editörü](references/blog-editoru.md): blog ve rehberlerde editoryal yapı, kaynak, katkı ve seri yayın tutarlılığı. Yeni içerik araştırması yalnız yazma/araştırma görevi kapsamındaysa yapılır.
 - [Derlem bulguları](references/derlem-bulgulari.md): gerçek işaretlenmiş Türkçe metinlerden toplu dil bilgisi kanıtı; sayılar kural veya kota değildir.
+- [Tarihsel blog bulguları](references/tarihsel-blog-bulgulari.md): yayımlanmış eski blog yazılarında gözlenen cümle, paragraf ve bağlaç çeşitliliği. Bu gözlemleri bağlama aykırı yasak veya kota yapma.
 - [İleri Türkçe](references/ileri-turkce.md): ulaç, odak, ek eylem, kip, anlam ve özne ilişkileri.
 - [TDK yazım](references/tdk-yazim.md), [ek ve eş dizim](references/tdk-ses-ek-esdizim.md): somut bir yazım veya dil bilgisi sorunu varsa.
 - [Türkçe kalıplar](references/yasakli-kaliplar-tr.md) ve [Türkçeye özgü kullanım](references/turkce-parmak-izi.md): teşhis önerileri. Eski yasaklar, kotalar ve eşikler bu çekirdek filtreyi geçersiz kılamaz.
