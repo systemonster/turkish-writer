@@ -40,4 +40,10 @@ Proje üretimi örnekler geliştirme içindir. Yeni yazar/kaynaklardan izinli ya
 
 ## Durum
 
-Kod ve girdiler hazırlanıyor. Yalnız tamamlanan, model/kol/vaka kimlikleriyle doğrulanan çalışmalar sonuç raporuna alınır. Aktif skill ve master bu deney sonuçlarından önce değiştirilmez.
+Kod ve girdiler `eeea2d17431016c2829c6d1fa19643b31529cedf` commit'inde donduruldu. Manifest SHA-256: `bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9`. Her model için 168 görev: 36 uzun metin, 16 çıkarma, 8 tekrar düzenleme, 48 anlam seçimi, 48 kısa kaynak düzenleme ve 12 brif üretimi.
+
+İlk gpt-oss başlangıcı konteynerde `python` komutu bulunmadığından model çalışmadan durdu; `python3` ile düzeltilmiş `6b06af281460ffe1d5ea5b34` işi 25 Kasım 09:49 UTC'de başlatıldı. Sabit çalışma ortamı `vllm/vllm-openai:v0.11.0`, H200, tek GPU, 60 dakika; model revizyonu `b5c939de8f754692c1647ca79fbf85e8c1e70f8a`. Qwen3-32B revizyonu `9216db5781bf21249d130ec9da846c4624c16137` ikinci aile olarak sıradadır. [Maliyet ve çalışma kaydı](results/compute-ledger-v10.json) fatura yerine geçmez.
+
+Sonuçlar görülmeden yapılan [AI fikstür incelemesi](results/semantic-fixture-review-v10.json), 024'te eyleyenin değişmesi ve 021'de eş zamanlılık ayrıntısı hakkında belirsizlik kaydetti. Ana tablo dondurulmuş 24 örneği korur; ek duyarlılık tabloları yalnız 024 dışarıda 23 örneği ve 021+024 dışarıda 22 örneği gösterir. Bunlar insan hakem kararı değildir; etiketler sonuca bakarak değiştirilmez. 009'daki zaman ifadesi not edilir fakat 5 ml/5 L farkı nedeniyle bu tablolardan çıkarılmaz.
+
+[Uzun metin verisi ve kaynaklar](LONGFORM-V10.md), [dedektör pilotu](DETECTOR-PILOT.md) ve [ölçüm sınırları](DIAGNOSTIC-METRICS.md) ayrıca kaydedildi. Yalnız tamamlanan, model/kol/vaka kimlikleriyle doğrulanan çalışmalar sonuç raporuna alınır. Aktif skill ve master bu deney sonuçlarından önce değiştirilmez.
