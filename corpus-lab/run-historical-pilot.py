@@ -96,8 +96,34 @@ def main():
         ids=out[:,inputs["input_ids"].shape[1]:]
         return [(tok.decode(x,skip_special_tokens=True).strip(),len(x)==max_new and int(x[-1]) not in {tok.eos_token_id,tok.pad_token_id}) for x in ids]
     start=time.monotonic();results=[]
+    slug=re.sub(r"[^a-z0-9]+","-",a.model.lower())
+    checkpoint_path="v10/checkpoints/"+slug+".json"
+    completed_ids=set()
+    # Keep partial work private. Resume only the same model, input, commit and prompt protocol.
+    from huggingface_hub import hf_hub_download
+    from huggingface_hub.errors import EntryNotFoundError
+    try:
+        cached=hf_hub_download(DEST,filename=checkpoint_path,repo_type="dataset",token=token,force_download=True)
+    except EntryNotFoundError:
+        cached=None
+    if cached:
+        saved=json.loads(pathlib.Path(cached).read_text(encoding="utf-8"))
+        identity=("model","revision","git","manifest_sha256","prompt_sha256")
+        if all(saved.get("run",{}).get(k)==info[k] for k in identity):
+            recovered=saved.get("results",[])
+            by_case=collections.defaultdict(list)
+            for row in recovered:by_case[row["id"]].append(row)
+            expected={r["id"]:r["source_sha256"] for r in rows}
+            arms={"baseline","skill","candidate_draft","candidate_reviewed","working_note"}
+            for case_id,items in by_case.items():
+                if case_id not in expected or len(items)!=5 or {x["arm"] for x in items}!=arms or any(x.get("model")!=a.model or x.get("source_sha256")!=expected[case_id] for x in items):
+                    raise RuntimeError("invalid checkpoint coverage")
+            completed_ids=set(by_case)
+            results=recovered
+            print("CHECKPOINT_RESUMED "+json.dumps({"model":a.model,"cases":len(completed_ids)}),flush=True)
     for i in range(0,len(rows),a.batch):
-        group=rows[i:i+a.batch]
+        group=[r for r in rows[i:i+a.batch] if r["id"] not in completed_ids]
+        if not group:continue
         baseline,current,plans,draft,final=run_batch(group,infer,skill)
         for r,b,c,pn,d,f in zip(group,baseline,current,plans,draft,final):
             arms={"baseline":b,"skill":c,"candidate_draft":d,"candidate_reviewed":f}
@@ -107,9 +133,14 @@ def main():
                 # Only non-text diagnostics in job logs.
                 print("PILOT_RESULT "+json.dumps({k:v for k,v in row.items() if k!="output"},ensure_ascii=False),flush=True)
             results.append({"id":r["id"],"model":a.model,"arm":"working_note","source_sha256":r["source_sha256"],"output":pn[0],"at_limit":pn[1],"license":"CC BY-SA 4.0"})
-        print("PROGRESS "+json.dumps({"model":a.model,"finished":i+len(group),"elapsed_seconds":round(time.monotonic()-start,2)}),flush=True)
-    payload={"run":info,"results":results}
-    path="v10/"+re.sub(r"[^a-z0-9]+","-",a.model.lower())+".json"
+        completed_ids.update(r["id"] for r in group)
+        payload={"run":info,"results":results,"complete":False,"completed_cases":len(completed_ids)}
+        api.upload_file(path_or_fileobj=json.dumps(payload,ensure_ascii=False).encode("utf-8"),path_in_repo=checkpoint_path,repo_id=DEST,repo_type="dataset",commit_message="Checkpoint historical pilot batch")
+        print("PROGRESS "+json.dumps({"model":a.model,"finished":len(completed_ids),"elapsed_seconds":round(time.monotonic()-start,2)}),flush=True)
+    if len(completed_ids)!=len(rows) or len(results)!=len(rows)*5:
+        raise RuntimeError("incomplete pilot output coverage")
+    payload={"run":info,"results":results,"complete":True,"completed_cases":len(completed_ids)}
+    path="v10/"+slug+".json"
     api.upload_file(path_or_fileobj=json.dumps(payload,ensure_ascii=False).encode("utf-8"),path_in_repo=path,repo_id=DEST,repo_type="dataset",commit_message="Save historical pilot outputs and model metadata")
     print("PILOT_COMPLETE "+json.dumps({"model":a.model,"cases":len(rows),"outputs":len(rows)*4,"private_artifact":path}),flush=True)
 if __name__=="__main__":main()
