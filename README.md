@@ -35,12 +35,13 @@ Ya da yalnız bir projede kullanmak için `.claude/skills/` altına kopyalayın.
 
 ### V2 geliştirme dalı (henüz yayımlanmadı)
 
-Aşağıdaki kurulum yalnız geliştirme adayını denemek içindir; kararlı sürümü değiştirmez:
+Aşağıdaki kurulum yalnız geliştirme adayını ayrı bir proje dizininde denemek içindir:
 
 ```bash
 git clone --branch native-turkish-editor-v2 --single-branch https://github.com/systemonster/turkish-writer.git turkish-writer-v2
-mkdir -p ~/.claude/skills
-cp -r turkish-writer-v2/skills/turkish-writer ~/.claude/skills/
+cd turkish-writer-v2
+mkdir -p .claude/skills
+cp -r skills/turkish-writer .claude/skills/
 ```
 
 Mevcut bir kurulumu korumak istiyorsanız ayrı bir deneme ortamı kullanın.
@@ -164,7 +165,9 @@ dil modeli onu hâlâ tanıyor.
 npm test
 ```
 
-## Kaynaklar
+## Kaynaklar ve teşekkür
+
+Daron Yöndem'e, SUDO Portal yazarlarına, Boğaziçi Üniversitesi/TABILAB UD Turkish BOUN ekibine ve katkıcılarına; ayrıca yerleşik Unicode bileşeni için Guillaume Meyer ve watermarks-remover katkıcılarına teşekkür ederiz. [Derlem kaynakları ve lisanslar](corpus-lab/LICENSE-DATA.md) ayrı kayıttadır.
 
 Wikipedia'nın "Signs of AI writing" sayfası, blader/humanizer, no-ai-slop,
 avoid-ai-writing, insanca, turkish-humanify, TDK Yazım Kılavuzu, Güncel Türkçe Sözlük,
