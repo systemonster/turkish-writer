@@ -21,36 +21,36 @@
     {
       "id": "6b06d395b6a90bbe997d2751",
       "name": "turkish-writer-v14-local-repair",
-      "stage": "RUNNING",
+      "stage": "COMPLETED",
       "hardware": "rtx-pro-6000",
       "created_at": "2026-11-25T12:24:53.354Z",
-      "finished_at": null,
-      "wall_seconds": null,
+      "finished_at": "2026-11-25T12:41:41.023Z",
+      "wall_seconds": 1007.669,
       "timeout_seconds": 1500,
       "usd_per_hour": 2.75,
       "nominal_max_usd": 1.1458333333333333,
-      "wall_rate_estimate_usd": null,
+      "wall_rate_estimate_usd": 0.7697471527777778,
       "actual_billed_usd": null,
       "code_commit": "5ac0e55bc8819b3b47eafb9e732ca737334a59f1"
     },
     {
       "id": "6b06d397b6a90bbe997d275a",
       "name": "turkish-writer-v14-watch",
-      "stage": "RUNNING",
+      "stage": "COMPLETED",
       "hardware": "cpu-basic",
       "created_at": "2026-11-25T12:24:55.841Z",
-      "finished_at": null,
-      "wall_seconds": null,
+      "finished_at": "2026-11-25T12:41:52.048Z",
+      "wall_seconds": 1016.207,
       "timeout_seconds": 1920,
       "usd_per_hour": 0.01,
       "nominal_max_usd": 0.005333333333333333,
-      "wall_rate_estimate_usd": null,
+      "wall_rate_estimate_usd": 0.002822797222222222,
       "actual_billed_usd": null,
       "code_commit": "5ac0e55bc8819b3b47eafb9e732ca737334a59f1"
     }
   ],
   "prior_known_wall_rate_usd": 9.76390185,
-  "new_known_wall_rate_usd": 0.00007511111111111111,
+  "new_known_wall_rate_usd": 0.7726450611111112,
   "actual_total_usd": null,
-  "combined_known_wall_rate_usd": 9.76397696111111
+  "combined_known_wall_rate_usd": 10.536546911111111
 }
