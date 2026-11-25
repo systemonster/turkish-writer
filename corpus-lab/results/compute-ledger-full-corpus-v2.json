@@ -67,17 +67,47 @@
       "id": "6b06f5aab6a90bbe997dacf9",
       "name": "turkish-writer-fineweb-text-shard0-v3",
       "hardware": "cpu-basic",
-      "stage": "RUNNING",
+      "stage": "COMPLETED",
       "created_at": "2026-11-25T14:50:18.081Z",
-      "finished_at": null,
+      "finished_at": "2026-11-25T14:59:32.130Z",
       "timeout_seconds": 1500,
-      "wall_seconds": null,
+      "wall_seconds": 554.049,
       "usd_per_hour": 0.01,
       "nominal_max_usd": 0.004166666666666667,
-      "wall_rate_estimate_usd": null,
+      "wall_rate_estimate_usd": 0.001539025,
       "actual_billed_usd": null,
       "code_commit": "4136b6f2c8c85f96fbb14059b1e9064c021027b4"
+    },
+    {
+      "id": "6b06fc93d91f621b93083372",
+      "name": "turkish-writer-corpus-v3-regressions",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T15:19:47.531Z",
+      "finished_at": "2026-11-25T15:20:02.057Z",
+      "timeout_seconds": 300,
+      "wall_seconds": 14.526,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0008333333333333334,
+      "wall_rate_estimate_usd": 0.00004035,
+      "actual_billed_usd": null,
+      "code_commit": "0135d24e25e4240d9350a0c45b358a6e542de25b"
+    },
+    {
+      "id": "6b06fca9d91f621b930833b6",
+      "name": "turkish-writer-fineweb-text-range-001-024-v3",
+      "hardware": "cpu-upgrade",
+      "stage": "RUNNING",
+      "created_at": "2026-11-25T15:20:09.917Z",
+      "finished_at": null,
+      "timeout_seconds": 3600,
+      "wall_seconds": null,
+      "usd_per_hour": 0.03,
+      "nominal_max_usd": 0.03,
+      "wall_rate_estimate_usd": null,
+      "actual_billed_usd": null,
+      "code_commit": "0135d24e25e4240d9350a0c45b358a6e542de25b"
     }
   ],
-  "known_wall_rate_usd": 0.00039560833333333336
+  "known_wall_rate_usd": 0.0019749833333333336
 }
