@@ -20,10 +20,10 @@ def pair(row,old,new):
     changed=[i for i,(x,y) in enumerate(zip(a,b)) if x!=y]
     if len(changed)!=1:return None,"multiple_changes"
     i=changed[0];x,y=a[i],b[i]
-    if any(not 80<=len(t)<=2200 or re.search(r"[<>{}\\[\\]|#=*]|https?://|www\\.|@|'{2,}|^[:;!]",t,re.I) or re.search(r"[\\x00-\\x1f\\x7f]",t) for t in (x,y)):return None,"markup_or_private_data"
-    if re.findall(r"\\d+",x)!=re.findall(r"\\d+",y):return None,"numeric_change"
+    if any(not 80<=len(t)<=2200 or re.search(r"[<>{}\[\]|#=*]|https?://|www\.|@|'{2,}|^[:;!]",t,re.I) or re.search(r"[\x00-\x1f\x7f]",t) for t in (x,y)):return None,"markup_or_private_data"
+    if re.findall(r"\d+",x)!=re.findall(r"\d+",y):return None,"numeric_change"
     # Reject potential personal-contact identifiers even if numbers were unchanged.
-    if any(re.search(r"\\b(?:\\+?90[ -]?)?0?5\\d{2}[ -]?\\d{3}[ -]?\\d{2}[ -]?\\d{2}\\b|\\b\\d{11}\\b",t) for t in (x,y)):return None,"private_data_risk"
+    if any(re.search(r"\b(?:\+?90[ -]?)?0?5\d{2}[ -]?\d{3}[ -]?\d{2}[ -]?\d{2}\b|\b\d{11}\b",t) for t in (x,y)):return None,"private_data_risk"
     return {**row,"page_title":old["title"],"before":x,"after":y,"before_sha256":sha(x),"after_sha256":sha(y),
         "attribution":{"contributors":"Wikipedia contributors; see linked article history and stable revisions",
         "previous_revision":"https://tr.wikipedia.org/w/index.php?oldid="+str(old["revid"]),
