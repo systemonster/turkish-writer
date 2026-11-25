@@ -1,0 +1,53 @@
+{
+  "as_of": "2026-11-25",
+  "pricing_source": "https://huggingface.co/docs/hub/en/jobs-pricing",
+  "scope": "New full-pass corpus and FineWeb metadata census jobs only; separate from previous ledgers; actual billing unknown",
+  "rows": [
+    {
+      "id": "6b06f3dfd91f621b93081777",
+      "name": "turkish-writer-full-licensed-corpus-v2",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T14:42:39.925Z",
+      "finished_at": "2026-11-25T14:43:34.137Z",
+      "timeout_seconds": 480,
+      "wall_seconds": 54.212,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0013333333333333333,
+      "wall_rate_estimate_usd": 0.0001505888888888889,
+      "actual_billed_usd": null,
+      "code_commit": "45fb5b69231deaa70613a21bbf5d6505aea3c24f"
+    },
+    {
+      "id": "6b06f416b6a90bbe997da88c",
+      "name": "turkish-writer-fineweb-full-census-preflight",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T14:43:34.781Z",
+      "finished_at": "2026-11-25T14:44:00.759Z",
+      "timeout_seconds": 300,
+      "wall_seconds": 25.978,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0008333333333333334,
+      "wall_rate_estimate_usd": 0.00007216111111111112,
+      "actual_billed_usd": null,
+      "code_commit": "d6f61f331950a69d2c323de6affad08d57be8bbd"
+    },
+    {
+      "id": "6b06f44cd91f621b930818b0",
+      "name": "turkish-writer-fineweb-full-census",
+      "hardware": "cpu-basic",
+      "stage": "RUNNING",
+      "created_at": "2026-11-25T14:44:28.636Z",
+      "finished_at": null,
+      "timeout_seconds": 3600,
+      "wall_seconds": null,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.01,
+      "wall_rate_estimate_usd": null,
+      "actual_billed_usd": null,
+      "code_commit": "d6f61f331950a69d2c323de6affad08d57be8bbd"
+    }
+  ],
+  "known_wall_rate_usd": 0.00022275000000000002
+}
