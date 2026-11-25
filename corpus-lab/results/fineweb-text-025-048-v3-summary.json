@@ -1,0 +1,307 @@
+{
+  "date": "2026-11-25",
+  "source": "https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned",
+  "source_revision": "7c5bd76fa456f1748ceb603d8e57acf24a173339",
+  "scope": "Fixed aggregate cue analysis of filtered texts; no raw text, URLs or person identifiers retained in this result.",
+  "job_id": "6b070b2ad91f621b930865f5",
+  "code_commit": "0135d24e25e4240d9350a0c45b358a6e542de25b",
+  "stage": "COMPLETED",
+  "monitor_job_id": "6b07110db6a90bbe997e02ce",
+  "range": [
+    25,
+    48
+  ],
+  "inventory": {
+    "rows": 7789899,
+    "texts_processed": 5862930,
+    "metadata_not_selected": 1925874,
+    "over_length_bound": 1095
+  },
+  "counts": {
+    "heuristic_sentences": 165166074,
+    "words_in_segments": 2200321652,
+    "unmarked_segment_starts": 156324675,
+    "before_after_sentence_cues": 1772574,
+    "dialogue_line_cues": 314742,
+    "method_cue_sentence_cues": 19622882,
+    "nominal_chain_sentence_cues": 61103,
+    "reported_sentence_cues": 3906599,
+    "scope_sentence_cues": 3976301,
+    "stance_sentence_cues": 235327,
+    "uncertainty_sentence_cues": 1253089,
+    "without_sentence_cues": 2467185,
+    "question_endings": 5203203,
+    "length_1_7": 50545538,
+    "length_8_15": 64776215,
+    "length_16_30": 41354501,
+    "length_31_plus": 8489820
+  },
+  "shards": [
+    {
+      "shard": 25,
+      "rows": 321147,
+      "texts_processed": 222653,
+      "heuristic_sentences": 6280386,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 26,
+      "rows": 328349,
+      "texts_processed": 261681,
+      "heuristic_sentences": 7383150,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 27,
+      "rows": 330245,
+      "texts_processed": 245082,
+      "heuristic_sentences": 6801370,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 28,
+      "rows": 327014,
+      "texts_processed": 235206,
+      "heuristic_sentences": 6466902,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 29,
+      "rows": 321241,
+      "texts_processed": 276268,
+      "heuristic_sentences": 8141619,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 30,
+      "rows": 311343,
+      "texts_processed": 231780,
+      "heuristic_sentences": 6849442,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 31,
+      "rows": 331495,
+      "texts_processed": 271459,
+      "heuristic_sentences": 7666746,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 32,
+      "rows": 318534,
+      "texts_processed": 240963,
+      "heuristic_sentences": 6971316,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 33,
+      "rows": 326753,
+      "texts_processed": 245490,
+      "heuristic_sentences": 6844567,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 34,
+      "rows": 316124,
+      "texts_processed": 221398,
+      "heuristic_sentences": 6312427,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 35,
+      "rows": 331692,
+      "texts_processed": 255089,
+      "heuristic_sentences": 7081921,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 36,
+      "rows": 338147,
+      "texts_processed": 303404,
+      "heuristic_sentences": 8629914,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 37,
+      "rows": 311185,
+      "texts_processed": 242716,
+      "heuristic_sentences": 7122387,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 38,
+      "rows": 310157,
+      "texts_processed": 206130,
+      "heuristic_sentences": 6017683,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 39,
+      "rows": 335219,
+      "texts_processed": 277418,
+      "heuristic_sentences": 7743583,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 40,
+      "rows": 309737,
+      "texts_processed": 210096,
+      "heuristic_sentences": 6063303,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 41,
+      "rows": 337224,
+      "texts_processed": 283727,
+      "heuristic_sentences": 7873674,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 42,
+      "rows": 327256,
+      "texts_processed": 233908,
+      "heuristic_sentences": 6440676,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 43,
+      "rows": 326661,
+      "texts_processed": 239775,
+      "heuristic_sentences": 6633699,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 44,
+      "rows": 327103,
+      "texts_processed": 238045,
+      "heuristic_sentences": 6589150,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 45,
+      "rows": 325835,
+      "texts_processed": 237167,
+      "heuristic_sentences": 6541956,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 46,
+      "rows": 320805,
+      "texts_processed": 207802,
+      "heuristic_sentences": 5703767,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 47,
+      "rows": 334285,
+      "texts_processed": 257843,
+      "heuristic_sentences": 7015912,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    },
+    {
+      "shard": 48,
+      "rows": 322348,
+      "texts_processed": 217830,
+      "heuristic_sentences": 5990524,
+      "row_balance_verified": true,
+      "marker_balance_verified": true,
+      "length_balance_verified": true
+    }
+  ],
+  "cumulative_000_048": {
+    "rows": 15878370,
+    "texts_processed": 12130858,
+    "metadata_not_selected": 3745145,
+    "over_length_bound": 2367,
+    "heuristic_sentences": 344807671,
+    "words_in_segments": 4595958993,
+    "unmarked_segment_starts": 326278803
+  },
+  "metadata_census": {
+    "source_revision": "7c5bd76fa456f1748ceb603d8e57acf24a173339",
+    "jobs": [
+      "6b06f416b6a90bbe997da88c",
+      "6b06f44cd91f621b930818b0",
+      "6b070863b6a90bbe997dea43"
+    ],
+    "initial_job_stage": "ERROR (timeout; checkpoints 0–148 retained)",
+    "resume_stage": "COMPLETED",
+    "checkpoint_verification_job": "6b071807d91f621b93088f8e",
+    "checkpoint_count": 203,
+    "rows": 63260614,
+    "rows_000_148": 47494931,
+    "rows_149_202": 15765683,
+    "candidates": 42839790,
+    "manifest_sha256": "d5c0623dd2de5f18c84d4eec491fc3dde8e17ec22be234abcb729433841b3ee3",
+    "candidate_years": {
+      "2013": 55101,
+      "2014": 429381,
+      "2015": 260413,
+      "2016": 1977218,
+      "2017": 8090432,
+      "2018": 6760854,
+      "2019": 7272564,
+      "2020": 7790269,
+      "2021": 10203558
+    },
+    "scope": "Metadata only; all 203 checkpoint bytes were independently read and hashed from one fixed private revision. This is not full document text coverage."
+  },
+  "validation": [
+    "All 24 text checkpoints read individually, source revision and shard identity match; inventory, length bins and marker counts balance.",
+    "Terminal log and independent monitor contain the exact 25–48 range.",
+    "Text checkpoint hashes were not independently recomputed; last four worker log inventory counts matched."
+  ],
+  "limitations": [
+    "Crawl date is not publication date; no deduplication, human authorship, literary quality or license inferred from score.",
+    "Counts are heuristic matches, not verified sentences or discourse labels.",
+    "Source database is attributed to Furkan Yılmaz, Aleyna Taşdemir, Faruk Gözay and Bekir Top; ODC-By is database-level, not a grant of document redistribution rights.",
+    "Not held-out human editorial evidence."
+  ],
+  "quality_verified": false
+}
