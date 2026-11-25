@@ -1,0 +1,931 @@
+{
+  "archive_bytes": 172595845,
+  "discourse_profile": {
+    "adjacent_marker_counts": [
+      [
+        "unmarked",
+        "unmarked",
+        6011
+      ],
+      [
+        "unmarked",
+        "contrast",
+        229
+      ],
+      [
+        "contrast",
+        "unmarked",
+        218
+      ],
+      [
+        "condition",
+        "unmarked",
+        166
+      ],
+      [
+        "unmarked",
+        "condition",
+        163
+      ],
+      [
+        "unmarked",
+        "sequence",
+        142
+      ],
+      [
+        "sequence",
+        "unmarked",
+        133
+      ],
+      [
+        "unmarked",
+        "explanation",
+        108
+      ],
+      [
+        "explanation",
+        "unmarked",
+        108
+      ],
+      [
+        "question",
+        "unmarked",
+        96
+      ],
+      [
+        "unmarked",
+        "addition",
+        84
+      ],
+      [
+        "example",
+        "unmarked",
+        78
+      ],
+      [
+        "inference",
+        "unmarked",
+        76
+      ],
+      [
+        "addition",
+        "unmarked",
+        75
+      ],
+      [
+        "unmarked",
+        "inference",
+        74
+      ],
+      [
+        "unmarked",
+        "example",
+        72
+      ],
+      [
+        "summary",
+        "unmarked",
+        23
+      ],
+      [
+        "unmarked",
+        "summary",
+        18
+      ],
+      [
+        "condition",
+        "condition",
+        13
+      ],
+      [
+        "contrast",
+        "explanation",
+        11
+      ],
+      [
+        "contrast",
+        "contrast",
+        7
+      ],
+      [
+        "sequence",
+        "condition",
+        6
+      ],
+      [
+        "contrast",
+        "condition",
+        5
+      ],
+      [
+        "condition",
+        "contrast",
+        5
+      ],
+      [
+        "sequence",
+        "sequence",
+        5
+      ],
+      [
+        "sequence",
+        "example",
+        4
+      ],
+      [
+        "condition",
+        "explanation",
+        4
+      ],
+      [
+        "explanation",
+        "condition",
+        4
+      ],
+      [
+        "contrast",
+        "addition",
+        4
+      ],
+      [
+        "addition",
+        "contrast",
+        4
+      ],
+      [
+        "explanation",
+        "sequence",
+        4
+      ],
+      [
+        "addition",
+        "condition",
+        3
+      ],
+      [
+        "question",
+        "example",
+        3
+      ],
+      [
+        "condition",
+        "example",
+        3
+      ],
+      [
+        "contrast",
+        "inference",
+        3
+      ],
+      [
+        "addition",
+        "summary",
+        3
+      ],
+      [
+        "sequence",
+        "inference",
+        3
+      ],
+      [
+        "explanation",
+        "contrast",
+        3
+      ],
+      [
+        "contrast",
+        "example",
+        3
+      ],
+      [
+        "example",
+        "contrast",
+        2
+      ],
+      [
+        "explanation",
+        "explanation",
+        2
+      ],
+      [
+        "inference",
+        "contrast",
+        2
+      ],
+      [
+        "example",
+        "inference",
+        2
+      ],
+      [
+        "addition",
+        "sequence",
+        2
+      ],
+      [
+        "example",
+        "addition",
+        2
+      ],
+      [
+        "explanation",
+        "example",
+        2
+      ],
+      [
+        "inference",
+        "sequence",
+        2
+      ],
+      [
+        "condition",
+        "inference",
+        2
+      ],
+      [
+        "sequence",
+        "addition",
+        1
+      ],
+      [
+        "addition",
+        "example",
+        1
+      ],
+      [
+        "question",
+        "addition",
+        1
+      ],
+      [
+        "addition",
+        "inference",
+        1
+      ],
+      [
+        "inference",
+        "condition",
+        1
+      ],
+      [
+        "example",
+        "condition",
+        1
+      ],
+      [
+        "addition",
+        "addition",
+        1
+      ],
+      [
+        "sequence",
+        "contrast",
+        1
+      ],
+      [
+        "inference",
+        "addition",
+        1
+      ],
+      [
+        "example",
+        "sequence",
+        1
+      ],
+      [
+        "example",
+        "explanation",
+        1
+      ],
+      [
+        "explanation",
+        "addition",
+        1
+      ],
+      [
+        "sequence",
+        "summary",
+        1
+      ],
+      [
+        "question",
+        "sequence",
+        1
+      ],
+      [
+        "sequence",
+        "explanation",
+        1
+      ],
+      [
+        "explanation",
+        "summary",
+        1
+      ],
+      [
+        "question",
+        "condition",
+        1
+      ],
+      [
+        "condition",
+        "sequence",
+        1
+      ]
+    ],
+    "after_question_counts": {
+      "addition": 1,
+      "condition": 1,
+      "example": 3,
+      "sequence": 1,
+      "unmarked": 96
+    },
+    "coverage": {
+      "documents": 103,
+      "paragraphs": 2405,
+      "questions": 103,
+      "sentences": 8113,
+      "words": 96480
+    },
+    "marker_position_counts": {
+      "addition": {
+        "inside_paragraph": 87,
+        "paragraph_start": 8
+      },
+      "condition": {
+        "inside_paragraph": 141,
+        "paragraph_start": 56
+      },
+      "contrast": {
+        "inside_paragraph": 237,
+        "paragraph_start": 16
+      },
+      "example": {
+        "inside_paragraph": 81,
+        "paragraph_start": 7
+      },
+      "explanation": {
+        "inside_paragraph": 120,
+        "paragraph_start": 7
+      },
+      "inference": {
+        "inside_paragraph": 78,
+        "paragraph_start": 7
+      },
+      "sequence": {
+        "inside_paragraph": 111,
+        "paragraph_start": 47
+      },
+      "summary": {
+        "inside_paragraph": 15,
+        "paragraph_start": 8
+      },
+      "unmarked": {
+        "inside_paragraph": 4838,
+        "opening": 103,
+        "paragraph_start": 2146
+      }
+    },
+    "marker_sentence_lengths": {
+      "addition": {
+        "mean": 12.52,
+        "median": 11,
+        "n": 95,
+        "p10": 7,
+        "p90": 20
+      },
+      "condition": {
+        "mean": 14.6,
+        "median": 14,
+        "n": 197,
+        "p10": 8,
+        "p90": 22
+      },
+      "contrast": {
+        "mean": 11.57,
+        "median": 10,
+        "n": 253,
+        "p10": 5,
+        "p90": 20
+      },
+      "example": {
+        "mean": 14.51,
+        "median": 14,
+        "n": 88,
+        "p10": 7,
+        "p90": 24
+      },
+      "explanation": {
+        "mean": 10.65,
+        "median": 10,
+        "n": 127,
+        "p10": 5,
+        "p90": 18
+      },
+      "inference": {
+        "mean": 11.59,
+        "median": 10,
+        "n": 85,
+        "p10": 6,
+        "p90": 20
+      },
+      "sequence": {
+        "mean": 10.2,
+        "median": 9,
+        "n": 158,
+        "p10": 5,
+        "p90": 17
+      },
+      "summary": {
+        "mean": 13.13,
+        "median": 13,
+        "n": 23,
+        "p10": 6,
+        "p90": 21
+      }
+    },
+    "years": {
+      "2011": 17,
+      "2012": 18,
+      "2013": 31,
+      "2014": 14,
+      "2016": 7,
+      "2017": 15,
+      "2018": 1
+    }
+  },
+  "distinct_author_metadata_groups": 32,
+  "fixed_cues": {
+    "counts": {
+      "before_after_sentence_cues": 209,
+      "heuristic_sentences": 8113,
+      "length_16_30": 1640,
+      "length_1_7": 2105,
+      "length_31_plus": 137,
+      "length_8_15": 4231,
+      "method_cue_sentence_cues": 1198,
+      "nonempty_lines": 2405,
+      "question_endings": 103,
+      "reported_sentence_cues": 3,
+      "scope_sentence_cues": 269,
+      "stance_sentence_cues": 6,
+      "uncertainty_sentence_cues": 67,
+      "without_sentence_cues": 170,
+      "words_in_segments": 96276
+    },
+    "marker_positions": [
+      [
+        "inside_line",
+        "unmarked",
+        4838
+      ],
+      [
+        "line_start",
+        "unmarked",
+        2249
+      ],
+      [
+        "inside_line",
+        "contrast",
+        237
+      ],
+      [
+        "inside_line",
+        "condition",
+        141
+      ],
+      [
+        "inside_line",
+        "explanation",
+        120
+      ],
+      [
+        "inside_line",
+        "sequence",
+        111
+      ],
+      [
+        "inside_line",
+        "addition",
+        87
+      ],
+      [
+        "inside_line",
+        "example",
+        81
+      ],
+      [
+        "inside_line",
+        "inference",
+        78
+      ],
+      [
+        "line_start",
+        "condition",
+        56
+      ],
+      [
+        "line_start",
+        "sequence",
+        47
+      ],
+      [
+        "line_start",
+        "contrast",
+        16
+      ],
+      [
+        "inside_line",
+        "summary",
+        15
+      ],
+      [
+        "line_start",
+        "summary",
+        8
+      ],
+      [
+        "line_start",
+        "addition",
+        8
+      ],
+      [
+        "line_start",
+        "explanation",
+        7
+      ],
+      [
+        "line_start",
+        "example",
+        7
+      ],
+      [
+        "line_start",
+        "inference",
+        7
+      ]
+    ],
+    "transitions": [
+      [
+        "unmarked",
+        "unmarked",
+        6011
+      ],
+      [
+        "unmarked",
+        "contrast",
+        229
+      ],
+      [
+        "contrast",
+        "unmarked",
+        218
+      ],
+      [
+        "condition",
+        "unmarked",
+        166
+      ],
+      [
+        "unmarked",
+        "condition",
+        163
+      ],
+      [
+        "unmarked",
+        "sequence",
+        142
+      ],
+      [
+        "sequence",
+        "unmarked",
+        133
+      ],
+      [
+        "unmarked",
+        "explanation",
+        108
+      ],
+      [
+        "explanation",
+        "unmarked",
+        108
+      ],
+      [
+        "question",
+        "unmarked",
+        96
+      ],
+      [
+        "unmarked",
+        "addition",
+        84
+      ],
+      [
+        "example",
+        "unmarked",
+        78
+      ],
+      [
+        "inference",
+        "unmarked",
+        76
+      ],
+      [
+        "addition",
+        "unmarked",
+        75
+      ],
+      [
+        "unmarked",
+        "inference",
+        74
+      ],
+      [
+        "unmarked",
+        "example",
+        72
+      ],
+      [
+        "summary",
+        "unmarked",
+        23
+      ],
+      [
+        "unmarked",
+        "summary",
+        18
+      ],
+      [
+        "condition",
+        "condition",
+        13
+      ],
+      [
+        "contrast",
+        "explanation",
+        11
+      ],
+      [
+        "contrast",
+        "contrast",
+        7
+      ],
+      [
+        "sequence",
+        "condition",
+        6
+      ],
+      [
+        "contrast",
+        "condition",
+        5
+      ],
+      [
+        "condition",
+        "contrast",
+        5
+      ],
+      [
+        "sequence",
+        "sequence",
+        5
+      ],
+      [
+        "sequence",
+        "example",
+        4
+      ],
+      [
+        "condition",
+        "explanation",
+        4
+      ],
+      [
+        "explanation",
+        "condition",
+        4
+      ],
+      [
+        "contrast",
+        "addition",
+        4
+      ],
+      [
+        "addition",
+        "contrast",
+        4
+      ],
+      [
+        "explanation",
+        "sequence",
+        4
+      ],
+      [
+        "addition",
+        "condition",
+        3
+      ],
+      [
+        "question",
+        "example",
+        3
+      ],
+      [
+        "condition",
+        "example",
+        3
+      ],
+      [
+        "contrast",
+        "inference",
+        3
+      ],
+      [
+        "addition",
+        "summary",
+        3
+      ],
+      [
+        "sequence",
+        "inference",
+        3
+      ],
+      [
+        "explanation",
+        "contrast",
+        3
+      ],
+      [
+        "contrast",
+        "example",
+        3
+      ],
+      [
+        "example",
+        "contrast",
+        2
+      ],
+      [
+        "explanation",
+        "explanation",
+        2
+      ],
+      [
+        "inference",
+        "contrast",
+        2
+      ],
+      [
+        "example",
+        "inference",
+        2
+      ],
+      [
+        "addition",
+        "sequence",
+        2
+      ],
+      [
+        "example",
+        "addition",
+        2
+      ],
+      [
+        "explanation",
+        "example",
+        2
+      ],
+      [
+        "inference",
+        "sequence",
+        2
+      ],
+      [
+        "condition",
+        "inference",
+        2
+      ],
+      [
+        "sequence",
+        "addition",
+        1
+      ],
+      [
+        "addition",
+        "example",
+        1
+      ],
+      [
+        "question",
+        "addition",
+        1
+      ],
+      [
+        "addition",
+        "inference",
+        1
+      ],
+      [
+        "inference",
+        "condition",
+        1
+      ],
+      [
+        "example",
+        "condition",
+        1
+      ],
+      [
+        "addition",
+        "addition",
+        1
+      ],
+      [
+        "sequence",
+        "contrast",
+        1
+      ],
+      [
+        "inference",
+        "addition",
+        1
+      ],
+      [
+        "example",
+        "sequence",
+        1
+      ],
+      [
+        "example",
+        "explanation",
+        1
+      ],
+      [
+        "explanation",
+        "addition",
+        1
+      ],
+      [
+        "sequence",
+        "summary",
+        1
+      ],
+      [
+        "question",
+        "sequence",
+        1
+      ],
+      [
+        "sequence",
+        "explanation",
+        1
+      ],
+      [
+        "explanation",
+        "summary",
+        1
+      ],
+      [
+        "question",
+        "condition",
+        1
+      ],
+      [
+        "condition",
+        "sequence",
+        1
+      ]
+    ]
+  },
+  "inventory": {
+    "post_files_seen": 103,
+    "prose_posts": 103
+  },
+  "limitations": [
+    "The pinned archive is not the whole Turkish web or a representative literary corpus.",
+    "Some posts may be translations, quotes, or technical code; no original-author verification at the individual article level.",
+    "No raw text or author identity exported."
+  ],
+  "rights_evidence": [
+    "https://ubuntu-tr.github.io/cekirdek-nedir-ne-yapar",
+    "https://bugra9.github.io/sendeyaz/"
+  ],
+  "scope": "entire pinned archive Markdown post inventory; eligible pre-2022 prose only, automatic parsing, not human editorial gold",
+  "source": "https://github.com/ubuntu-tr/ubuntu-tr.github.io/tree/18cd8b55645f92578d120e9fb105487f236fed79",
+  "source_attribution": "SUDO Portal authors; individual article attribution and original publication remain in upstream archive",
+  "year_counts": {
+    "2011": 17,
+    "2012": 18,
+    "2013": 31,
+    "2014": 14,
+    "2016": 7,
+    "2017": 15,
+    "2018": 1
+  },
+  "job_id": "6b06f57ad91f621b93081c11",
+  "code_commit": "4136b6f2c8c85f96fbb14059b1e9064c021027b4",
+  "artifact_sha256": "1392f2e2e8ff14bb062fd7d4307e03bf7938fec16d37dad01ef52d8813bdb6c3",
+  "license": "CC BY-SA 4.0; source publication license recorded in prior pilot; per-article third-party rights not independently established",
+  "quality_verified": false
+}
