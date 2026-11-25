@@ -17,7 +17,7 @@ Bu kılavuz dil bilgisi terimlerini ezberletmek için değil, bir düşünceyi T
 | Gelecekteki olay | Dosyanın silineceğini öğrendik. | Silinmiş olduğunu söylemiyor. |
 | Gereklilik | Kayıtların saklanması gerekiyor. | Saklayanın kimliği bilinmiyorsa "saklayacağız" diye ekleme. |
 
-**Uygulama:** "Kayıtların incelenmesinin gerçekleştirilmesine başlanacaktır." gibi çok katlı adlaştırmada hangi eylemin hangi aşaması bildiriliyor? "Kayıtlar incelenmeye başlanacak." başlangıcı ve edilgenliği korur. "Kayıtlar incelenecek." ise başlangıç bilgisini daha genel bir geleceğe dönüştürür.
+**Uygulama:** "Kayıtların incelenmesinin gerçekleştirilmesine başlanacaktır." gibi çok katlı adlaştırmada hangi eylemin hangi aşaması bildiriliyor? "Kayıtların incelenmesine başlanacak." başlangıcı ve edilgenliği korur. "Kayıtlar incelenecek." ise başlangıç bilgisini daha genel bir geleceğe dönüştürür.
 
 ## 2. Sıfat-fiil: bir kişiyi veya nesneyi eylemiyle tanıt
 
@@ -80,9 +80,8 @@ Bir fiilimsi dönüşümünün ardından asıl yüklemi, her eylemin öznesini, 
 
 ## Dayanak ve sınır
 
-- Asuman Ahmed Abdo Shaban ve Sibel Ekşi, “Türkçenin Yabancı Dil Olarak Öğretiminde Zarf Fiillerin İşlevsel Kullanımı”, IJLET 11(4), 2023, DOI [10.29228/ijlet.73057](https://doi.org/10.29228/ijlet.73057). İncelenen makale özeti, zarf-fiillerin işlev ve zaman ilişkilerinin ana fiille birlikte değerlendirilmesini destekler.
-- Kamil Tiken, [Türkiye Türkçesinde Basit ve Birleşik Zarf-Fiillerin İfade ve İşlevleri](https://dergipark.org.tr/tr/pub/belleten/article/563788), Türk Dili Araştırmaları Yıllığı - Belleten, cilt 47. İşlevsel yaklaşım; yalnız makale tanıtımı/özeti incelendi.
-- Gürer Gülsevin, [Türkiye Türkçesinde Birleşik Zarf-Fiiller](https://dergipark.org.tr/tr/pub/akusosbil/article/1683182), 2001. Zarf-fiil biçimlerinin çeşitliliği; yalnız makale özeti incelendi.
+- Kamil Tiken, [Türkiye Türkçesinde Basit ve Birleşik Zarf-Fiillerin İfade ve İşlevleri](https://dergipark.org.tr/tr/pub/belleten/article/563788), Türk Dili Araştırmaları Yıllığı - Belleten, cilt 47, 1999 sayısı (DergiPark yayın tarihi 2003). İşlevsel yaklaşım; yalnız makale tanıtımı/özeti incelendi.
+- Gürer Gülsevin, [Türkiye Türkçesinde Birleşik Zarf-Fiiller](https://dergipark.org.tr/tr/pub/akusosbil/article/1683182), 2001, 2(2), 125–144, CC BY-NC 4.0. Yalnız bibliyografik bilgi ve genel işlev yaklaşımı incelendi; makale içeriği ve örnekleri dağıtılmaz.
 - [Bağlamlı Türkçe](baglamli-turkce.md) ve [ileri Türkçe](ileri-turkce.md): mevcut derlem temelli ve editoryal gözlemler.
 
 Kaynak metinlerinden alıntı yapılmamıştır; makale lisansları doğrulanmadığından yeniden dağıtım yapılmaz. Bu dosyanın özgün editoryal açıklama ve örnekleri proje MIT lisansı kapsamındadır. Bir dil bilgisi araştırmasının varlığı, bu skill'in aynı düzeyde yazarlık performansı göstereceğini kanıtlamaz.
