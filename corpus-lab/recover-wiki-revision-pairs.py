@@ -33,9 +33,9 @@ def pair(row,old,new):
 def self_test():
     row={"source_group":"trwiki:1","previous_timestamp":"2016-01-01T00:00:00Z","revision_timestamp":"2016-01-02T00:00:00Z"}
     a={"pageid":1,"revid":2,"timestamp":row["previous_timestamp"],"title":"Sentetik","content":"Bu kayıt işleminin tamamlanmasının ardından diğer işlemlerin yapılması için gereken süre belirlenir.","tags":[]}
-    b={**a,"revid":3,"parentid":2,"timestamp":row["revision_timestamp"],"content":"Bu kayıt tamamlandıktan sonra diğer işlemlerin yapılması için gereken süre belirlenir."}
+    b={**a,"revid":3,"parentid":2,"timestamp":row["revision_timestamp"],"content":"Bu kayıt tamamlandıktan sonra diğer işlemlerin yapılması için gereken süre ayrıca belirlenir."}
     r,reason=pair(row,a,b)
-    assert r and not reason and r["before_sha256"]!=r["after_sha256"]
+    assert r and not reason and r["before_sha256"]!=r["after_sha256"],reason
     assert pair(row,a,{**b,"parentid":99})[1]=="revision_mismatch"
     assert pair(row,a,{**b,"content":b["content"]+" https://example.org"})[1]=="markup_or_private_data"
     print("WIKI_PAIR_SELF_TEST_COMPLETE",flush=True)
