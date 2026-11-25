@@ -30,3 +30,16 @@ Admission to a subsequent **development-only** panel: all 34 valid, >=32 correct
 | 6b0760f6d91f621b9309192b | pinned code + real tokenizer preflight | CPU Upgrade | 5 min | USD 0.0025 | SCHEDULING |
 
 No new GPU was launched yet. Prior V27 GPU and monitor terminated; exact IDs in README V28. Before any GPU launch recheck active Turkish Writer jobs, terminal preflight logs, private receipt hash, exact model revisions and hardware. Intended single RTX PRO 6000 (96 GB, USD 2.75/h), one model per sequential process, bounded <=50 minutes if justified, nominal maximum USD 2.2917; each subprocess <=15 minutes. Start only with verified source/preflight and adequate credential lifetime; monitor exact ID only, 15-second poll and finite timeout. Never touch other projects. Private outputs: lovefengis/turkish-writer-historical-review-v10/v29-judge-calibration/. No finished performance or costs claimed yet; close ledger with actual terminal timestamps, failures, and cost bounds; record cumulative cost without inventing previous missing billing. No master/release changes.
+
+### Execution update — 26 November 2026, Türkiye
+
+Preflight 6b0760f6d91f621b9309192b: COMPLETED, terminal 2026-11-25 22:29:34.960 UTC; 17 cases/34 decisions; three model tokenizers verified. Wall-clock elapsed from creation 88.204 s; at USD 0.03/h this is a USD 0.000735 wall-rate estimate, not actual billing. Receipt SHA-256 4aa8d05113d9ac1036c48dcb751fdd325789674b73457495b142e3612b70e97f; source SHA-256 c00c6df041465494f7f71c9c9f309e7cc69eac63aee9e1eede43a2ea0bf6d99f; fixture SHA-256 a37ddcc214ab880ca15458648f87f965d2b99e0c9b3247b3902080a874809b6a.
+
+Frozen model revisions: Mistral 95a6d26c4bfb886c58daf9d3f7332c857cb27b43; YTÜ Gemma bc2e3064994eefab3c9043ff58c5b3c7cbfc6c40; Phi cfbefacb99257ffa30c83adab238a50856ac3083.
+
+| job ID | role | hardware | bounded duration | nominal max tariff estimate | last verified status |
+|---|---|---|---|---|---|
+| 6b0761a7d91f621b93091b21 | sequential three-model calibration | RTX PRO 6000 | 50 min | USD 2.2917 | SCHEDULING (container image pull) |
+| 6b0761c1b6a90bbe997e96ab | exact-ID polling monitor, no new GPU launch | CPU basic | 55 min | USD 0.009167 | RUNNING, monitoring target SCHEDULING |
+
+GPU bootstrap verifies the frozen Git blob and SHA-256, self-test, private manifest identity, and remaining token lifetime before starting calibration. Monitor polls every 15 s, validates job labels, checks terminal markers and private model checkpoints, and saves a private receipt. Combined nominal maximum of these two newly submitted jobs: USD 2.300867; actual billing not yet known. No result is claimed before verifying terminal artifacts. Continue this exact experiment rather than launching a duplicate; do not modify other projects.
