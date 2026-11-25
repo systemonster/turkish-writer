@@ -26,3 +26,9 @@ Models used only in development evaluation, not bundled or required by the skill
 - [PyTorch](https://github.com/pytorch/pytorch) 2.8.0+cu128 and [Hugging Face Transformers](https://github.com/huggingface/transformers) 4.57.3; development inference libraries, not packaged skill dependencies. Full dependency notice inventory remains a release prerequisite.
 
 The candidate sources listed in [HOLDOUT.md](HOLDOUT.md) are screened but not yet used in experiments; no contribution claim is made.
+
+## Contextual editorial evidence (25 November 2026)
+
+- Source revisions: Daron Yöndem, Turkish blog archive `e5a5885a9f70d2f30519560a80c6de622aeac945`; UD Turkish BOUN, TABILAB / Boğaziçi University and contributors, train only, `09521f40c90904df85524b8e0b43afba6e4c7823`; SUDO Portal authors, [historical archive](https://github.com/ubuntu-tr/ubuntu-tr.github.io/tree/18cd8b55645f92578d120e9fb105487f236fed79), frozen development sample `0b1b8308559a935e6f3be060fe42bc00ed556f02`. Original article author credits and rights evidence are retained in the private source manifest; no source excerpts or additional personal data are distributed here.
+- The contextual aggregate and derived guide, `results/context-evidence-v1-summary.json` and `../skills/turkish-writer/references/baglamli-turkce.md`, are CC BY-SA 4.0 (https://creativecommons.org/licenses/by-sa/4.0/), with attribution and source links. The extraction script is independent MIT project code. The guide's illustrative before/after sentences are independently authored, not historical revisions or human-certified gold.
+- Private research context windows retain source locator, revision, author or attribution record, license, focus hash and stable evidence ID. They are not included in the skill package. Retrieval is heuristic; no blanket authorship, correctness, or editorial-quality claim follows.
