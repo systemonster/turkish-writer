@@ -38,6 +38,11 @@ Roman, öykü, kitap, anı, deneme, oyun, şiir ve uzun bölüm çalışmaların
 İhtiyaç halinde şu kaynakları aç. Hepsini her metin için okumak gerekmez.
 
 - [Türkçe kullanım atlası](references/turkce-kullanim-atlasi.md): türden bağımsız ifade seçimi, kip, anlam inceliği, odak, fiil ve ek ilişkisi, konuşma parçacıkları.
+- [Fiilimsiler](references/fiilimsiler.md): eyleyen, zaman, neden ve koşul ilişkisini koruyarak Türkçe yan yapılar kurma.
+- [Anlam incelikleri](references/anlam-incelikleri.md): kip, zaman, görünüş, olumsuzluk, kapsam ve bilgi kaynağı değişimlerini ayırt etme.
+- [Türkçe söyleyiş](references/turkce-soyleyis.md): bilgi sırası, doğal cümle, ritim, diyalog ve paragraf ilerleyişi.
+
+Bu ayrıntılı kılavuzları yalnızca ilgili sorun ya da yazarlık görevi gerektiriyorsa aç. Dil bilgisi başvurusunu metne zorunlu dönüşüm listesi olarak uygulama.
 - [Yazım motoru](references/yazim-motoru.md): yeni metin veya kapsamlı düzenleme için genel Türkçe ilkeleri.
 - [Filtre kararları](references/filtre-kararlari.md): doğru, gereksiz ve zararlı müdahalelerin karşılaştırmaları.
 - [Blog editörü](references/blog-editoru.md): blog ve rehberlerde editoryal yapı, kaynak, katkı ve seri yayın tutarlılığı. Yeni içerik araştırması yalnız yazma/araştırma görevi kapsamındaysa yapılır.
