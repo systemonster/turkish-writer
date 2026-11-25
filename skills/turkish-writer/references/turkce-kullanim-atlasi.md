@@ -73,7 +73,7 @@ Aynı olay: Toplantı saat üçte başlayacaktı; toplantı odası hazır olmad�
 
 Gerekçeli sadeleştirme:
 
-> Başvuru süresi dün sona erdi. İki formun değerlendirilmesi henüz tamamlanmadı. Eksik belgeler ulaşınca bu formlar incelenebilecek.
+> Başvuru alımı dün sona erdi. İki formun değerlendirilmesi tamamlanmadı. Eksik belgeler ulaşınca bu formlar incelenebilecek.
 >
 > Kalan formlar incelemeye alındıktan sonra sonuçların bildirilmesi planlanıyor. Bildirim için henüz tarih belirlenmedi.
 
