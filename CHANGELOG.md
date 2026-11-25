@@ -17,6 +17,8 @@ Bu kayıt yeni yayımlanmış sürüm değildir. Paket sürümü ve git etiketi 
 - Salt okunur, isteğe bağlı Unicode denetimi için watermarks-remover'ın MIT lisanslı sabit sürüm bileşeni korundu; yazarlık tespiti veya kaynak/provenance değiştirme amacı yoktur.
 - Türkçe ve İngilizce tanıtım, tarihsel ölçümler ile V2'nin doğrulama durumunu ayrı gösterir.
 
+- Kapsam, blog ve site metninden türler arası Türkçe yazarlık ve editörlüğe genişletildi. Kullanım atlası ile roman, öykü, uzun anlatı, diyalog ve kitap sürekliliği kılavuzu eklendi. Edebî kalite ayrıca doğrulanmalıdır.
+
 ### Doğrulama sınırı
 
 [Corpus Lab](corpus-lab/README.md) geliştirme deneyleri, olumlu ve olumsuz sonuçlarıyla kayıtlıdır. Teknik regresyon başarıları editoryal üstünlüğü kanıtlamaz. [Bağımsız insan editör değerlendirmesi](corpus-lab/HOLDOUT.md) tamamlanmadan final yayın yapılmaz.
