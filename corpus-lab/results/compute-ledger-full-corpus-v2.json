@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25T22:21:33.728Z",
+  "as_of": "2026-11-26",
   "pricing_source": "https://huggingface.co/docs/hub/en/jobs-pricing",
   "scope": "Full corpus research V2/V3 and V20–V25 regressions; terminal V21 interruptions, recovery, tail, and verification jobs. Actual bill unknown; no double counting.",
   "rows": [
@@ -524,13 +524,30 @@
       "status_message": null,
       "code_commit": "c378abcd93c469b918815260580da5da47ed5791",
       "scope": "Isolated narrative continuity reference fix, full existing suites and installation smoke. V27 GPU experiments tracked separately; this row does not include them."
+    },
+    {
+      "id": "6b076c26b6a90bbe997ea7cf",
+      "name": "turkish-writer-v30-clean-prose-regression",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T23:15:50.206Z",
+      "finished_at": "2026-11-25T23:16:02.338Z",
+      "timeout_seconds": 300,
+      "wall_seconds": 12.132,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0008333333333333334,
+      "wall_rate_estimate_usd": 0.0000337,
+      "actual_billed_usd": null,
+      "status_message": null,
+      "code_commit": "0f951b3996d067677588d2e1ff4f0ee5b9a729b1",
+      "scope": "V30 clean-prose preservation reference; regression, V29 calibration self-test, package and install smoke. V29 GPU and monitor are in separate judge-panel-v29-terminal.json."
     }
   ],
-  "known_wall_rate_usd": 0.2021849472222223,
-  "pricing_checked": "2026-11-25",
+  "known_wall_rate_usd": 0.2022186472222223,
+  "pricing_checked": "2026-11-26",
   "open_jobs_nominal_max_usd": 0,
   "previous_v18_known_wall_rate_usd": 11.378172,
-  "combined_known_wall_rate_estimate_usd": 11.580356947222223,
+  "combined_known_wall_rate_estimate_usd": 11.580390647222222,
   "terminal_unknown_cost_jobs": [
     "6b07110db6a90bbe997e02ce"
   ]
