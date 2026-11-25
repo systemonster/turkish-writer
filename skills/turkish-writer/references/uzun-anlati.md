@@ -92,7 +92,7 @@ Bir geçişte çözülemeyen sorunu diğer geçişlerde rastgele sözcük deği�
 
 **Alışkanlık, süregiden olay ve tek olay.** Öykünün alışkanlık bildiren geçmişi, sonradan başlayan tek bir olaya zemin hazırlayabilir. Özgün örnek: “Her akşam iskeleye iner, son vapuru beklerdik. O gece iskele boştu.” İlk cümleyi “İskeleye indik, son vapuru bekledik” diye değiştirmek alışkanlığı tek olaya dönüştürür. Kip tutarlılığı, bütün fiilleri aynı zamanda çekmek değildir.
 
-**Okurun bildiğiyle olayın gerçekleştiği sırayı ayır.** Bir karakterin kimliği veya iki kişinin ilişkisi geç açıklanıyorsa önceki sahneye bu bilgiyi açıklayıcı bir cümle olarak taşıma. “Yaşlı adamın bileğindeki iz tanıdık geldi. Adını ancak kapıcı söyleyince hatırladım.” Örneğinde adı baştan söylemek bilgi eksikliğini gideriyor gibi görünse de hatırlama anını ortadan kaldırır. Geri dönüş, önceden verilmiş ipucu ve bilinçli geciktirme ile istemeden unutulmuş bilgi farklıdır.
+**Okurun bildiğiyle olayın gerçekleştiği sırayı ayır.** Bir karakterin kimliği veya iki kişinin ilişkisi geç açıklanıyorsa önceki sahneye bu bilgiyi açıklayıcı bir cümle olarak taşıma. “Yaşlı adamın bileğindeki iz tanıdık geldi. Adını ancak kapıcı söyleyince hatırladım.” Bu iki cümlede adı baştan söylemek bilgi eksikliğini gideriyor gibi görünse de hatırlama anını ortadan kaldırır. Geri dönüş, önceden verilmiş ipucu ve bilinçli geciktirme ile istemeden unutulmuş bilgi farklıdır.
 
 **Tekrar konuşmada bir eylem olabilir.** “— Gelmeyecek misin?\n— Gelmeyeceğim.\n— Hiç mi?\n— Hiç.” İkinci soruyu ve cevabı silmek gereksiz bilgi tekrarını değil, ısrarı ve reddin kapsamını siler. Susma, yarım bırakılmış söz, kimin konuştuğunu gösteren işaret ve karakterler arası güç ilişkisini koru. Gerçek bir yazım kusurunu düzeltirken konuşmacının sözünü tamamlamak zorunda değilsin.
 
@@ -100,8 +100,8 @@ Bir geçişte çözülemeyen sorunu diğer geçişlerde rastgele sözcük deği�
 
 **Şiir ve kaynak biçimi.** Bir cümle birden fazla dizeye yayılabilir. Özgün örnek:
 
-> Geriye kalan\
-> bir kapı sesi\
+> Geriye kalan  
+> bir kapı sesi  
 > bir de boş avlu.
 
 Dizeyi cümleye, şiiri açıklayıcı paragrafa zorlamak ses ve durakları değiştirir. Biçimsel düzenleme talebinde dize/kıta, tekrar, sözcük ve noktalama tercihlerini birlikte değerlendir. Tarihsel metinde dizgi veya OCR kusuru ile bilinçli eski yazım birbirine karışabilir; güvenilir baskıyı görmeden özgün metni düzelttiğini iddia etme. Modernleştirme, sadeleştirme ve yazım denetimi ayrı işlerdir.
