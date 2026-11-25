@@ -37,6 +37,8 @@ Düzenleme: "Kayıtlar tamamlandıktan sonra kutular depoya alındı. Ancak kapa
 
 Karar: İlk iki cümlede tek bir olay vardı; tekrar çıkarıldı. İstisna ile ayrı masada bırakma bilgisi korundu. Depoya alma ve almama işlemlerinin eyleyeni kaynakta belirsiz olduğundan ikisi de edilgen kaldı; son eylemin birinci kişi anlatımı korundu. Kaynak zaten bu kadar kısa olsaydı yeni bir geçiş veya sonuç eklenmezdi.
 
+**Temiz metinde değişiklik gerekçesi.** Düzenleme talebi, her paragrafta mutlaka bir değişiklik yapılmasını gerektirmez. Son okumada değiştirdiğin noktalama, kip ve başlık biçimini de kaynakla karşılaştır. Bir müdahaleyi yalnız somut bir anlatım, yazım veya görev gereği açıklıyorsa bırak; açıklayamıyorsan kaynak biçimine dön. Özne ile yüklem arasına sırf duraklama hissiyle virgül yerleştirme; uzun özneyi ayırma, ara söz ve özel vurgu gibi gerçek işlevleri ayrıca değerlendir. Biçimi koruma isteniyorsa düz başlığı sırf görünür olsun diye kalınlaştırma veya yeni Markdown işareti ekleme. Önceki bir yanılgıya geriye bakan “Bu işin kolay olacağını sanmıştım” ifadesini, yalnız daha kısa olduğu için “Bu işin kolay olacağını sandım” yapma; anlatının referans zamanı önemlidir. Yeni yazım hatası üretmemek için değişen sözcükleri de kontrol et. Örneğin “Bir sepet yıkanmadan döndü” açık ve doğalysa öznesinden sonra virgül ekleme. Bunlar bütün virgülleri silme veya hiçbir kipi değiştirmeme kuralı değil; değişikliğin gerekçesini metnin işlevine bağlama örnekleridir.
+
 **Yazar sesi örneği (proje üretimi):**
 
 "Akşamüstü dükkânın önünde durdum. İçeride kimse yoktu. Biraz bekledim, sonra eve döndüm."
