@@ -1,0 +1,1780 @@
+{
+  "experiment": "judge-panel-v29",
+  "scope": "Synthetic development diagnostics; no human labels, independent holdout or qualified judges",
+  "source_commit": "3bba86ffc9385607be5248e204092c885604011a",
+  "fixture_sha256": "a37ddcc214ab880ca15458648f87f965d2b99e0c9b3247b3902080a874809b6a",
+  "monitor_receipt_sha256": "344bf7d6998c505b88f58adce1992f5f1d317a1da93dac90bab5623df609c4b2",
+  "private_dataset": "lovefengis/turkish-writer-historical-review-v10",
+  "private_directory": "v29-judge-calibration",
+  "hash_provenance": "Monitor downloaded and hashed all three terminal artifacts; current connector read verified coverage and summaries, no raw response text published",
+  "models": [
+    {
+      "model": {
+        "family": "mistral",
+        "license": "apache-2.0",
+        "model": "mistralai/Mistral-Small-3.2-24B-Instruct-2506",
+        "prompt_token_ids_sha256": "ed3b7a845ccbb2a497e94101763329772d2af0e87473e6f5ab2cd9aaba5cd626",
+        "prompt_tokens_max": 529,
+        "revision": "95a6d26c4bfb886c58daf9d3f7332c857cb27b43"
+      },
+      "artifact": "mistralai__Mistral-Small-3.2-24B-Instruct-2506.json",
+      "monitor_verified_sha256": "9ba9f43f12c4faba5fbf6a7918be9e943c7841680caedaa6c0b74bb2af5f4e83",
+      "summary": {
+        "all_targets_detected": 11,
+        "all_targets_total": 30,
+        "correct_preferences": 20,
+        "critical_targets_detected": 5,
+        "critical_targets_total": 24,
+        "false_critical_on_good": 3,
+        "identical_controls_correct": 4,
+        "identical_controls_total": 4,
+        "order_consistent_pairs": 8,
+        "pairs_total": 17,
+        "pilot_admission": false,
+        "planned": 34,
+        "recorded": 34,
+        "valid": 31
+      },
+      "records": [
+        {
+          "id": "j29-01-0",
+          "case": "j29-01",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "6a7ec4c521e7de05795e8d23f09dba575753b4d9ba2b8d43c6635d9b2c5176fe"
+        },
+        {
+          "id": "j29-01-1",
+          "case": "j29-01",
+          "order": 1,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "3231628e3a8edb2cb89939b9fd1ca0856b8c03d502fbf0e5ea37b03782c4e78b"
+        },
+        {
+          "id": "j29-02-0",
+          "case": "j29-02",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "bed4d9352c6cf07d3b9b5c130cbd01b55607864e2fe04dc5f6c1a69b272054b0"
+        },
+        {
+          "id": "j29-02-1",
+          "case": "j29-02",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "3bdcafd7d06c610cbfeafe84f372ccc000392283ff5257da94492e483e954716"
+        },
+        {
+          "id": "j29-03-0",
+          "case": "j29-03",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "206b7442a5d70f363b7484a402b33820bc28b15b890035085deae4ee2ed399b1"
+        },
+        {
+          "id": "j29-03-1",
+          "case": "j29-03",
+          "order": 1,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ccb39f768ed732a9a3b710aeacdb7dedf5c5b74603e0b37ffb43fc2e477e341d"
+        },
+        {
+          "id": "j29-04-0",
+          "case": "j29-04",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_shape",
+          "finish_reason": "stop",
+          "response_sha256": "8840d2e551821ba7c3de2163c3f2d824278223534246edaa1db0d7263e90f61a"
+        },
+        {
+          "id": "j29-04-1",
+          "case": "j29-04",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_shape",
+          "finish_reason": "stop",
+          "response_sha256": "2cdc30e98297e9a93cced24c0d925cd8c9ecfbc04b0f91ce5cdfaa9f00fb1963"
+        },
+        {
+          "id": "j29-05-0",
+          "case": "j29-05",
+          "order": 0,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "b0a8b33fc3ede844972923f105a147c08168b893e32fcd6e0250e71d094292c4"
+        },
+        {
+          "id": "j29-05-1",
+          "case": "j29-05",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ffb1ff8188b9ae5fcc337cac3ee04c390e24b0dd270104839a7cf3542ead0e37"
+        },
+        {
+          "id": "j29-06-0",
+          "case": "j29-06",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ae6461854efe1abbd164fe8ea0f43cbd59979e12f16a692987806cf5228fabf4"
+        },
+        {
+          "id": "j29-06-1",
+          "case": "j29-06",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_shape",
+          "finish_reason": "stop",
+          "response_sha256": "3856d2566d1149032bd9af4dba0c37f24c5049288d462a8ce1b5e460d96084ca"
+        },
+        {
+          "id": "j29-07-0",
+          "case": "j29-07",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "7ecc2f929b8bb1c74784a01d755e76984999dd72b8ab22cc675d005d7149ae3e"
+        },
+        {
+          "id": "j29-07-1",
+          "case": "j29-07",
+          "order": 1,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "9b7be476d9c313fe05f136f76fad599219b941f7ab04fb130182a5f81f6f040b"
+        },
+        {
+          "id": "j29-08-0",
+          "case": "j29-08",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "a9675d02683e72e911a6b7f3c666641f8b9f9ad5109271fc40b6c4803d5b7aa0"
+        },
+        {
+          "id": "j29-08-1",
+          "case": "j29-08",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "9983ec9d144d8687d96133086cac42f5b7959a12eebd30f70b7cff35cd633a48"
+        },
+        {
+          "id": "j29-09-0",
+          "case": "j29-09",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "0b0648ce546deb5b0dbf47774e2f85846f975b444cf3fe1cbc71d130e4a77dba"
+        },
+        {
+          "id": "j29-09-1",
+          "case": "j29-09",
+          "order": 1,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "344f456c26ecbfcc8cf95a5be523a97f9650284090809a3f24d0bacf069f3ddf"
+        },
+        {
+          "id": "j29-10-0",
+          "case": "j29-10",
+          "order": 0,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "6f86718f3d5123662b0838214ef171210425cd30db5aea317e682f192d4457f7"
+        },
+        {
+          "id": "j29-10-1",
+          "case": "j29-10",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "b6f5d145fc0f61fe840cce82cacf0e15150adedd719fb3a309258f853f797dfe"
+        },
+        {
+          "id": "j29-11-0",
+          "case": "j29-11",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "4feeb026a15cfa6531281fe956ae931a3e8cd8d8b6d1387025b979e9ba123f41"
+        },
+        {
+          "id": "j29-11-1",
+          "case": "j29-11",
+          "order": 1,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "58b9a7aceecfcb82da91b7f8c6e86c12927d0dad48bafe39d3a577f889dc1316"
+        },
+        {
+          "id": "j29-12-0",
+          "case": "j29-12",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "3d6d2eb3f20f3bcbb74b8d31a49f7202917c15a35121fc872b243d5bfd7384e9"
+        },
+        {
+          "id": "j29-12-1",
+          "case": "j29-12",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "7db28971f57317b121417c376882a536e5cee3f88f5d14c9e2df0208b4391aab"
+        },
+        {
+          "id": "j29-13-0",
+          "case": "j29-13",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "76018025c5f9f98ccb867895202a7a7b263b1bf240902187bbf54b6d424cf2e5"
+        },
+        {
+          "id": "j29-13-1",
+          "case": "j29-13",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "0c7828b5354819134c14632c4dbb47b58d45ab7e0cdd3144548da8314cc56595"
+        },
+        {
+          "id": "j29-14-0",
+          "case": "j29-14",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "b07db1ab6316a7bc131732856253043944c735157a7a0e39845412eafa84feae"
+        },
+        {
+          "id": "j29-14-1",
+          "case": "j29-14",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "62c37d8406dcf1cb4b8c3a1b88c04f0c1a2df41854fdbe95b7dec4cc555d2b80"
+        },
+        {
+          "id": "j29-15-0",
+          "case": "j29-15",
+          "order": 0,
+          "prefer": "A",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "e75ee4af5efadf14fcd3317163353c064724cfe8e98a8e06a2fbff964d7e2ced"
+        },
+        {
+          "id": "j29-15-1",
+          "case": "j29-15",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "93b1cf972ecfc78713088bba8846c9d9adc3ac4998cdb931d0efa359e4a6c9c5"
+        },
+        {
+          "id": "j29-16-0",
+          "case": "j29-16",
+          "order": 0,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "940acdda4aad3286aaabbf5114495a5ca0787480c06e7c81e437afa06079dd98"
+        },
+        {
+          "id": "j29-16-1",
+          "case": "j29-16",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "940acdda4aad3286aaabbf5114495a5ca0787480c06e7c81e437afa06079dd98"
+        },
+        {
+          "id": "j29-17-0",
+          "case": "j29-17",
+          "order": 0,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "360665453eabd9af77d8bbd4e08478d527a26d37145a561ff6ff093829c4d9bf"
+        },
+        {
+          "id": "j29-17-1",
+          "case": "j29-17",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "360665453eabd9af77d8bbd4e08478d527a26d37145a561ff6ff093829c4d9bf"
+        }
+      ]
+    },
+    {
+      "model": {
+        "family": "gemma2",
+        "license": "gemma",
+        "model": "ytu-ce-cosmos/Turkish-Gemma-9b-T1",
+        "prompt_token_ids_sha256": "f895583abde1715502ae47f8cbdbd2fb8f5bd9d28999918877c665282409ad48",
+        "prompt_tokens_max": 500,
+        "revision": "bc2e3064994eefab3c9043ff58c5b3c7cbfc6c40"
+      },
+      "artifact": "ytu-ce-cosmos__Turkish-Gemma-9b-T1.json",
+      "monitor_verified_sha256": "f227a48a56f5622f5f583a24e05b3186dd64d5c12e84d2339357997a2318bb55",
+      "summary": {
+        "all_targets_detected": 2,
+        "all_targets_total": 30,
+        "correct_preferences": 9,
+        "critical_targets_detected": 1,
+        "critical_targets_total": 24,
+        "false_critical_on_good": 0,
+        "identical_controls_correct": 4,
+        "identical_controls_total": 4,
+        "order_consistent_pairs": 2,
+        "pairs_total": 17,
+        "pilot_admission": false,
+        "planned": 34,
+        "recorded": 34,
+        "valid": 12
+      },
+      "records": [
+        {
+          "id": "j29-01-0",
+          "case": "j29-01",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "781ccb2279ae30d34f9e53d0c798bbff9b3127447beed498af45697d084b199d"
+        },
+        {
+          "id": "j29-01-1",
+          "case": "j29-01",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "54c31cdf10d9e595e4886e068419e281b7cb35e8efa0a40d63fe48c6e96de404"
+        },
+        {
+          "id": "j29-02-0",
+          "case": "j29-02",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "e2a0d7d0c32f800856fc44b13e4f5f052ec3cee5e9ee9450ed73d98ad4dd398c"
+        },
+        {
+          "id": "j29-02-1",
+          "case": "j29-02",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "finish_reason": "stop",
+          "response_sha256": "a6f147b7df56fc1ab6425f78e6651bf97ac37fb8ff603b1ce504417476f922d1"
+        },
+        {
+          "id": "j29-03-0",
+          "case": "j29-03",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "ec497ec90a6e71d745b2329fd0055725874c84857b05636c5017a54dc3fdc77a"
+        },
+        {
+          "id": "j29-03-1",
+          "case": "j29-03",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "3d7706e903943fb9356e807924620105a50666aded7c7d8d5c845a260a8997df"
+        },
+        {
+          "id": "j29-04-0",
+          "case": "j29-04",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "85617a743215d569c884ec597e2b9876b488d9b755e507665ae6195ddd59a822"
+        },
+        {
+          "id": "j29-04-1",
+          "case": "j29-04",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "fbd8bbda1bf082d596d9cdd5708662308072acc9fc82dfd1fbff57100498aaee"
+        },
+        {
+          "id": "j29-05-0",
+          "case": "j29-05",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "finish_reason": "stop",
+          "response_sha256": "b53b6649b73d4a6bff811f40772b80c5d7993243794408bfb2fe9887f746dac4"
+        },
+        {
+          "id": "j29-05-1",
+          "case": "j29-05",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "6e0b41374458906d9d897ba554da14114fbc5a1651647595a29b397d07af44c3"
+        },
+        {
+          "id": "j29-06-0",
+          "case": "j29-06",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "f19ffe7e33a0863ebd61d1ac3b1368dbe68f6bc560de5a28fa7b7803f328e396"
+        },
+        {
+          "id": "j29-06-1",
+          "case": "j29-06",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ce474adfb0af744209abf69627a50cacbe60ba7c039c6e6d850a57a39ca2f19b"
+        },
+        {
+          "id": "j29-07-0",
+          "case": "j29-07",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_shape",
+          "finish_reason": "stop",
+          "response_sha256": "fb55ae527ab47276383c9aa1f0a5eb17bd376f777500c1f4f0840b09319cf9e1"
+        },
+        {
+          "id": "j29-07-1",
+          "case": "j29-07",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ca9d8b3c024f0ef05a37619acca4b334998c520c14478c676e4604eb08a24083"
+        },
+        {
+          "id": "j29-08-0",
+          "case": "j29-08",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "finish_reason": "stop",
+          "response_sha256": "0883f268da648275aeeb690af8e47d74c64e1815d7b73fbe9949f42c780f3dbc"
+        },
+        {
+          "id": "j29-08-1",
+          "case": "j29-08",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "1ebae23c075719b9761bb8ebcc2efe1132556fb2b8c4c0fad7848d26cc31b264"
+        },
+        {
+          "id": "j29-09-0",
+          "case": "j29-09",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "710236de9b3914806f5c6fa781952a3bdaa438d56c5c01245801d0c12cd811a7"
+        },
+        {
+          "id": "j29-09-1",
+          "case": "j29-09",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "9e0f19d71212c1fd80e9a4518aace06c5fb62b972d1cd5e0d6fa0b0fc2b977cc"
+        },
+        {
+          "id": "j29-10-0",
+          "case": "j29-10",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "928117220612484ec9edd13dab5815099f0ac58347557a62d585ea3869edbd9d"
+        },
+        {
+          "id": "j29-10-1",
+          "case": "j29-10",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "finish_reason": "stop",
+          "response_sha256": "4cd052357b072a7e73b21113e58b612bd816e2bc786c75e9a608f64dacbe0085"
+        },
+        {
+          "id": "j29-11-0",
+          "case": "j29-11",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_text",
+          "finish_reason": "stop",
+          "response_sha256": "207821815a7337c4f2f35f03a706b635c8636ef194ca56e16d7720ac977dfb6a"
+        },
+        {
+          "id": "j29-11-1",
+          "case": "j29-11",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "89a23abbf2b035d2046dd98aa26e393982fb72708247aa7f8f5e009838309f9c"
+        },
+        {
+          "id": "j29-12-0",
+          "case": "j29-12",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "finish_reason": "stop",
+          "response_sha256": "bc8808b880631396129c6cc2e1b48954e3652ebd4e2977422abe88a946888419"
+        },
+        {
+          "id": "j29-12-1",
+          "case": "j29-12",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting ',' delimiter: line 1 column 280 (char 279)",
+          "finish_reason": "stop",
+          "response_sha256": "3785d467aa3da537bc7f49a6aa1ce395e5e9b8cda7c159b664373a91530c40c2"
+        },
+        {
+          "id": "j29-13-0",
+          "case": "j29-13",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "a33bf71952eb87de79aec3ebcf16b369e41545a244a3156a2ca0bb63649f1bc9"
+        },
+        {
+          "id": "j29-13-1",
+          "case": "j29-13",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ef0ff6e0762bd0b3a52dd1c2490806bbd26969d04dec9f7c8501873099a6e826"
+        },
+        {
+          "id": "j29-14-0",
+          "case": "j29-14",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting value: line 1 column 1 (char 0)",
+          "finish_reason": "stop",
+          "response_sha256": "304886748a7d31cc40000a5e1967200b9766c97c4caab348cc4b79bb79f440f2"
+        },
+        {
+          "id": "j29-14-1",
+          "case": "j29-14",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "bcdcec020116db2838cb1d54996262f35f973d2cf184a4dd0b777492c108e2e0"
+        },
+        {
+          "id": "j29-15-0",
+          "case": "j29-15",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "986e017cba455048268bb396ecbf877cc3dcf1b31703ca4574fae2ead366c472"
+        },
+        {
+          "id": "j29-15-1",
+          "case": "j29-15",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "f4ed05729b211b0134dae1293e7e36757a9fc680aaa00c4b06b75e9b4a7e4fb0"
+        },
+        {
+          "id": "j29-16-0",
+          "case": "j29-16",
+          "order": 0,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "4ff94a535840da6b93007b3b09b4fd14d05e2c92653b61f9bc58e276505013e9"
+        },
+        {
+          "id": "j29-16-1",
+          "case": "j29-16",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "4ff94a535840da6b93007b3b09b4fd14d05e2c92653b61f9bc58e276505013e9"
+        },
+        {
+          "id": "j29-17-0",
+          "case": "j29-17",
+          "order": 0,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "aa2e23b1c9af02f5557a6ccc114e0a5653c4f8aaa553957e5603044d5924c78f"
+        },
+        {
+          "id": "j29-17-1",
+          "case": "j29-17",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "aa2e23b1c9af02f5557a6ccc114e0a5653c4f8aaa553957e5603044d5924c78f"
+        }
+      ]
+    },
+    {
+      "model": {
+        "family": "phi3",
+        "license": "mit",
+        "model": "microsoft/Phi-4-mini-instruct",
+        "prompt_token_ids_sha256": "136d3190640b5c0ceaa4580dbc6109795c8ae62016f938ce6a6599ac9babb8c4",
+        "prompt_tokens_max": 486,
+        "revision": "cfbefacb99257ffa30c83adab238a50856ac3083"
+      },
+      "artifact": "microsoft__Phi-4-mini-instruct.json",
+      "monitor_verified_sha256": "b522d47792a5a5243f56d4b6f82b0d2a5a0091f0466b3fcd2d4f7890cf515d48",
+      "summary": {
+        "all_targets_detected": 2,
+        "all_targets_total": 30,
+        "correct_preferences": 8,
+        "critical_targets_detected": 2,
+        "critical_targets_total": 24,
+        "false_critical_on_good": 11,
+        "identical_controls_correct": 1,
+        "identical_controls_total": 4,
+        "order_consistent_pairs": 0,
+        "pairs_total": 17,
+        "pilot_admission": false,
+        "planned": 34,
+        "recorded": 34,
+        "valid": 17
+      },
+      "records": [
+        {
+          "id": "j29-01-0",
+          "case": "j29-01",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "d29d8bbf9d3324d563547afa84f6d48dd38db52a0bf7e115e356efbdd2426b4b"
+        },
+        {
+          "id": "j29-01-1",
+          "case": "j29-01",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "667f6a43fdcae067be017bc0d6a4ccd4963994e09ec16aa7872090ff5fa87e5e"
+        },
+        {
+          "id": "j29-02-0",
+          "case": "j29-02",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Extra data: line 1 column 421 (char 420)",
+          "finish_reason": "stop",
+          "response_sha256": "d131168b9ab152e45993c221cc126cc40f0514d95635216f12867cf6689392e1"
+        },
+        {
+          "id": "j29-02-1",
+          "case": "j29-02",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "34069fe213e24720d7874e675dda02f40bfe9312d78afb928c276a25c29d4021"
+        },
+        {
+          "id": "j29-03-0",
+          "case": "j29-03",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "d228ca09aabef995b41e31280f792ecb35ad0d7353dbb2fe824cb50dfab4d0bc"
+        },
+        {
+          "id": "j29-03-1",
+          "case": "j29-03",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "9546452b94547d29da45380d1ca640327eee41d71bf7f392f24c328136cb7dc5"
+        },
+        {
+          "id": "j29-04-0",
+          "case": "j29-04",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "6c68d0d4d75c54d59fad83f148d9c37e3afd8b87d871a54cf8b09de577a8bbed"
+        },
+        {
+          "id": "j29-04-1",
+          "case": "j29-04",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "05e5e86fc3c252d0461a91d79e0e1e5288e9593fef6cdba35a84f1d7b19bac13"
+        },
+        {
+          "id": "j29-05-0",
+          "case": "j29-05",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "c7af6fbf222df04a61b5177e91460d44d4948d978d37d003a4f47b56e69f0890"
+        },
+        {
+          "id": "j29-05-1",
+          "case": "j29-05",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "c7af6fbf222df04a61b5177e91460d44d4948d978d37d003a4f47b56e69f0890"
+        },
+        {
+          "id": "j29-06-0",
+          "case": "j29-06",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "0504e004cacb78042ed36aadb08a79a84f152cd741a776abc95d23f81ddf93eb"
+        },
+        {
+          "id": "j29-06-1",
+          "case": "j29-06",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting ',' delimiter: line 1 column 130 (char 129)",
+          "finish_reason": "stop",
+          "response_sha256": "1a3be5b6c9e4a70ad1227acf87988786683f820d0ffae722d7441f03499989db"
+        },
+        {
+          "id": "j29-07-0",
+          "case": "j29-07",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "f937cc690d1af7fa516de62b7256bc6213739a3545ccc5d89f4256b6d8f26b38"
+        },
+        {
+          "id": "j29-07-1",
+          "case": "j29-07",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "f684a8fa496dccbab0611a7fa65e4169e7476c0d01931243fa3c716c96275f9d"
+        },
+        {
+          "id": "j29-08-0",
+          "case": "j29-08",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Expecting property name enclosed in double quotes: line 1 column 213 (char 212)",
+          "finish_reason": "stop",
+          "response_sha256": "00397b4950644c4964062c35e7ce556e7297554ed46b01b9e6cd79133c89e3a6"
+        },
+        {
+          "id": "j29-08-1",
+          "case": "j29-08",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_shape",
+          "finish_reason": "stop",
+          "response_sha256": "5a9582fde5206900067509beaee224424619978ef972ce1a44599ef50d4aacf4"
+        },
+        {
+          "id": "j29-09-0",
+          "case": "j29-09",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "d8a66a19b082ef4cb0045071c1c2a4797d880cb63e4ad36cd5ef3a980608dc34"
+        },
+        {
+          "id": "j29-09-1",
+          "case": "j29-09",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": true,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "30892d7f13a74ca630879c408f7a6ca1abcc833559cecfce95559dc42d3a1e93"
+        },
+        {
+          "id": "j29-10-0",
+          "case": "j29-10",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "8e2306498fde93c97c89a5a97ab83ee40794265471916f5fb47ed1e3ad52eef8"
+        },
+        {
+          "id": "j29-10-1",
+          "case": "j29-10",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Extra data: line 1 column 767 (char 766)",
+          "finish_reason": "stop",
+          "response_sha256": "fbf4136608c866835a14cbc897e739b99c7ffb80323c0d85c76d579b42628fd5"
+        },
+        {
+          "id": "j29-11-0",
+          "case": "j29-11",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Extra data: line 1 column 511 (char 510)",
+          "finish_reason": "stop",
+          "response_sha256": "a9e67ea10eaf19fd8f2693f8166471e10b83f314716cd8e12784d08579d4546e"
+        },
+        {
+          "id": "j29-11-1",
+          "case": "j29-11",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "da0a92fd997b12e00d2d9008d959e9e381f6433f8083493f9163f10c3595af1f"
+        },
+        {
+          "id": "j29-12-0",
+          "case": "j29-12",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "issue_type",
+          "finish_reason": "stop",
+          "response_sha256": "d4efe872f7949ae671629f40f3396915bd6f598bb50c95d00f2dd7ede2ec17b4"
+        },
+        {
+          "id": "j29-12-1",
+          "case": "j29-12",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "a8a89ac1510c325a1a98b252c95e47ba0df7f98e6661439cf7fc64be75c09f5d"
+        },
+        {
+          "id": "j29-13-0",
+          "case": "j29-13",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "ce10a7f408e58b3731bf0ef4fa49b629bf28351f55c4ff3b4034851552531fee"
+        },
+        {
+          "id": "j29-13-1",
+          "case": "j29-13",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "c9f97bff2e41db068c270f89852f5accbc6eee7af03e934faf870581cc447851"
+        },
+        {
+          "id": "j29-14-0",
+          "case": "j29-14",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "unanchored_evidence",
+          "finish_reason": "stop",
+          "response_sha256": "b4d662850bb771efd6922bc8ea95a7f2fa2ee6957b9cb1a4eda68198bdd8668c"
+        },
+        {
+          "id": "j29-14-1",
+          "case": "j29-14",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "a48950ec227f3183fea680430b5a6d6765b5b01fb2a7a9cf76f06940c5778e64"
+        },
+        {
+          "id": "j29-15-0",
+          "case": "j29-15",
+          "order": 0,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": false,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "0df1a42d7b8f3e5fda44f213d6820c30b0ad9f261a905e6644ea4c3625879b35"
+        },
+        {
+          "id": "j29-15-1",
+          "case": "j29-15",
+          "order": 1,
+          "prefer": "B",
+          "grade": {
+            "false_critical_on_good": false,
+            "preference_correct": true,
+            "target_case": true,
+            "target_detected": false,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "9c510c815f20d48a161533f2b7f4a07a6b67f6e2c12b034066fe9602268bcac3"
+        },
+        {
+          "id": "j29-16-0",
+          "case": "j29-16",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": false,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "shape",
+          "finish_reason": "stop",
+          "response_sha256": "3b05058e9aab40e87d36803d8e8909f30c14b2020a8ad297ad381b7da45bdaa9"
+        },
+        {
+          "id": "j29-16-1",
+          "case": "j29-16",
+          "order": 1,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": false,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "shape",
+          "finish_reason": "stop",
+          "response_sha256": "3b05058e9aab40e87d36803d8e8909f30c14b2020a8ad297ad381b7da45bdaa9"
+        },
+        {
+          "id": "j29-17-0",
+          "case": "j29-17",
+          "order": 0,
+          "prefer": null,
+          "grade": {
+            "false_critical_on_good": null,
+            "preference_correct": false,
+            "target_case": false,
+            "target_detected": false,
+            "valid": false
+          },
+          "error": "Extra data: line 1 column 448 (char 447)",
+          "finish_reason": "stop",
+          "response_sha256": "170caa6804d25fe719eef7b7d04b062d58da8bc6433aaba8f263f1c7ebc5ddf9"
+        },
+        {
+          "id": "j29-17-1",
+          "case": "j29-17",
+          "order": 1,
+          "prefer": "equal",
+          "grade": {
+            "false_critical_on_good": true,
+            "preference_correct": true,
+            "target_case": false,
+            "target_detected": null,
+            "valid": true
+          },
+          "error": null,
+          "finish_reason": "stop",
+          "response_sha256": "b53983ee851214646847f8d7fa1be0745c949feaf304025ddaaf21e9dea69632"
+        }
+      ]
+    }
+  ],
+  "jobs": [
+    {
+      "id": "6b0760f6d91f621b9309192b",
+      "role": "preflight",
+      "flavor": "cpu-upgrade",
+      "status": "COMPLETED",
+      "wall_seconds": 88.204,
+      "nominal_minutes": 5,
+      "rate_usd_hour": 0.03,
+      "wall_rate_estimate_usd": 0.0007350333333333333,
+      "nominal_max_usd": 0.0025,
+      "actual_billing_usd": null
+    },
+    {
+      "id": "6b0761a7d91f621b93091b21",
+      "role": "gpu",
+      "flavor": "rtx-pro-6000",
+      "status": "COMPLETED",
+      "wall_seconds": 711.331,
+      "nominal_minutes": 50,
+      "rate_usd_hour": 2.75,
+      "wall_rate_estimate_usd": 0.5433778472222223,
+      "nominal_max_usd": 2.2916666666666665,
+      "actual_billing_usd": null
+    },
+    {
+      "id": "6b0761c1b6a90bbe997e96ab",
+      "role": "monitor",
+      "flavor": "cpu-basic",
+      "status": "COMPLETED",
+      "wall_seconds": 701.405,
+      "nominal_minutes": 55,
+      "rate_usd_hour": 0.01,
+      "wall_rate_estimate_usd": 0.0019483472222222222,
+      "nominal_max_usd": 0.009166666666666667,
+      "actual_billing_usd": null
+    }
+  ],
+  "cost": {
+    "rate_source": "https://huggingface.co/docs/hub/en/jobs-pricing",
+    "rates_from": "V29 run ledger",
+    "wall_rate_estimate_usd": 0.5460612277777779,
+    "prior_full_corpus_ledger_known_estimate_usd": 11.580356947,
+    "partial_known_total_usd": 12.126418174777779,
+    "limitations": "Excludes separately logged V26/V27 costs and unknown costs; not actual total invoice"
+  }
+}
