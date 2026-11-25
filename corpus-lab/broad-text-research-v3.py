@@ -135,7 +135,7 @@ def fineweb(api,shard):
         if inventory["rows"]!=pf.metadata.num_rows:raise RuntimeError("incomplete text shard")
     return {"scope":"Actual eligible FineWeb article text analyzed in memory, entire shard inventory, no source text/URL retained; not author or quality verification","source":"https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned","revision":FINE_REV,"shard":shard,"inventory":dict(inventory),"thresholds":{"crawl_year":[2013,2021],"language":[.9,1.01],"quality":[.8,1.01],"max_text_chars":200000},"fixed_cues":finish(acc),"limitations":["Crawl date is not publication date or authorship proof.","Quality-classifier score is a filter, not proof of good prose.","Cue matches are heuristic; not morphological parses or validated discourse labels.","Only fixed aggregate counts, no personal data or copied passages."]}
 def self_test():
-    a,b,c=scan_text("Bu işi yaptık. Peki sonuç ne oldu?\nAncak sonuç henüz belli değil.\n— Geldin mi?")
+    a,b,c=scan_text("Bu işi yaptık. Peki sonuç ne oldu?\nAncak sonuç henüz belli değil.\n— Sen geldin mi?")
     assert a["heuristic_sentences"]==4 and a["question_endings"]==2 and a["uncertainty_sentence_cues"]==1
     assert a["dialogue_line_cues"]==1 and c[("question","contrast")]==1
     assert b[("line_start","contrast")]==1
