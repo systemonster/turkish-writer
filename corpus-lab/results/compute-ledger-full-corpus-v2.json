@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25",
+  "as_of": "2026-11-25T22:21:33.728Z",
   "pricing_source": "https://huggingface.co/docs/hub/en/jobs-pricing",
   "scope": "Full corpus research V2/V3 and V20–V25 regressions; terminal V21 interruptions, recovery, tail, and verification jobs. Actual bill unknown; no double counting.",
   "rows": [
@@ -507,13 +507,30 @@
       "status_message": null,
       "code_commit": "e86f4fc032f3537b8d4bb9fcd6c792a4f1db88bb",
       "scope": "V26 isolated modality, additive focus and addressee scope repair; full regression and installation smoke"
+    },
+    {
+      "id": "6b075f63d91f621b93091695",
+      "name": "turkish-writer-v28-narrative-continuity-regression",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T22:21:23.136Z",
+      "finished_at": "2026-11-25T22:21:33.728Z",
+      "timeout_seconds": 300,
+      "wall_seconds": 10.592,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0008333333333333334,
+      "wall_rate_estimate_usd": 0.000029422222222222226,
+      "actual_billed_usd": null,
+      "status_message": null,
+      "code_commit": "c378abcd93c469b918815260580da5da47ed5791",
+      "scope": "Isolated narrative continuity reference fix, full existing suites and installation smoke. V27 GPU experiments tracked separately; this row does not include them."
     }
   ],
-  "known_wall_rate_usd": 0.20215552500000009,
+  "known_wall_rate_usd": 0.2021849472222223,
   "pricing_checked": "2026-11-25",
   "open_jobs_nominal_max_usd": 0,
   "previous_v18_known_wall_rate_usd": 11.378172,
-  "combined_known_wall_rate_estimate_usd": 11.580327525,
+  "combined_known_wall_rate_estimate_usd": 11.580356947222223,
   "terminal_unknown_cost_jobs": [
     "6b07110db6a90bbe997e02ce"
   ]
