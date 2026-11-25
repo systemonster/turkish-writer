@@ -105,3 +105,17 @@ Ham korpus, üçüncü taraf yazıları ve kişisel veri depoya commit edilmez. 
 [Deneysel kısa editör adayı](editor-core-candidate.md) henüz varsayılan değildir. [Uzun metin geliştirme vakaları](editorial-longform-v1.jsonl) 12 yeni sentetik örnektir. Üç kollu deney aynı düz metin protokolüyle 52 vaka/model planlar. Sabit kod sürümü `40c9bce705e0985230f4ffe5b90d02f317aa182e`; [HF Job](https://huggingface.co/jobs/lovefengis/6b063f971460ffe1d5e9851e). Sonuç görülmeden adayın daha iyi olduğu iddia edilmez.
 
 Çalıştırılmış yazılım doğrulaması: npm test 167 başarılı, 7 atlanan, 0 başarısız; ayrıca Corpus Lab Node 3 ve Python 5 başarılı. Model geliştirme vakaları bağımsız kör test değildir. İnsan editör onaylı önce/sonra veri seti ve bağımsız çok yazarlı değerlendirme hâlâ eksiktir. Skill için zorunlu bulut, API ya da model yoktur.
+
+## 8. Üç kollu deney tamamlandı; karar kapısı deneyi başlatıldı
+
+[HF Job: text-v2](https://huggingface.co/jobs/lovefengis/6b063f971460ffe1d5e9851e), 25 Kasım 2026, tamamlandı. Üç modelin her biri 52 vaka × 3 kol üretti (468 çıktı). Aşağıdaki sayı, beklenen kararı KORU olan 24 metnin ham çıktıda birebir korunmasıdır. Tek başına editörlük kalitesi ölçüsü değildir.
+
+| Model | Yalın | Mevcut skill | Kısa çekirdek |
+|---|---:|---:|---:|
+| [Qwen3-8B](results/editorial-abc-text-v2-qwen-qwen3-8b.json) | 7/24 | 18/24 | 0/24 |
+| [Turkish Gemma 9B](results/editorial-abc-text-v2-ytu-ce-cosmos-turkish-gemma-9b-v0-1.json) | 0/24 | 0/24 | 2/24 |
+| [Qwen3-32B](results/editorial-abc-text-v2-qwen-qwen3-32b.json) | 3/24 | 1/24 | 0/24 |
+
+Qwen3-32B kısa çekirdeğinde 28/52 çıktı kaynak sınırı etiketlerini içerdi; etiketi temizledikten sonra 9/24 koruma vakası birebir. Bu ham çıktı hatasını sonradan başarı sayma. Bazı kollar sayı, başlık, alıntı ve korunan ifadelerde değişiklik yaptı. Mevcut skill, kısa çekirdekle değiştirilmedi. Karar kapısı ve düzenleme adımlarını ayıran deney, bu kusurları hedefliyor.
+
+**Aktif takip:** [HF Job: editor-decision-gate-v3](https://huggingface.co/jobs/lovefengis/6b0646781460ffe1d5e9916c), RTX PRO 6000, azami 60 dakika. Sabit kod commit'i `d298b2d2f0ae9abfe55f4602fbc58636ef5a42a3`. [Deney kodu](run-editor-gate.py). 3 model × 52 vaka için karar (KORU/DÜZELT), doğrudan skill, karar kapılı skill ve karar kapılı kısa edit talimatı. Modelin KORU kararı yalnız model çıktısına dayanır, referans kararı verilmez. Ham kararları, yanlış koruma/düzenleme ve biçim/olgu risklerini ayrı değerlendir. Aynı örnekler geliştirme setidir; bağımsız kalite onayı değildir. Bu deney henüz tamamlanmamıştır; önce sonucu al, aynı işi tekrar başlatma.
