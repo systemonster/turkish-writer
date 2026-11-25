@@ -226,3 +226,28 @@ V6 Qwen3-32B teknik geçerlilik ve gereksiz müdahale göstergesinde ilerleme va
 Bu vakalar, geçerli yama ve birebir koruma sayılarının tek başına yeterli olmadığını gösteriyor. Ham sonuçlardaki protected_review kısa vakaların reference_required ve uzun vakaların protected_literals alanlarını kapsar; V5 özetindeki yalnız protected_literals sayısıyla doğrudan kıyaslanmamalı. İfade değişikliği sinyali anlamsal hata hükmü değildir. V6 mevcut skill'e alınmadı. Bir sonraki yön: yeni istem varyasyonunu yalnızca tekrar tekrar aynı geliştirme vakalarına uydurmak yerine bağımsız insan değerlendirmesi ve anlam koruma karşılaştırmalarına ağırlık ver.
 
 V6 duvar süresi 11,399 dk; resmî 2,75 USD/saat tarife ile tahmini 0,522464 USD. Süresi bilinen on işin tahmini toplamı 3,642035 USD. Fatura ve tamamlanmamış/iptal edilmiş işlerin süreleri doğrulanmadı. [Maliyet kaydı](results/compute-ledger-2026-11-25.json). Kaynaklar ve diğer projelerin işleri korunuyor; yayın kapısı kapalı.
+
+## 15. Düzeltilmiş Gemma V6 ve anlam sadakati V7
+
+25 Kasım 2026. [Düzeltilmiş Gemma işi](https://huggingface.co/jobs/lovefengis/6b067c90d0582cfbbefdc6a9) COMPLETED; 52 benzersiz kayıt, tamamlanma işareti, kesilmemiş log. V5'le birebir render hash eşitliği 0/52, ham çıktı eşitliği 1/52. İstem iletim hatası giderildi. [Tam sonuç](results/editorial-patches-v6-gemma-corrected.json); yanlış render içeren önceki V6 kaydı deney geçmişinde tutulur.
+
+| Ölçüt | V5 | Düzeltilmiş V6 |
+|---|---:|---:|
+| Uygulanabilir yama /52 | 43 | 44 |
+| KORU birebir /24 | 12 | 4 |
+| DÜZELT değişen /28 | 19 | 23 |
+| Uzun DÜZELT değişen /6 | 3 | 3 |
+
+Gemma'da koruma geriledi. Teknik olarak geçerli düzenlemelerde de ağır anlam hataları var:
+- `editorial-dev-002`: gönderim süresinde düşüş olasılığı → “gönderim süresini yavaşlatabilir” (yön tersine döndü).
+- `editorial-dev-001`: tasarımın payı olup olmadığı bilinmiyor → “ne ölçüde katkıda bulunduğunu” (etki varlığı varsayılıyor).
+- `editorial-dev-015`: “yanıltıcı olabilir” → “yanıltıcı olur” (kesinlik artışı).
+- `editorial-dev-039`: doğru ölçümün önemi → “sonuçların doğru yorumlanmasını sağlar” (garantiye dönüşüm).
+- `long-dev-010`: “yeterli olabilir” → “yeterlidir” (olasılık kesinlik oldu).
+- `long-dev-011`: “değerlendirmeye alınamadığı” → “değerlendirmeye alınmadığı” (yapamama ile yapmama ayrımı).
+- `editorial-dev-026`: kaynakta belirtilmeyen “kamuoyuyla” eklendi.
+- `long-dev-006`: hazırlık sürelerinin ölçülmediği bilgisi karşılaştırılamadığı iddiasına dönüştü; kaynakta olmayan soru ve öneriler eklendi.
+
+V6 hiçbir modelde yayına alınmadı. V7, yeni bir düzenleme istemini aynı 52 vakaya tekrar uydurmak yerine **anlam farkını ayırt etme** becerisini izole eder. [16 sentetik karşılaştırma vakası](semantic-contrast-v1.jsonl) yön, belirsizlik, kesinlik, kapsam, olumsuzluk, özne, zorunluluk, koşul, zaman, karşılaştırma, atıf, yeterlilik, nedensellik, yazar sesi, miktar ve süre hatalarını içerir. Proje üretimi geliştirme vakalarıdır; bağımsız insan testi değildir. [Betiği](run-semantic-contrast.py) iki istem (genel sadakat / somut anlam kontrol listesi) ve her vakada iki sunum sırası, 64 karar/model, 192 toplam karar. Model revizyonları sabittir; doğru etiket yalnız sonuç kaydında, model girdisinde değildir. Doğru/yanlış/geçersiz/kararsız ve iki sırada da doğru seçim ayrı sayılacak. Etiket seçimi, doğal Türkçe üretimi veya bağımsız insan kalitesi kanıtı değildir. Bu testte başarısız olan kontrol listesi hakem olarak kullanılmayacak; başarılı olan da tek başına yayın kapısı açmayacak.
+
+[V7 HF Job](https://huggingface.co/jobs/lovefengis/6b068b10d0582cfbbefde303), sabit commit `47db1152c043db722bcb1292496cee5dbf1ce9bb`, RTX PRO 6000 96 GB, azami 30 dk, nominal 1,375 USD. Önceki Turkish Writer işlerinin bitişi doğrulandı; tek GPU işi başlatıldı. Derleme ve self-test işin başlangıcında çalıştırılacak; sonuç görülmeden başarılı sayılmaz. Gemma düzeltmesinin duvar süresi 3,181 dk, yaklaşık 0,14579 USD. Tamamlanma süresi bilinen 11 iş için yaklaşık 3,78783 USD; üç iptal işinin süresi ve gerçek fatura bilinmiyor. [Maliyet çizelgesi](results/compute-ledger-2026-11-25.json), [25 Kasım HF tarifesi](https://huggingface.co/docs/hub/en/jobs-pricing). Başka proje kaynaklarına dokunulmadı.
