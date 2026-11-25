@@ -1,0 +1,400 @@
+{
+  "schema": "turkish-writer.ai-brief-review.v1",
+  "review_date": "2026-11-25",
+  "model": "Qwen/Qwen3-32B",
+  "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+  "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+  "reviewer": {
+    "kind": "AI",
+    "agent": "root",
+    "blinded": false,
+    "independent_human": false
+  },
+  "scope": {
+    "source_briefs": 6,
+    "underlying_fact_sets": 3,
+    "outputs_read": 12,
+    "all_outputs_complete": true
+  },
+  "method": [
+    "Read the complete 12 final texts against the frozen facts and shared restrictions.",
+    "Check every recorded source/output excerpt for exact containment.",
+    "Distinguish asserted events from hypothetical explanations, general advice and arithmetic derived from supplied figures.",
+    "Record illustrative errors and qualifications; no binary human-quality pass rate."
+  ],
+  "summary": {
+    "all_outputs_below_requested_650_words": true,
+    "word_count_range": [
+      324,
+      553
+    ],
+    "neutral_outputs_with_explicit_advice_labels": 1,
+    "directive_outputs_with_explicit_advice_labels": 5,
+    "interpretation": "Neutral briefs reduce explicit repeated advice labels in this sample, but do not prevent invented rules, events, participant details or unsupported inferences. Label absence does not mean no directive prose."
+  },
+  "records": [
+    {
+      "id": "brief10-01-neutral:baseline",
+      "source_id": "brief10-01-neutral",
+      "arm": "baseline",
+      "style_variant": "neutral",
+      "source_payload_sha256": "71c371da15f6b59a7c4dd090f7e815b18d86f9128067507de7e09ae61da4c226",
+      "final_sha256": "cc4de552c1355b7bc074a6d0f041cc22f3b6b219f0f496998ee4d99956a738cd",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 410,
+      "advice_label_count": 0,
+      "findings": [
+        {
+          "category": "unsupported_fact",
+          "source_excerpt": "Odadaki 240 kitabın 36'sı yalnız yerinde okunabilir.",
+          "output_excerpt": "Bu kural, özellikle nadir ya da hassas baskılar için geçerli. Bu tür kitaplar, taşıma riski taşıdığından okuma odasında bırakılıyor.",
+          "assessment": "36 kitabın niteliği ve kuralın gerekçesi kaynakta yok; olasılık olarak da sunulmuyor."
+        },
+        {
+          "category": "unsupported_observed_effect",
+          "source_excerpt": "Kullanımın okuma alışkanlığına etkisi ölçülmemiştir.",
+          "output_excerpt": "Odanın atmosferi, düzenli saatleri ve sınırlı kural seti, okuyucuya bir planlama bilinci kazandırıyor.",
+          "assessment": "Ölçülmemiş etki sınırlaması başka yerde korunuyor; bu cümle yine de gözlenmiş yarar gibi kesin bir sonuç ekliyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-01-neutral:full",
+      "source_id": "brief10-01-neutral",
+      "arm": "full",
+      "style_variant": "neutral",
+      "source_payload_sha256": "71c371da15f6b59a7c4dd090f7e815b18d86f9128067507de7e09ae61da4c226",
+      "final_sha256": "514b9afb5cac1a2cbd26e807d0c5071e7c36bfcd75ad45e139739c5e2c0cc683",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 532,
+      "advice_label_count": 0,
+      "findings": [
+        {
+          "category": "new_rule",
+          "source_excerpt": "Her ziyarette en fazla iki kitap ödünç alınabilir.",
+          "output_excerpt": "Bu sayı, bir kişinin aynı gün içinde birden fazla ziyaret yapması durumunda artmıyor.",
+          "assessment": "Ziyaret başına sınır, kaynakta olmayan günlük toplam sınırıyla genişletiliyor."
+        },
+        {
+          "category": "unsupported_data_collection",
+          "source_excerpt": "Kullanımın okuma alışkanlığına etkisi ölçülmemiştir.",
+          "output_excerpt": "Kullanıcıların kitapları ne sıklıkla okuduğu, hangi tür kitaplar tercih edildiği gibi bilgiler, henüz derlenmedi.",
+          "assessment": "Etki ölçümünün yokluğu, ayrı kullanım/tercih verilerinin hiç derlenmediğini göstermiyor."
+        },
+        {
+          "category": "unit_drift",
+          "source_excerpt": "İlk ay 74 ödünç işlemi yapılmıştır; bu sayı 74 ayrı kişi anlamına gelmez.",
+          "output_excerpt": "74 kitap, 74 farklı kişiyle mi, yoksa tekrar tekrar ödünç alınarak mı elde edildi?",
+          "assessment": "İşlem sayısı kitap sayısı olarak yeniden adlandırılıyor; önceki doğru ifade bu yerel kaymayı gidermiyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-01-overdirective:baseline",
+      "source_id": "brief10-01-overdirective",
+      "arm": "baseline",
+      "style_variant": "overdirective",
+      "source_payload_sha256": "f3e717d1e06c474b6282e3dba1037b996338069f4d5f86ef8eb2f5828aed34a9",
+      "final_sha256": "7eb7a6e2a06874525806de0949722ff8a0438ff8ea53eea1dbdd09e26bcfc97f",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 463,
+      "advice_label_count": 7,
+      "findings": [
+        {
+          "category": "unsupported_fact",
+          "source_excerpt": null,
+          "output_excerpt": "Örneğin, yerinde okunacak kitaplar için odanın kapasitesi sınırlıdır; bu nedenle bu bölüme uzun süreli kalınmaması, diğer kullanıcılara da fırsat sunar.",
+          "assessment": "Yerinde okuma bölümünün kapasitesi ya da oturma süresi hakkında bilgi verilmedi; örnek sözcüğü mevcut durumu varsayan cümleyi açık bir varsayıma dönüştürmüyor."
+        },
+        {
+          "category": "schedule_inconsistency",
+          "source_excerpt": "Oda salı ve perşembe günleri 18.00–20.00 arasında açılır.",
+          "output_excerpt": "Kitap iade tarihini takviminize ekleyin ve sürenin dolmasından bir gün önce odaya geri getirin.",
+          "assessment": "21 günlük sürenin ziyaret gününden başladığı doğal okumada son günden önceki gün pazartesi/çarşambadır; verilen açılış günleriyle uyuşmayan tavsiye. Dışarıdan iade kutusu varsayılmıyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-01-overdirective:full",
+      "source_id": "brief10-01-overdirective",
+      "arm": "full",
+      "style_variant": "overdirective",
+      "source_payload_sha256": "f3e717d1e06c474b6282e3dba1037b996338069f4d5f86ef8eb2f5828aed34a9",
+      "final_sha256": "f7f316de8864b6951f7784ec29fe8353a33dc76ddaaa98a2dbe5b75efdbda118",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 448,
+      "advice_label_count": 7,
+      "findings": [
+        {
+          "category": "scope_expansion",
+          "source_excerpt": "Ödünç işlemi için kitap kimliği ve takma kullanıcı kodu kaydedilir; herkese açık listede isim bulunmaz.",
+          "output_excerpt": "Kişisel isimler, listelerde ya da kayıtlarda yer almaz.",
+          "assessment": "Herkese açık liste sınırlaması bütün kayıtları kapsayacak şekilde genişletiliyor."
+        },
+        {
+          "category": "unsupported_existing_resource",
+          "source_excerpt": null,
+          "output_excerpt": "Odanın web sitesi veya bilgilendirme panosunda yer alan \"yerinde okunabilir kitaplar\" listesini inceleyin.",
+          "assessment": "Tavsiye, kaynakta verilmeyen mevcut bir web/pano listesini varsayıyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-02-neutral:baseline",
+      "source_id": "brief10-02-neutral",
+      "arm": "baseline",
+      "style_variant": "neutral",
+      "source_payload_sha256": "09e6ff81b97c3a3832f776eb7e55572742adf945ad1732dcd5d3bb91994e6393",
+      "final_sha256": "6f6f373753d01ed4529f42e67f857f3b5cad18b6a61d5f9d02e624078b98edd3",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 456,
+      "advice_label_count": 6,
+      "findings": [
+        {
+          "category": "unsupported_inference",
+          "source_excerpt": "İlk denemede 86 e-posta 59 farklı taleple eşleştirilmiştir.",
+          "output_excerpt": "Bu veri, e-posta gönderen müşterilerin talep kodlarını doğru kullandığını gösterir.",
+          "assessment": "Eşleştirme sayısı müşterilerin kodları nasıl kullandığını kanıtlamıyor; eşleştirmeyi ekip yapmış olabilir."
+        },
+        {
+          "category": "unsupported_diagnosis",
+          "source_excerpt": "Yedi talebin son durumu kaydedilmemiştir.",
+          "output_excerpt": "Bu durum, sistemdeki kayıt eksikliklerini veya süreci tamamlayan çalışanların dikkatini gösterir.",
+          "assessment": "Son durum boşluğu belirtilmiştir, çalışan dikkati veya tamamlanmış süreç bilgisi verilmemiştir."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-02-neutral:full",
+      "source_id": "brief10-02-neutral",
+      "arm": "full",
+      "style_variant": "neutral",
+      "source_payload_sha256": "09e6ff81b97c3a3832f776eb7e55572742adf945ad1732dcd5d3bb91994e6393",
+      "final_sha256": "b279f5fab57f9cbb39828086ee79fb32281c42bd51e6999b7ebf4e74125f9a22",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 373,
+      "advice_label_count": 0,
+      "findings": [
+        {
+          "category": "entity_conflation",
+          "source_excerpt": "Stok doğrulandıktan ve müşteri onayladıktan sonra sipariş açılır.",
+          "output_excerpt": "Bir talep, stok doğrulandıktan ve müşteri onayladıktan sonra \"açılır\".",
+          "assessment": "Kaynak talep kaydı ile sipariş açılmasını ayırır; çıktı sipariş yerine talep diyor."
+        },
+        {
+          "category": "unsupported_inference",
+          "source_excerpt": "Yedi talebin son durumu kaydedilmemiştir.",
+          "output_excerpt": "Bu veri, sistemin henüz tam otomasyona geçmediğini ve manuel kontrol süreçlerinin devam ettiğini gösteriyor.",
+          "assessment": "Eksik durum alanı otomasyon seviyesinin kanıtı değildir."
+        },
+        {
+          "category": "scope_drift",
+          "source_excerpt": "Yedi talebin son durumu kaydedilmemiştir.",
+          "output_excerpt": "Bu taleplerin neden kaydedilmediği",
+          "assessment": "Kaydedilmemiş olan son durum, taleplerin hiç kaydedilmemesine dönüşüyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-02-overdirective:baseline",
+      "source_id": "brief10-02-overdirective",
+      "arm": "baseline",
+      "style_variant": "overdirective",
+      "source_payload_sha256": "3ba524a9f8ada5aae8e340a809b8269d735e2e2b8ef8e4025f10e3fdad406d75",
+      "final_sha256": "9f508b41dd64f8468cbeba53ec84328faa3fc3cce3bffe5680150fa4efd71b4a",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 473,
+      "advice_label_count": 4,
+      "findings": [
+        {
+          "category": "scope_drift",
+          "source_excerpt": "İlk denemede 86 e-posta 59 farklı taleple eşleştirilmiştir.",
+          "output_excerpt": "59 talebin sadece bir kısmı eşleştirilebilirken, yedi talebin durumu kayıtsızdır.",
+          "assessment": "59 talep eşleştirilmişken sadece bir kısmının eşleştirilebilir olduğu ekleniyor; durum alanı eksikliğiyle eşleştirme karışıyor."
+        },
+        {
+          "category": "unsupported_status",
+          "source_excerpt": "Yedi talebin son durumu kaydedilmemiştir.",
+          "output_excerpt": "bazı siparişlerin henüz teyit aşamasında olduğu görülür.",
+          "assessment": "Kayıtsız son durum, siparişlerin teyit aşamasında olduğuna kanıt değildir."
+        },
+        {
+          "category": "instruction_semantic_drift",
+          "source_excerpt": "Alındı mesajı talebin kabul edildiğini veya ürünün stokta bulunduğunu göstermez.",
+          "output_excerpt": "“Alındı” mesajının anlamlı olmadığını açıkça belirtin.",
+          "assessment": "Kabul/stok anlamına gelmemek, mesajın anlamsız olması değildir."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-02-overdirective:full",
+      "source_id": "brief10-02-overdirective",
+      "arm": "full",
+      "style_variant": "overdirective",
+      "source_payload_sha256": "3ba524a9f8ada5aae8e340a809b8269d735e2e2b8ef8e4025f10e3fdad406d75",
+      "final_sha256": "b0d34ed05a542e8ba9c051a732770d526e70b9a362c8b7cca7a5a7c8f9f377c0",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 448,
+      "advice_label_count": 6,
+      "findings": [
+        {
+          "category": "unsupported_schedule",
+          "source_excerpt": "İşletmede üç kişi sipariş e-postalarını dönüşümlü kontrol eder.",
+          "output_excerpt": "Her biri, belirli günlerde gelen e-postaları inceleyip talep kodları oluşturur.",
+          "assessment": "Dönüşümlü kontrol belirli günlere atanmış görev düzenini zorunlu kılmaz; kaynakta olmayan uygulama gerçek gibi ekleniyor."
+        },
+        {
+          "category": "grammar_regression",
+          "source_excerpt": null,
+          "output_excerpt": "Bu iki adımı tamamlandıktan sonra sipariş işleme alınır.",
+          "assessment": "Adımı/tamamlandıktan bağlantısı bozuk; 'bu iki adım tamamlandıktan sonra' gibi bir yapı gerekir."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-03-neutral:baseline",
+      "source_id": "brief10-03-neutral",
+      "arm": "baseline",
+      "style_variant": "neutral",
+      "source_payload_sha256": "91a9e520db2198dc15f8cc902646a0452c72ebf813170480b553a4122603627e",
+      "final_sha256": "6b5f62b55fc11248b877e1417a906a90d6dd1c67770f2463d6ed10f9c3833fa9",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 553,
+      "advice_label_count": 0,
+      "findings": [
+        {
+          "category": "invented_event_detail",
+          "source_excerpt": "Deneme yürüyüşü 16 Mayıs'ta üç kişiyle yapılmıştır.",
+          "output_excerpt": "16 Mayıs’ta sabah saat 9.00’da başlayan deneme yürüyüşü",
+          "assessment": "Başlama saati kaynakta yok."
+        },
+        {
+          "category": "invented_participant_details",
+          "source_excerpt": "Yürüyüşçülerin daha önceki deneyimleri aynı değildir.",
+          "output_excerpt": "biri teknik ekipmanla donanmış, biri doğa fotoğrafçılığıyla ilgilenen, diğeri ise doğa yürüyüşlerine yeni başlayan biri.",
+          "assessment": "Farklı deneyim bilgisi üç kişinin ekipman, ilgi alanı ve acemiliğini belirlemiyor."
+        },
+        {
+          "category": "uncertainty_strengthening",
+          "source_excerpt": "Yazı, kişisel bir denemeyi anlatır; her yaşa veya her hava koşuluna uygunluk iddiası içermez.",
+          "output_excerpt": "Rota, her hava koşuluna veya yaş grubuna uygun değildir.",
+          "assessment": "Uygunluk iddiasının yokluğu, uygunsuzluk hükmüne dönüşüyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-03-neutral:full",
+      "source_id": "brief10-03-neutral",
+      "arm": "full",
+      "style_variant": "neutral",
+      "source_payload_sha256": "91a9e520db2198dc15f8cc902646a0452c72ebf813170480b553a4122603627e",
+      "final_sha256": "865b4c1ebaf2584f2c694fe069415ac504b9273d7d648ab43f0ebcb8fe9e8d3e",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 392,
+      "advice_label_count": 0,
+      "findings": [
+        {
+          "category": "invented_participant_details",
+          "source_excerpt": "Yürüyüşçülerin daha önceki deneyimleri aynı değildir.",
+          "output_excerpt": "biri benzer rotalarda uzun süre yürüyüş yapmıştı, diğeri ise bu tür aktivitelerde ilk adımı atıyordu.",
+          "assessment": "Deneyim seviyelerinin yönü ve ayrıntısı kaynakta yok."
+        },
+        {
+          "category": "invented_event",
+          "source_excerpt": "Su çeşmesi görülmüştür ancak suyun içilebilirliği doğrulanmamıştır.",
+          "output_excerpt": "Yürüyüş sırasında, bir su çeşmesiyle karşılaşmamız, yürüyüşçüleri su almak için durmaya zorladı.",
+          "assessment": "Görülmüş çeşme, kaynakta olmayan su almak için durma olayına dönüşüyor."
+        },
+        {
+          "category": "unsupported_guarantee",
+          "source_excerpt": null,
+          "output_excerpt": "Bu, hem güvenli hem de anlamlı bir deneyi garanti altına alır.",
+          "assessment": "Verilen belirsizlikler sürerken kişisel planlama sonucunda garanti sunuluyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-03-overdirective:baseline",
+      "source_id": "brief10-03-overdirective",
+      "arm": "baseline",
+      "style_variant": "overdirective",
+      "source_payload_sha256": "be633d6c95b515d66ad02872583d3329d7699cffeca1e0b25871190d9b12eb32",
+      "final_sha256": "562602c40299dccd45cf8ef48f76a0670fb003713ac7e5cda816e88f4745096f",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 324,
+      "advice_label_count": 0,
+      "findings": [
+        {
+          "category": "participant_count_ambiguity",
+          "source_excerpt": "Deneme yürüyüşü 16 Mayıs'ta üç kişiyle yapılmıştır.",
+          "output_excerpt": "16 Mayıs’ta üç kişilik bir gruba eşlik ederek deneme yürüyüşü yaptık.",
+          "assessment": "Anlatıcı üç kişinin dışında gibi okunabilir; sonra 'Üç yürüyüşçü' denmesi nedeniyle kesin dört kişi uydurulduğu hükmü verilmiyor."
+        },
+        {
+          "category": "unsupported_numeric_advice",
+          "source_excerpt": "Kaydedilen toplam süre 95 dakikadır; bu süre iki molayı içerir.",
+          "output_excerpt": "zamanı en az 100 dakika gibi değerlendirin.",
+          "assessment": "100 dakika geçmiş olay diye sunulmayan bir tavsiyedir; yeni sayı uydurmama talimatına rağmen açıklanmamış bir eşik ekleniyor. Gözlenen 95 dakika yanlış aktarılmış sayılmıyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    },
+    {
+      "id": "brief10-03-overdirective:full",
+      "source_id": "brief10-03-overdirective",
+      "arm": "full",
+      "style_variant": "overdirective",
+      "source_payload_sha256": "be633d6c95b515d66ad02872583d3329d7699cffeca1e0b25871190d9b12eb32",
+      "final_sha256": "b2c230a05aea37cfa5765ca091a5780b176f0015ec4732f0bfa4a34b4eaf634e",
+      "complete": true,
+      "finish_reason": "stop",
+      "whitespace_word_count": 430,
+      "advice_label_count": 7,
+      "findings": [
+        {
+          "category": "invented_event_purpose",
+          "source_excerpt": "Kaydedilen toplam süre 95 dakikadır; bu süre iki molayı içerir.",
+          "output_excerpt": "Molalar, su alım ve yürüyüşçülerin refahı için planlanmıştı.",
+          "assessment": "Molaların amacı ve önceden planlandığı kaynakta yok."
+        },
+        {
+          "category": "invented_participant_reactions",
+          "source_excerpt": "Yürüyüşçülerin daha önceki deneyimleri aynı değildir.",
+          "output_excerpt": "Bazıları taşlı bölümü zorlayıcı bulurken, başkaları molaları uzatmayı tercih etti.",
+          "assessment": "Deneyim farkı, kaynakta olmayan gözlem ve tercih olaylarıyla dolduruluyor."
+        }
+      ],
+      "review_verdict": "Illustrated issues; not an exhaustive semantic certification or overall quality score."
+    }
+  ],
+  "qualifications": [
+    "All three fact sets are fictional, project-generated development inputs, not external human gold or a holdout.",
+    "Both brief variants request 650–900 words; shared length pressure was not independently varied. These observations cannot isolate its causal contribution.",
+    "The directed brief explicitly asks for repeated advice; complying with that structure is not itself a model failure.",
+    "Calculating 240−36 or an approximate 86/59 mean is not fabricated source data. Explicit hypotheticals about why books stay onsite or winter conditions are not counted as observed events.",
+    "The source says not to invent numbers; 100 minutes is therefore recorded as unsupported advice, not a fabricated historical duration.",
+    "The semantic issue counts are reviewer judgments, not a detector output or verified population error rate.",
+    "All 12 stopped normally; their short length is not an output truncation artifact."
+  ]
+}

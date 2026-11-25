@@ -1,5 +1,5 @@
 {
-  "as_of": "2026-11-25",
+  "as_of": "2026-11-25T10:24:00Z",
   "scope": "V10 Turkish Writer experiments only; one project GPU job at a time.",
   "pricing_source": "https://huggingface.co/api/jobs/hardware",
   "pricing_checked_at": "2026-11-25",
@@ -50,10 +50,10 @@
     {
       "id": "6b06b26f1460ffe1d5ea6130",
       "name": "turkish-writer-v10-qwen32b-thinking",
-      "state": "SCHEDULING",
+      "state": "COMPLETED",
       "hardware": "h200",
       "created": "2026-11-25T10:03:27.880Z",
-      "finished": null,
+      "finished": "2026-11-25T10:21:34.851Z",
       "timeout_seconds": 3600,
       "usd_per_hour": 5,
       "unit_cost_usd_per_minute": 0.083333,
@@ -63,8 +63,15 @@
       "runtime_image": "vllm/vllm-openai:v0.11.0",
       "model": "Qwen/Qwen3-32B",
       "model_revision": "9216db5781bf21249d130ec9da846c4624c16137",
-      "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9"
+      "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+      "status_message": null,
+      "completion_marker": "DIAGNOSTIC_COMPLETE {\"model\": \"Qwen/Qwen3-32B\", \"expected\": 168, \"recorded\": 168, \"complete\": 168, \"elapsed_seconds\": 1026.924}",
+      "wall_minutes": 18.116183333333332,
+      "wall_time_rate_usd": 1.5096819444444445
     }
   ],
-  "billing_note": "Wall time includes scheduling/build time and is not a billed amount; per-minute rounding can differ. Failed container bootstrap produced no model output."
+  "billing_note": "Wall time includes scheduling/build time and is not a billed amount; per-minute rounding can differ. Failed container bootstrap produced no model output.",
+  "completed_model_tasks": 336,
+  "wall_time_rate_total_usd": 2.662447222222222,
+  "actual_billed_total_usd": null
 }

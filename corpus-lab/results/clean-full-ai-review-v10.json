@@ -1,0 +1,1504 @@
+{
+  "schema": "turkish-writer-clean-full-ai-review-v10-1",
+  "created_at": "2026-11-25T10:39:20.803407+00:00",
+  "title": "Targeted preservation review of 12 clean-source full-arm outputs",
+  "provenance": {
+    "reviewer_type": "AI assistant",
+    "review_type": "Unblinded source-conditioned preservation review",
+    "single_reviewer": true,
+    "unblinded": true,
+    "human_reviewed": false,
+    "human_gold": false,
+    "independent_human_evidence": false,
+    "model_and_arm_labels_visible": true,
+    "fixture_clean_label_visible": true,
+    "prior_fixture_exposure": true,
+    "prior_model_output_exposure": true,
+    "prior_flawed_arm_reviews": true,
+    "development_data": true,
+    "independent_holdout": false,
+    "prior_reviews_used_to_infer_new_errors": false,
+    "new_model_inference_launched_for_review": false,
+    "note": "The same AI reviewer previously inspected the flawed variants and both models, so this is not independent blinded validation. Each finding here is supported by the current clean source and its actual full-arm output. The clean label is a generated development annotation, not perfect human gold."
+  },
+  "inputs": [
+    {
+      "path": "corpus-lab/longform-v10.jsonl",
+      "sha256": "6faa16a13d01b81dbb077a5ee2bdd0429f17b4109666d8694888413a7e46641c",
+      "role": "Frozen generated source fixtures; only six clean-source texts reviewed"
+    },
+    {
+      "path": "corpus-lab/results/diagnostics-v10-gptoss120b.jsonl",
+      "sha256": "6ca4d3ca4882dd202da08d018ef030ba66bb57ec7227907b715e01b7c3457aec",
+      "rows": 168,
+      "role": "Final result file; only six clean-source full-arm outputs reviewed"
+    },
+    {
+      "path": "corpus-lab/results/diagnostics-v10-qwen32b.jsonl",
+      "sha256": "04b4efd8c1b252ff965f68b6f2bb0d7d4df062dc0883068018920537270572e9",
+      "rows": 168,
+      "role": "Final result file; only six clean-source full-arm outputs reviewed"
+    }
+  ],
+  "generation_provenance": {
+    "gptoss120b": {
+      "model": "openai/gpt-oss-120b",
+      "model_revision": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+      "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+      "git": "eeea2d17431016c2829c6d1fa19643b31529cedf",
+      "vllm_version": "0.11.0",
+      "reasoning": "gpt-oss-medium",
+      "seed": 1125,
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": -1,
+      "max_model_len": 32768
+    },
+    "qwen32b": {
+      "model": "Qwen/Qwen3-32B",
+      "model_revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+      "git": "eeea2d17431016c2829c6d1fa19643b31529cedf",
+      "vllm_version": "0.11.0",
+      "reasoning": "qwen-thinking",
+      "seed": 1125,
+      "temperature": 0.6,
+      "top_p": 0.95,
+      "top_k": 20,
+      "max_model_len": 32768
+    }
+  },
+  "coverage": {
+    "reviewed_source_count": 6,
+    "reviewed_output_count": 12,
+    "outputs_per_model": {
+      "gptoss120b": 6,
+      "qwen32b": 6
+    },
+    "arm": "full",
+    "reviewed_source_ids": [
+      "lf10-01-clean",
+      "lf10-02-clean",
+      "lf10-03-clean",
+      "lf10-04-clean",
+      "lf10-05-clean",
+      "lf10-06-clean"
+    ],
+    "reviewed_ids": [
+      "gptoss120b:lf10-01-clean:full",
+      "qwen32b:lf10-01-clean:full",
+      "gptoss120b:lf10-02-clean:full",
+      "qwen32b:lf10-02-clean:full",
+      "gptoss120b:lf10-03-clean:full",
+      "qwen32b:lf10-03-clean:full",
+      "gptoss120b:lf10-04-clean:full",
+      "qwen32b:lf10-04-clean:full",
+      "gptoss120b:lf10-05-clean:full",
+      "qwen32b:lf10-05-clean:full",
+      "gptoss120b:lf10-06-clean:full",
+      "qwen32b:lf10-06-clean:full"
+    ],
+    "all_requested_outputs_complete": true,
+    "excluded_from_this_review": "Clean-source baseline/core outputs, flawed-source outputs and other task types.",
+    "overall_quality_rates_computed": false,
+    "overall_model_ranking_produced": false
+  },
+  "methodology": [
+    "Read all six complete clean-source texts and all 12 full-arm outputs; judge each output against its own source.",
+    "Check suspected errors in paragraph context; record exact excerpts and verify every source/output hash.",
+    "Treat clean as a development label, not a statement that the source is flawless or may never be improved.",
+    "Separate clear new meaning/grammar errors, qualified linguistic judgments, harmless formatting and legitimate local edits.",
+    "Use surrounding source paragraphs to decide whether a reformulated action or result is supported elsewhere.",
+    "Accept unchanged adequate text; no minimum edit volume is required.",
+    "Do not use edit distance, word count, literal-format flags or any change by itself as a quality score.",
+    "No model-wide error rate, preference ranking or release-readiness score is derived from these 12 outputs."
+  ],
+  "severity_definitions": {
+    "major": "A clear alteration to reported facts, negation, evidence scope or technical distinction materially changes the account.",
+    "moderate": "A local grammatical, referent, modal, scope or precision change damages clarity or fidelity; adjacent context may retain part of the intended point.",
+    "minor": "A localized spelling regression without a demonstrated material change to the account."
+  },
+  "confidence_definitions": {
+    "high": "The exact source/output text and context directly support the observation; it remains a fallible AI judgment.",
+    "medium": "A reasonable editorial concern has alternative readings or linguistic uncertainty and is not needed for strict headline conclusions."
+  },
+  "sources": [
+    {
+      "source_id": "lf10-01-clean",
+      "source_sha256": "a45e5312f66c61fd4e0f5ddd0b79d3ea8aa31b62d69906dfb72457aaa17ff88a",
+      "fixture_label": "source_clean",
+      "fixture_decision": "keep",
+      "genre": "analitik-blog",
+      "purpose": "Kurmaca bir mağazanın raporunu, ölçüm sınırlarını koruyarak yorumlamak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "clean_label_is_human_gold": false
+    },
+    {
+      "source_id": "lf10-02-clean",
+      "source_sha256": "15641fad5dd80616ab8d78242e15f4f3be35811c7210c1478a61245317d17d32",
+      "fixture_label": "source_clean",
+      "fixture_decision": "keep",
+      "genre": "kisisel-deneme",
+      "purpose": "Kurmaca bir anlatıcının not alma alışkanlığını, sesini ve belirsizliklerini korumak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "clean_label_is_human_gold": false
+    },
+    {
+      "source_id": "lf10-03-clean",
+      "source_sha256": "abdfcf0c938264a9b37bef2814982011b43275a1810694f4bf774cb1614d2029",
+      "fixture_label": "source_clean",
+      "fixture_decision": "keep",
+      "genre": "urun-deneyimi-rehberi",
+      "purpose": "Kurmaca bir uygulamada yedek geri yükleme deneyini, koşulları ve veri sınırlarını koruyarak anlatmak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "clean_label_is_human_gold": false
+    },
+    {
+      "source_id": "lf10-04-clean",
+      "source_sha256": "4e29ff7783c75c8e40a5eb83f1878ac844b2f2313b6e179d08d638355a13047a",
+      "fixture_label": "source_clean",
+      "fixture_decision": "keep",
+      "genre": "kultur-blogu",
+      "purpose": "Kurmaca bir mahalle arşivinin çalışma kararlarını, alıntıları ve yayın izinlerini korumak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "clean_label_is_human_gold": false
+    },
+    {
+      "source_id": "lf10-05-clean",
+      "source_sha256": "31b6f368c9ebc542c0ea52f77c508d00915f897c6aa3bd3b2c99b6c5a1b24dbb",
+      "fixture_label": "source_clean",
+      "fixture_decision": "keep",
+      "genre": "tasarim-vaka-yazisi",
+      "purpose": "Kurmaca bir atölyenin ürün fotoğrafı ve ölçü sunumu kararlarını, ticari sonuç iddiası eklemeden anlatmak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "clean_label_is_human_gold": false
+    },
+    {
+      "source_id": "lf10-06-clean",
+      "source_sha256": "ded917b4e0a1ba7c66000bf17dd9ee977393a9509ee581105916a742ee46ed19",
+      "fixture_label": "source_clean",
+      "fixture_decision": "keep",
+      "genre": "egitim-atolyesi-gozlemi",
+      "purpose": "Kurmaca bir seramik atölyesindeki akış deneyini, gözlem ve yorum ayrımını koruyarak anlatmak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "clean_label_is_human_gold": false
+    }
+  ],
+  "reviews": [
+    {
+      "model_key": "gptoss120b",
+      "source_id": "lf10-01-clean",
+      "findings": [
+        {
+          "category": "meaning_relation_change",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Henüz aynı soruya cevap vermiyorlardı.",
+          "output_excerpt": "hâlâ aynı soruya yanıt bulamamışlardı.",
+          "rationale": "The source says the two people are not answering the same question. The rewrite says they have not been able to find an answer to the same question, changing the central disagreement into an inability to answer.",
+          "evidence_id": "gptoss120b:lf10-01-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, nisan raporunu açtığında önce sipariş sayısına baktı. İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki. Reklamları yöneten kişi ise tıklama sayısını gösteriyordu. İkisi de kendi seçtiği sayıya bakınca yapılan işin iyi gittiğini düşünüyordu. Sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, Nisan raporunu açtığında önce sipariş sayısına baktı: ilk dönemde 35 sipariş, ikinci dönemde 42. Reklamları yöneten ise tıklama sayısını gösteriyordu. Her iki yöneticinin de kendi seçtikleri sayıya bakarak işin iyi gittiğini düşünmesi doğaldı. Sorun, sayılardan birinin hatalı olması değildi; hâlâ aynı soruya yanıt bulamamışlardı."
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki.",
+          "output_excerpt": "ilk dönemde 35 sipariş, ikinci dönemde 42.",
+          "rationale": "Equivalent numeric notation and a concise combined clause preserve the quantities.",
+          "evidence_id": "gptoss120b:lf10-01-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, nisan raporunu açtığında önce sipariş sayısına baktı. İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki. Reklamları yöneten kişi ise tıklama sayısını gösteriyordu. İkisi de kendi seçtiği sayıya bakınca yapılan işin iyi gittiğini düşünüyordu. Sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, Nisan raporunu açtığında önce sipariş sayısına baktı: ilk dönemde 35 sipariş, ikinci dönemde 42. Reklamları yöneten ise tıklama sayısını gösteriyordu. Her iki yöneticinin de kendi seçtikleri sayıya bakarak işin iyi gittiğini düşünmesi doğaldı. Sorun, sayılardan birinin hatalı olması değildi; hâlâ aynı soruya yanıt bulamamışlardı."
+          }
+        },
+        {
+          "source_excerpt": "Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik.",
+          "output_excerpt": "Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi; bu yüzden dosyaya eklenmedi.",
+          "rationale": "Joining the sentences preserves the exclusion action and makes their connection explicit.",
+          "evidence_id": "gptoss120b:lf10-01-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesini dışa aktardık. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesini dışa aktardık. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum bulunuyordu. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi; bu yüzden dosyaya eklenmedi. Amacımız, kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına dahil edildiğini anlamaktı."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Retains all principal figures, unequal tracking duration, order-creation/cancellation sequence, day-level allocation, excluded personal information, fictional provenance and uncalculated profitability."
+      ],
+      "limitations": [
+        "The source's generated clean label does not make every wording uniquely correct.",
+        "The shift from 'çıkarmadık' to 'çıkaramadık' is not counted as a clear new error because the surrounding missing-data context supports inability as a reasonable reading."
+      ],
+      "review_id": "gptoss120b:lf10-01-clean:full",
+      "output_id": "lf10-01-clean:full",
+      "model": "openai/gpt-oss-120b",
+      "arm": "full",
+      "source_sha256": "a45e5312f66c61fd4e0f5ddd0b79d3ea8aa31b62d69906dfb72457aaa17ff88a",
+      "output_sha256": "a43ad3eef89f6902416bb9b5ae107a7c4766dfb7a9ecfb5930d9a42417154dbc",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "qwen32b",
+      "source_id": "lf10-01-clean",
+      "findings": [
+        {
+          "category": "meaning_chronology_change",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük.",
+          "output_excerpt": "İkinci dönemin son gününde iptal edilen bir sipariş tespit edildi.",
+          "rationale": "Creation on the final day and cancellation later become cancellation on the final day. This changes the reported event timing.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "Kontrol sırasında ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük. Ancak ilk dönem için aynı uzunlukta bir iptal takip süremiz henüz yoktu. Bu yüzden yalnız ikinci dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden sunmadık. Önce iki döneme de aynı takip kuralını uygulamak gerekiyordu. Aksi hâlde daha temiz görünen tablo, farklı kurallarla hazırlanmış iki sayıyı karşılaştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "İşlem listesini dışa aktarıp sipariş kimliklerini, oluşturulma tarihlerini ve son durumları kontrol ettik. Müşteri bilgileri bu inceleme için gerekli değildi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemlere dahil edildiğini anlamaktı. İkinci dönemin son gününde iptal edilen bir sipariş tespit edildi. Ancak ilk dönem için benzer bir iptal takibi yoktu. Bu nedenle yalnızca ikinci dönemin verisini düzeltmek yerine, iki döneme de aynı takip kuralı uygulanması gerekiyordu. Aksi takdirde \"daha temiz\" görünen tablo, farklı ölçütlerle hesaplanmış sayıları karşılaştırmış olurdu."
+          }
+        },
+        {
+          "category": "meaning_fact_change",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Ancak ilk dönem için aynı uzunlukta bir iptal takip süremiz henüz yoktu.",
+          "output_excerpt": "Ancak ilk dönem için benzer bir iptal takibi yoktu.",
+          "rationale": "Lacking equally long follow-up becomes lacking similar follow-up at all; the source permits a shorter first-period tracking window.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:findings:02",
+          "source_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "Kontrol sırasında ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük. Ancak ilk dönem için aynı uzunlukta bir iptal takip süremiz henüz yoktu. Bu yüzden yalnız ikinci dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden sunmadık. Önce iki döneme de aynı takip kuralını uygulamak gerekiyordu. Aksi hâlde daha temiz görünen tablo, farklı kurallarla hazırlanmış iki sayıyı karşılaştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "İşlem listesini dışa aktarıp sipariş kimliklerini, oluşturulma tarihlerini ve son durumları kontrol ettik. Müşteri bilgileri bu inceleme için gerekli değildi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemlere dahil edildiğini anlamaktı. İkinci dönemin son gününde iptal edilen bir sipariş tespit edildi. Ancak ilk dönem için benzer bir iptal takibi yoktu. Bu nedenle yalnızca ikinci dönemin verisini düzeltmek yerine, iki döneme de aynı takip kuralı uygulanması gerekiyordu. Aksi takdirde \"daha temiz\" görünen tablo, farklı ölçütlerle hesaplanmış sayıları karşılaştırmış olurdu."
+          }
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Bu iki cümle birbiriyle çelişmiyor.",
+          "output_excerpt": "Artan sipariş sayısı ve artan harcama birbirini çelişmiyor.",
+          "rationale": "'Çelişmek' requires 'birbiriyle' here; the new accusative 'birbirini' is ungrammatical.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:findings:03",
+          "source_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Sipariş başına reklam harcaması ilk dönemde 400 TL, ikinci dönemde 500 TL. Daha çok sipariş alınmış ama kaydedilen her siparişe düşen reklam harcaması da artmış. Bu iki cümle birbiriyle çelişmiyor. Mağaza sahibinin kabul edebileceği maliyet sipariş başına ne kadar kazandığına bağlı. Buradaki hesap, artışın iyi veya kötü olduğuna kendi başına karar vermiyor; karar için hangi bilginin eksik olduğunu gösteriyor."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Bu örnekte ilk dönem 7–20 Nisan, ikinci dönem 21 Nisan–4 Mayıs tarihleri arasında 14'şer gün sürdü. Reklam harcaması ilk dönemde 14.000 TL, ikinci dönemde 21.000 TL olarak arttı. Kârlılık hesaplamaları için ürün maliyetleri ve iadeler henüz raporda yoktu. Sipariş başına reklam harcaması ilk dönem 400 TL, ikinci dönem 500 TL olarak yükseldi. Artan sipariş sayısı ve artan harcama birbirini çelişmiyor. Mağaza sahibi için bu artışın iyi ya da kötü olup olmadığı, sipariş başına elde edilen kâr miktarına bağlıydı. Bu hesaplar, sorunun çözümüne doğrudan karar vermiyor; eksik bilgileri belirliyordu."
+          }
+        },
+        {
+          "category": "meaning_precision_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "hangi günün toplamına girdiğini",
+          "output_excerpt": "hangi dönemlere dahil edildiğini",
+          "rationale": "Daily reconciliation becomes assignment to periods, losing the stated day-level objective.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:findings:04",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesini dışa aktardık. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "İşlem listesini dışa aktarıp sipariş kimliklerini, oluşturulma tarihlerini ve son durumları kontrol ettik. Müşteri bilgileri bu inceleme için gerekli değildi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemlere dahil edildiğini anlamaktı. İkinci dönemin son gününde iptal edilen bir sipariş tespit edildi. Ancak ilk dönem için benzer bir iptal takibi yoktu. Bu nedenle yalnızca ikinci dönemin verisini düzeltmek yerine, iki döneme de aynı takip kuralı uygulanması gerekiyordu. Aksi takdirde \"daha temiz\" görünen tablo, farklı ölçütlerle hesaplanmış sayıları karşılaştırmış olurdu."
+          }
+        },
+        {
+          "category": "meaning_omission",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Onları dosyaya eklemedik.",
+          "output_excerpt": "Müşteri bilgileri bu inceleme için gerekli değildi.",
+          "rationale": "The explicit statement that personal information was excluded is omitted. This does not establish that data were included; the rewritten account loses the assurance.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:findings:05",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesini dışa aktardık. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "İşlem listesini dışa aktarıp sipariş kimliklerini, oluşturulma tarihlerini ve son durumları kontrol ettik. Müşteri bilgileri bu inceleme için gerekli değildi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemlere dahil edildiğini anlamaktı. İkinci dönemin son gününde iptal edilen bir sipariş tespit edildi. Ancak ilk dönem için benzer bir iptal takibi yoktu. Bu nedenle yalnızca ikinci dönemin verisini düzeltmek yerine, iki döneme de aynı takip kuralı uygulanması gerekiyordu. Aksi takdirde \"daha temiz\" görünen tablo, farklı ölçütlerle hesaplanmış sayıları karşılaştırmış olurdu."
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki.",
+          "output_excerpt": "İlk dönem 35, ikinci dönem 42 sipariş kaydı vardı.",
+          "rationale": "Digits and a combined sentence preserve the two counts.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, nisan raporunu açtığında önce sipariş sayısına baktı. İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki. Reklamları yöneten kişi ise tıklama sayısını gösteriyordu. İkisi de kendi seçtiği sayıya bakınca yapılan işin iyi gittiğini düşünüyordu. Sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi Nisan raporunu açtığında öncelikle sipariş sayısına baktı. İlk dönem 35, ikinci dönem 42 sipariş kaydı vardı. Reklamları yöneten kişi ise tıklama sayısına dikkat çekiyordu: 980'den 1.470'e yükseliyordu. İkisi de kendi seçtiği metrik üzerinden işin iyi gittiğini düşünüyordu. Asıl sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı."
+          }
+        },
+        {
+          "source_excerpt": "Henüz aynı soruya cevap vermiyorlardı.",
+          "output_excerpt": "Henüz aynı soruya cevap vermiyorlardı.",
+          "rationale": "The source's central different-question distinction is retained without a forced reformulation.",
+          "evidence_id": "qwen32b:lf10-01-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, nisan raporunu açtığında önce sipariş sayısına baktı. İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki. Reklamları yöneten kişi ise tıklama sayısını gösteriyordu. İkisi de kendi seçtiği sayıya bakınca yapılan işin iyi gittiğini düşünüyordu. Sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi Nisan raporunu açtığında öncelikle sipariş sayısına baktı. İlk dönem 35, ikinci dönem 42 sipariş kaydı vardı. Reklamları yöneten kişi ise tıklama sayısına dikkat çekiyordu: 980'den 1.470'e yükseliyordu. İkisi de kendi seçtiği metrik üzerinden işin iyi gittiğini düşünüyordu. Asıl sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Preserves the fictional framing, main amounts and counts, and the conclusion that profitability is not yet calculated."
+      ],
+      "limitations": [
+        "Shortening or changing paragraph structure is not itself a defect.",
+        "The chronology and follow-up findings are checked against the entire source cancellation paragraph; they are not literal-value flags."
+      ],
+      "review_id": "qwen32b:lf10-01-clean:full",
+      "output_id": "lf10-01-clean:full",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "full",
+      "source_sha256": "a45e5312f66c61fd4e0f5ddd0b79d3ea8aa31b62d69906dfb72457aaa17ff88a",
+      "output_sha256": "130950791319c3ffb8f389e7bf759e172a2bb9357a63d1f0e038d701632a8df8",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "gptoss120b",
+      "source_id": "lf10-02-clean",
+      "findings": [
+        {
+          "category": "referent_shift",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "İhtiyaç duymuyormuş.",
+          "output_excerpt": "İhtiyacım yokmuş.",
+          "rationale": "The preceding paragraph asks whether the writing needs the sentence. The rewrite makes the need explicitly the narrator's, changing the local referent. The subsequent scene-removal consequence remains.",
+          "evidence_id": "gptoss120b:lf10-02-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 11,
+            "paragraph": "İhtiyaç duymuyormuş. O sahneyi çıkardığımda metin eksilmedi; anlatıcının dikkatini başka yere çeken kısa bir sapak kapanmış oldu. Bunu, kaybolan her notun gereksiz olduğu biçiminde yorumlamıyorum. Bazı notlar bulunmadığında yazı yarım kalır. Bu kez öyle olmadı. Arama süresiyle yazının değeri arasında kendiliğinden bir ilişki kurmamak gerekiyordu.",
+            "previous_paragraph": "Sonraki hafta başka bir notu yine bulamadım. Önceki düzenin işe yaramadığını ilan etmek kolaydı. Fakat bu kez aradığım cümlenin defterde mi, telefonda mı olduğunu bile hatırlamıyordum. Kapağın içine yazdığım dizin, varlığından emin olmadığım bir notu bulamazdı. Sorunu küçük tutmak için iki yere baktım, sonra aramayı bıraktım. Yazının o cümleye gerçekten ihtiyaç duyup duymadığını yeniden düşündüm."
+          },
+          "output_context": {
+            "paragraph_index_1based": 11,
+            "paragraph": "İhtiyacım yokmuş. O sahneyi çıkardığımda metin eksilmedi; anlatıcının dikkatini başka yere çeken kısa bir sapak kapanmış oldu. Bunu, kaybolan her notun gereksiz olduğu biçiminde yorumlamıyorum. Bazı notlar bulunmadığında yazı yarım kalır. Bu kez öyle olmadı. Arama süresiyle yazının değeri arasında kendiliğinden bir ilişki kurmamak gerekiyordu.  "
+          }
+        },
+        {
+          "category": "new_turkish_orthography",
+          "severity": "minor",
+          "confidence": "high",
+          "source_excerpt": "bir tamir dükkânı hakkında.",
+          "output_excerpt": "bir tamir dükkanı hakkında.",
+          "rationale": "The source's standard 'dükkân' spelling loses its circumflex. This is a spelling issue, not a material change to the story.",
+          "evidence_id": "gptoss120b:lf10-02-clean:full:findings:02",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Bu anlatıdaki defterler ve olaylar kurmaca. Yine de anlatıcının derdi oldukça belirli: elindeki bütün notları sınıflandırmak istemiyor. Yarım kalmış bir yazının ilk fikrini yeniden bulmaya çalışıyor. Yazı, çocukken gidilen bir tamir dükkânı hakkında. Aranan notta dükkânın adresi veya ustanın adı yok. Yalnızca kapı açılınca duyulan sesin nasıl tarif edildiği yazıyor. Bellekte kalan şeyle sayfaya düşen şeyin aynı olup olmadığını görmek istiyor."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Bu anlatıdaki defterler ve olaylar kurmaca. Yine de anlatıcının derdi oldukça belirli: elindeki bütün notları sınıflandırmak istemiyor. Yarım kalmış bir yazının ilk fikrini yeniden bulmaya çalışıyor. Yazı, çocukken gidilen bir tamir dükkanı hakkında. Aranan notta dükkanın adresi ya da ustanın adı yok; yalnızca kapı açılınca duyulan sesin nasıl tarif edildiği yazıyor. Bellekte kalan şeyle sayfaya düşen şeyin aynı olup olmadığını görmek istiyor.  "
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "kapağın iç yüzüne kısa bir liste yazdım. Sayfa numarası, birkaç sözcük ve varsa bir soru.",
+          "output_excerpt": "kapağın iç yüzüne kısa bir liste yazdım: sayfa numarası, birkaç sözcük ve varsa bir soru.",
+          "rationale": "A colon clearly attaches the list contents to the preceding sentence without changing the event.",
+          "evidence_id": "gptoss120b:lf10-02-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "Ertesi gün masaya yalnızca kahve lekeli defteri koydum. Her sayfaya açıklama eklemek yerine kapağın iç yüzüne kısa bir liste yazdım. Sayfa numarası, birkaç sözcük ve varsa bir soru. Tamir dükkânıyla ilgili notu bulduğumda listenin karşısına \"Kapının sesi gerçekten burada mı?\" yazdım. Notun ne anlama geldiğini çözmek için acele etmemiştim. Sadece bir sonraki dönüşte yolumu kısaltacak bir işaret bırakmıştım."
+          },
+          "output_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "Ertesi gün masaya yalnızca kahve lekeli defteri koydum. Her sayfaya açıklama eklemek yerine kapağın iç yüzüne kısa bir liste yazdım: sayfa numarası, birkaç sözcük ve varsa bir soru. Tamir dükkanıyla ilgili notu bulduğumda listenin karşısına “Kapının sesi gerçekten burada mı?” yazdım. Notun ne anlama geldiğini çözmek için acele etmemiştim; sadece bir sonraki dönüşte yolumu kısaltacak bir işaret bırakmıştım.  "
+          }
+        },
+        {
+          "source_excerpt": "Çekmeceyi kapatınca içeride eksiksiz bir arşiv bırakmıyorum. Daha sonra dönmeyi umduğum birkaç sayfa bırakıyorum.",
+          "output_excerpt": "Çekmeceyi kapattığımda içeride eksiksiz bir arşiv bırakmıyorum; daha sonra dönmeyi umduğum birkaç sayfa bırakıyorum.",
+          "rationale": "The conjunction of two closely related clauses is a legitimate stylistic alternative.",
+          "evidence_id": "gptoss120b:lf10-02-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Yeni bir defter almak hâlâ hoşuma gidiyor. Bir gün bu üç defterden biri dolmadan dördüncüsüne başlayabilirim. Bunu yaptığımda önceki düzeni bozmuş sayılmak istemiyorum. Benim için işe yarayan şey, bütün notların aynı yerde durması değil; bir notun ne zaman işe yaradığını anlayabilmek. Çekmeceyi kapatınca içeride eksiksiz bir arşiv bırakmıyorum. Daha sonra dönmeyi umduğum birkaç sayfa bırakıyorum."
+          },
+          "output_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Yeni bir defter almak hâlâ hoşuma gidiyor. Bir gün bu üç defterden biri dolmadan dördüncüsüne başlayabilirim. Bunu yaptığımda önceki düzeni bozmuş sayılmak istemiyorum. Benim için işe yarayan şey, bütün notların aynı yerde durması değil; bir notun ne zaman işe yaradığını anlayabilmek. Çekmeceyi kapattığımda içeride eksiksiz bir arşiv bırakmıyorum; daha sonra dönmeyi umduğum birkaç sayfa bırakıyorum."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Preserves fictional status, three notebooks, both quotations, memory-versus-note uncertainty, unverified dates and limits of the narrator's method."
+      ],
+      "limitations": [
+        "The subject-shift finding uses the preceding paragraph as context.",
+        "Literary tense changes such as 'bırakmıştım' are not automatically treated as chronology errors."
+      ],
+      "review_id": "gptoss120b:lf10-02-clean:full",
+      "output_id": "lf10-02-clean:full",
+      "model": "openai/gpt-oss-120b",
+      "arm": "full",
+      "source_sha256": "15641fad5dd80616ab8d78242e15f4f3be35811c7210c1478a61245317d17d32",
+      "output_sha256": "06be4f74191544dce8931b9351220781fc07cf68d4f11a82b24036be72fbac5a",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "qwen32b",
+      "source_id": "lf10-02-clean",
+      "findings": [],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Bardağın gerçekten titreyip titremediğini de artık doğrulayamıyordum.",
+          "output_excerpt": "Bardağın gerçekten titreyip titremediğini de artık doğrulayamıyordum.",
+          "rationale": "Keeping the existing uncertainty unchanged preserves the narrative's distinction between memory and evidence.",
+          "evidence_id": "qwen32b:lf10-02-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "Bulduğum cümle, hatırladığımdan daha sıradandı: \"Kapı açılınca arkadaki bardak titriyordu.\" Ben yıllardır kapının ince bir zil sesi çıkardığını sanıyordum. Defterde zil yoktu. Bardağın gerçekten titreyip titremediğini de artık doğrulayamıyordum. Yazıda bu ayrımı korumaya karar verdim. Çocukluk hatırasını kesin bir kayıt gibi sunmak yerine, defterle belleğin birbirinden ayrıldığı yeri anlatacaktım."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "Bulduğum cümle, hatırladığımdan daha sıradandı: \"Kapı açılınca arkadaki bardak titriyordu.\" Ben yıllardır kapının ince bir zil sesi çıkardığını sanıyordum. Defterde zil yoktu. Bardağın gerçekten titreyip titremediğini de artık doğrulayamıyordum. Yazıda bu ayrımı korumaya karar verdim. Çocukluk hatırasını kesin bir kayıt gibi sunmak yerine, defterle belleğin birbirinden ayrıldığı yeri anlatacaktım."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "The reviewed output preserves the complete source wording; exact equality is verified separately in the report.",
+        "No forced edit is needed merely to demonstrate activity."
+      ],
+      "limitations": [
+        "An unchanged generated source is not thereby certified as perfect prose.",
+        "No new defect can be attributed to a textual change when exact equality holds, but that is narrower than a general model-quality conclusion."
+      ],
+      "review_id": "qwen32b:lf10-02-clean:full",
+      "output_id": "lf10-02-clean:full",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "full",
+      "source_sha256": "15641fad5dd80616ab8d78242e15f4f3be35811c7210c1478a61245317d17d32",
+      "output_sha256": "15641fad5dd80616ab8d78242e15f4f3be35811c7210c1478a61245317d17d32",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": true,
+      "whitespace_normalized_source_copy": true,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "gptoss120b",
+      "source_id": "lf10-03-clean",
+      "findings": [
+        {
+          "category": "certainty_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Bu iki aşamanın ayrı görünmesi, kullanıcının neyi beklediğini anlamasına yardımcı olabilirdi.",
+          "output_excerpt": "Bu iki aşamanın ayrı görünmesi, kullanıcının ne beklemesi gerektiğini anlamasına yardımcı olur.",
+          "rationale": "A possible benefit of the proposed interface change becomes a definite benefit. The unmeasured support-request caveat remains, so no measured reduction is alleged.",
+          "evidence_id": "gptoss120b:lf10-03-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Yükleme ekranındaki metinde küçük bir değişiklik önerdik: \"Dosya yüklendi\" mesajıyla \"Geri yükleme tamamlandı\" mesajı ayrılmalıydı. Bir dosyanın sunucuya ulaşması, içindeki kayıtların işlenmesini tamamlamıyordu. Bu iki aşamanın ayrı görünmesi, kullanıcının neyi beklediğini anlamasına yardımcı olabilirdi. Önerinin destek taleplerini azaltacağını henüz ölçmedik; ürün kararını bu iddiaya dayandırmadık."
+          },
+          "output_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Yükleme ekranındaki metinde küçük bir değişiklik önerdik: “Dosya yüklendi” mesajı ile “Geri yükleme tamamlandı” mesajının ayrı olması gerektiğini belirttik. Bir dosyanın sunucuya ulaşması, içindeki kayıtların işlenmesini tamamlamaz. Bu iki aşamanın ayrı görünmesi, kullanıcının ne beklemesi gerektiğini anlamasına yardımcı olur. Önerinin destek taleplerini azaltacağını henüz ölçmedik; ürün kararını bu iddiaya dayandırmadık."
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi.",
+          "output_excerpt": "Aynı özetin bulunması, dosyanın aktarım sırasında değişmediğini gösterebilir; fakat dosyanın baştan doğru içerikle oluşturulduğunu otomatik olarak söylemez.",
+          "rationale": "A general-present formulation retains both the possibility qualifier and the distinction between transfer integrity and original correctness.",
+          "evidence_id": "gptoss120b:lf10-03-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez yalnız sayıya güvenmedik; dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması, dosyanın aktarım sırasında değişmediğini gösterebilir; fakat dosyanın baştan doğru içerikle oluşturulduğunu otomatik olarak söylemez."
+          }
+        },
+        {
+          "source_excerpt": "sayıları ve ilişkileri de karşılaştırabilecektik.",
+          "output_excerpt": "sayıları ve ilişkileri de karşılaştırabildik.",
+          "rationale": "The later source paragraphs explicitly report comparing counts and folder IDs. In full context, the completed-action formulation is supported rather than an invented test result.",
+          "evidence_id": "gptoss120b:lf10-03-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Deneme hesabında 180 not, 12 klasör ve 27 dosya eki bulunuyordu. Bunlar gerçek kullanıcılara ait değildi. Ekibin oluşturduğu örnek notları kullandık; kişisel iletişim bilgisi veya müşteri belgesi eklemedik. Başlangıç durumunu ayrı bir listede sakladık. Böylece geri yükleme sonunda yalnızca ekranda bir şeyler görünüp görünmediğine bakmakla kalmayacak, sayıları ve ilişkileri de karşılaştırabilecektik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Deneme hesabında 180 not, 12 klasör ve 27 dosya eki bulunuyordu. Bunlar gerçek kullanıcılara ait değildi; ekibin oluşturduğu örnek notları kullandık ve kişisel iletişim bilgisi ya da müşteri belgesi eklemedik. Başlangıç durumunu ayrı bir listede sakladık. Böylece geri yükleme sonunda yalnızca ekranda bir şeyler görünüp görünmediğine bakmakla kalmayıp, sayıları ve ilişkileri de karşılaştırabildik."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Preserves all-attachment hashing versus subset inspection, version 2.4, counts 180/12/27/63, UTC versus account-zone display, same-instant condition, deliberate interruption and limitations on duplication claims."
+      ],
+      "limitations": [
+        "Tense changes are assessed using the complete source account, not an isolated sentence.",
+        "No clear new grammar error is recorded for this output; this is a targeted preservation review, not an exhaustive quality certification."
+      ],
+      "review_id": "gptoss120b:lf10-03-clean:full",
+      "output_id": "lf10-03-clean:full",
+      "model": "openai/gpt-oss-120b",
+      "arm": "full",
+      "source_sha256": "abdfcf0c938264a9b37bef2814982011b43275a1810694f4bf774cb1614d2029",
+      "output_sha256": "c944cc6c9de8ec91070319a29f95e2d445b36f567677a48f7dddbbef73cf580c",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "qwen32b",
+      "source_id": "lf10-03-clean",
+      "findings": [
+        {
+          "category": "meaning_failure_mode_change",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Notların içindeki ek bağlantıları görünüyordu ama bağlantılara tıklayınca dosyalar açılmıyordu.",
+          "output_excerpt": "ek dosyaların bağlantısı tıklanamıyordu.",
+          "rationale": "A clickable link whose file fails to open becomes an unclickable link, changing the reported interface failure.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "İlk denemeyi yalnız JSON dosyasıyla yaptık. Boş hesaba 180 not ve 12 klasör geldi. Notların içindeki ek bağlantıları görünüyordu ama bağlantılara tıklayınca dosyalar açılmıyordu. Bu sonuç, JSON dosyasının bozuk olduğunu tek başına göstermiyordu. Ekleri taşıyan ZIP dosyasını henüz yüklememiştik. Test tutanağına \"ekler kayıp\" yazmak yerine, hangi adımı yapmadığımızı açıkça kaydettik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "İlk geri yükleme denemesi yalnızca JSON dosyasıyla yapıldı. Boş hesaba 180 not ve 12 klasör aktarıldı. Notlar içeriğe sahip görünse de, ek dosyaların bağlantısı tıklanamıyordu. Bu durum, JSON dosyasının bozuk olduğunu değil, ekleri taşıyan ZIP dosyasının henüz yüklenmediğini gösteriyordu. Test tutanağına \"ekler kayıp\" yazmak yerine, hangi adımda eksik kaldığı açıkça belirlendi."
+          }
+        },
+        {
+          "category": "meaning_verification_scope_loss",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık.",
+          "output_excerpt": "Örneklerin bir kısmı manuel olarak açılıp kontrol edildi ve özetler karşılaştırıldı.",
+          "rationale": "The source explicitly distinguishes inspecting some examples from hashing all attachments. The rewrite removes the all-attachment qualification and reads as checks on the inspected subset.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:02",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyası yüklendiğinde 27 ekin tamamı listelendi. Ancak sayıya güvenmek yeterli değildi. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamazdı. Örneklerin bir kısmı manuel olarak açılıp kontrol edildi ve özetler karşılaştırıldı. Aynı özetin bulunması, aktarımda dosyanın değişmediğini gösterir; başlangıçtaki içerikle aynı olduğunu değil."
+          }
+        },
+        {
+          "category": "meaning_integrity_correctness_confusion",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi.",
+          "output_excerpt": "Aynı özetin bulunması, aktarımda dosyanın değişmediğini gösterir; başlangıçtaki içerikle aynı olduğunu değil.",
+          "rationale": "The source's limit concerns whether original contents were correct, not whether transferred contents match the original. The rewrite substitutes identity for correctness and creates a conflict with its own 'unchanged during transfer' statement.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:03",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyası yüklendiğinde 27 ekin tamamı listelendi. Ancak sayıya güvenmek yeterli değildi. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamazdı. Örneklerin bir kısmı manuel olarak açılıp kontrol edildi ve özetler karşılaştırıldı. Aynı özetin bulunması, aktarımda dosyanın değişmediğini gösterir; başlangıçtaki içerikle aynı olduğunu değil."
+          }
+        },
+        {
+          "category": "condition_omission",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Bu iki değer aynı anı ifade ediyorsa kayıt değişmiş sayılmayacaktı.",
+          "output_excerpt": "Bu fark, verinin değiştiğini değil, yalnızca gösterimdeki farklılığı ifade ediyordu.",
+          "rationale": "The same-instant condition is dropped; the difference is now categorically described as presentation only.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:04",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Tarih alanında ise beklenmedik bir fark çıktı. JSON dosyasında zaman UTC olarak saklanmıştı. Ekran, hesabın seçili saat dilimine göre gösterim yapıyordu. Dosyada gece yarısından önce görünen bir not, ekranda ertesi günün tarihiyle görünebiliyordu. Bu iki değer aynı anı ifade ediyorsa kayıt değişmiş sayılmayacaktı. Farkı açıklamadan \"tarihler uyuşmuyor\" demek, gösterimle veriyi birbirine karıştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Tarih alanında beklenmedik bir farkla karşılaşıldı. JSON dosyasında zaman UTC olarak saklanırken, ekran hesabın saat dilimine göre gösterim yapıyordu. Gece yarısından önce oluşturulmuş bir not, ekranda ertesi günün tarihiyle görünebilirdi. Bu fark, verinin değiştiğini değil, yalnızca gösterimdeki farklılığı ifade ediyordu. \"Tarihler uyuşmuyor\" demek, gösterimle veriyi karıştırıp kullanıcıyı yanıltabilirdi."
+          }
+        },
+        {
+          "category": "meaning_outcome_precision_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Tekrar yükleme sonunda toplam yine 180 not oldu.",
+          "output_excerpt": "Tekrar yükleme sonucunda toplam 180 not tekrar edilmedi;",
+          "rationale": "The source explicitly states the final total after retry. The rewrite turns 180 into the number of notes not duplicated, leaving the final-count postcondition less explicit.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:05",
+          "source_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Tekrar yükleme sonunda toplam yine 180 not oldu. Bu örnekte not kimlikleri sayesinde önceki kayıtlar ikinci kez oluşturulmamıştı. Ancak başlığı aynı, kimliği farklı olan notları ayrıca denememiştik. Sonucu \"uygulama hiçbir durumda tekrar üretmez\" diye yazmadık. Böyle bir cümle, yaptığımız tek kesinti denemesinden çok daha geniş bir davranışı garanti edecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 12,
+            "paragraph": "İkinci bir hesapta yükleme sırasında bağlantının kesilmesi denendi. Ekran işlemin tamamlanmadığını bildirdi. Hesap yeniden açıldığında notların tamamının gelip gelmediği doğrulanmadan önce işlem günlüğüne bakıldı, ardından sayılar karşılaştırıldı. Bu denemede 63 not kaydedilmiş oldu. Tekrar yükleme sonucunda toplam 180 not tekrar edilmedi; not kimlikleri sayesinde ikinci yükleme aynı verileri çoğaltmadı. Ancak başlığı aynı, kimliği farklı olan notlar için ayrı bir test yapılmadı. Sonucu \"uygulama hiçbir durumda tekrar üretmez\" demek, yalnızca bir kesinti denemesinden çok daha kapsamlı bir garanti oluştururdu."
+          }
+        },
+        {
+          "category": "negation_scope_weakening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "ürün kararını bu iddiaya dayandırmadık.",
+          "output_excerpt": "karar yalnızca bu iddiaya dayandırılmadı.",
+          "rationale": "Not basing the decision on this claim becomes not basing it solely on the claim, allowing it to be one contributing basis.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:06",
+          "source_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Yükleme ekranındaki metinde küçük bir değişiklik önerdik: \"Dosya yüklendi\" mesajıyla \"Geri yükleme tamamlandı\" mesajı ayrılmalıydı. Bir dosyanın sunucuya ulaşması, içindeki kayıtların işlenmesini tamamlamıyordu. Bu iki aşamanın ayrı görünmesi, kullanıcının neyi beklediğini anlamasına yardımcı olabilirdi. Önerinin destek taleplerini azaltacağını henüz ölçmedik; ürün kararını bu iddiaya dayandırmadık."
+          },
+          "output_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Yükleme ekranındaki mesaj için öneride bulunduk: \"Dosya yüklendi\" ile \"Geri yükleme tamamlandı\" mesajları ayrı olmalıydı. Bir dosyanın sunucuya ulaşması, içerdiği kayıtların işlenmesini bitirmiyor olabilirdi. Bu iki aşamanın kullanıcıya ayırt edilmesi, beklentileri netleştirebilirdi. Önerinin destek taleplerini azaltıp etkisini ölçmedik; karar yalnızca bu iddiaya dayandırılmadı."
+          }
+        },
+        {
+          "category": "meaning_scope_limit_loss",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Henüz her olasılığı sınamadık.",
+          "output_excerpt": "Tüm olasılıklar denendiğinde bile,",
+          "rationale": "An explicit statement that not all possibilities have been tested is replaced by an all-possibilities hypothetical. This removes the source's current evidence limit; the wording is not treated as an unambiguous assertion that exhaustive testing has already happened.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:07",
+          "source_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Yedek dosyasını saklamaya devam ediyoruz. Yanına, hangi hesapta ve hangi sürümde geri yükleme denemesi yaptığımızı belirten kısa bir kayıt da koyduk. Böylece elimizde yalnız bir indirme dosyası bulunmuyor; o dosyayla neyi denediğimizi anlatan bir iz de bulunuyor. Henüz her olasılığı sınamadık. Buna rağmen başlangıçtaki tek kutudan daha belirli bir soruya cevap verebiliyoruz: Bu örnek hesabı, açıklanan koşullarda geri getirebildik mi?"
+          },
+          "output_context": {
+            "paragraph_index_1based": 15,
+            "paragraph": "Yedek dosyası hâlâ saklanıyor. Yanına, hangi hesapta ve sürümde geri yükleme yapıldığı belirtilen kısa bir kayıt eklendi. Böylece elimizde yalnızca bir indirme dosyası değil, onunla ne yapıldığını anlatan bir iz de bulunuyor. Tüm olasılıklar denendiğinde bile, başlangıçtaki tek kutudan daha net bir soruya cevap verebiliyoruz: Bu örnek hesabı, açıklanan koşullarda geri getirebildik mi?"
+          }
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Bu iki aşamanın ayrı görünmesi, kullanıcının neyi beklediğini anlamasına yardımcı olabilirdi.",
+          "output_excerpt": "Bu iki aşamanın kullanıcıya ayırt edilmesi, beklentileri netleştirebilirdi.",
+          "rationale": "'Kullanıcıya ayırt edilmesi' has an incorrect relation: the stages can be shown separately to the user or distinguished by the user; the generated construction mixes them.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:findings:08",
+          "source_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Yükleme ekranındaki metinde küçük bir değişiklik önerdik: \"Dosya yüklendi\" mesajıyla \"Geri yükleme tamamlandı\" mesajı ayrılmalıydı. Bir dosyanın sunucuya ulaşması, içindeki kayıtların işlenmesini tamamlamıyordu. Bu iki aşamanın ayrı görünmesi, kullanıcının neyi beklediğini anlamasına yardımcı olabilirdi. Önerinin destek taleplerini azaltacağını henüz ölçmedik; ürün kararını bu iddiaya dayandırmadık."
+          },
+          "output_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Yükleme ekranındaki mesaj için öneride bulunduk: \"Dosya yüklendi\" ile \"Geri yükleme tamamlandı\" mesajları ayrı olmalıydı. Bir dosyanın sunucuya ulaşması, içerdiği kayıtların işlenmesini bitirmiyor olabilirdi. Bu iki aşamanın kullanıcıya ayırt edilmesi, beklentileri netleştirebilirdi. Önerinin destek taleplerini azaltıp etkisini ölçmedik; karar yalnızca bu iddiaya dayandırılmadı."
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Uygulama iki dosya biçimi sunuyordu.",
+          "output_excerpt": "Uygulama iki dışa aktarma biçimi sunuyordu: CSV ve JSON.",
+          "rationale": "Naming both formats in the introductory sentence is a legitimate local clarification.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Uygulama iki dosya biçimi sunuyordu. CSV seçeneği not başlığını, düz metni ve oluşturulma zamanını içeriyordu. JSON seçeneği bunlara klasör ilişkilerini de ekliyordu. Dosya eklerinin kendisi iki biçimde de bu dosyaların içine konmuyordu; ayrı bir ZIP dosyası hazırlanıyordu. Bu ayrım dışa aktarma ekranında yazıyordu, ancak indirme tamamlandığında görünen kısa mesajda tekrarlanmıyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Uygulama iki dışa aktarma biçimi sunuyordu: CSV ve JSON. CSV dosyası not başlıkları, düz metin ve oluşturulma tarihini içerirken, JSON dosyası ek olarak klasör ilişkilerini de taşıyordu. Dosya ekleri ise her iki biçimde de içine dahil edilmiyor, ayrı bir ZIP dosyası olarak hazırlanıyordu. Bu ayrım dışa aktarma ekranında belirtilse de, indirme tamamlandığında gösterilen kısa mesajda tekrar edilmiyordu."
+          }
+        },
+        {
+          "source_excerpt": "Başarısız denemeyi silmedik.",
+          "output_excerpt": "Başarısız deneme silinmedi;",
+          "rationale": "Changing active to passive preserves the fact that the failed trial record was retained.",
+          "evidence_id": "qwen32b:lf10-03-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 15,
+            "paragraph": "Denemenin sonunda yeni bir belge hazırladık. Belgede başlangıç listesi, dosyaların oluşturulma zamanı, uygulama sürümü ve görülen sonuçlar vardı. Başarısız denemeyi silmedik. Aynı hatayı yeniden oluşturmak gerektiğinde hangi anda bağlantıyı kestiğimizi bilmek, yalnızca son başarılı ekran görüntüsüne sahip olmaktan daha kullanışlıydı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Denemenin sonunda yeni bir belge hazırlandı. Başlangıç listesi, dosya zamanları, uygulama sürümü ve sonuçlar belgede yer aldı. Başarısız deneme silinmedi; aynı hatayı yeniden oluşturmak gerektiğinde, bağlantının hangi andaki kesintide olduğu bilgisi, yalnızca başarılı ekran görüntüsünden daha anlamlıydı."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Keeps fictional provenance, principal counts, separate ZIP requirement, version 2.4 and the untested same-title/different-ID case."
+      ],
+      "limitations": [
+        "The all-possibilities finding is a lost limitation, not a claimed proof that the output says all tests already passed.",
+        "The technical observations are source-relative comparisons; no outside facts about the fictional application are asserted."
+      ],
+      "review_id": "qwen32b:lf10-03-clean:full",
+      "output_id": "lf10-03-clean:full",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "full",
+      "source_sha256": "abdfcf0c938264a9b37bef2814982011b43275a1810694f4bf774cb1614d2029",
+      "output_sha256": "cca8af5be4a6fcf743b162e1e7974a5775e69fa47df71e4f30e3d3c97009f7d8",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "gptoss120b",
+      "source_id": "lf10-04-clean",
+      "findings": [
+        {
+          "category": "meaning_temporal_relation_change",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu.",
+          "output_excerpt": "Arşivin her boşluğu aynı günle doldurması gerekmezdi.",
+          "rationale": "The source's already awkward clause says gaps need not all be filled on the same day. Adding '-le' changes this to filling gaps with the same day/date. The inherited awkward subject construction is not counted as new.",
+          "evidence_id": "gptoss120b:lf10-04-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Fotoğraflardan birinin arkasında \"Yazın son pazarı\" yazıyordu. Cümlenin yanında yıl yoktu. Görüşmeye gelen iki kişi, görüntüdeki dükkânın ne zaman kapandığı konusunda farklı şeyler hatırlıyordu. Biri kapanışın taşınmadan önce, diğeri sonra olduğunu söyledi. Bizden bir tarih seçmemiz bekleniyordu. Oysa iki anlatıyı yan yana kaydetmek mümkündü. Arşivin her boşluğu aynı gün doldurması gerekmiyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Fotoğraflardan birinin arkasında “Yazın son pazarı” yazıyordu, ancak yanında bir yıl bulunmuyordu. Görüşmeye gelen iki kişi, görüntüdeki dükkânın ne zaman kapandığı konusunda farklı hatırlıklar paylaştı. Biri kapanışın taşınmadan önce gerçekleştiğini, diğeri ise sonrasını söyledi. Bizden kesin bir tarih seçmemiz isteniyordu; oysa iki anlatıyı yan yana kaydetmek mümkün olabilirdi. Arşivin her boşluğu aynı günle doldurması gerekmezdi."
+          }
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "soruların tek nedeninin o cümle olduğunu ölçmemiştik.",
+          "output_excerpt": "soruların tek nedeni o cümle olduğunu ölçmemiştik.",
+          "rationale": "The embedded clause loses the necessary genitive 'nedeninin', producing a new complement/case error.",
+          "evidence_id": "gptoss120b:lf10-04-clean:full:findings:02",
+          "source_context": {
+            "paragraph_index_1based": 15,
+            "paragraph": "Ayın sonunda en çok ziyaret edilen fotoğrafı seçip başarı ilan etmedik. Ziyaret sayıları, insanların ne öğrendiğini veya hangi bilgiyi yanlış anladığını göstermiyordu. Gelen düzeltme önerilerini ayrı izledik. Üç kişi aynı konumu sorduğunda, açıklamadaki yön tarifinin yetersiz olabileceğini düşündük. Bu bir olasılıktı; soruların tek nedeninin o cümle olduğunu ölçmemiştik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 15,
+            "paragraph": "Ayın sonunda en çok ziyaret edilen fotoğrafı seçip başarı ilan etmedik. Ziyaret sayıları, insanların ne öğrendiğini ya da hangi bilgiyi yanlış anladığını göstermez. Gelen düzeltme önerilerini ayrı ayrı inceledik. Üç kişi aynı konumu sorduğunda, açıklamadaki yön tarifinin yetersiz olabileceğini düşündük. Bu bir olasılıktı; soruların tek nedeni o cümle olduğunu ölçmemiştik."
+          }
+        },
+        {
+          "category": "new_turkish_word_choice",
+          "severity": "moderate",
+          "confidence": "medium",
+          "source_excerpt": "farklı şeyler hatırlıyordu.",
+          "output_excerpt": "farklı hatırlıklar paylaştı.",
+          "rationale": "'Hatırlıklar' is an unsuitable formation for recollections in this context. This is a lexical editorial judgment, not a claim that the form has no possible dictionary usage.",
+          "evidence_id": "gptoss120b:lf10-04-clean:full:findings:03",
+          "source_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Fotoğraflardan birinin arkasında \"Yazın son pazarı\" yazıyordu. Cümlenin yanında yıl yoktu. Görüşmeye gelen iki kişi, görüntüdeki dükkânın ne zaman kapandığı konusunda farklı şeyler hatırlıyordu. Biri kapanışın taşınmadan önce, diğeri sonra olduğunu söyledi. Bizden bir tarih seçmemiz bekleniyordu. Oysa iki anlatıyı yan yana kaydetmek mümkündü. Arşivin her boşluğu aynı gün doldurması gerekmiyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 4,
+            "paragraph": "Fotoğraflardan birinin arkasında “Yazın son pazarı” yazıyordu, ancak yanında bir yıl bulunmuyordu. Görüşmeye gelen iki kişi, görüntüdeki dükkânın ne zaman kapandığı konusunda farklı hatırlıklar paylaştı. Biri kapanışın taşınmadan önce gerçekleştiğini, diğeri ise sonrasını söyledi. Bizden kesin bir tarih seçmemiz isteniyordu; oysa iki anlatıyı yan yana kaydetmek mümkün olabilirdi. Arşivin her boşluğu aynı günle doldurması gerekmezdi."
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Bunu düzeltmek için eski kaydı silmedik. Zarf tarihini ayrı bir alana taşıdık",
+          "output_excerpt": "Bunu düzeltmek için eski kaydı silmek yerine güncelledik. Zarf tarihini ayrı bir alana taşıdık",
+          "rationale": "Describing the record as updated is supported by the source's relocation of the date and added unverified-date annotation; it is not an invented action.",
+          "evidence_id": "gptoss120b:lf10-04-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşivi kuran ekip olarak ilk hatamız, nesnenin üzerindeki her işareti doğrudan olayın bilgisi saymak olmuştu. Bunu düzeltmek için eski kaydı silmedik. Zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihinin henüz doğrulanmadığını yazdık. Böylece aynı zarfa daha sonra bakacak kişi hem ilk gözlemimizi hem de neden vazgeçtiğimizi görebilecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşivi kuran ekip olarak ilk hatamız, nesnenin üzerindeki her işareti doğrudan olayın bilgisi olarak kabul etmekti. Bunu düzeltmek için eski kaydı silmek yerine güncelledik. Zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihinin henüz doğrulanmadığını belirttik. Böylece aynı zarfa daha sonra bakacak kişi hem ilk gözlemimizi hem de neden vazgeçtiğimizi görebilecekti."
+          }
+        },
+        {
+          "source_excerpt": "İlk listeyi sessizce düzeltmek yerine belirsizliği not ettik. Görselin altına kesin bir isim dizisi koymadık.",
+          "output_excerpt": "İlk listeyi sessizce düzeltmek yerine belirsizliği not ettik; görselin altına kesin bir isim dizisi koymadık.",
+          "rationale": "Joining the two sentences preserves both the uncertainty and the decision not to supply definite names.",
+          "evidence_id": "gptoss120b:lf10-04-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bir fotoğraftaki çocukların adlarını hatırlayan kişi, isimleri sırayla söyledi. Daha sonra başka bir katılımcı iki adın yer değiştirmiş olabileceğini belirtti. İlk listeyi sessizce düzeltmek yerine belirsizliği not ettik. Görselin altına kesin bir isim dizisi koymadık. Bu tercih sayfayı daha eksik gösteriyordu ama okura elimizde olandan daha sağlam bir bilgi sunmuyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bir fotoğraftaki çocukların adlarını hatırlayan kişi, isimleri sırasıyla söyledi. Daha sonra başka bir katılımcı, iki ismin yer değiştirmiş olabileceğini belirtti. İlk listeyi sessizce düzeltmek yerine belirsizliği not ettik; görselin altına kesin bir isim dizisi koymadık. Bu tercih sayfayı daha eksik gösteriyordu, ancak okura elimizdeki bilgilerden daha sağlam bir veri sunmuyordu."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Preserves fictional provenance, photo and permission counts, competing date accounts, restricted recording use and the hypothesis-only explanation of repeated questions."
+      ],
+      "limitations": [
+        "The generated clean source contains an awkward archive-gap sentence; the review isolates the newly introduced 'günle' change rather than treating all awkwardness as model-introduced.",
+        "The 'hatırlıklar' observation has medium confidence and is not needed for the strict grammar findings."
+      ],
+      "review_id": "gptoss120b:lf10-04-clean:full",
+      "output_id": "lf10-04-clean:full",
+      "model": "openai/gpt-oss-120b",
+      "arm": "full",
+      "source_sha256": "4e29ff7783c75c8e40a5eb83f1878ac844b2f2313b6e179d08d638355a13047a",
+      "output_sha256": "361cdf9ca6481edc16dd4e875ae30c7057c849501b934c6351642512abdf753b",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "qwen32b",
+      "source_id": "lf10-04-clean",
+      "findings": [
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Arşivi kuran ekip olarak ilk hatamız,",
+          "output_excerpt": "Arşiv ekipten ilk hata,",
+          "rationale": "The generated noun phrase has no coherent case/possessive relation; the source's 'ekip olarak ilk hatamız' is grammatical.",
+          "evidence_id": "qwen32b:lf10-04-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşivi kuran ekip olarak ilk hatamız, nesnenin üzerindeki her işareti doğrudan olayın bilgisi saymak olmuştu. Bunu düzeltmek için eski kaydı silmedik. Zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihinin henüz doğrulanmadığını yazdık. Böylece aynı zarfa daha sonra bakacak kişi hem ilk gözlemimizi hem de neden vazgeçtiğimizi görebilecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşiv ekipten ilk hata, nesnelerdeki her işaretin doğrudan olayın bilgisi olduğunu varsaymaktı. Bu hatayı düzelttik, eski kaydı silmeden. Zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihinin henüz doğrulanmadığını belirttik. Böylece daha sonra bu zarfa bakanlar hem ilk gözlemin hem de neden vazgeçtiğimizin izini sürebilecekti.  "
+          }
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Eldeki izinlerin o tarihte neyi kapsadığını kaydettik.",
+          "output_excerpt": "O tarihte izin neyi kapsadığını kaydettik.",
+          "rationale": "The embedded clause requires a genitive subject such as 'iznin'; 'izin' is incorrectly left uninflected.",
+          "evidence_id": "qwen32b:lf10-04-clean:full:findings:02",
+          "source_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "İzin belgesinin kapsamı da her fotoğraf için aynı değildi. Bazı sahipler küçük boyutlu web gösterimine izin verirken basılı bir sergide kullanılmasını istemiyordu. Bu tercihleri, ileride değişmeyecek genel bir yasak gibi anlatmadık. Eldeki izinlerin o tarihte neyi kapsadığını kaydettik. Yeni bir kullanım düşünülürse yeniden görüşmek gerekecekti. İletişim için tutulan bilgiler ise ziyaretçilerin göreceği sayfalara taşınmadı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "İzin belgeleri de fotoğraf başına değişiyordu. Bazı sahipler küçük boyutlu web gösterimine izin verirken, basılı sergide kullanılmasını istemiyordu. Bu tercihleri genel yasak gibi anlatmadık. O tarihte izin neyi kapsadığını kaydettik. Yeni bir kullanım düşünülürse yeniden görüşmek gerekecekti. İletişim için tutulan bilgiler, ziyaretçilerin göreceği sayfalara taşınmadı.  "
+          }
+        },
+        {
+          "category": "new_negation_scope_error",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Arşivin açılışını, her kaydın tamamlandığı bir gün olarak görmüyoruz.",
+          "output_excerpt": "Arşivin açılışını, her kaydın tamamlandığı bir gün olarak değil, sürekli gelişen bir süreç olarak görmüyoruz.",
+          "rationale": "The added 'not X but Y' construction retains a negative main verb, now negating the newly added ongoing-process framing. The source simply denies that opening means every record is complete. The output is not treated as an unambiguous assertion that the archive is complete; its new negation structure is the problem.",
+          "evidence_id": "qwen32b:lf10-04-clean:full:findings:03",
+          "source_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Arşivin açılışını, her kaydın tamamlandığı bir gün olarak görmüyoruz. İlk zarfın tarihi hâlâ bazı fotoğrafları tarihlendirmeye yetmiyor. Buna rağmen o zarfın öyküsünü biliyoruz: bize kolay bir cevap vermiş, sonra bizi kaydın kaynağını sormaya zorlamıştı. Fotoğrafın arkasında yer kalmadığında eksik bilgiyi uydurmak gerekmiyor. Bazen yapılacak iş, soruyu fotoğrafla birlikte saklamak."
+          },
+          "output_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Arşivin açılışını, her kaydın tamamlandığı bir gün olarak değil, sürekli gelişen bir süreç olarak görmüyoruz. İlk zarfın tarihi hâlâ bazı fotoğrafları tarihlendirmeye yetmiyor. Buna rağmen o zarfın öyküsünü biliyoruz: bize kolay bir cevap verdi, sonra bizi kaydın kaynağını sormaya zorladı. Fotoğrafın arkasında yer kalmadığında eksik bilgiyi uydurmak gerekmiyor. Bazen yapılacak iş, soruyu fotoğrafla birlikte saklamak."
+          }
+        },
+        {
+          "category": "certainty_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi.",
+          "output_excerpt": "Zarfın üzerindeki tarih bu varsayımı destekliyordu.",
+          "rationale": "Apparent support for the initial date inference becomes definite support. The later envelope-date correction remains, so this is local strengthening.",
+          "evidence_id": "qwen32b:lf10-04-clean:full:findings:04",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü, masaya on dokuz fotoğraf bırakıldı. İçlerinde okul gezisi, dükkân önü ve bir düğün sofrası vardı. Fotoğrafların sahibi hepsini aynı zarfta saklamıştı. Biz de ilk anda aynı yılda çekildiklerini düşündük. Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi. Sonradan tarihin fotoğrafların çekildiği günü değil, zarfın satın alındığı günü anlattığını öğrendik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü, masaya on dokuz fotoğraf bırakıldı. İçlerinde okul gezisi, dükkân önü ve bir düğün sofrası vardı. Fotoğrafların sahibi hepsini aynı zarfta saklamıştı. İlk bakışta, hepsinin aynı yılda çekildiğini düşündük. Zarfın üzerindeki tarih bu varsayımı destekliyordu. Sonradan tarihin zarfın satın alındığı günü anlattığını öğrendik.  "
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Bunların 31'i için sitede yayımlama izni verildi.",
+          "output_excerpt": "31'ine web sitesinde yayımlama izni verildi.",
+          "rationale": "The reformulation keeps the permission count and publication channel.",
+          "evidence_id": "qwen32b:lf10-04-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "İlk hafta toplam 46 fotoğraf taradık. Bunların 31'i için sitede yayımlama izni verildi. Kalan 15 fotoğraf yalnızca özel arşiv kopyası olarak tutulacaktı. İki grubu aynı klasörde, yalnızca dosya adlarına güvenerek saklamadık. Yayın durumunu ayrı kaydettik ve siteye aktarılacak listeyi bu kayıttan ürettik. Taranmış olmakla yayımlanabilir olmak arasında açık bir ayrım gerekiyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "İlk hafta 46 fotoğraf taramıştık. 31'ine web sitesinde yayımlama izni verildi. Kalan 15 fotoğraf yalnızca özel arşiv kopyası olarak korunacaktı. İki grubu aynı klasörde, dosya adlarına güvenerek saklamadık. Yayın durumunu ayrı bir alanda kaydettik ve siteye aktarılacak listeyi bu bilgiye göre ürettik. Taranmış olmakla yayımlanabilir olmak arasında açık bir ayrım vardı.  "
+          }
+        },
+        {
+          "source_excerpt": "Yalnızca yazıya aktarılan ve sahibi tarafından kontrol edilen kısa bölümler kullanılacaktı.",
+          "output_excerpt": "yalnızca yazıya geçirilmiş ve sahibi tarafından kontrol edilen kısa bölümler kullanılacaktı.",
+          "rationale": "A legitimate lexical alternative preserves the short-excerpt and owner-check restrictions.",
+          "evidence_id": "qwen32b:lf10-04-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 10,
+            "paragraph": "Görüşmelerin ses kayıtları için de ayrı karar verdik. Bütün konuşmayı yayımlama izni almamıştık. Yalnızca yazıya aktarılan ve sahibi tarafından kontrol edilen kısa bölümler kullanılacaktı. Konuşma sırasında verilen bir onayı, daha geniş bir yayın iznine dönüştürmedik. Özellikle başka kişilerin hayatına ilişkin ayrıntıları, anlatının ilginç görünmesi uğruna sayfaya eklememeye çalıştık."
+          },
+          "output_context": {
+            "paragraph_index_1based": 10,
+            "paragraph": "Görüşmelerin ses kayıtları için de ayrı karar verdik. Tüm konuşmayı yayımlama izni almamıştık; yalnızca yazıya geçirilmiş ve sahibi tarafından kontrol edilen kısa bölümler kullanılacaktı. Konuşmada verilen bir onayı, daha geniş bir yayın iznine dönüştürmedik. Özellikle başka kişilerin hayatına dair ayrıntıları, anlatının ilginç görünmesi uğruna sayfaya eklememeye çalıştık.  "
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Preserves the fictional framing, counts 19/46/31/15, privacy exclusions, restricted audio permission and quoted participant wording."
+      ],
+      "limitations": [
+        "The source's archive-gap sentence is already awkward; the output's revision is not presented as evidence that the input was flawless.",
+        "The changed closing is analyzed for its actual negation scope, not simplified into a claim that it says all records are complete."
+      ],
+      "review_id": "qwen32b:lf10-04-clean:full",
+      "output_id": "lf10-04-clean:full",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "full",
+      "source_sha256": "4e29ff7783c75c8e40a5eb83f1878ac844b2f2313b6e179d08d638355a13047a",
+      "output_sha256": "e3f9be5de1783fbc22d5feb597b6dc05bb7e54e77ab2b6832c7e269d4b073b36",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "gptoss120b",
+      "source_id": "lf10-05-clean",
+      "findings": [
+        {
+          "category": "negation_reversal",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Çizimde yalnız dış ölçüler bulunmuyordu.",
+          "output_excerpt": "Çizimde yalnız dış ölçüler bulunuyordu.",
+          "rationale": "The drawing contains more than external dimensions in the source. The rewrite says it contains only external dimensions, contradicting both the source and its own next sentence about 58 cm hanger spacing.",
+          "evidence_id": "gptoss120b:lf10-05-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "Çizimde yalnız dış ölçüler bulunmuyordu. Askı noktaları arasındaki mesafe de 58 cm olarak gösterildi. Bu değer rafın genişliğiyle aynı değildi. İki sayıyı yan yana verdiğimizde neden farklı olduklarını kısa bir cümleyle açıkladık. Montaj deliğini dış kenardan hesaplayan birinin bu farkı gözden kaçırabileceğini düşündük. Bunun gerçekten kaç müşteriyi etkilediğini bilmiyorduk; yine de kendi sunumumuzdaki belirsizliği giderebilirdik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "Çizimde yalnız dış ölçüler bulunuyordu. Askı noktaları arasındaki mesafe ise 58 cm olarak gösterilmişti; bu değer rafın genişliğiyle aynı değildi. İki sayıyı yan yana verdiğimizde neden farklı olduklarını kısa bir cümleyle açıkladık. Montaj deliğini dış kenardan hesaplayan birinin bu farkı gözden kaçırabileceğini düşündük. Bu farkın kaç müşteriyi etkilediğini bilmiyoruz, ancak sunumumuzdaki belirsizliği giderebiliriz."
+          }
+        },
+        {
+          "category": "meaning_role_and_argument_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Güzel bir sahne, ölçü bilgisinin görevini kendiliğinden üstlenmiyordu.",
+          "output_excerpt": "Güzel bir sahne, ölçü bilgisinin kendiliğinden üstlenmesini sağlamıyordu.",
+          "rationale": "The source says a scene cannot automatically take over the role of measurement information. The rewrite makes the information itself the agent of 'üstlenmek' and drops what it would take over, breaking the grammatical/semantic relation.",
+          "evidence_id": "gptoss120b:lf10-05-clean:full:findings:02",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Ürünün genişliği 72 cm, derinliği 18 cm, kalınlığı 2 cm olarak belirlenmişti. Fotoğraftaki kitap ise ölçü referansı olması için seçilmemişti; çekim sırasında yakında bulunduğu için kullanılmıştı. Okurun kitabın boyunu bildiğini varsayamazdık. Masanın yüksekliği de sayfada yazmıyordu. Güzel bir sahne, ölçü bilgisinin görevini kendiliğinden üstlenmiyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Ürünün genişliği 72 cm, derinliği 18 cm, kalınlığı 2 cm olarak belirlenmişti. Fotoğraftaki kitap ölçü referansı olarak seçilmemiş, çekim sırasında yakın olduğu için kullanılmıştı; okuyucunun kitabın boyutunu bildiğini varsayamazdık. Masanın yüksekliği ise sayfada yer almıyordu. Güzel bir sahne, ölçü bilgisinin kendiliğinden üstlenmesini sağlamıyordu."
+          }
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "güzel görüntüyü, eksik ölçünün yerine koyduğu ölçüde değil.",
+          "output_excerpt": "güzel görüntü, eksik ölçünün yerine koyduğu ölçüyle değil.",
+          "rationale": "The source's object 'görüntüyü' becomes a nominative subject, and degree phrase 'ölçüde' becomes instrumental 'ölçüyle'. The final contrast no longer forms a coherent continuation of the product-page sentence.",
+          "evidence_id": "gptoss120b:lf10-05-clean:full:findings:03",
+          "source_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "İkinci fotoğraf hâlâ daha sıcak görünüyor. Masanın üzerindeki kitabın kapağını da seviyoruz. Fakat artık o fotoğrafın, yerine getiremeyeceği bütün bilgi görevlerini taşımasını beklemiyoruz. Rafı görmek başka, duvarda nereye oturacağını hesaplamak başka bir iş. Ürün sayfası bu iki işi birbirine bağlayabildiği ölçüde kullanışlı olacak; güzel görüntüyü, eksik ölçünün yerine koyduğu ölçüde değil."
+          },
+          "output_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "İkinci fotoğraf hâlâ daha sıcak görünüyor; masanın üzerindeki kitabın kapağını da seviyoruz. Ancak artık o fotoğrafın, yerine getiremeyeceği bütün bilgi görevlerini taşımasını beklemiyoruz. Rafı görmek bir şey, duvarda nereye oturacağını hesaplamak başka bir iş. Ürün sayfası bu iki işi birbirine bağlayabildiği ölçüde kullanılabilir; güzel görüntü, eksik ölçünün yerine koyduğu ölçüyle değil."
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Ürünün genişliği 72 cm, derinliği 18 cm, kalınlığı 2 cm",
+          "output_excerpt": "Ürünün genişliği 72 cm, derinliği 18 cm, kalınlığı 2 cm",
+          "rationale": "Narrow no-break spaces preserve values and units; they are typographic differences only.",
+          "evidence_id": "gptoss120b:lf10-05-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Ürünün genişliği 72 cm, derinliği 18 cm, kalınlığı 2 cm olarak belirlenmişti. Fotoğraftaki kitap ise ölçü referansı olması için seçilmemişti; çekim sırasında yakında bulunduğu için kullanılmıştı. Okurun kitabın boyunu bildiğini varsayamazdık. Masanın yüksekliği de sayfada yazmıyordu. Güzel bir sahne, ölçü bilgisinin görevini kendiliğinden üstlenmiyordu."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Ürünün genişliği 72 cm, derinliği 18 cm, kalınlığı 2 cm olarak belirlenmişti. Fotoğraftaki kitap ölçü referansı olarak seçilmemiş, çekim sırasında yakın olduğu için kullanılmıştı; okuyucunun kitabın boyutunu bildiğini varsayamazdık. Masanın yüksekliği ise sayfada yer almıyordu. Güzel bir sahne, ölçü bilgisinin kendiliğinden üstlenmesini sağlamıyordu."
+          }
+        },
+        {
+          "source_excerpt": "En çok sorulan şeylerden biri,",
+          "output_excerpt": "En çok sorulan sorulardan biri,",
+          "rationale": "The more specific noun 'questions' preserves the one-of-the-most qualification and fits the surrounding discussion.",
+          "evidence_id": "gptoss120b:lf10-05-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Fotoğraf seçimini yapmak için altı kişiye iki sayfa örneği gösterdik. Katılımcılar atölyenin çalışanları ve yakınlarından oluşuyordu; müşteri kitlesini temsil eden bir araştırma grubu değildi. Bu yüzden sonuçları bir tercih yüzdesine dönüştürüp sayfanın başarısı olarak sunmadık. Yalnızca hangi soruların tekrarlandığını kaydettik. En çok sorulan şeylerden biri, duvara takılan parçaların kutuya dahil olup olmadığıydı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Fotoğraf seçimini yapmak için altı kişiye iki sayfa örneği gösterdik. Katılımcılar atölyenin çalışanları ve yakınlarından oluşuyordu; müşteri kitlesini temsil eden bir araştırma grubu değildi. Bu yüzden sonuçları bir tercih yüzdesine dönüştürüp sayfanın başarısı olarak sunmadık. Yalnızca hangi soruların tekrarlandığını kaydettik. En çok sorulan sorulardan biri, duvara takılan parçaların kutuya dahil olup olmadığıydı."
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Retains fictional status, numerical dimensions, nonrepresentative six-person sample, box exclusions, two retained photos, absent capacity test and absent sales comparison."
+      ],
+      "limitations": [
+        "The drawing negation is a clear local contradiction even though every literal number is retained.",
+        "The 'altından ... yanına ekledik' formulation is not counted as a definite movement-direction reversal because both from/to markers remain."
+      ],
+      "review_id": "gptoss120b:lf10-05-clean:full",
+      "output_id": "lf10-05-clean:full",
+      "model": "openai/gpt-oss-120b",
+      "arm": "full",
+      "source_sha256": "31b6f368c9ebc542c0ea52f77c508d00915f897c6aa3bd3b2c99b6c5a1b24dbb",
+      "output_sha256": "386aac074529715f2712e3a9093a173ab353c76d2833db381cd70ac8079d2817",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "qwen32b",
+      "source_id": "lf10-05-clean",
+      "findings": [],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Çizimde yalnız dış ölçüler bulunmuyordu.",
+          "output_excerpt": "Çizimde yalnız dış ölçüler bulunmuyordu.",
+          "rationale": "Retaining the existing negation preserves the distinction between external dimensions and hanger spacing.",
+          "evidence_id": "qwen32b:lf10-05-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "Çizimde yalnız dış ölçüler bulunmuyordu. Askı noktaları arasındaki mesafe de 58 cm olarak gösterildi. Bu değer rafın genişliğiyle aynı değildi. İki sayıyı yan yana verdiğimizde neden farklı olduklarını kısa bir cümleyle açıkladık. Montaj deliğini dış kenardan hesaplayan birinin bu farkı gözden kaçırabileceğini düşündük. Bunun gerçekten kaç müşteriyi etkilediğini bilmiyorduk; yine de kendi sunumumuzdaki belirsizliği giderebilirdik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 5,
+            "paragraph": "Çizimde yalnız dış ölçüler bulunmuyordu. Askı noktaları arasındaki mesafe de 58 cm olarak gösterildi. Bu değer rafın genişliğiyle aynı değildi. İki sayıyı yan yana verdiğimizde neden farklı olduklarını kısa bir cümleyle açıkladık. Montaj deliğini dış kenardan hesaplayan birinin bu farkı gözden kaçırabileceğini düşündük. Bunun gerçekten kaç müşteriyi etkilediğini bilmiyorduk; yine de kendi sunumumuzdaki belirsizliği giderebilirdik.  "
+          }
+        },
+        {
+          "source_excerpt": "Yerini değiştirdiğimiz bilgiler ölçü çizimi, kutu içeriği ve malzeme açıklamasıydı.",
+          "output_excerpt": "Yerini değiştirdiğimiz bilgiler ölçü çizimi, kutu içeriği ve malzeme açıklamasıydı.",
+          "rationale": "Keeping the precise relocation statement avoids conflating moving information with changing its contents.",
+          "evidence_id": "qwen32b:lf10-05-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Yeni sürümü yayımlamadan önce eski ve yeni sayfayı aynı ekranda açtık. Ürün adı, fiyat ve dış ölçüler değişmemişti. Yerini değiştirdiğimiz bilgiler ölçü çizimi, kutu içeriği ve malzeme açıklamasıydı. Fotoğraflardan birini kaldırmadık; ilk fotoğrafı genel görünüm, ikinciyi kullanım sahnesi olarak bıraktık. Böylece farklı görevler üstlenen iki görüntüyü tek bir kazanan seçimine zorlamamış olduk."
+          },
+          "output_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Yeni sürümü yayımlamadan önce eski ve yeni sayfayı aynı ekranda açtık. Ürün adı, fiyat ve dış ölçüler değişmemişti. Yerini değiştirdiğimiz bilgiler ölçü çizimi, kutu içeriği ve malzeme açıklamasıydı. Fotoğraflardan birini kaldırmadık; ilk fotoğrafı genel görünüm, ikinciyi kullanım sahnesi olarak bıraktık. Böylece farklı görevler üstlenen iki görüntüyü tek bir kazanan seçimine zorlamamış olduk.  "
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Substantive wording is preserved; observed differences are presentation whitespace.",
+        "All source qualifications, figures, fictional provenance and explicit limits remain."
+      ],
+      "limitations": [
+        "No new meaning or grammar defect is recorded.",
+        "The generated clean label does not prove source perfection; preserving adequate existing prose is nevertheless a legitimate outcome."
+      ],
+      "review_id": "qwen32b:lf10-05-clean:full",
+      "output_id": "lf10-05-clean:full",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "full",
+      "source_sha256": "31b6f368c9ebc542c0ea52f77c508d00915f897c6aa3bd3b2c99b6c5a1b24dbb",
+      "output_sha256": "7a2815c35ef73fcf6625d5a0df113e62c04ede8e3651fbfe28fdc87603e37fe5",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": true,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "gptoss120b",
+      "source_id": "lf10-06-clean",
+      "findings": [
+        {
+          "category": "meaning_modality_precision_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "kullanılamıyorsa o anda masada ne oluyor?",
+          "output_excerpt": "kullanılmıyorsa o anda masada ne oluyor?",
+          "rationale": "The closing diagnostic condition changes from an explanation being unusable to it not being used. Non-use can also reflect choice or circumstance; it does not preserve the source's explicit inability condition.",
+          "evidence_id": "gptoss120b:lf10-06-clean:full:findings:01",
+          "source_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Atölye günlüğünün son sayfasında başarı puanı yok. Kimlerin geldiği, neyin denendiği ve hangi soruların açık kaldığı var. İlk haftanın sessizliği de ikinci haftanın konuşkanlığı da bu kayıtta yerini koruyor. Birini başarısızlık, diğerini başarı diye etiketlemedik. Bundan sonra bakacağımız şey daha belirli: Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılamıyorsa o anda masada ne oluyor?"
+          },
+          "output_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Atölye günlüğünün son sayfasında bir başarı puanı yok. Kimlerin geldiği, neyin denendiği ve hangi soruların açık kaldığı kayıtlarda yer alıyor. İlk haftanın sessizliği de ikinci haftanın konuşkanlığı da bu kayıtta korunuyor. Birini başarısızlık, diğerini başarı diye etiketlemedik. Bundan sonra bakacağımız şey daha belirli: Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılmıyorsa o anda masada ne oluyor?"
+          }
+        }
+      ],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "Sessizliği hemen anlaşılmış olmanın işareti saymak kolaydı.",
+          "output_excerpt": "Sessizliğin hemen anlaşılmış olmanın bir işareti sayılması kolaydı.",
+          "rationale": "The genitive subject is correctly matched with the nominalized 'sayılması'; this is a grammatical alternative preserving the inference about silence.",
+          "evidence_id": "gptoss120b:lf10-06-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Sessizliği hemen anlaşılmış olmanın işareti saymak kolaydı. Fakat masanın bir ucunda iki kişi eğitmenin el hareketini tekrar etmeye çalışıyor, diğer uçta biri arkadaşının yaptığına bakıyordu. Sorunun duyulmaması, herkesin ne yapacağını bildiğini göstermiyordu. Bazı insanlar nerede takıldığını henüz söyleyememiş olabilir; bazıları da kendi başına denemeyi tercih etmiş olabilir. O sabah bu olasılıkları birbirinden ayıracak veri toplamadık."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Sessizliğin hemen anlaşılmış olmanın bir işareti sayılması kolaydı. Ancak masanın bir ucunda iki kişi eğitmenin el hareketini tekrarlamaya çalışırken, diğer ucunda biri arkadaşının yaptığına bakıyordu. Sorunun duyulmaması, herkesin ne yapacağını bildiğini göstermiyordu. Bazı kişiler hâlâ nerede takıldıklarını söyleyememiş olabilir; bazıları ise kendi başına denemeyi tercih etmiş olabilir. O sabah bu olasılıkları birbirinden ayıracak veri toplamadık.  "
+          }
+        },
+        {
+          "source_excerpt": "Konuşma on sekiz dakika sürdü.",
+          "output_excerpt": "konuşma 18 dakika sürdü.",
+          "rationale": "Digits and a narrow no-break space preserve the duration.",
+          "evidence_id": "gptoss120b:lf10-06-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Bu yazıdaki çömlek atölyesi ve katılımcılar kurmacadır. Cumartesi sabahı on iki kişi uzun masanın çevresine oturdu. Eğitmen önce malzemeleri gösterdi, ardından küçük bir kâsenin nasıl biçimlendirildiğini anlattı. İlk denemede bütün açıklamalar başta yapıldı. Konuşma on sekiz dakika sürdü. Katılımcılar kile dokunmaya başladığında masada beklediğimizden az soru vardı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Bu yazıdaki çömlek atölyesi ve katılımcılar kurmacadır. Cumartesi sabahı 12 kişi uzun bir masanın çevresine oturdu. Eğitmen önce malzemeleri gösterdi, ardından küçük bir kâsenin nasıl biçimlendirileceğini anlattı. İlk denemede bütün açıklamalar başta yapıldı; konuşma 18 dakika sürdü. Katılımcılar kil ile çalışmaya başladıklarında masada beklediğimizden az soru soruldu.  "
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "Retains fictional framing, group sizes and durations, three returning members, noncomparability, separate participant feedback, unmeasured outcomes, possible future clue and the decision not to redesign the whole arrangement."
+      ],
+      "limitations": [
+        "Dropping 'düşündüğünü' from the participant question is not counted as a separate proven measurement reversal because the question remains a self-report and nearby limitations on skill inference are retained.",
+        "No clear new grammar error is recorded; the final modality difference is a local diagnostic-focus change."
+      ],
+      "review_id": "gptoss120b:lf10-06-clean:full",
+      "output_id": "lf10-06-clean:full",
+      "model": "openai/gpt-oss-120b",
+      "arm": "full",
+      "source_sha256": "ded917b4e0a1ba7c66000bf17dd9ee977393a9509ee581105916a742ee46ed19",
+      "output_sha256": "3b736b5e43421ea37ac6fcec74ab4b249dc5eae638dc83705ecec9090f18fc02",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    },
+    {
+      "model_key": "qwen32b",
+      "source_id": "lf10-06-clean",
+      "findings": [],
+      "benign_or_useful_edits": [
+        {
+          "source_excerpt": "# Atölyede sessizlik başladığında",
+          "output_excerpt": "# Atölyede Sessizlik ve Konuşkanlık",
+          "rationale": "The new title accurately reflects the essay's comparison of silence and talkativeness; a title change is not inherently a meaning defect.",
+          "evidence_id": "qwen32b:lf10-06-clean:full:benign_or_useful_edits:01",
+          "source_context": {
+            "paragraph_index_1based": 1,
+            "paragraph": "# Atölyede sessizlik başladığında"
+          },
+          "output_context": {
+            "paragraph_index_1based": 1,
+            "paragraph": "# Atölyede Sessizlik ve Konuşkanlık"
+          }
+        },
+        {
+          "source_excerpt": "Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılamıyorsa o anda masada ne oluyor?",
+          "output_excerpt": "Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılamıyorsa o anda masada ne oluyor?",
+          "rationale": "Keeping the final ability/inability distinction preserves the source's diagnostic question.",
+          "evidence_id": "qwen32b:lf10-06-clean:full:benign_or_useful_edits:02",
+          "source_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Atölye günlüğünün son sayfasında başarı puanı yok. Kimlerin geldiği, neyin denendiği ve hangi soruların açık kaldığı var. İlk haftanın sessizliği de ikinci haftanın konuşkanlığı da bu kayıtta yerini koruyor. Birini başarısızlık, diğerini başarı diye etiketlemedik. Bundan sonra bakacağımız şey daha belirli: Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılamıyorsa o anda masada ne oluyor?"
+          },
+          "output_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Atölye günlüğünün son sayfasında başarı puanı yok. Kimlerin geldiği, neyin denendiği ve hangi soruların açık kaldığı var. İlk haftanın sessizliği de ikinci haftanın konuşkanlığı da bu kayıtta yerini koruyor. Birini başarısızlık, diğerini başarı diye etiketlemedik. Bundan sonra bakacağımız şey daha belirli: Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılamıyorsa o anda masada ne oluyor?"
+          }
+        }
+      ],
+      "preserved_strengths": [
+        "The substantive narrative and qualifications are preserved; visible changes concern the title, heading casing and a punctuation choice.",
+        "All group counts, durations, unmeasured outcomes, distinct feedback and the limited-change plan remain."
+      ],
+      "limitations": [
+        "The title is treated as a legitimate editorial alternative, not evidence that any change is bad.",
+        "No high-confidence introduced meaning or grammar defect is recorded in this targeted review; this is not an overall quality rate."
+      ],
+      "review_id": "qwen32b:lf10-06-clean:full",
+      "output_id": "lf10-06-clean:full",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "full",
+      "source_sha256": "ded917b4e0a1ba7c66000bf17dd9ee977393a9509ee581105916a742ee46ed19",
+      "output_sha256": "394123b050232257f44f807333d36378dbe77d00571acc193654d2500c8343a7",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false,
+      "reviewed_full_source_and_output": true,
+      "semantic_fidelity_proved": false
+    }
+  ],
+  "key_findings": [
+    {
+      "id": "gptoss-drawing-negation",
+      "evidence_level": "High-confidence source/output observation",
+      "review_id": "gptoss120b:lf10-05-clean:full",
+      "source_excerpt": "Çizimde yalnız dış ölçüler bulunmuyordu.",
+      "output_excerpt": "Çizimde yalnız dış ölçüler bulunuyordu.",
+      "interpretation": "The negation is lost, contradicting both the source and the following 58 cm hanger-spacing sentence. Correct literal measurements do not prevent this error."
+    },
+    {
+      "id": "qwen-order-timing",
+      "evidence_level": "High-confidence source/output observation",
+      "review_id": "qwen32b:lf10-01-clean:full",
+      "source_excerpt": "ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük.",
+      "output_excerpt": "İkinci dönemin son gününde iptal edilen bir sipariş tespit edildi.",
+      "interpretation": "The order-creation timestamp becomes the cancellation timestamp; equal headline counts do not preserve chronology."
+    },
+    {
+      "id": "qwen-hash-distinction",
+      "evidence_level": "High-confidence source/output observation",
+      "review_id": "qwen32b:lf10-03-clean:full",
+      "source_excerpt": "dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi.",
+      "output_excerpt": "başlangıçtaki içerikle aynı olduğunu değil.",
+      "interpretation": "Original-content correctness is replaced by original-content identity, undermining the paragraph's integrity-versus-correctness distinction."
+    },
+    {
+      "id": "new-grammar-in-both-models",
+      "evidence_level": "High-confidence source/output observations",
+      "examples": [
+        {
+          "review_id": "qwen32b:lf10-01-clean:full",
+          "output_excerpt": "birbirini çelişmiyor",
+          "issue": "Wrong case with çelişmek."
+        },
+        {
+          "review_id": "gptoss120b:lf10-04-clean:full",
+          "output_excerpt": "soruların tek nedeni o cümle olduğunu",
+          "issue": "Missing genitive in the embedded clause."
+        },
+        {
+          "review_id": "qwen32b:lf10-04-clean:full",
+          "output_excerpt": "O tarihte izin neyi kapsadığını",
+          "issue": "Missing genitive in the embedded clause."
+        },
+        {
+          "review_id": "gptoss120b:lf10-05-clean:full",
+          "output_excerpt": "güzel görüntü, eksik ölçünün yerine koyduğu ölçüyle değil.",
+          "issue": "Object case and degree expression are broken."
+        }
+      ],
+      "interpretation": "These are actual new form problems, not penalties for typographic changes."
+    },
+    {
+      "id": "legitimate-preservation-and-editing",
+      "evidence_level": "Exact equality checks and contextual editorial judgments",
+      "examples": [
+        {
+          "review_id": "qwen32b:lf10-02-clean:full",
+          "observation": "Exact source copy verified; no new text is introduced."
+        },
+        {
+          "review_id": "qwen32b:lf10-05-clean:full",
+          "observation": "Whitespace-normalized equality verified; substantive wording is unchanged."
+        },
+        {
+          "review_id": "qwen32b:lf10-06-clean:full",
+          "observation": "New title reflects the essay's silence/talkativeness theme; no clear introduced meaning/grammar problem is recorded."
+        },
+        {
+          "review_id": "gptoss120b:lf10-03-clean:full",
+          "observation": "All-attachment scope, version, time-zone condition and main technical qualifications are preserved; supported tense and sentence-linking changes are not errors."
+        }
+      ],
+      "interpretation": "Preservation does not require byte-for-byte copying, and an unchanged adequate passage is a valid outcome. Neither observation establishes perfect source quality or universal model quality."
+    },
+    {
+      "id": "generated-clean-is-not-perfect",
+      "evidence_level": "Source inspection",
+      "source_id": "lf10-04-clean",
+      "source_excerpt": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu.",
+      "interpretation": "This source sentence is already awkward. The review attributes only newly introduced changes, such as gün becoming günle, to the model and does not treat the clean label as human certification."
+    }
+  ],
+  "interpretation_and_limits": [
+    "The targeted preservation risk is confirmed by concrete source-relative examples, including an unambiguous lost negation and changed chronology.",
+    "These observations complete the requested inspection of full-arm clean-source outputs; they do not estimate general quality rates or isolate causal effects of prompt rules.",
+    "Known prior fixture/model exposure, one AI reviewer and generated development sources limit independence and generalization.",
+    "No defect recorded for an output means none was identified under this focused review, not that every dimension of style or fidelity is proven optimal.",
+    "The findings support checking local negation, roles, temporal relations and evidence qualifications after edits; they do not justify forbidding all edits to clean-labeled text."
+  ],
+  "release_implication": {
+    "auto_promote": false,
+    "semantic_fidelity_proved": false,
+    "human_gate_satisfied": false,
+    "statement": "Diagnostic preservation evidence only; no release promotion or overall quality claim is made."
+  }
+}
