@@ -38,7 +38,7 @@ Cümle yığılmış adlar ve genel fiiller yüzünden ağırsa somut eylemi bul
 |---|---|
 | Belgelerin kontrol edilmesinin ardından arşivleme işlemi başlayacak. | Belgeler kontrol edildikten sonra arşivleme başlayacak. Sıra ve başlangıç korunur. |
 | Her talebin ayrı ayrı değerlendirilmesi işlemini gerçekleştirdik. | Her talebi ayrı ayrı değerlendirdik. Eylem görünür, kapsam ve kişi aynı. |
-| Bu aşamada işlemin iptal edilmesi söz konusu olabilir. | Bu aşamada işlemin iptali gündeme gelebilir. İhtimal korunur; iptale izin verildiği veya iptalin gerçekleşeceği söylenmez. |
+| Bu aşamada işlemin iptal edilmesi söz konusu olabilir. | Bu aşamada işlem iptal edilebilir. Ancak bağlam bunun yalnız bir olasılık mı, bir izin mi olduğunu belirlemiyorsa kaynak biçimini koru. “İptali gündeme gelebilir” ancak tartışmaya alınma ihtimali kastediliyorsa uygundur; iptalin gerçekleşme ihtimaliyle aynı değildir. |
 | Ödemeyi onaylamadık. | Aynen bırak. "Ödeme onaylanamadı" bir yetersizlik veya engel ima edebilir. |
 
 Sözcüğün ağırlığı tek başına sorun değildir. “Gerçekleştirmek”, “değerlendirmek”, “sağlamak”, “uygulamak” ve benzeri fiiller bağlamlarında doğal olabilir. “Kısa olan daha iyidir” şeklinde bir ön kabul kurma.
@@ -52,7 +52,7 @@ Türkçe konuşmada kısa yanıt, özne düşürme, bağlamdan tamamlanan ifade,
 | Hani yarın gelecektin? | Önceki sözü veya beklentiyi hatırlatma. |
 | Daha yeni geldim. | Yakın zaman ve karşı tarafın beklentisine yanıt. |
 | Gel de konuşalım. | Davet, bağlama göre sitem veya yakınlık. |
-| Bunu da mı unuttun? | Önceki olaya eklenen unutma, soru ve vurgu. |
+| Bunu da mı unuttun? | Başka bir öğeye veya olaya ekleme, soru ve vurgu. Önceden de bir şeyin unutulduğunu kesin olarak çıkarma. |
 | Bir bakayım. | Kısa süreli deneme veya konuşma sırası. |
 | Yok, öyle değil. | İtiraz veya önceki önermeyi düzeltme. |
 | Ee, şimdi ne olacak? | Sözlü geçiş, tereddüt veya yeni soru. |
@@ -67,9 +67,9 @@ Paragrafa ilk cümlesinden son cümlesine kadar bak. Okur bir bilgi mi ediniyor,
 
 Girdi: "Formun doldurulması için gerekli alanların tamamlanması gerekmektedir. E-posta adresinin girilmesi zorunludur. Telefon numarası ise isteğe bağlıdır."
 
-Düzenleme: "Formdaki zorunlu alanları doldurun. E-posta adresinizi girmeniz gerekiyor; telefon numarası ise isteğe bağlı."
+Düzenleme: "Formdaki zorunlu alanların doldurulması gerekiyor. E-posta adresi zorunlu, telefon numarası ise isteğe bağlı."
 
-Gerekçe: Talimatın özü görünür, gerekli alan ayrımı korunur. Zorunluluk kaynağın kendisinde açıkça yer alıyor; yalnız önemli olduğu söylenen bir alan zorunlu diye yazılmaz.
+Gerekçe: Gerekli alan ayrımı korunur; formu kimin doldurduğuna ve e-posta adresinin kime ait olduğuna ilişkin yeni bir bilgi eklenmez. Doğrudan kullanıcıya yönelik bir rehber olduğu bağlamdan belliyse “Formdaki zorunlu alanları doldurun” da uygun olabilir. Yalnız önemli olduğu söylenen bir alanı zorunlu diye yazma.
 
 **Anlatı — özgün örnek**
 
