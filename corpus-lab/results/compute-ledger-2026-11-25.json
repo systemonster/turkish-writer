@@ -4,6 +4,21 @@
   "scope": "Only confirmed Turkish Writer jobs; unlabelled jobs and other projects excluded. Wall-clock estimates include potentially unbilled scheduling/build time and exclude minute rounding. Timeout × hourly rate is nominal, not a billing statement. Actual charges and total spend require billing records.",
   "rows": [
     {
+      "id": "6b06a8751460ffe1d5ea4ead",
+      "name": "turkish-writer-review-collection-v9",
+      "state": "COMPLETED",
+      "hardware": "cpu-basic",
+      "created": "2026-11-25T09:20:53.108Z",
+      "finished": "2026-11-25T09:21:13.387Z",
+      "wall_minutes": 0.33798333333333336,
+      "usd_per_hour": 0.01,
+      "timeout_seconds": 600,
+      "timeout_rate_usd": 0.0016666666666666668,
+      "wall_time_rate_usd": 0.00005633055555555556,
+      "actual_billed_usd": null,
+      "code_commit": "4822e479e231c36d6b6299eb6e04a4a43415db77"
+    },
+    {
       "id": "6b069ad2d0582cfbbefe0594",
       "name": "turkish-writer-review-packet-cpu-v8",
       "state": "COMPLETED",
@@ -233,6 +248,6 @@
       "actual_billed_usd": null
     }
   ],
-  "known_wall_time_rate_usd": 3.9295599555555563,
+  "known_wall_time_rate_usd": 3.9296162861111115,
   "missing_duration_count": 3
 }
