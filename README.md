@@ -42,7 +42,7 @@ Ya da yalnız bir projede kullanmak için `.claude/skills/` altına kopyalayın.
 
 ### V2 geliştirme dalı
 
-V2'nin varsayılanı model bağımsız editoryal filtredir. Var olan metni veya yeni üretilen taslağı çalıştığı ajanla düzeltir; zorunlu API, yerel model veya çalışma zamanı yoktur. OpenAI API ve Codex taslak yolları isteğe bağlıdır. Tek yazım motoru [yazım-motoru.md](skills/turkish-writer/references/yazim-motoru.md) içinde bulunur. Sabit cümle/paragraf kotaları ve bağlamdan bağımsız sözcük yasakları yerine okur, amaç, tür, doğal söz dizimi ve olgu sadakati belirleyicidir. Eski ölçümler V1.1'e aittir; V2 başarısı henüz ölçülmemiştir. [Doğrulama planı](docs/V2-DOGRULAMA.md).
+V2'nin varsayılanı model bağımsız editoryal filtredir. Var olan metni veya yeni üretilen taslağı çalıştığı ajanla düzeltir; zorunlu API, yerel model veya çalışma zamanı yoktur. OpenAI API ve Codex taslak yolları isteğe bağlıdır. Tek yazım motoru [yazım-motoru.md](skills/turkish-writer/references/yazim-motoru.md) içinde bulunur. Sabit cümle/paragraf kotaları ve bağlamdan bağımsız sözcük yasakları yerine okur, amaç, tür, doğal söz dizimi ve olgu sadakati belirleyicidir. Eski ölçümler V1.1'e aittir; V2 için ilk geliştirme deneyleri çalıştırılmıştır, ancak bağımsız editör doğrulaması tamamlanmamıştır. [Doğrulama planı](docs/V2-DOGRULAMA.md).
 
 ```bash
 node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur site --out taslak.md
@@ -98,11 +98,11 @@ sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama)
 
 [Filtre kararları](skills/turkish-writer/references/filtre-kararlari.md) ve [model bağımsız filtre değerlendirme planı](docs/FILTRE-DEGERLENDIRME.md), iyi cümleyi koruma ve farklı ajanlarda çalışabilirlik ölçütlerini tanımlar.
 
-[Blog editörü kılavuzu](skills/turkish-writer/references/blog-editoru.md) araştırmayı, editoryal savı, kaynak sadakatini ve seri yayın tutarlılığını ele alır. [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar. [Kaynak incelemesi ve blog doğrulama planı](docs/BLOG-EDITORU-ARASTIRMA.md) geliştirme dalına aittir; canlı model testi henüz yoktur.
+[Blog editörü kılavuzu](skills/turkish-writer/references/blog-editoru.md) araştırmayı, editoryal savı, kaynak sadakatini ve seri yayın tutarlılığını ele alır. [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar. [Kaynak incelemesi ve blog doğrulama planı](docs/BLOG-EDITORU-ARASTIRMA.md) geliştirme dalına aittir; ilk canlı model deneyleri Corpus Lab'da kayıtlıdır.
 
 ## Corpus Lab (geliştirici araştırması)
 
-[Corpus Lab](corpus-lab/README.md) skill'in veri temelli geliştirme hattıdır. İlk BOUN eğitim pilotunda 7.803 işaretlenmiş cümle incelendi; [istatistikler](corpus-lab/results/boun-train-v1.json) ve [Türkçe derlem notları](skills/turkish-writer/references/derlem-bulgulari.md) ayrı CC BY-SA 4.0 lisansıyla sunuluyor. Blog veri seçme hattı hazır, ancak büyük veri kümesi henüz taranmadı. Son kullanıcı hiçbir derlem indirmek zorunda değildir.
+[Corpus Lab](corpus-lab/README.md) skill'in veri temelli geliştirme hattıdır. İlk BOUN eğitim pilotunda 7.803 işaretlenmiş cümle incelendi; [istatistikler](corpus-lab/results/boun-train-v1.json) ve [Türkçe derlem notları](skills/turkish-writer/references/derlem-bulgulari.md) ayrı CC BY-SA 4.0 lisansıyla sunuluyor. Bir milyon web kaydının üst verisi tarandı; 87.390 kayıt ön filtreden geçti (tam metin taraması veya editör onayı değil). Açık lisanslı tarihsel blog arşivinde 503 yazı ve 274.756 sözcük incelendi; [bulgular](skills/turkish-writer/references/tarihsel-blog-bulgulari.md) tek yazara aittir. 2.643 tarihsel Vikipedi revizyonundan 50 düzenleme adayı seçildi. İlk model deneyleri, sentetik geliştirme vakaları ve sonuçları [Corpus Lab](corpus-lab/README.md) altında kayıtlıdır; V2 henüz yayına hazır ilan edilmemiştir. Son kullanıcı hiçbir derlem indirmek zorunda değildir.
 
 ## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
 
@@ -185,6 +185,8 @@ MIT. watermarks-remover'ın ayrı MIT lisansı ve atfı vendor dizinindedir. İs
 dağıtılır (Creative Commons Türkiye metinleri CC BY 4.0, Türkçe Vikipedi metinleri CC BY-SA 4.0,
 yasa metinleri ve Sabahattin Ali kamu malı). `tests/ornekler/nitelikli-insan.md` Türkçe Vikipedi
 kaynaklıdır, CC BY-SA 3.0.
+
+Derlemden türetilen ayrı lisanslı dosyalar: [veri lisansları](corpus-lab/LICENSE-DATA.md).
 
 Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
