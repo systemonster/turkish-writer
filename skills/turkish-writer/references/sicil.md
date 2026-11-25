@@ -1,6 +1,6 @@
-# Sayfa türüne göre ayar
+# Tür ve sicil: sayfa metinleri
 
-Bu kılavuz site ve blog türlerinin tarihsel karşılaştırmasını içerir. V2 farklı türleri ve yazar seslerini de destekler. [Bağlamlı Türkçe](baglamli-turkce.md) ile çekirdek filtre önceliklidir; aşağıdaki tür örnekleri biçim veya ifade kotası değildir. Aynı kurallar
+Bu kılavuz site ve blog türlerinin tarihsel karşılaştırmasını içerir. V2 geliştirme adayı farklı türleri ve yazar seslerini de kapsar. Bu dosyadaki sayfa ve satış metni tercihlerini roman, şiir, deneme, kurmaca diyalog veya anı metnine taşıma. Bu türlerde [uzun anlatı](uzun-anlati.md) ve [Türkçe kullanım atlası](turkce-kullanim-atlasi.md) kılavuzları kullanılır. [Bağlamlı Türkçe](baglamli-turkce.md) ile çekirdek filtre önceliklidir; aşağıdaki tür örnekleri biçim veya ifade kotası değildir. Aynı kurallar
 ikisine de uygulanır, ama doz farklıdır. Site metni kısa ve satış odaklıdır; okur tarar.
 Blog yazısı uzundur; okur bir sorunun cevabını arar ve yazanın kim olduğunu hisseder.
 humanify'ın dört sicilinden site metni "kurumsal", blog "blog" hücresine oturur.
