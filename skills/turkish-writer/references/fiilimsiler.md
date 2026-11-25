@@ -26,11 +26,13 @@ Bu kılavuz dil bilgisi terimlerini ezberletmek için değil, bir düşünceyi T
 | Kapıyı açan görevli | Görevli açma eyleminin öznesi. |
 | Görevlinin açtığı kapı | Kapı, açılan nesne. |
 | Görevlinin açacağı kapı | Açma eylemi bağlamda geleceğe ait. |
-| Açılacak kapı | Nesne belirli, eyleyen açık değil. |
+| Açılacak kapı | Açma eylemi geleceğe dönük; kapının hangisi olduğu bağlamdan anlaşılır, eyleyen açık değil. |
 | Açılmış kapı | Açılmış olma durumu öne çıkıyor. |
 | Çıkmaz sokak | Kalıplaşmış niteleme; her fiilimsi biçimini yeni olaymış gibi çözme. |
 
-Birden çok niteliği adın önüne yığmak okurun hangi adın nitelendiğini anlamasını zorlaştırabilir. Örneğin: "Geçen ay gönderilen ve kurulun henüz değerlendirmediği rapor masada duruyor." Cümle doğalsa bölme. Yük ağırlaşıyorsa "Rapor geçen ay gönderildi. Kurul henüz değerlendirmedi. Masada duruyor." gibi bir ayrım düşünülebilir. Ancak kaynakta "henüz" ve kurul bilgisi kalmalıdır.
+Birden çok niteliği adın önüne yığmak okurun hangi adın nitelendiğini anlamasını zorlaştırabilir. Örneğin: "Geçen ay gönderilen ve kurulun henüz değerlendirmediği rapor masada duruyor." Cümle doğalsa bölme. Okur hangi raporun söz konusu olduğunu zaten biliyorsa "Rapor geçen ay gönderildi. Kurul henüz değerlendirmedi. Masada duruyor." biçimi düşünülebilir. Birden fazla rapor varsa bu bölme, raporu ayırt eden bilgiyi bağımsız iddiaya dönüştürebilir. Bu durumda nitelemeyi koru. "Henüz" ve kurul bilgisi her iki biçimde de kalmalıdır.
+
+**Niteleme bazen kapsamı sınırlar.** "Başvuru sırasında yüklenen ve henüz imzalanmamış belgeler yeniden incelenecek." ifadesinde iki koşulu birden taşıyan belgeler söz konusudur. "Belgeler yeniden incelenecek. Başvuru sırasında yüklendiler ve henüz imzalanmadılar." denirse bütün belgeler hakkında iddia ortaya çıkabilir. Daha ağır bir kaynak cümlesini sadeleştirirken "Başvuru sırasında yüklenen belgelerden henüz imzalanmamış olanlar yeniden incelenecek." biçimi iki koşulu ve incelemenin kapsamını korur. Niteleme açıklama mı, alt küme mi, bağlamda tanımlanmış nesne mi? Buna karar vermeden yan cümleyi bağımsızlaştırma. Bu örnek proje üretimi geliştirme vakasıdır.
 
 Türkçede özne/nesne ilişkisi yalnız sözcük sırasıyla kurulmaz; çekim, iyelik, durum ekleri ve yan cümlenin içeriği de belirleyicidir. "Beni bekleyen kişi" ile "benim beklediğim kişi" aynı kişi ilişkisini anlatmaz.
 
@@ -72,7 +74,7 @@ Birleştirmeden önce iki cümlenin ayrı ayrı taşıdığı bilgiyi belirle. O
 - Doğal: "Formu doldurun ve gönderin." veya "Formu doldurup gönderin." Her ikisi de talimat olarak iş görebilir.
 - Doğal: "Biraz bekledi. Sonra kalktı." Öyküde duraklama, sessizlik ve ayrı cümlelerin ritmi değerli olabilir.
 - Ağır: "Kapağı açıp kabloyu kontrol ederek düğmeye basınca ekranın açıldığını görüp..." Bir cümleye çok sayıda işlemi ve yan yapıyı yüklemek yerine anlamlı aşamalar kur.
-- Yanlış müdahale: "Bu sonucu doğrulamadık" → "Sonuç doğrulanamadı." Birinci kişi bilgisi, bilinçli olarak doğrulamama ve doğrulayamama ayrımı kaybolabilir.
+- Yanlış müdahale: "Bu sonucu doğrulamadık" → "Sonuç doğrulanamadı." Birinci kişi bilgisi kaybolur; doğrulama yapılmadığı bilgisinden doğrulamanın mümkün olmadığı sonucuna geçilir. Kaynak, doğrulamanın neden yapılmadığını belirtmez.
 
 ## 5. Son editör kararı
 
