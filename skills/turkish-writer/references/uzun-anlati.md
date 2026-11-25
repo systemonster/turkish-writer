@@ -86,6 +86,28 @@ Uzun metinde gelişim editörlüğü, cümle/paragraf düzenlemesi ve son okuma 
 
 Bir geçişte çözülemeyen sorunu diğer geçişlerde rastgele sözcük değiştirerek örtme. Kaynağa dön, gerekiyorsa yazardan karar iste. İyi metni değiştirmemek editoryal karardır. Yazarın adına yapılmamış insan editör değerlendirmesi veya bütün kitap doğrulaması iddia etme.
 
+## 8. Edebî metni düz yazı denetimine indirgeme
+
+[Ömer Seyfettin'in iki öyküsü ve Ahmet Haşim'in deneme/şiiri üzerine bağlamsal inceleme](https://github.com/systemonster/turkish-writer/blob/16a0983c58bcfdb75e5e6c2dc0efedaf05d1f263/corpus-lab/results/literary-context-v20.json), aşağıdaki ayrımları somutlaştırır. Örnek cümleler bu proje için bağımsız yazılmıştır; eserlerden alıntı değildir.
+
+**Alışkanlık, süregiden olay ve tek olay.** Öykünün alışkanlık bildiren geçmişi, sonradan başlayan tek bir olaya zemin hazırlayabilir. Özgün örnek: “Her akşam iskeleye iner, son vapuru beklerdik. O gece iskele boştu.” İlk cümleyi “İskeleye indik, son vapuru bekledik” diye değiştirmek alışkanlığı tek olaya dönüştürür. Kip tutarlılığı, bütün fiilleri aynı zamanda çekmek değildir.
+
+**Okurun bildiğiyle olayın gerçekleştiği sırayı ayır.** Bir karakterin kimliği veya iki kişinin ilişkisi geç açıklanıyorsa önceki sahneye bu bilgiyi açıklayıcı bir cümle olarak taşıma. “Yaşlı adamın bileğindeki iz tanıdık geldi. Adını ancak kapıcı söyleyince hatırladım.” Örneğinde adı baştan söylemek bilgi eksikliğini gideriyor gibi görünse de hatırlama anını ortadan kaldırır. Geri dönüş, önceden verilmiş ipucu ve bilinçli geciktirme ile istemeden unutulmuş bilgi farklıdır.
+
+**Tekrar konuşmada bir eylem olabilir.** “— Gelmeyecek misin?\n— Gelmeyeceğim.\n— Hiç mi?\n— Hiç.” İkinci soruyu ve cevabı silmek gereksiz bilgi tekrarını değil, ısrarı ve reddin kapsamını siler. Susma, yarım bırakılmış söz, kimin konuştuğunu gösteren işaret ve karakterler arası güç ilişkisini koru. Gerçek bir yazım kusurunu düzeltirken konuşmacının sözünü tamamlamak zorunda değilsin.
+
+**Denemede ara düşünce ve öznel bakış.** Anlatıcı bir karşılaşmadan önceki beklentisini açıklamak için algı, hafıza veya sanat üzerine bir ara düşünce kurabilir. Bu bölüm bir sonraki gözlemin gerekçesini oluşturuyorsa konu dışı değildir. Mecazı ölçülebilir olguya dönüştürme: “Odanın bütün ışığı yüzünde toplanmıştı” bir anlatım tercihi olabilir; elektrik tesisatına ilişkin iddia değildir. Öznel hükmü yazarın sesinden koparıp doğrulanmış genelleme gibi sunma.
+
+**Şiir ve kaynak biçimi.** Bir cümle birden fazla dizeye yayılabilir. Özgün örnek:
+
+> Geriye kalan\
+> bir kapı sesi\
+> bir de boş avlu.
+
+Dizeyi cümleye, şiiri açıklayıcı paragrafa zorlamak ses ve durakları değiştirir. Biçimsel düzenleme talebinde dize/kıta, tekrar, sözcük ve noktalama tercihlerini birlikte değerlendir. Tarihsel metinde dizgi veya OCR kusuru ile bilinçli eski yazım birbirine karışabilir; güvenilir baskıyı görmeden özgün metni düzelttiğini iddia etme. Modernleştirme, sadeleştirme ve yazım denetimi ayrı işlerdir.
+
+Bu dört metin iki yazara ait tarihsel geliştirme örnekleridir; çağdaş Türkçede genel yazım normu ya da türler arası model başarısı kanıtı değildir. Kaynak ve revizyon atıfları inceleme kaydında bulunur.
+
 ## Dayanak ve sınır
 
-Türkçe dil bilgisi ve bağlam için [editör muhakemesi](editor-muhakemesi.md), [bağlamlı Türkçe](baglamli-turkce.md), [ileri Türkçe](ileri-turkce.md) ve [kaynaklar](kaynaklar.md) ile birlikte kullan. Bu kılavuzun edebî örnekleri ve kitap iş akışı proje tarafından özgün hazırlanmıştır. Tarihsel blog ve dil bilgisi derlemleri roman, şiir, oyun veya kitap ölçeğinde doğrulanmış editoryal kalite kanıtı değildir. Edebî metinler üzerinde ayrı değerlendirme yapılmadıkça bu geniş kapsam bir geliştirme hedefi olarak kalır.
+Türkçe dil bilgisi ve bağlam için [editör muhakemesi](editor-muhakemesi.md), [bağlamlı Türkçe](baglamli-turkce.md), [ileri Türkçe](ileri-turkce.md) ve [kaynaklar](kaynaklar.md) ile birlikte kullan. Bu kılavuzun örnek cümleleri ve kitap iş akışı proje tarafından özgün hazırlanmıştır. §8'deki yorumlar belirtilen tarihsel eserlerin yakın okumasına dayanır; derlemden elde edilen bağlamsal gözlemler CC BY-SA 4.0 kapsamında, kaynak ve katkıcı bağlantılarıyla belgelenmiştir. Tarihsel blog ve dil bilgisi derlemleri roman, şiir, oyun veya kitap ölçeğinde doğrulanmış editoryal kalite kanıtı değildir. Edebî metinler üzerinde ayrı değerlendirme yapılmadıkça bu geniş kapsam bir geliştirme hedefi olarak kalır.
