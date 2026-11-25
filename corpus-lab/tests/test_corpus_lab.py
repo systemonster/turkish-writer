@@ -26,6 +26,16 @@ class LabTest(unittest.TestCase):
         self.assertIsNone(web.permitted('https://example.org.evil/blog/one', self.approved))
         self.assertIsNone(web.permitted('https://example.org/blog-other/one', self.approved))
 
+    def test_flat_parquet_schema_and_conflicting_metadata(self):
+        flat = {'id': self.row['id'], 'text': self.row['text'], **self.row['metadata']}
+        nested, _ = web.candidate(self.row, self.approved)
+        actual, why = web.candidate(flat, self.approved)
+        self.assertIsNone(why)
+        self.assertEqual(actual, nested)
+        self.assertEqual(web.candidate(flat, [])[1], 'unapproved_source')
+        self.assertEqual(web.candidate(dict(flat, metadata=dict(self.row['metadata'], url='https://other.example/')), self.approved)[1], 'metadata')
+        self.assertEqual(web.candidate({'text': self.row['text']}, self.approved)[1], 'metadata')
+
     def test_sample_provenance_and_duplicate(self):
         out = []
         report = web.sample([self.row, self.row], self.approved, 5, 2, 2, out.append)
