@@ -1,0 +1,24 @@
+# Bağımsız değerlendirme protokolü / Independent evaluation
+
+Durum (25 Kasım 2026): **insan onaylı bağımsız test henüz yok.** V1–V4 için kullanılan 52 proje üretimi vaka geliştirme setidir. Aşağıdaki kaynaklar yeni veri için adaydır, kabul edilmiş belge veya veri kümesi değildir.
+
+## Aday kaynaklar
+
+| Kaynak | Hak kanıtı ve kapsam | İnceleme |
+|---|---|---|
+| [Nitorel](https://nitorel.com/) | [CC BY 4.0 metin lisansı](https://nitorel.com/lisans); Ahmet Canal'ın özgün yazı ve rehberleri, üçüncü taraf parçaları hariç | Bilgi yönetimi, uygulamalı rehber; yazı tarihi, yazar, doğal Türkçe ve bağımsızlık ayrıca doğrulanmalı. |
+| [Mirasium](https://mirasium.org/) | [Kamu malı kılavuzu](https://mirasium.org/kamu-mali-kilavuzu/); özgün makale ve analiz metinleri CC BY 4.0 | Kültürel miras; kişisel yazar veya kurumsal katkı bilgisi, özgün metin ve üçüncü taraf alıntıların hakları ayrıca incelenmeli. |
+| [Özgür Yazılım Derneği](https://oyd.org.tr/yazilar/) | Yazı bazında lisans kanıtı gereklidir; örneğin [EFF çevirisi](https://www.oyd.org.tr/yazilar/eff-ifade-ozgurlugu/) özgün makale için CC BY 3.0 US bildiriyor. | Çeviri metinleri yerli Türkçe özgün blog kohortuna katma. Özgün, izinli ve mümkünse 2022 öncesi makaleler için aday havuzu. |
+
+Kaynakların lisans sayfaları ve arşivleri 2026-11-25 tarihinde incelendi. Lisans, insan yazarlığını veya editoryal kaliteyi ispatlamaz. Bu kaynaklardan ham metin, kişisel veri ya da model değerlendirmesi henüz yayımlanmadı. Daron Yöndem, BOUN, Wikipedia ve CC Türkiye gibi önceki geliştirme kaynaklarını bağımsız test havuzuna yeniden koyma.
+
+## Kabul ve ayrım
+
+1. Bağımsız editör özgün, doğal Türkçe, en az 3 paragraf ve 150 sözcük olan belgeler seçer; hedef 40 belge, farklı yazarlar, yayınlar ve konular. Mümkünse insan tarafından yazıldığı doğrulanmış veya 2022 öncesi tarihsel yazıları seç; tarih tek başına kanıt değildir. İyi yazılmış metni koruma vakalarını ve gerçekten edit gerektiren taslakları dengeli topla. Sentetik olarak bozulan insan metni ayrı stres testi olarak işaretlenir, gerçek taslak diye sunulmaz.
+2. Kaynak/yazar/konu grupları yalnızca bir bölümde bulunur. Bir yazı, çevirisi, yakın kopyası, alıntı zinciri ve aynı yazarın ilgili yazıları ayrı bölümlere sızmaz. Eğitim/ön inceleme geçmişindeki kaynakları ayrıca karşılaştır. Model ön eğitimine sızma denetlenemiyorsa bunu açıkça belirt. Test setini aday kurallar belirlenmeden dondur; düzenleyici ekibe cevapları gösterme.
+3. Yerel ve git dışı `corpus-lab/work/private-manifest.jsonl` dosyasında id, source_group, author_group, topic_group, source_url, rights_evidence, reviewer_id (anonim), source_sha256, split, review_status, paragraphs, words alanlarını tut. Gerçek kaynak dosyasının normalleştirilmiş UTF-8 metninin SHA-256 değerini doğrula; yakın kopyaları ve kişi bilgilerini insan incelemesinden geçir. Sadece gerçekten doğrulanan insan incelemesinde `editor_verified` kullan.
+4. `node corpus-lab/validate-holdout.mjs corpus-lab/work/private-manifest.jsonl` ile açık grup sızıntısı ve zorunlu alanları kontrol et. Bu araç hak kanıtını, SHA değerinin doğru hesaplandığını, gerçek insan onayını veya yakın kopyaları kanıtlamaz. Geliştirme manifestindeki kaynakları da dahil et; boş veya yalnız test içeren manifest geçmez.
+5. Aynı metin ve brifle yalın talimat, mevcut skill ve aday skill'i ayrı oturumlarda çalıştır. Model sürümü, bağlam, çıktı token sınırı ve örnek ID sabitlenir. En az iki farklı model ailesi. Çıktılar bağımsız iki Türkçe editör tarafından kol ve model kimliği bilinmeden okunur. Model hakeminin A/B seçimini insan değerlendirmesi sayma. Sunum sırası rastgele ve dengeli olmalı. Kaynağı referans olarak ayrıca göster; adayların model ve kol kimliklerini puanlar dondurulana dek gizle.
+6. Her vakada 1–5 anlam, doğal Türkçe, editoryal isabet, akış, yazım/biçim; kritik kusur kategorileri (olgu, koşul, olumsuzluk, kip, özne, atıf, kaynak, sayı, teknik değer), gereksiz müdahale, düzeltme süresi ve tercih (A/B/eşit) kaydedilir. Ciddi anlam kaybı olan aday üslup puanıyla geçemez. Editör anlaşmazlığında üçüncü bağımsız inceleme; sonuçlar yazar veya kaynak kümeleri bazında belirsizlikle raporlanır.
+
+Test seti, insan değerlendirmesi ve gerçek bağımsız karşılaştırma tamamlanmadan V2'yi yayınlama. Üçüncü taraf metinleri ve anonim olmayan değerlendirici kayıtları git'e koyma. Bu dosya test tasarımıdır, tamamlanmış doğrulama değildir.
