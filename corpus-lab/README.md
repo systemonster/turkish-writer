@@ -201,4 +201,28 @@ Maliyet: 12,243 dk, 2,75 USD/saat üzerinden yaklaşık 0,5611 USD; 60 dk nomina
 
 ## 13. V6: karşılaştırmalı editoryal karar örnekleri
 
-[HF Job](https://huggingface.co/jobs/lovefengis/6b06700e1460ffe1d5e9d4e9), RUNNING (25 Kasım 2026). Sabit kod `78ece08bc239c7a09ee6ce2d6a7fccf2c5e6ec58`. Aynı üç model revizyonu, 52 geliştirme vakası, 1024 çıktı token sınırı, V5 yama biçimi ve uygulayıcısı. Tek deneysel fark, isteme eklenen altı konu bağımsız sentetik karar örneği: iyi metni olduğu gibi bırakma, adlaştırmayı azaltma, kip ve kapsam sadakati, komşu cümlede tekrar, belirsiz özne. Bu örnekler insan onaylı veri değildir ve test referansları modele verilmez. `--variant v6`; varsayılan v5 yolu korunur. Başarı ölçütü yalnız geçerli JSON değil: KORU vakasında gereksiz değişiklik azalmalı, DÜZELT vakalarında gerçek iyileşme kaybolmamalı; özellikle V5'teki hatalar ve yeni anlamsal kusurlar vaka bazında incelenir. RTX PRO 6000 (96 GB), 60 dk sınır, 2,75 USD/saat [tarife](https://huggingface.co/docs/hub/en/jobs-pricing); nominal azami 2,75 USD. Sonuç görülmeden aktif skill değişmez. Başka projelerin işleri yönetilmedi.
+[HF Job](https://huggingface.co/jobs/lovefengis/6b06700e1460ffe1d5e9d4e9), COMPLETED (25 Kasım 2026; sonuçlar §14). Sabit kod `78ece08bc239c7a09ee6ce2d6a7fccf2c5e6ec58`. Aynı üç model revizyonu, 52 geliştirme vakası, 1024 çıktı token sınırı, V5 yama biçimi ve uygulayıcısı. Tek deneysel fark, isteme eklenen altı konu bağımsız sentetik karar örneği: iyi metni olduğu gibi bırakma, adlaştırmayı azaltma, kip ve kapsam sadakati, komşu cümlede tekrar, belirsiz özne. Bu örnekler insan onaylı veri değildir ve test referansları modele verilmez. `--variant v6`; varsayılan v5 yolu korunur. Başarı ölçütü yalnız geçerli JSON değil: KORU vakasında gereksiz değişiklik azalmalı, DÜZELT vakalarında gerçek iyileşme kaybolmamalı; özellikle V5'teki hatalar ve yeni anlamsal kusurlar vaka bazında incelenir. RTX PRO 6000 (96 GB), 60 dk sınır, 2,75 USD/saat [tarife](https://huggingface.co/docs/hub/en/jobs-pricing); nominal azami 2,75 USD. Sonuç görülmeden aktif skill değişmez. Başka projelerin işleri yönetilmedi.
+
+## 14. V6 sonuçları ve Gemma protokol hatası
+
+25 Kasım 2026. [V6 GPU işi](https://huggingface.co/jobs/lovefengis/6b06700e1460ffe1d5e9d4e9) COMPLETED, kesilmemiş loglarda 156 benzersiz vaka kaydı ve 3 BENCHMARK_COMPLETE. V5 uygulayıcı algoritması aynı JS ortamında yeniden yürütüldü; önceki 156 kayıt için uygulama durumu ve metin birebir yeniden üretildi. V6 için:
+
+| Model | Uygulanabilir /52 (V5→V6) | KORU birebir /24 | DÜZELT değişen /28 | Uzun DÜZELT değişen /6 |
+|---|---:|---:|---:|---:|
+| [Qwen3-8B](results/editorial-patches-v6-qwen-qwen3-8b.json) | 42→42 | 6→7 | 24→24 | 3→4 |
+| [Turkish Gemma 9B](results/editorial-patches-v6-ytu-ce-cosmos-turkish-gemma-9b-v0-1.json) | 43→43 | 12→12 | 19→19 | 3→3 |
+| [Qwen3-32B](results/editorial-patches-v6-qwen-qwen3-32b.json) | 48→52 | 11→17 | 23→21 | 5→5 |
+
+**Gemma sonucu V6 müdahalesinin testi değildir.** Kaynak kodunun Gemma tek kullanıcı mesajı dalı seçilmiş `prompt` yerine sabit `PATCH` kullanmış. V5 ile 52/52 gerçek render hash'i ve 52/52 ham çıktı aynı. RUN_INFO genel istem hash'i doğru görünmesine rağmen model örnekleri hiç görmemiş. Qwen modellerinde V5 ile aynı render hash'i 0/52. Bu yüzden Gemma'yı V6 iyileşme/başarısızlık iddiasına dahil etme. [Düzeltme](https://github.com/systemonster/turkish-writer/commit/5d9e850a21069d68bcb86c0eefd4019936ff6c4a) tek satırda aynı seçilmiş istemi kullanır. Yalnız eksik Gemma kolu, aynı model revizyonu, batch 4, 1024 token ve aynı RTX PRO 6000 donanımıyla yeniden çalıştırıldı: [düzeltilmiş V6 işi](https://huggingface.co/jobs/lovefengis/6b067c90d0582cfbbefdc6a9), azami 30 dk, nominal 1,375 USD. Bu işte V5 ile render hash eşitliği sıfır olmalı; 52 kayıt ve tamamlanma işareti aranacak. Qwen deneyleri tekrarlanmayacak.
+
+V6 Qwen3-32B teknik geçerlilik ve gereksiz müdahale göstergesinde ilerleme var; ama anlam sadakati hâlâ başarısız:
+- `long-dev-001`: "söylenmesi mümkün değildir" → "iddiası geçerli değildir" ile kanıt yokluğundan iddianın yanlışlığına geçti. "ölçülüp ölçülmediği" yerine "ölçüldüğüne dair kontrol" de varsayımı değiştirdi.
+- `editorial-dev-019`: önem bildiren ifadeyi "hareket edilmelidir" gerekliliğine yaklaştırdı.
+- `editorial-dev-007`: "bekleniyor" kipini kesin gelecek ifadeye dönüştürdü.
+- Qwen3-8B `long-dev-011`: "değerlendirmeye alınamadığı" yerine "değerlendirmeye alınmaması" kullandı; olumsuz çekim ve anlam bozuldu.
+- Qwen3-8B `editorial-dev-004`: "yalnızca" kapsamını yitirdi.
+- Qwen3-8B `long-dev-001`: yapı reddi nedeniyle düzenleme hiç uygulanmadı.
+
+Bu vakalar, geçerli yama ve birebir koruma sayılarının tek başına yeterli olmadığını gösteriyor. Ham sonuçlardaki protected_review kısa vakaların reference_required ve uzun vakaların protected_literals alanlarını kapsar; V5 özetindeki yalnız protected_literals sayısıyla doğrudan kıyaslanmamalı. İfade değişikliği sinyali anlamsal hata hükmü değildir. V6 mevcut skill'e alınmadı. Bir sonraki yön: yeni istem varyasyonunu yalnızca tekrar tekrar aynı geliştirme vakalarına uydurmak yerine bağımsız insan değerlendirmesi ve anlam koruma karşılaştırmalarına ağırlık ver.
+
+V6 duvar süresi 11,399 dk; resmî 2,75 USD/saat tarife ile tahmini 0,522464 USD. Süresi bilinen on işin tahmini toplamı 3,642035 USD. Fatura ve tamamlanmamış/iptal edilmiş işlerin süreleri doğrulanmadı. [Maliyet kaydı](results/compute-ledger-2026-11-25.json). Kaynaklar ve diğer projelerin işleri korunuyor; yayın kapısı kapalı.
