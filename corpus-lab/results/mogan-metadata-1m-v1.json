@@ -1,0 +1,229 @@
+{
+  "schema": 1,
+  "source": "https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned",
+  "revision": "7c5bd76fa456f1748ceb603d8e57acf24a173339",
+  "scope": "metadata-only systematic shard-prefix pilot, not a representative sample or editorial quality measurement; no document text or full URLs collected",
+  "shards": [
+    {
+      "shard": 0,
+      "scanned": 100000,
+      "eligible_metadata": 25748,
+      "layout": "flat"
+    },
+    {
+      "shard": 22,
+      "scanned": 100000,
+      "eligible_metadata": 12814,
+      "layout": "flat"
+    },
+    {
+      "shard": 45,
+      "scanned": 100000,
+      "eligible_metadata": 10391,
+      "layout": "flat"
+    },
+    {
+      "shard": 67,
+      "scanned": 100000,
+      "eligible_metadata": 8226,
+      "layout": "flat"
+    },
+    {
+      "shard": 90,
+      "scanned": 100000,
+      "eligible_metadata": 6995,
+      "layout": "flat"
+    },
+    {
+      "shard": 112,
+      "scanned": 100000,
+      "eligible_metadata": 4080,
+      "layout": "flat"
+    },
+    {
+      "shard": 135,
+      "scanned": 100000,
+      "eligible_metadata": 5913,
+      "layout": "flat"
+    },
+    {
+      "shard": 157,
+      "scanned": 100000,
+      "eligible_metadata": 3855,
+      "layout": "flat"
+    },
+    {
+      "shard": 180,
+      "scanned": 100000,
+      "eligible_metadata": 4576,
+      "layout": "flat"
+    },
+    {
+      "shard": 202,
+      "scanned": 100000,
+      "eligible_metadata": 4792,
+      "layout": "flat"
+    }
+  ],
+  "rows": 1000000,
+  "invalid_metadata": 0,
+  "crawl_years": {
+    "2013": 1102,
+    "2014": 11491,
+    "2015": 7309,
+    "2016": 40931,
+    "2017": 210936,
+    "2018": 122172,
+    "2019": 70487,
+    "2020": 99531,
+    "2021": 159260,
+    "2022": 108445,
+    "2023": 113861,
+    "2024": 54475
+  },
+  "eligible_years": {
+    "2013": 513,
+    "2014": 4648,
+    "2015": 2868,
+    "2016": 13109,
+    "2017": 66252
+  },
+  "thresholds": {
+    "crawl_years": [
+      2013,
+      2017
+    ],
+    "language": 0.9,
+    "quality": 0.8
+  },
+  "eligible_domain_count": 22624,
+  "most_common_domains": [
+    [
+      "www.aydinpost.com",
+      2672
+    ],
+    [
+      "www.sabah.com.tr",
+      1886
+    ],
+    [
+      "www.kizlarsoruyor.com",
+      1608
+    ],
+    [
+      "www.hurriyet.com.tr",
+      1392
+    ],
+    [
+      "www.sikayetvar.com",
+      1284
+    ],
+    [
+      "www.yoltarifi.com",
+      972
+    ],
+    [
+      "www.yenialanya.com",
+      839
+    ],
+    [
+      "www.dersimiz.com",
+      710
+    ],
+    [
+      "www.kayserinews.com",
+      576
+    ],
+    [
+      "www.kocaeligazetesi.com.tr",
+      488
+    ],
+    [
+      "haberseyret.com",
+      444
+    ],
+    [
+      "www.medyatrabzon.com",
+      421
+    ],
+    [
+      "slideplayer.biz.tr",
+      420
+    ],
+    [
+      "www.megakitap.com",
+      385
+    ],
+    [
+      "docplayer.biz.tr",
+      382
+    ],
+    [
+      "www.emlakwebtv.com",
+      353
+    ],
+    [
+      "www.habergazetesi.com.tr",
+      349
+    ],
+    [
+      "www.haberaktuel.com",
+      347
+    ],
+    [
+      "www.maxicep.com",
+      328
+    ],
+    [
+      "www.aksiyonhaber.com",
+      305
+    ],
+    [
+      "www.main-board.com",
+      297
+    ],
+    [
+      "www.engelliler.biz",
+      296
+    ],
+    [
+      "eksisozluk.com",
+      296
+    ],
+    [
+      "www.haber61.net",
+      287
+    ],
+    [
+      "www.radikal.com.tr",
+      282
+    ],
+    [
+      "www.istanbulhaber.com.tr",
+      276
+    ],
+    [
+      "www.mobiletisim.com",
+      262
+    ],
+    [
+      "www.alasayvan.net",
+      249
+    ],
+    [
+      "www.doktorsitesi.com",
+      241
+    ],
+    [
+      "www.akyazi.net",
+      240
+    ]
+  ],
+  "wikimedia_domain_counts": {
+    "tr.wikinews.org": 1,
+    "tr.wikipedia.org": 233
+  },
+  "human_verified": 0,
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b063d88d0582cfbbefd6666",
+  "script_commit": "c21dccffbc2f833fdd94ef1a327aff114d10cac6"
+}
