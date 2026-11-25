@@ -33,9 +33,9 @@ Bir paragrafın ilk cümlesi ile son cümlesi arasında okurun ne öğrendiğini
 
 Girdi: "Kayıt işlemlerinin tamamlanmasından sonra kutuların depoya alınması gerçekleştirildi. Bu bağlamda kutuların depoya alınması işlemi kayıt tamamlandıktan sonra yapıldı. Ancak kapağı hasarlı olan kutular depoya alınmadı. Bu kutuları ayrı bir masada bıraktık."
 
-Düzenleme: "Kayıtlar tamamlandıktan sonra kutular depoya alındı. Ancak kapağı hasarlı kutuları depoya almadık; ayrı bir masada bıraktık."
+Düzenleme: "Kayıtlar tamamlandıktan sonra kutular depoya alındı. Ancak kapağı hasarlı kutular depoya alınmadı; onları ayrı bir masada bıraktık."
 
-Karar: İlk iki cümlede tek bir olay vardı; tekrar çıkarıldı. İstisna ile ayrı masada bırakma bilgisi korundu. Genel işlemin eyleyeni kaynakta belirsiz olduğundan ilk cümle edilgen kaldı; son cümlenin birinci kişi bağlamı istisna için korundu. Kaynak zaten bu kadar kısa olsaydı yeni bir geçiş veya sonuç eklenmezdi.
+Karar: İlk iki cümlede tek bir olay vardı; tekrar çıkarıldı. İstisna ile ayrı masada bırakma bilgisi korundu. Depoya alma ve almama işlemlerinin eyleyeni kaynakta belirsiz olduğundan ikisi de edilgen kaldı; son eylemin birinci kişi anlatımı korundu. Kaynak zaten bu kadar kısa olsaydı yeni bir geçiş veya sonuç eklenmezdi.
 
 **Yazar sesi örneği (proje üretimi):**
 
