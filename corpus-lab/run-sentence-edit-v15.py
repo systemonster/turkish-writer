@@ -38,7 +38,7 @@ def segments(source):
             if stop==end or (raw[stop:].lstrip()[:1].isupper()):
                 start=pos
                 while start<stop and raw[start].isspace():start+=1
-                if len(raw[start:stop].split())>=4:
+                if len(raw[start:stop].split())>=3:
                     out.append((line.start()+start,line.start()+stop))
                 pos=stop
     assert all(a<b and (i==0 or out[i-1][1]<=a) for i,(a,b) in enumerate(out))
@@ -48,6 +48,7 @@ def safe(original,candidate,limited=False):
     if not candidate or "\n" in candidate or "\r" in candidate:return "invalid-shape"
     if candidate==original:return "unchanged"
     if candidate[-1] not in ".!?" or not v11.editable(candidate):return "invalid-shape"
+    if segments(candidate)!=[(0,len(candidate))]:return "invalid-shape"
     if v11.literal_signature(original)!=v11.literal_signature(candidate):return "literal-change"
     return "edited"
 def edit(source,infer):
@@ -74,6 +75,7 @@ def self_test():
     assert r["output"]==s.replace("İlk ölçümün yapılması gerekir.","İlk ölçüm yapılmalı.")
     assert [x["status"] for x in r["records"]]==["edited","literal-change","invalid-shape"]
     assert edit(s,lambda _,t:[(x,False) for x in t])["output"]==s
+    assert safe("Bu iş bitti.","Bu iş bitti. Ek bir açıklama.")=="invalid-shape"
     assert not segments("```\nBir cümle gibi görünse bile.\n```")
     assert len(segments("Dr. Ali bugün geldi. Sonra hep birlikte yemek yedik."))==2
     assert edit("Kısa başlık",lambda *_:(_ for _ in ()).throw(AssertionError()))["output"]=="Kısa başlık"
