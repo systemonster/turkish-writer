@@ -280,3 +280,7 @@ Maliyet: V7 duvar süresi 3,0918 dk, yaklaşık 0,141708 USD; V8 CPU 9,434 sn, y
 [CPU doğrulaması](https://huggingface.co/jobs/lovefengis/6b06a8751460ffe1d5ea4ead): COMPLETED, test edilen commit `4822e479e231c36d6b6299eb6e04a4a43415db77`. Kesilmemiş log, REVIEW_COLLECTION_REGRESSION_COMPLETE. Corpus Lab 58/58, npm 167 başarılı, 7 atlanan, 0 başarısız. Yeni sekiz test sentetik puanlarla veri doğrulama ve hesaplamayı sınar; gerçek editör puanı değildir. Python/Unicode regresyonları bu turda yeniden çalıştırılmadı; ilgili bileşen değişmedi.
 
 CPU Basic 10 dk sınır, 0,01 USD/saat, nominal 0,001667 USD, 20,279 sn duvar süresi, tahmini 0,000056 USD. [Maliyet çizelgesi](results/compute-ledger-2026-11-25.json) 14 süre bilgili iş için yaklaşık 3,929616 USD; üç iptal işinin süresi ve gerçek fatura bilinmiyor. GPU kullanılmadı. Kaynak incelemesinde tarih, özgün yazarlık ve metne özgü lisans kanıtı bulunmayan adaylar kabul edilmedi. Üçüncü taraf ham metinler yayımlanmadı. Henüz bağımsız holdout veya iki gerçek editörün değerlendirmesi yok. Yeni istem/GPU deneyine sırf tur ilerletmek için başlanmadı. Aktif skill, Unicode vendor ve master değiştirilmedi; diğer HF projelerine müdahale edilmedi.
+
+## V11 — üretmeyen son kontrol
+
+[Tarihsel V10 sonuçları, seçici V11 düzeltmesi, ön test ve GPU deney kaydı](V11-SELECTION-REVIEW.md). Bu turdaki tek GPU işi `6b06c542d91f621b9307756e`; önce bu kesin kimliği ve özel sonuçlarını kontrol et. Aynı çalışmayı yeniden başlatma. Aktif skill ve yayın kapısı değişmedi.
