@@ -4,7 +4,7 @@
 
 Bu beceriyi İzmir'de bir yazılım stüdyosu olan [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer) geliştirdi ve açık kaynak yaptı.
 
-Türkçe blog, rehber, analiz, web sitesi ve diğer yayın metinleri için bir Agent Skill. Metni okurun ihtiyacına, türüne ve yazarın sesine göre düzenler; doğal Türkiye Türkçesi, anlam sadakati, düşünce akışı ve yazım üzerinde çalışır.
+Roman, öykü, kitap, deneme, şiir, diyalog, akademik ve kurumsal metin, blog, rehber ve diğer Türkçe metin türleri için bir yazarlık ve editörlük Agent Skill'i. Metni okurun ihtiyacına, türüne ve yazarın sesine göre düzenler; doğal Türkiye Türkçesi, anlam sadakati, düşünce akışı ve yazım üzerinde çalışır.
 
 V2 geliştirme dalında editör, çalıştığı ajanın kendisidir. Ayrı bir API, model, sunucu veya çalışma zamanı zorunlu değildir. Amaç bir sınıflandırıcıdan geçmek değil, gerçek okur için daha iyi Türkçe yazmaktır. Editoryal üstünlük henüz bağımsız insan değerlendirmesiyle doğrulanmış değildir.
 
@@ -12,7 +12,7 @@ V2 geliştirme dalında editör, çalıştığı ajanın kendisidir. Ayrı bir A
 
 Üç kipi var:
 
-- **Yaz:** yeni site ya da blog metni.
+- **Yaz:** özgün kurmaca, kurmaca dışı metin veya kullanıcının istediği başka bir türde yeni taslak.
 - **Düzelt:** verilen metni doğallaştırır, TDK hatalarını giderir, anlamı ve olguları korur.
 - **Denetle:** metni değiştirmeden somut dil ve anlatım sorunlarını, gerekçelerini ve düzeltme önerilerini gösterir. Yazarlık hakkında hüküm vermez.
 
@@ -103,6 +103,10 @@ sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama)
 [Filtre kararları](skills/turkish-writer/references/filtre-kararlari.md) ve [model bağımsız filtre değerlendirme planı](docs/FILTRE-DEGERLENDIRME.md), iyi cümleyi koruma ve farklı ajanlarda çalışabilirlik ölçütlerini tanımlar.
 
 [Blog editörü kılavuzu](skills/turkish-writer/references/blog-editoru.md) araştırmayı, editoryal savı, kaynak sadakatini ve seri yayın tutarlılığını ele alır. [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar. [Kaynak incelemesi ve blog doğrulama planı](docs/BLOG-EDITORU-ARASTIRMA.md) geliştirme dalına aittir; ilk canlı model deneyleri Corpus Lab'da kayıtlıdır.
+
+## Edebî Türkçe ve uzun eserler
+
+[Türkçe kullanım atlası](skills/turkish-writer/references/turkce-kullanim-atlasi.md) ifade, kip, odak ve anlam farklarını; [uzun anlatı ve kitap yazarlığı](skills/turkish-writer/references/uzun-anlati.md) kurmaca, diyalog, anlatıcı, bölüm sürekliliği, anı ve kurmaca dışı eserlerin çalışma biçimini ele alır. Bu kılavuzlar geliştirme adayına dahildir; roman veya kitap ölçeğinde bağımsız editoryal kalite doğrulaması henüz yapılmamıştır.
 
 ## Corpus Lab (geliştirici araştırması)
 
@@ -202,7 +206,7 @@ Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
 ## English
 
-Turkish Writer is an Agent Skill for editing and drafting Turkish blog posts, guides, analyses and other publication copy. The development branch emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
+Turkish Writer is an Agent Skill for Turkish authorship and editing across genres, including novels, short stories, books, essays, poetry, dialogue, nonfiction, academic and business writing, blog posts and guides. The development candidate includes a long-form writing guide and a contextual usage atlas; literary and book-length quality has not yet been independently validated. The development branch emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
 
 **Current status:** V2 is a development candidate, not a released or independently validated upgrade. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and read-only Unicode inspection provide additional evidence, not editorial verdicts. Historical V1.1 measurements do not validate V2.
 
