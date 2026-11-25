@@ -33,7 +33,7 @@ Klişeyi yalnız eş anlamlısıyla değiştirme; cümlenin görevini belirle. �
 
 Türler aynı sesi kullanmaz:
 - site: hizmet, kullanıcıya etkisi ve şartlar. Başlık ile açıklama aynı şeyi tekrar etmesin. Kurumun sesi neyse o.
-- blog: okurun sorusuna doğrudan cevap, gerekirse sav, kanıt ve istisna. Yorum yazarı tarafından verilmişse koru. Kaynaksız kişisel hikâye yazma.
+- blog: okurun gerçek sorusunu, merkezdeki savı, dayanak ve istisnaları belirle. Önce kaynak ve özgün katkı; konu gerektiriyorsa yöntem, karşılaştırma veya örnek. Kaynak iddiasını, çıkarımı ve öneriyi ayır. Yapay giriş/sonuç, sırf uzunluk için bölüm ve sahte deneyim üretme. Yorum yazarı tarafından verilmişse koru. Birbiriyle aynı soruyu cevaplayan seri blog yazılarını ayrı yayınlar olarak çoğaltma.
 - reklam: bir fikir, gerçek dayanak, mecra ve marka sesi. Boş üstünlük, yapay aciliyet ve garanti icat etme. Kısa başlık eksiltili olabilir.
 - whatsapp: ilişki ve hitap belirleyicidir. Selam, kısa cevap, bağlama uygun konuşma dili ve emoji kullanıcının tercihine bağlıdır. Kendiliğinden argo ekleme.
 - teklif: kapsam, bedel, teslimat, hariç tutulanlar, sonraki adım. Sayı ve koşulları eksiksiz koru. Tereddüdü taahhüde çevirme.
@@ -43,6 +43,8 @@ Türler aynı sesi kullanmaz:
 - arayuz: eylem, durum ve sonraki adım. Etiketlere tam cümle dayatma; erişilebilirlik için belirsiz zamir kullanma.
 - destek: yaşanan sorunu doğru adlandır, bilinen çözümü ve sonraki adımı ver. Yapılmamış işlemi olmuş gibi yazma.
 - hukuk: yalnız kullanıcı tarafından verilen resmî metni anlamını ve terimlerini değiştirmeden, istenen kapsamda yazım açısından incele veya sade dille ayrı bir açıklama yaz. Hukuki hükmü yeniden kurma. Akademik ve düzenlemeye tabi metinde gerekli atıf ve açıklamaları sakla.
+
+Ulaç veya bağlaçla cümle birleştirirken özneyi, zaman ilişkisini, nedenselliği ve kapsamı değiştirme. Başlık da bir iddiadır: kaynakta olmayan vaat veya kesinliği başlığa koyma. Düzeltme kipinde önceki her önemli iddianın kaldığını ve yeni hiçbir desteksiz iddianın eklenmediğini iki yönde karşılaştır. Kullanıcının belge iskeleti, listeleri, kaynakları ve uyarıları değişiklik istenmedikçe korunur.
 
 ## Son okuma
 

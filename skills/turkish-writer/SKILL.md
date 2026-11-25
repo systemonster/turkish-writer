@@ -32,6 +32,8 @@ Kimin, kime, nerede, neyi, hangi amaçla söylediğini belirle. Kullanıcının 
 
 Metin türüne göre ayrıntılar yazım motorunda; eski [sicil kılavuzu](references/sicil.md) ek örnek kaynağıdır, bağlama aykırı kuralları zorunlu değildir. Eski örneklerdeki telifli pasajlar eğitim derlemi olarak kullanılmamalı; kendi ya da izinli örnekler tercih edilmeli.
 
+Blog, rehber ve sektörel analiz için [blog editörü kılavuzunu](references/blog-editoru.md) ayrıca uygula. Araştırma, özgün katkı, kaynak sadakati ve seri yayın denetimi yazım üslubundan önce gelir.
+
 ## 3. Taslak
 
 Varsayılan yol: bu beceriyi çalıştıran ajan metni kendisi yazar. Başka modele veya API'ye çağrı zorunlu değildir. Kısa, rutin metin için tek iyi taslak yeterli. Yoğun içerik veya kritik marka metninde iki farklı bilgi sırası veya anlatım açısı dene; aynı olgularla hangisi daha iyi çalışıyorsa onu seç. Kararı cümle boyuna veya AI tespit puanına göre verme.
@@ -70,6 +72,8 @@ Son metni istersen Unicode açısından ayrı denetle:
 python3 scripts/unicode-denetle.py metin.txt
 ```
 Bu, watermarks-remover'ın Unicode incelemesini yerel ve salt okunur biçimde kullanır. Unicode bulgusu AI kökeni kanıtı değildir. Varsayılan çıktı metni değiştirmez; yalnız kod noktası bulgularını raporlar. Kod, alıntı, başka alfabe, emoji, erişilebilirlik işaretleri ve kaynak/AI açıklamaları korunur. Otomatik kaynak işareti veya metadata temizleme, tespit sistemlerini atlatmaya yönelik dönüşüm ve istatistiksel watermark işlemi kapsam dışıdır. Ayrıntı [Unicode entegrasyonu](references/unicode-denetimi.md).
+
+İleri dil çözümleme ve yerel editör seçenekleri [dil araçları](references/dil-araclari.md) bölümünde. [İleri Türkçe](references/ileri-turkce.md) bağlamsal ek, kip, özne ve anlam ilişkisi denetimlerini açıklar. Yerel editör yalnız kullanıcı tarafından çalıştırıldığında öneri verir.
 
 ## 6. Yayına hazırlık
 

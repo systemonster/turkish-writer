@@ -94,6 +94,10 @@ sık yanlışlar, eş dizim). Skoru etkilemeyen iki bölüm daha vardır: **söz
 sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama) ve **ritim bilgisi**
 (cümle boyu sapması, kısa cümle, "ve" yoğunluğu; JSON'da `bilgi` alanı).
 
+## Blog editörlüğü ve isteğe bağlı yerel araçlar
+
+[Blog editörü kılavuzu](skills/turkish-writer/references/blog-editoru.md) araştırmayı, editoryal savı, kaynak sadakatini ve seri yayın tutarlılığını ele alır. [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar. [Kaynak incelemesi ve blog doğrulama planı](docs/BLOG-EDITORU-ARASTIRMA.md) geliştirme dalına aittir; canlı model testi henüz yoktur.
+
 ## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
 
 Tarayıcının ağırlıkları tahminle değil ölçümle seçildi. LLM öncesi yazılmış 180 Türkçe
