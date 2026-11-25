@@ -6,7 +6,7 @@ and existing SUDO private source freeze. Public stdout contains aggregate
 counts and IDs, never excerpts. Context windows go to the private research
 dataset with attribution and source locators, not to the distributed skill.
 """
-import argparse, collections, hashlib, importlib.util, io, json, os, pathlib, re, tarfile, urllib.request
+import argparse, collections, hashlib, importlib.util, io, json, os, pathlib, re, tarfile, tempfile, urllib.request
 HERE=pathlib.Path(__file__).resolve().parent
 spec=importlib.util.spec_from_file_location("profile",HERE/"profile-historical-blog.py")
 profile=importlib.util.module_from_spec(spec);spec.loader.exec_module(profile)
@@ -61,23 +61,42 @@ def contextual(doc,paragraphs):
                 paragraph_start=j==0,focus_sha256=sha(s),source_is_edited_gold=False))
     return matches,len(flat)
 def daron():
-    raw=read_url("https://codeload.github.com/daronyondem/daron-turkce-blog/tar.gz/"+DREV,100_000_000)
+    # Archive includes large image assets. Stream to disk with an explicit bound
+    # and inspect only the pinned README and Markdown posts; never extract images.
     root="daron-turkce-blog-"+DREV
     docs=[]
-    with tarfile.open(fileobj=io.BytesIO(raw),mode="r:gz") as tf:
-        readme=tf.extractfile(root+"/README.md").read().decode()
-        if "CC BY-SA 4.0" not in readme:raise RuntimeError("Daron license declaration missing")
-        for m in tf.getmembers():
-            if not m.isfile() or not m.name.startswith(root+"/posts/"):continue
-            name=pathlib.PurePosixPath(m.name).name
-            if not re.match(r"^20(?:0[7-9]|1[0-7])-\d{2}-\d{2}[^/]*\.md$",name):continue
-            s=tf.extractfile(m).read().decode()
-            p=profile.prose_blocks(s)
-            if len(p)<3 or sum(len(profile.WORD.findall(x)) for x in p)<200:continue
-            doc={"corpus":"daron","document_id":sha(name)[:20],"author":"Daron Yöndem","source_revision":DREV,
-                "source_url":"https://github.com/daronyondem/daron-turkce-blog/blob/"+DREV+"/posts/"+name,
-                "license":LICENSE}
-            docs.append((doc,p))
+    url="https://codeload.github.com/daronyondem/daron-turkce-blog/tar.gz/"+DREV
+    req=urllib.request.Request(url,headers={"User-Agent":"TurkishWriter-corpus-research/1.0"})
+    with tempfile.TemporaryFile() as tmp:
+        total=0
+        with urllib.request.urlopen(req,timeout=60) as r:
+            while True:
+                chunk=r.read(1024*1024)
+                if not chunk:break
+                total+=len(chunk)
+                if total>1_200_000_000:raise RuntimeError("archive exceeds bounded 1.2 GB")
+                tmp.write(chunk)
+        print("DARON_ARCHIVE_BYTES",total,flush=True)
+        tmp.seek(0)
+        with tarfile.open(fileobj=tmp,mode="r|gz") as tf:
+            readme=None
+            for m in tf:
+                if not m.isfile():continue
+                if m.name==root+"/README.md":
+                    readme=tf.extractfile(m).read().decode()
+                    continue
+                if not m.name.startswith(root+"/posts/"):continue
+                name=pathlib.PurePosixPath(m.name).name
+                if not re.match(r"^20(?:0[7-9]|1[0-7])-\d{2}-\d{2}[^/]*\.md$",name):continue
+                if m.size>2_000_000:raise RuntimeError("unexpected post size")
+                s=tf.extractfile(m).read().decode()
+                p=profile.prose_blocks(s)
+                if len(p)<3 or sum(len(profile.WORD.findall(x)) for x in p)<200:continue
+                doc={"corpus":"daron","document_id":sha(name)[:20],"author":"Daron Yöndem","source_revision":DREV,
+                    "source_url":"https://github.com/daronyondem/daron-turkce-blog/blob/"+DREV+"/posts/"+name,
+                    "license":LICENSE}
+                docs.append((doc,p))
+            if not readme or "CC BY-SA 4.0" not in readme:raise RuntimeError("Daron license declaration missing")
     if len(docs)!=503:raise RuntimeError("archive selection drift: "+str(len(docs)))
     return docs
 def sudo(api):
