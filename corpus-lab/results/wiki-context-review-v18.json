@@ -1,0 +1,80 @@
+{
+  "date": "2026-11-25",
+  "scope": "recovered historical development candidate review; not human gold, independent holdout, or measured quality gain",
+  "job_id": "6b06ef09d91f621b930808e2",
+  "code_commit": "c05aa8259171535f67309fc97e6e3ddb23c8d950",
+  "artifact_private": "lovefengis/turkish-writer-historical-review-v10/editorial-corpus-v1/wiki-revision-pairs.json",
+  "artifact_sha256_reported_by_job": "4c086b0d882fb7a056179b002e2269c98e5c3361523267fadca6f3a420647177",
+  "requested_pairs": 50,
+  "retrieved_pairs": 50,
+  "unique_revisions_requested": 98,
+  "prior_provisional_labels": {
+    "orthography_candidate": 14,
+    "contextual_editorial_choice": 4,
+    "semantic_content_or_uncertain": 10,
+    "questionable_or_partial_correction": 4,
+    "vandalism_or_revert_candidate": 18
+  },
+  "review": "AI read 18 positive/contextual before/after records and change windows for 32 other candidates; labels remain provisional, no human review or later-revert verification. Findings refer to the shown changed spans, not the articles' factual accuracy. Source passage text is not redistributed.",
+  "license": "CC BY-SA 4.0",
+  "source_attribution": "Turkish Wikipedia contributors; source diff IDs and article histories in wiki-historical-pilot-v1.json and private artifact; Wikimedia Terms of Use https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+  "findings": [
+    {
+      "ids": [
+        "trwiki-17406205-17406995",
+        "trwiki-13361529-13495388",
+        "trwiki-14388891-14391887",
+        "trwiki-14836669-14836677",
+        "trwiki-9523062-9526631",
+        "trwiki-13848219-13848220"
+      ],
+      "decision": "Local spelling/spacing correction; does not certify the rest of the passage. Independent AI inspection, not editor verification."
+    },
+    {
+      "ids": [
+        "trwiki-17659437-17663490",
+        "trwiki-13177190-14716938",
+        "trwiki-13699870-13791384"
+      ],
+      "decision": "The changed span addresses a spelling or spacing issue, but other visible defects remain; do not treat the after revision as gold or copy its residual errors."
+    },
+    {
+      "ids": [
+        "trwiki-16150945-16150948",
+        "trwiki-14497660-14604458",
+        "trwiki-13944615-13946210",
+        "trwiki-17207501-17207515"
+      ],
+      "decision": "Context-dependent wording, terminology, parallelism or register change; no blanket synonym replacement, and no automatic improvement merely because the revision is later."
+    },
+    {
+      "ids": [
+        "trwiki-16391612-16802727",
+        "trwiki-14223653-14303572",
+        "trwiki-11401262-11465005",
+        "trwiki-11729302-11729479",
+        "trwiki-17037635-17659437"
+      ],
+      "decision": "Temporal stance, deleted recommendation, expanded action, added factual statement or changed scope: content changes are not licensed by a language-only brief."
+    },
+    {
+      "ids": [
+        "trwiki-18164529-18365806",
+        "trwiki-13828009-13846563",
+        "trwiki-10163995-10204927",
+        "trwiki-17413228-17419230"
+      ],
+      "decision": "Questionable direction/partial fix; check current normative spelling and punctuation function, not revision order."
+    },
+    {
+      "ids": [
+        "trwiki-17813309-17880754",
+        "trwiki-17880958-17880960",
+        "trwiki-13234271-13234282",
+        "trwiki-13887315-13887318"
+      ],
+      "decision": "Noise insertion/removal: useful negative cases for data selection, not evidence of native blog editorial quality."
+    }
+  ],
+  "quality_verified": false
+}
