@@ -10,7 +10,7 @@ Bu kılavuz yeni bir sözcük yasağı listesi değil, paragraf ve metin düzeyi
 - Paragrafın sonuna otomatik özet, çağrı veya geçiş ekleme. Bir sonraki paragraf için gerekiyorsa önceki bilgiyi işlevsel biçimde bağla.
 - Brifin malzemesi yetersizse metni doldurma. Kaynakta olmayan örnek, vaka, araştırma ve kişisel deneyim yazma.
 
-## 2. Cümleyi Türkçe düşünce üzerinden kur
+## 2. Söyleyiş ve bilgi akışı
 
 Önce okurun cümleden alması gereken bilgiyi belirle. Cümle zaten bunu açık ve doğal biçimde veriyorsa onu yeniden kurma. Sorunlu cümlede ise sözcükleri tek tek değiştirmek yerine düşüncenin çekirdeğini bul: kim, ne yaptı veya yapacak, neye, hangi koşulda? Sonra bu düşünceyi okurun izleyeceği sırayla ifade et.
 
@@ -25,7 +25,7 @@ Bu kılavuz yeni bir sözcük yasağı listesi değil, paragraf ve metin düzeyi
 
 **Çatıyı anlatıcıya göre koru.** "Bu ayrıntıyı kaydetmedik" birinci kişiyle verilmiş bir işlem bilgisidir. "Bu ayrıntı kaydedilmedi" aynı olaya işaret etse de sorumluluğu ve anlatıcı sesini zayıflatabilir. "Bu ayrıntı kaydedilemedi" ise imkânsızlık ima eder. Üçünü birbirinin süslü eş anlamlısı sayma.
 
-## 3. Paragrafı okurun ilerleyişi üzerinden düzenle
+## 3. Yerleşik kullanım, ses ve ritim
 
 Bir paragrafın ilk cümlesi ile son cümlesi arasında okurun ne öğrendiğini belirle. Aynı bilgiyi yeniden söyleyen cümle varsa çıkar veya birleştir. Yeni gerekçe, istisna, örnek veya koşul taşıyan cümle kısalacak diye silinmez. Geçişi konu değiştiği yerde kur; her paragrafı geçiş kalıbıyla başlatma. Gerekli bağ zaten bilgi sırasından anlaşılıyorsa bağlaç ekleme.
 
