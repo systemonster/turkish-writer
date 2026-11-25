@@ -108,6 +108,19 @@ Dizeyi cümleye, şiiri açıklayıcı paragrafa zorlamak ses ve durakları değ
 
 Bu dört metin iki yazara ait tarihsel geliştirme örnekleridir; çağdaş Türkçede genel yazım normu ya da türler arası model başarısı kanıtı değildir. Kaynak ve revizyon atıfları inceleme kaydında bulunur.
 
+## 9. Sahnenin somut sürekliliği ve saklanan bilgi
+
+Özgün öyküde yaratıcı özgürlük, brifin sabit bilgilerini değiştirme izni değildir. Yazmadan önce yalnız bu sahne için gerekli üç ilişkiyi kur: karakterin geliş amacı ve yanında taşıdığı nesneler; sahnede nesnelerin el değiştirmesi veya yer değiştirmesi; anlatıcının ve okurun hangi bilgiyi ne zaman öğrenebileceği. Kısa bir öykü için ayrı dosya veya uzun hazırlık gerekmez. Bu ilişkiler bitmiş metinde doğal bir hareket dizisine dönüşmeli, açıklama listesi olarak görünmemeli.
+
+- **Nesne ve eylem:** Bir nesne birinin yanında mı, bir yerde mi bırakılmış, sonra eline nasıl geçmiş? Özgün örnek: Sema avluda unuttuğu şemsiyesini almaya gelirken yanında kapalı bir zarf taşıyorsa şemsiyeyi bulmadan elinde açık şemsiye betimleme; zarfı başka yerde bulduracaksan oraya nasıl geldiğini metinle uyumlu kur. Zarfın yeri belirtilmemişse yaratıcı seçim mümkündür; her boşluk hata değildir.
+- **Kişi, iyelik ve fiil:** Üçüncü kişiyle sürdürülen sahnede birinci kişi iyeliğinin anlatıcıya istemeden karışıp karışmadığını kontrol et. “Sema omzumu silkti” yerine, hareketi yapan Sema ise “Sema omuz silkti.” Diyalog, doğrudan iç konuşma ve bilinçli anlatıcı geçişi bunun dışındadır.
+- **Duyusal ayrıntı:** Betimleme cümlesinde algılanan şey ile algının fiziksel ilişkisi anlaşılır olsun. “Rüzgârın sesi camların arasından inledi” gibi yığılmış aktarımlar yerine sahnenin gerçekten taşıdığı sesi veya hareketi kur: “Camların arasından rüzgâr uğulduyordu.” Bilinçli mecazı gerçekçilik kuralıyla silme; anlamsız bağlanmayı mecaz diye örtme.
+- **Bilginin saklanması:** Açıklanması ertelenen bir nesne, kimlik veya olay için başlık da metnin okunduğu ilk yerdir. Okurun bunu son paragrafta öğrenmesi gerekiyorsa başlığı, ara betimlemeyi ve karakterin çıkarımlarını birlikte oku. Örneğin zarfın içinde anahtar olduğu yalnız son paragrafta açıklanacaksa “Yedek Anahtar” başlığı bu koşula aykırıdır; “Avlu” gibi nötr bir başlık mümkün olabilir. Başlığın ipucu vermesine izin verildiyse otomatik olarak silme.
+
+Son okumada önce olayları sırayla zihninde canlandır: karakter ne için geldi, neleri yaptı, hangi nesne nerede, okur neyi biliyor? Ardından yalnız gerçek kusurları düzelt. Okur için gerekli bilgiyi hareketin içine yerleştir; verilen yaşı, akrabalığı veya görevi koruma adına metnin başına yapay bir özgeçmiş yığma.
+
+Bu kararlar V27'nin proje üretimi `v27-write-iskele-paketi` / `a27-08` geliştirme vakasındaki kişi, nesne, duyusal bağlanma ve başlıkta bilgi açığa çıkarma sorunlarını hedefler. Örnekler bu kılavuz için özgün üretimdir; bağımsız insan değerlendirmesi veya yeni model karşılaştırması değildir. [Qwen3-32B deney kaydı](https://huggingface.co/jobs/lovefengis/6b075a34d91f621b93090eb7), [gpt-oss-120b kısmi deney kaydı](https://huggingface.co/jobs/lovefengis/6b0755d1d91f621b93090905). Dondurulmuş V27 istemleri ve sonuçları değişmez.
+
 ## Dayanak ve sınır
 
 Türkçe dil bilgisi ve bağlam için [editör muhakemesi](editor-muhakemesi.md), [bağlamlı Türkçe](baglamli-turkce.md), [ileri Türkçe](ileri-turkce.md) ve [kaynaklar](kaynaklar.md) ile birlikte kullan. Bu kılavuzun örnek cümleleri ve kitap iş akışı proje tarafından özgün hazırlanmıştır. §8'deki yorumlar belirtilen tarihsel eserlerin yakın okumasına dayanır; derlemden elde edilen bağlamsal gözlemler CC BY-SA 4.0 kapsamında, kaynak ve katkıcı bağlantılarıyla belgelenmiştir. Tarihsel blog ve dil bilgisi derlemleri roman, şiir, oyun veya kitap ölçeğinde doğrulanmış editoryal kalite kanıtı değildir. Edebî metinler üzerinde ayrı değerlendirme yapılmadıkça bu geniş kapsam bir geliştirme hedefi olarak kalır.
