@@ -22,3 +22,21 @@ Kaynakların lisans sayfaları ve arşivleri 2026-11-25 tarihinde incelendi. Lis
 6. Her vakada 1–5 anlam, doğal Türkçe, editoryal isabet, akış, yazım/biçim; kritik kusur kategorileri (olgu, koşul, olumsuzluk, kip, özne, atıf, kaynak, sayı, teknik değer), gereksiz müdahale, düzeltme süresi ve tercih (A/B/eşit) kaydedilir. Ciddi anlam kaybı olan aday üslup puanıyla geçemez. Editör anlaşmazlığında üçüncü bağımsız inceleme; sonuçlar yazar veya kaynak kümeleri bazında belirsizlikle raporlanır.
 
 Test seti, insan değerlendirmesi ve gerçek bağımsız karşılaştırma tamamlanmadan V2'yi yayınlama. Üçüncü taraf metinleri ve anonim olmayan değerlendirici kayıtları git'e koyma. Bu dosya test tasarımıdır, tamamlanmış doğrulama değildir.
+
+## Kör değerlendirme paketini hazırlama
+
+[build-review-packets.mjs](build-review-packets.mjs) iki ayrı editör paketi ve ayrı koordinatör anahtarı üretir. Node 18+ dışında bağımlılığı yoktur. Özel girdiyi git dışında tut:
+
+```sh
+node corpus-lab/build-review-packets.mjs corpus-lab/work/private-input.json inceleme-01
+```
+
+Girdi JSON nesnesi: `mode` ("independent_test" veya yalnız sentetik deneme için "development_dry_run"), `manifest` (yukarıdaki tüm bölüm envanteri), `documents` (id, split, source, source_sha256, genre, purpose), `models` (id, family, revision, baseline_commit, candidate_commit, baseline_protocol, candidate_protocol), `outputs` (id, model, arm: baseline/candidate, text, source_sha256, complete: boolean). Kaynak hash'i, modelin gerçekten gördüğü metnin UTF-8 baytlarından hesaplanır; normalleştirme yapılacaksa model çalıştırmadan önce bir kez yapılır. Aynı test belgesi ve aynı model sürümü için her iki kol bulunmalıdır. Eksik çıktı boş metin ve complete=false olarak kaydedilir; yanıltıcı biçimde dışlanmaz. Gerçek testte en az iki model ailesi, manifestle birebir kaynak hash'i ve asgari metin uzunluğu doğrulanır. Dosyayı üreten kişinin beyanı insan doğrulaması değildir.
+
+Çıktı yalnız `corpus-lab/work/inceleme-01/` içinde oluşturulur; var olan paketlerin üzerine yazılmaz. `reviewer-1` ve `reviewer-2` klasörlerini ayrı editörlere ver. `coordinator/private-key.json` dosyasını hiçbir değerlendiriciyle paylaşma. A/B sırası her model içinde dengeli ve iki editör arasında terslenmiş; vaka kimlikleri de anonimleştirilmiştir. Metnin kendisi kaynak hakkında ipucu verebilir; bu araç model/kol kimliğini gizler, kaynak içeriğini değiştirmez.
+
+### Editöre verilecek ortak yönerge
+
+Her iki metni kaynak ve amaçla ayrı ayrı karşılaştır. 1 = ciddi kusur, 2 = belirgin kusur, 3 = yeterli ama düzenleme gerekli, 4 = iyi, 5 = yayınlanabilir düzeyde. Beş alan: anlam sadakati, doğal Türkçe, editoryal katkı/isabet, akış, yazım/biçim. Anlamı veya olguyu değiştiren ifadeyi kritik hata olarak kategori ve kısa gerekçeyle kaydet. Gereksiz müdahaleleri say; gerçek düzeltme süresini ölçebiliyorsan dakika olarak gir, tahmin uydurma. Tercih A, B veya eşit; iyi yazılmış kaynakta gereksiz düzenleme olumlu katkı değildir. İki çıktı aynıysa eşit tercih ver. Boş veya eksik metni başarı sayma. Yalnız değerlendirme dosyanı koordinatöre teslim et; diğer editörle görüşmeden önce puanları dondur.
+
+Pilot: 12 mevcut sentetik uzun geliştirme vakası, Qwen3-32B ve Turkish Gemma 9B'nin önceki V2 baseline/skill çıktıları (24 karşılaştırma/editör, 48 toplam atama). Bu, paket mekanizmasının yazılım testidir; bağımsız editör puanı veya yeni holdout değildir. Gerçek veriler henüz toplanmadı. Sonuçları birleştirme, körlüğü koruma ve değerlendiriciler arası anlaşmazlığı çözme işlemi koordinatör sorumluluğunda; henüz otomatik puan toplama aracı yok.
