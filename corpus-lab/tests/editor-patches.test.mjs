@@ -344,6 +344,34 @@ const cases=[
     ],
     true,
     "Henüz tamamlandı."
+  ],
+  [
+    "long fence lock",
+    "````md\n\n```\n\nGizli metin.\n\n```\n\n````\n\nİşlem mevcut değildir.",
+    [
+      {
+        "index": 4,
+        "before": "Gizli",
+        "after": "Yeni",
+        "reason": "Test"
+      }
+    ],
+    false,
+    null
+  ],
+  [
+    "different fence lock",
+    "~~~md\n\n```\n\nGizli metin.\n\n~~~\n\nİşlem mevcut değildir.",
+    [
+      {
+        "index": 4,
+        "before": "Gizli",
+        "after": "Yeni",
+        "reason": "Test"
+      }
+    ],
+    false,
+    null
   ]
 ];
 for(const [name,source,patches,valid,output] of cases)test(name,()=>{const r=applyPatches(source,patches);assert.equal(r.valid,valid);assert.equal(r.output,valid?output:source);});
