@@ -118,7 +118,7 @@ Ham korpus, üçüncü taraf yazıları ve kişisel veri depoya commit edilmez. 
 
 Qwen3-32B kısa çekirdeğinde 28/52 çıktı kaynak sınırı etiketlerini içerdi; etiketi temizledikten sonra 9/24 koruma vakası birebir. Bu ham çıktı hatasını sonradan başarı sayma. Bazı kollar sayı, başlık, alıntı ve korunan ifadelerde değişiklik yaptı. Mevcut skill, kısa çekirdekle değiştirilmedi. Karar kapısı ve düzenleme adımlarını ayıran deney, bu kusurları hedefliyor.
 
-**Aktif takip:** [HF Job: editor-decision-gate-v3](https://huggingface.co/jobs/lovefengis/6b0646781460ffe1d5e9916c), RTX PRO 6000, azami 60 dakika. Sabit kod commit'i `d298b2d2f0ae9abfe55f4602fbc58636ef5a42a3`. [Deney kodu](run-editor-gate.py). 3 model × 52 vaka için karar (KORU/DÜZELT), doğrudan skill, karar kapılı skill ve karar kapılı kısa edit talimatı. Modelin KORU kararı yalnız model çıktısına dayanır, referans kararı verilmez. Ham kararları, yanlış koruma/düzenleme ve biçim/olgu risklerini ayrı değerlendir. Aynı örnekler geliştirme setidir; bağımsız kalite onayı değildir. Bu deney henüz tamamlanmamıştır; önce sonucu al, aynı işi tekrar başlatma.
+**Önceki takip (tamamlandı, §9):** [HF Job: editor-decision-gate-v3](https://huggingface.co/jobs/lovefengis/6b0646781460ffe1d5e9916c), RTX PRO 6000, azami 60 dakika. Sabit kod commit'i `d298b2d2f0ae9abfe55f4602fbc58636ef5a42a3`. [Deney kodu](run-editor-gate.py). 3 model × 52 vaka için karar (KORU/DÜZELT), doğrudan skill, karar kapılı skill ve karar kapılı kısa edit talimatı. Modelin KORU kararı yalnız model çıktısına dayanır, referans kararı verilmez. Ham kararları, yanlış koruma/düzenleme ve biçim/olgu risklerini ayrı değerlendir. Aynı örnekler geliştirme setidir; bağımsız kalite onayı değildir. Sonuçlar §9'da; aynı işi tekrar başlatma.
 
 ## 9. Karar kapısı V3 ve somut bulgu V4
 
@@ -132,4 +132,34 @@ Qwen3-32B kısa çekirdeğinde 28/52 çıktı kaynak sınırı etiketlerini içe
 
 Karar kapısı gereksiz müdahaleyi azaltsa da düzenlenmesi gereken metinleri büyük oranda gözden kaçırdı. Bu haliyle kabul edilmedi. Aynı metni döndürerek literal kontrolü geçmek editoryal başarı değildir.
 
-**Aktif deney V4:** [HF Job](https://huggingface.co/jobs/lovefengis/6b064ad11460ffe1d5e99908), RTX PRO 6000, azami 90 dakika. Sabit commit `183b177e4593d4d98a01fd992a82dd7a6bca691f`, [run-editor-audit.py](run-editor-audit.py). Aynı 52 geliştirme vakası ve üç model üzerinde doğrudan düzenleme, kaynakta birebir alıntıyla kanıtlanan kusurlara göre düzenleme ve karşılaştırmalı son okuma. Karar ve biçim hataları ayrı raporlanır; referans kararları modelden saklanır. Bu deney bir bağımsız insan değerlendirmesi değildir. Tamamlanınca ham sonuçlar ve hata analizi kaydedilir. V3 ve V4 işleri tekrar başlatılmaz; diğer projelerin HF kaynaklarına dokunulmaz.
+**V4 deney tanımı (tamamlandı, §10):** [HF Job](https://huggingface.co/jobs/lovefengis/6b064ad11460ffe1d5e99908), RTX PRO 6000, azami 90 dakika. Sabit commit `183b177e4593d4d98a01fd992a82dd7a6bca691f`, [run-editor-audit.py](run-editor-audit.py). Aynı 52 geliştirme vakası ve üç model üzerinde doğrudan düzenleme, kaynakta birebir alıntıyla kanıtlanan kusurlara göre düzenleme ve karşılaştırmalı son okuma. Karar ve biçim hataları ayrı raporlanır; referans kararları modelden saklanır. Bu deney bir bağımsız insan değerlendirmesi değildir. Ham sonuçlar ve hata analizi §10'da. V3 ve V4 işleri tekrar başlatılmaz; diğer projelerin HF kaynaklarına dokunulmaz.
+
+## 10. V4 tamamlandı: somut bulgu ve aynı modelle son okuma
+
+[Job](https://huggingface.co/jobs/lovefengis/6b064ad11460ffe1d5e99908) 25 Kasım 2026, COMPLETED. Sabit deney commit'i `183b177e4593d4d98a01fd992a82dd7a6bca691f`. 3 model, 52 geliştirme vakası/model; 156 teşhis, 468 çıktı, 142 karşılaştırma kararı. Ham kayıtlar:
+
+| Model | Geçerli teşhis /52 | KORU vakası birebir, doğrudan → teşhisli → son okuma (/24) | DÜZELT vakasında değişiklik, doğrudan → teşhisli → son okuma (/28) | Hakemin B tercihi |
+|---|---:|---:|---:|---:|
+| [Qwen3-8B](results/editorial-audit-v4-qwen-qwen3-8b.json) | 44 | 16 → 8 → 14 | 16 → 22 → 16 | 26/38 |
+| [Turkish Gemma 9B](results/editorial-audit-v4-ytu-ce-cosmos-turkish-gemma-9b-v0-1.json) | 1 | 0 → 0 → 3 | 28 → 28 → 27 | 48/52 |
+| [Qwen3-32B](results/editorial-audit-v4-qwen-qwen3-32b.json) | 37 | 0 → 0 → 4 | 28 → 28 → 27 | 47/52 |
+
+Değişen metin iyileşmiş sayılmaz; geçerli JSON da doğru teşhis değildir. V4 şu haliyle varsayılan skill'e alınmadı. Aynı modelin kaynak A ve revizyon B sıralı hakemliği bağımsız değildir; yüksek B seçimi tek başına konum yanlılığını kanıtlamaz. Somut olumsuz örnekler:
+- `editorial-dev-001`, Qwen3-32B: doğru belirtme çekimi olan “olmadığını” yerine “olmadığı henüz bilmiyoruz” getirdi. Hakem B'yi tercih etti.
+- `long-dev-001`, Turkish Gemma: “sipariş sayısının değişmemesi” yerine “sipariş sayısındaki değişim” getirerek verilen olguyla çelişti. Başlığı kaldırdı; hakem B'yi tercih etti.
+- `long-dev-006`, Qwen3-8B: birinci şahıs anlatımını edilgene çevirdi, hazırlık süresini anlatan cümleyi bozdu. Hakem bunlara rağmen B'yi tercih etti.
+- `editorial-dev-001`, Qwen3-8B: iyi metinde “ilk hafta” bilgisinin silinmesini kusur giderme olarak önerdi; biçimsel teşhis doğrulaması anlamsal muhakemeyi garanti etmedi.
+
+### 10.1 Ücretsiz yapısal tekrar oynatma
+
+[Offline replay sonuçları](results/editorial-structure-replay-v4.json): aynı 468 çıktı üzerinde yalnız benzersiz ve değişmemiş başlıkta Markdown işaretini geri koyma; kalan başlık, bağlantı, tablo ve satır içi kod farkında kaynak metne dönme. 7 sentetik çekirdek kontrolü geçti. Son okuma kolunda kalan yapısal farkı olan vaka sayıları Qwen3-8B 3, Gemma 9, Qwen3-32B 3. Ancak geri alma Qwen3-8B'de düzenleme gereken vakalarda değişiklik sayısını 16'dan 13'e, Gemma'da 27'den 19'a, 32B'de 27'den 26'ya düşürdü. Bu korumayı başarı sayma: anlamsal hataları yakalamaz ve editoryal kusuru kaynakta bırakabilir. Kod deneysel sonuçta saklı; üretime alınmadı. Ek GPU çalıştırılmadı.
+
+### 10.2 Bağımsız holdout ve bir sonraki hipotez
+
+[Bağımsız değerlendirme protokolü](HOLDOUT.md) ve [manifest doğrulayıcı](validate-holdout.mjs) eklendi. 9 sentetik fonksiyon kontrolü geçti; yeni Node test dosyasının gerçek CLI koşusu ayrıca doğrulanmalıdır. Kaynak, yazar, konu ve birebir hash gruplarının bölüm sızıntısı denetlenir. Aday lisans kaynakları araştırıldı, fakat henüz insan onaylı örnek yok.
+
+Sonraki deneyde tüm belgeyi yeniden ürettirmek yerine değiştirilecek doğal metin parçalarını kesin kaynak alıntısıyla sınırla; belge yapısı, bağlantılar ve değiştirilmemiş paragraflar mekanik olarak korunsun. Çok paragraflı akış gerektiren durumda paragraflar arasında düzenlemeye izin ver; modelden noktasal değişiklik gerekçesi iste. Eşleştirme belirsizse uygulama, model çıktısında bulunmayan yeni olgu veya kip değişimini insan/bağımsız değerlendirme ile kontrol et. Önce CPU'da yama uygulayıcısının testlerini ve bağımsız inceleme paketini doğrula; yalnız sonra yeni anlamlı GPU deneyi başlat. A/B sunum sırası dengeli olmalı; V4 aynı modelin kendini onaylamasıyla kaliteyi ispatlamadı.
+
+### 10.3 Maliyet ve atıflar
+
+[Hesap çizelgesi](results/compute-ledger-2026-11-25.json), [resmî HF tarifesi](https://huggingface.co/docs/hub/en/jobs-pricing) ile oluşturuldu. V4 duvar süresi 24,182 dk, saatlik 2,75 USD, yaklaşık 1,1084 USD; 90 dk süre sınırının nominal bedeli 4,125 USD. Sonlanma zamanı bilinen 7 proje işi için yaklaşık 2,5584 USD; üç iptal edilen işin süreleri ve gerçek fatura bilinmiyor. Toplam gerçek harcama iddia edilmiyor. Başka proje işleri çizelgeye girmedi. [Model atıfları](LICENSE-DATA.md) sabit model sürümleriyle güncellendi.
