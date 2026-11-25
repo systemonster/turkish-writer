@@ -28,11 +28,20 @@ def main():
     token=os.environ["HF_TOKEN"]
     api=HfApi(token=token)
     if not api.repo_info(DEST,repo_type="dataset").private:raise RuntimeError("private artifact repository required")
-    before=api.inspect_job(PRECEDING_ID,namespace=NS)
-    pre=api.inspect_job(PREFLIGHT_ID,namespace=NS)
+    import inspect
+    for method,kwargs in ((api.inspect_job,{"job_id":PRECEDING_ID,"namespace":NS}),(api.list_jobs,{"namespace":NS}),(api.fetch_job_logs,{"job_id":PREFLIGHT_ID,"namespace":NS,"follow":False,"tail":5}),(api.run_job,{"image":"python:3.12","command":["true"],"flavor":"cpu-basic","timeout":"1m","namespace":NS,"labels":{},"secrets":{}})):
+        inspect.signature(method).bind(**kwargs)
+    before=api.inspect_job(job_id=PRECEDING_ID,namespace=NS)
+    pre=api.inspect_job(job_id=PREFLIGHT_ID,namespace=NS)
     if name(before)!="turkish-writer-v10-qwen32b-thinking" or name(pre)!="turkish-writer-historical-preflight-fix" or stage(pre)!="COMPLETED":
         raise RuntimeError("unexpected dependency or failed preflight")
     report("PREFLIGHT_VERIFIED",id=PREFLIGHT_ID)
+    if "--self-test" in sys.argv[1:]:
+        jobs=list(api.list_jobs(namespace=NS))
+        logs=list(api.fetch_job_logs(job_id=PREFLIGHT_ID,namespace=NS,follow=False,tail=20))
+        if not any("HISTORICAL_PILOT_SELF_TEST_COMPLETE" in str(line) for line in logs):raise RuntimeError("missing preflight marker")
+        report("SDK_PREFLIGHT_COMPLETE",api_calls=["repo_info","inspect_job","list_jobs","fetch_job_logs"],jobs_seen=len(jobs))
+        return
     existing=None
     started=time.monotonic()
     prev=None
@@ -45,7 +54,7 @@ def main():
             report("WORKER_ALREADY_EXISTS",id=existing.id,status=stage(existing))
             break
         own=[j for j in jobs if name(j).startswith("turkish-writer-") and gpu(j) and stage(j) not in TERMINAL]
-        predecessor=api.inspect_job(PRECEDING_ID,namespace=NS)
+        predecessor=api.inspect_job(job_id=PRECEDING_ID,namespace=NS)
         active=sorted((j.id,stage(j)) for j in own)
         signature=(stage(predecessor),active)
         if signature!=prev:
@@ -61,7 +70,7 @@ def main():
     deadline=time.monotonic()+5700
     previous=None
     while time.monotonic()<deadline:
-        j=api.inspect_job(existing.id,namespace=NS)
+        j=api.inspect_job(job_id=existing.id,namespace=NS)
         s=stage(j)
         if s!=previous:
             report("WORKER_STATUS",id=j.id,status=s)
@@ -70,13 +79,13 @@ def main():
             result={"child_id":j.id,"stage":s,"code":CODE,"timeout_seconds":5400}
             if s!="COMPLETED":
                 try:
-                    lines=list(api.fetch_job_logs(j.id,namespace=NS,follow=False,tail=35))
+                    lines=list(api.fetch_job_logs(job_id=j.id,namespace=NS,follow=False,tail=35))
                     result["error_tail"]=[str(line).replace(token,"[REDACTED]")[-1000:] for line in lines[-15:]]
                 except Exception as e:
                     result["log_error"]=type(e).__name__
             else:
                 try:
-                    lines=list(api.fetch_job_logs(j.id,namespace=NS,follow=False,tail=100))
+                    lines=list(api.fetch_job_logs(job_id=j.id,namespace=NS,follow=False,tail=100))
                     result["completion_marker"]=any("HISTORICAL_RETRY_COMPLETE" in str(line) for line in lines)
                 except Exception:
                     result["completion_marker"]=False
