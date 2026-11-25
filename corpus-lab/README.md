@@ -51,8 +51,44 @@ python -m unittest discover -s corpus-lab/tests -p 'test_*.py'
 
 Yapısal kontrol, korunan dizilerin kaybını, aynı kaynağın farklı bölümlere dağılmasını ve birebir kopyaları kontrol eder. Benzer metinler, konu çakışması ve anlam sadakati ayrıca editör tarafından incelenir. Bu kontrol insan doğrulamasının yerini tutmaz.
 
-## 4. Yayın politikası
+## 4. Tarihsel düzenleme adayları: Vikipedi
+
+`collect-wiki-revisions.mjs` ve `wiki-revision-candidates.mjs`, 2018 öncesi birbirinin doğrudan ebeveyni olan iki Türkçe Vikipedi madde revizyonundan tek bir temiz paragraf içindeki küçük değişiklikleri ayıklar. Bu bir editör onayı değil, inceleme kuyruğudur. Sayı değişiklikleri, belirgin wiki işaretlemesi, etiketli geri alma ve eldeki bir sonraki revizyonda tamamen geri dönen değişiklikler elenir. Daha geç geri alma, botlar, yanlış veya olgusal müdahale ve yakın kopya kalabilir. Yöntem kasıtlı olarak dar kapsamlıdır; teknik ve blog metninin yerini tutmaz. Kimlik, revizyon tarihi, kaynak ve geçmiş bağlantısı saklanır; kullanıcı adı, IP veya düzenleme özeti istenmez. Kişisel veri ve yeniden kullanım koşullarını insan incelemesinde ayrıca kontrol et.
+
+Node 18+ ile sentetik çekirdek testi:
+
+```bash
+node corpus-lab/collect-wiki-revisions.mjs --self-test
+```
+
+İnternet erişimi olan geliştirme makinesinde `work/titles.txt` içine satır başına bir tane, en fazla 20 madde başlığı yaz. Gerçek iletişim adresini kullan, istekleri art arda yap; API sınırı veya maxlag durumunda betik durur.
+
+```bash
+node corpus-lab/collect-wiki-revisions.mjs --titles-file corpus-lab/work/titles.txt --contact https://your-project.example --out corpus-lab/work/wiki-candidates.jsonl --batches 2 --limit 200
+```
+
+Daha önce alınmış MediaWiki Action API formatversion=2 JSON yanıtıyla çevrimdışı da çalışır:
+
+```bash
+node corpus-lab/collect-wiki-revisions.mjs --input corpus-lab/work/revisions.json --out corpus-lab/work/wiki-candidates.jsonl
+```
+
+Adayları doğrudan skill'e taşıma. Editör iki revizyonu geçmişiyle inceleyerek olgu değişikliği ve vandalizmi ayırır, gerekçeyi yazar ve lisans/atfı doğrular. Gerçek onaydan sonra 3. bölümdeki şema ile ayrı dosya oluşturup doğrula. Büyük taramalar için API yerine Wikimedia dump verisi araştırılır. İlgili kaynaklar: [MediaWiki revizyon API](https://www.mediawiki.org/wiki/API:Revisions), [API etiquette](https://www.mediawiki.org/wiki/API:Etiquette), [Wikimedia kullanım koşulları](https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use), [WikiSmallEdits](https://github.com/tguinard/WikiSmallEdits). Son kaynak ayrı bir araştırmadır; bu depoda kodu kopyalanmamıştır.
+
+## 5. Editoryal stres testi
+
+`editorial-stress-v1.jsonl` 40 proje üretimi geliştirme vakası içerir: 18 korunacak, 22 düzenlenecek. Sekiz alan: anlam, söz dizimi, metin akışı, sicil, terminoloji, eş dizim, yapı ve anlatım sesi. Açık geliştirme verisidir; bağımsız kör test olarak kullanılamaz. Referans düzenleme tek geçerli cevap değildir. Otomatik denetim sayı, bağlantı, tırnak içi alıntı değişikliklerini inceleme için işaretler; anlam ve kalite hakkında hüküm vermez.
+
+```bash
+node corpus-lab/editorial-eval.mjs --fixture-check
+node corpus-lab/editorial-eval.mjs --prepare corpus-lab/work/editorial-tasks.jsonl
+node corpus-lab/editorial-eval.mjs --check corpus-lab/work/model-outputs.jsonl
+```
+
+Model çıktısı her satırda `{"id":"editorial-dev-001","output":"..."}` biçimindedir. Hazırlanan görevler referansı, kategori veya beklenen müdahaleyi göstermez. Aynı görevleri dört deney kolunda ayrı oturumlarda çalıştır. Çıktıları kodlanmış rastgele sırada iki bağımsız editör değerlendirsin. Literal değişiklikler otomatik ret değil inceleme sinyalidir. Sayının silinmesi, aynı sayının farklı özneye bağlanması, yeni olgu, olumsuzluğun değişmesi veya gereksiz müdahale gibi kusurları anlam denetiminde ayrıca yakala. Geliştirme örneklerinden yeni kurallar çıkar; yeni kuralları tekrar bu veri üzerinde başarı kanıtı sayma. Bağımsız, görülmemiş bloglar ve gerçek editör kararı olmadan V2 yayın kapısı açılmaz. [Değerlendirme planı](../docs/FILTRE-DEGERLENDIRME.md).
+
+## 6. Yayın politikası
 
 Ham korpus, üçüncü taraf yazıları ve kişisel veri depoya commit edilmez. Çıkarılan toplu bilgiler ve bağımsız örnekler ancak editör tarafından gözden geçirildikten sonra skill referansı olur. İyi Türkçe, doğruluk, anlam koruma ve editoryal fayda ölçülür. Dil dağılımları kota veya sınıflandırıcı atlatma hedefi değildir.
 
-Durum: BOUN pilotu tamamlandı; web tarama, gerçek editör çiftleri ve insan kör değerlendirmesi henüz yapılmadı. Kaynak ve lisans kaydı: `sources.json`.
+Durum: BOUN pilotu tamamlandı. Vikipedi toplama kodu, 17 sentetik çekirdek kontrolü ve 40 editoryal geliştirme vakası eklendi. Çekirdek ve değerlendirme fonksiyonları izole JavaScript ortamında sınandı; Node CLI ve tüm npm test paketi bu geliştirme turunda çalıştırılmadı. Canlı Vikipedi taraması, geniş web derlemi, gerçek editör çiftlerinin insan onayı ve bağımsız kör değerlendirme henüz yapılmadı. Kaynak ve lisans kaydı: `sources.json`.
