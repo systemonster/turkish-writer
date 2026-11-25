@@ -22,5 +22,11 @@
     "ai-writing",
     "claude-skill",
     "agent-skills"
+  ],
+  "files": [
+    "skills/turkish-writer/",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
   ]
 }
