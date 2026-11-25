@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "boun",
+      "url": "https://github.com/UniversalDependencies/UD_Turkish-BOUN",
+      "revision": "09521f40c90904df85524b8e0b43afba6e4c7823",
+      "license": "CC BY-SA 4.0",
+      "scope": "annotated train",
+      "status": "analyzed",
+      "source_note": "TNC derived; not blog-specific"
+    },
+    {
+      "id": "mogan",
+      "url": "https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned",
+      "license": "ODC-By (database); document rights separately",
+      "status": "card verified; not downloaded",
+      "scope": "streamed authorized pre-2018 crawl sample"
+    },
+    {
+      "id": "authorship",
+      "url": "https://data.mendeley.com/datasets/xcb8r9d554/1",
+      "license": "CC BY 4.0 dataset card; underlying document rights separately",
+      "status": "card verified; not downloaded",
+      "scope": "blog/article genre and author variation 2015–2018"
+    },
+    {
+      "id": "gec",
+      "url": "https://github.com/asimokby/Turkish-GEC",
+      "license": "review dataset-specific terms",
+      "status": "README verified; not downloaded",
+      "scope": "synthetic grammar pairs and human annotated held-out evaluation; not editorial judgments"
+    },
+    {
+      "id": "wiki",
+      "url": "https://dumps.wikimedia.org/trwiki/",
+      "license": "verify revision-specific rights and attribution",
+      "status": "planned",
+      "scope": "historical genuine revision candidates, separate facts/style"
+    }
+  ]
+}

@@ -100,6 +100,10 @@ sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama)
 
 [Blog editörü kılavuzu](skills/turkish-writer/references/blog-editoru.md) araştırmayı, editoryal savı, kaynak sadakatini ve seri yayın tutarlılığını ele alır. [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar. [Kaynak incelemesi ve blog doğrulama planı](docs/BLOG-EDITORU-ARASTIRMA.md) geliştirme dalına aittir; canlı model testi henüz yoktur.
 
+## Corpus Lab (geliştirici araştırması)
+
+[Corpus Lab](corpus-lab/README.md) skill'in veri temelli geliştirme hattıdır. İlk BOUN eğitim pilotunda 7.803 işaretlenmiş cümle incelendi; [istatistikler](corpus-lab/results/boun-train-v1.json) ve [Türkçe derlem notları](skills/turkish-writer/references/derlem-bulgulari.md) ayrı CC BY-SA 4.0 lisansıyla sunuluyor. Blog veri seçme hattı hazır, ancak büyük veri kümesi henüz taranmadı. Son kullanıcı hiçbir derlem indirmek zorunda değildir.
+
 ## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
 
 Tarayıcının ağırlıkları tahminle değil ölçümle seçildi. LLM öncesi yazılmış 180 Türkçe
