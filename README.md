@@ -4,16 +4,9 @@
 
 Bu beceriyi İzmir'de bir yazılım stüdyosu olan [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer) geliştirdi ve açık kaynak yaptı.
 
-Türkçe site içeriği ve blog yazısı için bir yapay zekâ becerisi (Claude Code / Agent
-Skills). Yapay zekânın Türkçe yazdığı metnin iki ortak kusurunu giderir: sesli okununca
-**yanlış yerde vurgulu** olması ve **İngilizceden çevrilmiş gibi** durması. Metin TDK
-yazım kurallarına da uyar.
+Türkçe blog, rehber, analiz, web sitesi ve diğer yayın metinleri için bir Agent Skill. Metni okurun ihtiyacına, türüne ve yazarın sesine göre düzenler; doğal Türkiye Türkçesi, anlam sadakati, düşünce akışı ve yazım üzerinde çalışır.
 
-İngilizce için bu işi yapan çok araç var. Türkçeye uyarlananlar genellikle İngilizce
-listeyi çevirip bırakıyor. Oysa Türkçe metni ele veren şeylerin bir kısmı İngilizcede hiç
-yok: vurgunun yüklemden önceki öğeye düşmesi, "bir"in *a/an* gibi her cümleye girmesi,
-ulaç yerine "ve", "karar vermek adına" gibi edat kalıpları. Bu beceri bunları ayrı bir
-katman olarak ele alıyor ve hepsini ölçüyor.
+V2 geliştirme dalında editör, çalıştığı ajanın kendisidir. Ayrı bir API, model, sunucu veya çalışma zamanı zorunlu değildir. Amaç bir sınıflandırıcıdan geçmek değil, gerçek okur için daha iyi Türkçe yazmaktır. Editoryal üstünlük henüz bağımsız insan değerlendirmesiyle doğrulanmış değildir.
 
 ## Ne yapar
 
@@ -21,18 +14,18 @@ katman olarak ele alıyor ve hepsini ölçüyor.
 
 - **Yaz:** yeni site ya da blog metni.
 - **Düzelt:** verilen metni doğallaştırır, TDK hatalarını giderir, anlamı ve olguları korur.
-- **Denetle:** metni değiştirmeden izleri satır satır listeler. "Bunu yapay zekâ yazdı"
-  hükmü vermez.
+- **Denetle:** metni değiştirmeden somut dil ve anlatım sorunlarını, gerekçelerini ve düzeltme önerilerini gösterir. Yazarlık hakkında hüküm vermez.
 
 V2 akışı: kısa brif, tür ve ses, taslak, editör okuması, isteğe bağlı araçlar ve son kontrol.
 Ayrıntı: [`skills/turkish-writer/SKILL.md`](skills/turkish-writer/SKILL.md).
 
 ## Kurulum
 
-Claude Code'da kişisel beceri olarak:
+Yayımlanmış dalı Claude Code'da kişisel beceri olarak kurmak için:
 
 ```bash
 git clone https://github.com/systemonster/turkish-writer.git
+mkdir -p ~/.claude/skills
 cp -r turkish-writer/skills/turkish-writer ~/.claude/skills/
 ```
 
@@ -40,7 +33,17 @@ Ya da yalnız bir projede kullanmak için `.claude/skills/` altına kopyalayın.
 [Agent Skills](https://agentskills.io) biçimindedir; bu biçimi okuyan başka ajanlarda da
 çalışır.
 
-### V2 geliştirme dalı
+### V2 geliştirme dalı (henüz yayımlanmadı)
+
+Aşağıdaki kurulum yalnız geliştirme adayını denemek içindir; kararlı sürümü değiştirmez:
+
+```bash
+git clone --branch native-turkish-editor-v2 --single-branch https://github.com/systemonster/turkish-writer.git turkish-writer-v2
+mkdir -p ~/.claude/skills
+cp -r turkish-writer-v2/skills/turkish-writer ~/.claude/skills/
+```
+
+Mevcut bir kurulumu korumak istiyorsanız ayrı bir deneme ortamı kullanın.
 
 V2'nin varsayılanı model bağımsız editoryal filtredir. Var olan metni veya yeni üretilen taslağı çalıştığı ajanla düzeltir; zorunlu API, yerel model veya çalışma zamanı yoktur. OpenAI API ve Codex taslak yolları isteğe bağlıdır. Tek yazım motoru [yazım-motoru.md](skills/turkish-writer/references/yazim-motoru.md) içinde bulunur. Sabit cümle/paragraf kotaları ve bağlamdan bağımsız sözcük yasakları yerine okur, amaç, tür, doğal söz dizimi ve olgu sadakati belirleyicidir. Eski ölçümler V1.1'e aittir; V2 için ilk geliştirme deneyleri çalıştırılmıştır, ancak bağımsız editör doğrulaması tamamlanmamıştır. [Doğrulama planı](docs/V2-DOGRULAMA.md).
 
@@ -103,6 +106,8 @@ sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama)
 ## Corpus Lab (geliştirici araştırması)
 
 [Corpus Lab](corpus-lab/README.md) skill'in veri temelli geliştirme hattıdır. İlk BOUN eğitim pilotunda 7.803 işaretlenmiş cümle incelendi; [istatistikler](corpus-lab/results/boun-train-v1.json) ve [Türkçe derlem notları](skills/turkish-writer/references/derlem-bulgulari.md) ayrı CC BY-SA 4.0 lisansıyla sunuluyor. Bir milyon web kaydının üst verisi tarandı; 87.390 kayıt ön filtreden geçti (tam metin taraması veya editör onayı değil). Açık lisanslı tarihsel blog arşivinde 503 yazı ve 274.756 sözcük incelendi; [bulgular](skills/turkish-writer/references/tarihsel-blog-bulgulari.md) tek yazara aittir. 2.643 tarihsel Vikipedi revizyonundan 50 düzenleme adayı seçildi. İlk model deneyleri, sentetik geliştirme vakaları ve sonuçları [Corpus Lab](corpus-lab/README.md) altında kayıtlıdır; V2 henüz yayına hazır ilan edilmemiştir. Son kullanıcı hiçbir derlem indirmek zorunda değildir.
+
+Derlemden çıkarılan kararlar [bağlamlı Türkçe](skills/turkish-writer/references/baglamli-turkce.md) kılavuzunda kullanılabilir hale getirildi. 503 tarihsel blog, 20 SUDO yazısı ve BOUN eğitim bölümü üzerinde 126 seçilmiş bağlam incelendi; bunlar insan onaylı düzeltme çifti değildir. [Yöntem ve kanıt kimlikleri](corpus-lab/results/context-evidence-v1-summary.json). [Bağımsız editör değerlendirme protokolü](corpus-lab/HOLDOUT.md) yayın kapısı olarak duruyor.
 
 ## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
 
@@ -194,14 +199,14 @@ Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
 ## English
 
-`turkish-writer` is an Agent Skill for writing and editing Turkish website copy and blog
-posts so they read as written by a Turkish speaker, not translated from English or
-generated by an LLM. It covers Turkish-specific tells that English humanizers miss
-(misplaced focus/stress, *bir* as an article calque, *ve* instead of converbs,
-calqued postpositions), follows the official TDK spelling rules, and ships a
-dependency-free Node scanner. Calibrated on 180 pre-LLM Turkish texts vs 180 GPT texts;
-see `tests/kalibrasyon/`. It does not use invisible characters, homoglyphs or deliberate
-typos, and it does not invent facts. In V2, the active agent can write directly; OpenAI/Codex drafting is optional. The V1.1 measurements are historical and do not validate V2. Optional read-only Unicode inspection uses a vendored MIT module from watermarks-remover.
+Turkish Writer is an Agent Skill for editing and drafting Turkish blog posts, guides, analyses and other publication copy. The development branch emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
 
-Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer),
-an İzmir studio for custom panels, integrations, multilingual sites and automation.
+**Current status:** V2 is a development candidate, not a released or independently validated upgrade. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and read-only Unicode inspection provide additional evidence, not editorial verdicts. Historical V1.1 measurements do not validate V2.
+
+The Turkish guide [Contextual Turkish](skills/turkish-writer/references/baglamli-turkce.md) translates observations from licensed historical prose and annotated Turkish syntax into contextual editorial decisions. See [research provenance](corpus-lab/LICENSE-DATA.md), [context evidence](corpus-lab/results/context-evidence-v1-summary.json), and the [independent evaluation protocol](corpus-lab/HOLDOUT.md). No third-party raw research corpus or model weights are required by the skill.
+
+### Acknowledgements / Teşekkür
+
+We thank Daron Yöndem, the contributing SUDO Portal writers, and the UD Turkish BOUN team at Boğaziçi University/TABILAB for their licensed works. We also acknowledge Guillaume Meyer and the contributors to watermarks-remover for the vendored MIT-licensed read-only Unicode component. Other project, research and language-resource attributions, including materials reviewed but not incorporated, are listed in [sources and licenses](skills/turkish-writer/references/kaynaklar.md) and [data provenance](corpus-lab/LICENSE-DATA.md). Their contributions do not imply endorsement of Turkish Writer.
+
+Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer), an İzmir studio.
