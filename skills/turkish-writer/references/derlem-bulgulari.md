@@ -1,6 +1,6 @@
 # BOUN derleminden ilk dil bilgisi bulguları
 
-Kaynak: [UD Turkish BOUN](https://github.com/UniversalDependencies/UD_Turkish-BOUN/tree/09521f40c90904df85524b8e0b43afba6e4c7823), TABILAB / Boğaziçi Üniversitesi; Türkçe Ulusal Derlem'den seçilmiş, elle işaretlenmiş metinler. Eğitim bölümü, 7.803 cümle. Bu sayılar gerçek hesaplamadır; blog editörlüğü başarı ölçümü değildir. Kaynak: CC BY-SA 4.0. Bu türetilmiş veri notu da CC BY-SA 4.0 olarak dağıtılır. [Tam istatistik](../../../corpus-lab/results/boun-train-v1.json).
+Kaynak: [UD Turkish BOUN](https://github.com/UniversalDependencies/UD_Turkish-BOUN/tree/09521f40c90904df85524b8e0b43afba6e4c7823), TABILAB / Boğaziçi Üniversitesi; Türkçe Ulusal Derlem'den seçilmiş, elle işaretlenmiş metinler. Eğitim bölümü, 7.803 cümle. Bu sayılar gerçek hesaplamadır; blog editörlüğü başarı ölçümü değildir. Kaynak: CC BY-SA 4.0. Bu türetilmiş veri notu da CC BY-SA 4.0 olarak dağıtılır. [Tam istatistik](https://github.com/systemonster/turkish-writer/blob/b2b8cebd9099b3eb7c0d8e802390f37940b6ea1c/corpus-lab/results/boun-train-v1.json).
 
 ## Dil bilgisi kararları
 
