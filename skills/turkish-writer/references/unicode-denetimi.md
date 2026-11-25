@@ -1,7 +1,7 @@
 # Unicode denetimi: watermarks-remover
 
 Kaynak: https://github.com/guillaumemeyer/watermarks-remover, commit 5a62be6338d2812372b1da440e55c82922f97d53.
-Yalnız standart kütüphane kullanan `service/scripts/text_unicode.py` dosyası MIT lisansıyla aynen alınmıştır. Lisans ve kaynak yolu `scripts/vendor/watermarks-remover/` altında saklanır. Python 3.10+ isteğe bağlıdır; Node ve skill kullanımı Python gerektirmez.
+Yalnız standart kütüphane kullanan `service/scripts/text_unicode.py` dosyası MIT lisansıyla aynen alınmıştır. Lisans ve kaynak yolu `scripts/vendor/watermarks-remover/` altında saklanır. Bileşen skill ile birlikte dağıtılır; ayrı kurulum veya servis gerekmez. Python 3.10+ mevcutsa yayıma hazır metinlerde son kontrolde kullanılır. Python mevcut değilse normal editoryal akış devam eder; Node ve skill kullanımı Python gerektirmez.
 
 ```bash
 python3 scripts/unicode-denetle.py metin.txt
