@@ -4,19 +4,35 @@
   "scope": "Only confirmed Turkish Writer jobs; unlabelled jobs and other projects excluded. Wall-clock estimates include potentially unbilled scheduling/build time and exclude minute rounding. Timeout × hourly rate is nominal, not a billing statement. Actual charges and total spend require billing records.",
   "rows": [
     {
-      "id": "6b06700e1460ffe1d5e9d4e9",
-      "name": "turkish-writer-contrastive-span-v6",
-      "state": "RUNNING",
+      "id": "6b067c90d0582cfbbefdc6a9",
+      "name": "turkish-writer-contrastive-span-v6-gemma-corrected",
+      "state": "SCHEDULING",
       "hardware": "rtx-pro-6000",
-      "created": "2026-11-25T05:20:14.942Z",
+      "created": "2026-11-25T06:13:36.068Z",
       "finished": null,
       "wall_minutes": null,
       "usd_per_hour": 2.75,
-      "timeout_seconds": 3600,
-      "timeout_rate_usd": 2.75,
+      "timeout_seconds": 1800,
+      "timeout_rate_usd": 1.375,
       "wall_time_rate_usd": null,
       "actual_billed_usd": null,
-      "git": "78ece08bc239c7a09ee6ce2d6a7fccf2c5e6ec58"
+      "code_commit": "5d9e850a21069d68bcb86c0eefd4019936ff6c4a"
+    },
+    {
+      "id": "6b06700e1460ffe1d5e9d4e9",
+      "name": "turkish-writer-contrastive-span-v6",
+      "state": "COMPLETED",
+      "hardware": "rtx-pro-6000",
+      "created": "2026-11-25T05:20:14.942Z",
+      "finished": "2026-11-25T05:31:38.895Z",
+      "wall_minutes": 11.3992167,
+      "usd_per_hour": 2.75,
+      "timeout_seconds": 3600,
+      "timeout_rate_usd": 2.75,
+      "wall_time_rate_usd": 0.522464,
+      "actual_billed_usd": null,
+      "git": "78ece08bc239c7a09ee6ce2d6a7fccf2c5e6ec58",
+      "code_commit": "78ece08bc239c7a09ee6ce2d6a7fccf2c5e6ec58"
     },
     {
       "id": "6b06625d1460ffe1d5e9bc20",
@@ -187,6 +203,6 @@
       "actual_billed_usd": null
     }
   ],
-  "known_wall_time_rate_usd": 3.119571,
+  "known_wall_time_rate_usd": 3.642035,
   "missing_duration_count": 4
 }
