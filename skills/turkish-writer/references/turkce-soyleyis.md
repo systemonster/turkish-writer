@@ -38,7 +38,7 @@ Cümle yığılmış adlar ve genel fiiller yüzünden ağırsa somut eylemi bul
 |---|---|
 | Belgelerin kontrol edilmesinin ardından arşivleme işlemi başlayacak. | Belgeler kontrol edildikten sonra arşivleme başlayacak. Sıra ve başlangıç korunur. |
 | Her talebin ayrı ayrı değerlendirilmesi işlemini gerçekleştirdik. | Her talebi ayrı ayrı değerlendirdik. Eylem görünür, kapsam ve kişi aynı. |
-| Bu aşamada işlemin iptal edilmesi söz konusu olabilir. | Bu aşamada işlem iptal edilebilir. Olasılık korunur. |
+| Bu aşamada işlemin iptal edilmesi söz konusu olabilir. | Bu aşamada işlemin iptali gündeme gelebilir. İhtimal korunur; iptale izin verildiği veya iptalin gerçekleşeceği söylenmez. |
 | Ödemeyi onaylamadık. | Aynen bırak. "Ödeme onaylanamadı" bir yetersizlik veya engel ima edebilir. |
 
 Sözcüğün ağırlığı tek başına sorun değildir. “Gerçekleştirmek”, “değerlendirmek”, “sağlamak”, “uygulamak” ve benzeri fiiller bağlamlarında doğal olabilir. “Kısa olan daha iyidir” şeklinde bir ön kabul kurma.
@@ -65,11 +65,11 @@ Paragrafa ilk cümlesinden son cümlesine kadar bak. Okur bir bilgi mi ediniyor,
 
 **Açıklayıcı metin — özgün örnek**
 
-Girdi: "Formun doldurulması için gerekli alanların tamamlanması gerekmektedir. Bu noktada e-posta adresinin girilmesi de önem arz etmektedir. Telefon numarası ise isteğe bağlıdır."
+Girdi: "Formun doldurulması için gerekli alanların tamamlanması gerekmektedir. E-posta adresinin girilmesi zorunludur. Telefon numarası ise isteğe bağlıdır."
 
 Düzenleme: "Formdaki zorunlu alanları doldurun. E-posta adresinizi girmeniz gerekiyor; telefon numarası ise isteğe bağlı."
 
-Gerekçe: Talimatın özü görünür, gerekli alan ayrımı korunur. Kaynak e-postanın zorunlu olup olmadığını başka türlü tanımlıyorsa "gerekiyor" biçiminde güçlendirme yapılmaz; bu örnekte zorunlu olduğu açıklayıcı brifte varsayılmıştır.
+Gerekçe: Talimatın özü görünür, gerekli alan ayrımı korunur. Zorunluluk kaynağın kendisinde açıkça yer alıyor; yalnız önemli olduğu söylenen bir alan zorunlu diye yazılmaz.
 
 **Anlatı — özgün örnek**
 
@@ -97,7 +97,7 @@ Bir düzeltme doğal görünmekle birlikte kaynağın niyetini zayıflatıyorsa 
 
 ## Dayanak ve sınır
 
-- [Raised and in-situ preverbal foci: A unified prosodic account](https://www.cambridge.org/core/journals/journal-of-linguistics/article/raised-and-insitu-preverbal-foci-a-unified-prosodic-account/F4F3D08AF50518233CE3454B4CD0C272), Journal of Linguistics, §4.1. Türkçede yüklem önü dar odak ve bağlamsal sözcük sırası hakkındaki açıklamalar incelendi; özgün örnekleri burada yeniden basılmadı.
+- Lena Borise, Andreas Pregla ve Balázs Surányi, [Raised and in-situ preverbal foci: A unified prosodic account](https://www.cambridge.org/core/journals/journal-of-linguistics/article/raised-and-insitu-preverbal-foci-a-unified-prosodic-account/F4F3D08AF50518233CE3454B4CD0C272), Journal of Linguistics, 62(1), 1–34, 2026 (çevrim içi 2025), DOI 10.1017/S0022226725000118, CC BY-NC-SA 4.0, §4.1. Türkçede yüklem önü dar odak üzerine genel dilbilimsel bulgu için bibliyografik başvuru; metin ve özgün örnekler alınmadı.
 - [BOUN derlem bulguları](derlem-bulgulari.md), [bağlamlı Türkçe](baglamli-turkce.md), [tarihsel blog bulguları](tarihsel-blog-bulgulari.md): mevcut kaynaklara dayanan gözlemler; örneklerin sıklığı bir kalite veya yazarlık kotası değildir.
 - [TDK Yazım Kılavuzu](https://tdk.gov.tr/icerik/yazim-kurallari/): normatif yazım kararları için birincil başvuru.
 
