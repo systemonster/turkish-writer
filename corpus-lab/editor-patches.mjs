@@ -2,12 +2,18 @@
 function blocks(source){
   // Only LF prose blocks; unknown/structured Markdown is deliberately immutable.
   const parts=source.split(/(\n[ \t]*\n(?:[ \t]*\n)*)/u);
-  let fenced=false;
+  let fence=null;
   return parts.map((text,index)=>{
     if(index%2)return {index,text,editable:false};
-    const hasFence=/^[ \t]{0,3}(?:`{3,}|~{3,})/mu.test(text);
-    const wasFenced=fenced;
-    for(const line of text.split("\n"))if(/^[ \t]{0,3}(?:`{3,}|~{3,})/u.test(line))fenced=!fenced;
+    let hasFence=false;
+    const wasFenced=!!fence;
+    for(const line of text.split("\n")){
+      const m=line.match(/^[ ]{0,3}(`{3,}|~{3,})(.*)$/u);
+      if(!m)continue;
+      hasFence=true;
+      if(!fence)fence={char:m[1][0],length:m[1].length};
+      else if(m[1][0]===fence.char&&m[1].length>=fence.length&&!m[2].trim())fence=null;
+    }
     const structured=/^[ \t]*(?:#{1,6}(?:\s|$)|>|[-*+]\s|\d+[.)]\s|\||(?:---|\*\*\*|___)\s*$|<|!?\[[^\]]+\]:)/mu.test(text)||/^[ \t]{4,}\S/mu.test(text)||/^\t/mu.test(text)||/^[ \t]*(?:=+|-+)[ \t]*$/mu.test(text);
     return {index,text,editable:!wasFenced&&!hasFence&&!structured&&!text.includes("\r")&&!!text.trim()};
   });
