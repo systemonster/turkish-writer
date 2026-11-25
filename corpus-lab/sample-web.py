@@ -31,8 +31,14 @@ def permitted(url, approvals):
     return None
 
 def candidate(row, approvals):
+    # Dataset card labels metadata.*, but the pinned Parquet exports are flat.
+    fields = ('url', 'date', 'language_score', 'fasttext_clean_score')
     m = row.get('metadata')
-    if not isinstance(m, dict):
+    if m is None:
+        if not all(k in row for k in fields):
+            return None, 'metadata'
+        m = {k: row[k] for k in fields}
+    elif not isinstance(m, dict) or any(k in row and row[k] != m.get(k) for k in fields):
         return None, 'metadata'
     url = m.get('url')
     if not isinstance(url, str):
