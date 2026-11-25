@@ -14,8 +14,9 @@
       "id": "mogan",
       "url": "https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned",
       "license": "ODC-By (database); document rights separately",
-      "status": "card verified; not downloaded",
-      "scope": "streamed authorized pre-2018 crawl sample"
+      "status": "one-million-row metadata pilot completed; document rights not cleared",
+      "scope": "streamed authorized pre-2018 crawl sample",
+      "revision": "7c5bd76fa456f1748ceb603d8e57acf24a173339"
     },
     {
       "id": "authorship",
@@ -35,8 +36,16 @@
       "id": "wiki",
       "url": "https://dumps.wikimedia.org/trwiki/",
       "license": "verify revision-specific rights and attribution",
-      "status": "planned",
+      "status": "2643 revisions scanned; 50 model-triaged candidates; zero human verification",
       "scope": "historical genuine revision candidates, separate facts/style"
+    },
+    {
+      "id": "daron-blog",
+      "url": "https://github.com/daronyondem/daron-turkce-blog",
+      "revision": "e5a5885a9f70d2f30519560a80c6de622aeac945",
+      "license": "CC BY-SA 4.0",
+      "scope": "2007–2017 historical blog prose; aggregate statistics only",
+      "status": "503 eligible articles profiled; one author"
     }
   ]
 }
