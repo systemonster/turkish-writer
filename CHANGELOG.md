@@ -5,6 +5,22 @@ Biçim [Keep a Changelog](https://keepachangelog.com/tr-TR/1.1.0/), sürümleme
 değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör**, yalnız düzeltme
 **yama** artışıdır. `package.json` sürümü ile git etiketi aynı olur.
 
+## [Unreleased] — V2 geliştirme adayı
+
+Bu kayıt yeni yayımlanmış sürüm değildir. Paket sürümü ve git etiketi yayın kapısı karşılanana kadar değiştirilmez.
+
+### Değişti
+
+- Varsayılan iş akışı ayrı API veya yerel model gerektirmeyen, bağlama göre müdahale eden editoryal filtreye taşındı.
+- Gerçek editoryal kusur saptanmadan değişiklik yapılmaması; gerekli olduğunda cümle ve paragrafın düşünce akışına göre yeniden kurulması; kaynak anlamının ve yazarın sesinin iki yönlü korunması esas alındı.
+- Editör muhakemesi ve bağlamlı Türkçe kılavuzu, tarihsel Türkçe bloglar, SUDO Portal ve BOUN eğitim derlemindeki bağlam incelemesinden türetilen kararlarla genişletildi. Ham araştırma metinleri dağıtılmaz. [Veri kaynakları ve lisanslar](corpus-lab/LICENSE-DATA.md).
+- Salt okunur, isteğe bağlı Unicode denetimi için watermarks-remover'ın MIT lisanslı sabit sürüm bileşeni korundu; yazarlık tespiti veya kaynak/provenance değiştirme amacı yoktur.
+- Türkçe ve İngilizce tanıtım, tarihsel ölçümler ile V2'nin doğrulama durumunu ayrı gösterir.
+
+### Doğrulama sınırı
+
+[Corpus Lab](corpus-lab/README.md) geliştirme deneyleri, olumlu ve olumsuz sonuçlarıyla kayıtlıdır. Teknik regresyon başarıları editoryal üstünlüğü kanıtlamaz. [Bağımsız insan editör değerlendirmesi](corpus-lab/HOLDOUT.md) tamamlanmadan final yayın yapılmaz.
+
 ## [1.1.0] - 2026-10-14
 
 ### Eklendi
