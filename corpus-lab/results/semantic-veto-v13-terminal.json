@@ -1,0 +1,2956 @@
+{
+  "scope": "V13 development replay; not independent or human reviewed",
+  "monitor": {
+    "job_id": "6b06cfabd91f621b93078d85",
+    "stage": "COMPLETED",
+    "code": "272cb8d4c34eb16dd33e8965fd378075090a114c",
+    "completion_marker": true,
+    "counts": {
+      "Qwen/Qwen3-32B": {
+        "synthetic_correct": 48,
+        "synthetic_total": 48,
+        "false_accept": 0,
+        "false_reject": 0,
+        "historical_accepted": 0,
+        "historical_total": 1
+      },
+      "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1": {
+        "synthetic_correct": 35,
+        "synthetic_total": 48,
+        "false_accept": 0,
+        "false_reject": 13,
+        "historical_accepted": 4,
+        "historical_total": 7
+      }
+    },
+    "artifact_revision": "5721aeb0c4439af1140045ccc0b39f46aeaca7fe"
+  },
+  "models": [
+    {
+      "run": {
+        "model": "Qwen/Qwen3-32B",
+        "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+        "artifact_revision": "c6e64c911d34739ed2a436b5bb1f3afff74be638",
+        "git": "272cb8d4c34eb16dd33e8965fd378075090a114c",
+        "scope": "V10 synthetic calibration and fixed V12 cross-model historical review, not blind"
+      },
+      "results": [
+        {
+          "id": "semantic-v10-001:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "modality",
+          "accept": true,
+          "scores": [
+            [
+              -0.062497228384017944,
+              -9.43749713897705
+            ],
+            [
+              -7.787813663482666,
+              -0.0378137044608593
+            ],
+            [
+              -0.04375489056110382,
+              -10.168754577636719
+            ],
+            [
+              -8.911592483520508,
+              -0.03659209981560707
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "dce80eff5b9ab192ba58d3ca0268b8636d093189dcdabb5b8d8e5e1f36a69983",
+          "after_sha256": "f103fdb731b15e4263b79f269ba618ae4d9ed3161a0eb5d083636e2bb78fb1a1"
+        },
+        {
+          "id": "semantic-v10-001:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "modality",
+          "accept": false,
+          "scores": [
+            [
+              -4.946882247924805,
+              -0.07188235968351364
+            ],
+            [
+              -0.35798129439353943,
+              -2.1079812049865723
+            ],
+            [
+              -7.544686794281006,
+              -0.044686928391456604
+            ],
+            [
+              -0.05866936221718788,
+              -6.558669567108154
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "dce80eff5b9ab192ba58d3ca0268b8636d093189dcdabb5b8d8e5e1f36a69983",
+          "after_sha256": "34dabaf4d15e503f95b62f0d27e49880d68d212cc0c2bf4af4d18ad487126512"
+        },
+        {
+          "id": "semantic-v10-002:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "negation",
+          "accept": false,
+          "scores": [
+            [
+              -12.1301851272583,
+              -0.005185250658541918
+            ],
+            [
+              -0.049878984689712524,
+              -9.67487907409668
+            ],
+            [
+              -11.629752159118652,
+              -0.004751936998218298
+            ],
+            [
+              -0.031747858971357346,
+              -10.281747817993164
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "18d7b3517a19e679f0b3be759c7bd31636e54f49860beb3add5cebf628e5126a",
+          "after_sha256": "0ed368d71c912161aff3dbfb7caa5a034254ad57a4b90217c410db95db5b3865"
+        },
+        {
+          "id": "semantic-v10-002:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "negation",
+          "accept": true,
+          "scores": [
+            [
+              -0.03203687444329262,
+              -11.157036781311035
+            ],
+            [
+              -8.908296585083008,
+              -0.03329668939113617
+            ],
+            [
+              -0.03302060812711716,
+              -10.533020973205566
+            ],
+            [
+              -8.649996757507324,
+              -0.024997137486934662
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "18d7b3517a19e679f0b3be759c7bd31636e54f49860beb3add5cebf628e5126a",
+          "after_sha256": "97909e44c03552efa2169233a038ad1c4bbba9335aef5ae68105e679e932e50d"
+        },
+        {
+          "id": "semantic-v10-003:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "agent",
+          "accept": true,
+          "scores": [
+            [
+              -0.18041740357875824,
+              -10.43041706085205
+            ],
+            [
+              -6.998302459716797,
+              -0.2483026534318924
+            ],
+            [
+              -0.14468319714069366,
+              -9.894682884216309
+            ],
+            [
+              -6.299445152282715,
+              -0.17444509267807007
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "dd9d5c0f0fd1e787ce91488cb4c5e26a2f79463819847f30aefa08696a1bf67b",
+          "after_sha256": "73f806d22517c852a8f543c8a5f9e3440641a78d3ca6d94633e6fa262bb85836"
+        },
+        {
+          "id": "semantic-v10-003:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "agent",
+          "accept": false,
+          "scores": [
+            [
+              -9.950064659118652,
+              -0.07506485283374786
+            ],
+            [
+              -0.4305254817008972,
+              -8.430525779724121
+            ],
+            [
+              -10.297676086425781,
+              -0.047676537185907364
+            ],
+            [
+              -0.35462960600852966,
+              -8.854629516601562
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "dd9d5c0f0fd1e787ce91488cb4c5e26a2f79463819847f30aefa08696a1bf67b",
+          "after_sha256": "f12c24c0c9a5cd60dba6df4f50a3cdce15308a22fce084b48c1c4112d9655b63"
+        },
+        {
+          "id": "semantic-v10-004:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "time",
+          "accept": false,
+          "scores": [
+            [
+              -11.655556678771973,
+              -0.030556855723261833
+            ],
+            [
+              -0.025445010513067245,
+              -9.400444984436035
+            ],
+            [
+              -11.164071083068848,
+              -0.03907119482755661
+            ],
+            [
+              -0.03255130723118782,
+              -9.157551765441895
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f0f32a83e04e71e435ffd6321b101dfea1db8eb1fd2e5c182f2153fbab7cf43e",
+          "after_sha256": "91636ab66e0f8570fbb8775168078fe1e1a42a9d91be6edd0fd6c27fd868b41d"
+        },
+        {
+          "id": "semantic-v10-004:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "time",
+          "accept": true,
+          "scores": [
+            [
+              -0.025507068261504173,
+              -8.775506973266602
+            ],
+            [
+              -7.544624328613281,
+              -0.04462411254644394
+            ],
+            [
+              -0.031046509742736816,
+              -9.031046867370605
+            ],
+            [
+              -5.58358907699585,
+              -0.0835888460278511
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f0f32a83e04e71e435ffd6321b101dfea1db8eb1fd2e5c182f2153fbab7cf43e",
+          "after_sha256": "fb5e619b81427da6621c8c9e62bb2a3bbde936b37bb16ce089da805f993986a2"
+        },
+        {
+          "id": "semantic-v10-005:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "causality",
+          "accept": true,
+          "scores": [
+            [
+              -0.31444087624549866,
+              -9.439440727233887
+            ],
+            [
+              -6.991429328918457,
+              -0.24142922461032867
+            ],
+            [
+              -0.1569208800792694,
+              -9.281920433044434
+            ],
+            [
+              -6.2426228523254395,
+              -0.24262288212776184
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f55d02b03c025651c314612f029fde13f11d4db4cdf3d24e16ebe44eebee797f",
+          "after_sha256": "135b581ce8cda768a7d4d2580dbcc0d309d91cf94d8ae95a81bab64a9bb1ee8f"
+        },
+        {
+          "id": "semantic-v10-005:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "causality",
+          "accept": false,
+          "scores": [
+            [
+              -9.954463005065918,
+              -0.07946288585662842
+            ],
+            [
+              -0.10374747216701508,
+              -10.353747367858887
+            ],
+            [
+              -10.839387893676758,
+              -0.0893881544470787
+            ],
+            [
+              -0.18222007155418396,
+              -10.807220458984375
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f55d02b03c025651c314612f029fde13f11d4db4cdf3d24e16ebe44eebee797f",
+          "after_sha256": "39fd0a23013401d38518ff2da8d71c1e141de80d1cd1960ee7ef85347a7901e7"
+        },
+        {
+          "id": "semantic-v10-006:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "scope",
+          "accept": false,
+          "scores": [
+            [
+              -11.279232025146484,
+              -0.029231879860162735
+            ],
+            [
+              -0.1479359269142151,
+              -9.27293586730957
+            ],
+            [
+              -11.156983375549316,
+              -0.03198295831680298
+            ],
+            [
+              -0.05190955474972725,
+              -10.051909446716309
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "0aeea94a3e67a9aaafa860ca08f619180fcc7541546a23ad500861afd9fa4ccc",
+          "after_sha256": "ee3ea21fe844e4a163aeb4675689df4939dd4dd7f465c9a5040aae0809ca9588"
+        },
+        {
+          "id": "semantic-v10-006:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "scope",
+          "accept": true,
+          "scores": [
+            [
+              -0.13661128282546997,
+              -10.261610984802246
+            ],
+            [
+              -8.552241325378418,
+              -0.052241452038288116
+            ],
+            [
+              -0.10815206170082092,
+              -9.233152389526367
+            ],
+            [
+              -8.795731544494629,
+              -0.04573152959346771
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "0aeea94a3e67a9aaafa860ca08f619180fcc7541546a23ad500861afd9fa4ccc",
+          "after_sha256": "8e62fb6bffbe338890c2cb36a87d8ce296c56fafd7084814f2470feb30527be1"
+        },
+        {
+          "id": "semantic-v10-007:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "attribution",
+          "accept": true,
+          "scores": [
+            [
+              -0.1027434915304184,
+              -10.852743148803711
+            ],
+            [
+              -9.025740623474121,
+              -0.025741081684827805
+            ],
+            [
+              -0.13131630420684814,
+              -10.631316184997559
+            ],
+            [
+              -8.544316291809082,
+              -0.04431658983230591
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "82b6daa2206b91fa937d82928570bc86e6a5f3a098f06511eec192dfe142ee87",
+          "after_sha256": "0047b6e7a6f45dcf0b8b0ab83c7075a2cb50d0bc23077206ec65085d67d2054e"
+        },
+        {
+          "id": "semantic-v10-007:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "attribution",
+          "accept": false,
+          "scores": [
+            [
+              -0.35580483078956604,
+              -3.605804920196533
+            ],
+            [
+              -0.918014645576477,
+              -1.293014645576477
+            ],
+            [
+              -2.275972366333008,
+              -0.40097227692604065
+            ],
+            [
+              -0.893852949142456,
+              -1.143852949142456
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "82b6daa2206b91fa937d82928570bc86e6a5f3a098f06511eec192dfe142ee87",
+          "after_sha256": "746cdb9f624dc1e61878e11ca3bed40e3b499cfdbc41bda63e2d88ba189f487e"
+        },
+        {
+          "id": "semantic-v10-008:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "number",
+          "accept": false,
+          "scores": [
+            [
+              -12.139594078063965,
+              -0.014593761414289474
+            ],
+            [
+              -0.0908154621720314,
+              -9.340815544128418
+            ],
+            [
+              -11.515771865844727,
+              -0.015771767124533653
+            ],
+            [
+              -0.08725571632385254,
+              -9.087255477905273
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "889e253f21a8273ffcffeed5a7812587cb695926e8b442acf04c6a68851a71d4",
+          "after_sha256": "68f4b77f6a6a5bfa0796aec3b1ad95fc9ae44a9826d72017b72959747b1bea82"
+        },
+        {
+          "id": "semantic-v10-008:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "number",
+          "accept": true,
+          "scores": [
+            [
+              -0.026532068848609924,
+              -10.151532173156738
+            ],
+            [
+              -8.145515441894531,
+              -0.020515156909823418
+            ],
+            [
+              -0.02576025016605854,
+              -11.400760650634766
+            ],
+            [
+              -9.146328926086426,
+              -0.021329307928681374
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "889e253f21a8273ffcffeed5a7812587cb695926e8b442acf04c6a68851a71d4",
+          "after_sha256": "1bfa14c13d6fb017b61c7adae00de6729cdbbf2cf78ecd6f352bf7c43bd1a9b2"
+        },
+        {
+          "id": "semantic-v10-009:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "unit",
+          "accept": true,
+          "scores": [
+            [
+              -0.2827039659023285,
+              -8.40770435333252
+            ],
+            [
+              -7.747539043426514,
+              -0.24753913283348083
+            ],
+            [
+              -0.34725746512413025,
+              -6.972257614135742
+            ],
+            [
+              -6.675837993621826,
+              -0.30083778500556946
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "285e78b4e49eff83d2b4c34b8e32d0b9e4320adb92fa02c438c96278297c4745",
+          "after_sha256": "482f788e855b6ff8d8dfe2be1e911dd9fd310be6154fd58e9c6b24072096d642"
+        },
+        {
+          "id": "semantic-v10-009:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "unit",
+          "accept": false,
+          "scores": [
+            [
+              -8.594902992248535,
+              -0.09490339457988739
+            ],
+            [
+              -0.34990471601486206,
+              -8.974905014038086
+            ],
+            [
+              -8.827878952026367,
+              -0.07787912338972092
+            ],
+            [
+              -0.634656548500061,
+              -8.13465690612793
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "285e78b4e49eff83d2b4c34b8e32d0b9e4320adb92fa02c438c96278297c4745",
+          "after_sha256": "c346f58fffcb2fd9aa24bfd8c93c33391de5ac62147bace2061eac1d627763f6"
+        },
+        {
+          "id": "semantic-v10-010:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "comparison",
+          "accept": false,
+          "scores": [
+            [
+              -10.065093994140625,
+              -0.19009415805339813
+            ],
+            [
+              -1.1615345478057861,
+              -9.036534309387207
+            ],
+            [
+              -10.46440601348877,
+              -0.2144058793783188
+            ],
+            [
+              -1.0099661350250244,
+              -9.259965896606445
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "96d209ba3adc0d5ee2790a8c546a8755b9a0685e83fa51da02ef7fabd71c60e2",
+          "after_sha256": "c91c9183434d6ef0e71742000256d604e8e2dd6eb60dc672a0061da53a293e4c"
+        },
+        {
+          "id": "semantic-v10-010:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "comparison",
+          "accept": true,
+          "scores": [
+            [
+              -0.4766022562980652,
+              -9.976602554321289
+            ],
+            [
+              -7.446812152862549,
+              -0.3218119442462921
+            ],
+            [
+              -0.3318825364112854,
+              -9.83188247680664
+            ],
+            [
+              -7.178177356719971,
+              -0.30317750573158264
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "96d209ba3adc0d5ee2790a8c546a8755b9a0685e83fa51da02ef7fabd71c60e2",
+          "after_sha256": "9e0053dd1f5023f59ce7d25633b1bcae608341e2dbd7e88acdcb76766d737c19"
+        },
+        {
+          "id": "semantic-v10-011:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "obligation",
+          "accept": true,
+          "scores": [
+            [
+              -0.15361374616622925,
+              -10.153614044189453
+            ],
+            [
+              -9.245841979980469,
+              -0.12084176391363144
+            ],
+            [
+              -0.2821880877017975,
+              -9.532188415527344
+            ],
+            [
+              -9.152586936950684,
+              -0.1525866985321045
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "b5fffe769100432b09e438dc352d20dc6981fceeaa968a5179fdb88e100898bd",
+          "after_sha256": "bba517bb0408123b7843eb54b3cebbd8a0a73c4dd179527f349ab889d5d5fda3"
+        },
+        {
+          "id": "semantic-v10-011:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "obligation",
+          "accept": false,
+          "scores": [
+            [
+              -6.609652519226074,
+              -0.10965242236852646
+            ],
+            [
+              -0.6191073060035706,
+              -5.119107246398926
+            ],
+            [
+              -10.904359817504883,
+              -0.029360149055719376
+            ],
+            [
+              -0.23333853483200073,
+              -8.233338356018066
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "b5fffe769100432b09e438dc352d20dc6981fceeaa968a5179fdb88e100898bd",
+          "after_sha256": "9778f2ee2ed14d4982fe0998b5c952df2c4e946fc750c4629c4de44531ca1c70"
+        },
+        {
+          "id": "semantic-v10-012:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "ability",
+          "accept": false,
+          "scores": [
+            [
+              -8.085776329040527,
+              -0.0857759416103363
+            ],
+            [
+              -0.19852857291698456,
+              -7.07352876663208
+            ],
+            [
+              -2.9508464336395264,
+              -0.32584643363952637
+            ],
+            [
+              -0.4913005828857422,
+              -2.866300582885742
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f82b4f857da35904fa2db4fe2d8e7f9437d8ab8fc5388dbfb58ec6dbaa13d209",
+          "after_sha256": "9d7c91b0cc91fc7bd13409b64c7335bfe4ea8fe23f2a67501fc32dab8b97c596"
+        },
+        {
+          "id": "semantic-v10-012:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "ability",
+          "accept": true,
+          "scores": [
+            [
+              -0.10835040360689163,
+              -9.73335075378418
+            ],
+            [
+              -9.03747272491455,
+              -0.03747250512242317
+            ],
+            [
+              -0.14164458215236664,
+              -8.766644477844238
+            ],
+            [
+              -7.436473369598389,
+              -0.061473142355680466
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f82b4f857da35904fa2db4fe2d8e7f9437d8ab8fc5388dbfb58ec6dbaa13d209",
+          "after_sha256": "55913cb70c07cf93624dd310cd46428dc587a154283ae4072aebd3931bf60f6f"
+        },
+        {
+          "id": "semantic-v10-013:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "condition",
+          "accept": true,
+          "scores": [
+            [
+              -0.33477911353111267,
+              -10.459778785705566
+            ],
+            [
+              -7.523707389831543,
+              -0.39870715141296387
+            ],
+            [
+              -0.2988651990890503,
+              -10.17386531829834
+            ],
+            [
+              -6.958107948303223,
+              -0.33310791850090027
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "9adab19578ab12852dd2d397987cd44a01c7b9a8991068d9c658de8d8246f380",
+          "after_sha256": "7397ddcaed286e1b8577552dac7424c24b6fc1acf5f6e7de08a62616e478be46"
+        },
+        {
+          "id": "semantic-v10-013:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "condition",
+          "accept": false,
+          "scores": [
+            [
+              -10.384025573730469,
+              -0.13402511179447174
+            ],
+            [
+              -0.46549057960510254,
+              -8.340490341186523
+            ],
+            [
+              -3.5893726348876953,
+              -0.46437254548072815
+            ],
+            [
+              -0.8772096037864685,
+              -4.377209663391113
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "9adab19578ab12852dd2d397987cd44a01c7b9a8991068d9c658de8d8246f380",
+          "after_sha256": "50f4eb43baf3a0a13095b73f12db62c089bfce7738b419b90570c0d0e1ba2efb"
+        },
+        {
+          "id": "semantic-v10-014:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "uncertainty",
+          "accept": false,
+          "scores": [
+            [
+              -9.926127433776855,
+              -0.05112785845994949
+            ],
+            [
+              -0.10692360252141953,
+              -8.981924057006836
+            ],
+            [
+              -3.3975067138671875,
+              -0.2725066542625427
+            ],
+            [
+              -0.39796262979507446,
+              -4.02296257019043
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "1a668a467d18df9e12424fa5879526a50242a6e800b4c81e90f30f36dbf841b4",
+          "after_sha256": "db3224e8d4380cc4625c638033ded42c6d3e0e8c12e2a83c2f91afc513e7ad61"
+        },
+        {
+          "id": "semantic-v10-014:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "uncertainty",
+          "accept": true,
+          "scores": [
+            [
+              -0.09807906299829483,
+              -10.973078727722168
+            ],
+            [
+              -7.956693172454834,
+              -0.08169340342283249
+            ],
+            [
+              -0.09821274131536484,
+              -10.223213195800781
+            ],
+            [
+              -7.750054836273193,
+              -0.12505489587783813
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "1a668a467d18df9e12424fa5879526a50242a6e800b4c81e90f30f36dbf841b4",
+          "after_sha256": "77e6ecdaa5b397fbe729e44589ac275d4b5f941e7229c40366784870727f5422"
+        },
+        {
+          "id": "semantic-v10-015:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "sequence",
+          "accept": true,
+          "scores": [
+            [
+              -0.11432625353336334,
+              -10.239326477050781
+            ],
+            [
+              -8.15722370147705,
+              -0.15722407400608063
+            ],
+            [
+              -0.1937476545572281,
+              -8.068747520446777
+            ],
+            [
+              -5.400261402130127,
+              -0.2752614915370941
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "3c4c25ed04485f637bd738c2a43b7d4a7cf36b649bc54ae3ef91b5a760ef2dd9",
+          "after_sha256": "d372c759e057976bdd9adf0a07865598d6789e9ac2c2c0b7382cd323de339650"
+        },
+        {
+          "id": "semantic-v10-015:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "sequence",
+          "accept": false,
+          "scores": [
+            [
+              -12.647287368774414,
+              -0.02228725329041481
+            ],
+            [
+              -0.33067190647125244,
+              -10.705672264099121
+            ],
+            [
+              -0.3006140887737274,
+              -3.42561411857605
+            ],
+            [
+              -2.2013916969299316,
+              -0.5763916969299316
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "3c4c25ed04485f637bd738c2a43b7d4a7cf36b649bc54ae3ef91b5a760ef2dd9",
+          "after_sha256": "e8ef7fec2fae1eb00bcfa23a82bb8095adf98c5a45c88e24e47a89a2ef2042b9"
+        },
+        {
+          "id": "semantic-v10-016:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "duration",
+          "accept": false,
+          "scores": [
+            [
+              -12.269700050354004,
+              -0.019699756056070328
+            ],
+            [
+              -0.19338302314281464,
+              -9.44338321685791
+            ],
+            [
+              -11.282281875610352,
+              -0.03228217735886574
+            ],
+            [
+              -0.23790141940116882,
+              -7.987901210784912
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "97da09d104be0117a724eff0e5af4f386b30093b90cb8800c32378ecf085d551",
+          "after_sha256": "c0ffddd73fd136ec975e89209e9d2bf24e2487242758c0128aa7597f725a1c16"
+        },
+        {
+          "id": "semantic-v10-016:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "duration",
+          "accept": true,
+          "scores": [
+            [
+              -0.17025303840637207,
+              -9.670252799987793
+            ],
+            [
+              -8.235817909240723,
+              -0.11081778258085251
+            ],
+            [
+              -0.16113458573818207,
+              -8.411134719848633
+            ],
+            [
+              -6.921533107757568,
+              -0.1715329885482788
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "97da09d104be0117a724eff0e5af4f386b30093b90cb8800c32378ecf085d551",
+          "after_sha256": "1a459e2482ac8a7754624087fea201d01148dce558ff5f3eec07a9e2310fb541"
+        },
+        {
+          "id": "semantic-v10-017:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "modality",
+          "accept": true,
+          "scores": [
+            [
+              -0.026538338512182236,
+              -10.276537895202637
+            ],
+            [
+              -7.902230739593506,
+              -0.027230558916926384
+            ],
+            [
+              -0.043265145272016525,
+              -10.918265342712402
+            ],
+            [
+              -8.161836624145508,
+              -0.03683628514409065
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "6dbc3a7847f2c6156d26e8d8a813fd487a6b3d102b84100b18f4d918fe47909d",
+          "after_sha256": "a778a338afce05328895326fe43af999878feb0ce1ab8e4ea0e9f27eef752b32"
+        },
+        {
+          "id": "semantic-v10-017:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "modality",
+          "accept": true,
+          "scores": [
+            [
+              -0.04108799621462822,
+              -9.416088104248047
+            ],
+            [
+              -7.278809547424316,
+              -0.028809674084186554
+            ],
+            [
+              -0.040409769862890244,
+              -9.665410041809082
+            ],
+            [
+              -5.545417785644531,
+              -0.04541774094104767
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "6dbc3a7847f2c6156d26e8d8a813fd487a6b3d102b84100b18f4d918fe47909d",
+          "after_sha256": "e7d3284f5f739bbf7191a808e80a5cf4de869251917e37ec68dc9cdd367e0571"
+        },
+        {
+          "id": "semantic-v10-018:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "negation",
+          "accept": true,
+          "scores": [
+            [
+              -0.04121223837137222,
+              -10.54121208190918
+            ],
+            [
+              -8.045060157775879,
+              -0.045060209929943085
+            ],
+            [
+              -0.05643303319811821,
+              -7.931433200836182
+            ],
+            [
+              -6.06060266494751,
+              -0.060602519661188126
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "3877b01504f224cbb4729168dd3ae44736a47bcad0a9b0852c1a1f08982825de",
+          "after_sha256": "c1a8774858a4d5a658745330c2b1a919f46851526c965f43c35f8eb48b3850be"
+        },
+        {
+          "id": "semantic-v10-018:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "negation",
+          "accept": true,
+          "scores": [
+            [
+              -0.08478813618421555,
+              -7.9597883224487305
+            ],
+            [
+              -6.803219795227051,
+              -0.053219985216856
+            ],
+            [
+              -0.0758330374956131,
+              -8.950833320617676
+            ],
+            [
+              -7.537926197052002,
+              -0.03792641684412956
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "3877b01504f224cbb4729168dd3ae44736a47bcad0a9b0852c1a1f08982825de",
+          "after_sha256": "be1a159c8e6a5b40f68ef1419e026f33004bce0f1d6212cd066615888bd5051e"
+        },
+        {
+          "id": "semantic-v10-019:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "agent",
+          "accept": true,
+          "scores": [
+            [
+              -0.16788536310195923,
+              -10.417885780334473
+            ],
+            [
+              -8.699363708496094,
+              -0.07436414062976837
+            ],
+            [
+              -0.207992285490036,
+              -10.707992553710938
+            ],
+            [
+              -8.574361801147461,
+              -0.0743621438741684
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "97b250658f255af620286695c8a6283ca6e55e113453d12ceac8df3d8c8b04bb",
+          "after_sha256": "e3be8dff909c1fe957984fd103570c85de4af283bb03f69b767f606a6eaf5f1a"
+        },
+        {
+          "id": "semantic-v10-019:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "agent",
+          "accept": true,
+          "scores": [
+            [
+              -0.17014765739440918,
+              -9.295147895812988
+            ],
+            [
+              -7.931536674499512,
+              -0.05653690919280052
+            ],
+            [
+              -0.20905949175357819,
+              -9.334059715270996
+            ],
+            [
+              -7.486374855041504,
+              -0.11137472838163376
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "97b250658f255af620286695c8a6283ca6e55e113453d12ceac8df3d8c8b04bb",
+          "after_sha256": "50ca118978bb24e13eb669db72b4a3517805be7111b3410d79b89c7c96ee4ae8"
+        },
+        {
+          "id": "semantic-v10-020:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "number_and_unit",
+          "accept": true,
+          "scores": [
+            [
+              -0.23367512226104736,
+              -8.108675003051758
+            ],
+            [
+              -5.7651896476745605,
+              -0.1401897370815277
+            ],
+            [
+              -0.2532397210597992,
+              -9.253239631652832
+            ],
+            [
+              -6.491945266723633,
+              -0.24194523692131042
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "690f6cbec21e324b8d797478d8d04072e83ce518928a67e79bec7b05951d4995",
+          "after_sha256": "757dbd851aa3e6e6d6782b72bf902b8efe887f0cbd81f72f5c6eee264f2af588"
+        },
+        {
+          "id": "semantic-v10-020:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "number_and_unit",
+          "accept": true,
+          "scores": [
+            [
+              -0.3307282626628876,
+              -10.455728530883789
+            ],
+            [
+              -8.74954605102539,
+              -0.12454572319984436
+            ],
+            [
+              -0.4211530089378357,
+              -8.54615306854248
+            ],
+            [
+              -7.268077850341797,
+              -0.268078088760376
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "690f6cbec21e324b8d797478d8d04072e83ce518928a67e79bec7b05951d4995",
+          "after_sha256": "f18fd40078190ef9ba8e8f7cf1224199d6c39183313d533b4160df9f52ac3fe1"
+        },
+        {
+          "id": "semantic-v10-021:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "causality",
+          "accept": true,
+          "scores": [
+            [
+              -0.17231865227222443,
+              -10.047318458557129
+            ],
+            [
+              -7.382021903991699,
+              -0.13202179968357086
+            ],
+            [
+              -0.13660141825675964,
+              -10.386601448059082
+            ],
+            [
+              -6.590522289276123,
+              -0.21552209556102753
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f34dfc3ae36a7716043829217360de37e0a75ced5eea866db88b5ee14d77ac7f",
+          "after_sha256": "10359d28e5a837126b448fa43e0c0a2130c5080c1bbf5fef1be98e50f67df1ce"
+        },
+        {
+          "id": "semantic-v10-021:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "causality",
+          "accept": true,
+          "scores": [
+            [
+              -0.19336768984794617,
+              -9.318367958068848
+            ],
+            [
+              -6.541255474090576,
+              -0.1662556380033493
+            ],
+            [
+              -0.18603095412254333,
+              -10.436031341552734
+            ],
+            [
+              -7.298483848571777,
+              -0.17348362505435944
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "f34dfc3ae36a7716043829217360de37e0a75ced5eea866db88b5ee14d77ac7f",
+          "after_sha256": "35881cdd47bbc317084fbf8f9f63c8206a3df0e795713bac29b6ec1de187b128"
+        },
+        {
+          "id": "semantic-v10-022:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "scope",
+          "accept": true,
+          "scores": [
+            [
+              -0.213899627327919,
+              -10.088899612426758
+            ],
+            [
+              -7.2711076736450195,
+              -0.14610762894153595
+            ],
+            [
+              -0.3314053416252136,
+              -10.081405639648438
+            ],
+            [
+              -6.836623668670654,
+              -0.33662378787994385
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "6468a177d45cb6175b4fe1fec7c12efd2f1e577c87842fedeb6f5437261fb05e",
+          "after_sha256": "0e2b373921e3306b2716c641b979d9b208dfccbaadfee5caa5ecf77b74af41b0"
+        },
+        {
+          "id": "semantic-v10-022:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "scope",
+          "accept": true,
+          "scores": [
+            [
+              -0.6668247580528259,
+              -3.6668248176574707
+            ],
+            [
+              -3.377758026123047,
+              -1.1277580261230469
+            ],
+            [
+              -0.5384438633918762,
+              -8.788443565368652
+            ],
+            [
+              -7.228576183319092,
+              -0.3535762429237366
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "6468a177d45cb6175b4fe1fec7c12efd2f1e577c87842fedeb6f5437261fb05e",
+          "after_sha256": "447f9154567ce7c517dbabd28ac978ee2ffb798685c468047c2ccceb9058034f"
+        },
+        {
+          "id": "semantic-v10-023:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "attribution",
+          "accept": true,
+          "scores": [
+            [
+              -0.18641707301139832,
+              -9.061416625976562
+            ],
+            [
+              -7.326693534851074,
+              -0.07669337838888168
+            ],
+            [
+              -0.22932547330856323,
+              -7.604325294494629
+            ],
+            [
+              -5.2337822914123535,
+              -0.23378241062164307
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "4805719334cbcaf28f4caacc6cb71a6535c79c5fc639537a63dfc5726a5a4441",
+          "after_sha256": "e847a6a8865c70eee0a916f33d8764df32cdcceacba2433462b89a2caa32ff9b"
+        },
+        {
+          "id": "semantic-v10-023:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "attribution",
+          "accept": true,
+          "scores": [
+            [
+              -0.15778784453868866,
+              -8.032788276672363
+            ],
+            [
+              -5.29517936706543,
+              -0.17017923295497894
+            ],
+            [
+              -0.16123218834400177,
+              -9.536231994628906
+            ],
+            [
+              -8.064453125,
+              -0.06445307284593582
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "4805719334cbcaf28f4caacc6cb71a6535c79c5fc639537a63dfc5726a5a4441",
+          "after_sha256": "9f1715c86165827ab2e94f6e0e6c08bb665fa89834b120b66178aff9dfe6bdb5"
+        },
+        {
+          "id": "semantic-v10-024:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "sequence",
+          "accept": true,
+          "scores": [
+            [
+              -0.3263312578201294,
+              -7.45133113861084
+            ],
+            [
+              -6.422982215881348,
+              -0.2979820966720581
+            ],
+            [
+              -0.2134632170200348,
+              -9.713462829589844
+            ],
+            [
+              -7.666197776794434,
+              -0.16619789600372314
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "fe30f43156d1d76e272ff02aaed1bd2f1dd04f315d7579220cfb1c7af48f3f93",
+          "after_sha256": "90faa000bb63a5c0d50d62d7b361159c61bd7e3daf3ff3051477a11c6446fce5"
+        },
+        {
+          "id": "semantic-v10-024:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "sequence",
+          "accept": true,
+          "scores": [
+            [
+              -0.21537072956562042,
+              -8.465371131896973
+            ],
+            [
+              -6.886469841003418,
+              -0.2614700198173523
+            ],
+            [
+              -0.3362695276737213,
+              -5.836269378662109
+            ],
+            [
+              -6.434706211090088,
+              -0.30970609188079834
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "fe30f43156d1d76e272ff02aaed1bd2f1dd04f315d7579220cfb1c7af48f3f93",
+          "after_sha256": "92b193de967777cd99c4d9fff31cdae2adcff015e992e66911285edec62384f9"
+        },
+        {
+          "id": "sudo-17c17668853b5918:block:0",
+          "kind": "historical",
+          "writer": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "accept": false,
+          "scores": [
+            [
+              -3.534384250640869,
+              -1.7843842506408691
+            ],
+            [
+              -3.355872392654419,
+              -2.605872392654419
+            ],
+            [
+              -3.5500168800354004,
+              -1.3000168800354004
+            ],
+            [
+              -2.4959402084350586,
+              -2.9959402084350586
+            ]
+          ],
+          "model": "Qwen/Qwen3-32B",
+          "before_sha256": "5c724ae992097abc5bcc24959bf173a4ae1bb915ba087d85697a099273b900a5",
+          "after_sha256": "0caf4dd9d5a16ee70e229981923c6279f105c29461f131cec71157e6bde1a433"
+        }
+      ]
+    },
+    {
+      "run": {
+        "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+        "revision": "1bbe9f19a26a70dc4d0c709e1a816e6a9378a7f5",
+        "artifact_revision": "c6e64c911d34739ed2a436b5bb1f3afff74be638",
+        "git": "272cb8d4c34eb16dd33e8965fd378075090a114c",
+        "scope": "V10 synthetic calibration and fixed V12 cross-model historical review, not blind"
+      },
+      "results": [
+        {
+          "id": "semantic-v10-001:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "modality",
+          "accept": false,
+          "scores": [
+            [
+              -1.6733323335647583,
+              -1.0483360290527344
+            ],
+            [
+              -2.211409568786621,
+              -0.586410403251648
+            ],
+            [
+              -0.6333618760108948,
+              -3.383369207382202
+            ],
+            [
+              -3.4012973308563232,
+              -0.40129467844963074
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "dce80eff5b9ab192ba58d3ca0268b8636d093189dcdabb5b8d8e5e1f36a69983",
+          "after_sha256": "f103fdb731b15e4263b79f269ba618ae4d9ed3161a0eb5d083636e2bb78fb1a1"
+        },
+        {
+          "id": "semantic-v10-001:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "modality",
+          "accept": false,
+          "scores": [
+            [
+              -2.038835048675537,
+              -0.6638370156288147
+            ],
+            [
+              -1.3293125629425049,
+              -0.8293163776397705
+            ],
+            [
+              -2.3453657627105713,
+              -0.5953653454780579
+            ],
+            [
+              -1.7307132482528687,
+              -0.6057156920433044
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "dce80eff5b9ab192ba58d3ca0268b8636d093189dcdabb5b8d8e5e1f36a69983",
+          "after_sha256": "34dabaf4d15e503f95b62f0d27e49880d68d212cc0c2bf4af4d18ad487126512"
+        },
+        {
+          "id": "semantic-v10-002:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "negation",
+          "accept": false,
+          "scores": [
+            [
+              -3.9821512699127197,
+              -0.2321467399597168
+            ],
+            [
+              -0.5341084003448486,
+              -1.9091161489486694
+            ],
+            [
+              -3.3140180110931396,
+              -0.31401512026786804
+            ],
+            [
+              -0.7536695599555969,
+              -1.5036745071411133
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "18d7b3517a19e679f0b3be759c7bd31636e54f49860beb3add5cebf628e5126a",
+          "after_sha256": "0ed368d71c912161aff3dbfb7caa5a034254ad57a4b90217c410db95db5b3865"
+        },
+        {
+          "id": "semantic-v10-002:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "negation",
+          "accept": true,
+          "scores": [
+            [
+              -0.5041190385818481,
+              -2.7541284561157227
+            ],
+            [
+              -2.598763942718506,
+              -0.47376275062561035
+            ],
+            [
+              -0.4968307912349701,
+              -2.6218411922454834
+            ],
+            [
+              -2.3640694618225098,
+              -0.489069402217865
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "18d7b3517a19e679f0b3be759c7bd31636e54f49860beb3add5cebf628e5126a",
+          "after_sha256": "97909e44c03552efa2169233a038ad1c4bbba9335aef5ae68105e679e932e50d"
+        },
+        {
+          "id": "semantic-v10-003:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "agent",
+          "accept": true,
+          "scores": [
+            [
+              -1.072691559791565,
+              -2.3226990699768066
+            ],
+            [
+              -3.0338237285614014,
+              -0.6588219404220581
+            ],
+            [
+              -0.7986825704574585,
+              -2.6736888885498047
+            ],
+            [
+              -2.774322032928467,
+              -0.6493208408355713
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "dd9d5c0f0fd1e787ce91488cb4c5e26a2f79463819847f30aefa08696a1bf67b",
+          "after_sha256": "73f806d22517c852a8f543c8a5f9e3440641a78d3ca6d94633e6fa262bb85836"
+        },
+        {
+          "id": "semantic-v10-003:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "agent",
+          "accept": false,
+          "scores": [
+            [
+              -3.3210763931274414,
+              -0.4460727572441101
+            ],
+            [
+              -1.1943535804748535,
+              -1.1943585872650146
+            ],
+            [
+              -3.3187646865844727,
+              -0.44376134872436523
+            ],
+            [
+              -1.1224441528320312,
+              -1.247449517250061
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "dd9d5c0f0fd1e787ce91488cb4c5e26a2f79463819847f30aefa08696a1bf67b",
+          "after_sha256": "f12c24c0c9a5cd60dba6df4f50a3cdce15308a22fce084b48c1c4112d9655b63"
+        },
+        {
+          "id": "semantic-v10-004:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "time",
+          "accept": false,
+          "scores": [
+            [
+              -3.6856653690338135,
+              -0.3106621503829956
+            ],
+            [
+              -0.9483393430709839,
+              -1.1983451843261719
+            ],
+            [
+              -3.714509963989258,
+              -0.3395056426525116
+            ],
+            [
+              -0.7697101831436157,
+              -1.5197166204452515
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f0f32a83e04e71e435ffd6321b101dfea1db8eb1fd2e5c182f2153fbab7cf43e",
+          "after_sha256": "91636ab66e0f8570fbb8775168078fe1e1a42a9d91be6edd0fd6c27fd868b41d"
+        },
+        {
+          "id": "semantic-v10-004:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "time",
+          "accept": false,
+          "scores": [
+            [
+              -1.2076613903045654,
+              -2.582667589187622
+            ],
+            [
+              -2.2493088245391846,
+              -0.9993093609809875
+            ],
+            [
+              -2.6822516918182373,
+              -0.8072518706321716
+            ],
+            [
+              -1.2028858661651611,
+              -1.3278923034667969
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f0f32a83e04e71e435ffd6321b101dfea1db8eb1fd2e5c182f2153fbab7cf43e",
+          "after_sha256": "fb5e619b81427da6621c8c9e62bb2a3bbde936b37bb16ce089da805f993986a2"
+        },
+        {
+          "id": "semantic-v10-005:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "causality",
+          "accept": false,
+          "scores": [
+            [
+              -1.8622809648513794,
+              -1.1122844219207764
+            ],
+            [
+              -1.9056435823440552,
+              -1.0306450128555298
+            ],
+            [
+              -1.3502734899520874,
+              -1.7252789735794067
+            ],
+            [
+              -2.4819042682647705,
+              -0.7319038510322571
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f55d02b03c025651c314612f029fde13f11d4db4cdf3d24e16ebe44eebee797f",
+          "after_sha256": "135b581ce8cda768a7d4d2580dbcc0d309d91cf94d8ae95a81bab64a9bb1ee8f"
+        },
+        {
+          "id": "semantic-v10-005:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "causality",
+          "accept": false,
+          "scores": [
+            [
+              -2.195643663406372,
+              -1.3206455707550049
+            ],
+            [
+              -2.0810294151306152,
+              -1.2060307264328003
+            ],
+            [
+              -4.612987995147705,
+              -0.6129844784736633
+            ],
+            [
+              -1.403576135635376,
+              -1.403581142425537
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f55d02b03c025651c314612f029fde13f11d4db4cdf3d24e16ebe44eebee797f",
+          "after_sha256": "39fd0a23013401d38518ff2da8d71c1e141de80d1cd1960ee7ef85347a7901e7"
+        },
+        {
+          "id": "semantic-v10-006:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "scope",
+          "accept": false,
+          "scores": [
+            [
+              -4.762280464172363,
+              -0.2622763514518738
+            ],
+            [
+              -0.6288543939590454,
+              -1.8788608312606812
+            ],
+            [
+              -3.9275383949279785,
+              -0.30253514647483826
+            ],
+            [
+              -0.9411529898643494,
+              -1.3161600828170776
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "0aeea94a3e67a9aaafa860ca08f619180fcc7541546a23ad500861afd9fa4ccc",
+          "after_sha256": "ee3ea21fe844e4a163aeb4675689df4939dd4dd7f465c9a5040aae0809ca9588"
+        },
+        {
+          "id": "semantic-v10-006:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "scope",
+          "accept": true,
+          "scores": [
+            [
+              -0.9897814989089966,
+              -2.4897892475128174
+            ],
+            [
+              -3.2083985805511475,
+              -0.5833971500396729
+            ],
+            [
+              -0.7346417307853699,
+              -3.2346487045288086
+            ],
+            [
+              -2.8457837104797363,
+              -0.5957822203636169
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "0aeea94a3e67a9aaafa860ca08f619180fcc7541546a23ad500861afd9fa4ccc",
+          "after_sha256": "8e62fb6bffbe338890c2cb36a87d8ce296c56fafd7084814f2470feb30527be1"
+        },
+        {
+          "id": "semantic-v10-007:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "attribution",
+          "accept": true,
+          "scores": [
+            [
+              -0.529625654220581,
+              -2.9046337604522705
+            ],
+            [
+              -3.124713659286499,
+              -0.37471142411231995
+            ],
+            [
+              -0.44645193219184875,
+              -3.446460008621216
+            ],
+            [
+              -3.693626642227173,
+              -0.31862446665763855
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "82b6daa2206b91fa937d82928570bc86e6a5f3a098f06511eec192dfe142ee87",
+          "after_sha256": "0047b6e7a6f45dcf0b8b0ab83c7075a2cb50d0bc23077206ec65085d67d2054e"
+        },
+        {
+          "id": "semantic-v10-007:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "attribution",
+          "accept": false,
+          "scores": [
+            [
+              -1.4969290494918823,
+              -0.8719349503517151
+            ],
+            [
+              -2.206608533859253,
+              -0.5816094279289246
+            ],
+            [
+              -1.9646458625793457,
+              -0.8396493196487427
+            ],
+            [
+              -2.268721342086792,
+              -0.6437214612960815
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "82b6daa2206b91fa937d82928570bc86e6a5f3a098f06511eec192dfe142ee87",
+          "after_sha256": "746cdb9f624dc1e61878e11ca3bed40e3b499cfdbc41bda63e2d88ba189f487e"
+        },
+        {
+          "id": "semantic-v10-008:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "number",
+          "accept": false,
+          "scores": [
+            [
+              -3.9454030990600586,
+              -0.32039937376976013
+            ],
+            [
+              -0.5957754850387573,
+              -1.720785140991211
+            ],
+            [
+              -3.5397698879241943,
+              -0.41476744413375854
+            ],
+            [
+              -0.66343092918396,
+              -1.663438320159912
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "889e253f21a8273ffcffeed5a7812587cb695926e8b442acf04c6a68851a71d4",
+          "after_sha256": "68f4b77f6a6a5bfa0796aec3b1ad95fc9ae44a9826d72017b72959747b1bea82"
+        },
+        {
+          "id": "semantic-v10-008:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "number",
+          "accept": true,
+          "scores": [
+            [
+              -1.0459309816360474,
+              -1.7959394454956055
+            ],
+            [
+              -2.2877373695373535,
+              -0.5377383828163147
+            ],
+            [
+              -0.9323359131813049,
+              -2.307344675064087
+            ],
+            [
+              -2.3700709342956543,
+              -0.620071291923523
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "889e253f21a8273ffcffeed5a7812587cb695926e8b442acf04c6a68851a71d4",
+          "after_sha256": "1bfa14c13d6fb017b61c7adae00de6729cdbbf2cf78ecd6f352bf7c43bd1a9b2"
+        },
+        {
+          "id": "semantic-v10-009:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "unit",
+          "accept": true,
+          "scores": [
+            [
+              -1.2265411615371704,
+              -2.351548194885254
+            ],
+            [
+              -3.3051812648773193,
+              -0.6801797151565552
+            ],
+            [
+              -1.6059720516204834,
+              -1.7309776544570923
+            ],
+            [
+              -2.7911977767944336,
+              -0.7911967635154724
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "285e78b4e49eff83d2b4c34b8e32d0b9e4320adb92fa02c438c96278297c4745",
+          "after_sha256": "482f788e855b6ff8d8dfe2be1e911dd9fd310be6154fd58e9c6b24072096d642"
+        },
+        {
+          "id": "semantic-v10-009:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "unit",
+          "accept": false,
+          "scores": [
+            [
+              -5.345741271972656,
+              -0.3457368016242981
+            ],
+            [
+              -0.5813747644424438,
+              -2.206381320953369
+            ],
+            [
+              -5.133892059326172,
+              -0.38388732075691223
+            ],
+            [
+              -0.7233792543411255,
+              -2.098386526107788
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "285e78b4e49eff83d2b4c34b8e32d0b9e4320adb92fa02c438c96278297c4745",
+          "after_sha256": "c346f58fffcb2fd9aa24bfd8c93c33391de5ac62147bace2061eac1d627763f6"
+        },
+        {
+          "id": "semantic-v10-010:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "comparison",
+          "accept": false,
+          "scores": [
+            [
+              -5.138541221618652,
+              -0.26353639364242554
+            ],
+            [
+              -0.6559641361236572,
+              -2.030971050262451
+            ],
+            [
+              -5.07234001159668,
+              -0.3223351836204529
+            ],
+            [
+              -0.7653799653053284,
+              -1.765386700630188
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "96d209ba3adc0d5ee2790a8c546a8755b9a0685e83fa51da02ef7fabd71c60e2",
+          "after_sha256": "c91c9183434d6ef0e71742000256d604e8e2dd6eb60dc672a0061da53a293e4c"
+        },
+        {
+          "id": "semantic-v10-010:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "comparison",
+          "accept": true,
+          "scores": [
+            [
+              -0.7551784515380859,
+              -3.505185127258301
+            ],
+            [
+              -4.095827102661133,
+              -0.5958247184753418
+            ],
+            [
+              -0.6109487414360046,
+              -3.3609557151794434
+            ],
+            [
+              -3.402010679244995,
+              -0.6520085334777832
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "96d209ba3adc0d5ee2790a8c546a8755b9a0685e83fa51da02ef7fabd71c60e2",
+          "after_sha256": "9e0053dd1f5023f59ce7d25633b1bcae608341e2dbd7e88acdcb76766d737c19"
+        },
+        {
+          "id": "semantic-v10-011:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "obligation",
+          "accept": true,
+          "scores": [
+            [
+              -0.5777937173843384,
+              -3.5778000354766846
+            ],
+            [
+              -4.2056498527526855,
+              -0.33064770698547363
+            ],
+            [
+              -0.7690040469169617,
+              -2.5190112590789795
+            ],
+            [
+              -4.181005001068115,
+              -0.306002140045166
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "b5fffe769100432b09e438dc352d20dc6981fceeaa968a5179fdb88e100898bd",
+          "after_sha256": "bba517bb0408123b7843eb54b3cebbd8a0a73c4dd179527f349ab889d5d5fda3"
+        },
+        {
+          "id": "semantic-v10-011:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "obligation",
+          "accept": false,
+          "scores": [
+            [
+              -4.096311569213867,
+              -0.34630703926086426
+            ],
+            [
+              -0.7564280033111572,
+              -1.7564353942871094
+            ],
+            [
+              -4.496789455413818,
+              -0.37178412079811096
+            ],
+            [
+              -0.77810138463974,
+              -1.9031089544296265
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "b5fffe769100432b09e438dc352d20dc6981fceeaa968a5179fdb88e100898bd",
+          "after_sha256": "9778f2ee2ed14d4982fe0998b5c952df2c4e946fc750c4629c4de44531ca1c70"
+        },
+        {
+          "id": "semantic-v10-012:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "ability",
+          "accept": false,
+          "scores": [
+            [
+              -4.820398330688477,
+              -0.44539427757263184
+            ],
+            [
+              -1.324431300163269,
+              -1.4494357109069824
+            ],
+            [
+              -1.1610596179962158,
+              -1.7860642671585083
+            ],
+            [
+              -2.367690324783325,
+              -0.7426896095275879
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f82b4f857da35904fa2db4fe2d8e7f9437d8ab8fc5388dbfb58ec6dbaa13d209",
+          "after_sha256": "9d7c91b0cc91fc7bd13409b64c7335bfe4ea8fe23f2a67501fc32dab8b97c596"
+        },
+        {
+          "id": "semantic-v10-012:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "ability",
+          "accept": false,
+          "scores": [
+            [
+              -1.7478007078170776,
+              -1.247804045677185
+            ],
+            [
+              -2.4056308269500732,
+              -0.7806304693222046
+            ],
+            [
+              -1.5597940683364868,
+              -1.6847976446151733
+            ],
+            [
+              -2.724086046218872,
+              -0.7240852117538452
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f82b4f857da35904fa2db4fe2d8e7f9437d8ab8fc5388dbfb58ec6dbaa13d209",
+          "after_sha256": "55913cb70c07cf93624dd310cd46428dc587a154283ae4072aebd3931bf60f6f"
+        },
+        {
+          "id": "semantic-v10-013:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "condition",
+          "accept": true,
+          "scores": [
+            [
+              -1.3238499164581299,
+              -2.3238565921783447
+            ],
+            [
+              -3.5444302558898926,
+              -0.6694280505180359
+            ],
+            [
+              -1.0942718982696533,
+              -2.4692776203155518
+            ],
+            [
+              -3.4214344024658203,
+              -0.671432375907898
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "9adab19578ab12852dd2d397987cd44a01c7b9a8991068d9c658de8d8246f380",
+          "after_sha256": "7397ddcaed286e1b8577552dac7424c24b6fc1acf5f6e7de08a62616e478be46"
+        },
+        {
+          "id": "semantic-v10-013:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "condition",
+          "accept": false,
+          "scores": [
+            [
+              -5.899402618408203,
+              -0.27439841628074646
+            ],
+            [
+              -0.5175596475601196,
+              -2.892566204071045
+            ],
+            [
+              -3.8491098880767822,
+              -0.47410672903060913
+            ],
+            [
+              -1.070770502090454,
+              -1.5707753896713257
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "9adab19578ab12852dd2d397987cd44a01c7b9a8991068d9c658de8d8246f380",
+          "after_sha256": "50f4eb43baf3a0a13095b73f12db62c089bfce7738b419b90570c0d0e1ba2efb"
+        },
+        {
+          "id": "semantic-v10-014:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "uncertainty",
+          "accept": false,
+          "scores": [
+            [
+              -2.5761992931365967,
+              -0.5761979818344116
+            ],
+            [
+              -1.3022748231887817,
+              -1.0522764921188354
+            ],
+            [
+              -3.9430809020996094,
+              -0.44307780265808105
+            ],
+            [
+              -1.1428182125091553,
+              -1.3928227424621582
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "1a668a467d18df9e12424fa5879526a50242a6e800b4c81e90f30f36dbf841b4",
+          "after_sha256": "db3224e8d4380cc4625c638033ded42c6d3e0e8c12e2a83c2f91afc513e7ad61"
+        },
+        {
+          "id": "semantic-v10-014:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "uncertainty",
+          "accept": true,
+          "scores": [
+            [
+              -0.5242262482643127,
+              -3.524233818054199
+            ],
+            [
+              -3.7107152938842773,
+              -0.3357129395008087
+            ],
+            [
+              -0.4971071481704712,
+              -3.1221156120300293
+            ],
+            [
+              -3.4797065258026123,
+              -0.3547048568725586
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "1a668a467d18df9e12424fa5879526a50242a6e800b4c81e90f30f36dbf841b4",
+          "after_sha256": "77e6ecdaa5b397fbe729e44589ac275d4b5f941e7229c40366784870727f5422"
+        },
+        {
+          "id": "semantic-v10-015:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "sequence",
+          "accept": false,
+          "scores": [
+            [
+              -1.8384891748428345,
+              -1.0884912014007568
+            ],
+            [
+              -2.9056944847106934,
+              -0.5306926965713501
+            ],
+            [
+              -1.2706469297409058,
+              -1.5206515789031982
+            ],
+            [
+              -3.294635057449341,
+              -0.41963356733322144
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "3c4c25ed04485f637bd738c2a43b7d4a7cf36b649bc54ae3ef91b5a760ef2dd9",
+          "after_sha256": "d372c759e057976bdd9adf0a07865598d6789e9ac2c2c0b7382cd323de339650"
+        },
+        {
+          "id": "semantic-v10-015:B",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "sequence",
+          "accept": false,
+          "scores": [
+            [
+              -4.794743537902832,
+              -0.294739693403244
+            ],
+            [
+              -0.6665542125701904,
+              -1.7915581464767456
+            ],
+            [
+              -3.8676581382751465,
+              -0.36765503883361816
+            ],
+            [
+              -1.52684485912323,
+              -0.7768475413322449
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "3c4c25ed04485f637bd738c2a43b7d4a7cf36b649bc54ae3ef91b5a760ef2dd9",
+          "after_sha256": "e8ef7fec2fae1eb00bcfa23a82bb8095adf98c5a45c88e24e47a89a2ef2042b9"
+        },
+        {
+          "id": "semantic-v10-016:A",
+          "kind": "synthetic",
+          "gold": false,
+          "category": "duration",
+          "accept": false,
+          "scores": [
+            [
+              -5.037639141082764,
+              -0.28763502836227417
+            ],
+            [
+              -0.4991324543952942,
+              -2.249138116836548
+            ],
+            [
+              -5.007218837738037,
+              -0.25721481442451477
+            ],
+            [
+              -0.5504514575004578,
+              -2.0504579544067383
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "97da09d104be0117a724eff0e5af4f386b30093b90cb8800c32378ecf085d551",
+          "after_sha256": "c0ffddd73fd136ec975e89209e9d2bf24e2487242758c0128aa7597f725a1c16"
+        },
+        {
+          "id": "semantic-v10-016:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "duration",
+          "accept": true,
+          "scores": [
+            [
+              -0.7988979816436768,
+              -4.298902988433838
+            ],
+            [
+              -4.1800360679626465,
+              -0.43003395199775696
+            ],
+            [
+              -1.2591205835342407,
+              -2.6341259479522705
+            ],
+            [
+              -3.3685550689697266,
+              -0.6185532212257385
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "97da09d104be0117a724eff0e5af4f386b30093b90cb8800c32378ecf085d551",
+          "after_sha256": "1a459e2482ac8a7754624087fea201d01148dce558ff5f3eec07a9e2310fb541"
+        },
+        {
+          "id": "semantic-v10-017:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "modality",
+          "accept": false,
+          "scores": [
+            [
+              -1.312227725982666,
+              -1.1872349977493286
+            ],
+            [
+              -2.32676100730896,
+              -0.5767609477043152
+            ],
+            [
+              -0.730187714099884,
+              -2.355195999145508
+            ],
+            [
+              -2.4645755290985107,
+              -0.5895741581916809
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "6dbc3a7847f2c6156d26e8d8a813fd487a6b3d102b84100b18f4d918fe47909d",
+          "after_sha256": "a778a338afce05328895326fe43af999878feb0ce1ab8e4ea0e9f27eef752b32"
+        },
+        {
+          "id": "semantic-v10-017:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "modality",
+          "accept": false,
+          "scores": [
+            [
+              -1.2065749168395996,
+              -1.0815815925598145
+            ],
+            [
+              -2.3151931762695312,
+              -0.44019338488578796
+            ],
+            [
+              -1.0129508972167969,
+              -1.3879624605178833
+            ],
+            [
+              -2.145555019378662,
+              -0.5205544233322144
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "6dbc3a7847f2c6156d26e8d8a813fd487a6b3d102b84100b18f4d918fe47909d",
+          "after_sha256": "e7d3284f5f739bbf7191a808e80a5cf4de869251917e37ec68dc9cdd367e0571"
+        },
+        {
+          "id": "semantic-v10-018:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "negation",
+          "accept": true,
+          "scores": [
+            [
+              -0.7240594625473022,
+              -2.974066972732544
+            ],
+            [
+              -3.0556933879852295,
+              -0.5556907653808594
+            ],
+            [
+              -1.075344443321228,
+              -2.0753509998321533
+            ],
+            [
+              -2.4966225624084473,
+              -0.7466221451759338
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "3877b01504f224cbb4729168dd3ae44736a47bcad0a9b0852c1a1f08982825de",
+          "after_sha256": "c1a8774858a4d5a658745330c2b1a919f46851526c965f43c35f8eb48b3850be"
+        },
+        {
+          "id": "semantic-v10-018:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "negation",
+          "accept": false,
+          "scores": [
+            [
+              -1.3652864694595337,
+              -1.3652931451797485
+            ],
+            [
+              -2.0936388969421387,
+              -0.7186405658721924
+            ],
+            [
+              -1.4839956760406494,
+              -1.359000325202942
+            ],
+            [
+              -2.1429007053375244,
+              -0.7679016590118408
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "3877b01504f224cbb4729168dd3ae44736a47bcad0a9b0852c1a1f08982825de",
+          "after_sha256": "be1a159c8e6a5b40f68ef1419e026f33004bce0f1d6212cd066615888bd5051e"
+        },
+        {
+          "id": "semantic-v10-019:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "agent",
+          "accept": true,
+          "scores": [
+            [
+              -0.6680246591567993,
+              -3.543031930923462
+            ],
+            [
+              -3.141178607940674,
+              -0.5161771774291992
+            ],
+            [
+              -0.8680521845817566,
+              -3.1180591583251953
+            ],
+            [
+              -2.935941696166992,
+              -0.5609405636787415
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "97b250658f255af620286695c8a6283ca6e55e113453d12ceac8df3d8c8b04bb",
+          "after_sha256": "e3be8dff909c1fe957984fd103570c85de4af283bb03f69b767f606a6eaf5f1a"
+        },
+        {
+          "id": "semantic-v10-019:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "agent",
+          "accept": true,
+          "scores": [
+            [
+              -0.6297191381454468,
+              -2.6297285556793213
+            ],
+            [
+              -2.435924768447876,
+              -0.5609242916107178
+            ],
+            [
+              -0.5294061899185181,
+              -2.4044172763824463
+            ],
+            [
+              -2.157944917678833,
+              -0.5329456925392151
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "97b250658f255af620286695c8a6283ca6e55e113453d12ceac8df3d8c8b04bb",
+          "after_sha256": "50ca118978bb24e13eb669db72b4a3517805be7111b3410d79b89c7c96ee4ae8"
+        },
+        {
+          "id": "semantic-v10-020:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "number_and_unit",
+          "accept": true,
+          "scores": [
+            [
+              -0.6516989469528198,
+              -2.6517064571380615
+            ],
+            [
+              -2.9114789962768555,
+              -0.5364772081375122
+            ],
+            [
+              -1.1890097856521606,
+              -1.4390162229537964
+            ],
+            [
+              -2.511235475540161,
+              -0.6362346410751343
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "690f6cbec21e324b8d797478d8d04072e83ce518928a67e79bec7b05951d4995",
+          "after_sha256": "757dbd851aa3e6e6d6782b72bf902b8efe887f0cbd81f72f5c6eee264f2af588"
+        },
+        {
+          "id": "semantic-v10-020:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "number_and_unit",
+          "accept": true,
+          "scores": [
+            [
+              -0.6547991633415222,
+              -2.7798080444335938
+            ],
+            [
+              -3.2637813091278076,
+              -0.5137792825698853
+            ],
+            [
+              -1.200459599494934,
+              -1.7004663944244385
+            ],
+            [
+              -2.4718706607818604,
+              -0.7218700051307678
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "690f6cbec21e324b8d797478d8d04072e83ce518928a67e79bec7b05951d4995",
+          "after_sha256": "f18fd40078190ef9ba8e8f7cf1224199d6c39183313d533b4160df9f52ac3fe1"
+        },
+        {
+          "id": "semantic-v10-021:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "causality",
+          "accept": false,
+          "scores": [
+            [
+              -1.558626413345337,
+              -1.4336308240890503
+            ],
+            [
+              -2.0860681533813477,
+              -0.9610698223114014
+            ],
+            [
+              -1.3283531665802002,
+              -2.3283588886260986
+            ],
+            [
+              -2.503356456756592,
+              -0.8783555626869202
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f34dfc3ae36a7716043829217360de37e0a75ced5eea866db88b5ee14d77ac7f",
+          "after_sha256": "10359d28e5a837126b448fa43e0c0a2130c5080c1bbf5fef1be98e50f67df1ce"
+        },
+        {
+          "id": "semantic-v10-021:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "causality",
+          "accept": true,
+          "scores": [
+            [
+              -0.9039046764373779,
+              -2.653911590576172
+            ],
+            [
+              -2.5290207862854004,
+              -0.7790200710296631
+            ],
+            [
+              -1.0368043184280396,
+              -2.7868106365203857
+            ],
+            [
+              -2.7896041870117188,
+              -0.7896029353141785
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "f34dfc3ae36a7716043829217360de37e0a75ced5eea866db88b5ee14d77ac7f",
+          "after_sha256": "35881cdd47bbc317084fbf8f9f63c8206a3df0e795713bac29b6ec1de187b128"
+        },
+        {
+          "id": "semantic-v10-022:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "scope",
+          "accept": true,
+          "scores": [
+            [
+              -0.7520245909690857,
+              -2.8770320415496826
+            ],
+            [
+              -3.936609983444214,
+              -0.43660715222358704
+            ],
+            [
+              -0.9740225076675415,
+              -1.9740288257598877
+            ],
+            [
+              -3.5677716732025146,
+              -0.44276943802833557
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "6468a177d45cb6175b4fe1fec7c12efd2f1e577c87842fedeb6f5437261fb05e",
+          "after_sha256": "0e2b373921e3306b2716c641b979d9b208dfccbaadfee5caa5ecf77b74af41b0"
+        },
+        {
+          "id": "semantic-v10-022:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "scope",
+          "accept": false,
+          "scores": [
+            [
+              -2.432116985321045,
+              -0.6821166276931763
+            ],
+            [
+              -1.5936334133148193,
+              -0.968637228012085
+            ],
+            [
+              -0.8465557098388672,
+              -1.9715626239776611
+            ],
+            [
+              -2.541811466217041,
+              -0.541810154914856
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "6468a177d45cb6175b4fe1fec7c12efd2f1e577c87842fedeb6f5437261fb05e",
+          "after_sha256": "447f9154567ce7c517dbabd28ac978ee2ffb798685c468047c2ccceb9058034f"
+        },
+        {
+          "id": "semantic-v10-023:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "attribution",
+          "accept": true,
+          "scores": [
+            [
+              -1.0381925106048584,
+              -2.038200616836548
+            ],
+            [
+              -3.1691107749938965,
+              -0.5441091060638428
+            ],
+            [
+              -1.4463521242141724,
+              -1.4463576078414917
+            ],
+            [
+              -2.39861798286438,
+              -0.7736168503761292
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "4805719334cbcaf28f4caacc6cb71a6535c79c5fc639537a63dfc5726a5a4441",
+          "after_sha256": "e847a6a8865c70eee0a916f33d8764df32cdcceacba2433462b89a2caa32ff9b"
+        },
+        {
+          "id": "semantic-v10-023:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "attribution",
+          "accept": false,
+          "scores": [
+            [
+              -1.514147162437439,
+              -1.2641513347625732
+            ],
+            [
+              -2.181833028793335,
+              -0.8068329691886902
+            ],
+            [
+              -1.0756340026855469,
+              -2.075640916824341
+            ],
+            [
+              -2.600903034210205,
+              -0.725902259349823
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "4805719334cbcaf28f4caacc6cb71a6535c79c5fc639537a63dfc5726a5a4441",
+          "after_sha256": "9f1715c86165827ab2e94f6e0e6c08bb665fa89834b120b66178aff9dfe6bdb5"
+        },
+        {
+          "id": "semantic-v10-024:A",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "sequence",
+          "accept": false,
+          "scores": [
+            [
+              -1.2186652421951294,
+              -1.7186709642410278
+            ],
+            [
+              -2.9028468132019043,
+              -0.5278456807136536
+            ],
+            [
+              -2.728317975997925,
+              -0.6033167243003845
+            ],
+            [
+              -2.311673402786255,
+              -0.6866728067398071
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "fe30f43156d1d76e272ff02aaed1bd2f1dd04f315d7579220cfb1c7af48f3f93",
+          "after_sha256": "90faa000bb63a5c0d50d62d7b361159c61bd7e3daf3ff3051477a11c6446fce5"
+        },
+        {
+          "id": "semantic-v10-024:B",
+          "kind": "synthetic",
+          "gold": true,
+          "category": "sequence",
+          "accept": false,
+          "scores": [
+            [
+              -1.1900290250778198,
+              -1.8150357007980347
+            ],
+            [
+              -2.9034690856933594,
+              -0.5284671783447266
+            ],
+            [
+              -2.3339004516601562,
+              -0.7089003324508667
+            ],
+            [
+              -2.0784881114959717,
+              -0.7034886479377747
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "fe30f43156d1d76e272ff02aaed1bd2f1dd04f315d7579220cfb1c7af48f3f93",
+          "after_sha256": "92b193de967777cd99c4d9fff31cdae2adcff015e992e66911285edec62384f9"
+        },
+        {
+          "id": "sudo-3dc45336d810812b:block:1",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": true,
+          "scores": [
+            [
+              -0.8752351999282837,
+              -2.1252431869506836
+            ],
+            [
+              -3.1458423137664795,
+              -0.770837664604187
+            ],
+            [
+              -0.4087173342704773,
+              -3.158728837966919
+            ],
+            [
+              -4.353291034698486,
+              -0.35328561067581177
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "7b0ec92fcbb8bdcbf52e9992d52d140c56267fcf0bd2fbda0edab4f381989f1a",
+          "after_sha256": "806f16e6931772ca33df9282a6e00d16c11fb575a481db3fa80d44a29373f252"
+        },
+        {
+          "id": "sudo-3dc45336d810812b:block:4",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": false,
+          "scores": [
+            [
+              -2.3874566555023193,
+              -0.8874554634094238
+            ],
+            [
+              -2.890141010284424,
+              -0.6401371359825134
+            ],
+            [
+              -1.2117565870285034,
+              -1.4617640972137451
+            ],
+            [
+              -2.9286606311798096,
+              -0.5536578893661499
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "77dd0b1abf83ba4b68544e2a7e45b8c7f57a964437204217033f933cd4edea89",
+          "after_sha256": "7bcfc442796a13b74f017b6d0ac0704ba9acc9d0a1f6f9d5100e12b7b9a44c87"
+        },
+        {
+          "id": "sudo-0191b6cb1680889a:block:2",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": true,
+          "scores": [
+            [
+              -0.8592939376831055,
+              -1.984299898147583
+            ],
+            [
+              -3.762906074523926,
+              -0.5129034519195557
+            ],
+            [
+              -1.011989712715149,
+              -1.511995792388916
+            ],
+            [
+              -3.369739055633545,
+              -0.4947369694709778
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "58b7296677c8f652e8e0549a3ea13685a4d2b8b0237145167e46dc2e88f0f6a4",
+          "after_sha256": "e854bc65da64f66803d009a45ba9c9f7ebcc28c1456d08cd7d94310311fc43eb"
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6:block:0",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": false,
+          "scores": [
+            [
+              -1.3040947914123535,
+              -2.554098606109619
+            ],
+            [
+              -3.1361653804779053,
+              -1.0111641883850098
+            ],
+            [
+              -2.2740325927734375,
+              -1.5240331888198853
+            ],
+            [
+              -2.2891366481781006,
+              -1.1641359329223633
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "fe7f78ba6ea468181db25c8b6b0ed675e26f4bf091430fb2be9979d4a13205a3",
+          "after_sha256": "248e83d78b6fa8405913d86508382c0b561b8dbc16fda8fff4744ddb2a0ecc74"
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6:block:2",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": true,
+          "scores": [
+            [
+              -0.8023977875709534,
+              -3.052401065826416
+            ],
+            [
+              -2.8892509937286377,
+              -0.6392500996589661
+            ],
+            [
+              -0.6176866292953491,
+              -2.6176910400390625
+            ],
+            [
+              -1.8380591869354248,
+              -0.8380600810050964
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "03927469368cbd844bb0cefb620c11939395b390395891d76be1668983d7699e",
+          "after_sha256": "d67825f097188032d98e53fee1306f277cdf2bc1f583c8b4bc01d5b81be36f6e"
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6:block:3",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": true,
+          "scores": [
+            [
+              -0.825606107711792,
+              -2.2006101608276367
+            ],
+            [
+              -3.2982356548309326,
+              -0.5482337474822998
+            ],
+            [
+              -0.6163392663002014,
+              -3.3663437366485596
+            ],
+            [
+              -2.906189441680908,
+              -0.5311880111694336
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "457d339c89268322fa893c45f32eeaa2e6a9a86820a89581da5144e7f57cb1f3",
+          "after_sha256": "34dca7af93411abb7727bbb0629976853aa551ba71c51dd1ce87fded387b4567"
+        },
+        {
+          "id": "sudo-494acdea301a431d:block:2",
+          "kind": "historical",
+          "writer": "Qwen/Qwen3-32B",
+          "accept": false,
+          "scores": [
+            [
+              -2.098543405532837,
+              -1.2235437631607056
+            ],
+            [
+              -2.6095387935638428,
+              -0.6095361709594727
+            ],
+            [
+              -1.2574141025543213,
+              -1.8824189901351929
+            ],
+            [
+              -3.297269821166992,
+              -0.5472666025161743
+            ]
+          ],
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "before_sha256": "532fb098aefaca695abf8e53d40c0f4794a202fc56340a5f54085e0a48141aaa",
+          "after_sha256": "64f6f779213df6f6d8847cd75584eaefbd062cb2a3f83af6746f1ceffc1d042c"
+        }
+      ]
+    }
+  ]
+}
