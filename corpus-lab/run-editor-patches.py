@@ -56,7 +56,7 @@ def main():
         if c.get("purpose"):ctx+="\nAmaç: "+c["purpose"]
         body=json.dumps({"bloklar":source_blocks(c["source"])},ensure_ascii=False)
         if qwen:return tok.apply_chat_template([{"role":"system","content":prompt+ctx},{"role":"user","content":body}],tokenize=False,add_generation_prompt=True,enable_thinking=False)
-        return tok.apply_chat_template([{"role":"user","content":PATCH+ctx+"\n\n"+body}],tokenize=False,add_generation_prompt=True)
+        return tok.apply_chat_template([{"role":"user","content":prompt+ctx+"\n\n"+body}],tokenize=False,add_generation_prompt=True)
     started=time.monotonic()
     for i in range(0,len(cases),a.batch):
         group=cases[i:i+a.batch]
