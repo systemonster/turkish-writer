@@ -490,13 +490,30 @@
       "status_message": null,
       "code_commit": "a60ddc055dbb3a18fd63420e8e95783895a965ed",
       "scope": "V25 isolated relative clause scope reference regression; full existing suites and independent install"
+    },
+    {
+      "id": "6b074251d91f621b9308dc0e",
+      "name": "turkish-writer-v26-modality-addressee-regression",
+      "hardware": "cpu-basic",
+      "stage": "COMPLETED",
+      "created_at": "2026-11-25T20:17:21.185Z",
+      "finished_at": "2026-11-25T20:17:31.868Z",
+      "timeout_seconds": 300,
+      "wall_seconds": 10.683,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0008333333333333334,
+      "wall_rate_estimate_usd": 0.000029675,
+      "actual_billed_usd": null,
+      "status_message": null,
+      "code_commit": "e86f4fc032f3537b8d4bb9fcd6c792a4f1db88bb",
+      "scope": "V26 isolated modality, additive focus and addressee scope repair; full regression and installation smoke"
     }
   ],
-  "known_wall_rate_usd": 0.20212585000000008,
+  "known_wall_rate_usd": 0.20215552500000009,
   "pricing_checked": "2026-11-25",
   "open_jobs_nominal_max_usd": 0,
   "previous_v18_known_wall_rate_usd": 11.378172,
-  "combined_known_wall_rate_estimate_usd": 11.58029785,
+  "combined_known_wall_rate_estimate_usd": 11.580327525,
   "terminal_unknown_cost_jobs": [
     "6b07110db6a90bbe997e02ce"
   ]
