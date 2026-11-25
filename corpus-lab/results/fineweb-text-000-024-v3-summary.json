@@ -1,0 +1,405 @@
+{
+  "revision": "7c5bd76fa456f1748ceb603d8e57acf24a173339",
+  "source": "https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned",
+  "source_attribution": "Furkan Yılmaz, Aleyna Taşdemir, Faruk Gözay, Bekir Top; ODC-By database license",
+  "jobs": [
+    "6b06f5aab6a90bbe997dacf9",
+    "6b06fca9d91f621b930833b6"
+  ],
+  "range": "0–24 inclusive (25 of 203)",
+  "inventory": {
+    "metadata_not_selected": 1819271,
+    "over_length_bound": 1272,
+    "rows": 8088471,
+    "texts_processed": 6267928
+  },
+  "counts": {
+    "before_after_sentence_cues": 1938247,
+    "dialogue_line_cues": 347390,
+    "heuristic_sentences": 179641597,
+    "length_16_30": 44926847,
+    "length_1_7": 54863132,
+    "length_31_plus": 9297248,
+    "length_8_15": 70554370,
+    "method_cue_sentence_cues": 21444198,
+    "nominal_chain_sentence_cues": 67422,
+    "nonempty_lines": 94561821,
+    "question_endings": 5582853,
+    "reported_sentence_cues": 4220986,
+    "scope_sentence_cues": 4319930,
+    "stance_sentence_cues": 256588,
+    "uncertainty_sentence_cues": 1355515,
+    "without_sentence_cues": 2691407,
+    "words_in_segments": 2395637341
+  },
+  "marker_positions": {
+    "inside_line|unmarked": 88768183,
+    "line_start|unmarked": 81185945,
+    "inside_line|contrast": 3007851,
+    "inside_line|inference": 1323710,
+    "inside_line|addition": 1288275,
+    "inside_line|sequence": 923958,
+    "inside_line|condition": 570057,
+    "inside_line|explanation": 526535,
+    "inside_line|example": 439254,
+    "line_start|contrast": 430000,
+    "line_start|sequence": 317136,
+    "line_start|addition": 252756,
+    "line_start|condition": 174302,
+    "line_start|inference": 136502,
+    "inside_line|summary": 89824,
+    "line_start|example": 78065,
+    "line_start|explanation": 69054,
+    "line_start|summary": 60190
+  },
+  "transitions": {
+    "unmarked|unmarked": 149970385,
+    "question|unmarked": 5343086,
+    "unmarked|contrast": 3160137,
+    "contrast|unmarked": 3028624,
+    "unmarked|addition": 1394114,
+    "addition|unmarked": 1340045,
+    "unmarked|inference": 1299721,
+    "inference|unmarked": 1274199,
+    "unmarked|sequence": 1104257,
+    "sequence|unmarked": 1075738,
+    "unmarked|condition": 621882,
+    "condition|unmarked": 609083,
+    "unmarked|explanation": 513007,
+    "explanation|unmarked": 497901,
+    "unmarked|example": 445948,
+    "example|unmarked": 438103,
+    "unmarked|summary": 129236,
+    "summary|unmarked": 126909,
+    "contrast|inference": 64055,
+    "contrast|contrast": 63034,
+    "inference|contrast": 44855,
+    "sequence|sequence": 43761,
+    "contrast|addition": 41634,
+    "addition|contrast": 36378,
+    "question|condition": 33093,
+    "question|contrast": 30145,
+    "contrast|explanation": 27244,
+    "contrast|sequence": 27275,
+    "condition|contrast": 27781,
+    "condition|condition": 26316,
+    "explanation|contrast": 24308,
+    "inference|addition": 26217,
+    "contrast|example": 24150,
+    "addition|inference": 23898,
+    "sequence|contrast": 22758,
+    "question|sequence": 24990,
+    "contrast|condition": 22104,
+    "inference|inference": 22675,
+    "example|contrast": 20770,
+    "addition|addition": 21097,
+    "question|addition": 18527,
+    "question|explanation": 15121,
+    "question|example": 14347,
+    "explanation|inference": 11974,
+    "example|addition": 9769,
+    "addition|explanation": 10309,
+    "addition|example": 9475,
+    "inference|condition": 10352,
+    "condition|addition": 9761,
+    "inference|sequence": 9621,
+    "addition|sequence": 8577,
+    "condition|inference": 10206,
+    "example|inference": 8340,
+    "addition|condition": 8274,
+    "sequence|inference": 7962,
+    "question|inference": 8092,
+    "explanation|addition": 8721,
+    "inference|example": 7148,
+    "sequence|addition": 7865,
+    "sequence|condition": 6438,
+    "inference|explanation": 6870,
+    "explanation|sequence": 6293,
+    "explanation|explanation": 7100,
+    "sequence|explanation": 5716,
+    "contrast|summary": 5347,
+    "condition|sequence": 5541,
+    "explanation|condition": 4948,
+    "condition|explanation": 4370,
+    "example|condition": 4664,
+    "explanation|example": 4226,
+    "example|explanation": 4398,
+    "summary|contrast": 4763,
+    "condition|example": 3903,
+    "example|sequence": 4263,
+    "addition|summary": 4142,
+    "inference|summary": 3229,
+    "example|example": 3874,
+    "summary|inference": 2427,
+    "sequence|example": 2803,
+    "summary|addition": 1966,
+    "question|summary": 2527,
+    "explanation|summary": 1593,
+    "condition|summary": 1175,
+    "summary|condition": 1034,
+    "example|summary": 1124,
+    "sequence|summary": 882,
+    "summary|sequence": 913,
+    "summary|explanation": 886,
+    "summary|example": 501,
+    "summary|summary": 399
+  },
+  "shards": [
+    {
+      "shard": 0,
+      "inventory": {
+        "metadata_not_selected": 64623,
+        "over_length_bound": 65,
+        "rows": 305560,
+        "texts_processed": 240872
+      },
+      "reported_sha256": "f8849c46c1bc81f09c6d4afa4b6997b59d699da2f5d6d8f97bd47581e86f6a36"
+    },
+    {
+      "shard": 1,
+      "inventory": {
+        "metadata_not_selected": 63845,
+        "over_length_bound": 86,
+        "rows": 318367,
+        "texts_processed": 254436
+      },
+      "reported_sha256": "fbb12449f725cca51b36e43db77e2bc7df8dc9d4441a1b98d0cefe7e843489f3"
+    },
+    {
+      "shard": 2,
+      "inventory": {
+        "metadata_not_selected": 61187,
+        "over_length_bound": 48,
+        "rows": 332361,
+        "texts_processed": 271126
+      },
+      "reported_sha256": "6902914e0ee93d9895430bbfd0ca4b5def01fe5f1aede9fd6133b7ebe8e40663"
+    },
+    {
+      "shard": 3,
+      "inventory": {
+        "metadata_not_selected": 62819,
+        "over_length_bound": 42,
+        "rows": 321907,
+        "texts_processed": 259046
+      },
+      "reported_sha256": "da8e2c96edda27ff5859f0c2d88c095444a509c15ccc3e858d2d0dedec135015"
+    },
+    {
+      "shard": 4,
+      "inventory": {
+        "metadata_not_selected": 99484,
+        "over_length_bound": 51,
+        "rows": 325242,
+        "texts_processed": 225707
+      },
+      "reported_sha256": "02fc09fb947b3b322f6b8c36947f8189b2ccde276f588435f5326d3c7899c284"
+    },
+    {
+      "shard": 5,
+      "inventory": {
+        "metadata_not_selected": 79392,
+        "over_length_bound": 39,
+        "rows": 326557,
+        "texts_processed": 247126
+      },
+      "reported_sha256": "946886aee9e4fdb4fc148829e16b63f344b767f0ab579736b482fdbf69543828"
+    },
+    {
+      "shard": 6,
+      "inventory": {
+        "metadata_not_selected": 70753,
+        "over_length_bound": 45,
+        "rows": 334201,
+        "texts_processed": 263403
+      },
+      "reported_sha256": "a1952f8a6b878af3e4efa59e47002b96e8c72784e891244e3fb3863424eb3d78"
+    },
+    {
+      "shard": 7,
+      "inventory": {
+        "metadata_not_selected": 50739,
+        "over_length_bound": 71,
+        "rows": 320983,
+        "texts_processed": 270173
+      },
+      "reported_sha256": "5c55f85496dda20063c316ec4dd1142d22a7c7ca37b832374b3576274dfed22a"
+    },
+    {
+      "shard": 8,
+      "inventory": {
+        "metadata_not_selected": 88635,
+        "over_length_bound": 44,
+        "rows": 311803,
+        "texts_processed": 223124
+      },
+      "reported_sha256": "f11e05b462e076c3eca5dff49d970760d7f9588569df902cf3aecd31ffcbc5ae"
+    },
+    {
+      "shard": 9,
+      "inventory": {
+        "metadata_not_selected": 89404,
+        "over_length_bound": 48,
+        "rows": 316647,
+        "texts_processed": 227195
+      },
+      "reported_sha256": "8733f8bc8fe8a4a17917273bf2fab79cb9eb6f35d5c7303fa5c8cc5e2a41a505"
+    },
+    {
+      "shard": 10,
+      "inventory": {
+        "metadata_not_selected": 58396,
+        "over_length_bound": 57,
+        "rows": 333678,
+        "texts_processed": 275225
+      },
+      "reported_sha256": "37a8d12858eef9913cae47e0e706177e8b7fa10b38870c49f0063c98d7a130a9"
+    },
+    {
+      "shard": 11,
+      "inventory": {
+        "metadata_not_selected": 94497,
+        "over_length_bound": 35,
+        "rows": 316815,
+        "texts_processed": 222283
+      },
+      "reported_sha256": "9e8cdf2178e7a251a84c64865e2f3366ae2b949f319abd437a0d3b9f1121102e"
+    },
+    {
+      "shard": 12,
+      "inventory": {
+        "metadata_not_selected": 62240,
+        "over_length_bound": 57,
+        "rows": 335000,
+        "texts_processed": 272703
+      },
+      "reported_sha256": "cf613f9834b25660bbe92af31dd458abbf781c5c0b656cf1cd37b67da6d6db32"
+    },
+    {
+      "shard": 13,
+      "inventory": {
+        "metadata_not_selected": 94808,
+        "over_length_bound": 46,
+        "rows": 324969,
+        "texts_processed": 230115
+      },
+      "reported_sha256": "baa2c7d625cbea06f77210994cabce979e9772718e7702d93467c069800bc1ab"
+    },
+    {
+      "shard": 14,
+      "inventory": {
+        "metadata_not_selected": 51206,
+        "over_length_bound": 63,
+        "rows": 336986,
+        "texts_processed": 285717
+      },
+      "reported_sha256": "2db89838985dc112e6866fdee0f5b78e532d801e3345e71f3bbf0cc3b18acdeb"
+    },
+    {
+      "shard": 15,
+      "inventory": {
+        "metadata_not_selected": 65126,
+        "over_length_bound": 54,
+        "rows": 315287,
+        "texts_processed": 250107
+      },
+      "reported_sha256": "4402bffd353b5e585a1225e51a3cf87c13cf565ee5269304c6712eacb60bc708"
+    },
+    {
+      "shard": 16,
+      "inventory": {
+        "metadata_not_selected": 66743,
+        "over_length_bound": 46,
+        "rows": 315991,
+        "texts_processed": 249202
+      },
+      "reported_sha256": "69336d60a00b79259dcc0102c7c320142a50ec74645702da1a39721a4f95fc1e"
+    },
+    {
+      "shard": 17,
+      "inventory": {
+        "metadata_not_selected": 103203,
+        "over_length_bound": 48,
+        "rows": 317415,
+        "texts_processed": 214164
+      },
+      "reported_sha256": "00a528a2dd703e46929184dbe16379a8286f605337d1914fcf967aeb5b17d757"
+    },
+    {
+      "shard": 18,
+      "inventory": {
+        "metadata_not_selected": 56949,
+        "over_length_bound": 36,
+        "rows": 334567,
+        "texts_processed": 277582
+      },
+      "reported_sha256": "821c18d96862b9f77957f5db351f33a7f60a8083708334048c5ae61df0335dc2"
+    },
+    {
+      "shard": 19,
+      "inventory": {
+        "metadata_not_selected": 98706,
+        "over_length_bound": 34,
+        "rows": 319407,
+        "texts_processed": 220667
+      },
+      "reported_sha256": "9a9a778f917e6ec281f65f8617c5ddc26aef3179fbb492d1fadd549283648ab6"
+    },
+    {
+      "shard": 20,
+      "inventory": {
+        "metadata_not_selected": 82014,
+        "over_length_bound": 27,
+        "rows": 327655,
+        "texts_processed": 245614
+      },
+      "reported_sha256": "4f585a7cbfd7877e0e7c090e230efefe24c67a19ddb4b7629ee943296bbdeddb"
+    },
+    {
+      "shard": 21,
+      "inventory": {
+        "metadata_not_selected": 62999,
+        "over_length_bound": 74,
+        "rows": 332697,
+        "texts_processed": 269624
+      },
+      "reported_sha256": "b2f922a2b574a1ce6d48d42a79dbbb88fa1792c7e429bad2f6254a8ec4e03a86"
+    },
+    {
+      "shard": 22,
+      "inventory": {
+        "metadata_not_selected": 64396,
+        "over_length_bound": 63,
+        "rows": 322306,
+        "texts_processed": 257847
+      },
+      "reported_sha256": "4033be63a881937eeff294364e25a3bbfcbaebbc9d9bada47e2daaa8267fa661"
+    },
+    {
+      "shard": 23,
+      "inventory": {
+        "metadata_not_selected": 61727,
+        "over_length_bound": 45,
+        "rows": 324408,
+        "texts_processed": 262636
+      },
+      "reported_sha256": "9534638d7d94d86e2374455b73969220e29f05532c57c1cbb859d47bd239789d"
+    },
+    {
+      "shard": 24,
+      "inventory": {
+        "metadata_not_selected": 65380,
+        "over_length_bound": 48,
+        "rows": 317662,
+        "texts_processed": 252234
+      },
+      "reported_sha256": "717d2558dccaceb3fe28f0ba353956758b67588928e52166e511f05e270e93b7"
+    }
+  ],
+  "validation": "All 25 private JSON checkpoints read and identity, inventory/segment balances checked; 24 range job log inventories matched. SHA-256 values are worker-reported, not independently recalculated in this review.",
+  "limitations": [
+    "Filtered crawl dates and classifier thresholds, not verified publication dates, author identities or editorial quality.",
+    "Heuristic markers are not labeled discourse functions. Web duplication, genre and boilerplate confound frequencies.",
+    "No text, URLs, or personal data extracted from source documents into this summary."
+  ]
+}
