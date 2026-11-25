@@ -81,3 +81,15 @@ kaynak, tarih ve lisans cümlesi aynen yazılıdır.
 | [Türkçe Vikipedi](https://tr.wikipedia.org/) (Köy çeşmesi, Danışma masası, karşılama şablonu, anı defteri) | CC BY-SA 4.0 (bu dosyalar aynı lisansla paylaşılır) | reklam, whatsapp |
 | Sabahattin Ali, *Kürk Mantolu Madonna*, 1943 ([Vikikaynak](https://tr.wikisource.org/wiki/K%C3%BCrk_Mantolu_Madonna)) | kamu malı (FSEK md. 27) | blog |
 | 6698 sayılı KVKK md. 10, 13; 6502 sayılı TKHK md. 48 ([mevzuat.gov.tr](https://www.mevzuat.gov.tr/)) | FSEK md. 31 | hukuk |
+
+
+## V2 derlem araştırması ve yerleşik Unicode bileşeni
+
+| Kaynak / katkı sahipleri | Sürüm ve lisans | Kullanım |
+|---|---|---|
+| [Daron Yöndem, Türkçe Blog İçeriği](https://github.com/daronyondem/daron-turkce-blog/tree/e5a5885a9f70d2f30519560a80c6de622aeac945) | `e5a5885a9f70d2f30519560a80c6de622aeac945`, CC BY-SA 4.0 | Tarihsel anlatım ve bağlam gözlemleri, ham derlem dağıtılmaz. |
+| [SUDO Portal yazarları](https://github.com/ubuntu-tr/ubuntu-tr.github.io/tree/18cd8b55645f92578d120e9fb105487f236fed79) | `18cd8b55645f92578d120e9fb105487f236fed79`, CC BY-SA 4.0 | Tarihsel teknik anlatım ve düzenleme deneyleri. Yazar/özgün eser atıfları özel kaynak manifestinde korunur; ham kaynak dağıtılmaz. |
+| [UD Turkish BOUN, TABILAB / Boğaziçi Üniversitesi ve katkıcıları](https://github.com/UniversalDependencies/UD_Turkish-BOUN/tree/09521f40c90904df85524b8e0b43afba6e4c7823) | `09521f40c90904df85524b8e0b43afba6e4c7823`, CC BY-SA 4.0 | Yalnız train bölümü; bağlam, ek ve fiil ilişkisi. |
+| [Guillaume Meyer ve watermarks-remover katkıcıları](https://github.com/guillaumemeyer/watermarks-remover/tree/5a62be6338d2812372b1da440e55c82922f97d53) | `5a62be6338d2812372b1da440e55c82922f97d53`, MIT | Yalnız `text_unicode.py` kodu, salt okunur Unicode incelemesi; upstream lisansı vendor dizininde. |
+
+Derlemden türetilen [derlem bulguları](derlem-bulgulari.md), [tarihsel blog bulguları](tarihsel-blog-bulgulari.md) ve [bağlamlı Türkçe](baglamli-turkce.md) notları ayrı CC BY-SA 4.0 lisansıyla sunulur: https://creativecommons.org/licenses/by-sa/4.0/. Kılavuzlardaki yeni örnekler proje üretimidir; insan editörünün tarihsel düzeltme çifti olduğu iddia edilmez. Araştırma model ve kütüphaneleri yalnız geliştirici deneylerinde kullanılır. Son kullanıcıya model ağırlıkları veya özel araştırma verisi dağıtılmaz. [Ayrıntılı araştırma kaynakları](https://github.com/systemonster/turkish-writer/blob/native-turkish-editor-v2/corpus-lab/LICENSE-DATA.md).
