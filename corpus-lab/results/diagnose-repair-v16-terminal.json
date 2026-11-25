@@ -1,0 +1,399 @@
+{
+  "job_id": "6b06e080d91f621b9307bfc9",
+  "monitor_id": "6b06e082b6a90bbe997d5227",
+  "code": "bc9f025fd39b729a820ea3a2f9576b6d840375f8",
+  "artifact_revision": "49200a8a0d904ef401bba649c55081b061ca9041",
+  "status": "COMPLETED",
+  "rows": [
+    {
+      "id": "sudo-3dc45336d810812b",
+      "kind": "historical",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "output_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "targets": 0,
+      "repair_calls": 0,
+      "unchanged": true,
+      "status_counts": {}
+    },
+    {
+      "id": "sudo-0191b6cb1680889a",
+      "kind": "historical",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+      "output_sha256": "879365a132b6116b953abcf20e931a8793894c9c1a4d8ac9f8f385d4302c558d",
+      "targets": 9,
+      "repair_calls": 5,
+      "unchanged": false,
+      "status_counts": {
+        "keep": 1,
+        "repair-invalid": 3,
+        "edited": 2,
+        "whole-sentence-refused": 2,
+        "diag-truncated": 1
+      }
+    },
+    {
+      "id": "sudo-17c17668853b5918",
+      "kind": "historical",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+      "output_sha256": "b728b288ba1930ca3099482680d95df627a634d1f76ae1d2cf563aab6856dc68",
+      "targets": 16,
+      "repair_calls": 9,
+      "unchanged": false,
+      "status_counts": {
+        "repair-invalid": 1,
+        "whole-sentence-refused": 5,
+        "edited": 8,
+        "diag-invalid": 1,
+        "keep": 1
+      }
+    },
+    {
+      "id": "sudo-494acdea301a431d",
+      "kind": "historical",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+      "output_sha256": "c122516950ac7534f6fbac4bd7575a328811392a896cae83f4be61b2f38ac34b",
+      "targets": 14,
+      "repair_calls": 4,
+      "unchanged": false,
+      "status_counts": {
+        "keep": 3,
+        "diag-invalid": 7,
+        "edited": 1,
+        "repair-invalid": 3
+      }
+    },
+    {
+      "id": "v14-local-001",
+      "kind": "synthetic",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "0578af8fa4eabf9e53e1026a282fe8ec0d6453a90ded830b441a994894cbdf9d",
+      "output_sha256": "e01773d64e10bcb22979efead22ed2a8f8ef8fc6db4f23bf492559e3b327aac6",
+      "targets": 7,
+      "repair_calls": 1,
+      "unchanged": false,
+      "status_counts": {
+        "keep": 3,
+        "whole-sentence-refused": 3,
+        "edited": 1
+      }
+    },
+    {
+      "id": "v14-local-002",
+      "kind": "synthetic",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "85cd6ac7f0823e896f8caffc37771b260228ae24df48270f24dfec9075bd26a7",
+      "output_sha256": "85cd6ac7f0823e896f8caffc37771b260228ae24df48270f24dfec9075bd26a7",
+      "targets": 6,
+      "repair_calls": 0,
+      "unchanged": true,
+      "status_counts": {
+        "keep": 5,
+        "whole-sentence-refused": 1
+      }
+    },
+    {
+      "id": "v14-local-003",
+      "kind": "synthetic",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "9c275e2ebf4868f6561bfc28758b9421334713b09ab8fbb0430b05004485679f",
+      "output_sha256": "01f576608151e6ec1bf93abdbae1bdb4dc01717b1f0e7252547dc7d4cd7db70c",
+      "targets": 6,
+      "repair_calls": 1,
+      "unchanged": false,
+      "status_counts": {
+        "keep": 3,
+        "whole-sentence-refused": 2,
+        "edited": 1
+      }
+    },
+    {
+      "id": "v14-local-004",
+      "kind": "synthetic",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "6162747e84ad72ae7d26050b19ed2de41905338c50f2d422053eeecf5d15205a",
+      "output_sha256": "6162747e84ad72ae7d26050b19ed2de41905338c50f2d422053eeecf5d15205a",
+      "targets": 7,
+      "repair_calls": 0,
+      "unchanged": true,
+      "status_counts": {
+        "keep": 6,
+        "unanchored": 1
+      }
+    },
+    {
+      "id": "v16-long-001",
+      "kind": "synthetic-long",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "e8682579d24aae90d1a90f5af015815db0ab166db59e5eec83babe182da569b7",
+      "output_sha256": "06cc3954536903f56135ecaf105860c4cf350b142475ca4a1564b1631cdf9a5f",
+      "targets": 23,
+      "repair_calls": 7,
+      "unchanged": false,
+      "status_counts": {
+        "keep": 7,
+        "repair-invalid": 5,
+        "whole-sentence-refused": 9,
+        "edited": 2
+      }
+    },
+    {
+      "id": "v16-long-001",
+      "kind": "synthetic-long",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "direct_sentence",
+      "source_sha256": "e8682579d24aae90d1a90f5af015815db0ab166db59e5eec83babe182da569b7",
+      "output_sha256": "640aad044f705596e6779db7fb1a0735d9e1421e84c16f5ad5fb4f8d91090396",
+      "targets": 23,
+      "unchanged": false,
+      "status_counts": {
+        "unchanged": 15,
+        "edited": 7,
+        "literal-change": 1
+      }
+    },
+    {
+      "id": "v16-long-002",
+      "kind": "synthetic-long",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "diagnose_repair",
+      "source_sha256": "12b103ac1075720dad6b2e2efe41510ea9176a3d8cff99a3c7b3dd52f29b86bc",
+      "output_sha256": "d615f263a7eac345cf08d35295db0a782bc5308662ea434f324f3da4605c75c8",
+      "targets": 25,
+      "repair_calls": 7,
+      "unchanged": false,
+      "status_counts": {
+        "keep": 4,
+        "edited": 3,
+        "unchanged": 2,
+        "repair-invalid": 2,
+        "whole-sentence-refused": 12,
+        "diag-truncated": 2
+      }
+    },
+    {
+      "id": "v16-long-002",
+      "kind": "synthetic-long",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "direct_sentence",
+      "source_sha256": "12b103ac1075720dad6b2e2efe41510ea9176a3d8cff99a3c7b3dd52f29b86bc",
+      "output_sha256": "c12a24d0317ec60ed1032b60ea397ce610fcd54e0dd3b3706aa4ad8c8ae53250",
+      "targets": 25,
+      "unchanged": false,
+      "status_counts": {
+        "unchanged": 22,
+        "edited": 3
+      }
+    },
+    {
+      "id": "sudo-3dc45336d810812b",
+      "kind": "historical",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "output_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "targets": 0,
+      "repair_calls": 0,
+      "unchanged": true,
+      "status_counts": {}
+    },
+    {
+      "id": "sudo-0191b6cb1680889a",
+      "kind": "historical",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+      "output_sha256": "a840247ef3887d53c94f2b8e93f788c96826b51bf4008e37a2e465c6a7340c5b",
+      "targets": 9,
+      "repair_calls": 3,
+      "unchanged": false,
+      "status_counts": {
+        "whole-sentence-refused": 4,
+        "edited": 3,
+        "unanchored": 2
+      }
+    },
+    {
+      "id": "sudo-17c17668853b5918",
+      "kind": "historical",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+      "output_sha256": "d4e64aeb92051d6536b1fca6aeb6cb86931dc3f66bc8ec2f8721b11b78a01f0f",
+      "targets": 16,
+      "repair_calls": 4,
+      "unchanged": false,
+      "status_counts": {
+        "unanchored": 1,
+        "whole-sentence-refused": 9,
+        "edited": 3,
+        "diag-invalid": 2,
+        "literal-change": 1
+      }
+    },
+    {
+      "id": "sudo-494acdea301a431d",
+      "kind": "historical",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+      "output_sha256": "a33084cfe3f37faeb4cddd4422548eb0783e1e99221a22b152c334185bc23a78",
+      "targets": 14,
+      "repair_calls": 5,
+      "unchanged": false,
+      "status_counts": {
+        "whole-sentence-refused": 5,
+        "edited": 4,
+        "unanchored": 3,
+        "literal-change": 1,
+        "diag-invalid": 1
+      }
+    },
+    {
+      "id": "v14-local-001",
+      "kind": "synthetic",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "0578af8fa4eabf9e53e1026a282fe8ec0d6453a90ded830b441a994894cbdf9d",
+      "output_sha256": "f85c9b2542354e5e4bf732edc82feaed9afa805558c546aa90b14455eade6801",
+      "targets": 7,
+      "repair_calls": 1,
+      "unchanged": false,
+      "status_counts": {
+        "diag-invalid": 3,
+        "whole-sentence-refused": 3,
+        "edited": 1
+      }
+    },
+    {
+      "id": "v14-local-002",
+      "kind": "synthetic",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "85cd6ac7f0823e896f8caffc37771b260228ae24df48270f24dfec9075bd26a7",
+      "output_sha256": "85cd6ac7f0823e896f8caffc37771b260228ae24df48270f24dfec9075bd26a7",
+      "targets": 6,
+      "repair_calls": 0,
+      "unchanged": true,
+      "status_counts": {
+        "diag-invalid": 2,
+        "whole-sentence-refused": 4
+      }
+    },
+    {
+      "id": "v14-local-003",
+      "kind": "synthetic",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "9c275e2ebf4868f6561bfc28758b9421334713b09ab8fbb0430b05004485679f",
+      "output_sha256": "4aa22a1f8dce3bc91e8c48f00580638256c5ce934dbae9d5635e74178ad2a711",
+      "targets": 6,
+      "repair_calls": 2,
+      "unchanged": false,
+      "status_counts": {
+        "diag-invalid": 1,
+        "repair-invalid": 1,
+        "whole-sentence-refused": 3,
+        "edited": 1
+      }
+    },
+    {
+      "id": "v14-local-004",
+      "kind": "synthetic",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "6162747e84ad72ae7d26050b19ed2de41905338c50f2d422053eeecf5d15205a",
+      "output_sha256": "9c24885362507a5b8b2eb9d083d603b04326f022bc05622bc15054eb2c626914",
+      "targets": 7,
+      "repair_calls": 1,
+      "unchanged": false,
+      "status_counts": {
+        "diag-invalid": 4,
+        "whole-sentence-refused": 2,
+        "edited": 1
+      }
+    },
+    {
+      "id": "v16-long-001",
+      "kind": "synthetic-long",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "e8682579d24aae90d1a90f5af015815db0ab166db59e5eec83babe182da569b7",
+      "output_sha256": "f22d780c9e75e6d3ee463464b43ed1ebe77edf9175e6ab5f9d18f7f9adbcb438",
+      "targets": 23,
+      "repair_calls": 7,
+      "unchanged": false,
+      "status_counts": {
+        "diag-invalid": 5,
+        "whole-sentence-refused": 11,
+        "edited": 6,
+        "invalid-shape": 1
+      }
+    },
+    {
+      "id": "v16-long-001",
+      "kind": "synthetic-long",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "direct_sentence",
+      "source_sha256": "e8682579d24aae90d1a90f5af015815db0ab166db59e5eec83babe182da569b7",
+      "output_sha256": "358248486ead8d1df491a3bf76992157d90b7824da91deb722f237c95b7c2b4f",
+      "targets": 23,
+      "unchanged": false,
+      "status_counts": {
+        "unchanged": 7,
+        "edited": 16
+      }
+    },
+    {
+      "id": "v16-long-002",
+      "kind": "synthetic-long",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "diagnose_repair",
+      "source_sha256": "12b103ac1075720dad6b2e2efe41510ea9176a3d8cff99a3c7b3dd52f29b86bc",
+      "output_sha256": "e68311fa8d181751c69a4819fcfdada664a7e300e5ecb9f5a66caf5024ec4e05",
+      "targets": 25,
+      "repair_calls": 3,
+      "unchanged": false,
+      "status_counts": {
+        "diag-invalid": 2,
+        "whole-sentence-refused": 20,
+        "edited": 2,
+        "invalid-shape": 1
+      }
+    },
+    {
+      "id": "v16-long-002",
+      "kind": "synthetic-long",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "direct_sentence",
+      "source_sha256": "12b103ac1075720dad6b2e2efe41510ea9176a3d8cff99a3c7b3dd52f29b86bc",
+      "output_sha256": "e730df97e784160f1917feff76e6585fde52f1a393706ca1d485241579900412",
+      "targets": 25,
+      "unchanged": false,
+      "status_counts": {
+        "unchanged": 4,
+        "edited": 21
+      }
+    }
+  ],
+  "findings": [
+    "v16-long-001 both models diagnose_repair leave all five targeted bureaucratic phrases; edits target other text.",
+    "Qwen diagnose_repair v16-long-002 introduces 'eve dönmekten önce' and broken possessive 'köpeğinin tasmayı'; both arms modify clean source.",
+    "Gemma diagnose_repair v16-long-002 loses trash-bin destination and alters before-return time into on-return; capitalization/doubled period regressions.",
+    "Gemma direct_sentence v16-long-001 reverses inability to estimate savings into ability; diagnosis arm preserves negation but weakens other facts and leaves intended stylistic defects.",
+    "Protocol failures and refusal counts are not quality; no production candidate acceptance."
+  ],
+  "quality_verified": false
+}
