@@ -1,4 +1,4 @@
-# Blog editörünün muhakemesi
+# Editörün muhakemesi
 
 Bu kılavuz yeni bir sözcük yasağı listesi değil, paragraf ve metin düzeyinde karar desteğidir. Kaynaktaki olgular, teknik adlar, kesinlik, atıflar ve yazarın sesi önce gelir. Buradaki örnekler proje için üretilmiştir; gerçek editör derlemi veya ölçülmüş model sonucu değildir.
 
@@ -16,14 +16,14 @@ Bu kılavuz yeni bir sözcük yasağı listesi değil, paragraf ve metin düzeyi
 
 **Eylem kaybolmuşsa geri getir.** Özellikle iç içe adlaştırmalar, eylemi taşıyamayan genel fiiller ve dolambaçlı yardımcı fiil öbekleri yük oluşturabilir. Cümlenin eyleyenini, zamanını, çatısını ve kipini kaynakla birlikte düşün; bunları koruyarak yüklemi doğal biçimde kur. Başlamak ile bitirmek, denemek ile başarmak, bilmemek ile doğrulayamamak aynı şey değildir.
 
-- "Etiketlerin hazırlanmasının tamamlanmasının ardından rafların düzenlenmesi işlemine başladık." → "Etiketleri hazırladıktan sonra rafları düzenlemeye başladık." İki eylemin sırası ve yalnızca başlangıç bilgisi korunuyor. "Rafları düzenledik" erken bir sonuç bildirirdi.
-- "Kapağın açılmasının ardından mandalın kontrol edilmesi gerekiyor." → "Kapağı açtıktan sonra mandalı kontrol etmek gerekiyor." Eylem açık; yükümlülük ve işlem sırası aynı. Mandalı kapakla karıştırma.
+- "Etiketlerin hazırlanmasının tamamlanmasının ardından rafların düzenlenmesi işlemine başladık." → "Etiketler hazırlandıktan sonra rafları düzenlemeye başladık." Etiketleri kimin hazırladığı kaynakta belirtilmiyor. İlk eylemi de bize yüklememek için edilgen biçimi koruyoruz. İki eylemin sırası ve raf düzenlemenin yalnızca başlangıcı korunuyor. "Rafları düzenledik" erken bir sonuç bildirirdi.
+- "Kapağın açılmasının ardından mandalın kontrol edilmesi gerekiyor." → "Kapak açıldıktan sonra mandalı kontrol etmek gerekiyor." Kapağı açanın mandalı kontrol eden kişiyle aynı olduğunu varsaymıyoruz. Yükümlülük ve işlem sırası korunuyor. Mandalı kapakla karıştırma.
 - "Bu rapor reklam maliyetlerini açıklamaktadır." → Kısa, konuşmaya yakın bir rehberde "Bu rapor reklam maliyetlerini açıklıyor" uygun olabilir. Kurumsal veya hukukî metinde ilk biçim de doğal olabilir.
 - "Müşteri verilerini kullanarak sonuçları değerlendirdik." → Dokunma. Yöntem ve eyleyen belli; daha soyut bir söyleyiş katkı sağlamaz.
 
 **Bilgi sırası bozuksa odağı düzelt.** Türkçede tek bir doğru sözcük sırası yoktur. Önceki cümlede tanıtılan kişi veya nesne ile yeni bilginin ilişkisini düşün. "İki ekip de raporu okudu. Sorunu satış ekibi fark etti." ikinci cümlede satış ekibi odaktır; sırayı mekanik olarak değiştirme. Bir zamirin neye döndüğü anlaşılmıyorsa kaynakta belli olan adı kullan, belirsiz bir göndergeyi tahmin etme.
 
-**Çatıyı anlatıcıya göre koru.** "Bu ayrıntıyı kaydetmedik" birinci kişiyle verilmiş bir işlem bilgisidir. "Bu ayrıntı kaydedilmedi" aynı olaya işaret etse de sorumluluğu ve anlatıcı sesini zayıflatabilir. "Bu ayrıntı kaydedilemedi" ise imkânsızlık ima eder. Üçünü birbirinin süslü eş anlamlısı sayma.
+**Çatıyı anlatıcıya göre koru.** "Bu ayrıntıyı kaydetmedik" birinci kişiyle verilmiş bir işlem bilgisidir. "Bu ayrıntı kaydedilmedi" aynı olaya işaret etse de sorumluluğu ve anlatıcı sesini zayıflatabilir. "Bu ayrıntı kaydedilemedi" ise imkânsızlık ima eder. Üçünü birbirinin süslü eş anlamlısı sayma. Edilgen yapıdaki bir ön eylemi ulaçla kısaltırken de dikkat et: ana cümlenin açık öznesini ön eyleme taşımak, kaynakta bilinmeyen eyleyeni belirlemiş olabilir. Eyleyen belli değilse çekimli edilgen yan cümle, doğal ve kısa bir çözüm olabilir. Eyleyen açıkça aynıysa gereksiz edilgenlik yaratma.
 
 ## 3. Yerleşik kullanım, ses ve ritim
 
