@@ -39,4 +39,27 @@ Girdi JSON nesnesi: `mode` ("independent_test" veya yalnız sentetik deneme içi
 
 Her iki metni kaynak ve amaçla ayrı ayrı karşılaştır. 1 = ciddi kusur, 2 = belirgin kusur, 3 = yeterli ama düzenleme gerekli, 4 = iyi, 5 = yayınlanabilir düzeyde. Beş alan: anlam sadakati, doğal Türkçe, editoryal katkı/isabet, akış, yazım/biçim. Anlamı veya olguyu değiştiren ifadeyi kritik hata olarak kategori ve kısa gerekçeyle kaydet. Gereksiz müdahaleleri say; gerçek düzeltme süresini ölçebiliyorsan dakika olarak gir, tahmin uydurma. Tercih A, B veya eşit; iyi yazılmış kaynakta gereksiz düzenleme olumlu katkı değildir. İki çıktı aynıysa eşit tercih ver. Boş veya eksik metni başarı sayma. Yalnız değerlendirme dosyanı koordinatöre teslim et; diğer editörle görüşmeden önce puanları dondur.
 
-Pilot: 12 mevcut sentetik uzun geliştirme vakası, Qwen3-32B ve Turkish Gemma 9B'nin önceki V2 baseline/skill çıktıları (24 karşılaştırma/editör, 48 toplam atama). Bu, paket mekanizmasının yazılım testidir; bağımsız editör puanı veya yeni holdout değildir. Gerçek veriler henüz toplanmadı. Sonuçları birleştirme, körlüğü koruma ve değerlendiriciler arası anlaşmazlığı çözme işlemi koordinatör sorumluluğunda; henüz otomatik puan toplama aracı yok.
+Pilot: 12 mevcut sentetik uzun geliştirme vakası, Qwen3-32B ve Turkish Gemma 9B'nin önceki V2 baseline/skill çıktıları (24 karşılaştırma/editör, 48 toplam atama). Bu, paket mekanizmasının yazılım testidir; bağımsız editör puanı veya yeni holdout değildir. Gerçek veriler henüz toplanmadı. Sonuçları birleştirme, körlüğü koruma ve değerlendiriciler arası anlaşmazlığı çözme işlemi koordinatör sorumluluğunda; aşağıdaki V9 aracıyla puan toplama ve temel anlaşmazlık kontrolü yapılabilir.
+
+
+## Puan toplama ve anlaşmazlık kontrolü (V9)
+
+İki gerçek bağımsız editör kendi paketindeki `response-template.json` dosyasını doldurup `response.json` olarak teslim eder. Her birine farklı anonim `reviewer_id` verilir. Beş puan 1–5 tam sayı, gereksiz müdahale sayısı sıfır veya pozitif tam sayı, süre ölçülmediyse `null`, kritik hata kaydı `{"category":"modality","reason":"somut gerekçe"}` biçimindedir. Tercih alanı `A`, `B` veya `equal`; gerekçe zorunludur. Özdeş metinler eşit tercih alır. Tamamlanmamış/boş çıktılara beş alanda 1 ve başarısızlığı açıklayan not verilir. Gerçek insan puanları olmadan bu dosyaları doldurmuş gibi yapma.
+
+Puanlar ayrı ayrı dondurulduktan sonra koordinatör çalıştırır:
+
+```sh
+node corpus-lab/collect-reviews.mjs inceleme-01 report-01
+```
+
+Her iki paketteki kaynak/çıktı hash'lerini, tüm atamaları, model-vaka matrisini ve puan şemasını doğrular. Eksik/çift kayıt, değiştirilmiş metin, aynı değerlendirici kimliği ve geçersiz puan reddedilir. Eşitliği ve başarısız çıktıyı gizlemez. Her modelin ayrı ortalamaları, tercih sayıları, kritik hata işaretli vaka sayısı, eksik çıktı sayısı ve tercih/kritik hata varlığı konusunda anlaşmazlık gösterilir. Rapor yalnız özel koordinatör klasörüne, üzerine yazmadan kaydedilir. Çıktı ham metin ya da değerlendirici kimliği içermez; yine de vaka kimlikleri özel envanterle ilişkilendirilebildiğinden git'e koyulmaz.
+
+Bu araç insan kimliğini, bağımsızlığı, lisansı veya değerlendirmenin doğruluğunu ispatlamaz. Kritik hata kategorisi ve gerekçe farklılıkları, yalnız puan farkı olan vakalar, yazar/kaynak kümelerine göre belirsizlik ve üçüncü editörün kararı ayrıca incelenmelidir. Ortalama kalite puanı kritik anlam hatasını telafi etmez. Raporun `release_gate` alanı her durumda `NOT_EVALUATED` kalır. Pilot puanlar yalnız sentetik yazılım testi içindir.
+
+### 25 Kasım kaynak elemesi
+
+- Nitorel'in [okuma rehberi](https://nitorel.com/yazilar/okuma-ve-okudugunu-unutmamak) ve [notlardan yazıya](https://nitorel.com/yazilar/notlardan-yaziya) örnekleri 2026 tarihli ve aynı yazara ait. İzin sayfası tek başına bağımsız insan yazarlığını doğrulamadığından tarihsel kohorta alınmadı.
+- ÖYD'nin [özgür yazılım yazısı](https://oyd.org.tr/yazilar/ozgur-yazilim/) uzun metin adayı; yazıdaki görsel lisansı metne ilişkin izin değildir. Metnin hak kanıtı, yazar ve tarih ayrı doğrulanmadan kabul edilmez.
+- Mirasium'un [kendi metinlerine ilişkin lisans bildirimi](https://mirasium.org/kamu-mali-kilavuzu/) CC BY 4.0 kapsamını açıklar. Üçüncü taraf kitaplar, çeviriler ve güncel katalog açıklamaları kendiliğinden özgün insan blog örneği değildir.
+
+Yukarıdakiler yalnız kaynak incelemesidir. Yeni holdout'a kabul edilmiş metin yoktur; ham yazı veya yeni kişi verisi depoya eklenmedi.
