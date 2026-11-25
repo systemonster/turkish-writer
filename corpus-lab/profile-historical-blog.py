@@ -43,7 +43,7 @@ def prose_blocks(text):
 
 def sentences(text):
     # Do not split common abbreviations, URLs removed above, or decimal numbers.
-    protected=re.sub(r"(?i)(?<!\w)(örn|vb|vs|dr|prof|doç|sn|bkz|no)\.",r"\1\u2024",text)
+    protected=re.sub(r"(?i)(?<!\w)(örn|vb|vs|dr|prof|doç|sn|bkz|no)\.",lambda m: m.group(1)+"\u2024",text)
     protected=re.sub(r"(?<=\d)\.(?=\d)","\u2024",protected)
     return [s.strip().replace("\u2024",".") for s in re.split(r"(?<=[.!?])\s+(?=[\"“'‘(]*[A-ZÇĞİÖŞÜ0-9])",protected) if len(WORD.findall(s))>=3]
 
