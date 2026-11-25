@@ -173,3 +173,28 @@ Sonraki deneyde tüm belgeyi yeniden ürettirmek yerine değiştirilecek doğal 
 [CPU regresyon işi](https://huggingface.co/jobs/lovefengis/6b06625d1460ffe1d5e9bc20) tamamlandı. Test edilen commit `c44a57511b8cdc4fdd9e2fd613e1d11d45ccce93`: Corpus Lab Node 39/39 (27 yeni yama testi dahil), npm 167 başarılı, 7 atlanan, 0 başarısız; Python Corpus Lab 5/5, Unicode 2/2. CPU Basic, 10 dk sınır, nominal azami 0,001667 USD, duvar süresi 13,459 saniye; fatura doğrulanmadı. Test çıktısında CPU_REGRESSION_COMPLETE var.
 
 [V5 GPU işi](https://huggingface.co/jobs/lovefengis/6b06629b1460ffe1d5e9bc9b) başladı. [Deney betiği](run-editor-patches.py), sabit commit `d0b6e30e085d58cdd750de4ddb11a37357f2bedd`; aynı 52 geliştirme vakası ve V4'teki üç sabit model revizyonu. RTX PRO 6000, 60 dk sınır, 2,75 USD/saat (25 Kasım [Jobs tarifesi](https://huggingface.co/docs/hub/en/jobs-pricing)). Tek model kolu `exact_span_patch`, her vaka için ham JSON önerisi, kaynak ve istem hash'i. Sonuçlar gelince JSON geçerliliği, yama uygulanabilirliği, korunacak metinde gereksiz değişiklik, gereken düzenlemede gerçek değişiklik ve kalan anlam riskleri V4 ile karşılaştırılacak. V4 doğrudan çıktı ile istem biçimi ve token bütçesi farklı olduğundan mimari karşılaştırma olarak raporlanacak, tek etkene nedensellik atfedilmeyecek. 156 beklenen kayıt tamamlanmadan deney tamamlandı sayılmaz. Bu iş sürerken ikinci Turkish Writer GPU işi açılmayacak. [Maliyet çizelgesi](results/compute-ledger-2026-11-25.json). V5 henüz aktif skill'e entegre edilmedi.
+
+
+## 12. V5 sonuçları: yapısal güvenlik, editoryal seçim değil
+
+[GPU işi](https://huggingface.co/jobs/lovefengis/6b06629b1460ffe1d5e9bc9b) COMPLETED, 25 Kasım 2026. 3 model × 52 kayıt, her modelin BENCHMARK_COMPLETE işareti mevcut, log kesilmemiş; log API'sindeki finished bayrağı false olsa da inspect tamamlanmış ve tüm kayıtlar mevcut. Uygulayıcı mantığı JS ortamında aynı algoritmayla yeniden yürütüldü; ham öneriler, vaka/kol kimlikleri ve uygulanmış metinler kayıtlı. Çitli JSON için açık biçim normalizasyonu yapıldı. Red halinde kaynak aynen döner; koruma başarısıyla karıştırılmamalı.
+
+| Model | JSON okundu /52 | Geçerli uygulama /52 | KORU birebir /24 | DÜZELT değişen /28 | Uzun DÜZELT değişen /6 |
+|---|---:|---:|---:|---:|---:|
+| [Qwen3-8B](results/editorial-patches-v5-qwen-qwen3-8b.json) | 52 | 42 | 6 | 24 | 3 |
+| [Turkish Gemma 9B](results/editorial-patches-v5-ytu-ce-cosmos-turkish-gemma-9b-v0-1.json) | 51 | 43 | 12 | 19 | 3 |
+| [Qwen3-32B](results/editorial-patches-v5-qwen-qwen3-32b.json) | 52 | 48 | 11 | 23 | 5 |
+
+133/156 uygulanabilir çıktı, 23 red. Qwen3-8B hiçbir geçerli boş yama üretmedi; Gemma ve 32B 12'şer boş yama üretti. V5, V4 son okumasına kıyasla Qwen3-8B koruma sayısını 14'ten 6'ya düşürdü; Gemma 3→12, 32B 4→11. Karşılaştırma farklı istem ve çıktı bütçesi nedeniyle mimari karşılaştırmadır. Değişim sayısı editoryal iyileşme değildir.
+
+Somut hatalar (sentetik proje vakaları):
+- Qwen3-8B `editorial-dev-020`: düzgün yazar sesi yerine “zorluğuydı” yazdı; teknik uygulayıcı kabul etti.
+- Qwen3-8B `editorial-dev-016`: “değerlendirilmekte olup” yapısını özne/çekim ilişkisini bozarak kullandı.
+- Gemma `editorial-dev-004`: deneme hesabı kapsamındaki sınırlamayı zayıflattı, hesabın kapanmasını iki kez anlattı.
+- Gemma `editorial-dev-031`: kaynakta olmayan parantezli kapsam ekledi, KDV cümlesini tekrarladı.
+- Qwen3-32B `editorial-dev-019`: öneriyi zorunluluğa yaklaştırdı; `editorial-dev-007` doğal olmayan “karar verileceği bekleniyor” ifadesini bıraktı.
+- Qwen3-8B ve 32B `editorial-dev-033`: düz yazı için uygulanabilir öneri, aynı çıktıda gereksiz liste/no-op önerisi yüzünden tamamen reddedildi. Red koruma olarak raporlanır fakat iyileştirme değildir.
+
+Yama uygulayıcısı yapıyı korumak için değerlidir, fakat değişiklik seçimi ve anlam denetimi hâlâ zayıf; V5 aktif skill'e eklenmedi. Sonraki izole hipotez: aynı yama biçimi, veri, model, uygulayıcı, token bütçesi altında yalnız editoryal karar örneklerini değiştir; kozmetik resmileştirme ile gerçek kusur arasındaki ayrım, komşu cümlede tekrar, olumsuzluk/kip/özne ve kaynakta olmayan kapsamı özellikle göster. Örnekler test setinin metinlerinden alınmayacak. Bağımsız insan doğrulaması hâlâ gerekli.
+
+Maliyet: 12,243 dk, 2,75 USD/saat üzerinden yaklaşık 0,5611 USD; 60 dk nominal üst sınır 2,75 USD. Süresi bilinen dokuz işin tahmini toplamı 3,119571 USD; üç iptal işinin süreleri ve gerçek fatura bilinmiyor. [Maliyet kaydı](results/compute-ledger-2026-11-25.json).
