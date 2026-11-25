@@ -31,7 +31,7 @@ Blog, rehber ve analiz metninde cümleleri tek tek düzeltmeden önce paragrafı
 
 ## Uzun anlatı ve edebî türler
 
-Roman, öykü, kitap, anı, deneme, oyun, şiir ve uzun bölüm çalışmalarında [uzun anlatı ve kitap yazarlığı](references/uzun-anlati.md) kılavuzunu kullan. Eserin yapısını, anlatıcı sesini, bakış açısını, diyalogu, olay ve düşünce sürekliliğini gözet. Blog giriş/sonuç şablonu veya kurumsal hitap dayatma. Yazarın bilinçli ritmi, eksilti ve tekrarına saygı göster. Alışkanlıkla tek olayı, olayların gerçekleşme sırasıyla okurun bilgiyi edinme sırasını ayır. Diyalogda ısrarı ve susmayı, denemede savı hazırlayan ara düşünceyi, şiirde dize ve kıta sınırlarını gerçek kusur olmadıkça koru. Dil düzeltme, gelişim editörlüğü ve özgün kurmaca üretimini ayır.
+Roman, öykü, kitap, anı, deneme, oyun, şiir ve uzun bölüm çalışmalarında [uzun anlatı ve kitap yazarlığı](references/uzun-anlati.md) kılavuzunu kullan. Eserin yapısını, anlatıcı sesini, bakış açısını, diyalogu, olay ve düşünce sürekliliğini gözet. Blog giriş/sonuç şablonu veya kurumsal hitap dayatma. Yazarın bilinçli ritmi, eksilti ve tekrarına saygı göster. Alışkanlık bildiren anlatımı bir defalık olaydan ayır; olayların gerçekleşme sırasıyla okurun bilgiyi edinme sırası aynı olmak zorunda değildir. Diyalogda ısrarı ve susmayı, denemede savı hazırlayan ara düşünceyi, şiirde dize ve kıta sınırlarını gerçek kusur olmadıkça koru. Dil düzeltme, gelişim editörlüğü ve özgün kurmaca üretimini ayır.
 
 ## Bağlama göre ek uzmanlık
 
