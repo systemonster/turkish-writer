@@ -1,8 +1,36 @@
 {
   "as_of": "2026-11-25",
   "pricing_source": "https://huggingface.co/docs/hub/en/jobs-pricing",
-  "scope": "Only 10 confirmed Turkish Writer jobs; unlabelled jobs and other projects excluded. Wall-clock estimate includes potentially unbilled scheduling/build time and excludes minute rounding. Timeout × hourly rate is a nominal budget estimate, not a billing statement. Canceled jobs without finish time cannot be costed. Actual charges and total spend require billing records.",
+  "scope": "Only confirmed Turkish Writer jobs; unlabelled jobs and other projects excluded. Wall-clock estimates include potentially unbilled scheduling/build time and exclude minute rounding. Timeout × hourly rate is nominal, not a billing statement. Actual charges and total spend require billing records.",
   "rows": [
+    {
+      "id": "6b06625d1460ffe1d5e9bc20",
+      "name": "turkish-writer-v5-cpu-regression",
+      "state": "COMPLETED",
+      "hardware": "cpu-basic",
+      "created": "2026-11-25T04:21:49.768Z",
+      "finished": "2026-11-25T04:22:03.227Z",
+      "wall_minutes": 0.224,
+      "usd_per_hour": 0.01,
+      "timeout_seconds": 600,
+      "timeout_rate_usd": 0.001667,
+      "wall_time_rate_usd": 0.000037,
+      "actual_billed_usd": null
+    },
+    {
+      "id": "6b06629b1460ffe1d5e9bc9b",
+      "name": "turkish-writer-exact-span-v5",
+      "state": "RUNNING",
+      "hardware": "rtx-pro-6000",
+      "created": "2026-11-25T04:22:51.998Z",
+      "finished": null,
+      "wall_minutes": null,
+      "usd_per_hour": 2.75,
+      "timeout_seconds": 3600,
+      "timeout_rate_usd": 2.75,
+      "wall_time_rate_usd": null,
+      "actual_billed_usd": null
+    },
     {
       "id": "6b064ad11460ffe1d5e99908",
       "name": "turkish-writer-evidence-audit-v4",
@@ -144,6 +172,6 @@
       "actual_billed_usd": null
     }
   ],
-  "known_wall_time_rate_usd": 2.5584,
-  "missing_duration_count": 3
+  "known_wall_time_rate_usd": 2.558437,
+  "missing_duration_count": 4
 }
