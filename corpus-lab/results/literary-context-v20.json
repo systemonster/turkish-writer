@@ -1,0 +1,91 @@
+{
+  "date": "2026-11-25",
+  "scope": "AI close reading of four pinned Turkish Wikisource development texts, not an independent holdout, not human editorial review",
+  "sources": [
+    {
+      "id": "lit-020-01",
+      "author": "Ömer Seyfettin",
+      "title": "Kaşağı",
+      "revision": 172873,
+      "url": "https://tr.wikisource.org/w/index.php?title=Ka%C5%9Fa%C4%9F%C4%B1&oldid=172873",
+      "attribution": "https://tr.wikisource.org/w/index.php?title=Ka%C5%9Fa%C4%9F%C4%B1&action=history",
+      "observations": [
+        {
+          "location": "Opening stable routine and transition to the narrator alone in the stable",
+          "finding": "Habitual imperfective verbs establish repeated childhood activity, then bounded past events initiate the incident. Collapsing the opening into completed events changes scene time."
+        },
+        {
+          "location": "Father's questioning of Hasan and later confession to Pervin",
+          "finding": "Reiterated denial, short replies and interrupted speech are character action and tension; repetition removal or completing an unfinished utterance can alter the plot."
+        }
+      ]
+    },
+    {
+      "id": "lit-020-02",
+      "author": "Ömer Seyfettin",
+      "title": "Forsa",
+      "revision": 167612,
+      "url": "https://tr.wikisource.org/w/index.php?title=Forsa&oldid=167612",
+      "attribution": "https://tr.wikisource.org/w/index.php?title=Forsa&action=history",
+      "observations": [
+        {
+          "location": "Opening landscape, unnamed old man, followed by captivity backstory; recognition sequence on ship",
+          "finding": "Information about identity and relationship is deliberately staged. Moving all biographical facts into the opening spoils the recognition; the reader's knowledge and chronological event order are separate."
+        }
+      ]
+    },
+    {
+      "id": "lit-020-03",
+      "author": "Ahmet Haşim",
+      "title": "Bize Göre / Gazi",
+      "revision": 170026,
+      "url": "https://tr.wikisource.org/w/index.php?title=Bize_G%C3%B6re/Gazi&oldid=170026",
+      "attribution": "https://tr.wikisource.org/w/index.php?title=Bize_G%C3%B6re/Gazi&action=history",
+      "observations": [
+        {
+          "location": "Opening personal encounter, digression on photographic representation, then remembered encounter and visual impressions",
+          "finding": "The apparent digression establishes why the narrator's direct perception differs from expectation. Reducing it to an unrelated tangent or reordering it after the encounter removes the essay's argumentative bridge."
+        },
+        {
+          "location": "Descriptions after the narrator's expectations are overturned",
+          "finding": "Visual imagery, expressive metaphors and evaluative fragments belong to an individual literary perspective, not measurable documentary claims; do not manufacture an objective fact or flatten the comparison."
+        }
+      ]
+    },
+    {
+      "id": "lit-020-04",
+      "author": "Ahmet Haşim",
+      "title": "O Belde",
+      "revision": 140719,
+      "url": "https://tr.wikisource.org/w/index.php?title=O_Belde&oldid=140719",
+      "attribution": "https://tr.wikisource.org/w/index.php?title=O_Belde&action=history",
+      "observations": [
+        {
+          "location": "Opening coordinated subjects spread over multiple lines and recurrence of imagined place toward the closing lines",
+          "finding": "Line breaks delay syntactic completion; repetition changes emphasis and connects opening to closing. Treat the poem as a whole, not a series of malformed prose sentences."
+        },
+        {
+          "location": "Transcription displays irregular spacing within words",
+          "finding": "The rendered historical transcription may contain digitization or typography defects. No spelling or original-edition claim is made; verify a scanned edition before altering the transcription."
+        }
+      ]
+    }
+  ],
+  "rights": {
+    "source_transcriptions": "Wikisource page footer CC BY-SA; contributor history URLs above; https://creativecommons.org/licenses/by-sa/4.0/ ; https://foundation.wikimedia.org/wiki/Policy:Terms_of_Use",
+    "use": "Only non-extractive analytical findings and independently written project examples; no source text copied. Original works are historical; exact first edition and transcription accuracy not certified."
+  },
+  "excluded": [
+    {
+      "title": "Anlatamıyorum",
+      "author": "Orhan Veli",
+      "revision": 142130,
+      "reason": "Wikisource explicitly flags unknown source document; not used as evidence for precise textual form."
+    }
+  ],
+  "limits": [
+    "Four texts by two authors are development evidence, not a representative literary corpus.",
+    "Historical diction is not a universal modern usage rule.",
+    "These findings are qualitative editorial analysis, not proof of model improvement."
+  ]
+}
