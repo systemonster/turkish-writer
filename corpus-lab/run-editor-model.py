@@ -20,7 +20,8 @@ def main():
     if not 1<=a.batch<=8 or not 1<=a.limit<=100 or not 64<=a.max_new_tokens<=1536: p.error("invalid batch, limit or token budget")
     selected_arms=a.arms.split(",")
     if len(set(selected_arms))!=len(selected_arms) or any(x not in {"baseline","skill","compact"} for x in selected_arms): p.error("invalid arms")
-    cases=[json.loads(line) for line in (ROOT/a.cases).read_text(encoding="utf-8").splitlines() if line.strip()][:a.limit]
+    cases=[json.loads(line) for case_path in a.cases.split(",") for line in (ROOT/case_path).read_text(encoding="utf-8").splitlines() if line.strip()][:a.limit]
+    if not cases or len({c["id"] for c in cases})!=len(cases): p.error("empty or duplicate case IDs")
     skill=(ROOT/"skills/turkish-writer/SKILL.md").read_text(encoding="utf-8")
     guide=(ROOT/"skills/turkish-writer/references/editor-muhakemesi.md").read_text(encoding="utf-8")
     # Only instructions, not expected answers, are passed. This is public dev data and may overlap examples.
@@ -33,11 +34,12 @@ def main():
     prompts={k:prompts[k] for k in selected_arms}
     revision=HfApi().model_info(a.model).sha
     git_sha=subprocess.check_output(["git","rev-parse","HEAD"],cwd=ROOT,text=True).strip()
-    print("RUN_INFO "+json.dumps({"model":a.model,"revision":revision,"git":git_sha,"torch":torch.__version__,"transformers":transformers_version,"gpu":torch.cuda.get_device_name(0),"cases":len(cases),"dtype":"bfloat16","decoding":f"greedy, {a.max_new_tokens} new tokens, no deliberate thinking","protocol":a.protocol,"cases_path":a.cases,"prompt_sha256":{k:hashlib.sha256(v.encode()).hexdigest() for k,v in prompts.items()}},ensure_ascii=False),flush=True)
+    attention="sdpa" if a.model.startswith("Qwen/") else "eager"
+    print("RUN_INFO "+json.dumps({"model":a.model,"revision":revision,"git":git_sha,"torch":torch.__version__,"transformers":transformers_version,"gpu":torch.cuda.get_device_name(0),"cases":len(cases),"dtype":"bfloat16","decoding":f"greedy, {a.max_new_tokens} new tokens, no deliberate thinking","protocol":a.protocol,"cases_path":a.cases,"batch":a.batch,"attention":attention,"prompt_sha256":{k:hashlib.sha256(v.encode()).hexdigest() for k,v in prompts.items()}},ensure_ascii=False),flush=True)
     tok=AutoTokenizer.from_pretrained(a.model,revision=revision,trust_remote_code=False)
     tok.padding_side="left"
     if tok.pad_token_id is None: tok.pad_token=tok.eos_token
-    model=AutoModelForCausalLM.from_pretrained(a.model,revision=revision,dtype=torch.bfloat16,device_map={"":"cuda:0"},trust_remote_code=False,attn_implementation="eager").eval()
+    model=AutoModelForCausalLM.from_pretrained(a.model,revision=revision,dtype=torch.bfloat16,device_map={"":"cuda:0"},trust_remote_code=False,attn_implementation=attention).eval()
     start=time.monotonic()
     for arm, instruction in prompts.items():
         for i in range(0,len(cases),a.batch):
