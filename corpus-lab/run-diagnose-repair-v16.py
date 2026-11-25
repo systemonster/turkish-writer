@@ -103,14 +103,6 @@ def run_doc(source,infer):
     return {"output":"".join(out),"targets":len(spans),"records":records,"repair_calls":len(indices)}
 def self_test():
     s="Başlık\nKayıt işlemini gerçekleştirdik. Sonra 12 kutu hazırladık.\n\nBu metin zaten doğal."
-    calls=[]
-    def fake(p,b):
-        calls.append((p,b))
-        if p==DIAGNOSE:
-            assert len(b)==3
-            return [('{"span":"Kayıt işlemini gerçekleştirdik","category":"dolambac","reason":"Gereksiz adlaştırma"}',False),('{"span":"12","category":"anlatim","reason":"test"}',False),('{"keep":true}',False)]
-        assert p==REPAIR and len(b)==2 and b[0]["kusur"]["span"]=="Kayıt işlemini gerçekleştirdik"
-        return [('{"replacement":"Kaydettik"}',False),('{"replacement":"13"}',False)]
     # The first repair becomes one word, outside V15's conservative target shape.
     # Use a four-word target to exercise successful replacement with unchanged context.
     s=s.replace("Kayıt işlemini gerçekleştirdik.","Dün kayıt işlemini gerçekleştirdik.")
@@ -132,6 +124,15 @@ def self_test():
     print("V16_SELF_TEST_COMPLETE",flush=True)
 def cases(api,model):
     return v15.cases(api,model)+NEW
+def checked_revision():
+    # Archive transport is used only by a launcher that verifies the public
+    # commit archive root and Git blob identities before starting this script.
+    archive=os.environ.get("TW_VERIFIED_ARCHIVE_COMMIT")
+    if archive:
+        if not re.fullmatch(r"[0-9a-f]{40}",archive) or HERE.parent.name!="turkish-writer-"+archive:
+            raise RuntimeError("archive identity mismatch")
+        return archive,"verified-public-archive"
+    return subprocess.check_output(["git","rev-parse","HEAD"],cwd=HERE,text=True).strip(),"git-checkout"
 def main():
     p=argparse.ArgumentParser();p.add_argument("--self-test",action="store_true");p.add_argument("--preflight",action="store_true");p.add_argument("--model",choices=v11.MODELS)
     a=p.parse_args();self_test()
@@ -173,7 +174,8 @@ def main():
                 for ids in out[:,inp["input_ids"].shape[1]:]:
                     result.append((tok.decode(ids,skip_special_tokens=True).strip(),len(ids)==384 and int(ids[-1]) not in {tok.pad_token_id,tok.eos_token_id}))
             return result
-        info={"model":model,"model_revision":rev,"git":subprocess.check_output(["git","rev-parse","HEAD"],cwd=HERE,text=True).strip(),"source_revision":v14.REV,"scope":"8 V15 development replays + 2 new project-authored multi-paragraph controls; no blind/independent claim","prompt_sha256":{"diagnose":sha(DIAGNOSE),"repair":sha(REPAIR),"direct":sha(v15.PROMPT)}}
+        git,transport=checked_revision()
+        info={"model":model,"model_revision":rev,"git":git,"source_transport":transport,"source_revision":v14.REV,"scope":"8 V15 development replays + 2 new project-authored multi-paragraph controls; no blind/independent claim","prompt_sha256":{"diagnose":sha(DIAGNOSE),"repair":sha(REPAIR),"direct":sha(v15.PROMPT)}}
         results=[]
         for row in rows:
             source=row["source"]
