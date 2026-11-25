@@ -103,6 +103,16 @@ Bu revizyonların hiçbiri bağımsız editör altın standardı değildir. Baş
 - **Ulaç, yalnızca kısaltma değildir.** BOUN'da VerbForm=Conv işaretli 962 birim arasında 677 advcl ve başka bağıntılar da vardır. Bu etiketlerin tamamı aynı işlevi veya aynı eyleyeni kanıtlamaz. Eylemler arasındaki zaman, yöntem, neden ve eş zamanlılık bağını metinden belirle; salt "ve" sayısını azaltmak için dönüştürme.
 - **Odak bağlama bağlıdır.** Açık isim/zamir bağıntılarının çoğu fiilden önce gelse de fiilden sonra gelen örnekler mevcuttur: nesne 104, özne 118, obl 161. Bu sayılar tek doğru Türkçe söz dizimi oluşturmaz. Konuşma, karşıtlık, artlama ve bilinçli anlatıcı tercihini koru.
 
-Bu yeni çalışma bir dilsel kullanım envanteridir; 1.035 yazının tamamının insan editörü tarafından okunduğu veya 23.780 cümlenin tamamının dilsel işlevinin elle doğrulandığı iddia edilmez. SUDO'da henüz yalnız 20 dondurulmuş parça, Vikipedi'de daha önce seçilmiş 50 çift işlenmiştir. Bu kaynaklar ve BOUN'un ayrılmış dev/test bölümleri bağımsız test kapısını kirletecek biçimde kullanılamaz.
+Bu yeni çalışma bir dilsel kullanım envanteridir; 1.035 yazının tamamının insan editörü tarafından okunduğu veya 23.780 cümlenin tamamının dilsel işlevinin elle doğrulandığı iddia edilmez. Bu ilk taramada SUDO'nun 20 dondurulmuş parçası ve Vikipedi'nin daha önce seçilmiş 50 çifti işlenmiştir; SUDO tam arşivine ilişkin sonraki çalışma aşağıdadır. Bu kaynaklar ve BOUN'un ayrılmış dev/test bölümleri bağımsız test kapısını kirletecek biçimde kullanılamaz.
+
+## 9. Birden fazla yazar: SUDO arşivindeki anlatım ilişkileri
+
+[SUDO Portal'ın tam arşiv taraması](https://github.com/systemonster/turkish-writer/blob/410bd931a4ccdbcd5b2e3f1bb0c99f8f85ed7c2b/corpus-lab/results/sudo-full-text-v3-summary.json) önceki 20 parçayla sınırlı değildir: 103 yazı dosyasının 103'ü, 32 yazar üst veri grubu, 2.405 düzyazı bloğu, 96.480 sözcük ve 8.113 sezgisel cümle işlendi. Kaynakların tümünün özgün Türkçe veya insan eliyle düzeltilmiş olduğu doğrulanmadı.
+
+- Seçilen geçiş belirteçleriyle başlamayan 7.087 cümle ve soru sonrası 102 cümlenin 96'sında aynı durum gözlendi. Daron arşivinden farklı yazarları kapsayan bu gözlem, her yeni düşüncenin açık bir geçiş sözcüğüne ihtiyaç duymadığını destekler; bir yazıya bağlaç sayısı hedefi koymaz.
+- Bir teknik rehberde karşıtlık (237 paragraf içi başlangıç, 16 sonraki paragraf başlangıcı), koşul (141/56) ve sıra (111/47) ayrı ilişkiler taşır. "Ancak"ı "sonra" ile değiştirmek ritmi çeşitlendirebilir fakat anlamı bozabilir. Önce okura aktarılan ilişkiyi belirle.
+- 209 cümlede önce/sonra kalıbı, 170 cümlede -madan/-meden yüzey işareti, 269 cümlede kapsam belirteci görüldü. Bunlar doğrulanmış dil bilgisi sınıfları değildir. İşlemin sırası, yapılmayan eylem ve "yalnızca/en az/hariç" gibi sınırları koru. Özgün örnek: "Kapağı çıkarmadan filtreyi temizleyebilirsiniz." ifadesini "Kapağı çıkarıp filtreyi temizleyin." diye düzenleme; hem işlemin sırası ve olumsuzluğu hem kip değişir.
+
+Bu gözlemler teknik yayın diline aittir. Kurmaca, şiir veya gündelik diyalog için aynı dağılımı hedefleme. Ham kaynaklar dağıtılmamıştır; araştırma özeti kaynak ve yöntem atıflarını taşır.
 
 **Sınır:** Derlem örnekleri farklı dönem ve türlerden gelir; tarihsel imla, teknik bilgi, mizah ve editoryal tercih her bağlamda kopyalanmaz. Bu çalışma gözleme dayalı karar kılavuzudur, bağımsız insan editör doğrulaması veya ölçülmüş kalite artışı değildir.
