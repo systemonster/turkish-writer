@@ -16,9 +16,15 @@ function validateHoldout(rows){
   if(ids.has(row.id))errors.push(`${label}: duplicate id`);
   ids.add(row.id);
   if(!/^[a-f0-9]{64}$/.test(row.source_sha256))errors.push(`${label}: invalid source hash`);
-  if(row.review_status!=="editor_verified")errors.push(`${label}: no declared human review`);
-  if(!Number.isInteger(row.paragraphs)||row.paragraphs<3)errors.push(`${label}: fewer than 3 paragraphs`);
-  if(!Number.isInteger(row.words)||row.words<150)errors.push(`${label}: fewer than 150 words`);
+  // Development inventory is an exclusion ledger, not evidence of human quality.
+  // Keep short/unreviewed historical inputs visible instead of inventing reviews.
+  const development=row.split==="development";
+  if(development){
+   if(!["editor_verified","development_unreviewed"].includes(row.review_status))errors.push(`${label}: invalid development review status`);
+   if(row.review_status==="development_unreviewed"&&row.reviewer_id!=="not_reviewed")errors.push(`${label}: unreviewed development requires not_reviewed reviewer_id`);
+  }else if(row.review_status!=="editor_verified"||row.reviewer_id==="not_reviewed")errors.push(`${label}: no declared human review`);
+  if(!Number.isInteger(row.paragraphs)||row.paragraphs<(development?1:3))errors.push(`${label}: too few paragraphs`);
+  if(!Number.isInteger(row.words)||row.words<(development?1:150))errors.push(`${label}: too few words`);
   for(const key of ["source_group","author_group","topic_group","source_sha256"]){
    const value=row[key].trim().toLowerCase();
    const groupKey=key+"\u0000"+value;
