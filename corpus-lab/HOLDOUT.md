@@ -69,3 +69,31 @@ Yukarıdakiler yalnız kaynak incelemesidir. Yeni holdout'a kabul edilmiş metin
 V31 ön kontrolü dört geliştirme vakasını dondurdu (CC Türkiye, Mirasium, iki proje üretimi vaka). Bkz. [V31 iş kaydı](README.md#v31-ön-kontrol-ve-karşılaştırma-yeniden-başlatma--26-kasım-2026-0045-utc). Bu vakaları veya aynı yayın/yazar/konu gruplarını bağımsız test diye kullanma. V31'deki tek kılavuz paragrafı karşılaştırmasının başarılı olması tüm V2 ürününü doğrulamaz.
 
 Sonraki bağımsız değerlendirmede güncel aday ve karşılaştırma sürümleri sabit commit'lere bağlanmalı; yeni kaynakları editörler seçmeli ve mevcut geliştirme envanteriyle çakışma kontrolü yapılmalı. İki bağımsız Türkçe editörün gerçek kör incelemesi için mevcut paketleme/toplama araçlarını kullan; yeni yapay hakem döngüsünü insan puanı yerine koyma. Kritik kusurları açıkça çöz, kalan teknik ve kaynak/lisans denetimlerini tamamla. Sonuçlar olumsuzsa yayın kapısını geçirme; yeni bir deney yalnız somut kusuru çözmek veya gerçekten yeni bilgi sağlamak için yapılır. Kullanıcıdan istenen dış katkı: bağımsız metin seçimi ve iki editör incelemesi. Bu kayıt yeni insan değerlendirmesi veya yayın yetkisi değildir.
+
+## Yayın adayı için editör teslimi — 26 Kasım 2026
+
+Ürün adayı (yalnız bu commit'teki skill dosyaları): [c99c4b4763204f0aac68194bf1dfea8959a3771a](https://github.com/systemonster/turkish-writer/commit/c99c4b4763204f0aac68194bf1dfea8959a3771a). Yeni ürün özelliği ekleme; adayın değişmesi gerekirse yeni commit ve yeni değerlendirme turu kaydet. Eski V31 metinleri test seti değildir. V31'de dört Mistral çıktısı kılavuzu tekrar etti ve kesildi; Qwen'in iki onarım kolu da teşhis metnindeki anlatım kusurlarını bıraktı. Bu sonuçlar yayın için yeterli değildir.
+
+**Girdi teslimi:** Geliştirme ekibinden bağımsız bir Türkçe editörün (iki değerlendiriciden biri de olabilir; model sonuçlarını önceden görmemeli) seçtiği 40 belge hedeflenir. Gerçek, yayıma hazır metinler ile gerçek düzenleme gerektiren taslakları dengeli tut. En az üç metin paragrafı ve 150 sözcük; blog ve rehber yanında deneme, anlatı/diyalog ve kurumsal/bilgilendirici düzyazı gibi çeşitliliği sağla. Şiir, uzun kitap ve özgün yazarlık iddiaları ayrı görevlerle değerlendirilmelidir; bu düzyazı testi tüm türlerdeki kaliteyi kanıtlamaz. Özellikle henüz yayımlanmamış, yazarının test kullanımına izin verdiği özgün metinler, FineWeb ve model ön eğitimi çakışması riskini azaltır; bu riskin tamamen ortadan kalktığı iddia edilmez. Daha önce proje tarafından görülen metni seçme.
+
+Editör, her belge için şu bilgileri **özel** teslim eder (bir satır = bir belge):
+
+| Alan | Girilecek bilgi |
+| --- | --- |
+| id | Benzersiz anonim belge kodu |
+| source | UTF-8 kaynak metin, başlık ve biçim korunmuş |
+| source_url | Yayın adresi veya izinli özel belgeyi gösteren anonim kalıcı tanımlayıcı |
+| rights_evidence | Test/işleme izni ve gerekiyorsa lisans kaydı; kişisel bilgiler özel kalır |
+| source_group / author_group / topic_group | Tutarlı anonim yayın, yazar ve konu grupları |
+| genre / purpose | Metin türü, hedef okur/amaç ve düzenleme kapsamı |
+| review_status | İnsan gerçekten incelemişse editor_verified |
+| reviewer_id | Seçimi yapan editörün anonim kodu |
+| source_sha256 / paragraphs / words / split | Koordinatör gerçek dosyadan doğrular ve test olarak dondurur |
+
+Bilinen geliştirme dışlama grupları: Daron Yöndem arşivi, SUDO Portal, BOUN train, Türkçe Vikipedi revizyonları, FineWeb Türkçe taramasında kullanılan kaynaklar ve konu kümeleri (salt toplu tarama olduğunda birebir belge çakışmasını kanıtlayamadığımızı kaydet), Creative Commons Türkiye, Mirasium, V20 Wikisource eserleri ve bunların yakın türevleri, tüm proje üretimi teşhis/benchmark metinleri. Bu liste tam belge manifestinin yerine geçmez. Yazar, kaynak, konu ve metin hash'i çakışmalarını özel tam envanterle kontrol et; bilinmeyen çakışmaları saklama. Yeni editör incelemesi olmadan herhangi bir test satırını editor_verified olarak işaretleme.
+
+**Geliştirme dışlama envanteri düzeltmesi:** Eski validator, bağımsız olmayan kısa ve hiç insan tarafından doğrulanmamış geliştirme satırlarını da 150 sözcük/3 paragraf ve editor_verified şartına zorladığı için gerçek geçmişi dürüst biçimde kaydetmeyi engelliyordu. Artık sadece development satırlarında development_unreviewed + not_reviewed ve en az bir paragraf/sözcük kabul edilir; tüm kaynak/yazar/konu/hash ayrım denetimleri aynen uygulanır. Test ve validation için insan inceleme beyanı ve uzunluk şartı değişmedi. Bkz. [düzeltme](https://github.com/systemonster/turkish-writer/commit/e6cd2e539903945a8aa310f10280176e05298084) ve [beş regresyon](https://github.com/systemonster/turkish-writer/commit/7538f15901b385947de66f9faee0689dfce345ef).
+
+**Karşılaştırma:** Kaynak ve amaç dondurulduktan sonra, iki farklı model ailesinde aynı kullanıcı düzenleme brifini kullan. Yalın kol yalnız görev ve kaynak; aday kol aynı görev, sabit skill ve gerçekten görev için gereken referanslar. Model sürümü ve parametreler, her vaka için açılan dosya listesi ve istem hash'i kaydedilmeli. Mümkünse gerçek Agent Skills akışını kullan; sabit referans bağlamı kullanılırsa bunu açıkça belirt. Yönerge ve hedefi ayrı role/veri sınırlarıyla ayır; kılavuz çıktısı, eksik çıktı veya kaynakla ilgisiz metin geçerli sayılmaz. İki kol da eşit token sınırı ve bağlam bütçesine tabi. Dondurulmuş kaynaklar görülmeden yeni skill ayarı yapma. Kusur nedeniyle aday değişirse bu test geliştirme/validation olarak yeniden sınıflandırılır, yeni bağımsız test gerekir.
+
+**Teslim sırası:** Önce insan tarafından seçilmiş metinlerin özel manifesti; ardından iki modelin eşleştirilmiş çıktıları; sonra mevcut build-review-packets.mjs ile iki ayrı kör paket ve collect-reviews.mjs ile puan toplama. Her editör 40 belge × 2 model = 80 eşleştirme görür (40 belge hedefi karşılanırsa). Hakemler ayrı çalışır, kol kimliğini ve koordinatör anahtarını görmez. Kritik anlam hatalarını ortalamaya gömme; anlaşmazlığı bağımsız üçüncü değerlendirmeye gönder. Yayın sonucu gerçek değerlendirmeye bağlıdır; hiçbir paket veya insan puanı henüz üretilmedi. Bağımsız girdi ve editörler olmadan yeni GPU çalıştırmak bu kapıyı geçiremez.
