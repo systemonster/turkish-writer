@@ -7,10 +7,10 @@ Durum (25 Kasım 2026): **insan onaylı bağımsız test henüz yok.** V1–V4 i
 | Kaynak | Hak kanıtı ve kapsam | İnceleme |
 |---|---|---|
 | [Nitorel](https://nitorel.com/) | [CC BY 4.0 metin lisansı](https://nitorel.com/lisans); Ahmet Canal'ın özgün yazı ve rehberleri, üçüncü taraf parçaları hariç | Bilgi yönetimi, uygulamalı rehber; yazı tarihi, yazar, doğal Türkçe ve bağımsızlık ayrıca doğrulanmalı. |
-| [Mirasium](https://mirasium.org/) | [Kamu malı kılavuzu](https://mirasium.org/kamu-mali-kilavuzu/); özgün makale ve analiz metinleri CC BY 4.0 | Kültürel miras; kişisel yazar veya kurumsal katkı bilgisi, özgün metin ve üçüncü taraf alıntıların hakları ayrıca incelenmeli. |
+| [Mirasium](https://mirasium.org/) | [Kamu malı kılavuzu](https://mirasium.org/kamu-mali-kilavuzu/); özgün makale ve analiz metinleri CC BY 4.0 | **Geliştirme kaynağı — bağımsız testten hariç.** V31'de v31-mirasium-history kullanıldı; insan yazarlığı doğrulanmadı. |
 | [Özgür Yazılım Derneği](https://oyd.org.tr/yazilar/) | Yazı bazında lisans kanıtı gereklidir; örneğin [EFF çevirisi](https://www.oyd.org.tr/yazilar/eff-ifade-ozgurlugu/) özgün makale için CC BY 3.0 US bildiriyor. | Çeviri metinleri yerli Türkçe özgün blog kohortuna katma. Özgün, izinli ve mümkünse 2022 öncesi makaleler için aday havuzu. |
 
-Kaynakların lisans sayfaları ve arşivleri 2026-11-25 tarihinde incelendi. Lisans, insan yazarlığını veya editoryal kaliteyi ispatlamaz. Bu kaynaklardan ham metin, kişisel veri ya da model değerlendirmesi henüz yayımlanmadı. Daron Yöndem, BOUN, Wikipedia ve CC Türkiye gibi önceki geliştirme kaynaklarını bağımsız test havuzuna yeniden koyma.
+Kaynakların lisans sayfaları ve arşivleri 2026-11-25 tarihinde incelendi. Lisans, insan yazarlığını veya editoryal kaliteyi ispatlamaz. Bu kaynaklardan ham metin, kişisel veri ya da model değerlendirmesi henüz yayımlanmadı. Daron Yöndem, BOUN, Wikipedia, Mirasium ve CC Türkiye gibi önceki geliştirme kaynaklarını bağımsız test havuzuna yeniden koyma.
 
 ## Kabul ve ayrım
 
@@ -63,3 +63,9 @@ Bu araç insan kimliğini, bağımsızlığı, lisansı veya değerlendirmenin d
 - Mirasium'un [kendi metinlerine ilişkin lisans bildirimi](https://mirasium.org/kamu-mali-kilavuzu/) CC BY 4.0 kapsamını açıklar. Üçüncü taraf kitaplar, çeviriler ve güncel katalog açıklamaları kendiliğinden özgün insan blog örneği değildir.
 
 Yukarıdakiler yalnız kaynak incelemesidir. Yeni holdout'a kabul edilmiş metin yoktur; ham yazı veya yeni kişi verisi depoya eklenmedi.
+
+## 26 Kasım — yayın adayına geçiş
+
+V31 ön kontrolü dört geliştirme vakasını dondurdu (CC Türkiye, Mirasium, iki proje üretimi vaka). Bkz. [V31 iş kaydı](README.md#v31-ön-kontrol-ve-karşılaştırma-yeniden-başlatma--26-kasım-2026-0045-utc). Bu vakaları veya aynı yayın/yazar/konu gruplarını bağımsız test diye kullanma. V31'deki tek kılavuz paragrafı karşılaştırmasının başarılı olması tüm V2 ürününü doğrulamaz.
+
+Sonraki bağımsız değerlendirmede güncel aday ve karşılaştırma sürümleri sabit commit'lere bağlanmalı; yeni kaynakları editörler seçmeli ve mevcut geliştirme envanteriyle çakışma kontrolü yapılmalı. İki bağımsız Türkçe editörün gerçek kör incelemesi için mevcut paketleme/toplama araçlarını kullan; yeni yapay hakem döngüsünü insan puanı yerine koyma. Kritik kusurları açıkça çöz, kalan teknik ve kaynak/lisans denetimlerini tamamla. Sonuçlar olumsuzsa yayın kapısını geçirme; yeni bir deney yalnız somut kusuru çözmek veya gerçekten yeni bilgi sağlamak için yapılır. Kullanıcıdan istenen dış katkı: bağımsız metin seçimi ve iki editör incelemesi. Bu kayıt yeni insan değerlendirmesi veya yayın yetkisi değildir.
