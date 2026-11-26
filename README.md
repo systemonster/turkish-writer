@@ -109,7 +109,7 @@ sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama)
 
 ## Sözcüksel muhakeme (V2 geliştirme özelliği)
 
-[Sözcüksel muhakeme](skills/turkish-writer/references/sozcuk-muhakemesi.md) Yaz, Düzelt ve Denetle kiplerine bağlam, kelime seçimi, çağrışım ve tür denetimi ekler. `tr-scan --editor` TDK bulgularını ve editör inceleme ipuçlarını eski iz skorundan ayrı gösterir. İsteğe bağlı yerel KeNet anlam dizini ayrı CC BY-SA 4.0 veri kaynağıdır; TDK'nın tamamı veya KeNet ham verisi dağıtılmaz. Tekrar, nadir kelime veya dedektör puanı optimizasyon hedefi değildir. Yeni özellik bağımsız editör değerlendirmesinden geçmemiştir.
+[Sözcüksel muhakeme](skills/turkish-writer/references/sozcuk-muhakemesi.md) Yaz, Düzelt ve Denetle kiplerine bağlam, kelime seçimi, çağrışım ve tür denetimi ekler. `tr-scan --editor` TDK bulgularını ve editör inceleme ipuçlarını eski iz skorundan ayrı gösterir. İsteğe bağlı yerel KeNet anlam dizini ayrı CC BY-SA 4.0 veri kaynağıdır; TDK'nın tamamı veya KeNet ham verisi dağıtılmaz. Tekrar, nadir kelime veya dedektör puanı optimizasyon hedefi değildir. Sabit KeNet verisiyle teknik ön kontrol 78.327 anlam kümesi ve 82.155 farklı lemma doğruladı. Dokuz yeni Node ve iki yeni Python testi, mevcut npm/Corpus Lab testleri ve 89 dosyalı paket/ayrı kurulum geçti. Yeni özellik bağımsız editör değerlendirmesinden geçmemiştir. [Deney kaydı](corpus-lab/LEXICAL-JUDGMENT.md).
 
 ```bash
 node skills/turkish-writer/scripts/tr-scan.mjs icerik.json --json --editor

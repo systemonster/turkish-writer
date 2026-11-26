@@ -40,3 +40,8 @@ AnlamAra, kelimeye ait kümeleri gösterir. Editör seçili anlamın kimliğini 
 ## Site ve dosya denetimi
 
 tr-scan'in eski puanı ve varsayılan JSON sözleşmesi korunur. --editor kipi, TDK bulgu yoğunluğunu, söz dizimi bulgularını, eski tarayıcıdan seçili inceleme ipuçlarını ve bağlam/tekrar notlarını ekler. JSON içindeki her metin alanı ayrı değerlendirilir; başlık ve butonlarda yeni kelime önerisi üretilmez. Sayfa metnini Markdown veya görünür içerik JSON olarak ver; ham HTML/CSS/JS ya da teknik alanları yazı gibi değerlendirme. Alıntı ve kaynak açıklamalarını değiştirme. TDK bulguları önce doğrulanır. Okuma ve kaynak sadakati olmadan bulguların sıfırlanması başarı değildir. Bu katman henüz bağımsız insan editör deneyinde doğrulanmamıştır.
+
+
+## İlk gerçek veri kontrolü (26 Kasım 2026)
+
+Sabit XML dosyasından 78.327 anlam kümesi ve 82.155 farklı lemma indekslendi (upstream README'deki tarihsel sayımla karıştırma). `yüz` 14, `kötü` 10, `fena` 6, `durum` 4, `vaziyet` 3, `düşünmek` 8 anlam kümesinde bulundu. Sayılar sözcüklerin bağlam içinde birbirinin yerine geçebileceğini göstermez. Kaynak hash'i, testler ve henüz ölçülmeyen kabul koşulları [deney kaydında](https://github.com/systemonster/turkish-writer/blob/ozellik/esanlam-onerisi/corpus-lab/LEXICAL-JUDGMENT.md) yer alır.
