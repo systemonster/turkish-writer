@@ -70,6 +70,10 @@ def checked_input(path):
     return hashlib.sha256(raw).hexdigest()
 
 def write_index(src, out):
+    # Never place licensed derived data inside the distributable skill tree.
+    skill_root = Path(__file__).resolve().parents[1]
+    if out.resolve().is_relative_to(skill_root):
+        raise ValueError('Store the derived CC BY-SA data outside the skill distribution')
     if out.exists():
         raise FileExistsError("Output exists; choose a new path")
     digest = checked_input(src)

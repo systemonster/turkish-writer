@@ -739,11 +739,11 @@ function rapor(ad, s) {
       `-DIr %${Math.round(o.dirOran * 100)} · hece ${o.heceOrt.toFixed(2)} · cümle ${o.cumleOrt.toFixed(1)}±${o.cumleSapma.toFixed(1)} (CV ${o.cumleCV.toFixed(2)})`,
   )
   if (iz.length) {
-    satirlar.push('  yapay zekâ izleri:')
+    satirlar.push(s.editor ? '  tarihsel tarayıcı işaretleri (bağlamda incele):' : '  yapay zekâ izleri:')
     for (const b of iz) satirlar.push(`    ${b.satir ? String(b.satir).padStart(4) + ':' : '  --:'} [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 80) : ''}`)
   }
   if (uslup.length) {
-    satirlar.push('  üslup (skoru etkilemez, site metninde yine de düzelt):')
+    satirlar.push(s.editor ? '  üslup (yalnız gerçek kusuru düzelt):' : '  üslup (skoru etkilemez, site metninde yine de düzelt):')
     for (const b of uslup) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 80) : ''}`)
   }
   if (yin.length) {
@@ -766,7 +766,7 @@ function rapor(ad, s) {
     satirlar.push('  Editör denetimi (iz skorundan bağımsız): TDK ' + s.editor.tdk.bulgu_sayisi + ' aday bulgu, kapsam: ' + s.editor.tdk.kapsam)
     for (const b of s.editor.sozcuk) satirlar.push('    [' + b.tur + '] ' + b.parca + ' → ' + b.not)
   }
-  if (!iz.length && !tdk.length && !uslup.length && !soz.length && !yin.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
+  if (!iz.length && !tdk.length && !uslup.length && !soz.length && !yin.length && !s.editor?.sozcuk.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
   return satirlar.join('\n')
 }
 
@@ -782,6 +782,9 @@ function main() {
   const govdeAlan = deger('--govde-alan') && new RegExp(deger('--govde-alan'))
   const dosyalar = argv.filter((a, i) => !a.startsWith('--') && !['--etiket-alan', '--govde-alan', '--kenet'].includes(argv[i - 1]))
   let kenet = null
+  if (argv.includes('--kenet') && (!editor || !deger('--kenet') || deger('--kenet').startsWith('--'))) {
+    console.error('--kenet DOSYA için --editor ve geçerli dosya yolu gerekli'); process.exit(2)
+  }
   if (editor) {
     try { const k = kenetYukle(deger('--kenet')); if (deger('--kenet') && !k.data) throw new Error('Belirtilen KeNet dizini bulunamadı'); kenet = k.data }
     catch (e) { console.error(e.message); process.exit(2) }
@@ -881,7 +884,7 @@ function jsonRapor(s) {
         : `    [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 60) : ''}`)
     }
   }
-  if (!s.bulgular.length && !s.butunBulgular.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok.')
+  if (!s.bulgular.length && !s.butunBulgular.length && !s.alanlar.some(a=>a.editor?.sozcuk.length)) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok.')
   return satirlar.join('\n')
 }
 

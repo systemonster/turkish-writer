@@ -37,19 +37,19 @@ export function anlamAra(data, word, chosen = null) {
   // A selected synset is still only lexical evidence, never context approval.
   const candidates = [...new Set(selected.members.map(m=>m.lemma).filter(m => tr(m) !== key))].slice(0,3)
   return { word, status: 'editor-review-required', selected: chosen, senses, candidates,
+    siklik: 'bilinmiyor', sicil: 'bilinmiyor', esdizim: 'dogrulanmadi',
     note: 'Önce cümleyi olduğu gibi korumayı veya yeniden kurmayı değerlendir. Adaylar aynı anlam kümesindedir; çağrışım, sicil, çekim ve eş dizim doğrulanmadan kullanma.' }
 }
 
 // Original project-authored contrast cases, not dictionary transcriptions.
 // They deliberately favor the plain wording unless context supplies a real reason.
 const CASES = [
-  {id:'lex-01', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))sebebiyet ver[\p{L}]*/giu, note:'Hukukî bir terim ya da bilinçli resmiyet değilse eylemi doğal kur; nedensellik derecesini değiştirme. "Neden olmak" da yerinde olabilir.'},
-  {id:'lex-02', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))tefekkür et[\p{L}]*/giu, note:'Düşünmenin niteliği, anlatıcının sesi ve dönemini kontrol et. Sırf edebî görünmek için ağırlaştırma; "düşünmek" çoğu bağlamda yeterli olabilir.'},
-  {id:'lex-03', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))idrak ed[\p{L}]*/giu, note:'Anlamak, kavramak ve idrak etmek aynı kesinlik ve ses düzeyinde olmayabilir. Kaynakta olanı koru.'},
+  // Clustered signs of inflated diction rather than banning individual words.
+  {id:'lex-01', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))vaziyet(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))[^.!?\n]{0,130}(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))fena(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))[^.!?\n]{0,100}(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))sebebiyet ver[\p{L}]*/giu, note:'Üç sözcük birden farklı bir sicile çekilmiş olabilir. Duygunun niteliği ve şiddeti kaynakta belirsizse üzülme, kaygı veya öfke uydurma; doğal ifadeyi koru.'},
+  {id:'lex-02', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))uzun müddet tefekkür et[\p{L}]*/giu, note:'Düşünmenin niteliği, anlatıcının sesi ve dönemini kontrol et. Bilinçli edebî ses değilse düz ifadeyi değerlendir.'},
+  {id:'lex-03', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))beyanlar[\p{L}]*[^.!?\n]{0,100}(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))idrak ed[\p{L}]*/giu, note:'Resmiyet, çağrışım ve kesinlik değişmiş olabilir. Hukukî ifade veya anlatıcı tercihi ise koru.'},
   {id:'lex-04', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))ehemmiyet arz ed[\p{L}]*/giu, note:'Resmî bir kalıp gerekliyse koru. Gereksiz soyutluk varsa düşünceyi yeniden kur; önem derecesini artırma.'},
   {id:'lex-05', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))(?:hayata geçirilmesi|gerçekleştirilmesi) işlemi(?:nin)?(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))/giu, note:'Birden çok işlem türü ayrılmıyorsa yüklemi görünür kıl. İşin başlaması, tamamlanması ve eyleyenini aynen koru.'},
-  {id:'lex-06', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))vaziyet(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))/giu, note:'Anlatıcının doğal sözcüğü veya tarihsel/edebî bağlam ise koru. "Durum" yerine sırf çeşitlilik için seçilmemeli.'},
-  {id:'lex-07', match:/(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))fena(?:(?<!\p{L})(?=\p{L})|(?<=\p{L})(?!\p{L}))/giu, note:'Olumsuzluk, şiddet, konuşma dili ve duygusal ton bağlama bağlıdır; "kötü" ile otomatik değiştirilemez.'},
 ]
 const reviewable = new Set(['yineleme','kok-tekrar','esdizim','esdizim-derlem','ceviri-kokusu','burokratik','hafif-fiil','bos-vurgu','gpt-sozlugu','hype','giris-klisesi','kapanis-klisesi','olumsuz-kosutluk','retorik-soru','meta'])
 const mask = s => s.replace(/[^\n]/g,' ')
@@ -60,7 +60,7 @@ function prose(src) {
   return String(src)
     .replace(/^---\r?\n[\s\S]*?\r?\n---(?:\r?\n|$)/,mask)
     .replace(/(^|\n)[ \t]*(?:\x60{3,}|~{3,})[^\n]*\n[\s\S]*?(?:\n[ \t]*(?:\x60{3,}|~{3,})[^\n]*(?=\n|$)|$)/g,mask)
-    .replace(/<[^>\n]+>|https?:\/\/[^\s)]+|\x60[^\x60\n]*\x60|“[^”]*”|"[^"\n]*"/g,mask)
+    .replace(/<[^>\n]+>|https?:\/\/[^\s)]+|\x60[^\x60\n]*\x60|“[^”]*”|‘[^’]*’|«[^»]*»|"[^"\n]*"/g,mask)
     .replace(/^[ \t]*(?:#{1,6}\s|>\s?|[-*+]\s|\d+[.)]\s|\|).*(?:\n|$)/gm,mask)
 }
 const line = (s,i) => s.slice(0,i).split('\n').length
@@ -88,6 +88,7 @@ export function sozcukIncele(src, scan = {}, options = {}) {
     }
     for (const [word,positions] of hits) {
       if (positions.length < 3) continue
+      // Exact technical repetitions remain a review signal, never an edit.
       const lex=anlamAra(options.kenet,word)
       out.push({tur:'sozcuk-tekrar',satir:line(s,positions[0]),parca:word,konum:positions[0],
         tekrar:positions.length,karar:'tekrar-gerekli-mi',not:'Terim, kişi, motif veya bilinçli vurgu ise koru. Gereksizse önce cümleyi yeniden kur.',
