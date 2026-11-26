@@ -33,7 +33,7 @@ python3 scripts/kenet-derle.py --indir
 node scripts/sozcuk-muhakemesi.mjs --kelime yüz
 ```
 
-KeNet (Turkish WordNet), StarlangSoftware ve katkıcılarının ayrı CC BY-SA 4.0 lisanslı veri kaynağıdır. [Sabit kaynak](https://github.com/StarlangSoftware/TurkishWordNet-Py/tree/09ebb811b08eedaedc4abb9cfde2d08eadfe71e4); veri dosyası WordNet/data/turkish_wordnet.xml, Git blob 2cdf2a59e524764cfe2c11a03fa9623495df21bb. Bakay ve arkadaşları, Turkish WordNet KeNet, Proceedings of GWC 2021 (kaynak deponun atıf künyesi). GPL-3.0 upstream kodu alınmadı. Yerel standart kütüphane derleyicisi sabit XML boyutunu ve Git blob hash'ini doğrular; anlam kimliği, lemma, anlam numarası, POS ve tanım alanlarını yerelde indeksler. Örnek cümle ve anlam dışı ilişkiler alınmaz. Veri kaynak paketiyle dağıtılmaz; varsayılan konumu ~/.cache/turkish-writer altındadır. Ağ erişimi yalnız açık --indir çağrısında yapılır. TDK'nın bütün sözlük verisini toplama/dağıtma yok; [TDK veri tabanı paylaşım açıklaması](https://tdk.gov.tr/icerik/sikca-sorulan-sorular/turkce-sozlukun-veri-tabanini-talep-edildiginde-paylasiyor-musunuz/).
+KeNet (Turkish WordNet), StarlangSoftware ve katkıcılarının ayrı CC BY-SA 4.0 lisanslı veri kaynağıdır. [Sabit kaynak](https://github.com/StarlangSoftware/TurkishWordNet-Py/tree/09ebb811b08eedaedc4abb9cfde2d08eadfe71e4); veri dosyası WordNet/data/turkish_wordnet.xml, Git blob 2cdf2a59e524764cfe2c11a03fa9623495df21bb. Bakay ve arkadaşları, Turkish WordNet KeNet, Proceedings of GWC 2021 (kaynak deponun atıf künyesi). GPL-3.0 upstream kodu alınmadı. Yerel standart kütüphane derleyicisi sabit XML boyutunu ve Git blob hash'ini doğrular; anlam kimliği, lemma, anlam numarası, POS ve tanım alanlarını yerelde indeksler. Örnek cümle ve anlam dışı ilişkiler alınmaz. Veri kaynak paketiyle dağıtılmaz; varsayılan konumu ~/.cache/turkish-writer altındadır. Ağ erişimi yalnız açık --indir çağrısında yapılır. TDK verisini otomatik toplama veya dağıtma yok; [TDK veri tabanı paylaşım açıklaması](https://tdk.gov.tr/icerik/sikca-sorulan-sorular/turkce-sozlukun-veri-tabanini-talep-edildiginde-paylasiyor-musunuz/).
 
 AnlamAra, kelimeye ait kümeleri gösterir. Editör seçili anlamın kimliğini belirlediğinde --anlam ID ile en fazla üç aynı küme adayı alabilir. Sıklık, eş dizim veya sicil bilinmiyorsa bilinmiyor olarak kalır; adaylar öneri onayı değildir. Mevcut esdizim.mjs sınırlı isim-fiil ilişkilerini inceler, bütün anlam ve dil bilgisi sorunlarını çözmez. Sözlük yokken yerleşik kılavuz, proje örnekleri ve tarayıcı editör modu çalışır.
 
@@ -45,3 +45,18 @@ tr-scan'in eski puanı ve varsayılan JSON sözleşmesi korunur. --editor kipi, 
 ## İlk gerçek veri kontrolü (26 Kasım 2026)
 
 Sabit XML dosyasından 78.327 anlam kümesi ve 82.155 farklı lemma indekslendi (upstream README'deki tarihsel sayımla karıştırma). `yüz` 14, `kötü` 10, `fena` 6, `durum` 4, `vaziyet` 3, `düşünmek` 8 anlam kümesinde bulundu. Sayılar sözcüklerin bağlam içinde birbirinin yerine geçebileceğini göstermez. Kaynak hash'i, testler ve henüz ölçülmeyen kabul koşulları [deney kaydında](https://github.com/systemonster/turkish-writer/blob/ozellik/esanlam-onerisi/corpus-lab/LEXICAL-JUDGMENT.md) yer alır.
+
+
+## İsteğe bağlı yerel TDK sözlük kanıtı
+
+Kullanım hakkına sahip olduğunuz ve kendiniz sağladığınız yerel TDK sözlük kopyasını ağ erişimi olmadan kullanabilirsiniz. Okuyucu Python 3.10+ standart kütüphanesiyle, salt okunur SQLite ve parametreli sorgularla çalışır. Uygulamayı çalıştırmaz; desteklenen, açık paket öğelerini yalnız geçici dizinde okur; şifreli veya beklenmeyen paketi reddeder. Dosyayı depo/skill klasörü dışında tutun. Sözlük kopyası sağlanmaz, indirilmez, pakete gömülmez. Kaynağın orijinalliği ve güncelliği doğrulanmış kabul edilmez.
+
+```powershell
+$env:TW_TDK_KAYNAK = 'C:\Sozluk\Turkce-Sozluk.apks'
+node scripts/sozcuk-muhakemesi.mjs --kelime kötü
+node scripts/sozcuk-muhakemesi.mjs --kelime yüz --tdk-ornek
+```
+
+`--tdk-kaynak` ile yerel `.db`, `.sqlite`, `.sqlite3`, `.apk`, `.apks` dosyasını da açıkça seçebilirsiniz. Python okuyucu tek başına `--bilgi` ile tablo sayıları/bütünlük; `--kelime` ile en çok sekiz açık madde başı; `--ornek` ile anlam başına en çok iki örnek döndürür. Tanım, anlam sırası ve kimliği, köken, söyleyiş, özellik ilişkileri ve mevcut yazar atfı korunur. Eksik kayıt doldurulmaz. `madde_duz` üzerinden şapka veya Türkçe harfleri yok sayan eşleştirme yapılmaz. Kaynakta bir madde bulunmaması yazım hatası değildir.
+
+KeNet'te anlam seçilmeden aday verilmez; seçildikten sonra TDK'ya yalnız ilgili madde ve en çok üç ham aday sorulur. İki sözlüğün numaraları eşit değildir. TDK tanımı ve örneği, aynı bağlamda çekim, duygu, şiddet ve üslup uygunluğunu kendiliğinden kanıtlamaz. Ajan kararı verir; kaynak veriyi veya örnekleri dışarı yayımlamaz. Sözlük yoksa normal skill/tr-scan çalışma akışı değişmez.

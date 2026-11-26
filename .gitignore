@@ -76,3 +76,10 @@ corpus-lab/work/
 # Optional local lexical resource; never ship derived KeNet data in the MIT package
 **/kenet-*.json
 **/kenet.xml
+
+# User-owned dictionary snapshots: not project source or package assets
+*.apk
+*.apks
+*.sqlite
+*.sqlite3
+*.db

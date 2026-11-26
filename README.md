@@ -117,6 +117,17 @@ python3 skills/turkish-writer/scripts/kenet-derle.py --indir
 node skills/turkish-writer/scripts/sozcuk-muhakemesi.mjs --kelime yüz
 ```
 
+### Yerel TDK sözlüğü (isteğe bağlı)
+
+Kullanım hakkına sahip olduğunuz, sizin sağladığınız SQLite veya desteklenen mobil sözlük kopyasından TDK tanım ve anlam kayıtları sorgulanabilir. KeNet adaylarıyla birlikte, ayrı kaynak kimlikleriyle sunulur; otomatik eş anlamlı değişimi yoktur. Dosya repo dışında kalır. Python yalnız bu araç için gereklidir; API veya internet gerekmez.
+
+```powershell
+$env:TW_TDK_KAYNAK = 'C:\Sozluk\Turkce-Sozluk.apks'
+node skills/turkish-writer/scripts/sozcuk-muhakemesi.mjs --kelime kötü
+```
+
+[Ayrıntılar ve sınırlar](skills/turkish-writer/references/sozcuk-muhakemesi.md#isteğe-bağlı-yerel-tdk-sözlük-kanıtı).
+
 ## Blog editörlüğü ve isteğe bağlı yerel araçlar
 
 [Filtre kararları](skills/turkish-writer/references/filtre-kararlari.md) ve [model bağımsız filtre değerlendirme planı](docs/FILTRE-DEGERLENDIRME.md), iyi cümleyi koruma ve farklı ajanlarda çalışabilirlik ölçütlerini tanımlar.
@@ -251,3 +262,6 @@ Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github
 
 
 **Lexical judgment (development):** The optional `--editor` scanner mode adds separate spelling and contextual review signals without changing the legacy score. A pinned, locally built CC BY-SA KeNet index supports explicit sense lookup. Synset membership is not permission for automatic substitution. See [lexical judgment](skills/turkish-writer/references/sozcuk-muhakemesi.md).
+
+
+**Optional local TDK evidence:** Users may point the lexical lookup at their own lawfully usable local dictionary snapshot. The reader is offline and read-only; the dictionary is not included or downloaded. TDK sense identifiers are not automatically aligned to KeNet synsets. No Python requirement for the default skill.
