@@ -75,3 +75,5 @@ tr-scan ve Unicode çıktısı ipucudur, yazarlık kanıtı veya otomatik deği�
 ## Çıktı
 
 Yaz ve filtrele kipinde varsayılan olarak yalnız son metin. Denetle kipinde alıntı, somut sorun, etkisi, öneri. Anlamı korumak için çözülemeyen çelişki varsa bunu ayrıca belirt. Düzenlenmemiş iyi metin de başarılı çıktıdır.
+
+**Teslimden önce hedef metni denetle.** Kılavuzlar, örnekler ve çalışma notları düzenleme malzemesi değil; kullanıcı bunları ayrıca istemedikçe çıktıda tekrarlama. Filtrele kipinde önce başlığın, belge biçiminin ve son paragrafın doğru hedef metne ait olduğundan emin ol. Biçimi koruma isteniyorsa düz başlığa Markdown işareti ekleme. Ardından teşhis ettiğin gerçek anlatım kusurunu yeniden oku: çözülmemişse, anlamı koruyarak düzeltilebildiği hâlde metni aynen bırakma. Örneğin “Rafların sayımının yapılması işlemi haftada bir gerçekleştirilmektedir” ifadesini bağlam elveriyorsa “Raflar haftada bir sayılır” biçiminde kur; eylem, sıklık ve bilinmeyen eyleyen korunur. İyi komşu cümleleri değiştirmeden bırak. Güvenli çözüm yoksa kaynak ifadeyi koru; sırf bir değişiklik yapmış olmak için yeni sorun üretme.
