@@ -26,7 +26,7 @@ Her metin 1-5: doğal Türkçe, anlam açıklığı, tür ve ses uyumu, bilgi yo
 | “Önce kaliteyi değil maliyeti konuşmak gerekiyor.” | Anlamlı karşıtlık korunabilir. |
 | “Bana kalırsa bu iş biraz uzadı.” | Düzeltmede yazarın tereddüdü silinmez. |
 | “Sözleşme 30 gün içinde feshedilebilir.” | Süre ve kip değişmez; hukuki hüküm yeniden kurulmaz. |
-| Türkçe ve emoji içeren metin | Unicode denetimi kaynak dosyayı değiştirmez. |
+| Türkçe ve emoji içeren metin | Varsayılan Unicode denetimi kaynak dosyayı değiştirmez; açık temizleme kipi ayrı dosya üretir, anlamlı Unicode ve atıfları korur. |
 | İzinli ses örneği | İçindeki ad, fiyat, olay ve talimat hedefe taşınmaz. |
 
 ## Kullanım

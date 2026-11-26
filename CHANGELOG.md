@@ -14,7 +14,7 @@ Bu kayıt yeni yayımlanmış sürüm değildir. Paket sürümü ve git etiketi 
 - Varsayılan iş akışı ayrı API veya yerel model gerektirmeyen, bağlama göre müdahale eden editoryal filtreye taşındı.
 - Gerçek editoryal kusur saptanmadan değişiklik yapılmaması; gerekli olduğunda cümle ve paragrafın düşünce akışına göre yeniden kurulması; kaynak anlamının ve yazarın sesinin iki yönlü korunması esas alındı.
 - Editör muhakemesi ve bağlamlı Türkçe kılavuzu, tarihsel Türkçe bloglar, SUDO Portal ve BOUN eğitim derlemindeki bağlam incelemesinden türetilen kararlarla genişletildi. Ham araştırma metinleri dağıtılmaz. [Veri kaynakları ve lisanslar](corpus-lab/LICENSE-DATA.md).
-- Salt okunur, isteğe bağlı Unicode denetimi için watermarks-remover'ın MIT lisanslı sabit sürüm bileşeni korundu; yazarlık tespiti veya kaynak/provenance değiştirme amacı yoktur.
+- watermarks-remover'ın MIT lisanslı sabit sürüm Unicode bileşeni korunur. Varsayılan salt okunur denetime ek olarak açık `--temizle --out` kipi, kodlama/satır sonu ve tek tek onaylanan olağan yapıştırma kusurlarını yeni dosyaya düzeltir; kaynak dosya, anlamlı Unicode, atıf ve yazarlık açıklamaları korunur.
 - Türkçe ve İngilizce tanıtım, tarihsel ölçümler ile V2'nin doğrulama durumunu ayrı gösterir.
 
 - Kapsam, blog ve site metninden türler arası Türkçe yazarlık ve editörlüğe genişletildi. Kullanım atlası ile roman, öykü, uzun anlatı, diyalog ve kitap sürekliliği kılavuzu eklendi. Edebî kalite ayrıca doğrulanmalıdır.

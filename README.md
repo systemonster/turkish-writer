@@ -6,6 +6,8 @@ Bu beceriyi İzmir'de bir yazılım stüdyosu olan [lovefengis](https://lovefeng
 
 Roman, öykü, kitap, deneme, şiir, diyalog, akademik ve kurumsal metin, blog, rehber ve diğer Türkçe metin türleri için bir yazarlık ve editörlük Agent Skill'i. Metni okurun ihtiyacına, türüne ve yazarın sesine göre düzenler; doğal Türkiye Türkçesi, anlam sadakati, düşünce akışı ve yazım üzerinde çalışır.
 
+**V2 önizleme / geliştirme adayı:** Bu dal herkesin inceleyebileceği V2 adayını içerir. Kararlı 1.1.0 sürümü `master` dalında kalır; final V2 henüz doğrulanmadı.
+
 V2 geliştirme dalında editör, çalıştığı ajanın kendisidir. Ayrı bir API, model, sunucu veya çalışma zamanı zorunlu değildir. Amaç bir sınıflandırıcıdan geçmek değil, gerçek okur için daha iyi Türkçe yazmaktır. Editoryal üstünlük henüz bağımsız insan değerlendirmesiyle doğrulanmış değildir.
 
 ## Ne yapar
@@ -21,7 +23,7 @@ Ayrıntı: [`skills/turkish-writer/SKILL.md`](skills/turkish-writer/SKILL.md).
 
 ## Kurulum
 
-Yayımlanmış dalı Claude Code'da kişisel beceri olarak kurmak için:
+Kararlı V1.1.0 dalını Claude Code'da kişisel beceri olarak kurmak için (V2 önizlemesinden ayrı):
 
 ```bash
 git clone https://github.com/systemonster/turkish-writer.git
@@ -53,10 +55,11 @@ node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur site --out ta
 node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur eposta --codex --out taslak.md
 ```
 
-İsteğe bağlı [watermarks-remover Unicode denetimi](skills/turkish-writer/references/unicode-denetimi.md) yerel ve salt okunur çalışır; yazarlık veya tespit sonucu hakkında hüküm vermez.
+İsteğe bağlı [yerleşik Unicode denetimi ve kontrollü biçim düzeltmesi](skills/turkish-writer/references/unicode-denetimi.md), Guillaume Meyer ve katkıcılarının MIT lisanslı watermarks-remover bileşenini kullanır. Varsayılan denetim salt okunurdur. `--temizle --out` seçeneği kodlama ve satır sonu kusurlarını yeni dosyada düzeltir; editörün tek tek onayladığı olağan yapıştırma kusurları da düzeltilebilir. Kaynak, telif, atıf ve anlamlı Unicode korunur; bu bir yapay zekâ filigranı veya telif hakkı kaldırma özelliği değildir.
 
 ```bash
 python3 skills/turkish-writer/scripts/unicode-denetle.py metin.txt
+python3 skills/turkish-writer/scripts/unicode-denetle.py metin.txt --temizle --out duzeltilmis.txt
 ```
 
 İsteğe bağlı, resmî TDK dizin denetimi için bir kez:
@@ -210,12 +213,12 @@ Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
 Turkish Writer is an Agent Skill for Turkish authorship and editing across genres, including novels, short stories, books, essays, poetry, dialogue, nonfiction, academic and business writing, blog posts and guides. The development candidate includes a long-form writing guide and a contextual usage atlas; literary and book-length quality has not yet been independently validated. The development branch emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
 
-**Current status:** V2 is a development candidate, not a released or independently validated upgrade. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and read-only Unicode inspection provide additional evidence, not editorial verdicts. Historical V1.1 measurements do not validate V2. The [frozen candidate](https://github.com/systemonster/turkish-writer/commit/c99c4b4763204f0aac68194bf1dfea8959a3771a) awaits independent source selection and human editorial review. The [V31 development comparison](corpus-lab/results/clean-prose-v31-terminal.json) yielded 8/8 complete Qwen outputs and 4/8 complete Mistral outputs; protocol completion is not an editorial quality score, and repeatable improvement was not demonstrated.
+**Current status:** V2 is a development candidate, not a released or independently validated upgrade. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and local Unicode inspection provide additional evidence, not editorial verdicts. The explicit clean-copy mode repairs encoding and line-ending defects and individually confirmed ordinary paste/layout defects; original files, meaningful Unicode, attribution and provenance are preserved. No statistical watermark or copyright removal is provided. Historical V1.1 measurements do not validate V2. The [frozen candidate](https://github.com/systemonster/turkish-writer/commit/c99c4b4763204f0aac68194bf1dfea8959a3771a) awaits independent source selection and human editorial review. The [V31 development comparison](corpus-lab/results/clean-prose-v31-terminal.json) yielded 8/8 complete Qwen outputs and 4/8 complete Mistral outputs; protocol completion is not an editorial quality score, and repeatable improvement was not demonstrated.
 
 The Turkish guide [Contextual Turkish](skills/turkish-writer/references/baglamli-turkce.md) translates observations from licensed historical prose and annotated Turkish syntax into contextual editorial decisions. See [research provenance](corpus-lab/LICENSE-DATA.md), [context evidence](corpus-lab/results/context-evidence-v1-summary.json), and the [independent evaluation protocol](corpus-lab/HOLDOUT.md). The completed [FineWeb aggregate](corpus-lab/results/fineweb-text-000-202-v3-summary.json) covered 63,260,614 rows across 203 shards, with 42,831,847 eligible texts processed for fixed descriptive cue counts; it is not proof of human authorship, document rights or editorial quality. No third-party raw research corpus or model weights are required by the skill.
 
 ### Acknowledgements / Teşekkür
 
-We thank Daron Yöndem, the contributing SUDO Portal writers, and the UD Turkish BOUN team at Boğaziçi University/TABILAB for their licensed works. We acknowledge the TurkishFineweb2-Cleaned dataset authors, Wikipedia/Wikisource contributors, İlkay Holt and Creative Commons Türkiye, and Mirasium for the documented research use. We also acknowledge Guillaume Meyer and the contributors to watermarks-remover for the vendored MIT-licensed read-only Unicode component. Other project, research and language-resource attributions, including materials reviewed but not incorporated, are listed in [sources and licenses](skills/turkish-writer/references/kaynaklar.md) and [data provenance](corpus-lab/LICENSE-DATA.md). Their contributions do not imply endorsement of Turkish Writer.
+We thank Daron Yöndem, the contributing SUDO Portal writers, and the UD Turkish BOUN team at Boğaziçi University/TABILAB for their licensed works. We acknowledge the TurkishFineweb2-Cleaned dataset authors, Wikipedia/Wikisource contributors, İlkay Holt and Creative Commons Türkiye, and Mirasium for the documented research use. We also acknowledge Guillaume Meyer and the contributors to watermarks-remover for the vendored MIT-licensed Unicode component used for inspection and individually confirmed layout repairs. Other project, research and language-resource attributions, including materials reviewed but not incorporated, are listed in [sources and licenses](skills/turkish-writer/references/kaynaklar.md) and [data provenance](corpus-lab/LICENSE-DATA.md). Their contributions do not imply endorsement of Turkish Writer.
 
 Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer), an İzmir studio.

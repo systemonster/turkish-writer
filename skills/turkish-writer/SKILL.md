@@ -57,7 +57,7 @@ Kullanıcının izinli ses örneği varsa anlatım alışkanlıklarını öğren
 
 ## Yerleşik Unicode son kontrolü
 
-Yayıma hazır metinlerde, çalıştığın ortamda Python varsa son metni [paket içindeki watermarks-remover Unicode denetimi](references/unicode-denetimi.md) ile incele. Araç yoksa metni normal biçimde teslim et; kurulum, ağ veya ayrı servis isteme. Denetim salt okunurdur. Bulguyu bağlamıyla değerlendir; anlamlı Unicode, emoji, atıf ve gerekli açıklamaları koru. Yazarlık veya tespit sonucu çıkarma. Bu bileşen dağıtımın bir parçasıdır, geliştirme temizliğinde kaldırılmaz.
+Yayıma hazır metinlerde, çalıştığın ortamda Python varsa son metni [paket içindeki watermarks-remover Unicode denetimi](references/unicode-denetimi.md) ile incele. Araç yoksa metni normal biçimde teslim et; kurulum, ağ veya ayrı servis isteme. Varsayılan denetim salt okunurdur. Kullanıcı biçim düzeltmesi istediğinde `--temizle --out` ile ayrı bir kopyaya gerçek düzeltme uygulanabilir; yalnız kodlama/satır sonu ve tek tek onaylanmış olağan yapıştırma kusurları. Bulguyu bağlamıyla değerlendir; anlamlı Unicode, emoji, atıf, kaynak bilgisi ve gerekli açıklamaları koru. Yazarlık veya tespit sonucu çıkarma. Bu bileşen dağıtımın bir parçasıdır, geliştirme temizliğinde kaldırılmaz.
 
 ## İsteğe bağlı teknik araçlar
 
@@ -70,7 +70,7 @@ node scripts/metin-kapisi.mjs metin.txt korunanlar.json
 python3 scripts/unicode-denetle.py metin.txt
 ```
 
-tr-scan ve Unicode çıktısı ipucudur, yazarlık kanıtı veya otomatik değişiklik emri değildir. Unicode denetimi salt okunurdur ve gerekli açıklamaları korur. Zemberek, VNLP ve yerel ikinci editör için [dil araçlarına](references/dil-araclari.md) bak; kullanıcı bu araçları kendisi seçer. Harici OpenAI/Codex taslak komutları mevcut otomasyonla geriye uyumluluk için tutulur, filtre bunlara ihtiyaç duymaz. Eski hakem döngüsü deneysel geçmiş kayıttır.
+tr-scan ve Unicode çıktısı ipucudur, yazarlık kanıtı veya otomatik değişiklik emri değildir. Unicode denetimi varsayılan olarak salt okunurdur; izinli biçim düzeltmesi ayrı kopyaya yazılır. Kaynak ve yazarlık açıklamalarını kaldırma. Zemberek, VNLP ve yerel ikinci editör için [dil araçlarına](references/dil-araclari.md) bak; kullanıcı bu araçları kendisi seçer. Harici OpenAI/Codex taslak komutları mevcut otomasyonla geriye uyumluluk için tutulur, filtre bunlara ihtiyaç duymaz. Eski hakem döngüsü deneysel geçmiş kayıttır.
 
 ## Çıktı
 
