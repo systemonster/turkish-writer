@@ -443,3 +443,8 @@ Kullanıcı yerleşik Unicode bileşeninin isteğe bağlı düzeltme de yapması
 | 6b0803a8b6a90bbe997fc4a2 | COMPLETED | 13,016 sn | 0,000833333 | 0,0000361556 |
 
 [26 Kasım 2026 güncel tarife](https://huggingface.co/docs/hub/en/jobs-pricing) CPU Basic 0,01 USD/saat. Üç sonlu 5 dakika işin toplam nominal azamisi 0,0025 USD, duvar-süre tahmini 0,0000822806 USD. Önceki kayıtlı kısmi toplamla 12,6005971056 USD; gerçek fatura değildir, ayrı V26/V27 kayıtları ve bilinmeyen harcamalar dahil değildir. Yeni GPU yok. Final yayın için önceki bağımsız değerlendirme kapısı halen geçilmemiştir.
+
+
+## 26 Kasım — master önizleme kararı
+
+Depo sahibi V2 adayının master'a alınmasını ve gerçek blog yazılarıyla kendisinin değerlendirmesini açıkça istedi. Önizleme paket numarası `2.0.0-rc.1`, sabit teknik ürün kodu 2ada5dd393ff361bbf0ed7e2b7d1208a24960cb1; bu değişiklik yalnız README, paket sürümü, changelog ve doğrulama belgeleridir. [PR #1](https://github.com/systemonster/turkish-writer/pull/1) normal merge akışı için hazırlanır. Önceki master 0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab korunur. Bu kayıt merge sonucu veya final yayın kanıtı değildir. Yeni GPU veya model deneyi yoktur; gerçek bağımsız kalite sonuçları henüz mevcut değildir.

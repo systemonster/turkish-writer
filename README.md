@@ -6,9 +6,9 @@ Bu beceriyi İzmir'de bir yazılım stüdyosu olan [lovefengis](https://lovefeng
 
 Roman, öykü, kitap, deneme, şiir, diyalog, akademik ve kurumsal metin, blog, rehber ve diğer Türkçe metin türleri için bir yazarlık ve editörlük Agent Skill'i. Metni okurun ihtiyacına, türüne ve yazarın sesine göre düzenler; doğal Türkiye Türkçesi, anlam sadakati, düşünce akışı ve yazım üzerinde çalışır.
 
-**V2 önizleme / geliştirme adayı:** Bu dal herkesin inceleyebileceği V2 adayını içerir. Kararlı 1.1.0 sürümü `master` dalında kalır; final V2 henüz doğrulanmadı.
+**V2 önizleme — `2.0.0-rc.1`:** Varsayılan dal üzerinden gerçek yazarlık ve editörlük işlerinde denenebilen teknik aday. Bağımsız insan editör değerlendirmesi henüz tamamlanmadı; bu bir final 2.0.0 sürümü veya GitHub Release değildir. [Önceki V1.1.0 kodu](https://github.com/systemonster/turkish-writer/tree/0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab) korunur.
 
-V2 geliştirme dalında editör, çalıştığı ajanın kendisidir. Ayrı bir API, model, sunucu veya çalışma zamanı zorunlu değildir. Amaç bir sınıflandırıcıdan geçmek değil, gerçek okur için daha iyi Türkçe yazmaktır. Editoryal üstünlük henüz bağımsız insan değerlendirmesiyle doğrulanmış değildir.
+V2'de editör, çalıştığı ajanın kendisidir. Ayrı bir API, model, sunucu veya çalışma zamanı zorunlu değildir. Amaç bir sınıflandırıcıdan geçmek değil, gerçek okur için daha iyi Türkçe yazmaktır. Editoryal üstünlük henüz bağımsız insan değerlendirmesiyle doğrulanmış değildir.
 
 ## Ne yapar
 
@@ -23,7 +23,7 @@ Ayrıntı: [`skills/turkish-writer/SKILL.md`](skills/turkish-writer/SKILL.md).
 
 ## Kurulum
 
-Kararlı V1.1.0 dalını Claude Code'da kişisel beceri olarak kurmak için (V2 önizlemesinden ayrı):
+V2 önizlemesini Claude Code'da kişisel beceri olarak kurmak için (yeni kurulum):
 
 ```bash
 git clone https://github.com/systemonster/turkish-writer.git
@@ -35,18 +35,22 @@ Ya da yalnız bir projede kullanmak için `.claude/skills/` altına kopyalayın.
 [Agent Skills](https://agentskills.io) biçimindedir; bu biçimi okuyan başka ajanlarda da
 çalışır.
 
-### V2 önizleme (geliştirme dalından; kararlı release değil)
+### Ayrı projede V2'yi deneme
 
 Aşağıdaki kurulum yalnız geliştirme adayını ayrı bir proje dizininde denemek içindir:
 
 ```bash
-git clone --branch native-turkish-editor-v2 --single-branch https://github.com/systemonster/turkish-writer.git turkish-writer-v2
+git clone https://github.com/systemonster/turkish-writer.git turkish-writer-v2
 cd turkish-writer-v2
 mkdir -p .claude/skills
 cp -r skills/turkish-writer .claude/skills/
 ```
 
-Mevcut bir kurulumu korumak istiyorsanız ayrı bir deneme ortamı kullanın.
+Mevcut bir kurulumu korumak istiyorsanız ayrı bir deneme ortamı kullanın. Proje yerelindeki `.claude/skills/turkish-writer` dizinini hâlihazırda kullanıyorsanız önce yedekleyin; eski ve yeni dosyaları karıştırmayın.
+
+### İlk yazı
+
+Ajanınıza `turkish-writer` becerisini kullanmasını söyleyin. Örneğin: “Küçük işletmelerin reklam bütçesini planlaması hakkında 600 kelimelik bir Türkçe blog yazısı hazırla. Hedef okur işletme sahibi. Kaynakla doğrulanmamış sayılar, uydurma deneyimler ve gereksiz dolgu kullanma. Teslimden önce editör okumasını yap.” Son metni gerçek editoryal ihtiyaçlarınıza göre inceleyin.
 
 V2'nin varsayılanı model bağımsız editoryal filtredir. Var olan metni veya yeni üretilen taslağı çalıştığı ajanla düzeltir; zorunlu API, yerel model veya çalışma zamanı yoktur. OpenAI API ve Codex taslak yolları isteğe bağlıdır. Tek yazım motoru [yazım-motoru.md](skills/turkish-writer/references/yazim-motoru.md) içinde bulunur. Sabit cümle/paragraf kotaları ve bağlamdan bağımsız sözcük yasakları yerine okur, amaç, tür, doğal söz dizimi ve olgu sadakati belirleyicidir. Eski ölçümler V1.1'e aittir; V2 için ilk geliştirme deneyleri çalıştırılmıştır, ancak bağımsız editör doğrulaması tamamlanmamıştır. [Doğrulama planı](docs/V2-DOGRULAMA.md).
 
@@ -223,9 +227,9 @@ Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
 ## English
 
-Turkish Writer is an Agent Skill for Turkish authorship and editing across genres, including novels, short stories, books, essays, poetry, dialogue, nonfiction, academic and business writing, blog posts and guides. The development candidate includes a long-form writing guide and a contextual usage atlas; literary and book-length quality has not yet been independently validated. The development branch emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
+Turkish Writer is an Agent Skill for Turkish authorship and editing across genres, including novels, short stories, books, essays, poetry, dialogue, nonfiction, academic and business writing, blog posts and guides. The V2 preview includes a long-form writing guide and a contextual usage atlas; literary and book-length quality has not yet been independently validated. V2 emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
 
-**Current status:** V2 is a development candidate, not a released or independently validated upgrade. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and local Unicode inspection provide additional evidence, not editorial verdicts. The explicit clean-copy mode repairs encoding and line-ending defects and individually confirmed ordinary paste/layout defects; original files, meaningful Unicode, attribution and provenance are preserved. No statistical watermark or copyright removal is provided. Historical V1.1 measurements do not validate V2. The [frozen candidate](https://github.com/systemonster/turkish-writer/commit/2ada5dd393ff361bbf0ed7e2b7d1208a24960cb1) awaits independent source selection and human editorial review. The [V31 development comparison](corpus-lab/results/clean-prose-v31-terminal.json) yielded 8/8 complete Qwen outputs and 4/8 complete Mistral outputs; protocol completion is not an editorial quality score, and repeatable improvement was not demonstrated.
+**Current status:** `2.0.0-rc.1` is a public source-code preview on the default branch for real-world trials, not a final 2.0.0 release or an independently validated upgrade. Clone the repository for the preview; the [previous V1.1.0 code](https://github.com/systemonster/turkish-writer/tree/0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab) remains available. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and local Unicode inspection provide additional evidence, not editorial verdicts. The explicit clean-copy mode repairs encoding and line-ending defects and individually confirmed ordinary paste/layout defects; original files, meaningful Unicode, attribution and provenance are preserved. No statistical watermark or copyright removal is provided. Historical V1.1 measurements do not validate V2. The [frozen candidate](https://github.com/systemonster/turkish-writer/commit/2ada5dd393ff361bbf0ed7e2b7d1208a24960cb1) awaits independent source selection and human editorial review. The [V31 development comparison](corpus-lab/results/clean-prose-v31-terminal.json) yielded 8/8 complete Qwen outputs and 4/8 complete Mistral outputs; protocol completion is not an editorial quality score, and repeatable improvement was not demonstrated.
 
 The Turkish guide [Contextual Turkish](skills/turkish-writer/references/baglamli-turkce.md) translates observations from licensed historical prose and annotated Turkish syntax into contextual editorial decisions. See [research provenance](corpus-lab/LICENSE-DATA.md), [context evidence](corpus-lab/results/context-evidence-v1-summary.json), and the [independent evaluation protocol](corpus-lab/HOLDOUT.md). The completed [FineWeb aggregate](corpus-lab/results/fineweb-text-000-202-v3-summary.json) covered 63,260,614 rows across 203 shards, with 42,831,847 eligible texts processed for fixed descriptive cue counts; it is not proof of human authorship, document rights or editorial quality. No third-party raw research corpus or model weights are required by the skill.
 

@@ -6,7 +6,7 @@ V1.1 yazım motoru ortalama cümle uzunluğu, paragraf biçimi ve bağlaç yoğu
 
 ## Deney
 
-Aynı brifle üç kol: A) modelin normal çıktısı, B) master'daki V1.1 (tam akış), C) V2 (tam akış). Aynı üretici modeli, aynı kaynak, biçim, süre ve çağrı bütçesi; API/Codex ayrı raporlanır. Çıpalı ve çıpasız alt kümeler ayrılır. Ayar seti ile son sınama seti kaynak/yazar/konu bazında ayrılır. Son sınama seti düzeltme istemine girmez. En az iki Türkiye Türkçesi editörü birbirinden bağımsız değerlendirsin, sıra rastgele olsun, kol adı gösterilmesin.
+Aynı brifle üç kol: A) modelin normal çıktısı, B) [sabit V1.1](https://github.com/systemonster/turkish-writer/tree/0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab) (tam akış), C) V2 (tam akış). Aynı üretici modeli, aynı kaynak, biçim, süre ve çağrı bütçesi; API/Codex ayrı raporlanır. Çıpalı ve çıpasız alt kümeler ayrılır. Ayar seti ile son sınama seti kaynak/yazar/konu bazında ayrılır. Son sınama seti düzeltme istemine girmez. En az iki Türkiye Türkçesi editörü birbirinden bağımsız değerlendirsin, sıra rastgele olsun, kol adı gösterilmesin.
 
 Önerilen minimum: 10 tür x 12 görev = 120 bağımsız brif. Her türde kısa ve uzun/karma görev, yazma ve düzeltme, iyi insan metnini gereksiz değiştirmeme vakaları. Tür örnekleri için izinli gerçek metin; örnek yoksa açıkça sentetik brif. Editörler gerçek yayımlama uygunluğunu değerlendirir; AI yazarlığı tahminini değerlendirme hedefi yapmaz.
 
@@ -39,3 +39,8 @@ node skills/turkish-writer/scripts/metin-kapisi.mjs metin.txt korunanlar.json
 `korunanlar.json` örneği: `["11.900 TL", "https://example.com", "her ay iptal"]`. Yalnız birebir dizi kontrol eder; anlam doğrulaması değildir. Semantik kapı editör okumasıdır.
 
 Bu dal bir adaydır. Gerçek model çağrıları, kör editör deneyi ve tüm testler çalıştırılmadan sürüm etiketi atılmamalıdır.
+
+
+## 26 Kasım — kullanıcı denemesi
+
+Depo sahibi V2 önizlemesinin master'a alınmasını ve gerçek blog yazılarını kendisinin inceleyip düzeltmesini istedi. Bu, final 2.0.0 doğrulamasının yerine geçmez. Bağımsız değerlendirme sonuçları henüz yoktur. Önizleme için `2.0.0-rc.1` paket sürümü kullanılır; final etiket ve GitHub Release oluşturulmaz. Kullanıcının geri bildirimi geliştirme vakası olarak ele alınır.

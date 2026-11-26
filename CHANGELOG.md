@@ -3,11 +3,11 @@
 Biçim [Keep a Changelog](https://keepachangelog.com/tr-TR/1.1.0/), sürümleme
 [SemVer](https://semver.org/lang/tr/). Kural: tarayıcı skorunu ya da kural davranışını
 değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör**, yalnız düzeltme
-**yama** artışıdır. `package.json` sürümü ile git etiketi aynı olur.
+**yama** artışıdır. Etiketli sürümlerde `package.json` sürümü ile git etiketi aynı olur; dal üzerinden denenen önizleme etiketsiz olabilir.
 
-## [Unreleased] — V2 geliştirme adayı
+## [2.0.0-rc.1] — 2026-11-26 (kaynak kod önizlemesi)
 
-Bu kayıt yeni yayımlanmış sürüm değildir. Paket sürümü ve git etiketi yayın kapısı karşılanana kadar değiştirilmez.
+Depo sahibinin gerçek blog yazılarıyla bizzat deneme isteği üzerine bu aday varsayılan dala alınmak üzere hazırlanmıştır. Kararlı 2.0.0, git etiketi, npm yayını veya GitHub Release değildir. Bağımsız editoryal doğrulama tamamlanmadan final kalite iddiası yapılmaz.
 
 ### Değişti
 
