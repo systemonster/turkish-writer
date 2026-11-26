@@ -1,0 +1,248 @@
+{
+  "schema": "turkish-writer.v10-comparison.v1",
+  "as_of": "2026-11-25",
+  "scope": "Completed fixed-manifest development diagnostics, not release certification",
+  "frozen_code_commit": "eeea2d17431016c2829c6d1fa19643b31529cedf",
+  "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+  "input_sha256": {
+    "longform-v10.jsonl": "6faa16a13d01b81dbb077a5ee2bdd0429f17b4109666d8694888413a7e46641c",
+    "semantic-mutations-v10.jsonl": "d8190312d6e01ea98b6ada9477f5491494a5cb0915bdeb4cbb27e9a3b5dda211",
+    "brief-pairs-v10.jsonl": "f133f91f5b6af0d65f479545d0b7b28324fd1599fab90a660a8add4a40b143d0"
+  },
+  "models": [
+    {
+      "model": "openai/gpt-oss-120b",
+      "revision": "b5c939de8f754692c1647ca79fbf85e8c1e70f8a",
+      "raw_path": "corpus-lab/results/diagnostics-v10-gptoss120b.jsonl",
+      "raw_sha256": "6ca4d3ca4882dd202da08d018ef030ba66bb57ec7227907b715e01b7c3457aec",
+      "summary_path": "corpus-lab/results/diagnostics-v10-gptoss120b-summary.json",
+      "summary_sha256": "d2fe9a98372098592f353dbc686853609030ae7f106f9efed9f81e48f8b3d0c5",
+      "overall": {
+        "recorded": 168,
+        "runner_complete": 168,
+        "incomplete": 0,
+        "integrity_rejected": 0,
+        "truncated": 0,
+        "final_channel_parse_error": 0,
+        "judge_parser_invalid": 0,
+        "empty_final": 0
+      },
+      "counts_by_kind": {
+        "longform_edit": 36,
+        "ablation": 16,
+        "stability": 8,
+        "semantic_choice": 48,
+        "semantic_edit": 48,
+        "brief_generation": 12
+      },
+      "semantic_choice": {
+        "primary": {
+          "excluded_source_ids": [],
+          "attempts": 48,
+          "correct": 47,
+          "label_scope": "frozen_project_development_not_human_gold"
+        },
+        "pre_result_conservative": {
+          "excluded_source_ids": [
+            "semantic-v10-024"
+          ],
+          "attempts": 46,
+          "correct": 45,
+          "label_scope": "frozen_project_development_not_human_gold"
+        },
+        "pre_result_strict": {
+          "excluded_source_ids": [
+            "semantic-v10-021",
+            "semantic-v10-024"
+          ],
+          "attempts": 44,
+          "correct": 43,
+          "label_scope": "frozen_project_development_not_human_gold"
+        }
+      },
+      "semantic_order": {
+        "recorded_fixture_pairs": 24,
+        "both_orders_eligible": 24,
+        "both_orders_correct": 23,
+        "order_consistent": 23,
+        "order_inconsistent": 1
+      },
+      "longform_edit_descriptives": {
+        "baseline": {
+          "outputs": 12,
+          "mean_normalized_token_edit_distance": 0.31073806681836086,
+          "clean_exact_keep": 0,
+          "flawed_exact_keep": 0,
+          "clean_total": 6,
+          "flawed_total": 6
+        },
+        "core": {
+          "outputs": 12,
+          "mean_normalized_token_edit_distance": 0.11027095911397909,
+          "clean_exact_keep": 0,
+          "flawed_exact_keep": 0,
+          "clean_total": 6,
+          "flawed_total": 6
+        },
+        "full": {
+          "outputs": 12,
+          "mean_normalized_token_edit_distance": 0.1428830850420831,
+          "clean_exact_keep": 0,
+          "flawed_exact_keep": 0,
+          "clean_total": 6,
+          "flawed_total": 6
+        }
+      },
+      "stability_descriptives": {
+        "pass2": {
+          "trajectories": 4,
+          "changed_exact_bytes": 4,
+          "changed_nonwhitespace": 4,
+          "mean_distance_from_previous_pass": 0.0219841177655338
+        },
+        "pass3": {
+          "trajectories": 4,
+          "changed_exact_bytes": 4,
+          "changed_nonwhitespace": 4,
+          "mean_distance_from_previous_pass": 0.003109132682184697
+        }
+      },
+      "brief_length": {
+        "requested_whitespace_words": [
+          650,
+          900
+        ],
+        "observed_min": 432,
+        "observed_max": 807,
+        "below": 7,
+        "within": 5,
+        "above": 0,
+        "note": "Whitespace split includes standalone Markdown punctuation; boundary counts are not linguistic word-count gold."
+      }
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+      "raw_path": "corpus-lab/results/diagnostics-v10-qwen32b.jsonl",
+      "raw_sha256": "04b4efd8c1b252ff965f68b6f2bb0d7d4df062dc0883068018920537270572e9",
+      "summary_path": "corpus-lab/results/diagnostics-v10-qwen32b-summary.json",
+      "summary_sha256": "849470f48570b353fc5dd80f80b3f9fd3602ee05330ddcb6433c88e4e36599c5",
+      "overall": {
+        "recorded": 168,
+        "runner_complete": 168,
+        "incomplete": 0,
+        "integrity_rejected": 0,
+        "truncated": 0,
+        "final_channel_parse_error": 0,
+        "judge_parser_invalid": 0,
+        "empty_final": 0
+      },
+      "counts_by_kind": {
+        "longform_edit": 36,
+        "ablation": 16,
+        "stability": 8,
+        "semantic_choice": 48,
+        "semantic_edit": 48,
+        "brief_generation": 12
+      },
+      "semantic_choice": {
+        "primary": {
+          "excluded_source_ids": [],
+          "attempts": 48,
+          "correct": 48,
+          "label_scope": "frozen_project_development_not_human_gold"
+        },
+        "pre_result_conservative": {
+          "excluded_source_ids": [
+            "semantic-v10-024"
+          ],
+          "attempts": 46,
+          "correct": 46,
+          "label_scope": "frozen_project_development_not_human_gold"
+        },
+        "pre_result_strict": {
+          "excluded_source_ids": [
+            "semantic-v10-021",
+            "semantic-v10-024"
+          ],
+          "attempts": 44,
+          "correct": 44,
+          "label_scope": "frozen_project_development_not_human_gold"
+        }
+      },
+      "semantic_order": {
+        "recorded_fixture_pairs": 24,
+        "both_orders_eligible": 24,
+        "both_orders_correct": 24,
+        "order_consistent": 24,
+        "order_inconsistent": 0
+      },
+      "longform_edit_descriptives": {
+        "baseline": {
+          "outputs": 12,
+          "mean_normalized_token_edit_distance": 0.323166897374992,
+          "clean_exact_keep": 0,
+          "flawed_exact_keep": 0,
+          "clean_total": 6,
+          "flawed_total": 6
+        },
+        "core": {
+          "outputs": 12,
+          "mean_normalized_token_edit_distance": 0.08179903238684773,
+          "clean_exact_keep": 0,
+          "flawed_exact_keep": 1,
+          "clean_total": 6,
+          "flawed_total": 6
+        },
+        "full": {
+          "outputs": 12,
+          "mean_normalized_token_edit_distance": 0.15314752845512894,
+          "clean_exact_keep": 1,
+          "flawed_exact_keep": 0,
+          "clean_total": 6,
+          "flawed_total": 6
+        }
+      },
+      "stability_descriptives": {
+        "pass2": {
+          "trajectories": 4,
+          "changed_exact_bytes": 3,
+          "changed_nonwhitespace": 3,
+          "mean_distance_from_previous_pass": 0.016132166624394605
+        },
+        "pass3": {
+          "trajectories": 4,
+          "changed_exact_bytes": 1,
+          "changed_nonwhitespace": 1,
+          "mean_distance_from_previous_pass": 0.0030303030303030303
+        }
+      },
+      "brief_length": {
+        "requested_whitespace_words": [
+          650,
+          900
+        ],
+        "observed_min": 324,
+        "observed_max": 553,
+        "below": 12,
+        "within": 0,
+        "above": 0,
+        "note": "Whitespace split includes standalone Markdown punctuation; boundary counts are not linguistic word-count gold."
+      }
+    }
+  ],
+  "total_tasks": 336,
+  "human_validated": false,
+  "independent_holdout": false,
+  "automatic_promotion": false,
+  "limitations": [
+    "All source texts and brief fixtures are project-generated development material.",
+    "Clean and flawed variants share each underlying source; 12 longform inputs are six independent source articles, not 12 authors.",
+    "Single seed per condition; order effects and generation variability are not separated.",
+    "Edit distance, literal retention and convergence are descriptive and never measure quality by themselves.",
+    "Choice correctness is agreement with project labels; edit fidelity is reviewed separately.",
+    "Full loads six reference files as fixed context, not the complete dynamic tool-enabled skill runtime.",
+    "Both brief variants share a 650–900 word target; the isolated effect of length pressure is unknown.",
+    "AI reviews are unblinded and do not substitute for independent human editorial review."
+  ]
+}

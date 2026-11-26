@@ -1,0 +1,251 @@
+{
+  "scope": "Oracle feasibility on public project-authored development references, not model results or an independent quality score. Full-block replacement used; smaller valid edits may exist for blocked cases.",
+  "module_blob_sha": "a115061b90ae494f5023fb4521a40d8fd2474fe2",
+  "summary": {
+    "keep": 18,
+    "edit": 22,
+    "blocked": []
+  },
+  "rows": [
+    {
+      "id": "editorial-dev-001",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-002",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-003",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-004",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-005",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-006",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-007",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-008",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-009",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-010",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-011",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-012",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-013",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-014",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-015",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-016",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-017",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-018",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-019",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-020",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-021",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-022",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-023",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-024",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-025",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-026",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-027",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-028",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-029",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-030",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-031",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-032",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-033",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-034",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-035",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-036",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-037",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-038",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-039",
+      "decision": "edit",
+      "reachable": true,
+      "reason": null
+    },
+    {
+      "id": "editorial-dev-040",
+      "decision": "keep",
+      "reachable": true,
+      "reason": null
+    }
+  ]
+}

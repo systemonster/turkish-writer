@@ -1,0 +1,402 @@
+{
+  "schema": 1,
+  "source": {
+    "dataset": "UD Turkish BOUN",
+    "origin": "Turkish National Corpus",
+    "repo": "https://github.com/UniversalDependencies/UD_Turkish-BOUN",
+    "commit": "09521f40c90904df85524b8e0b43afba6e4c7823",
+    "blob": "2045db158c0f2f6cc136d8ddef1ef3057086b038",
+    "split": "train",
+    "license": "CC BY-SA 4.0",
+    "note": "Derived aggregate statistics; no source sentences included. Development only; dev/test not read."
+  },
+  "method": "integer CoNLL-U word rows excluding PUNCT/SYM; nsubj and obj of verbal heads; VerbForm=Conv; NOUN obj/obl + VERB lemma and case, min count 5, top 40",
+  "sentences": 7803,
+  "malformed": 0,
+  "groups": {
+    "all": {
+      "sentences": 7803,
+      "words": 83998,
+      "verbalRoots": 4879,
+      "verbalRootsWithNominalSubject": 2505,
+      "subjects": {
+        "before": 4497,
+        "after": 126
+      },
+      "objects": {
+        "before": 4806,
+        "after": 109
+      },
+      "converbs": 962,
+      "converbSentences": 837,
+      "nominalVerbPairs": 9661
+    },
+    "bio": {
+      "sentences": 1576,
+      "words": 16455,
+      "verbalRoots": 1070,
+      "verbalRootsWithNominalSubject": 531,
+      "subjects": {
+        "before": 898,
+        "after": 24
+      },
+      "objects": {
+        "before": 1013,
+        "after": 30
+      },
+      "converbs": 235,
+      "converbSentences": 204,
+      "nominalVerbPairs": 1925
+    },
+    "ess": {
+      "sentences": 1561,
+      "words": 18310,
+      "verbalRoots": 928,
+      "verbalRootsWithNominalSubject": 410,
+      "subjects": {
+        "before": 797,
+        "after": 40
+      },
+      "objects": {
+        "before": 1216,
+        "after": 27
+      },
+      "converbs": 218,
+      "converbSentences": 181,
+      "nominalVerbPairs": 1984
+    },
+    "ins": {
+      "sentences": 1580,
+      "words": 13962,
+      "verbalRoots": 1053,
+      "verbalRootsWithNominalSubject": 548,
+      "subjects": {
+        "before": 855,
+        "after": 40
+      },
+      "objects": {
+        "before": 784,
+        "after": 26
+      },
+      "converbs": 185,
+      "converbSentences": 168,
+      "nominalVerbPairs": 1742
+    },
+    "news": {
+      "sentences": 1518,
+      "words": 20831,
+      "verbalRoots": 976,
+      "verbalRootsWithNominalSubject": 656,
+      "subjects": {
+        "before": 1309,
+        "after": 4
+      },
+      "objects": {
+        "before": 971,
+        "after": 8
+      },
+      "converbs": 128,
+      "converbSentences": 119,
+      "nominalVerbPairs": 2347
+    },
+    "pop": {
+      "sentences": 1568,
+      "words": 14440,
+      "verbalRoots": 852,
+      "verbalRootsWithNominalSubject": 360,
+      "subjects": {
+        "before": 638,
+        "after": 18
+      },
+      "objects": {
+        "before": 822,
+        "after": 18
+      },
+      "converbs": 196,
+      "converbSentences": 165,
+      "nominalVerbPairs": 1663
+    }
+  },
+  "frequentPairs": [
+    {
+      "noun": "baş",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 15
+    },
+    {
+      "noun": "iş",
+      "verb": "yap",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 13
+    },
+    {
+      "noun": "şey",
+      "verb": "yap",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 12
+    },
+    {
+      "noun": "akıl",
+      "verb": "gel",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 11
+    },
+    {
+      "noun": "hâl",
+      "verb": "gel",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 11
+    },
+    {
+      "noun": "iç",
+      "verb": "bulun",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 11
+    },
+    {
+      "noun": "zaman",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 11
+    },
+    {
+      "noun": "hâl",
+      "verb": "getir",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 10
+    },
+    {
+      "noun": "kapı",
+      "verb": "aç",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 10
+    },
+    {
+      "noun": "ara",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 9
+    },
+    {
+      "noun": "dakika",
+      "verb": "pişir",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 9
+    },
+    {
+      "noun": "bilgi",
+      "verb": "ver",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 8
+    },
+    {
+      "noun": "sabah",
+      "verb": "uyan",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 8
+    },
+    {
+      "noun": "ara",
+      "verb": "bulun",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 7
+    },
+    {
+      "noun": "ayakkabı",
+      "verb": "giy",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 7
+    },
+    {
+      "noun": "ev",
+      "verb": "gel",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 7
+    },
+    {
+      "noun": "kitap",
+      "verb": "oku",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 7
+    },
+    {
+      "noun": "para",
+      "verb": "kazan",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 7
+    },
+    {
+      "noun": "sahip",
+      "verb": "ol",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 7
+    },
+    {
+      "noun": "ses",
+      "verb": "duy",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 7
+    },
+    {
+      "noun": "ev",
+      "verb": "git",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 6
+    },
+    {
+      "noun": "gün",
+      "verb": "gel",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 6
+    },
+    {
+      "noun": "iç",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 6
+    },
+    {
+      "noun": "konu",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 6
+    },
+    {
+      "noun": "puan",
+      "verb": "al",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 6
+    },
+    {
+      "noun": "resim",
+      "verb": "yap",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 6
+    },
+    {
+      "noun": "ön",
+      "verb": "çık",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 6
+    },
+    {
+      "noun": "şey",
+      "verb": "de",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 6
+    },
+    {
+      "noun": "şey",
+      "verb": "ol",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 6
+    },
+    {
+      "noun": "ad",
+      "verb": "koy",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 5
+    },
+    {
+      "noun": "ad",
+      "verb": "ver",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 5
+    },
+    {
+      "noun": "ara",
+      "verb": "geç",
+      "relation": "obl",
+      "case": "Abl",
+      "count": 5
+    },
+    {
+      "noun": "ara",
+      "verb": "yap",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 5
+    },
+    {
+      "noun": "açı",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Abl",
+      "count": 5
+    },
+    {
+      "noun": "baş",
+      "verb": "gel",
+      "relation": "obl",
+      "case": "Loc",
+      "count": 5
+    },
+    {
+      "noun": "bugün",
+      "verb": "ol",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 5
+    },
+    {
+      "noun": "gün",
+      "verb": "de",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 5
+    },
+    {
+      "noun": "gün",
+      "verb": "getir",
+      "relation": "obl",
+      "case": "Nom",
+      "count": 5
+    },
+    {
+      "noun": "ifade",
+      "verb": "kullan",
+      "relation": "obj",
+      "case": "Acc",
+      "count": 5
+    },
+    {
+      "noun": "karşı",
+      "verb": "çık",
+      "relation": "obl",
+      "case": "Dat",
+      "count": 5
+    }
+  ]
+}

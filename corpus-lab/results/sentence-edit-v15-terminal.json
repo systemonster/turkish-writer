@@ -1,0 +1,1181 @@
+{
+  "job_id": "6b06da44d91f621b9307a941",
+  "monitor_id": "6b06da47b6a90bbe997d3c0c",
+  "status": "COMPLETED",
+  "artifact_revision": "284411234bbb07014d37b87e0fbafdd9013412a2",
+  "models": [
+    {
+      "run": {
+        "model": "Qwen/Qwen3-32B",
+        "model_revision": "9216db5781bf21249d130ec9da846c4624c16137",
+        "git": "20d1122ac130e3e5bffc62617088919590bb4654",
+        "source_revision": "0b1b8308559a935e6f3be060fe42bc00ed556f02",
+        "scope": "four historical development replays and four V14 synthetic controls; not blind",
+        "prompt_sha256": "c4b0d1cc15990dad307b2c08426b03863ea41bb85d6eb4c9f9fc3f1183bc918b"
+      },
+      "rows": [
+        {
+          "id": "sudo-3dc45336d810812b",
+          "kind": "historical",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "targets": 0,
+          "records": [],
+          "unchanged": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "kind": "historical",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "037c4263583b59495b96357b9b33dbd2def4a2ef792940b673f5225d36ea39dc",
+          "targets": 9,
+          "records": [
+            {
+              "start": 227,
+              "end": 285,
+              "before_sha256": "62981189c84aaf77a3b8ace981bdfefc68acca337600e259c47c9cffb139dfa6",
+              "candidate_sha256": "8a9541b312945b264802590d6239b2523de32441f8f8c47849084c2006e0285c",
+              "status": "edited"
+            },
+            {
+              "start": 286,
+              "end": 504,
+              "before_sha256": "7cce41f77254f5fa19fe2da36229fcf073b36b32e033990947c5e6b445c6b937",
+              "candidate_sha256": "045fb51f03516b5dbb055a3e64d051f869967b7624b5c0081feb9067b673eaf3",
+              "status": "edited"
+            },
+            {
+              "start": 505,
+              "end": 672,
+              "before_sha256": "7b6c1485fa761056470d8f2b48610ad4a60f1e92306373aef6a74c55e46903ff",
+              "candidate_sha256": "75985bdea87f094a275d03005f1451dec87e5d2b2e9f416129bc0469c2f8d7e9",
+              "status": "edited"
+            },
+            {
+              "start": 707,
+              "end": 882,
+              "before_sha256": "edf559ee8d3065266113a4575f0ac12ff94c6e6c4e06f86877d6d8e603eafbc7",
+              "candidate_sha256": "b35bff84684a566d0d33f09be3e8b2193e6133d0154093591993a9cf52483b81",
+              "status": "edited"
+            },
+            {
+              "start": 883,
+              "end": 1027,
+              "before_sha256": "a5cc0ec4e66ba7e634f0bc8e6786b003c9e5ea3980668a36ed4e90dde4440c49",
+              "candidate_sha256": "1cf52f4c0fe31754cb8f89be3132b47d773c317daad26f96524d75de553539ea",
+              "status": "edited"
+            },
+            {
+              "start": 1059,
+              "end": 1129,
+              "before_sha256": "cf65826eb549ee50f3fb562834b9800d1e7483585064b3063e131241e183c17f",
+              "candidate_sha256": "cf65826eb549ee50f3fb562834b9800d1e7483585064b3063e131241e183c17f",
+              "status": "unchanged"
+            },
+            {
+              "start": 1130,
+              "end": 1196,
+              "before_sha256": "47d16f7f2fc0fd210cff959616543a0c613bdb168e28d5da8b066fb045effa5b",
+              "candidate_sha256": "4dc66174b792816d3a238b662a857231602e1bba355a479855d5119280ebe0ec",
+              "status": "edited"
+            },
+            {
+              "start": 1228,
+              "end": 1308,
+              "before_sha256": "f38de5179eb659429cfd00ea959fb79735d42f8656ab263a23cd3101d4b5471d",
+              "candidate_sha256": "a1e5db3a9aa639b0974a92131e649ddad9ea337d2408a2391a90095d08b7d2d0",
+              "status": "edited"
+            },
+            {
+              "start": 1309,
+              "end": 1445,
+              "before_sha256": "d537a0de15344866502372bca16a81000e5b58dc1cde897c723e96bf3a40f282",
+              "candidate_sha256": "f8ccb1cc2e7a4630bc332f6512e163f6248d0bdb39cfe90cb9e985fe91ceafb0",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "kind": "historical",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "4ca745d6ff99405d1768dffb73b9c87f14af02c355a14f9444636b19bbf09a37",
+          "targets": 16,
+          "records": [
+            {
+              "start": 0,
+              "end": 93,
+              "before_sha256": "caff0506452188a1170ce10f80b03a24f678f6a91684d3eee53531b32a6e4641",
+              "candidate_sha256": "335d6e088478d64396e87c4a2f29db8effdea3c2f913ba8fdf4f0c82bbc80892",
+              "status": "edited"
+            },
+            {
+              "start": 94,
+              "end": 129,
+              "before_sha256": "b0d0cf95603e608800a44bca874b8d9d0a5734468332a575e17250ccbbf0b10c",
+              "candidate_sha256": "b0d0cf95603e608800a44bca874b8d9d0a5734468332a575e17250ccbbf0b10c",
+              "status": "unchanged"
+            },
+            {
+              "start": 130,
+              "end": 334,
+              "before_sha256": "3081209c062a15103051c780284e61c63cf5f4c13d4729dcbf13264e41fe824c",
+              "candidate_sha256": "0fd966a2d5608f9231a501c407f77f3c51359f8f4abbd34f28881bfbd10802a1",
+              "status": "edited"
+            },
+            {
+              "start": 335,
+              "end": 442,
+              "before_sha256": "eec80aee16399c66b9621e3a78144738c73ad28e935e1f4b73dd24a76f4daea1",
+              "candidate_sha256": "eec80aee16399c66b9621e3a78144738c73ad28e935e1f4b73dd24a76f4daea1",
+              "status": "unchanged"
+            },
+            {
+              "start": 444,
+              "end": 537,
+              "before_sha256": "cf304befe75662e969f65f035fd7f5c3eed4702b105289de2aebfb7d77a996dc",
+              "candidate_sha256": "cf304befe75662e969f65f035fd7f5c3eed4702b105289de2aebfb7d77a996dc",
+              "status": "unchanged"
+            },
+            {
+              "start": 538,
+              "end": 619,
+              "before_sha256": "60b55229f321a7078153158b447e9c0735c53637e50630c37c101343fedf8321",
+              "candidate_sha256": "60b55229f321a7078153158b447e9c0735c53637e50630c37c101343fedf8321",
+              "status": "unchanged"
+            },
+            {
+              "start": 621,
+              "end": 675,
+              "before_sha256": "56a1b9a709bd51d1f006ca6af9cbbde4ccad59e816e540d8d5057fde0ed0b0d7",
+              "candidate_sha256": "56a1b9a709bd51d1f006ca6af9cbbde4ccad59e816e540d8d5057fde0ed0b0d7",
+              "status": "unchanged"
+            },
+            {
+              "start": 676,
+              "end": 691,
+              "before_sha256": "8599f93df9243546cf8f91c38e18a5b004d8604844a5d138e2f73a3b809f944c",
+              "candidate_sha256": "8599f93df9243546cf8f91c38e18a5b004d8604844a5d138e2f73a3b809f944c",
+              "status": "unchanged"
+            },
+            {
+              "start": 692,
+              "end": 817,
+              "before_sha256": "eb3f88dcbe1d12b1099c6b181406b2843fd2f530152ff65248cdda73b55700cf",
+              "candidate_sha256": "cefc145114dd44b165d39c72d5d8ea91e79565e7b8f318c7792de77a2b06aaf1",
+              "status": "edited"
+            },
+            {
+              "start": 818,
+              "end": 925,
+              "before_sha256": "3f5bca285f18e9a96ae4a2ebd66d25ea5327df6835f963374b2f43b7f3775ddb",
+              "candidate_sha256": "22253e7aadf6417f6e9845f92e71bf6a75a7aab5e68ad30715aa1b487ce1111c",
+              "status": "edited"
+            },
+            {
+              "start": 926,
+              "end": 1019,
+              "before_sha256": "5ca99c8ebd70f8781e957fa86da67f4e6f9ce483b97172e4e7880c97dc24399d",
+              "candidate_sha256": "18f9c75f2f114be0638d04901bcb1ceb99d45114fbdaae5783f1eb26cb7b073c",
+              "status": "edited"
+            },
+            {
+              "start": 1020,
+              "end": 1064,
+              "before_sha256": "1ad732a21a00338213179bb561d3f3e39ad6190244a827b4874ee404fb4efd2e",
+              "candidate_sha256": "1ad732a21a00338213179bb561d3f3e39ad6190244a827b4874ee404fb4efd2e",
+              "status": "unchanged"
+            },
+            {
+              "start": 1065,
+              "end": 1165,
+              "before_sha256": "07cf2c7fbdbeeb7db38d41a9d66a7c1e01ff93466435fd1c695afb9f3698e164",
+              "candidate_sha256": "75c20771844e1d0a75e44ae9b04a32321087662d2fb1ce74f659c0e85ad42fb4",
+              "status": "edited"
+            },
+            {
+              "start": 1166,
+              "end": 1265,
+              "before_sha256": "228370d1f12a8d0f078a9a85c0db0e1c7d9dc3d9088825f6aa0fe42080bcf83f",
+              "candidate_sha256": "0074f693d5dbd48474930bbebe1ed7528b86eb1de34fd8a77eedd13a359d00d1",
+              "status": "edited"
+            },
+            {
+              "start": 1266,
+              "end": 1479,
+              "before_sha256": "535505daa7314ac1eb51b2d799b34561a89cad6514a5a44355f33e04072e2f1f",
+              "candidate_sha256": "a1d294c9cb0c203b858d8ac0d18c7c0f7b434287816842cabd02688d5f7fc794",
+              "status": "edited"
+            },
+            {
+              "start": 1480,
+              "end": 1510,
+              "before_sha256": "ce33ffba12622238a07d2cf47836b1028f7567374c2efe44f10d83191749b1b0",
+              "candidate_sha256": "ce33ffba12622238a07d2cf47836b1028f7567374c2efe44f10d83191749b1b0",
+              "status": "unchanged"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "kind": "historical",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "c2ce8eb6de69697ebc57a31e3d549cb625aff1727fdecb020267e0c3a343fe7d",
+          "targets": 14,
+          "records": [
+            {
+              "start": 0,
+              "end": 69,
+              "before_sha256": "e6ef7b8998c94db06dd155871499d85f22f64994412a3f84ca127adab4d1c68a",
+              "candidate_sha256": "e6ef7b8998c94db06dd155871499d85f22f64994412a3f84ca127adab4d1c68a",
+              "status": "unchanged"
+            },
+            {
+              "start": 70,
+              "end": 141,
+              "before_sha256": "aa902eb6f3dd6d30cd71ac99b7fe49727542ae3874496835c479bbe975f74e0e",
+              "candidate_sha256": "aa902eb6f3dd6d30cd71ac99b7fe49727542ae3874496835c479bbe975f74e0e",
+              "status": "unchanged"
+            },
+            {
+              "start": 142,
+              "end": 233,
+              "before_sha256": "5fc78056f008d99c4588b03fae89dba2b29b1536d1ecac1ee405204ff0266d3b",
+              "candidate_sha256": "861c07dca5d8ec7a213160bc62a2c5c8f9ddb542f93c948d8ce68e8d43d44e33",
+              "status": "edited"
+            },
+            {
+              "start": 234,
+              "end": 335,
+              "before_sha256": "089ec364d85e084ef5af727b944793ddfd25136de09684adb3ae83e27b39577f",
+              "candidate_sha256": "089ec364d85e084ef5af727b944793ddfd25136de09684adb3ae83e27b39577f",
+              "status": "unchanged"
+            },
+            {
+              "start": 337,
+              "end": 427,
+              "before_sha256": "fdbcb6b63fc5989181ca514bce8d1885552b8bb76510eab3f2e363533fff307a",
+              "candidate_sha256": "fdbcb6b63fc5989181ca514bce8d1885552b8bb76510eab3f2e363533fff307a",
+              "status": "unchanged"
+            },
+            {
+              "start": 428,
+              "end": 552,
+              "before_sha256": "c5aa4f92cda05ab8a6b77e62bef8ef7e9b3389db94cef994619208689cbbb4ee",
+              "candidate_sha256": "c5aa4f92cda05ab8a6b77e62bef8ef7e9b3389db94cef994619208689cbbb4ee",
+              "status": "unchanged"
+            },
+            {
+              "start": 553,
+              "end": 655,
+              "before_sha256": "2e90b9a45adcbb7cf8cc8b19a51fa8665e2befa477e1b59c60d643b1d8e17e37",
+              "candidate_sha256": "ed24b868883067728567e3923a0d7f2d16b47adce57d09529846ed9720cfdbb9",
+              "status": "edited"
+            },
+            {
+              "start": 657,
+              "end": 807,
+              "before_sha256": "9ead58baa12d82be7ed546bb955905d2f1743095552bdf1ee7a68f37ee0b43af",
+              "candidate_sha256": "9ead58baa12d82be7ed546bb955905d2f1743095552bdf1ee7a68f37ee0b43af",
+              "status": "unchanged"
+            },
+            {
+              "start": 808,
+              "end": 898,
+              "before_sha256": "bc4420ee35af9c8e1d455dba0f3a82ff5fb5269cd0ebe466ed4df7cc50d607bc",
+              "candidate_sha256": "bc4420ee35af9c8e1d455dba0f3a82ff5fb5269cd0ebe466ed4df7cc50d607bc",
+              "status": "unchanged"
+            },
+            {
+              "start": 899,
+              "end": 955,
+              "before_sha256": "1be682a3320c38b291223fb84b2a3b41bf0b71266cd739a3f762dd7dad5795cf",
+              "candidate_sha256": "1be682a3320c38b291223fb84b2a3b41bf0b71266cd739a3f762dd7dad5795cf",
+              "status": "unchanged"
+            },
+            {
+              "start": 956,
+              "end": 1073,
+              "before_sha256": "35219e4caf8fe9fc40cb2140df16bfa1a2ada7c5d0f813ea620c8b8767bd407b",
+              "candidate_sha256": "2cae61f5e7c295d25b1995cda93971695d565cd952d3f5dbb5fa2a3441ee23bf",
+              "status": "edited"
+            },
+            {
+              "start": 1074,
+              "end": 1205,
+              "before_sha256": "438e5f64f0ae44bd74d486e02b374083b3b3edc1057b6039185e621f7ec493b5",
+              "candidate_sha256": "438e5f64f0ae44bd74d486e02b374083b3b3edc1057b6039185e621f7ec493b5",
+              "status": "unchanged"
+            },
+            {
+              "start": 1206,
+              "end": 1288,
+              "before_sha256": "d8987ef407410d9ea7d602f66fdaacaeb5640abd956ca21baeadf8b9627e7285",
+              "candidate_sha256": "f5c5525f4d7152fa00900467e517f54b2ee3b22fa26349b4c1296e1e1e26d723",
+              "status": "edited"
+            },
+            {
+              "start": 1289,
+              "end": 1365,
+              "before_sha256": "71712e98aace21c6908737c8afe0204eaf004bc7ccfc86e4bbc1d6be2c4e71ed",
+              "candidate_sha256": "970e9a285cbf23a434e3b117027b3e40b3bf6465fcbd98f1ee37218d2b9de22a",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "v14-local-001",
+          "kind": "synthetic",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "0578af8fa4eabf9e53e1026a282fe8ec0d6453a90ded830b441a994894cbdf9d",
+          "output_sha256": "0578af8fa4eabf9e53e1026a282fe8ec0d6453a90ded830b441a994894cbdf9d",
+          "targets": 7,
+          "records": [
+            {
+              "start": 17,
+              "end": 94,
+              "before_sha256": "0465da565d03c5610cf87e945e1ad16631c9791981b4177811433590b4b4c73d",
+              "candidate_sha256": "0465da565d03c5610cf87e945e1ad16631c9791981b4177811433590b4b4c73d",
+              "status": "unchanged"
+            },
+            {
+              "start": 95,
+              "end": 133,
+              "before_sha256": "0b1a3f5c89a8ac1a993350e27669292990e815d7dfaf15d61081a7bdee8d3074",
+              "candidate_sha256": "0b1a3f5c89a8ac1a993350e27669292990e815d7dfaf15d61081a7bdee8d3074",
+              "status": "unchanged"
+            },
+            {
+              "start": 134,
+              "end": 172,
+              "before_sha256": "ddffc573299aaaf99cfdf779822c4a3fbe7aa5ead195a9779208e714450054af",
+              "candidate_sha256": "ddffc573299aaaf99cfdf779822c4a3fbe7aa5ead195a9779208e714450054af",
+              "status": "unchanged"
+            },
+            {
+              "start": 174,
+              "end": 215,
+              "before_sha256": "b535db8b2ed9634458b51023bd250064f296fb2816ca3b8d36d98bfcf83da3e4",
+              "candidate_sha256": "b535db8b2ed9634458b51023bd250064f296fb2816ca3b8d36d98bfcf83da3e4",
+              "status": "unchanged"
+            },
+            {
+              "start": 216,
+              "end": 267,
+              "before_sha256": "9c9345e8fcdfe6303de3dcd90d625b80ab2b33537d8c4d7768ad18383d21d1c2",
+              "candidate_sha256": "9c9345e8fcdfe6303de3dcd90d625b80ab2b33537d8c4d7768ad18383d21d1c2",
+              "status": "unchanged"
+            },
+            {
+              "start": 268,
+              "end": 359,
+              "before_sha256": "38fd48600c7f31fb0f5715617800fb031c119f3890afe9526c91a3ac5d933ebd",
+              "candidate_sha256": "38fd48600c7f31fb0f5715617800fb031c119f3890afe9526c91a3ac5d933ebd",
+              "status": "unchanged"
+            },
+            {
+              "start": 360,
+              "end": 415,
+              "before_sha256": "bb92d822936f9cc38775f15a11503364c0ea1ec9148c8714085bddaefbe5563f",
+              "candidate_sha256": "bb92d822936f9cc38775f15a11503364c0ea1ec9148c8714085bddaefbe5563f",
+              "status": "unchanged"
+            }
+          ],
+          "unchanged": true
+        },
+        {
+          "id": "v14-local-002",
+          "kind": "synthetic",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "85cd6ac7f0823e896f8caffc37771b260228ae24df48270f24dfec9075bd26a7",
+          "output_sha256": "73a15999c758681f6871a1e73ee86a3c3e6365c277cee9b05af5ff259ab9830e",
+          "targets": 6,
+          "records": [
+            {
+              "start": 17,
+              "end": 72,
+              "before_sha256": "baa84e9b47269606455da838bb60c4a16a47768974d48577e8ab992aaa54179c",
+              "candidate_sha256": "591581f01570d3644f661e6c1eb64064c78e74a5b92d3fff57a53d29eec55c5b",
+              "status": "edited"
+            },
+            {
+              "start": 73,
+              "end": 108,
+              "before_sha256": "5ef913e5d6e08942b01398f9354e41a09e2743ff24da63f3b4781f6a6dae502c",
+              "candidate_sha256": "5ef913e5d6e08942b01398f9354e41a09e2743ff24da63f3b4781f6a6dae502c",
+              "status": "unchanged"
+            },
+            {
+              "start": 109,
+              "end": 177,
+              "before_sha256": "76a7a391d8db7f3938d684e494f0e7c3a1062e335c4e84ee591f5506bd8d31d1",
+              "candidate_sha256": "76a7a391d8db7f3938d684e494f0e7c3a1062e335c4e84ee591f5506bd8d31d1",
+              "status": "unchanged"
+            },
+            {
+              "start": 179,
+              "end": 229,
+              "before_sha256": "ab23f2a3b5ec691443004ca000591b4baa0dafd88f8032ac3c839383c61f3832",
+              "candidate_sha256": "ab23f2a3b5ec691443004ca000591b4baa0dafd88f8032ac3c839383c61f3832",
+              "status": "unchanged"
+            },
+            {
+              "start": 230,
+              "end": 295,
+              "before_sha256": "6e764efa1a6469eeac40749007667a9f9ec6e3d918be19364bafea51b783a592",
+              "candidate_sha256": "6e764efa1a6469eeac40749007667a9f9ec6e3d918be19364bafea51b783a592",
+              "status": "unchanged"
+            },
+            {
+              "start": 296,
+              "end": 379,
+              "before_sha256": "fb9eec2ca8c1ee5bd985f75aaf98eb950092312600dd505b129d86ccbd024bde",
+              "candidate_sha256": "fb9eec2ca8c1ee5bd985f75aaf98eb950092312600dd505b129d86ccbd024bde",
+              "status": "unchanged"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "v14-local-003",
+          "kind": "synthetic",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "9c275e2ebf4868f6561bfc28758b9421334713b09ab8fbb0430b05004485679f",
+          "output_sha256": "9c275e2ebf4868f6561bfc28758b9421334713b09ab8fbb0430b05004485679f",
+          "targets": 6,
+          "records": [
+            {
+              "start": 17,
+              "end": 43,
+              "before_sha256": "3a361f92aa0183e90ee129f5f9ac7e47acd89567df743f08f2ebe1061a807da8",
+              "candidate_sha256": "3a361f92aa0183e90ee129f5f9ac7e47acd89567df743f08f2ebe1061a807da8",
+              "status": "unchanged"
+            },
+            {
+              "start": 44,
+              "end": 108,
+              "before_sha256": "406b61fe4e3718494c66e764c4707b54b1a15567a1bd75718bf9283d58453451",
+              "candidate_sha256": "406b61fe4e3718494c66e764c4707b54b1a15567a1bd75718bf9283d58453451",
+              "status": "unchanged"
+            },
+            {
+              "start": 109,
+              "end": 131,
+              "before_sha256": "23db44ee0ae0000721bbf9ded1a69641354bff394db3b04354e3fd51c08822ae",
+              "candidate_sha256": "23db44ee0ae0000721bbf9ded1a69641354bff394db3b04354e3fd51c08822ae",
+              "status": "unchanged"
+            },
+            {
+              "start": 133,
+              "end": 186,
+              "before_sha256": "035c5fdd3300e1fea5fcb39b47374c98fa8eda7d175e3aafb5c5ecb044675602",
+              "candidate_sha256": "035c5fdd3300e1fea5fcb39b47374c98fa8eda7d175e3aafb5c5ecb044675602",
+              "status": "unchanged"
+            },
+            {
+              "start": 187,
+              "end": 237,
+              "before_sha256": "6f3b36cc23b41bff66734c305411f438746f0ff8128b5d0a0debb5e8fd755f9e",
+              "candidate_sha256": "6f3b36cc23b41bff66734c305411f438746f0ff8128b5d0a0debb5e8fd755f9e",
+              "status": "unchanged"
+            },
+            {
+              "start": 238,
+              "end": 325,
+              "before_sha256": "8191e2aff16228d7b485d2bb6cfe9387e4a6ddc1be3ea75f6b629db86155f808",
+              "candidate_sha256": "8191e2aff16228d7b485d2bb6cfe9387e4a6ddc1be3ea75f6b629db86155f808",
+              "status": "unchanged"
+            }
+          ],
+          "unchanged": true
+        },
+        {
+          "id": "v14-local-004",
+          "kind": "synthetic",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "6162747e84ad72ae7d26050b19ed2de41905338c50f2d422053eeecf5d15205a",
+          "output_sha256": "5b338724725a91edddf3609db15e6d92ae362454267f547de9fff31102284b62",
+          "targets": 7,
+          "records": [
+            {
+              "start": 27,
+              "end": 100,
+              "before_sha256": "7420344f513247147a944996fc3765cc337d8032a0bc4de7d54ff46bc42f4369",
+              "candidate_sha256": "7420344f513247147a944996fc3765cc337d8032a0bc4de7d54ff46bc42f4369",
+              "status": "unchanged"
+            },
+            {
+              "start": 101,
+              "end": 141,
+              "before_sha256": "9d5818a7bb7a41cf561f7c3ad375c2abdd26d5b08721fc644658f3b3961459c5",
+              "candidate_sha256": "9d5818a7bb7a41cf561f7c3ad375c2abdd26d5b08721fc644658f3b3961459c5",
+              "status": "unchanged"
+            },
+            {
+              "start": 142,
+              "end": 183,
+              "before_sha256": "0d80a2f895ab44690160455303cdfcc4a490463a00ec1448eba8975ccacbbc1b",
+              "candidate_sha256": "0d80a2f895ab44690160455303cdfcc4a490463a00ec1448eba8975ccacbbc1b",
+              "status": "unchanged"
+            },
+            {
+              "start": 185,
+              "end": 213,
+              "before_sha256": "109cd774bf69fc6b5b29692bca00ed97ba7af9e578a7a705441a36662ca40fa9",
+              "candidate_sha256": "109cd774bf69fc6b5b29692bca00ed97ba7af9e578a7a705441a36662ca40fa9",
+              "status": "unchanged"
+            },
+            {
+              "start": 214,
+              "end": 240,
+              "before_sha256": "663ac9494d9c2188701600fecad4758a37c7ec0ce16b408704012edec396c721",
+              "candidate_sha256": "639fb4cfebb1da7a3af03655ad3ea4b8e0ce1f99a8dbd6911f1c119c05538ecf",
+              "status": "literal-change"
+            },
+            {
+              "start": 241,
+              "end": 269,
+              "before_sha256": "8e2d6e32fca4176447b1f08947e2488b8d058be57fae6b1a03e5fb7f35266eec",
+              "candidate_sha256": "8e2d6e32fca4176447b1f08947e2488b8d058be57fae6b1a03e5fb7f35266eec",
+              "status": "unchanged"
+            },
+            {
+              "start": 270,
+              "end": 381,
+              "before_sha256": "44855367a4fe968a50d4d063d72da69e569e29cf80fee7258aa707c8a663c5e1",
+              "candidate_sha256": "98eb98a9bf54f10d79bbc2d528999dad93136b0462586ad068d8fb4cda58ce5c",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        }
+      ]
+    },
+    {
+      "run": {
+        "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+        "model_revision": "1bbe9f19a26a70dc4d0c709e1a816e6a9378a7f5",
+        "git": "20d1122ac130e3e5bffc62617088919590bb4654",
+        "source_revision": "0b1b8308559a935e6f3be060fe42bc00ed556f02",
+        "scope": "four historical development replays and four V14 synthetic controls; not blind",
+        "prompt_sha256": "c4b0d1cc15990dad307b2c08426b03863ea41bb85d6eb4c9f9fc3f1183bc918b"
+      },
+      "rows": [
+        {
+          "id": "sudo-3dc45336d810812b",
+          "kind": "historical",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "targets": 0,
+          "records": [],
+          "unchanged": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "kind": "historical",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "d2b41c7ffb01704264451212032e21fbb29e69e565e4f258f7e6332cd67abeff",
+          "targets": 9,
+          "records": [
+            {
+              "start": 227,
+              "end": 285,
+              "before_sha256": "62981189c84aaf77a3b8ace981bdfefc68acca337600e259c47c9cffb139dfa6",
+              "candidate_sha256": "edac8d63270f5631463a5df89ef73c574064df2fd266de55ef04176a00a5be17",
+              "status": "edited"
+            },
+            {
+              "start": 286,
+              "end": 504,
+              "before_sha256": "7cce41f77254f5fa19fe2da36229fcf073b36b32e033990947c5e6b445c6b937",
+              "candidate_sha256": "69564c729e7ae6e8f978fbdcf2dabe3fe748231f2d1e74930031eae283d0c8bf",
+              "status": "edited"
+            },
+            {
+              "start": 505,
+              "end": 672,
+              "before_sha256": "7b6c1485fa761056470d8f2b48610ad4a60f1e92306373aef6a74c55e46903ff",
+              "candidate_sha256": "7b6c1485fa761056470d8f2b48610ad4a60f1e92306373aef6a74c55e46903ff",
+              "status": "unchanged"
+            },
+            {
+              "start": 707,
+              "end": 882,
+              "before_sha256": "edf559ee8d3065266113a4575f0ac12ff94c6e6c4e06f86877d6d8e603eafbc7",
+              "candidate_sha256": "bfc865dbd6f400728959b20603fba96e4c7ceab8d7810a32ead288834a6a8060",
+              "status": "invalid-shape"
+            },
+            {
+              "start": 883,
+              "end": 1027,
+              "before_sha256": "a5cc0ec4e66ba7e634f0bc8e6786b003c9e5ea3980668a36ed4e90dde4440c49",
+              "candidate_sha256": "33afa3610960a0a6f58dee756076ae79db5b934863884e4ce2d43f890ae27b79",
+              "status": "edited"
+            },
+            {
+              "start": 1059,
+              "end": 1129,
+              "before_sha256": "cf65826eb549ee50f3fb562834b9800d1e7483585064b3063e131241e183c17f",
+              "candidate_sha256": "7cf974e5fb64423926aa19a64f1f9dcb711ae45a49b551b94cc8fe5f16801799",
+              "status": "edited"
+            },
+            {
+              "start": 1130,
+              "end": 1196,
+              "before_sha256": "47d16f7f2fc0fd210cff959616543a0c613bdb168e28d5da8b066fb045effa5b",
+              "candidate_sha256": "0911fffe15cd5dae0ffbf1f7bec3ea0f9ef4c56b50ad5df786c55a88c82f82f0",
+              "status": "edited"
+            },
+            {
+              "start": 1228,
+              "end": 1308,
+              "before_sha256": "f38de5179eb659429cfd00ea959fb79735d42f8656ab263a23cd3101d4b5471d",
+              "candidate_sha256": "83b0ddf497830d9ccf605f509fefee96fc0bac107121597457b5b08ca803b4f4",
+              "status": "edited"
+            },
+            {
+              "start": 1309,
+              "end": 1445,
+              "before_sha256": "d537a0de15344866502372bca16a81000e5b58dc1cde897c723e96bf3a40f282",
+              "candidate_sha256": "6eb9b08a91144de3e2265498c0703e710e1f6eb9a9eddb4b6559cd9791d79658",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "kind": "historical",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "dad3fdfa9ed6e471cc66219e413b1173b84f849e21ee6579f035cefe34ba9456",
+          "targets": 16,
+          "records": [
+            {
+              "start": 0,
+              "end": 93,
+              "before_sha256": "caff0506452188a1170ce10f80b03a24f678f6a91684d3eee53531b32a6e4641",
+              "candidate_sha256": "335d6e088478d64396e87c4a2f29db8effdea3c2f913ba8fdf4f0c82bbc80892",
+              "status": "edited"
+            },
+            {
+              "start": 94,
+              "end": 129,
+              "before_sha256": "b0d0cf95603e608800a44bca874b8d9d0a5734468332a575e17250ccbbf0b10c",
+              "candidate_sha256": "6c04d1dd405def0e38113a1cc99cdfa0a936fcfda67fd7fbe716b0e97b30875c",
+              "status": "edited"
+            },
+            {
+              "start": 130,
+              "end": 334,
+              "before_sha256": "3081209c062a15103051c780284e61c63cf5f4c13d4729dcbf13264e41fe824c",
+              "candidate_sha256": "486916f8ce8c6eedae16ddb27a6d2308167e077e82646aa5ffc79b60a7e3e08e",
+              "status": "edited"
+            },
+            {
+              "start": 335,
+              "end": 442,
+              "before_sha256": "eec80aee16399c66b9621e3a78144738c73ad28e935e1f4b73dd24a76f4daea1",
+              "candidate_sha256": "eec80aee16399c66b9621e3a78144738c73ad28e935e1f4b73dd24a76f4daea1",
+              "status": "unchanged"
+            },
+            {
+              "start": 444,
+              "end": 537,
+              "before_sha256": "cf304befe75662e969f65f035fd7f5c3eed4702b105289de2aebfb7d77a996dc",
+              "candidate_sha256": "53d168abda313bea95bf734e2a518402673105fa692014dd1447ce4ac5b494a8",
+              "status": "edited"
+            },
+            {
+              "start": 538,
+              "end": 619,
+              "before_sha256": "60b55229f321a7078153158b447e9c0735c53637e50630c37c101343fedf8321",
+              "candidate_sha256": "60b55229f321a7078153158b447e9c0735c53637e50630c37c101343fedf8321",
+              "status": "unchanged"
+            },
+            {
+              "start": 621,
+              "end": 675,
+              "before_sha256": "56a1b9a709bd51d1f006ca6af9cbbde4ccad59e816e540d8d5057fde0ed0b0d7",
+              "candidate_sha256": "4beb87a5f1f57e7dd0d6fb48ccf8395a4241229c3a3a01217b41cd7b6abca607",
+              "status": "edited"
+            },
+            {
+              "start": 676,
+              "end": 691,
+              "before_sha256": "8599f93df9243546cf8f91c38e18a5b004d8604844a5d138e2f73a3b809f944c",
+              "candidate_sha256": "7a86319b65981a582b905bb1efb9ed00e81e427cb1a0e633036bf6ec711b6338",
+              "status": "invalid-shape"
+            },
+            {
+              "start": 692,
+              "end": 817,
+              "before_sha256": "eb3f88dcbe1d12b1099c6b181406b2843fd2f530152ff65248cdda73b55700cf",
+              "candidate_sha256": "cefc145114dd44b165d39c72d5d8ea91e79565e7b8f318c7792de77a2b06aaf1",
+              "status": "edited"
+            },
+            {
+              "start": 818,
+              "end": 925,
+              "before_sha256": "3f5bca285f18e9a96ae4a2ebd66d25ea5327df6835f963374b2f43b7f3775ddb",
+              "candidate_sha256": "3f5bca285f18e9a96ae4a2ebd66d25ea5327df6835f963374b2f43b7f3775ddb",
+              "status": "unchanged"
+            },
+            {
+              "start": 926,
+              "end": 1019,
+              "before_sha256": "5ca99c8ebd70f8781e957fa86da67f4e6f9ce483b97172e4e7880c97dc24399d",
+              "candidate_sha256": "5ca99c8ebd70f8781e957fa86da67f4e6f9ce483b97172e4e7880c97dc24399d",
+              "status": "unchanged"
+            },
+            {
+              "start": 1020,
+              "end": 1064,
+              "before_sha256": "1ad732a21a00338213179bb561d3f3e39ad6190244a827b4874ee404fb4efd2e",
+              "candidate_sha256": "59a243349775531e344d5180201e6e976de6f60f206351413a5a85782cef08aa",
+              "status": "edited"
+            },
+            {
+              "start": 1065,
+              "end": 1165,
+              "before_sha256": "07cf2c7fbdbeeb7db38d41a9d66a7c1e01ff93466435fd1c695afb9f3698e164",
+              "candidate_sha256": "cfb54cba3f6a273281b27905b5dc57c75892a3bc33a102fa12336f3819bfd9d5",
+              "status": "edited"
+            },
+            {
+              "start": 1166,
+              "end": 1265,
+              "before_sha256": "228370d1f12a8d0f078a9a85c0db0e1c7d9dc3d9088825f6aa0fe42080bcf83f",
+              "candidate_sha256": "5e5ff0b83630a98f9c69ac0526ff787f8501051d74c8a35b91daf0c7c1a6256e",
+              "status": "edited"
+            },
+            {
+              "start": 1266,
+              "end": 1479,
+              "before_sha256": "535505daa7314ac1eb51b2d799b34561a89cad6514a5a44355f33e04072e2f1f",
+              "candidate_sha256": "3018e4c2095c519ec70d52b6d13396a135f77070a105d73fcaf26359b531d022",
+              "status": "edited"
+            },
+            {
+              "start": 1480,
+              "end": 1510,
+              "before_sha256": "ce33ffba12622238a07d2cf47836b1028f7567374c2efe44f10d83191749b1b0",
+              "candidate_sha256": "ce33ffba12622238a07d2cf47836b1028f7567374c2efe44f10d83191749b1b0",
+              "status": "unchanged"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "kind": "historical",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "578b0dc585732cf63e8be6158b320c63bcc52922e9c2d6b0b1d480a565921484",
+          "targets": 14,
+          "records": [
+            {
+              "start": 0,
+              "end": 69,
+              "before_sha256": "e6ef7b8998c94db06dd155871499d85f22f64994412a3f84ca127adab4d1c68a",
+              "candidate_sha256": "e6ef7b8998c94db06dd155871499d85f22f64994412a3f84ca127adab4d1c68a",
+              "status": "unchanged"
+            },
+            {
+              "start": 70,
+              "end": 141,
+              "before_sha256": "aa902eb6f3dd6d30cd71ac99b7fe49727542ae3874496835c479bbe975f74e0e",
+              "candidate_sha256": "aa902eb6f3dd6d30cd71ac99b7fe49727542ae3874496835c479bbe975f74e0e",
+              "status": "unchanged"
+            },
+            {
+              "start": 142,
+              "end": 233,
+              "before_sha256": "5fc78056f008d99c4588b03fae89dba2b29b1536d1ecac1ee405204ff0266d3b",
+              "candidate_sha256": "ec0a60aa1b0f87ca6d258a613891f75e07544a67cc099a2b551a1f6b63b5a6ea",
+              "status": "edited"
+            },
+            {
+              "start": 234,
+              "end": 335,
+              "before_sha256": "089ec364d85e084ef5af727b944793ddfd25136de09684adb3ae83e27b39577f",
+              "candidate_sha256": "201e993c49130c04113482373f1bbb85f279f94e90ceaa449d3a13dfb8b24744",
+              "status": "edited"
+            },
+            {
+              "start": 337,
+              "end": 427,
+              "before_sha256": "fdbcb6b63fc5989181ca514bce8d1885552b8bb76510eab3f2e363533fff307a",
+              "candidate_sha256": "fdbcb6b63fc5989181ca514bce8d1885552b8bb76510eab3f2e363533fff307a",
+              "status": "unchanged"
+            },
+            {
+              "start": 428,
+              "end": 552,
+              "before_sha256": "c5aa4f92cda05ab8a6b77e62bef8ef7e9b3389db94cef994619208689cbbb4ee",
+              "candidate_sha256": "aad8b398bd3a0476498deed72ab20cbc42d222ea01a095d6cb73214063c91db0",
+              "status": "edited"
+            },
+            {
+              "start": 553,
+              "end": 655,
+              "before_sha256": "2e90b9a45adcbb7cf8cc8b19a51fa8665e2befa477e1b59c60d643b1d8e17e37",
+              "candidate_sha256": "cfabdb0d1b68514c722012f83095b3e38775b61c59457f165e5003600feb7293",
+              "status": "edited"
+            },
+            {
+              "start": 657,
+              "end": 807,
+              "before_sha256": "9ead58baa12d82be7ed546bb955905d2f1743095552bdf1ee7a68f37ee0b43af",
+              "candidate_sha256": "8c71ba9007336b8736f7723173232b34191364b37abbc3807e1b6caf4d47e50a",
+              "status": "edited"
+            },
+            {
+              "start": 808,
+              "end": 898,
+              "before_sha256": "bc4420ee35af9c8e1d455dba0f3a82ff5fb5269cd0ebe466ed4df7cc50d607bc",
+              "candidate_sha256": "bc4420ee35af9c8e1d455dba0f3a82ff5fb5269cd0ebe466ed4df7cc50d607bc",
+              "status": "unchanged"
+            },
+            {
+              "start": 899,
+              "end": 955,
+              "before_sha256": "1be682a3320c38b291223fb84b2a3b41bf0b71266cd739a3f762dd7dad5795cf",
+              "candidate_sha256": "9d7ff4824fc57234e4aaed53c9ddfadffec3687d4f76ec47a15534ce0369054c",
+              "status": "edited"
+            },
+            {
+              "start": 956,
+              "end": 1073,
+              "before_sha256": "35219e4caf8fe9fc40cb2140df16bfa1a2ada7c5d0f813ea620c8b8767bd407b",
+              "candidate_sha256": "35219e4caf8fe9fc40cb2140df16bfa1a2ada7c5d0f813ea620c8b8767bd407b",
+              "status": "unchanged"
+            },
+            {
+              "start": 1074,
+              "end": 1205,
+              "before_sha256": "438e5f64f0ae44bd74d486e02b374083b3b3edc1057b6039185e621f7ec493b5",
+              "candidate_sha256": "b26fe7c7a137fc908b12a80699d501747ccae842ec1271a23d08edcbd793d476",
+              "status": "edited"
+            },
+            {
+              "start": 1206,
+              "end": 1288,
+              "before_sha256": "d8987ef407410d9ea7d602f66fdaacaeb5640abd956ca21baeadf8b9627e7285",
+              "candidate_sha256": "d8987ef407410d9ea7d602f66fdaacaeb5640abd956ca21baeadf8b9627e7285",
+              "status": "unchanged"
+            },
+            {
+              "start": 1289,
+              "end": 1365,
+              "before_sha256": "71712e98aace21c6908737c8afe0204eaf004bc7ccfc86e4bbc1d6be2c4e71ed",
+              "candidate_sha256": "124b8d87d20d67c23291ea01202781bda47031a8d65ad53d08401d676e70235e",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "v14-local-001",
+          "kind": "synthetic",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "0578af8fa4eabf9e53e1026a282fe8ec0d6453a90ded830b441a994894cbdf9d",
+          "output_sha256": "08b885a310df47450bc1ee11e0c4170f6b300b00364e7ee71bcafa4419473bc0",
+          "targets": 7,
+          "records": [
+            {
+              "start": 17,
+              "end": 94,
+              "before_sha256": "0465da565d03c5610cf87e945e1ad16631c9791981b4177811433590b4b4c73d",
+              "candidate_sha256": "0465da565d03c5610cf87e945e1ad16631c9791981b4177811433590b4b4c73d",
+              "status": "unchanged"
+            },
+            {
+              "start": 95,
+              "end": 133,
+              "before_sha256": "0b1a3f5c89a8ac1a993350e27669292990e815d7dfaf15d61081a7bdee8d3074",
+              "candidate_sha256": "2fd67be1b0d37d5a2f7f7d959994b8c879ff209df78efc033fad42827682cb64",
+              "status": "edited"
+            },
+            {
+              "start": 134,
+              "end": 172,
+              "before_sha256": "ddffc573299aaaf99cfdf779822c4a3fbe7aa5ead195a9779208e714450054af",
+              "candidate_sha256": "ddffc573299aaaf99cfdf779822c4a3fbe7aa5ead195a9779208e714450054af",
+              "status": "unchanged"
+            },
+            {
+              "start": 174,
+              "end": 215,
+              "before_sha256": "b535db8b2ed9634458b51023bd250064f296fb2816ca3b8d36d98bfcf83da3e4",
+              "candidate_sha256": "b535db8b2ed9634458b51023bd250064f296fb2816ca3b8d36d98bfcf83da3e4",
+              "status": "unchanged"
+            },
+            {
+              "start": 216,
+              "end": 267,
+              "before_sha256": "9c9345e8fcdfe6303de3dcd90d625b80ab2b33537d8c4d7768ad18383d21d1c2",
+              "candidate_sha256": "b678c9272a1547361eadfdfda934ede7b267ca974420d0378a5e9b3db31fccad",
+              "status": "edited"
+            },
+            {
+              "start": 268,
+              "end": 359,
+              "before_sha256": "38fd48600c7f31fb0f5715617800fb031c119f3890afe9526c91a3ac5d933ebd",
+              "candidate_sha256": "d8d0cdf867264520d5b01861bdb5023434f7e339c894f04b10024e6c80926946",
+              "status": "edited"
+            },
+            {
+              "start": 360,
+              "end": 415,
+              "before_sha256": "bb92d822936f9cc38775f15a11503364c0ea1ec9148c8714085bddaefbe5563f",
+              "candidate_sha256": "78288a47c2fde5a2213707d83d940ec99d7250fff8cc997fb8edb706fe7da204",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "v14-local-002",
+          "kind": "synthetic",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "85cd6ac7f0823e896f8caffc37771b260228ae24df48270f24dfec9075bd26a7",
+          "output_sha256": "a996ee664960ac66a99398bafdeb0ab6b401480a333cd477f42937b6ced689b2",
+          "targets": 6,
+          "records": [
+            {
+              "start": 17,
+              "end": 72,
+              "before_sha256": "baa84e9b47269606455da838bb60c4a16a47768974d48577e8ab992aaa54179c",
+              "candidate_sha256": "baa84e9b47269606455da838bb60c4a16a47768974d48577e8ab992aaa54179c",
+              "status": "unchanged"
+            },
+            {
+              "start": 73,
+              "end": 108,
+              "before_sha256": "5ef913e5d6e08942b01398f9354e41a09e2743ff24da63f3b4781f6a6dae502c",
+              "candidate_sha256": "5ef913e5d6e08942b01398f9354e41a09e2743ff24da63f3b4781f6a6dae502c",
+              "status": "unchanged"
+            },
+            {
+              "start": 109,
+              "end": 177,
+              "before_sha256": "76a7a391d8db7f3938d684e494f0e7c3a1062e335c4e84ee591f5506bd8d31d1",
+              "candidate_sha256": "b2bd933c3fe966030b0d4c96637b7f88778362ffb4b0ccda14d8202baccfa32f",
+              "status": "edited"
+            },
+            {
+              "start": 179,
+              "end": 229,
+              "before_sha256": "ab23f2a3b5ec691443004ca000591b4baa0dafd88f8032ac3c839383c61f3832",
+              "candidate_sha256": "ab23f2a3b5ec691443004ca000591b4baa0dafd88f8032ac3c839383c61f3832",
+              "status": "unchanged"
+            },
+            {
+              "start": 230,
+              "end": 295,
+              "before_sha256": "6e764efa1a6469eeac40749007667a9f9ec6e3d918be19364bafea51b783a592",
+              "candidate_sha256": "483c1b766f04156335577462db6ec01a085529646bfd79b4285224b0172daa43",
+              "status": "edited"
+            },
+            {
+              "start": 296,
+              "end": 379,
+              "before_sha256": "fb9eec2ca8c1ee5bd985f75aaf98eb950092312600dd505b129d86ccbd024bde",
+              "candidate_sha256": "fb9eec2ca8c1ee5bd985f75aaf98eb950092312600dd505b129d86ccbd024bde",
+              "status": "unchanged"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "v14-local-003",
+          "kind": "synthetic",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "9c275e2ebf4868f6561bfc28758b9421334713b09ab8fbb0430b05004485679f",
+          "output_sha256": "cfa686c4ecc10dc02f7a8ca305cc1575e0c5f72fcb4df94ca35b53b802e5c920",
+          "targets": 6,
+          "records": [
+            {
+              "start": 17,
+              "end": 43,
+              "before_sha256": "3a361f92aa0183e90ee129f5f9ac7e47acd89567df743f08f2ebe1061a807da8",
+              "candidate_sha256": "3a361f92aa0183e90ee129f5f9ac7e47acd89567df743f08f2ebe1061a807da8",
+              "status": "unchanged"
+            },
+            {
+              "start": 44,
+              "end": 108,
+              "before_sha256": "406b61fe4e3718494c66e764c4707b54b1a15567a1bd75718bf9283d58453451",
+              "candidate_sha256": "f7317ec77b5e15e8dfd387f4fe5e8229d65158326ca6168c123c3e7381deed36",
+              "status": "edited"
+            },
+            {
+              "start": 109,
+              "end": 131,
+              "before_sha256": "23db44ee0ae0000721bbf9ded1a69641354bff394db3b04354e3fd51c08822ae",
+              "candidate_sha256": "23db44ee0ae0000721bbf9ded1a69641354bff394db3b04354e3fd51c08822ae",
+              "status": "unchanged"
+            },
+            {
+              "start": 133,
+              "end": 186,
+              "before_sha256": "035c5fdd3300e1fea5fcb39b47374c98fa8eda7d175e3aafb5c5ecb044675602",
+              "candidate_sha256": "035c5fdd3300e1fea5fcb39b47374c98fa8eda7d175e3aafb5c5ecb044675602",
+              "status": "unchanged"
+            },
+            {
+              "start": 187,
+              "end": 237,
+              "before_sha256": "6f3b36cc23b41bff66734c305411f438746f0ff8128b5d0a0debb5e8fd755f9e",
+              "candidate_sha256": "6f3b36cc23b41bff66734c305411f438746f0ff8128b5d0a0debb5e8fd755f9e",
+              "status": "unchanged"
+            },
+            {
+              "start": 238,
+              "end": 325,
+              "before_sha256": "8191e2aff16228d7b485d2bb6cfe9387e4a6ddc1be3ea75f6b629db86155f808",
+              "candidate_sha256": "aadafdc5169ee8176472ff6cf2baa5ce81e4a85c276f8913b7752cfd26b89e39",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        },
+        {
+          "id": "v14-local-004",
+          "kind": "synthetic",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "sentence_anchored_v15",
+          "source_sha256": "6162747e84ad72ae7d26050b19ed2de41905338c50f2d422053eeecf5d15205a",
+          "output_sha256": "120d9af4123f03cb407578efcc7c226af6105bb984a879c2d8ba741e30216a34",
+          "targets": 7,
+          "records": [
+            {
+              "start": 27,
+              "end": 100,
+              "before_sha256": "7420344f513247147a944996fc3765cc337d8032a0bc4de7d54ff46bc42f4369",
+              "candidate_sha256": "ea22ceadf6c075b25998008043930913de7528a50913f232ed96a6e1b1869e56",
+              "status": "edited"
+            },
+            {
+              "start": 101,
+              "end": 141,
+              "before_sha256": "9d5818a7bb7a41cf561f7c3ad375c2abdd26d5b08721fc644658f3b3961459c5",
+              "candidate_sha256": "9d5818a7bb7a41cf561f7c3ad375c2abdd26d5b08721fc644658f3b3961459c5",
+              "status": "unchanged"
+            },
+            {
+              "start": 142,
+              "end": 183,
+              "before_sha256": "0d80a2f895ab44690160455303cdfcc4a490463a00ec1448eba8975ccacbbc1b",
+              "candidate_sha256": "a62873819f6669a3bc08ec01aa4f8607346c2b9ef4b4b2e503ccd0db94e26d4d",
+              "status": "edited"
+            },
+            {
+              "start": 185,
+              "end": 213,
+              "before_sha256": "109cd774bf69fc6b5b29692bca00ed97ba7af9e578a7a705441a36662ca40fa9",
+              "candidate_sha256": "109cd774bf69fc6b5b29692bca00ed97ba7af9e578a7a705441a36662ca40fa9",
+              "status": "unchanged"
+            },
+            {
+              "start": 214,
+              "end": 240,
+              "before_sha256": "663ac9494d9c2188701600fecad4758a37c7ec0ce16b408704012edec396c721",
+              "candidate_sha256": "639fb4cfebb1da7a3af03655ad3ea4b8e0ce1f99a8dbd6911f1c119c05538ecf",
+              "status": "literal-change"
+            },
+            {
+              "start": 241,
+              "end": 269,
+              "before_sha256": "8e2d6e32fca4176447b1f08947e2488b8d058be57fae6b1a03e5fb7f35266eec",
+              "candidate_sha256": "8e2d6e32fca4176447b1f08947e2488b8d058be57fae6b1a03e5fb7f35266eec",
+              "status": "unchanged"
+            },
+            {
+              "start": 270,
+              "end": 381,
+              "before_sha256": "44855367a4fe968a50d4d063d72da69e569e29cf80fee7258aa707c8a663c5e1",
+              "candidate_sha256": "98eb98a9bf54f10d79bbc2d528999dad93136b0462586ad068d8fb4cda58ce5c",
+              "status": "edited"
+            }
+          ],
+          "unchanged": false
+        }
+      ]
+    }
+  ],
+  "findings": [
+    {
+      "id": "sudo-3dc45336d810812b",
+      "model": "both",
+      "problem": "0 targets due to line-level quotation/structure exclusion; identical output is not successful editing."
+    },
+    {
+      "id": "sudo-494acdea301a431d",
+      "model": "Qwen/Qwen3-32B",
+      "problem": "Changed source unmounting to mounting; changed requirement to enabling result; omitted unnecessary source typo in another sentence but technical regressions outweigh that."
+    },
+    {
+      "id": "sudo-494acdea301a431d",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "problem": "Removed necessity modality in existing filesystem statement; replacement ungrammatical in unmounting statement."
+    },
+    {
+      "id": "sudo-0191b6cb1680889a",
+      "model": "Qwen/Qwen3-32B",
+      "problem": "Browser bookmark detail lost again despite source-anchored sentence granularity."
+    },
+    {
+      "id": "sudo-17c17668853b5918",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "problem": "Rhetorical question replaced with near duplicate of next sentence; cross-sentence repetition."
+    },
+    {
+      "id": "v14-local-001",
+      "model": "Qwen/Qwen3-32B",
+      "problem": "No editing despite bureaucratic nominalizations; non-intervention is not improvement."
+    },
+    {
+      "id": "v14-local-001",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "problem": "Possibility of light turning on became certainty."
+    },
+    {
+      "id": "v14-local-003",
+      "model": "both",
+      "problem": "Qwen kept natural control unchanged; Gemma changed two sentences unnecessarily and dropped recurrence."
+    },
+    {
+      "id": "v14-local-004",
+      "model": "both",
+      "problem": "Neither removed core bureaucratic nominalization adequately; both changed weekday capitalization without need."
+    }
+  ],
+  "independent_human_review": false,
+  "quality_verified": false
+}

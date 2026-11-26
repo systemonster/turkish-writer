@@ -1,4 +1,4 @@
-# Türkçe yasaklı kalıplar: birleşik liste
+# Türkçe anlatım kalıpları: bağlamsal teşhis
 
 Kaynaklar: bu depodaki beş ayrı LLM'in (ChatGPT, DeepSeek, Gemini, z.ai, Qwen) Türkçe
 doğallık raporları, lovefengis `TR-RULES.md`, `dogal-turkce-editor`, Wikipedia "Signs of
@@ -7,11 +7,7 @@ MIT) ve **humanify** (durmazoguzhan/turkish-humanify, MIT). MIT kaynaklardan gel
 kurallar yeniden yazıldı, örnekler uyarlandı; kaynakta olmayan olgu taşıyan örnekler
 alınmadı.
 
-**Bu bir yasak listesi değil, bir yoğunluk listesidir.** Buradaki ifadelerin çoğu
-Türkçede yanlış değildir. Kusur olan, hepsinin aynı metinde ve her paragrafta
-tekrarlanmasıdır. Kural: **bir kalıbı kullanmak için gerekçen olsun.** Tek bir
-"kapsamlı" zayıf sinyaldir; kümelenme imzadır. Kelime listeleri model sürümüyle
-eskir, yapısal kalıplar kalır (bkz. `denetleyici.md`).
+**V2 kullanım sınırı:** Bu dosyadaki V1.1 ölçümleri tarihsel araştırma kaydıdır; yazarlık, editörlük kalitesi veya otomatik silme ölçütü değildir. İfadeyi değiştirmek için gerçek bir anlatım kusuru ve bağlam içi gerekçe gerekir. Tekrarlar kimi türlerde işlevlidir. [Bağlamlı Türkçe](baglamli-turkce.md) kılavuzundaki gerçek derlem gözlemleri ve SKILL.md çekirdek filtresi önceliklidir. Aşağıdaki kalıplar yalnız teşhis adaylarıdır; listede bulunmak tek başına müdahale gerekçesi olmaz.
 
 **Kalibrasyon** (`tests/kalibrasyon/`, metinlerin yüzde kaçında çıktı, insan / LLM):
 - **Olumsuz koşutluk** (§8): haber ve forumda 3 / 24; "doğal yaz" istemli metinlerde
@@ -33,7 +29,7 @@ Kalıbı başka bir kalıpla değiştirmek çözüm değildir. "Sonuç olarak"u 
 
 ---
 
-## 1. Giriş klişeleri ve anons: hepsi silinir
+## 1. Giriş klişeleri ve anons: işlevini değerlendir
 
 Elbette! · Tabii ki, memnuniyetle · Kesinlikle! · Harika bir soru! ·
 İşte sizin için hazırladığım… · İşte size… · Anladığım kadarıyla… ·
@@ -59,13 +55,13 @@ artırdı (bkz. §14).
 meselesini mizahi bir dille sorgulayacağız." → "Her şey mayıs ayının son günlerinde, …
 Aja'nın H&M'in pride kampanyasına katıldığını ilan ettiği bir görselle başladı."
 
-**Kural:** doğrudan konuya gir. Metnin ne anlatacağını anons etme, anlat.
+**Karar:** Giriş yalnız bölümün içeriğini yeniden söylüyorsa doğrudan konuya gir. Okuru uzun bir yazıya hazırlayan kapsam açıklaması, gerçek selamlama veya yazarın yerinde kullandığı giriş korunabilir.
 "Şimdi fiyatlandırmaya geçelim. Fiyatlar pakete göre değişiyor." → "Fiyat pakete göre
 değişiyor."
 
 ---
 
-## 2. Kapanış klişeleri: hepsi silinir
+## 2. Kapanış klişeleri: işlevini değerlendir
 
 Sonuç olarak · Özetle · Kısacası · Netice itibarıyla · Görüldüğü üzere ·
 Unutmayın ki · Unutmamak gerekir ki · Unutulmamalıdır ki · Özetlemek gerekirse ·
@@ -83,7 +79,7 @@ satıcıyı en çok iade oranı zorluyor." (Olgu listesinde varsa.)
 
 **Kural:** metin söylemesi gerekeni söylediyse biter. Kapanış ancak yeni bilgi ya da
 somut bir sonraki adım taşıyorsa kalır. Gerçekten merak edilen, cevabı okurda olan bir
-soru blog kapanışı olabilir (humanify); "Peki ya siz?" olamaz. Liste yetmez: kalıpta
+soru blog kapanışı olabilir (humanify); kısa bir okur sorusunun işlevini de bağlam belirler. Liste yetmez: kalıpta
 olmayan taşınabilir kapanışı işlevsel testle bul (`turkce-parmak-izi.md` §14).
 
 ---
@@ -126,8 +122,7 @@ kalıcı iz bırakmak · köklü bir geçmişe sahip · sizi bekliyor · kaçır
 her damak tadına hitap eden · unutulmaz bir deneyim · kilit · bütüncül · dönüştürücü ·
 ezber bozan · beraberinde getiriyor
 
-**Kural:** sıfatı sil, ölçülebilir olguyu koy (olgu listesinden).
-"Dijital varlığınızı güçlendirin" → "Açılış süresini 4 saniyeden 1 saniyeye indiriyoruz."
+**Karar:** Sıfat veya vaat gerçekten boşsa sadeleştir. Kaynakta yalnız genel bir amaç varsa bundan ölçülebilir bir sonuç çıkarma. Ölçüm ancak kaynakta mevcut ve aynı iddiayı destekliyorsa kullanılır. Örneğin "Açılış süresini 4 saniyeden 1 saniyeye indiriyoruz" ifadesi genel bir dijital gelişim vaadinin eş anlamlısı değildir.
 **Sitede tek başına ayırt edici değil:** iyi insan site metinleri de "eşsiz",
 "efsanevi" kullanıyor (fark derlemi s04, s05). Kural kalır; iz kümelenmede, kapanışta ve
 olgu azlığında.

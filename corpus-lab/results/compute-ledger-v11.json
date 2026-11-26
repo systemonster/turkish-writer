@@ -1,0 +1,142 @@
+{
+  "as_of": "2026-11-25",
+  "pricing_source": "https://huggingface.co/docs/hub/main/en/jobs-pricing",
+  "scope": "Historical V10 and selection-only V11; confirmed project jobs only. Wall time × rate is an estimate, not actual billing. Startup/scheduling may be unbilled and minute rounding may differ. Previous ledger files are preserved and contain distinct job IDs.",
+  "rows": [
+    {
+      "id": "6b06c542d91f621b9307756e",
+      "name": "turkish-writer-v11-selection-only",
+      "stage": "COMPLETED",
+      "hardware": "rtx-pro-6000",
+      "created_at": "2026-11-25T11:23:46.651Z",
+      "finished_at": "2026-11-25T11:26:30.735Z",
+      "wall_seconds": 164.084,
+      "timeout_seconds": 1200,
+      "usd_per_hour": 2.75,
+      "nominal_max_usd": 0.9166666666666666,
+      "wall_rate_estimate_usd": 0.12534194444444444,
+      "actual_billed_usd": null,
+      "code_commit": "cc1c2a7a8cef4ce3182575adcd5354a260f05a04"
+    },
+    {
+      "id": "6b06c523b6a90bbe997d096b",
+      "name": "turkish-writer-v11-selection-preflight",
+      "stage": "COMPLETED",
+      "hardware": "cpu-basic",
+      "created_at": "2026-11-25T11:23:15.392Z",
+      "finished_at": "2026-11-25T11:23:30.442Z",
+      "wall_seconds": 15.05,
+      "timeout_seconds": 600,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0016666666666666668,
+      "wall_rate_estimate_usd": 0.00004180555555555556,
+      "actual_billed_usd": null,
+      "code_commit": "cc1c2a7a8cef4ce3182575adcd5354a260f05a04"
+    },
+    {
+      "id": "6b06b6af1460ffe1d5ea6ab4",
+      "name": "turkish-writer-historical-prose-comparison-v10-r2",
+      "stage": "COMPLETED",
+      "hardware": "rtx-pro-6000",
+      "created_at": "2026-11-25T10:21:35.541Z",
+      "finished_at": "2026-11-25T11:20:48.547Z",
+      "wall_seconds": 3553.006,
+      "timeout_seconds": 5400,
+      "usd_per_hour": 2.75,
+      "nominal_max_usd": 4.125,
+      "wall_rate_estimate_usd": 2.7141018055555555,
+      "actual_billed_usd": null,
+      "code_commit": "e855943131ebd9f471614593ca5068a3a11bd6aa"
+    },
+    {
+      "id": "6b06b46a1460ffe1d5ea6601",
+      "name": "turkish-writer-historical-supervisor-v10-r2-sdkfix",
+      "stage": "COMPLETED",
+      "hardware": "cpu-basic",
+      "created_at": "2026-11-25T10:11:54.094Z",
+      "finished_at": "2026-11-25T11:21:28.436Z",
+      "wall_seconds": 4174.342,
+      "timeout_seconds": 10500,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.029166666666666667,
+      "wall_rate_estimate_usd": 0.011595394444444445,
+      "actual_billed_usd": null,
+      "code_commit": "adab1dc25078e3a75cc9040a0aca56f242f74dae"
+    },
+    {
+      "id": "6b06b44cd0582cfbbefe36b0",
+      "name": "turkish-writer-historical-supervisor-v10-r2",
+      "stage": "ERROR",
+      "hardware": "cpu-basic",
+      "created_at": "2026-11-25T10:11:24.649Z",
+      "finished_at": "2026-11-25T10:11:35.989Z",
+      "wall_seconds": 11.34,
+      "timeout_seconds": 10500,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.029166666666666667,
+      "wall_rate_estimate_usd": 0.0000315,
+      "actual_billed_usd": null,
+      "code_commit": "2d71355d282fe4971253d7e475fdacde51da4678"
+    },
+    {
+      "id": "6b06b3d5d0582cfbbefe35b5",
+      "name": "turkish-writer-historical-preflight-fix",
+      "stage": "COMPLETED",
+      "hardware": "cpu-basic",
+      "created_at": "2026-11-25T10:09:25.329Z",
+      "finished_at": "2026-11-25T10:09:30.576Z",
+      "wall_seconds": 5.247,
+      "timeout_seconds": 600,
+      "usd_per_hour": 0.01,
+      "nominal_max_usd": 0.0016666666666666668,
+      "wall_rate_estimate_usd": 0.000014575,
+      "actual_billed_usd": null,
+      "code_commit": "c756b6fb8ce7f4de213d121ce9a60ca15bb46b69"
+    },
+    {
+      "id": "6b06b251d0582cfbbefe327a",
+      "name": "turkish-writer-historical-prose-comparison-v10",
+      "stage": "ERROR",
+      "hardware": "rtx-pro-6000",
+      "created_at": "2026-11-25T10:02:57.756Z",
+      "finished_at": "2026-11-25T10:04:25.192Z",
+      "wall_seconds": 87.436,
+      "timeout_seconds": 5400,
+      "usd_per_hour": 2.75,
+      "nominal_max_usd": 4.125,
+      "wall_rate_estimate_usd": 0.06679138888888889,
+      "actual_billed_usd": null,
+      "code_commit": "e88b9c1b540f6e46e3c0424d2d99efc485ec182b"
+    },
+    {
+      "id": "6b06b236d0582cfbbefe3242",
+      "name": "turkish-writer-historical-source-freeze-v10",
+      "stage": "COMPLETED",
+      "hardware": "cpu-upgrade",
+      "created_at": "2026-11-25T10:02:30.065Z",
+      "finished_at": "2026-11-25T10:02:44.812Z",
+      "wall_seconds": 14.747,
+      "timeout_seconds": 900,
+      "usd_per_hour": 0.03,
+      "nominal_max_usd": 0.0075,
+      "wall_rate_estimate_usd": 0.00012289166666666667,
+      "actual_billed_usd": null,
+      "code_commit": "e88b9c1b540f6e46e3c0424d2d99efc485ec182b"
+    }
+  ],
+  "prior_ledgers": [
+    {
+      "path": "compute-ledger-2026-11-25.json",
+      "known_wall_rate_usd": 3.9296162861111115,
+      "missing_duration_count": 3
+    },
+    {
+      "path": "compute-ledger-v10.json",
+      "known_wall_rate_usd": 2.662447222222222
+    }
+  ],
+  "new_known_wall_rate_usd": 2.918041305555555,
+  "combined_known_wall_rate_usd": 9.510104813888889,
+  "actual_total_usd": null,
+  "missing_new_duration_count": 0
+}

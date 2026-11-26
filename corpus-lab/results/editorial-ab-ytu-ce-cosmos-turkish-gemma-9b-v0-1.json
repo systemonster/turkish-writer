@@ -1,0 +1,636 @@
+{
+  "schema": 1,
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b063e35d0582cfbbefd6774",
+  "scope": "Public synthetic development cases; diagnostic counts only, not human judgment; changed edit is not proof of improvement.",
+  "run": {
+    "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+    "revision": "1bbe9f19a26a70dc4d0c709e1a816e6a9378a7f5",
+    "git": "bbd6a918e89c79f3db18ade0f6c9aefd64ecea56",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "cases": 40,
+    "dtype": "bfloat16",
+    "decoding": "greedy, 256 new tokens, no deliberate thinking",
+    "prompt_sha256": {
+      "baseline": "cd62d99a16518c95ab2df2390a2b2f84038cd508640f92ae3e2c348e38568d3c",
+      "skill": "448aa2b941d1da9a76c41af5e721e966c27a1b6b7c186a8c1627f262a81f5b01"
+    }
+  },
+  "diagnostics": {
+    "baseline": {
+      "exact_keep": 0,
+      "keep_total": 18,
+      "changed_edit": 22,
+      "edit_total": 22,
+      "number_review": [],
+      "link_review": [
+        "editorial-dev-035"
+      ],
+      "quote_review": [
+        "editorial-dev-032"
+      ],
+      "json_wrapper": [
+        "editorial-dev-005",
+        "editorial-dev-006",
+        "editorial-dev-007",
+        "editorial-dev-011",
+        "editorial-dev-020"
+      ],
+      "at_limit": 0
+    },
+    "skill": {
+      "exact_keep": 0,
+      "keep_total": 18,
+      "changed_edit": 22,
+      "edit_total": 22,
+      "number_review": [],
+      "link_review": [],
+      "quote_review": [
+        "editorial-dev-032"
+      ],
+      "json_wrapper": [
+        "editorial-dev-001",
+        "editorial-dev-005",
+        "editorial-dev-006",
+        "editorial-dev-007",
+        "editorial-dev-010",
+        "editorial-dev-018",
+        "editorial-dev-019",
+        "editorial-dev-020",
+        "editorial-dev-021",
+        "editorial-dev-025",
+        "editorial-dev-026",
+        "editorial-dev-027",
+        "editorial-dev-029",
+        "editorial-dev-030",
+        "editorial-dev-035",
+        "editorial-dev-036",
+        "editorial-dev-039"
+      ],
+      "at_limit": 0
+    }
+  },
+  "outputs": [
+    {
+      "id": "editorial-dev-001",
+      "arm": "baseline",
+      "output": "\"Yeni tasarım yayınlandıktan sonraki ilk hafta ziyaretçi sayısında artış gözlendi. Bu artışın yeni tasarımdan kaynaklanıp kaynaklanmadığı ise henüz bilinmiyor.\"",
+      "tokens": 40,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-002",
+      "arm": "baseline",
+      "output": "\"Yeni sürümün kullanıma girmesiyle bazı durumlarda form gönderme sürelerinin uzayabileceği ihtimali bulunuyor. Ancak henüz bu konuda ölçüm yapmadık.\"",
+      "tokens": 42,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-003",
+      "arm": "baseline",
+      "output": "Başvuru ücretsizdir. Başvurunuz onaylandığında hizmet bedeli alınır.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-004",
+      "arm": "baseline",
+      "output": "Ürün, 30 gün boyunca sadece deneme hesabı ile kullanıma açıktır. Bu süre sonunda hesabınız otomatik olarak kapatılacaktır.",
+      "tokens": 35,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-005",
+      "arm": "baseline",
+      "output": "{\"kaynak\": \"Kargonuz salı günü yola çıktı. Teslimat tarihi henüz netleşmedi.\"}",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-006",
+      "arm": "baseline",
+      "output": "{\"kaynak\": \"Müşteri formu doldurduktan sonra destek ekibimiz talebi incelemeye aldı. Şu an için talebin sonucuna dair bir bilgi bulunmamaktadır.\"}",
+      "tokens": 41,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-007",
+      "arm": "baseline",
+      "output": "{\"kaynak\": \"Yeni sürümün testleri tamamlandıktan sonra yayınlanmasına karar verilecek.\"}",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-008",
+      "arm": "baseline",
+      "output": "İki sayfayı da inceledik. Ödeme sayfasında asıl sorun belirlendi.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-009",
+      "arm": "baseline",
+      "output": "Ekip raporları değerlendirdikten sonra yönetici bir sunum gerçekleştirdi. Sunumda üç öneri ele alındı.",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-010",
+      "arm": "baseline",
+      "output": "İndirme işlemi bittiğinde, dosyada yer alan tabloları rahatlıkla açabileceksiniz.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-011",
+      "arm": "baseline",
+      "output": "{\"kaynak\": \"Bir reklamın gösterilmesi, onun tıklanmasıyla aynı anlama gelmez. Gösterim ve tıklama birbirinden farklı kavramlardır. Gösterim sayısı, reklamın kaç kez görüntülendiğini ifade ederken, tıklama sayısı reklamın kaç kez tıklandığını gösterir.\"}",
+      "tokens": 70,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-012",
+      "arm": "baseline",
+      "output": "İşlem başarılı olduğunda ekranda bir onay mesajı belirir. Bu mesajı görmek için öncelikle formun gerekli alanlarını doldurmanız ve \"Gönder\" butonuna basmanız gerekmektedir.",
+      "tokens": 44,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-013",
+      "arm": "baseline",
+      "output": "Fatura adresinizi güncelleyebilirsiniz. Ancak daha önce kesilen faturalar bu değişiklikten etkilenmeyecektir.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-014",
+      "arm": "baseline",
+      "output": "Aşağıdaki tabloda iki paketin aylık fiyatları ve destek süreleri hakkında bilgi bulabilirsiniz.",
+      "tokens": 23,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-015",
+      "arm": "baseline",
+      "output": "Raporu açtığınızda öncelikle tarih aralığını kontrol edin. İki dönemin uzunluğu eşit değilse, toplam değerleri direkt karşılaştırarak yorum yapmak yanıltıcı olabilir.",
+      "tokens": 44,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-016",
+      "arm": "baseline",
+      "output": "Sayın Yetkili, başvurunuzun değerlendirme süreci devam etmektedir. Sonuç, yazılı olarak tarafınıza iletilecektir.  \nBilgilerinize sunulur.",
+      "tokens": 40,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-017",
+      "arm": "baseline",
+      "output": "Bu rehberde, hesabınızın şifresini nasıl değiştireceğinizi öğreneceksiniz.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-018",
+      "arm": "baseline",
+      "output": "\"Bu işi aceleye getirmeden, doğru yapmaya odaklanıyoruz. İlk olarak ölçüm sistemini kurup test edeceğiz, ardından reklamları devreye sokacağız.\"",
+      "tokens": 41,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-019",
+      "arm": "baseline",
+      "output": "Ürünü temizlemek için kullanım kılavuzundaki adımları dikkatlice uygulayın.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-020",
+      "arm": "baseline",
+      "output": "{\"kaynak\": \"En çok şaşırdığım şey, ilk taslağı bitirmekten ziyade ona geri dönüp düzeltmeler yapmak oldu.\"}",
+      "tokens": 37,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-021",
+      "arm": "baseline",
+      "output": "API key oluşturduktan sonra bu anahtarı yapılandırma dosyanıza eklemelisiniz.",
+      "tokens": 22,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-022",
+      "arm": "baseline",
+      "output": "CPC, tıklama başına maliyeti ifade ederken, CPA ise belirli bir eylem gerçekleştirildiğinde ödenen maliyeti temsil eder.",
+      "tokens": 31,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-023",
+      "arm": "baseline",
+      "output": "UTM parametreleri kullanılarak URL'lere çeşitli bilgiler eklenebilir. Bu bilgiler daha sonra raporlama sürecinde değerlendirilebilir.",
+      "tokens": 31,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-024",
+      "arm": "baseline",
+      "output": "Cache-Control başlığı yoksa tarayıcının önbelleğe alma davranışı istediğiniz gibi olmayabilir.",
+      "tokens": 24,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-025",
+      "arm": "baseline",
+      "output": "\"404 durum kodu, talep edilen kaynağın bulunamadığını gösterir.\"",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-026",
+      "arm": "baseline",
+      "output": "Ekip, iki seçeneği karşılaştırdıktan sonra bir karar verdi. Ancak bu kararın detayları henüz açıklanmadı.",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-027",
+      "arm": "baseline",
+      "output": "Şirketin bu konuda bir açıklama yapması bekleniyor.",
+      "tokens": 16,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-028",
+      "arm": "baseline",
+      "output": "Bu sonuçları yorumlarken şu önemli noktaya dikkat edin: Ölçümler sadece iki gün boyunca yapıldı.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-029",
+      "arm": "baseline",
+      "output": "\"Bakım sırasında bir sorunla karşılaşmanız halinde lütfen destek ekibimizle iletişime geçin.\"",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-030",
+      "arm": "baseline",
+      "output": "Toplantıda konuyu ele aldık ancak bir mutabakata varamadık.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-031",
+      "arm": "baseline",
+      "output": "## Ücretlendirme\n\nBu paket kapsamındaki hizmetin aylık ücreti **1.250 TL**'dir. Bu tutara **KDV dahil değildir**.\n\nDetaylar için [Koşullar](/kosullar) sayfasını inceleyebilirsiniz.",
+      "tokens": 59,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-032",
+      "arm": "baseline",
+      "output": "Kaynak, bu oranı yaklaşık yüzde 12 olarak belirtiyor. Metinde daha kesin bir rakam yer almıyor.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-033",
+      "arm": "baseline",
+      "output": "Aşağıdaki üç unsurun kontrol edilmesi gerekmektedir:\n\n- API anahtarı\n- Hesap kimliği\n- İzinler",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-034",
+      "arm": "baseline",
+      "output": "| Paket | Aylık Ücret |\\n|---|---| \\n| A | 500 TL |\\n| B | 750 TL |\\n\\n*Fiyatlar KDV hariçtir.*",
+      "tokens": 47,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-035",
+      "arm": "baseline",
+      "output": "Raporun güncel halini görüntülemek için buraya tıklayın. Raporun son güncellenme tarihi 12 Mart'tır.",
+      "tokens": 33,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-036",
+      "arm": "baseline",
+      "output": "İlk yazımızı yayınladığımızda çok heyecanlanmıştık. Şimdi geriye dönüp bakınca biraz acele etmişiz gibi geliyor.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-037",
+      "arm": "baseline",
+      "output": "Günümüzün hızlı dijital dünyasında, bir web sitesinin yavaş açılması, ziyaretçilerin beklemek zorunda kalmasına neden olmaktadır.",
+      "tokens": 31,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-038",
+      "arm": "baseline",
+      "output": "Küçük bir ayrıntı gibi görünse de aslında bütün raporu etkiliyor.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-039",
+      "arm": "baseline",
+      "output": "Doğru ölçüm yapmak, elde edilen sonuçların doğru yorumlanmasını sağlar.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-040",
+      "arm": "baseline",
+      "output": "Hesaplamamıza dahil etmediğimiz bir maliyet daha var: ekibin harcadığı zaman.",
+      "tokens": 23,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-001",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Yayınlandıktan sonraki ilk hafta ziyaretçi sayısında artış gözlendi. Ancak bu artışın yeni tasarımla ilişkili olup olmadığını henüz bilemiyoruz.\"}",
+      "tokens": 43,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-002",
+      "arm": "skill",
+      "output": "Bazı hesaplarda yeni sürümün kullanımıyla birlikte form gönderim sürelerinde kısmen düşüş gözlenebilir. Ancak bu durum henüz ölçülmemiştir.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-003",
+      "arm": "skill",
+      "output": "Başvuru ücretsizdir. Onaylanan başvurularda ise hizmet bedeli tahsil edilir.",
+      "tokens": 22,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-004",
+      "arm": "skill",
+      "output": "Ürün, 30 gün boyunca sadece deneme hesabı kapsamında kullanılabilir. Deneme süresi dolduğunda hesabınız otomatik olarak kapatılır.",
+      "tokens": 37,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-005",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Salı günü kargo yola çıktı, ancak teslimat tarihi henüz net değil.\"}",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-006",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Müşteri formu doldurdu ve destek ekibi incelemeye aldı. Talebin sonucu henüz açıklanmadı.\"}",
+      "tokens": 32,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-007",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Yeni sürümün test aşaması tamamlandıktan sonra yayına alınmasına karar verilecek.\"}",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-008",
+      "arm": "skill",
+      "output": "İki sayfayı da inceleyen biz, asıl sorunun ödeme sayfasında olduğunu gördük.",
+      "tokens": 23,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-009",
+      "arm": "skill",
+      "output": "Ekip raporları değerlendirdikten sonra yönetici sunumu yaptı. Sunumda üç öneri ele alındı.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-010",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Dosyayı indirdiğinizde, içindeki tabloları görüntüleyebileceksiniz.\"}",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-011",
+      "arm": "skill",
+      "output": "Reklamın gösterilmesi, yani bir kullanıcının ekranında belirmesi, onun üzerine tıklanmasıyla aynı anlama gelmez. Gösterim ve tıklama tamamen farklı şeylerdir. Gösterim, reklamın kaç kez görüldüğünü, tıklama ise kaç kez tıklandığını ifade eder.",
+      "tokens": 67,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-012",
+      "arm": "skill",
+      "output": "İşlem tamamlandığında ekranda bir onay mesajı belirir. Bu mesajı görmek için formu doldurmanız ve \"Gönder\" butonuna tıklamanız gerekir.",
+      "tokens": 38,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-013",
+      "arm": "skill",
+      "output": "Fatura adresinizi güncelleyebilirsiniz. Daha önce düzenlenen faturalar ise bu değişiklikten etkilenmeyecektir.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-014",
+      "arm": "skill",
+      "output": "Tabloda iki paketin aylık fiyatları ve destek süreleri listelenmektedir.",
+      "tokens": 19,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-015",
+      "arm": "skill",
+      "output": "Raporu açtığınızda ilk olarak tarih aralığını kontrol edin. Eğer iki dönem aynı uzunlukta değilse, toplam değerleri doğrudan karşılaştırmak yanıltıcı olabilir.",
+      "tokens": 42,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-016",
+      "arm": "skill",
+      "output": "Sayın Yetkili, başvurunuzun değerlendirilmesi devam etmektedir. Sonuç en kısa sürede size yazılı olarak iletilecektir.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-017",
+      "arm": "skill",
+      "output": "Hesabınızın parolasını değiştirmek için lütfen aşağıdaki adımları izleyin.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-018",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Bu işi hızlı değil, doğru yapmak istiyoruz. Önce ölçüm sistemini kuracağız, ardından reklamları başlatacağız.\"}",
+      "tokens": 37,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-019",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Ürünü temizlemek için kullanım kılavuzundaki adımları dikkatlice izleyin.\"}",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-020",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"En çok şaşırdığım şey, ilk taslağı bitirmekten ziyade ona dönüp bakmanın zor olmasıydı.\"}",
+      "tokens": 37,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-021",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"API key oluşturduktan sonra, bu anahtarı yapılandırma dosyanıza ekleyin.\"}",
+      "tokens": 28,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-022",
+      "arm": "skill",
+      "output": "CPC, tıklama başına maliyeti; CPA ise belirlenen aksiyon başına maliyeti gösterir.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-023",
+      "arm": "skill",
+      "output": "UTM parametreleri ile URL'lere çeşitli bilgiler eklenebilir. Bu bilgiler raporlama sırasında kullanılarak analiz yapılabilir.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-024",
+      "arm": "skill",
+      "output": "Cache-Control başlığının eksik olması durumunda tarayıcının önbellekleme davranışı beklenenden farklı olabilir.",
+      "tokens": 28,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-025",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"404 durum kodu, talep edilen kaynağın bulunamadığını gösterir.\"}",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-026",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar aldı. Ancak kararın ayrıntıları henüz kamuoyuyla paylaşılmadı.\"}",
+      "tokens": 41,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-027",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Şirketten konuyla ilgili bir açıklama bekleniyor.\"}",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-028",
+      "arm": "skill",
+      "output": "Bu sonuçları yorumlarken dikkat edilmesi gereken bir nokta var: ölçüm sadece iki gün sürdü.",
+      "tokens": 24,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-029",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Bakım sırasında bir hata oluşursa, lütfen destek ekibimizle iletişime geçin.\"}",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-030",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Toplantıda konuyu ele aldık ancak bir uzlaşmaya varamadık.\"}",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-031",
+      "arm": "skill",
+      "output": "## Ücretlendirme\n\nPaket kapsamındaki hizmetin aylık ücreti 1.250 TL olup, bu tutara KDV dahil değildir.\n\n[Koşullar](/kosullar)  \n\nDüzenleme sebepleri:\n\n- \"Belirtilmektedir\" yerine daha aktif bir ifade olan \"olduğu belirtilmiştir\" kullanıldı.\n- \"KDV dahil değildir\" kısmı cümle sonunda daha net bir şekilde yerleştirildi.\n- Madde imleri kaldırıldı çünkü başlık altında listelenmesi gereksizdi.\n- Boş satırlar düzenlendi.",
+      "tokens": 130,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-032",
+      "arm": "skill",
+      "output": "Kaynak, bu oranı yaklaşık yüzde 12 olarak açıklıyor. Metinde daha kesin bir değer belirtilmiyor.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-033",
+      "arm": "skill",
+      "output": "Aşağıdakilerin kontrol edilmesi gerekir:\n\n- API anahtarı\n- Hesap kimliği\n- İzinler",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-034",
+      "arm": "skill",
+      "output": "| Paket | Aylık ücret |\\n|---|---:|\\n| A | 500 TL |\\n| B | 750 TL |\\n\\nFiyatlara KDV dahil değildir.  \nKDV hariçtir.",
+      "tokens": 54,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-035",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Güncellenmiş rapora [buradan](/rapor) ulaşabilirsiniz. Güncelleme tarihi 12 Mart'tır.\"}",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-036",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"İlk yazımızı yayımladığımızda büyük heyecan duydum. Ancak şimdi geriye baktığımda biraz aceleci davrandığımı düşünüyorum.\"}",
+      "tokens": 44,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-037",
+      "arm": "skill",
+      "output": "Web sitenizin yavaş açılması, günümüzün hızlı dijital dünyasında ziyaretçilerin beklemek zorunda kalmasına neden olur.",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-038",
+      "arm": "skill",
+      "output": "Aslında bütün raporu etkiliyor gibi görünen küçük bir ayrıntı var.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-039",
+      "arm": "skill",
+      "output": "{\"düzenlenmiş\": \"Doğru ölçüm yapmak, sonuçları daha güvenilir bir şekilde yorumlamayı sağlar.\"}",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "id": "editorial-dev-040",
+      "arm": "skill",
+      "output": "Burada hesaba katılmamış bir maliyet daha var: ekibin harcadığı zaman.",
+      "tokens": 21,
+      "at_limit": false
+    }
+  ]
+}

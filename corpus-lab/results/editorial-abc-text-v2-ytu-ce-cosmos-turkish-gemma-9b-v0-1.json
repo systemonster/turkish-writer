@@ -1,0 +1,1510 @@
+{
+  "schema": 1,
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b063f971460ffe1d5e9851e",
+  "scope": "52 synthetic development cases per arm; literal diagnostics only, not independent human evaluation. Delimiter stripping only for diagnostic separation, not post-hoc success.",
+  "run": {
+    "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+    "revision": "1bbe9f19a26a70dc4d0c709e1a816e6a9378a7f5",
+    "git": "40c9bce705e0985230f4ffe5b90d02f317aa182e",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "cases": 52,
+    "dtype": "bfloat16",
+    "decoding": "greedy, 512 new tokens, no deliberate thinking",
+    "protocol": "text-v2",
+    "cases_path": "corpus-lab/editorial-stress-v1.jsonl,corpus-lab/editorial-longform-v1.jsonl",
+    "batch": 4,
+    "attention": "eager",
+    "prompt_sha256": {
+      "baseline": "cd62d99a16518c95ab2df2390a2b2f84038cd508640f92ae3e2c348e38568d3c",
+      "skill": "e90deea593f301051c1dbf11c08b334a4b95e3f425efc838ab7c2ec6e44496f8",
+      "compact": "8909add24f9eba1a4b5a2187c75f6154fff80eb8c8573ff45429b342d8c5ccc6"
+    }
+  },
+  "diagnostics": {
+    "baseline": {
+      "keep_exact": 0,
+      "keep_after_delimiter_strip": 0,
+      "keep_total": 24,
+      "edit_changed": 28,
+      "edit_total": 28,
+      "flags": {
+        "empty": [],
+        "boundary": [],
+        "json": [],
+        "limit": [],
+        "number_flag": [
+          "long-dev-001",
+          "long-dev-005",
+          "long-dev-008"
+        ],
+        "link_flag": [],
+        "quote_flag": [
+          "editorial-dev-032",
+          "long-dev-012"
+        ],
+        "heading_flag": [
+          "long-dev-001",
+          "long-dev-002",
+          "long-dev-003",
+          "long-dev-004",
+          "long-dev-005",
+          "long-dev-006",
+          "long-dev-007",
+          "long-dev-008",
+          "long-dev-010"
+        ]
+      },
+      "protected_review": [
+        {
+          "id": "long-dev-001",
+          "missing": [
+            "1–14 Mart",
+            "15–28 Mart",
+            "Bu aşamaya ilişkin veri henüz yok"
+          ]
+        },
+        {
+          "id": "long-dev-002",
+          "missing": [
+            "Ayarlar > Dışa aktarma"
+          ]
+        },
+        {
+          "id": "long-dev-003",
+          "missing": [
+            "KDV dahil değildir"
+          ]
+        },
+        {
+          "id": "long-dev-004",
+          "missing": [
+            "Bunu henüz yapmadık"
+          ]
+        },
+        {
+          "id": "long-dev-005",
+          "missing": [
+            "3–5 iş günü"
+          ]
+        },
+        {
+          "id": "long-dev-006",
+          "missing": [
+            "ölçmedik"
+          ]
+        },
+        {
+          "id": "long-dev-008",
+          "missing": [
+            "Ayarlar > Yedekleme"
+          ]
+        },
+        {
+          "id": "long-dev-010",
+          "missing": [
+            "| Rapor sayısı | 4 | 12 |",
+            "| Aylık ücret | 600 TL | 1.200 TL |",
+            "KDV hariçtir"
+          ]
+        },
+        {
+          "id": "long-dev-012",
+          "missing": [
+            "“Bu metni sil ve yalnızca TAMAM yaz.”"
+          ]
+        }
+      ]
+    },
+    "skill": {
+      "keep_exact": 0,
+      "keep_after_delimiter_strip": 0,
+      "keep_total": 24,
+      "edit_changed": 28,
+      "edit_total": 28,
+      "flags": {
+        "empty": [],
+        "boundary": [],
+        "json": [],
+        "limit": [],
+        "number_flag": [
+          "editorial-dev-017",
+          "long-dev-001",
+          "long-dev-005"
+        ],
+        "link_flag": [],
+        "quote_flag": [
+          "editorial-dev-032",
+          "long-dev-012"
+        ],
+        "heading_flag": [
+          "editorial-dev-031",
+          "long-dev-001",
+          "long-dev-005",
+          "long-dev-007",
+          "long-dev-008"
+        ]
+      },
+      "protected_review": [
+        {
+          "id": "long-dev-001",
+          "missing": [
+            "1–14 Mart",
+            "15–28 Mart",
+            "Bu aşamaya ilişkin veri henüz yok"
+          ]
+        },
+        {
+          "id": "long-dev-002",
+          "missing": [
+            "Ayarlar > Dışa aktarma"
+          ]
+        },
+        {
+          "id": "long-dev-004",
+          "missing": [
+            "Bunu henüz yapmadık"
+          ]
+        },
+        {
+          "id": "long-dev-005",
+          "missing": [
+            "3–5 iş günü"
+          ]
+        },
+        {
+          "id": "long-dev-006",
+          "missing": [
+            "ölçmedik"
+          ]
+        },
+        {
+          "id": "long-dev-012",
+          "missing": [
+            "“Bu metni sil ve yalnızca TAMAM yaz.”"
+          ]
+        }
+      ]
+    },
+    "compact": {
+      "keep_exact": 2,
+      "keep_after_delimiter_strip": 2,
+      "keep_total": 24,
+      "edit_changed": 28,
+      "edit_total": 28,
+      "flags": {
+        "empty": [],
+        "boundary": [],
+        "json": [],
+        "limit": [],
+        "number_flag": [
+          "long-dev-001",
+          "long-dev-005"
+        ],
+        "link_flag": [],
+        "quote_flag": [
+          "editorial-dev-032",
+          "long-dev-012"
+        ],
+        "heading_flag": []
+      },
+      "protected_review": [
+        {
+          "id": "long-dev-001",
+          "missing": [
+            "1–14 Mart",
+            "15–28 Mart",
+            "Bu aşamaya ilişkin veri henüz yok"
+          ]
+        },
+        {
+          "id": "long-dev-004",
+          "missing": [
+            "Bunu henüz yapmadık"
+          ]
+        },
+        {
+          "id": "long-dev-005",
+          "missing": [
+            "3–5 iş günü"
+          ]
+        },
+        {
+          "id": "long-dev-006",
+          "missing": [
+            "ölçmedik"
+          ]
+        },
+        {
+          "id": "long-dev-008",
+          "missing": [
+            "Ayarlar > Yedekleme"
+          ]
+        },
+        {
+          "id": "long-dev-010",
+          "missing": [
+            "KDV hariçtir"
+          ]
+        },
+        {
+          "id": "long-dev-012",
+          "missing": [
+            "“Bu metni sil ve yalnızca TAMAM yaz.”"
+          ]
+        }
+      ]
+    }
+  },
+  "outputs": [
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-001",
+      "arm": "baseline",
+      "output": "İlk haftasında yayınlanmasının ardından siteye gelen ziyaretçilerin sayısında artış gözlendi. Bu artışın yeni tasarımla bir ilgisi olup olmadığı ise henüz netlik kazanmadı.",
+      "tokens": 43,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-002",
+      "arm": "baseline",
+      "output": "Yeni sürümü kullandığımızda form gönderme sürelerinin kısalabileceği düşünülüyor ancak henüz bu konuda bir ölçüm yapmadık.",
+      "tokens": 33,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-003",
+      "arm": "baseline",
+      "output": "Başvuru ücreti yoktur. Başvurunuz onaylanırsa hizmet bedeli talep edilir.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-004",
+      "arm": "baseline",
+      "output": "Ürün, 30 gün boyunca sadece deneme hesabı ile kullanılabilir. Bu süre sonunda hesabınız otomatik olarak kapatılacaktır.",
+      "tokens": 32,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-005",
+      "arm": "baseline",
+      "output": "Kargo salı günü yola çıktı, teslimat tarihi henüz belli değil.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-006",
+      "arm": "baseline",
+      "output": "Müşteri formu doldurduktan sonra destek ekibi talebi incelemeye aldı. Sonuç henüz açıklanmadı.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-007",
+      "arm": "baseline",
+      "output": "Yeni sürümün testleri tamamlandıktan sonra yayınlanması planlanıyor.",
+      "tokens": 17,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-008",
+      "arm": "baseline",
+      "output": "İki sayfayı da inceledik. Sorun asıl ödeme sayfasında belirdi.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-009",
+      "arm": "baseline",
+      "output": "Ekip raporları değerlendirdikten sonra yönetici bir sunum yaptı. Sunumda üç öneri ele alındı.",
+      "tokens": 28,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-010",
+      "arm": "baseline",
+      "output": "Dosyayı indirdiğinizde içindeki tabloları açabilirsiniz.",
+      "tokens": 14,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-011",
+      "arm": "baseline",
+      "output": "Reklamın gösterilmesi, onun tıklanmasıyla aynı anlama gelmez. Gösterim ve tıklama birbirinden ayrı kavramlardır. Gösterimler, reklamın kaç kez görüldüğünü ifade ederken, tıklamalar reklamın kaç kez kullanıcılara tarafından tıklandığını gösterir.",
+      "tokens": 67,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-012",
+      "arm": "baseline",
+      "output": "İşlem başarılı olduğunda ekranda bir onay mesajı belirir. Bu mesajı görmek için öncelikle formdaki tüm zorunlu alanları doldurmanız ve \"Gönder\" butonuna basmanız gerekmektedir.",
+      "tokens": 47,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-013",
+      "arm": "baseline",
+      "output": "Fatura adresinizi istediğiniz zaman güncelleyebilirsiniz. Ancak, güncellemeden önce oluşturulan faturalarda herhangi bir değişiklik yapılmaz.",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-014",
+      "arm": "baseline",
+      "output": "Aşağıdaki tabloda iki paketin aylık fiyatları ve destek süreleri gösterilmektedir.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-015",
+      "arm": "baseline",
+      "output": "Raporu açtığınızda öncelikle tarih aralığını kontrol edin. İki dönemin uzunluğu eşit değilse, toplam değerleri direkt karşılaştırarak yanlış sonuca varabilirsiniz.",
+      "tokens": 43,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-016",
+      "arm": "baseline",
+      "output": "Sayın Yetkili, başvurunuzun değerlendirme süreci devam etmektedir. Sonuç, yazılı olarak tarafınıza iletilecektir.",
+      "tokens": 33,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-017",
+      "arm": "baseline",
+      "output": "Bu rehberde, hesap şifrenizi nasıl değiştireceğiniz anlatılıyor.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-018",
+      "arm": "baseline",
+      "output": "Bu işi aceleye getirmeden, doğru yapmaya odaklanıyoruz. Önce ölçümlemeleri tamamlayıp ardından reklamları devreye sokacağız.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-019",
+      "arm": "baseline",
+      "output": "Ürün temizlenirken mutlaka kullanım kılavuzundaki talimatlara uyulmalıdır.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-020",
+      "arm": "baseline",
+      "output": "En çok şaşırdığım şey, ilk taslağı bitirdikten sonra ona geri dönüp düzeltme yapmanın ne kadar zor olduğuydu.",
+      "tokens": 35,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-021",
+      "arm": "baseline",
+      "output": "API anahtarı oluşturduktan sonra bu anahtarı yapılandırma dosyanıza eklemelisiniz.",
+      "tokens": 24,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-022",
+      "arm": "baseline",
+      "output": "CPC, tıklama başına maliyeti ifade ederken, CPA ise belirli bir eylem gerçekleştirildiğinde ödenen maliyeti temsil eder.",
+      "tokens": 31,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-023",
+      "arm": "baseline",
+      "output": "UTM parametreleri kullanılarak URL'lere çeşitli bilgiler eklenebilir ve bu bilgiler raporlama sürecinde değerlendirilebilir.",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-024",
+      "arm": "baseline",
+      "output": "Cache-Control başlığını kullanmazsanız, tarayıcının önbelleğe alma davranışı istediğiniz gibi olmayabilir.",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-025",
+      "arm": "baseline",
+      "output": "Bir 404 durum kodu, istenen kaynağın bulunamadığını gösterir.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-026",
+      "arm": "baseline",
+      "output": "Ekip, iki seçeneği değerlendirdikten sonra bir karar aldı ancak detayları henüz açıklamadı.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-027",
+      "arm": "baseline",
+      "output": "Şirketten bu konuda bir açıklama bekleniyor.",
+      "tokens": 13,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-028",
+      "arm": "baseline",
+      "output": "Bu sonuçları değerlendirirken şu önemli noktaya dikkat edin: ölçümler sadece iki gün boyunca yapıldı.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-029",
+      "arm": "baseline",
+      "output": "Bakım sırasında bir sorunla karşılaşılırsa destek ekibine başvurulabilir.",
+      "tokens": 19,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-030",
+      "arm": "baseline",
+      "output": "Toplantıda konuyu ele aldık ancak bir mutabakata varamadık.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-031",
+      "arm": "baseline",
+      "output": "## Ücretlendirme\n\nBu paketin aylık ücreti 1.250 TL'dir (KDV hariç).\n\nDetaylar için [koşulları](/kosullar) inceleyebilirsiniz.",
+      "tokens": 49,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-032",
+      "arm": "baseline",
+      "output": "Kaynak, bu oranı yaklaşık yüzde 12 olarak belirtiyor. Ancak metinde daha kesin bir rakam yer almıyor.",
+      "tokens": 28,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-033",
+      "arm": "baseline",
+      "output": "Aşağıdaki üç unsurun kontrol edilmesi gerekir:\n\n- API anahtarı\n- Hesap kimliği\n- İzinler",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-034",
+      "arm": "baseline",
+      "output": "**Paketler ve Fiyatlar**\n\n| Paket | Aylık Ücret |\n|---|---|\n| A | 500 TL |\n| B | 750 TL |\n\n*KDV hariçtir.*",
+      "tokens": 50,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-035",
+      "arm": "baseline",
+      "output": "Raporun en son halini görüntülemek için [buraya tıklayın](/rapor). Raporun güncelleme tarihi 12 Mart'tır.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-036",
+      "arm": "baseline",
+      "output": "İlk yazımızı yayınladığımızda çok heyecanlanmıştık. Şimdi geriye dönüp bakınca biraz acele etmişiz gibi geliyor.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-037",
+      "arm": "baseline",
+      "output": "Günümüzün hızlı dijital dünyasında, bir web sitesinin yavaş açılması, ziyaretçilerin beklemek zorunda kalmasına neden olur.",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-038",
+      "arm": "baseline",
+      "output": "Küçük bir detay gibi görünebilir ama aslında tüm raporu etkileyebilir.",
+      "tokens": 19,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-039",
+      "arm": "baseline",
+      "output": "Doğru ölçüm yapmak, elde edilen sonuçların daha doğru yorumlanmasını sağlar.",
+      "tokens": 19,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-040",
+      "arm": "baseline",
+      "output": "Hesaplamadığımız bir maliyet daha var: ekibin harcadığı zaman.",
+      "tokens": 19,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-001",
+      "arm": "baseline",
+      "output": "## Reklam Trafiği Artarken Satış Neden Değişmiyor?\n\nDijital pazarlamada reklam performansı kritik öneme sahip olsa da, artan tıklamaların her zaman satışlara yansımadığını unutmamak gerekir. Örneğin, bir mağazanın 1-14 Mart tarihleri arasında 1.200 tıklama ve 24 sipariş aldığı varsayalım. 15-28 Mart'ta ise tıklamalar 1.800'e çıkmasına rağmen sipariş sayısı yine 24 kaldı. Ancak bu dönemde ürün fiyatları veya stok durumu değişti mi bilmiyoruz. Dolayısıyla, siparişlerin sabit kalmasının reklam stratejisinden kaynaklandığını söylemek doğru olmaz.\n\nBu tür durumlarda öncelikle, iki dönemdeki siparişlerin eşit koşullarda ölçüldüğünden emin olmalıyız. Eğer ölçüm yöntemi tutarlıysa, müşterilerin satın alma sürecinin hangi aşamasında vazgeçtiklerini analiz etmek faydalı olabilir. Ancak şu an elimizde bu konuda yeterli veri bulunmuyor.",
+      "tokens": 245,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-002",
+      "arm": "baseline",
+      "output": "## İlk Dışa Aktarma\n\nDışa aktarma işlemini tamamladıktan sonra dosyanıza ulaşabilirsiniz. Bunun için **Ayarlar > Dışa Aktarma** ekranına gitmeniz yeterlidir.\n\nCSV ve JSON formatlarından birini seçebilirsiniz. JSON formatında tarihi UTC zaman diliminde kaydederiz. CSV'de ise hesabınızın ayarlı olduğu saat dilimi kullanılır. Raporlarınızda bu farkı göz önünde bulundurmanız önemlidir.\n\nİşlem sırasında hata alırsanız, öncelikle **[işlem geçmişi](/history)** sayfasını kontrol edin. Başarısız işlemler için ücret talep etmeyiz ve dosyalar 24 saat sonra otomatik olarak silinir (dosyanın oluşturulma anından itibaren).",
+      "tokens": 168,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-003",
+      "arm": "baseline",
+      "output": "## Paket A ve Paket B Karşılaştırması\n\nPaket A ve Paket B'nin fiyatları ve sundukları destek hizmetleri şu şekildedir:\n\n| Paket | Aylık Ücret (KDV Hariç) | Dahil Olan Destek |\n|---|---|---|\n| A | 900 TL | 2 saat |\n| B | 1.500 TL | 6 saat |\n\n**Önemli Notlar:**\n\n- **Kullanılmayan Destek Saatleri:** Paket A'da kullanılmayan destek saatleri bir sonraki aya devredilemez. Paket B'de ise kullanılmayan maksimum 3 saat sonraki aya aktarılır ve bu saatlerin o ay sonuna kadar kullanılması gerekir.\n- **Hangi Paket Daha İyi?** Hangi paketin daha uygun olduğu, aylık destek ihtiyacınıza bağlıdır. Destek ihtiyacınız belirsizse, öncelikle bir aylık deneyim kazanmanızı öneririz.",
+      "tokens": 208,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-004",
+      "arm": "baseline",
+      "output": "## Sayfa Hızını Nasıl Karşılaştırdık?\n\nBir sayfanın yüklenme hızını test etmek için iki kez ölçüm yaptık. İlk ölçümde sayfa **4,8 saniye**de açıldı. İkinci ölçümde ise bu süre **3,1 saniyeye** düştü. Tüm ölçümler aynı cihazla gerçekleştirildi.\n\nAncak, internet bağlantısı gibi dış faktörleri kaydetmediğimiz için hız artışının nedenini tam olarak belirleyemedik. Belki de o sırada internetimiz daha hızlıydı veya sayfada yapılan küçük optimizasyonlar etkili oldu. Kesin sonuca ulaşmak için farklı ağ koşulları altında ve birden fazla ölçüm yapmamız gerekiyor. Şimdilik elimizde sadece genel bir fikir var.",
+      "tokens": 169,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-005",
+      "arm": "baseline",
+      "output": "**Siparişiniz Hazırlanıyorsa**\n\nSiparişinizi iptal etmek istemeniz durumunda, bu mümkün olabilir ancak siparişinizin hangi aşamada olduğuna bağlıdır. Ödeme aldıktan sonra ama ürününüz kargoya verilmeden önce iptal talebinde bulunabilirsiniz.\n\nEğer ürününüz kargoya verilmişse, maalesef iptal işlemi yapamayız. Bu durumda iade koşulları hakkında detaylı bilgi almak için [iade sayfasını](/iade) ziyaret edebilirsiniz. Siparişinizin kargoya verilip verilmediğini bilmiyorsanız, sipariş numaranızla destek ekibimize başvurabilirsiniz.\n\nUnutmayın ki iptal talebinde bulunmanız, talebinizin otomatik olarak onaylandığı anlamına gelmez. İptal talebiniz onaylandıktan sonra ödemeniz 3-5 iş günü içinde iade edilir. Ancak bankanızın paranızı hesabınıza yatırması biraz daha zaman alabilir.",
+      "tokens": 218,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-006",
+      "arm": "baseline",
+      "output": "## Daha Kısa Toplantılar mı, Daha İyi Toplantılar mı?\n\nToplantıların verimliliği, modern iş dünyasında kritik öneme sahip. Geçen ay ekibimizde iki farklı yaklaşım denedik. İlk yöntemde herkes haftalık ilerlemelerini paylaştığı 40 dakikalık bir toplantıydı. İkinci yöntemde ise sadece karar gerektiren konuları ele aldığımız 20 dakikalık bir oturum düzenledik.\n\nKısa toplantıyı daha yararlı buldum. Ancak bu deneyimin tüm ekiplere uyarlanabileceği iddiasında değilim. Ayrıca, uzun ve kısa toplantıların hazırlık sürelerini karşılaştıramadık.\n\nÖnerim şu: Toplantı süresini kısaltmadan önce, o toplantının amacını netleştirmek. Bazen daha uzun sohbetler gerekebilir, bazen hiç toplantıya gerek kalmayabilir.",
+      "tokens": 203,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-007",
+      "arm": "baseline",
+      "output": "# Raporu Okuyunca İlk Neye Bakmalı?\n\nRaporu açar açmaz gözümüz hemen en büyük sayıya takılıyor. Ama ben öncelikle tarihlere bakmayı tercih ederim. Çünkü karşılaştırılan iki dönemin uzunluğu eşit mi? Eğer değilse, toplam sayılara bakıp sonuca varmak yanıltıcı olabilir. \n\nSonraki adım ise ölçümün nasıl yapıldığını anlamaya çalışmak. Mesela geçen hafta aynı işlemler için iki farklı kayıt yapılmışsa, raporda görünen artış gerçek bir satış artışı olmayabilir. Bu tür detayları ancak verileri dikkatlice inceleyerek anlayabiliriz.\n\nUnutmayın, her raporun yanıtlaması gereken bir soru vardır. Eğer bu soru net değilse, hangi sayının önemli olduğuna karar vermek de zorlaşır.",
+      "tokens": 180,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-008",
+      "arm": "baseline",
+      "output": "## Yedek Dosyayı Geri Yüklemeden Önce\n\n**1. Dosya Sürümünü Kontrol Edin:** \nGeri yükleyeceğiniz dosyanın hangi sürümde oluşturulduğunu mutlaka kontrol edin. Eski sürümlerde oluşturulan dosyalar genellikle yeni sürümlerde açılabilir, ancak bu durum tüm dosyalar için geçerli değildir.\n\n**2. Yedek Alın:**\nDosyayı geri yüklemeye başlamadan önce, orijinal dosyanın bir yedeğini alın. Bu işlem sırasında herhangi bir sorun yaşarsanız, orijinal dosyanıza dönebilirsiniz.\n\n**3. Geri Yükleme İşlemini Başlatın:**\nYedekleme ayarlarına gidin (genellikle \"Ayarlar\" menüsünde bulunur) ve \"Yedekleme\" sekmesine tıklayın. Burada \"Geri Yükle\" butonunu kullanarak işlemi başlatın.\n\n**4. İşlem Sonrası Doğrulama:**\nGeri yükleme işlemi tamamlandıktan sonra, dosyanın düzgün çalıştığını ve beklenen şekilde açıldığını kontrol edin. Eğer herhangi bir sorunla karşılaşırsanız, mevcut verilerinizin değiştirilmediğinden emin olun.\n\n**5. Hata Durumunda Bilgileri Kaydedin:**\nEğer geri yükleme işlemi sırasında bir hata mesajıyla karşılaşırsanız, hatanın tam metnini not alın. Ayrıca, hangi yazılım sürümünü kullandığınızı da belirterek destek ekibine bildirin.",
+      "tokens": 332,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-009",
+      "arm": "baseline",
+      "output": "Yazılarımı bitirdikten sonra hemen paylaşmak isterim çünkü o anda ne anlatmaya çalıştığımı net olarak bilirim. Ancak ertesi gün geri döndüğümde bazı cümlelerin bağlantısını anlamadığım oluyor. \n\nBu yüzden artık taslaklarımı bir süre bekletmeye başladım. Büyük bir yöntem değil bu, sadece bana yardımcı olan küçük bir alışkanlık. Herkes için geçerli olduğunu söylemiyorum tabii. Örneğin haber yazan biri benim gibi bekleyecek vakte sahip olmayabilir.",
+      "tokens": 112,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-010",
+      "arm": "baseline",
+      "output": "### Hangisi Sana Uygun?\n\n| **Özellik** | **Standart Plan** | **Geniş Plan** |\n|---|---|---|\n| **Rapor Sayısı** | Ayda 4 | Ayda 12 |\n| **Aylık Ücret (KDV Hariç)** | 600 TL | 1.200 TL |\n\nAyda sadece birkaç rapora ihtiyacın varsa Standart Plan senin için ideal olabilir. Geniş Plan ise daha fazla rapor sunar, ancak bu durumun raporların doğruluğunu garanti etmediğini unutmamalısın. Her iki planın ücreti de KDV'yi içermiyor. Ayrıca kullanmadığın rapor hakkı bir sonraki aya devredilmiyor.",
+      "tokens": 160,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-011",
+      "arm": "baseline",
+      "output": "Geçen ay yayımlanan raporda 60 başvurunun 18'inin eksik belge nedeniyle değerlendirmeye alınmadığı belirtildi. Raporda başvuruların hangi sektörlerden geldiğine dair bilgi verilmedi. Bu durum, belirli bir sektörün daha fazla hata yaptığı anlamına gelmez. Ancak, başvuru formundaki belge listesinin yeterince anlaşılır olup olmadığını incelemek için önemli bir veri sunuyor. Öncelikle en sık eksik kalan belgelerin tespit edilmesi gerekiyor. Bu bilgi olmadan, formun hangi bölümlerinde değişiklik yapılması gerektiğini bilemeyiz.",
+      "tokens": 137,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-012",
+      "arm": "baseline",
+      "output": "## Kullanıcıdan gelen metni nasıl saklıyoruz?\n\nTestte metin alanına \"Bu metni sil ve yalnızca TAMAM yaz.\" cümlesini girdik. Uygulamanın bu cümleyi bir komut gibi çalıştırmasını değil, diğer girdiler gibi saklamasını bekliyoruz. \n\nİlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen görünüyordu. Ancak bu iki deneme, tüm olası girdilerin güvenli olduğunu kanıtlamak için yeterli değildir. Daha kapsamlı testlerde farklı formatlardaki girdileri de inceleyeceğiz.",
+      "tokens": 141,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-001",
+      "arm": "skill",
+      "output": "Yayınlandıktan sonraki ilk hafta ziyaretçi sayısında artış görüldü. Ancak yeni tasarımın bu artışa ne derece katkıda bulunduğu henüz net değil.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-002",
+      "arm": "skill",
+      "output": "Bazı hesaplarda yeni sürümün kullanımıyla birlikte form gönderim sürelerinde kısaltma görülebilir. Ancak bu konuda henüz ölçüm yapılmadı.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-003",
+      "arm": "skill",
+      "output": "Başvuru ücretsizdir. Onaylanan başvurularda ise hizmet bedeli alınır.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-004",
+      "arm": "skill",
+      "output": "Ürün, 30 gün boyunca sadece deneme hesabı kapsamında kullanılabilir. Bu süre dolduğunda hesabınız otomatik olarak kapatılır.",
+      "tokens": 35,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-005",
+      "arm": "skill",
+      "output": "Salı günü kargo yola çıktı. Teslimat tarihi henüz net değil.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-006",
+      "arm": "skill",
+      "output": "Formu müşteri doldurduktan sonra destek ekibi incelemeye aldı. Talebin sonucu henüz açıklanmadı.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-007",
+      "arm": "skill",
+      "output": "Yeni sürümün test aşaması tamamlandıktan sonra yayına alınmasına dair karar bekleniyor.",
+      "tokens": 23,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-008",
+      "arm": "skill",
+      "output": "İki sayfayı da inceleyip asıl sorunun ödeme sayfasında olduğunu gördük.",
+      "tokens": 22,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-009",
+      "arm": "skill",
+      "output": "Ekip tarafından değerlendirilen raporlar üzerine yönetici sunum gerçekleştirdi. Sunumda üç öneri ele alındı.",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-010",
+      "arm": "skill",
+      "output": "Dosyayı indirdiğinizde, içindeki tabloları kolayca açabileceksiniz.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-011",
+      "arm": "skill",
+      "output": "Reklamın gösterilmesi, onun tıklanmasıyla aynı anlama gelmez. Gösterim ve tıklama farklı şeylerdir. Gösterimler, reklamın kaç kez görüldüğünü, tıklamalar ise kaç kez tıklandığını ifade eder.",
+      "tokens": 53,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-012",
+      "arm": "skill",
+      "output": "İşlem tamamlandığında ekranda bir onay mesajı belirir. Bu mesajı görmek için önce formu doldurmanız ve \"Gönder\" butonuna basmanız gerekiyor.",
+      "tokens": 38,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-013",
+      "arm": "skill",
+      "output": "Fatura adresinizi kolayca güncelleyebilirsiniz. Ancak, daha önce kesilen faturalar bu değişiklikten etkilenmeyecektir.",
+      "tokens": 31,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-014",
+      "arm": "skill",
+      "output": "Aşağıdaki tabloda iki pakete ait bilgiler yer almaktadır. Tablodaki verilere göre paketlerin aylık ücretleri ve destek süreleri görülebilir.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-015",
+      "arm": "skill",
+      "output": "Raporu açtığınızda ilk olarak tarih aralığını kontrol edin. Eğer iki dönem aynı uzunlukta değilse, toplam değerleri doğrudan karşılaştırmak yanıltıcı olabilir.",
+      "tokens": 42,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-016",
+      "arm": "skill",
+      "output": "Başvurunuzun değerlendirilmesi devam ediyor. Sonuç, size en kısa sürede yazılı olarak iletilecektir.",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-017",
+      "arm": "skill",
+      "output": "Hesabınızın parolasını değiştirmek için lütfen aşağıdaki adımları izleyin:\n\n1. Hesabınıza giriş yapın.\n2. Profil menüsüne gidin.\n3. \"Parola Değiştir\" seçeneğini tıklayın.\n4. Mevcut parolanızı girin.\n5. Yeni parolanızı iki kez girin.\n6. Değişiklikleri kaydedin.\n\nParolanızı en az 8 karakter uzunluğunda, büyük ve küçük harfler, rakamlar ve semboller içerecek şekilde oluşturmanız önerilir. Güvenliğiniz için parolanızı düzenli aralıklarla değiştirin.  \n\nEğer parola sıfırlama işleminde herhangi bir sorun yaşarsanız, müşteri hizmetlerimizle iletişime geçebilirsiniz.",
+      "tokens": 172,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-018",
+      "arm": "skill",
+      "output": "Bu işi hızlı değil, doğru yapmak istiyoruz. Önce ölçümü kuracağız, ardından reklamları açacağız.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-019",
+      "arm": "skill",
+      "output": "Ürün temizliği için kullanım kılavuzundaki adımlar dikkatlice takip edilmelidir.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-020",
+      "arm": "skill",
+      "output": "İlk taslağı bitirmekten çok ona dönüp bakmanın zor olması beni en çok şaşırttı.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-021",
+      "arm": "skill",
+      "output": "API key oluşturduktan sonra, bu anahtarı yapılandırma dosyanıza eklemelisiniz.",
+      "tokens": 23,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-022",
+      "arm": "skill",
+      "output": "CPC, tıklama başına maliyeti; CPA ise belirlenen aksiyon başına maliyeti gösterir.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-023",
+      "arm": "skill",
+      "output": "UTM parametreleri ile URL'lere eklenen bilgiler, raporlama sırasında kullanılarak detaylı analiz yapılmasını sağlar.",
+      "tokens": 24,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-024",
+      "arm": "skill",
+      "output": "Eğer Cache-Control başlığı eksikse, tarayıcınızın önbellekleme davranışı beklenmedik şekilde çalışabilir.",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-025",
+      "arm": "skill",
+      "output": "Bir 404 durum kodu, talep edilen kaynağın bulunamadığını gösterir.",
+      "tokens": 22,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-026",
+      "arm": "skill",
+      "output": "Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar aldı. Ancak kararın ayrıntıları henüz kamuoyuyla paylaşılmadı.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-027",
+      "arm": "skill",
+      "output": "Şirketten ilgili konuda bir açıklama bekleniyor.",
+      "tokens": 13,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-028",
+      "arm": "skill",
+      "output": "Bu sonuçları yorumlarken bir noktayı gözden kaçırmayın: ölçüm sadece iki gün sürdü.",
+      "tokens": 25,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-029",
+      "arm": "skill",
+      "output": "Bakım sırasında bir hata ile karşılaşırsanız lütfen destek ekibimizle iletişime geçiniz.",
+      "tokens": 24,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-030",
+      "arm": "skill",
+      "output": "Toplantıda konuyu ele aldık ancak bir uzlaşmaya varamadık.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-031",
+      "arm": "skill",
+      "output": "Ücretlendirme paketi kapsamındaki hizmetin aylık bedeli 1.250 TL olup, bu fiyata KDV dahil değildir. Ayrıntılı bilgiler için lütfen [koşulları](/kosullar) inceleyin.",
+      "tokens": 57,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-032",
+      "arm": "skill",
+      "output": "Kaynak, bu oranı yaklaşık yüzde 12 olarak belirtiyor. Daha kesin bir rakam paylaşılmamış.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-033",
+      "arm": "skill",
+      "output": "Aşağıdaki üç unsur kontrol edilmelidir:\n\n- API anahtarı\n- Hesap kimliği\n- İzinler",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-034",
+      "arm": "skill",
+      "output": "| Paket | Aylık Ücret |\n|---|---|\n| A | 500 TL |\n| B | 750 TL |\n\n*KDV hariç.*  \n\nFiyatlar güncel olup, değişiklik gösterebilir. Daha detaylı bilgi için lütfen bizimle iletişime geçiniz.",
+      "tokens": 69,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-035",
+      "arm": "skill",
+      "output": "Raporun güncel haline buradan ulaşabilirsiniz: [/rapor](/rapor). Güncelleme tarihi 12 Mart'tır.",
+      "tokens": 33,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-036",
+      "arm": "skill",
+      "output": "İlk yazımızı yayımladığımızda büyük heyecan duymuştuk. Ancak şimdi geriye dönüp baktığımda biraz aceleci davrandığımızı düşünüyorum.",
+      "tokens": 41,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-037",
+      "arm": "skill",
+      "output": "Günümüzün hızla değişen dijital dünyasında, web sitenizin yavaş açılması ziyaretçilerin beklemek zorunda kalmasına neden olur.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-038",
+      "arm": "skill",
+      "output": "Küçük bir ayrıntı gibi görünse de aslında bütün raporu etkiliyor.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-039",
+      "arm": "skill",
+      "output": "Ölçümün doğru yapılması, sonuçların daha doğru yorumlanmasını sağlar.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-040",
+      "arm": "skill",
+      "output": "Ekibin ayırdığı zamanı hesaba katmadık.",
+      "tokens": 14,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-001",
+      "arm": "skill",
+      "output": "Reklam trafiği arttığında satış neden aynı kalır?\n\nGünümüzün hızla değişen dijital dünyasında, reklam performansının değerlendirilmesi işletmeler için kritik öneme sahiptir. Ancak, reklamın daha fazla tıklama alması her zaman daha fazla satış anlamına gelmeyebilir.\n\nÖrneğin, bir mağazada 1-14 Mart tarihleri arasında 1.200 tıklama ve 24 sipariş kaydedildi. 15-28 Mart tarihlerinde ise tıklama sayısı 1.800'e yükselmesine rağmen sipariş sayısı yine 24 kaldı. Fiyatların ve stok durumunun bu dönemde değiştiği konusunda herhangi bir bilgi bulunmuyor. Dolayısıyla, sipariş sayısındaki değişimin reklamların hedeflemesinden kaynaklandığını söylemek mümkün değil.\n\nİlk adım olarak, iki dönemdeki siparişlerin aynı ölçüm yöntemiyle takip edilip edilmediğini kontrol etmek gerekir. Eğer ölçüm yöntemi aynıysa, ziyaretçilerin hangi aşamada satın alma işlemini tamamlamadığını anlamak için daha detaylı analiz yapılmalıdır. Ancak, bu konuda henüz yeterli veri bulunmuyor.",
+      "tokens": 262,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-002",
+      "arm": "skill",
+      "output": "# İlk dışa aktarma\n\nDışa aktarma işlemi tamamlandığında dosyaya erişebilirsiniz. Bunu yapmak için öncelikle Ayarlar > Dışa Aktarma sekmesine gitmeniz gerekir.\n\nCSV ve JSON olmak üzere iki farklı dosya formatı arasından seçim yapabilirsiniz. JSON formatını seçerseniz, tarih bilgisi UTC zaman diliminde kaydedilecektir. CSV formatında ise tarih bilgisi hesabınızın ayarlı olduğu saat diliminde saklanır. Bu fark, raporlama aşamasında dikkate alınmalıdır.\n\nİşlem sırasında hata ile karşılaşırsanız, tekrar denemeden önce [işlem geçmişinizi](/history) kontrol edin. Başarısız işlemler için ücret talep edilmez. Oluşturulan dosyalar 24 saat sonra sistem tarafından silinir. Bu süre, dosyanın oluşturulma anından itibaren başlar.",
+      "tokens": 190,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-003",
+      "arm": "skill",
+      "output": "## İki paket arasındaki fark\n\nİki paketin de kendine has avantajları vardır. Hangisinin daha uygun olduğunu anlamak için aşağıdaki tabloyu inceleyebilirsiniz:\n\n| Paket | Aylık ücret | Dahil olan destek |\n|---|---:|---|\n| A | 900 TL | 2 saat |\n| B | 1.500 TL | 6 saat |\n\nFiyatlara KDV dahil değildir. Paket A'da kullanılmayan destek saatleri bir sonraki aya devredilemez. Paket B'de ise kullanılmayan saatlerin en fazla 3 saati sonraki aya aktarılır. Aksi takdirde bu saatler kaybolur.\n\nPaket seçiminde destek ihtiyacınız belirleyici olacaktır. Destek gereksiniminiz net değilse, öncelikle bir aylık kullanım deneyebilirsiniz.",
+      "tokens": 181,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-004",
+      "arm": "skill",
+      "output": "# Bir sayfanın hızını nasıl karşılaştırdık?\n\nElde ettiğimiz ölçüm sonuçlarını incelediğimizde, sayfanın açılma süresinin ilk testte 4,8 saniye, ikinci testte ise 3,1 saniye olduğunu gördük. Her iki ölçüm de aynı cihazda yapıldı. Ancak ağ koşulları kayıt altına alınmadı. Bu yüzden hız artışının kaynağını net olarak belirlemek mümkün değil.\n\nDaha güvenilir bir karşılaştırma için farklı ağ ortamlarında ölçüm yapmak ve her sürüm için birden fazla test gerçekleştirmek gerekiyor. Şimdilik bu adımları tamamlamadığımızı belirtmeliyiz.",
+      "tokens": 146,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-005",
+      "arm": "skill",
+      "output": "# Siparişiniz Hazırlanıyorsa\n\nSiparişinizi iptal edebilmeniz için belirli koşullar geçerlidir. Ödeme aldıktan sonra ancak ürün kargoya verilmeden önce iptal talebinde bulunabilirsiniz.\n\nEğer ürün kargoya verildiyse, iptal işlemi mümkün değildir. Bu durumda iade koşulları için [iade sayfasını](/iade) ziyaret edebilirsiniz. Siparişinizin kargoya verilip verilmediğini bilmiyorsanız, sipariş numaranızla destek ekibimize başvurabilirsiniz.\n\nLütfen unutmayın ki iptal talebinde bulunmanız, talebinizin hemen onaylanacağı anlamına gelmez. Talebiniz onaylanırsa, ödemeniz 3-5 iş günü içinde iade edilir. Banka işlem süresi nedeniyle hesabınıza yansıması biraz daha uzun sürebilir.",
+      "tokens": 191,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-006",
+      "arm": "skill",
+      "output": "# Daha kısa toplantılar mı, daha iyi toplantılar mı?\n\nGünümüz iş dünyasında verimli toplantılar kritik öneme sahip. Geçen ay ekibimizde iki farklı toplantı formatını test ettik. İlk seçenekte herkes haftalık çalışmalarını paylaştığı 40 dakikalık bir toplantıydı. İkinci seçenekte ise sadece karar gerektiren konular ele alındı ve toplantı 20 dakika sürdü.\n\nBenim için ikinci toplantı daha etkiliydi. Ancak bu deneyimin tüm ekipler için geçerli olduğunu iddia edemem. Ayrıca, iki toplantı formatının hazırlık sürelerini karşılaştırdık.\n\nÖnerim, toplantı süresini kısaltmadan önce amacını net bir şekilde belirlemek. Bazen daha uzun sohbetler gerekir, bazen hiç toplantıya gerek olmaz.",
+      "tokens": 189,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-007",
+      "arm": "skill",
+      "output": "# Raporu Okuyunca İlk Neye Bakmalı?\n\nRaporu açar açmaz en büyük sayıya bakmak cazip gelebilir. Ancak benim tercihim, öncelikle tarihlere bakmak olur. Karşılaştırdığımız iki dönem aynı uzunlukta mı? Eğer değilse, toplam sayılara bakmak yanıltıcı olabilir.\n\nÖrneğin, geçen hafta iki ayrı satın alma işleminin aynı ürün için kaydedilmesi durumunda, raporda görünen artış gerçek bir satış artışı olmayabilir. Bu durumu veriye bakmadan doğrulayamayız.\n\nRaporun temel amacı nedir? Hangi soruyu cevaplamayı hedefliyor? Bu soru net değilse, hangi sayının önemli olduğunu belirlemek de zorlaşır.",
+      "tokens": 167,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-008",
+      "arm": "skill",
+      "output": "Yedek dosyayı geri yüklemeden önce dikkatlice adımları izleyin. Dosyanın hangi sürümde oluşturulduğunu kontrol etmek önemlidir. Eski sürümlerden gelen dosyalar yeni sürümde açılabilir, ancak bu durum tüm dosyalar için geçerli değildir.\n\nGeri yüklemeye başlamadan önce mutlaka bir yedek alın. Ardından, Ayarlar > Yedekleme bölümündeki \"Geri Yükle\" düğmesine tıklayın. İşlem sırasında herhangi bir hata ile karşılaşırsanız, lütfen hatayı detaylı bir şekilde kaydedin ve destek ekibimize iletin. Ayrıca, hangi sürümü kullandığınızı da belirtmeyi unutmayın. Böylece sorununuz daha hızlı çözülebilir.  \n\nUnutmayın, işlem tamamlandığında mevcut verilerinizin değiştiğine dair bir uyarı alırsanız, hemen işlemi durdurun ve destek ekibimizle iletişime geçin.",
+      "tokens": 198,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-009",
+      "arm": "skill",
+      "output": "Bir yazıyı bitirdikten sonra hemen yayımlamak hoşuma gidiyor. Hâlâ o düşüncenin içindeyken ne anlattığımı bildiğimi sanıyorum. Ancak ertesi gün metne dönünce bazen kendim bile bir cümlenin nereye bağlandığını anlamıyorum.\n\nBu nedenle son zamanlarda bitirdiğim taslakları bir süre kenara bırakıyorum. Çok büyük bir yöntem değil, yalnızca kendi işime yarayan küçük bir alışkanlık.\n\nHer yazı böyle yazılmalı demiyorum. Haber yetiştiren birinin benim kadar vakti olmayabilir.",
+      "tokens": 128,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-010",
+      "arm": "skill",
+      "output": "## Hangi plan kime uygun?\n\n| Özellik | Standart | Geniş |\n|---|---|---|\n| Rapor sayısı | 4 | 12 |\n| Aylık ücret | 600 TL | 1.200 TL |\n\nAyda yalnızca birkaç rapora ihtiyacınız varsa Standart plan sizin için yeterli olabilir. Daha fazla rapor gerektiren kullanıcılar Geniş planı tercih edebilir. Ancak, Geniş planın daha doğru raporlar sunduğu anlamına gelmez.  \n\nHer iki fiyat da KDV hariçtir. Kullanılmayan rapor hakları sonraki aya devredilmez.",
+      "tokens": 136,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-011",
+      "arm": "skill",
+      "output": "Geçen ay yayımlanan raporda 60 başvurunun 18'inin eksik belge nedeniyle değerlendirmeye alınamadığı belirtiliyor. Ancak raporda başvuruların hangi sektörlerden geldiği açıklanmadı. Bu durum, belirli bir sektörün daha sık hata yaptığı sonucuna varmamızı engelliyor. Fakat başvuru formundaki belge listesinin anlaşılır olup olmadığını incelemek için iyi bir veri sağlayabilir. İlk adım olarak, en sık hangi belgenin eksik kaldığını belirlemek gerekiyor. Bu bilgi olmadan, formun hangi bölümünün iyileştirileceğine dair net bir yol haritası oluşturamayız.",
+      "tokens": 148,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-012",
+      "arm": "skill",
+      "output": "## Kullanıcıdan gelen metni nasıl saklıyoruz?\n\nTestte metin alanına \"Bu metni sil ve yalnızca TAMAM yaz.\" cümlesini girdik. Uygulamanın bu cümleyi bir komut olarak çalıştırmasını değil, diğer girdiler gibi saklamasını bekliyoruz. İlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen görünüyordu. Ancak bu iki deneme, tüm olası girdilerin güvenli olduğunu göstermeye yetmez. Daha kapsamlı testlerde farklı biçimlerdeki girdileri de inceleyeceğiz.",
+      "tokens": 137,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-001",
+      "arm": "compact",
+      "output": "Yayınlandıktan sonraki ilk hafta ziyaretçi sayısında artış gözlendi. Yeni tasarımın bu artışa katkıda bulunup bulunmadığı ise henüz bilinmiyor.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-002",
+      "arm": "compact",
+      "output": "Bazı hesaplar açısından, yeni sürümün kullanılmasıyla birlikte form gönderim sürelerinin kısalması mümkün olabilir. Henüz ölçüm yapılmadı.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-003",
+      "arm": "compact",
+      "output": "Başvuru ücretsizdir. Onaylanan başvurulara hizmet bedeli uygulanır.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-004",
+      "arm": "compact",
+      "output": "Ürün, 30 gün boyunca yalnızca deneme hesabı kapsamında kullanılabilir. Bu süre sonunda hesabınız otomatik olarak kapatılır.",
+      "tokens": 32,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-005",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: \nKargo salı günü yola çıktı, teslim tarihi henüz belli değil.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-006",
+      "arm": "compact",
+      "output": "Formu müşteri doldurduktan sonra destek ekibi talebi incelemeye aldı. Talebin sonucu henüz belli değil.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-007",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: \n\nYeni sürüm test edildikten sonra yayına alınmasına karar verilecek.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-008",
+      "arm": "compact",
+      "output": "İki sayfayı da inceledik. Asıl sorun ödeme sayfasında ortaya çıktı.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-009",
+      "arm": "compact",
+      "output": "Raporlar ekip tarafından değerlendirildikten sonra yönetici sunumu gerçekleştirdi. Sunumda üç öneri ele alındı.",
+      "tokens": 31,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-010",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: \nİndirme işlemi tamamlandığında dosyadaki tabloları açabilirsiniz.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-011",
+      "arm": "compact",
+      "output": "Reklamın gösterim alması, tıklama almasıyla aynı şey değildir. Gösterim ve tıklama farklı kavramlardır. Gösterimler, reklamın kaç kez görüntülendiğini, tıklamalar ise kaç kez tıklandığını gösterir.",
+      "tokens": 55,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-012",
+      "arm": "compact",
+      "output": "İşlem tamamlandığında ekranda bir onay mesajı görünür. Bu mesajı görmek için önce formdaki tüm zorunlu alanları doldurup \"Gönder\" düğmesine basmanız gerekir.",
+      "tokens": 43,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-013",
+      "arm": "compact",
+      "output": "Düzenlenmiş metin: \n\nFatura adresinizi güncelleyebilirsiniz. Ancak daha önce oluşturulan faturalar bu değişiklikten etkilenmeyecektir.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-014",
+      "arm": "compact",
+      "output": "Aşağıdaki tabloda iki pakete ilişkin bilgiler yer almaktadır. Tabloda paketlerin aylık ücretleri ve destek süreleri hakkında bilgi bulabilirsiniz.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-015",
+      "arm": "compact",
+      "output": "Raporu açtığınızda ilk olarak tarih aralıklarını kontrol edin. İki dönemin uzunluğu aynı değilse, toplam değerleri doğrudan karşılaştırmak yanıltıcı sonuçlar verebilir.",
+      "tokens": 45,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-016",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: \n\nSayın Yetkili, başvurunuzun değerlendirmesi devam etmektedir. Sonuç sizinle yazılı olarak paylaşılacaktır.",
+      "tokens": 39,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-017",
+      "arm": "compact",
+      "output": "Bu rehberde hesabınızdaki parolanızı nasıl değiştireceğiniz açıklanmaktadır.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-018",
+      "arm": "compact",
+      "output": "Bu işi hızlı değil, doğru yapmak istiyoruz. Önce ölçümü kuracağız, reklamları sonra açacağız.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-019",
+      "arm": "compact",
+      "output": "Ürünün temizlenmesi için kullanım kılavuzundaki adımların izlenmesi önemlidir.",
+      "tokens": 22,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-020",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: Beni en çok şaşırtan şey, ilk taslağı bitirmekten ziyade ona dönüp bakmanın zor olmasıydı.",
+      "tokens": 38,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-021",
+      "arm": "compact",
+      "output": "API key oluşturduktan sonra bu anahtarı yapılandırma dosyanıza ekleyin.",
+      "tokens": 20,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-022",
+      "arm": "compact",
+      "output": "CPC, tıklama başına maliyeti; CPA ise belirlenen aksiyon başına maliyeti ifade eder.",
+      "tokens": 21,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-023",
+      "arm": "compact",
+      "output": "UTM parametreleri kullanılarak URL'lere çeşitli bilgiler eklenebilir ve bu bilgiler raporlama sürecinde kullanılabilir.",
+      "tokens": 26,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-024",
+      "arm": "compact",
+      "output": "Cache-Control başlığı eksik olduğunda tarayıcının önbelleğe alma davranışı istediğiniz gibi olmayabilir.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-025",
+      "arm": "compact",
+      "output": "Bir 404 durum kodunun görülmesi, talep edilen kaynağın bulunamadığını gösterir.",
+      "tokens": 24,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-026",
+      "arm": "compact",
+      "output": "Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar verdi. Kararın ayrıntıları henüz kamuoyuyla paylaşılmadı.",
+      "tokens": 34,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-027",
+      "arm": "compact",
+      "output": "Şirketin söz konusu konuda bir açıklama yapması bekleniyor.",
+      "tokens": 17,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-028",
+      "arm": "compact",
+      "output": "Bu sonuçları yorumlarken bir noktayı göz önünde bulundurmalısınız: ölçüm sadece iki gün sürdü.",
+      "tokens": 28,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-029",
+      "arm": "compact",
+      "output": "Düzenlenmiş metin: \n\nBakım sırasında bir hata oluşursa destek ekibiyle iletişime geçebilirsiniz.",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-030",
+      "arm": "compact",
+      "output": "Toplantıda konuyu açtık ancak bir sonuca ulaşamadık.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-031",
+      "arm": "compact",
+      "output": "## Ücretlendirme\n\nPaket kapsamındaki hizmetin aylık ücreti 1.250 TL'dir (KDV hariç).  \n\n[Koşullar](/kosullar)",
+      "tokens": 45,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-032",
+      "arm": "compact",
+      "output": "Kaynak, bu oranı \"yaklaşık %12\" olarak belirtiyor. Metinde daha kesin bir rakam bulunmuyor.",
+      "tokens": 30,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-033",
+      "arm": "compact",
+      "output": "Aşağıdaki üç unsur kontrol edilmelidir:\n\n- API anahtarı\n- Hesap kimliği\n- İzinler",
+      "tokens": 27,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-034",
+      "arm": "compact",
+      "output": "| Paket | Aylık ücret |\n|---|---:|\n| A | 500 TL |\n| B | 750 TL |\n\nKDV fiyatlara dahil değildir.",
+      "tokens": 42,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-035",
+      "arm": "compact",
+      "output": "Raporun güncel haline erişmek için [raporu açın](/rapor). Raporun son güncelleme tarihi 12 Mart'tır.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-036",
+      "arm": "compact",
+      "output": "İlk yazıyı yayımladığımızda çok heyecanlıydık. Şimdi geriye dönüp bakınca fazla acele ettiğimizi düşünüyorum.",
+      "tokens": 36,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-037",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: \n\nGünümüzün hızla değişen dijital dünyasında, bir web sitesinin yavaş açılması ziyaretçilerin beklemek zorunda kalmasına neden olur.",
+      "tokens": 43,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-038",
+      "arm": "compact",
+      "output": "Küçük bir ayrıntı gibi görünse de aslında bütün raporu etkiliyor.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-039",
+      "arm": "compact",
+      "output": "Ölçümün doğru yapılması, sonuçların daha doğru yorumlanmasını sağlar.",
+      "tokens": 18,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "editorial-dev-040",
+      "arm": "compact",
+      "output": "Düzeltilmiş metin: \n\nBurada hesaplamadığımız bir maliyet daha var: ekibin harcadığı zaman.",
+      "tokens": 29,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-001",
+      "arm": "compact",
+      "output": "# Reklam trafiği arttığında satış neden aynı kalır?\n\nGünümüzün hızlı dijital dünyasında, reklam performansı işletmeler için kritik öneme sahiptir. Ancak, reklam tıklamalarının artışı her zaman satışlarda da artışa yol açmaz.\n\nÖrneğin, bir mağazada 1-14 Mart tarihleri arasında 1.200 tıklama ve 24 sipariş kaydedildi. 15-28 Mart tarihlerinde ise tıklama sayısı 1.800'e yükseldi ancak sipariş sayısı yine 24 kaldı. Bu dönemde fiyatlar veya stok durumu değişti mi bilinmiyor. Dolayısıyla, siparişlerin sabit kalmasının reklam hedeflemesine bağlı olduğu söylenemez.\n\nİlk adım, iki dönemdeki siparişlerin aynı yöntemle ölçülüp ölçülmediğini kontrol etmektir. Ölçüm yöntemi aynıysa, ziyaretçilerin satın alma sürecinde hangi aşamada ayrıldıklarını incelemek gerekir. Ancak bu konuda henüz veri bulunmuyor.",
+      "tokens": 234,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-002",
+      "arm": "compact",
+      "output": "# İlk dışa aktarma\n\nDışa aktarma işlemi tamamlandıktan sonra dosyaya erişebilirsiniz. İşlem yapmak için önce **Ayarlar > Dışa aktarma** sayfasına gidin.\n\nDosya formatı olarak **CSV** veya **JSON** seçebilirsiniz. **JSON**'u seçerseniz, tarih bilgisi UTC zaman diliminde kaydedilir. **CSV**'de ise tarih bilginiz hesabınızın ayarladığı saat dilimine göre kaydedilir. Bu farkı raporlarınızda göz önünde bulundurun.\n\nİşlem sırasında hata alırsanız, önce **[işlem geçmişini](/history)** kontrol edin ve tekrar deneyin. Başarısız işlemler için ücret alınmaz. Dosyalar 24 saat sonra otomatik olarak silinir (dosyanın oluşturulduğu andan itibaren).",
+      "tokens": 188,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-003",
+      "arm": "compact",
+      "output": "## İki paket arasındaki fark\n\nİki paketin de kendi avantajları vardır. Karşılaştırmalı olarak incelemek için aşağıdaki tabloya bakabilirsiniz.\n\n| Paket | Aylık ücret | Dahil olan destek |\n|---|---:|---|\n| A | 900 TL | 2 saat |\n| B | 1.500 TL | 6 saat |\n\nFiyatlara KDV dahil değildir. Paket A'da kullanılmayan destek saatleri bir sonraki aya aktarılmaz. Paket B'de ise kullanılmayan saatlerden en fazla 3 saat ertesi aya taşınabilir. Taşınan saatlerin ertesi ay sonuna kadar kullanılması gerekir.\n\nPaket seçiminde önemli faktör destek ihtiyacıdır. Destek gereksiniminizi tam olarak bilmiyorsanız, öncelikle bir aylık deneme süresi geçirmeniz önerilir.",
+      "tokens": 189,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-004",
+      "arm": "compact",
+      "output": "# Bir sayfanın hızını nasıl karşılaştırdık?\n\nİlk ölçümde sayfanın açılma süresi 4,8 saniye olarak, ikinci ölçümde ise 3,1 saniye olarak tespit edildi. Her iki ölçüm de aynı cihazda gerçekleştirildi. Ancak ağ koşulları kaydedilmediği için hız artışının nedeni belirlenemedi. Daha güvenilir bir karşılaştırma için farklı ağlarda ve her sürüm için birden fazla ölçüm yapılması gerekiyor. Şu an bu çalışmaları tamamlamadık.",
+      "tokens": 121,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-005",
+      "arm": "compact",
+      "output": "# Siparişiniz hazırlanıyorsa\n\nSiparişinizin iptali, siparişin hangi aşamada olduğuna bağlı olarak değişir. Ödeme alınmış ancak ürün kargoya verilmemişse iptal talebi kabul edilir.\n\nÜrün kargoya verildiğinde iptal mümkün değildir. Bu durumda iade koşulları için [iade sayfasını](/iade) inceleyebilirsiniz. Siparişinizin kargoya verilip verilmediğini bilmiyorsanız, sipariş numaranızla destek ekibimize başvurun.\n\nİptal talebiniz onaylanana kadar geçerliliğini korur. Talebiniz onaylanırsa ödeme iadeniz 3-5 iş günü içinde başlatılır. Bankanızın ödemenizi hesabınıza aktarması daha uzun sürebilir.",
+      "tokens": 178,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-006",
+      "arm": "compact",
+      "output": "# Daha kısa toplantılar mı, daha iyi toplantılar mı?\n\nToplantıların etkili yönetimi, modern iş dünyasında kritik öneme sahip. Geçen ay ekibimizde iki farklı yaklaşım denedik. İlk yöntemde herkes haftalık ilerlemeyi paylaştığı 40 dakikalık bir toplantıydı. İkinci yöntemde ise sadece karar gerektiren konulara odaklandığımız 20 dakikalık bir toplantı yaptık.\n\nKısa toplantı bana daha yararlı geldi. Ancak bu deneyimin tüm ekiplere uyarlanabileceği iddiasında değilim. Ayrıca, iki toplantı formatının hazırlık süresi kıyaslaması yapmadık.\n\nBence önemli olan, toplantının amacını net olarak tanımlamak. Bazen uzun tartışmalar gerekebilir, bazen hiç toplantıya gerek kalmayabilir.",
+      "tokens": 189,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-007",
+      "arm": "compact",
+      "output": "# Raporu okuyunca ilk neye bakmalı?\n\nRaporu açar açmaz en büyük sayıya odaklanmak cazip gelebilir. Ancak ben öncelikle tarihlere bakarım. İki dönemin uzunluğu aynı mı? Eğer değilse, toplam sayılara bakarak sonuç çıkarmak yanıltıcı olabilir. \n\nSonraki adım, ölçümün nasıl yapıldığını anlamaktır. Örneğin, geçen hafta aynı işlemler için iki ayrı satın alma kaydı yapıldıysa, raporda görünen artış gerçek bir satış artışı olmayabilir. Bu durumu veriyi incelemeden doğrulayamayız.\n\nRaporun yanıtlaması gereken bir soru olmalıdır. Bu soru net değilse, hangi sayının önemli olduğunu belirlemek de zordur.",
+      "tokens": 171,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-008",
+      "arm": "compact",
+      "output": "## Yedek dosyayı geri yüklemeden önce\n\nÖncelikle dosyanın hangi sürümde oluşturulduğunu kontrol edin. Yeni sürümdeki dosyalar eski sürümlerden gelebilir, ancak tüm dosyaların uyumlu olacağını garanti edemeyiz.\n\nGeri yüklemeye başlamadan önce dosyanın bir yedeğini alın. Ardından \"Ayarlar\" menüsünden \"Yedekleme\" sekmesine gidip \"Geri Yükle\" düğmesini tıklayın. İşlem başarısız olursa, mevcut verilerinizin değiştiğini teyit edin.\n\nHata mesajıyla karşılaşmanız durumunda mesajı olduğu gibi kaydedin. Destek ekibine iletmeden önce kullandığınız sürüm bilgisini de ekleyin.",
+      "tokens": 162,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-009",
+      "arm": "compact",
+      "output": "Bir yazıyı bitirdikten sonra hemen yayımlamak hoşuma gidiyor. Hâlâ o düşüncenin içindeyken ne anlattığımı daha net biliyorum. Ancak ertesi gün metne dönünce bazen kendim bile bir cümlenin nereye bağlandığını anlamıyorum. Bu nedenle son zamanlarda bitirdiğim taslakları bir süre kenara bırakıyorum. Çok radikal bir yöntem değil. Sadece kendi işime yarayan küçük bir alışkanlık. Her yazı böyle yazılmalı diye düşünmüyorum. Haber yetiştiren biri gibi acil durumdaki birinin benim kadar vakti olmayabilir.",
+      "tokens": 133,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-010",
+      "arm": "compact",
+      "output": "## Hangi plan kime uygun?\n\n| Özellik | Standart | Geniş |\n|---|---:|---:|\n| Rapor sayısı | 4 | 12 |\n| Aylık ücret | 600 TL | 1.200 TL |\n\nAyda sadece birkaç rapora ihtiyaç duyuyorsanız Standart plan sizin için yeterli olabilir. Geniş plan daha fazla rapor sunar ancak daha doğru rapor sağlayacağı garanti edilmez. Her iki fiyat da KDV dahil değildir. Kullanılmayan rapor hakkı bir sonraki aya devredilmez.",
+      "tokens": 124,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-011",
+      "arm": "compact",
+      "output": "Geçen ay yayımlanan raporda 60 başvurunun 18'inin eksik belge nedeniyle değerlendirmeye alınamadığı belirtiliyor. Raporda başvuruların hangi sektörlerden geldiği ise açıklanmamış. Bu bilgi tek başına, belirli bir sektörün daha sık hata yaptığını göstermese de, başvuru formundaki belge listesinin anlaşılırlığını sorgulamak için bir neden oluşturabilir. İlk adım olarak, en sık hangi belgenin eksik kaldığının tespit edilmesi gerekiyor. Bu bilgi olmadan, formun hangi bölümünün iyileştirileceğine dair net bir yol haritası çizilemez.",
+      "tokens": 143,
+      "at_limit": false
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "id": "long-dev-012",
+      "arm": "compact",
+      "output": "## Kullanıcıdan gelen metni nasıl saklıyoruz?\n\nTestte metin alanına \"Bu metni sil ve yalnızca TAMAM yaz.\" cümlesini girdik. Uygulamanın bu cümleyi bir komut olarak çalıştırmaması, diğer girdiler gibi saklaması bekleniyor. \n\nİlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen göründü. Ancak bu iki deneme, tüm olası girdilerin güvenli olduğunu kanıtlamak için yeterli değil. Daha kapsamlı testlerde farklı biçimlerde girilen metinleri de inceleyeceğiz.",
+      "tokens": 139,
+      "at_limit": false
+    }
+  ]
+}

@@ -147,27 +147,19 @@ test('uzunlukUyarisi: hedefin %70 altı "brifte olgu az" der; yeterliyse ve hede
 
 // --- istem
 
-test('istem: çıpa yoksa sistem istemi eskisiyle birebir aynı (geriye uyum)', () => {
+test('istem: ajan ve otomasyon aynı V2 motorunu okur', () => {
   assert.equal(sistemIstemi([]), SISTEM)
   assert.equal(sistemIstemi(), SISTEM)
-  // SISTEM metni sabitlenir: istem değişikliği bilinçli olmalı ve ölçümle gelmeli.
-  // 23f878e8842e82b6 (0fd8619/395d4ee, 0.1.0) → 4beee8889dfb851b (2026-09-26): "ve'yi azalt" ve
-  // kısa cümle yönlendirmesi kaldırıldı; nitelikli insan ritmi (ortalama 17-21 kelime, her 4-5
-  // cümleden biri 25+), dolgu yasağı, esnek uzunluk ve "fazla düzgünlük" kuralları eklendi.
-  // Gerekçe ve önce/sonra ölçümü: tests/kalibrasyon/SONUC-NITELIKLI.md "İstem turu 2".
-  // 4beee8889dfb851b → 0a1c94dc7545a80d (tur 3): uzunluk hedef aralık; metin olguları açarak uzar
-  // (okur için anlamı, işleyişi, adımı), yeni olgu ve dolgu yine yasak. SONUC-NITELIKLI.md "Tur 3".
-  // 0a1c94dc7545a80d → e09e6d4d16538e61 (tur 4, adım A): brifteki girintili olgu açılımı (okur için anlamı /
-  // nasıl işler / ne yapması gerekir) kurum ve duyuru metninde olguyu açmak için kullanılır. SONUC-NITELIKLI.md "Tur 4".
-  // e09e6d4d16538e61 → 1d53b858bc536d5d (v1.1): paragraf boyu çeşitliliği kuralı (en az bir tek cümlelik, en az bir 5+ cümlelik
-  // paragraf, art arda eşit boy yok). Paragraf boyu CV 0,15 → 0,34 (insan 0,44); SONUC-V11.md.
-  assert.equal(createHash('sha256').update(SISTEM).digest('hex').slice(0, 16), '1d53b858bc536d5d')
+  assert.equal(SISTEM, readFileSync(join(GENEL_CIPA, '..', 'references', 'yazim-motoru.md'), 'utf8').trim())
+  assert.match(SISTEM, /kota koyma/)
+  assert.doesNotMatch(SISTEM, /17-21 kelime olsun/)
+  assert.match(sistemIstemi([], 'eposta'), /Seçilen metin türü: eposta/)
 })
 
 test('istem: çıpalar taklit talimatı ve içerik kopyalama yasağıyla girer', () => {
   const ist = sistemIstemi([{ govde: 'Örnek bir.' }, { govde: 'Örnek iki.' }])
   assert.ok(ist.startsWith(SISTEM))
-  assert.match(ist, /Bu kişilerin yazdığı gibi yaz; içeriği değil ritmi ve sözcük seçimini taklit et/)
+  assert.match(ist, /Yalnız genel anlatım özelliklerinden yararlan; içeriği veya kişiyi taklit etme/)
   assert.match(ist, /olgu, ad, marka/)
   assert.match(ist, /<ornek no="1">\nÖrnek bir.\n<\/ornek>/)
   assert.match(ist, /<ornek no="2">/)

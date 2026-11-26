@@ -1,4 +1,6 @@
-# Türkçeye özgü yapay zekâ parmak izleri
+# Türkçeye özgü anlatım özellikleri ve tarihsel ölçümler
+
+**V2 kullanım sınırı:** Bu dosya eski ölçümleri ve dil bilgisi açıklamalarını korur. Cümle uzunluğu, sözcük sırası, kişi zamiri, ulaç ve diğer biçim özellikleri tek başına metnin kökenini veya kusurlu olduğunu göstermez. [Bağlamlı Türkçe](baglamli-turkce.md) derlem gözlemleri ve SKILL.md çekirdek filtresi önceliklidir; sayısal eşikleri üretim kuralına dönüştürme.
 
 İngilizce kaynaklardaki listeler (Wikipedia Signs of AI writing, no-ai-slop, humanizer)
 kelime ve noktalama izleridir; Türkçede izlerin yarısı kaybolur, yerine Türkçenin kendi
@@ -17,7 +19,7 @@ eşikler kitaba ya da gözleme dayanır. `scripts/tr-scan.mjs` ölçülenleri sa
 
 **Kalibrasyonun en önemli sonucu:** LLM Türkçesini en iyi ayıran şey kelime ya da ek
 değil, **cümle uzunluğunun tekdüzeliğidir** (§15; güç haber ve forumda 0,93, site ve
-blogda 0,76-0,83). Uzun cümle insan işaretidir. İki derlemde birden tutan öteki
+blogda 0,76-0,83). Bu eski örneklemde cümle uzunluğu ayırıcıydı; tek bir uzun cümleden yazarlık veya kalite sonucu çıkarılamaz. İki derlemde birden tutan öteki
 ayırıcılar: "ve" yoğunluğu ve birkaç kalıp. "bir" yoğunluğu bağımsız derlemde çöktü.
 
 Kaynaklar: **Oxford** = *The Oxford Turkish Grammar* (2020); **Lewis** = *Turkish
@@ -77,7 +79,7 @@ kim sorusunu, "Ekibimiz kurulumu **iki günde** yapıyor" ne kadar sürede sorus
    doğaldır: *Kayseri'de bir damadı var, doktor* (Lewis, §XV.4 / s. 244-245). Bu artlama
    serbesttir ve devrik dozuna sayılmaz (insanca Ak18). Yeni bilgiyi sona atmak ise
    İngilizce sıradır: ~~Teslim ediyoruz sitenizi 10 günde.~~
-6. **Cümle fiille başlamaz,** buyruk ve acil soru dışında (Lewis, §XV.3 / s. 243-244).
+6. **Fiille başlayan cümlenin işlevini incele.** Buyruk, soru, anlatı ve vurgu bağlamında doğal olabilir. Kaynağın söz dizimini sırf fiil başta diye değiştirme (Lewis, §XV.3 / s. 243-244).
 7. **Var/yok cümlesinde odak var/yok'un önüdür:** "Sitede **canlı destek** var"
    (Lewis, §XV.2 / s. 241).
 8. **de ve bile, vurguladıkları kelimenin arkasına gelir;** vurgu önlerindeki heceye
@@ -93,15 +95,15 @@ için formu tek yerde topladık."
 **Vurguyu kalıpla değil, yapıyla kur.** "İşte bu yüzden", "asıl önemlisi" vurguyu
 söyler ama taşımaz. Blogda anafor (aynı açılışın iki kez dönmesi) ya da yerinde bir
 devrik iş görür (insanca Ak6).
-"Asıl önemlisi, maliyet düştü." → "Hiç bu kadar ucuz, hiç bu kadar kolay olmamıştı."
+"Asıl önemlisi, maliyet düştü." ifadesindeki vurgu bağlamda gereksizse "Maliyet düştü." yeterli olabilir. En düşük maliyet veya işin kolaylaştığı iddiasını ekleme.
 
 **Sık görülen kayma örnekleri:**
 
 | Çeviri kokan | Doğal | Neden |
 |---|---|---|
 | Size özel çözümler sunuyoruz işletmeniz için. | İşletmenize özel çözüm sunuyoruz. | Devrik cümle burada vurgu değil, İngilizce sıra (*for your business* sonda) |
-| Sitenizi hızlı ve güvenli bir şekilde kuruyoruz. | Sitenizi hızlı kuruyoruz, güvenliğini de biz alıyoruz. | "bir şekilde" zarfı yüklemin önüne oturup asıl bilgiyi (hız) itiyor |
-| Çiftlikte, yaşı 40 olan fillerle tanışma fırsatımız oldu. | Kılavuzumuza fillerin yaşını sorduğumda aldığım cevap 40 olunca şaşırmamak elde değil. | Yeni bilgi (40) sıfat öbeğine gömülmüş, yüklemi boş kalıp ("fırsatımız oldu") almış; vurgu kalıba düşüyor |
+| Sitenizi hızlı ve güvenli bir şekilde kuruyoruz. | Sitenizi hızlı ve güvenli biçimde kuruyoruz. | Kaynakta iki nitelik var; bunları yeni bir güvenlik hizmeti vaadine dönüştürme. Zarf öbeği bağlamda doğalysa ilk biçim de kalabilir. |
+| Çiftlikte, yaşı 40 olan fillerle tanışma fırsatımız oldu. | Çiftlikte 40 yaşındaki fillerle tanıştık. | Tanışma gerçekleşmişse ad öbeği sadeleşebilir; soru, kılavuz veya şaşırma olayı uydurma. Sadece fırsat doğmuşsa tanışmanın gerçekleştiğini de varsayma. |
 
 **Olayı sahne olarak anlat, sonucu kalıba gömme.** İnsan olguyu olay sırasıyla verir
 (sordum → cevap → tepki); model onu sıfata çevirip yüklemi boş kalıba verir. Fark
@@ -109,15 +111,14 @@ derleminde (`tests/kalibrasyon/SONUC-FARK.md`: 28 insan metni, aynı olgulardan 
 metinleri) 7 çiftte. Kalıplar: `yasakli-kaliplar-tr.md` §6. Olay sırası kaynakta yoksa
 sahne uydurma; olguyu yüklemin önüne al.
 
-**Düzeltme (her cümleye):** cümlenin cevap verdiği soruyu ve tek asıl bilgisini bul;
+**Düzeltme (gerçek odak sorunu varsa):** cümlenin cevap verdiği soruyu ve tek asıl bilgisini bul;
 cevabı yüklemin hemen önüne, bilinen öğeyi başa koy. O konumu dolgu zarfı işgal
 ediyorsa sil, gerekçesiz kişi zamirini sil, yüklemden sonra kalan yeni bilgiyi öne al,
 "mi/de/bile"yi vurgulanan kelimenin arkasına taşı. Sonra sesli oku: vurgu, cümlenin
 satmak istediği şeye mi düşüyor?
 
 **Yazı vurgusu da aynı kurala uyar.** Kalın yazılan kelime, sesli okumada vurgulanan
-kelimeyle **aynı** olmalı; model kalını anahtar kelimeye (SEO refleksi) koyar. Paragrafta
-en fazla bir kalın, çoğunda sıfır.
+kelimeyle **aynı** olmalı; model kalını anahtar kelimeye (SEO refleksi) koyar. Kalın yazı sayısına kota koyma; vurgunun veya arayüz etiketinin işlevine bak.
 
 **Soru eki "mi" de vurgu taşır** ve sorgulanan öğenin hemen arkasına gelir: "Siteyi
 **siz mi** yapıyorsunuz?" (yapanı sorar) / "Siteyi siz **yapıyor musunuz**?" (eylemi

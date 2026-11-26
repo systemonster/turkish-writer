@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "scope": "source-disjoint historical multi-author pilot; no human-verified test or gold decisions",
+  "source": "https://github.com/ubuntu-tr/ubuntu-tr.github.io",
+  "revision": "18cd8b55645f92578d120e9fb105487f236fed79",
+  "license": "CC BY-SA 4.0",
+  "license_evidence": [
+    "https://ubuntu-tr.github.io/cekirdek-nedir-ne-yapar",
+    "https://bugra9.github.io/sendeyaz/",
+    "https://creativecommons.org/licenses/by-sa/4.0/"
+  ],
+  "articles": 20,
+  "authors": 15,
+  "words": 3928,
+  "rejections": {
+    "no_eligible_contiguous_prose": 33,
+    "author_cap": 5
+  },
+  "source_file_sha256": "e7ecd643614bde335854a5a19f20b7061cb1aa85b9f7022fc8a39e4c2ded8e05",
+  "private_dataset": "lovefengis/turkish-writer-historical-review-v10",
+  "source_job": "https://huggingface.co/jobs/lovefengis/6b06b236d0582cfbbefe3242",
+  "model_job": "https://huggingface.co/jobs/lovefengis/6b06b251d0582cfbbefe327a",
+  "code_commit": "e88b9c1b540f6e46e3c0424d2d99efc485ec182b",
+  "human_verified": 0,
+  "limitations": [
+    "One publication, 15 named authors or pseudonyms; author metadata not independently authenticated.",
+    "Contiguous excerpts, not full posts or a representative blog sample.",
+    "Historical technology domain; model pretraining overlap unknown.",
+    "Private artifacts hold source attribution and text; no public raw text.",
+    "No gold keep/edit decisions or independent human ratings."
+  ]
+}

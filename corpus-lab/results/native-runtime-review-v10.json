@@ -1,0 +1,857 @@
+{
+  "schema_version": 1,
+  "review_id": "native-runtime-review-v10",
+  "review_date": "2026-11-25",
+  "status": "completed_exploratory_ai_review",
+  "reviewer": {
+    "type": "separate AI reviewer plus deterministic local checks",
+    "human": false,
+    "blinded_to_arm_or_expected_decision": false,
+    "relationship_to_inputs": "Reviewer authored the development fixtures; not an independent human gold evaluation."
+  },
+  "scope": {
+    "runtime": "ChatGPT delegated agent",
+    "full_codex_cli_run": false,
+    "codex_cli_limitation": "The controller reported a read-only filesystem failure when starting the separate Codex CLI process; see corpus-lab/DIAGNOSTICS-V10.md. This delegated-runtime pilot does not resolve or bypass that limitation.",
+    "source_variants": 2,
+    "underlying_articles": 1,
+    "genres": 1,
+    "outputs": 4,
+    "repetitions_per_source_arm": 1,
+    "source_provenance": "generated_development",
+    "human_gold": false,
+    "statistical_comparison": false,
+    "source_independent_holdout": false
+  },
+  "protocol_evidence": {
+    "controller_report": {
+      "dispatch_tool": "collaboration.spawn_agent",
+      "fork_turns": "none",
+      "execution_agents": 4,
+      "input_policy": "exactly one opaque case file per agent, with no clean/flawed or expected-decision label",
+      "mapping_path": "corpus-lab/work/v10/native-isolated/mapping.json",
+      "generation_backend_seed_and_sampling_controls": "not exposed or not recorded"
+    },
+    "directly_verified": [
+      "All four output artifacts exist and parse as JSON.",
+      "Source hashes agree with the opaque input files, mapping file, and longform fixture.",
+      "Opaque input keys are amac, tur, kaynak and id; no seeded_defects, decision, protected_facts or pair label.",
+      "All output and artifact hashes were recomputed."
+    ],
+    "not_independently_audited": [
+      "Full agent conversation and filesystem access trace.",
+      "Whether every reference listed was actually read or every tool invocation succeeded.",
+      "Exact backend model version, random seed, temperature and run order."
+    ],
+    "isolation_interpretation": "Fresh context according to controller protocol, not forensic proof of all filesystem accesses or model-level independence."
+  },
+  "excluded_shared_context_pilot": {
+    "status": "INVALID_FOR_INDEPENDENT_COMPARISON",
+    "reason": "One shared input contained clean and flawed forms of each of two articles, and the IDs exposed clean/flawed labels. The clean counterpart could serve as an answer key. Any apparent repair success cannot be attributed to an independent edit of one source.",
+    "actual_copying_proven": false,
+    "excluded_from_all_comparative_metrics": true,
+    "source_variants": 4,
+    "underlying_articles": 2,
+    "outputs": 8,
+    "artifacts": [
+      {
+        "path": "corpus-lab/work/v10/agent-pilot-inputs.jsonl",
+        "sha256": "e082ec3c7f5cbcd666b24bf5aeeb4c7d684822b0812e765f5c8e1f725b817b8f",
+        "records": 4,
+        "ids": [
+          "lf10-01-clean",
+          "lf10-01-flawed",
+          "lf10-02-clean",
+          "lf10-02-flawed"
+        ],
+        "status": "INVALID_FOR_INDEPENDENT_COMPARISON",
+        "raw_artifact_retained_unmodified": true
+      },
+      {
+        "path": "corpus-lab/results/agent-baseline-v10.jsonl",
+        "sha256": "5c73465a7144d61bde22fa19762fca34e71fab4f162c302fafef8d217cb7a4b3",
+        "records": 4,
+        "ids": [
+          "lf10-01-clean",
+          "lf10-01-flawed",
+          "lf10-02-clean",
+          "lf10-02-flawed"
+        ],
+        "status": "INVALID_FOR_INDEPENDENT_COMPARISON",
+        "raw_artifact_retained_unmodified": true
+      },
+      {
+        "path": "corpus-lab/results/agent-skill-v10.jsonl",
+        "sha256": "f59a5d273316e11f12b2737a67bf6e3b96aae4a6b5d5e106cd763df10bc33c2e",
+        "records": 4,
+        "ids": [
+          "lf10-01-clean",
+          "lf10-01-flawed",
+          "lf10-02-clean",
+          "lf10-02-flawed"
+        ],
+        "status": "INVALID_FOR_INDEPENDENT_COMPARISON",
+        "raw_artifact_retained_unmodified": true
+      }
+    ]
+  },
+  "methods": {
+    "byte_equivalence": "Exact Python string equality after JSON decoding, no normalization or stripping. Source and output hashes are UTF-8 SHA-256.",
+    "word_count": "Python str.split; punctuation remains attached and standalone punctuation counts as a token.",
+    "edit_hunks": "difflib.SequenceMatcher over whitespace tokens, autojunk=False; descriptive alignment, not Levenshtein distance.",
+    "character_similarity": "difflib.SequenceMatcher.ratio on characters, autojunk=False; not a quality or meaning score.",
+    "text_blocks": "Split on two newline characters, including headings.",
+    "seed_assessment": "Remove or repair the four known seeded spans, inspect the replacement meaning, then examine residual changes. Canonical clean wording is not the only valid repair.",
+    "semantic_assessment": "AI reading of protected facts, negation, uncertainty, causal restraint, fictional status, narrative sequence and all changed spans. Not a human rating.",
+    "tool_provenance": "Raw output metadata is copied as reported. Missing tools_used on baseline is unknown, not zero tool calls."
+  },
+  "cases": [
+    {
+      "case_id": "case-01",
+      "source_id": "lf10-01-clean",
+      "source_pair_id": "lf10-01",
+      "arm": "baseline_agent",
+      "input_path": "corpus-lab/work/v10/native-isolated/case-01.json",
+      "input_file_sha256": "181948d343aa6368b4200e31a16645f32de0743a19f4bdd0775a124116fae7c2",
+      "source_sha256": "a45e5312f66c61fd4e0f5ddd0b79d3ea8aa31b62d69906dfb72457aaa17ff88a",
+      "artifact_path": "corpus-lab/results/native-isolated-v10-case01-baseline.json",
+      "artifact_file_sha256": "aebfc32039ccb8a1243444d732162bb0a428f848a23d360f906b170d47ab892f",
+      "output_sha256": "eb9a896402fda1baac1a555bed0927c49368e0c47f74ca20fe9129be49080d4a",
+      "expected_development_decision": "keep",
+      "observed_action": "edit",
+      "development_decision_agreement": false,
+      "runtime_metadata": {
+        "runtime": "ChatGPT delegated agent",
+        "model_version_reported": "not exposed",
+        "exact_backend_model": null,
+        "seed": null,
+        "temperature": null,
+        "human_reviewed_reported": false,
+        "single_case_context_reported": true,
+        "references_read_reported": [],
+        "tools_used_reported": null,
+        "tools_list_presence": "not recorded; do not interpret as no tool use",
+        "evidence_level": "self-reported artifact metadata, not an independent execution trace audit"
+      },
+      "metrics": {
+        "exact_source_match": false,
+        "source_word_count_whitespace": 668,
+        "output_word_count_whitespace": 673,
+        "word_count_delta": 5,
+        "source_text_blocks": 16,
+        "output_text_blocks": 16,
+        "changed_text_blocks": 6,
+        "word_diff_hunks": 9,
+        "source_tokens_touched": 12,
+        "output_tokens_touched": 17,
+        "character_sequence_match_ratio": 0.989542,
+        "protected_literals_total": 11,
+        "protected_literals_preserved": 11,
+        "missing_protected_literals": [],
+        "numeric_sequence_identical": true,
+        "headings_identical": true,
+        "canonical_clean_exact_match": false
+      },
+      "changes": [
+        {
+          "block_ordinal_1_based": 3,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "Mayıs.",
+              "after": "Mayıs tarihlerini kapsıyor.",
+              "context_before": "ilk dönem 7–20 Nisan, ikinci dönem 21 Nisan–4",
+              "context_after": "Her ikisi de on dört gün sürüyor. Reklamlardan"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 4,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "maliyet",
+              "after": "maliyet,",
+              "context_before": "iki cümle birbiriyle çelişmiyor. Mağaza sahibinin kabul edebileceği",
+              "context_after": "sipariş başına ne kadar kazandığına bağlı. Buradaki hesap,"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 8,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "yalnız",
+              "after": "o kaydı yalnızca",
+              "context_before": "bir iptal takip süremiz henüz yoktu. Bu yüzden",
+              "context_after": "ikinci dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden"
+            },
+            {
+              "operation": "delete",
+              "before": "o kaydı",
+              "after": "",
+              "context_before": "henüz yoktu. Bu yüzden yalnız ikinci dönemin toplamından",
+              "context_after": "çıkarıp karşılaştırmayı yeniden sunmadık. Önce iki döneme de"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 9,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "kişinin,",
+              "after": "kişinin",
+              "context_before": "amacı sonucu küçümsemek değildi. Tabloyu daha sonra açan",
+              "context_after": "sayının hangi tanıma dayandığını anlayabilmesini istiyorduk. Tanım değiştiğinde"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 13,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "çizmek,",
+              "after": "çizmek",
+              "context_before": "edecektik. Sipariş kimliği kayboluyorsa daha ayrıntılı bir grafik",
+              "context_after": "bağlantıyı geri getirmeyecekti."
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 14,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "kayıtlardan",
+              "after": "kayıtlara dayanarak harcamayı artırması yönünde",
+              "context_before": "sırada reklam harcamasını artırıp artırmaması gerektiğini sordu. Elimizdeki",
+              "context_after": "kesin bir artış önerisi çıkarmadık. Sipariş başına reklam"
+            },
+            {
+              "operation": "replace",
+              "before": "artış önerisi çıkarmadık.",
+              "after": "öneride bulunmadık.",
+              "context_before": "artırıp artırmaması gerektiğini sordu. Elimizdeki kayıtlardan kesin bir",
+              "context_after": "Sipariş başına reklam harcamasının yükseldiğini, kârlılık verisinin eksik"
+            },
+            {
+              "operation": "replace",
+              "before": "kaldığını",
+              "after": "olduğunu",
+              "context_before": "bir gerekçe üretmiyorduk; kararın hangi üç bilgiye bağlı",
+              "context_after": "belirtiyorduk."
+            }
+          ]
+        }
+      ],
+      "seed_reviews": [],
+      "seed_repairs_only_reconstruct_output": null,
+      "additional_edits_after_seed_repair": null,
+      "semantic_ai_review": {
+        "protected_facts": [
+          {
+            "fact": "İki dönem de on dört gündür.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Tıklamalar 980'den 1.470'e, kayıtlı siparişler 35'ten 42'ye çıkmıştır.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Harcama 14.000 TL ve 21.000 TL; sipariş başına reklam harcaması 400 TL ve 500 TL'dir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Kârlılık, iptal takibi ve ürün bazındaki ilişkilendirme eksiktir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Nedensellik veya kesin bütçe artışı önerisi verilmemiştir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          }
+        ],
+        "material_meaning_drift_observed": false,
+        "new_substantive_fact_observed": false,
+        "fictional_status_retained": true,
+        "uncertainty_and_negation_retained": true,
+        "caveat": "Finite AI review of this source and these changes; literal and number preservation alone does not prove semantic equivalence."
+      },
+      "editorial_ai_assessment": "The output changes six text blocks with optional punctuation, wording and explicit phrasing. No mandatory correction was identified in those spans by this AI reviewer. The intended development KEEP condition is not met, but these changes are not evidence of factual harm or lower human preference."
+    },
+    {
+      "case_id": "case-01",
+      "source_id": "lf10-01-clean",
+      "source_pair_id": "lf10-01",
+      "arm": "skill_agent",
+      "input_path": "corpus-lab/work/v10/native-isolated/case-01.json",
+      "input_file_sha256": "181948d343aa6368b4200e31a16645f32de0743a19f4bdd0775a124116fae7c2",
+      "source_sha256": "a45e5312f66c61fd4e0f5ddd0b79d3ea8aa31b62d69906dfb72457aaa17ff88a",
+      "artifact_path": "corpus-lab/results/native-isolated-v10-case01-skill.json",
+      "artifact_file_sha256": "ac7d8b8c32ded61e72d1cb59ac875724aeffdde6403f2dc583092ff2d77b95a3",
+      "output_sha256": "a45e5312f66c61fd4e0f5ddd0b79d3ea8aa31b62d69906dfb72457aaa17ff88a",
+      "expected_development_decision": "keep",
+      "observed_action": "keep",
+      "development_decision_agreement": true,
+      "runtime_metadata": {
+        "runtime": "ChatGPT delegated agent",
+        "model_version_reported": "not exposed",
+        "exact_backend_model": null,
+        "seed": null,
+        "temperature": null,
+        "human_reviewed_reported": false,
+        "single_case_context_reported": true,
+        "references_read_reported": [
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/SKILL.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/references/editor-muhakemesi.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/references/filtre-kararlari.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/references/unicode-denetimi.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/scripts/unicode-denetle.py"
+        ],
+        "tools_used_reported": [
+          "functions.exec",
+          "tools.exec_command",
+          "cat",
+          "python3 -B",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/scripts/unicode-denetle.py"
+        ],
+        "tools_list_presence": "present",
+        "evidence_level": "self-reported artifact metadata, not an independent execution trace audit"
+      },
+      "metrics": {
+        "exact_source_match": true,
+        "source_word_count_whitespace": 668,
+        "output_word_count_whitespace": 668,
+        "word_count_delta": 0,
+        "source_text_blocks": 16,
+        "output_text_blocks": 16,
+        "changed_text_blocks": 0,
+        "word_diff_hunks": 0,
+        "source_tokens_touched": 0,
+        "output_tokens_touched": 0,
+        "character_sequence_match_ratio": 1.0,
+        "protected_literals_total": 11,
+        "protected_literals_preserved": 11,
+        "missing_protected_literals": [],
+        "numeric_sequence_identical": true,
+        "headings_identical": true,
+        "canonical_clean_exact_match": true
+      },
+      "changes": [],
+      "seed_reviews": [],
+      "seed_repairs_only_reconstruct_output": null,
+      "additional_edits_after_seed_repair": null,
+      "semantic_ai_review": {
+        "protected_facts": [
+          {
+            "fact": "İki dönem de on dört gündür.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Tıklamalar 980'den 1.470'e, kayıtlı siparişler 35'ten 42'ye çıkmıştır.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Harcama 14.000 TL ve 21.000 TL; sipariş başına reklam harcaması 400 TL ve 500 TL'dir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Kârlılık, iptal takibi ve ürün bazındaki ilişkilendirme eksiktir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Nedensellik veya kesin bütçe artışı önerisi verilmemiştir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          }
+        ],
+        "material_meaning_drift_observed": false,
+        "new_substantive_fact_observed": false,
+        "fictional_status_retained": true,
+        "uncertainty_and_negation_retained": true,
+        "caveat": "Finite AI review of this source and these changes; literal and number preservation alone does not prove semantic equivalence."
+      },
+      "editorial_ai_assessment": "The output is byte-identical to the clean source and satisfies the intended development KEEP condition."
+    },
+    {
+      "case_id": "case-02",
+      "source_id": "lf10-01-flawed",
+      "source_pair_id": "lf10-01",
+      "arm": "baseline_agent",
+      "input_path": "corpus-lab/work/v10/native-isolated/case-02.json",
+      "input_file_sha256": "285acafcdc8370f4a675c06809ef5e2a6417953faba1bce95699171f33faf91c",
+      "source_sha256": "36c52ce582671f1538cb21ed7ef555cc86d87e5f20d82f5fbf83a7ff87b3a411",
+      "artifact_path": "corpus-lab/results/native-isolated-v10-case02-baseline.json",
+      "artifact_file_sha256": "7f17d94e41baaeb72e9ceaf237639fbf644ea89bbea83b0be98a25a3ea1bf4fb",
+      "output_sha256": "61ffde1c851570bf41d95ca916308dfceec89d53f78f95dd879ab1cc7c231715",
+      "expected_development_decision": "edit",
+      "observed_action": "edit",
+      "development_decision_agreement": true,
+      "runtime_metadata": {
+        "runtime": "ChatGPT delegated agent",
+        "model_version_reported": "not exposed",
+        "exact_backend_model": null,
+        "seed": null,
+        "temperature": null,
+        "human_reviewed_reported": false,
+        "single_case_context_reported": true,
+        "references_read_reported": [],
+        "tools_used_reported": null,
+        "tools_list_presence": "not recorded; do not interpret as no tool use",
+        "evidence_level": "self-reported artifact metadata, not an independent execution trace audit"
+      },
+      "metrics": {
+        "exact_source_match": false,
+        "source_word_count_whitespace": 695,
+        "output_word_count_whitespace": 669,
+        "word_count_delta": -26,
+        "source_text_blocks": 16,
+        "output_text_blocks": 16,
+        "changed_text_blocks": 5,
+        "word_diff_hunks": 9,
+        "source_tokens_touched": 35,
+        "output_tokens_touched": 9,
+        "character_sequence_match_ratio": 0.976771,
+        "protected_literals_total": 11,
+        "protected_literals_preserved": 11,
+        "missing_protected_literals": [],
+        "numeric_sequence_identical": true,
+        "headings_identical": true,
+        "canonical_clean_exact_match": false
+      },
+      "changes": [
+        {
+          "block_ordinal_1_based": 2,
+          "word_diff_hunks": [
+            {
+              "operation": "delete",
+              "before": "Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+              "after": "",
+              "context_before": "yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı.",
+              "context_after": ""
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 4,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "maliyet",
+              "after": "maliyet,",
+              "context_before": "iki cümle birbiriyle çelişmiyor. Mağaza sahibinin kabul edebileceği",
+              "context_after": "sipariş başına ne kadar kazandığına bağlı. Buradaki hesap,"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 7,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "listesinin",
+              "after": "listesini",
+              "context_before": "Mağazanın işlem",
+              "context_after": "dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada"
+            },
+            {
+              "operation": "replace",
+              "before": "aktarılması işlemini gerçekleştirdik.",
+              "after": "aktardık.",
+              "context_before": "Mağazanın işlem listesinin dışa",
+              "context_after": "İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 8,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "Öncelikle",
+              "after": "Önce",
+              "context_before": "dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden sunmadık.",
+              "context_after": "her iki döneme ilişkin olarak aynı takip kuralının"
+            },
+            {
+              "operation": "replace",
+              "before": "ilişkin olarak",
+              "after": "de",
+              "context_before": "çıkarıp karşılaştırmayı yeniden sunmadık. Öncelikle her iki döneme",
+              "context_after": "aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu. Aksi"
+            },
+            {
+              "operation": "replace",
+              "before": "kuralının uygulanması işleminin gerçekleştirilmesi",
+              "after": "kuralını uygulamamız",
+              "context_before": "Öncelikle her iki döneme ilişkin olarak aynı takip",
+              "context_after": "gerekiyordu. Aksi hâlde daha temiz görünen tablo, farklı"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 12,
+          "word_diff_hunks": [
+            {
+              "operation": "delete",
+              "before": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır.",
+              "after": "",
+              "context_before": "",
+              "context_after": "Ürün gruplarına baktığımızda başka bir boşluk çıktı. Siparişlerin"
+            },
+            {
+              "operation": "replace",
+              "before": "boşluk çıktı.",
+              "after": "boşlukla karşılaştık.",
+              "context_before": "büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir",
+              "context_after": "Siparişlerin hangi ürünlerden oluştuğunu biliyorduk ama tıklamaların tamamını"
+            }
+          ]
+        }
+      ],
+      "seed_reviews": [
+        {
+          "seed_ordinal_1_based": 1,
+          "type": "nominalization",
+          "source_seed": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik.",
+          "observed_replacement": "Mağazanın işlem listesini dışa aktardık.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": true,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Direct verb restores the original action without changing the described event."
+        },
+        {
+          "seed_ordinal_1_based": 2,
+          "type": "redundancy",
+          "source_seed": "Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+          "observed_replacement": "Henüz aynı soruya cevap vermiyorlardı.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": true,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Repetition or empty transition removed; factual content retained."
+        },
+        {
+          "seed_ordinal_1_based": 3,
+          "type": "empty_transition",
+          "source_seed": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "observed_replacement": "Ürün gruplarına baktığımızda başka bir boşlukla karşılaştık.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": false,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Repetition or empty transition removed; factual content retained."
+        },
+        {
+          "seed_ordinal_1_based": 4,
+          "type": "nominalization",
+          "source_seed": "Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu.",
+          "observed_replacement": "Önce her iki döneme de aynı takip kuralını uygulamamız gerekiyordu.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": false,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Heavy nominal chain removed. The first-person plural agent is made explicit but is consistent with the surrounding narrative."
+        }
+      ],
+      "seed_repairs_only_reconstruct_output": false,
+      "additional_edits_after_seed_repair": [
+        {
+          "before": "maliyet sipariş",
+          "after": "maliyet, sipariş",
+          "assessment": "optional punctuation, no observed fact change"
+        },
+        {
+          "before": "boşluk çıktı.",
+          "after": "boşlukla karşılaştık.",
+          "assessment": "optional equivalent phrase; not needed to remove the empty transition"
+        }
+      ],
+      "semantic_ai_review": {
+        "protected_facts": [
+          {
+            "fact": "İki dönem de on dört gündür.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Tıklamalar 980'den 1.470'e, kayıtlı siparişler 35'ten 42'ye çıkmıştır.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Harcama 14.000 TL ve 21.000 TL; sipariş başına reklam harcaması 400 TL ve 500 TL'dir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Kârlılık, iptal takibi ve ürün bazındaki ilişkilendirme eksiktir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Nedensellik veya kesin bütçe artışı önerisi verilmemiştir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          }
+        ],
+        "material_meaning_drift_observed": false,
+        "new_substantive_fact_observed": false,
+        "fictional_status_retained": true,
+        "uncertainty_and_negation_retained": true,
+        "caveat": "Finite AI review of this source and these changes; literal and number preservation alone does not prove semantic equivalence."
+      },
+      "editorial_ai_assessment": "All four seeded defects are addressed. Two additional surface edits remain after accounting for the required repairs: a comma and an equivalent phrase. No material factual drift observed; the follow-up rule now has an explicit first-person plural actor."
+    },
+    {
+      "case_id": "case-02",
+      "source_id": "lf10-01-flawed",
+      "source_pair_id": "lf10-01",
+      "arm": "skill_agent",
+      "input_path": "corpus-lab/work/v10/native-isolated/case-02.json",
+      "input_file_sha256": "285acafcdc8370f4a675c06809ef5e2a6417953faba1bce95699171f33faf91c",
+      "source_sha256": "36c52ce582671f1538cb21ed7ef555cc86d87e5f20d82f5fbf83a7ff87b3a411",
+      "artifact_path": "corpus-lab/results/native-isolated-v10-case02-skill.json",
+      "artifact_file_sha256": "ac485c4f7411fce382f7caa6e4e3c8dca191fd6376892b10a56396a8cd8843f9",
+      "output_sha256": "31bf24ce0a10ccfce6e6d4898db90948552953e51dd85b970cf0733e958bfc54",
+      "expected_development_decision": "edit",
+      "observed_action": "edit",
+      "development_decision_agreement": true,
+      "runtime_metadata": {
+        "runtime": "ChatGPT delegated agent",
+        "model_version_reported": "not exposed",
+        "exact_backend_model": null,
+        "seed": null,
+        "temperature": null,
+        "human_reviewed_reported": false,
+        "single_case_context_reported": true,
+        "references_read_reported": [
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/SKILL.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/references/editor-muhakemesi.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/references/filtre-kararlari.md",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/references/unicode-denetimi.md"
+        ],
+        "tools_used_reported": [
+          "functions.exec",
+          "exec_command",
+          "python3",
+          "/workspace/scratch/8359bc600cdb/turkish-writer/skills/turkish-writer/scripts/unicode-denetle.py"
+        ],
+        "tools_list_presence": "present",
+        "evidence_level": "self-reported artifact metadata, not an independent execution trace audit"
+      },
+      "metrics": {
+        "exact_source_match": false,
+        "source_word_count_whitespace": 695,
+        "output_word_count_whitespace": 669,
+        "word_count_delta": -26,
+        "source_text_blocks": 16,
+        "output_text_blocks": 16,
+        "changed_text_blocks": 4,
+        "word_diff_hunks": 7,
+        "source_tokens_touched": 30,
+        "output_tokens_touched": 4,
+        "character_sequence_match_ratio": 0.978674,
+        "protected_literals_total": 11,
+        "protected_literals_preserved": 11,
+        "missing_protected_literals": [],
+        "numeric_sequence_identical": true,
+        "headings_identical": true,
+        "canonical_clean_exact_match": false
+      },
+      "changes": [
+        {
+          "block_ordinal_1_based": 2,
+          "word_diff_hunks": [
+            {
+              "operation": "delete",
+              "before": "Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+              "after": "",
+              "context_before": "yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı.",
+              "context_after": ""
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 7,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "listesinin",
+              "after": "listesini",
+              "context_before": "Mağazanın işlem",
+              "context_after": "dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada"
+            },
+            {
+              "operation": "replace",
+              "before": "aktarılması işlemini gerçekleştirdik.",
+              "after": "aktardık.",
+              "context_before": "Mağazanın işlem listesinin dışa",
+              "context_after": "İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 8,
+          "word_diff_hunks": [
+            {
+              "operation": "replace",
+              "before": "Öncelikle",
+              "after": "Önce",
+              "context_before": "dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden sunmadık.",
+              "context_after": "her iki döneme ilişkin olarak aynı takip kuralının"
+            },
+            {
+              "operation": "replace",
+              "before": "ilişkin olarak",
+              "after": "de",
+              "context_before": "çıkarıp karşılaştırmayı yeniden sunmadık. Öncelikle her iki döneme",
+              "context_after": "aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu. Aksi"
+            },
+            {
+              "operation": "delete",
+              "before": "işleminin gerçekleştirilmesi",
+              "after": "",
+              "context_before": "iki döneme ilişkin olarak aynı takip kuralının uygulanması",
+              "context_after": "gerekiyordu. Aksi hâlde daha temiz görünen tablo, farklı"
+            }
+          ]
+        },
+        {
+          "block_ordinal_1_based": 12,
+          "word_diff_hunks": [
+            {
+              "operation": "delete",
+              "before": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır.",
+              "after": "",
+              "context_before": "",
+              "context_after": "Ürün gruplarına baktığımızda başka bir boşluk çıktı. Siparişlerin"
+            }
+          ]
+        }
+      ],
+      "seed_reviews": [
+        {
+          "seed_ordinal_1_based": 1,
+          "type": "nominalization",
+          "source_seed": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik.",
+          "observed_replacement": "Mağazanın işlem listesini dışa aktardık.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": true,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Direct verb restores the original action without changing the described event."
+        },
+        {
+          "seed_ordinal_1_based": 2,
+          "type": "redundancy",
+          "source_seed": "Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+          "observed_replacement": "Henüz aynı soruya cevap vermiyorlardı.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": true,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Repetition or empty transition removed; factual content retained."
+        },
+        {
+          "seed_ordinal_1_based": 3,
+          "type": "empty_transition",
+          "source_seed": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "observed_replacement": "Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": true,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Repetition or empty transition removed; factual content retained."
+        },
+        {
+          "seed_ordinal_1_based": 4,
+          "type": "nominalization",
+          "source_seed": "Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu.",
+          "observed_replacement": "Önce her iki döneme de aynı takip kuralının uygulanması gerekiyordu.",
+          "original_defect_span_removed": true,
+          "canonical_clean_phrase_present": false,
+          "ai_review": "targeted_style_defect_resolved",
+          "material_fact_drift_observed": false,
+          "note": "Heavy nominal chain removed; the remaining short nominal form is acceptable in this context and retains impersonal stance."
+        }
+      ],
+      "seed_repairs_only_reconstruct_output": true,
+      "additional_edits_after_seed_repair": [],
+      "semantic_ai_review": {
+        "protected_facts": [
+          {
+            "fact": "İki dönem de on dört gündür.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Tıklamalar 980'den 1.470'e, kayıtlı siparişler 35'ten 42'ye çıkmıştır.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Harcama 14.000 TL ve 21.000 TL; sipariş başına reklam harcaması 400 TL ve 500 TL'dir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Kârlılık, iptal takibi ve ürün bazındaki ilişkilendirme eksiktir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          },
+          {
+            "fact": "Nedensellik veya kesin bütçe artışı önerisi verilmemiştir.",
+            "ai_review_result": "preserved",
+            "human_verified": false
+          }
+        ],
+        "material_meaning_drift_observed": false,
+        "new_substantive_fact_observed": false,
+        "fictional_status_retained": true,
+        "uncertainty_and_negation_retained": true,
+        "caveat": "Finite AI review of this source and these changes; literal and number preservation alone does not prove semantic equivalence."
+      },
+      "editorial_ai_assessment": "All four seeded defects are addressed by local replacements, with no edits outside the four repair spans."
+    }
+  ],
+  "findings": [
+    {
+      "id": "clean_restraint",
+      "observation": "The skill output preserves the clean source exactly. Baseline makes optional changes in six text blocks.",
+      "interpretation": "A narrow example of better agreement with the development KEEP objective, not proof of higher overall writing quality."
+    },
+    {
+      "id": "flawed_repair",
+      "observation": "Both arms remove all four known stylistic defects and retain all eleven protected literal spans and the numeric sequence. Skill changes four blocks; baseline changes five.",
+      "interpretation": "Both are successful repairs on this case. Skill stays within the four repair spans; baseline also makes two nonessential surface edits."
+    },
+    {
+      "id": "semantic_preservation",
+      "observation": "No material factual, negation, uncertainty or causal drift was found in the four-output AI review. Baseline makes the actor explicit in the follow-up-rule sentence.",
+      "interpretation": "This is a finite review result, not a universal semantic guarantee."
+    }
+  ],
+  "limitations": [
+    "Only one underlying article, represented by two source variants; four outputs and one sample per condition.",
+    "All source text, editing and substantive reviewing are AI-produced; no human preference or human authorship gold.",
+    "The review is not blind; the reviewer knows arms, expected decisions and seeded defects.",
+    "The reviewer authored the development source fixtures, so external validation is still absent.",
+    "No exposed exact model/backend version, seed, temperature or full independent tool trace.",
+    "The comparison bundles skill instructions, selected references and reported tools; it does not identify which component caused a difference.",
+    "No statistical dominance, general Turkish-quality conclusion, detector evasion claim or full Codex CLI qualification follows.",
+    "The original shared-context pilot is excluded even though its raw artifacts remain for audit."
+  ]
+}

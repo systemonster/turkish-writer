@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "sources": [
+    {
+      "id": "boun",
+      "url": "https://github.com/UniversalDependencies/UD_Turkish-BOUN",
+      "revision": "09521f40c90904df85524b8e0b43afba6e4c7823",
+      "license": "CC BY-SA 4.0",
+      "scope": "annotated train",
+      "status": "analyzed",
+      "source_note": "TNC derived; not blog-specific"
+    },
+    {
+      "id": "mogan",
+      "url": "https://huggingface.co/datasets/moganai/turkishfineweb2-cleaned",
+      "license": "ODC-By (database); document rights separately",
+      "status": "one-million-row metadata pilot completed; document rights not cleared",
+      "scope": "streamed authorized pre-2018 crawl sample",
+      "revision": "7c5bd76fa456f1748ceb603d8e57acf24a173339"
+    },
+    {
+      "id": "authorship",
+      "url": "https://data.mendeley.com/datasets/xcb8r9d554/1",
+      "license": "CC BY 4.0 dataset card; underlying document rights separately",
+      "status": "card verified; not downloaded",
+      "scope": "blog/article genre and author variation 2015–2018"
+    },
+    {
+      "id": "gec",
+      "url": "https://github.com/asimokby/Turkish-GEC",
+      "license": "review dataset-specific terms",
+      "status": "README verified; not downloaded",
+      "scope": "synthetic grammar pairs and human annotated held-out evaluation; not editorial judgments"
+    },
+    {
+      "id": "wiki",
+      "url": "https://dumps.wikimedia.org/trwiki/",
+      "license": "verify revision-specific rights and attribution",
+      "status": "2643 revisions scanned; 50 model-triaged candidates; zero human verification",
+      "scope": "historical genuine revision candidates, separate facts/style"
+    },
+    {
+      "id": "daron-blog",
+      "url": "https://github.com/daronyondem/daron-turkce-blog",
+      "revision": "e5a5885a9f70d2f30519560a80c6de622aeac945",
+      "license": "CC BY-SA 4.0",
+      "scope": "2007–2017 historical blog prose; aggregate statistics only",
+      "status": "503 eligible articles profiled; one author"
+    }
+  ]
+}

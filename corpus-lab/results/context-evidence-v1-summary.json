@@ -1,0 +1,165 @@
+{
+  "scope": "heuristic contextual retrieval on licensed development sources; not human gold, not independent holdout",
+  "corpora": {
+    "daron": {
+      "documents": 503,
+      "heuristic_sentences": 20048,
+      "pattern_hits": {
+        "question_answer": 627,
+        "contrast": 482,
+        "reformulation": 262,
+        "example": 180,
+        "inference": 487,
+        "sequence": 603,
+        "conditional": 899,
+        "nominal_heaviness": 161,
+        "author_position": 325
+      },
+      "sample_contexts": 54
+    },
+    "sudo": {
+      "documents": 20,
+      "heuristic_sentences": 286,
+      "pattern_hits": {
+        "question_answer": 4,
+        "contrast": 21,
+        "reformulation": 5,
+        "example": 4,
+        "inference": 2,
+        "sequence": 10,
+        "conditional": 5,
+        "nominal_heaviness": 5,
+        "author_position": 3
+      },
+      "sample_contexts": 32
+    },
+    "boun-train": {
+      "sentences": 7803,
+      "source_sha256": "ae54aef82e69cb7ccc54703a07e2ebcde66c2e4453a5debfac1eb78dfed60e9f",
+      "annotated_hits": {
+        "annotated_converb": 836,
+        "verb_dependent_obj_Acc": 3101,
+        "verb_dependent_obl_Dat": 1706,
+        "verb_dependent_obl_Abl": 733,
+        "verb_dependent_obl_Loc": 1809
+      },
+      "sample_contexts": 40
+    }
+  },
+  "license": "CC BY-SA 4.0",
+  "evidence_records": 126,
+  "method": "Deterministic hash sample, max one per document per pattern, source context kept private; surface hits are candidates, not confirmed discourse/grammatical categories.",
+  "private_artifact_sha256": "3bd615a6ac636c8da2b31e3e490dca99838081b0b11b8557c8a508fc5f814c69",
+  "as_of": "2026-11-25",
+  "job_id": "6b06e806d91f621b9307d75e",
+  "code_commit": "154bfdde04299b869a46cd0e8065d91fd0d01ce4",
+  "failed_attempt": {
+    "id": "6b06e7ddd91f621b9307d705",
+    "reason": "Archive includes large nontext assets; original 100 MB cap exceeded. Bounded stream fixed without extracting media."
+  },
+  "source_revisions": {
+    "daron": "e5a5885a9f70d2f30519560a80c6de622aeac945",
+    "sudo": "18cd8b55645f92578d120e9fb105487f236fed79",
+    "sudo_frozen_dataset": "0b1b8308559a935e6f3be060fe42bc00ed556f02",
+    "boun_train": "09521f40c90904df85524b8e0b43afba6e4c7823"
+  },
+  "private_artifact": "lovefengis/turkish-writer-historical-review-v10/editorial-corpus-v1/context-evidence.json",
+  "review_scope": "AI reading of all 126 focus windows and available surrounding context (some context displayed in shortened form); not article-by-article reading of the entire corpus, not independent human review. Retrieval matches are provisional, not quality labels. No source excerpts published.",
+  "findings": [
+    {
+      "decision": "Question introduces a genuine unresolved issue; next material must answer it.",
+      "evidence": [
+        "30935057f5cfc7dfe660",
+        "599c9e928a46a492d253",
+        "e55394f180051179abdc",
+        "fbe67de69049ffd9e4c4"
+      ]
+    },
+    {
+      "decision": "Reformulation may clarify an implication, correct a misunderstanding, or turn abstract terminology into a practical question; redundant reformulations still removable.",
+      "evidence": [
+        "4cda52f002191ae92382",
+        "b89cda07e3bcfe6e8992",
+        "5d78573e9fe9abcd3e6c",
+        "16d9ba4d25de45384b75"
+      ]
+    },
+    {
+      "decision": "Contrast may introduce a prerequisite, extend the stated scope, or limit applicability; distinguish these functions rather than banning markers.",
+      "evidence": [
+        "874c8ee18df06bed58c1",
+        "4061290b21fc9239b0d2",
+        "ddd58f28be6b95f65ae5",
+        "4ca7df34bdcc5b6f058c",
+        "90cd251cec8f20f117d6"
+      ]
+    },
+    {
+      "decision": "Example can instantiate a calculation or illustrate a hypothetical procedure. Keep the hypothetical or empirical status.",
+      "evidence": [
+        "497845b845d156a7f02e",
+        "35fe3a6be0ed5a15f65b",
+        "d4554c143d27cec7e8e5"
+      ]
+    },
+    {
+      "decision": "Result markers can express a procedure outcome, causal justification, or completed exposition; require the relevant relation in the source.",
+      "evidence": [
+        "6e8c50c7dfe2e855fc5c",
+        "7d3fee5d6fc2f43df760",
+        "8f1c95f63d24cc935728",
+        "553c1ad391ac300c4b8e"
+      ]
+    },
+    {
+      "decision": "Temporal order, condition, and modality must survive converb edits; a shared predicate does not justify collapsing different agents.",
+      "evidence": [
+        "828e6a32d61e7f690000",
+        "face18e5df94bf6efb72",
+        "06d3e3b31ef0c4d1f197",
+        "906d16ff167cae733ff2",
+        "7df21d88f4670a07db04",
+        "bdbb93d9e6e440512530"
+      ]
+    },
+    {
+      "decision": "Nominalization may identify a specific operation and its completion; simplify only when redundant support verbs and nominal chains obscure the actual action.",
+      "evidence": [
+        "6c36639192eba1cda31d",
+        "9a38cc4257e7374d5ef1",
+        "a86c72f3da70752b0c05",
+        "cb4286c33b9997b9108e"
+      ]
+    },
+    {
+      "decision": "Verb case frames carry meaning, e.g. direction, source, object, and location. Check inflection together with lexical choice. Annotation anomalies require caution.",
+      "evidence": [
+        "3f0009026e6d33dca706",
+        "7c22d1d2c5b29e8dd1e3",
+        "0169bd036ccc4d7f4713",
+        "e4a134ebf6894eba4c3f",
+        "fd717f6172435a60df0d",
+        "416f48ed2c5be73a2cdd",
+        "d14047ba4bb2623081db",
+        "9f5d73bde7c493081c5d"
+      ]
+    },
+    {
+      "decision": "Author stance markers can preserve uncertainty, subjectivity, preference and personal narrative; don't standardize them into assertions.",
+      "evidence": [
+        "71d5159fcd91802a3745",
+        "1b274b0906c9501de643",
+        "92a9aeeeb8381258ce30",
+        "79c6354b4eceb01dbeed",
+        "3b4d5f91c351f037f88e"
+      ]
+    }
+  ],
+  "skill_changes": {
+    "guide": "skills/turkish-writer/references/baglamli-turkce.md",
+    "guide_commit": "b449a210a5e734d788ade394e20c69b6bcf45849",
+    "skill_integration_commit": "5c6e8a8ee4585f6328c5d0569348d9c5455805ec",
+    "license_commit": "37123e572b9f75d5c2a082d93db7df5eb20469f1"
+  },
+  "quality_verified": false
+}

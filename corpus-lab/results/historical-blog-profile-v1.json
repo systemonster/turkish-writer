@@ -1,0 +1,119 @@
+{
+  "source": "https://github.com/daronyondem/daron-turkce-blog",
+  "source_revision": "e5a5885a9f70d2f30519560a80c6de622aeac945",
+  "source_license": "CC BY-SA 4.0",
+  "attribution": "Daron Yöndem, Türkçe Blog İçeriği (2007–2018); aggregate research notes only",
+  "scope": "One author's historical technical/personal blog archive; heuristically selected prose, not a representative corpus or verified professional editing benchmark.",
+  "criteria": {
+    "filename_years": [
+      2007,
+      2017
+    ],
+    "min_prose_words": 200,
+    "min_prose_blocks": 3,
+    "min_words_per_block": 8,
+    "min_words_per_segmented_sentence": 3
+  },
+  "files_examined": 1038,
+  "documents_retained": 503,
+  "excluded": {
+    "under_200_prose_words_or_3_paragraphs": 529,
+    "outside_2007_2017_or_filename": 6
+  },
+  "years": {
+    "2007": 57,
+    "2008": 135,
+    "2009": 89,
+    "2010": 30,
+    "2011": 51,
+    "2012": 44,
+    "2013": 24,
+    "2014": 40,
+    "2015": 8,
+    "2016": 23,
+    "2017": 2
+  },
+  "prose_words": 274756,
+  "segmented_sentences": 20048,
+  "paragraphs": 5401,
+  "words_per_document": {
+    "n": 503,
+    "mean": 546.23,
+    "median": 462,
+    "p10": 239,
+    "p90": 944
+  },
+  "words_per_paragraph": {
+    "n": 5401,
+    "mean": 50.87,
+    "median": 44,
+    "p10": 18,
+    "p90": 91
+  },
+  "words_per_first_paragraph": {
+    "n": 503,
+    "mean": 59.02,
+    "median": 56,
+    "p10": 27,
+    "p90": 100
+  },
+  "words_per_sentence": {
+    "n": 20048,
+    "mean": 13.68,
+    "median": 12,
+    "p10": 6,
+    "p90": 23
+  },
+  "within_document_sentence_word_sd": {
+    "n": 503,
+    "mean": 6.91,
+    "median": 6.5352933500798285,
+    "p10": 4.922989707931461,
+    "p90": 9.214249833817183
+  },
+  "documents_with_question_mark": 294,
+  "documents_with_short_paragraph_15_words_or_less": 248,
+  "documents_with_5_or_more_paragraphs": 457,
+  "surface_connective_counts": {
+    "fakat": 567,
+    "ayrıca": 199,
+    "peki": 252,
+    "oysa": 149,
+    "yani": 571,
+    "böylece": 500,
+    "özetle": 103,
+    "örneğin": 203,
+    "aslında": 967,
+    "ancak": 49,
+    "çünkü": 220,
+    "şimdi": 267,
+    "ama": 585,
+    "nitekim": 39,
+    "dolayısıyla": 1
+  },
+  "sentence_initial_connective_counts": {
+    "fakat": 207,
+    "ayrıca": 109,
+    "oysa": 121,
+    "peki": 225,
+    "yani": 262,
+    "özetle": 61,
+    "böylece": 454,
+    "örneğin": 169,
+    "aslında": 242,
+    "çünkü": 42,
+    "şimdi": 175,
+    "ama": 138,
+    "nitekim": 27,
+    "ancak": 3
+  },
+  "limitations": [
+    "No native-speaker authorship claim beyond archive provenance; documents not individually editor-reviewed.",
+    "Markdown stripping, language screening, word and sentence segmentation are heuristic and omit some valid prose.",
+    "The word counts are Unicode word matches, not BPE tokens; sentence segmentation is approximate.",
+    "Selection favors long articles, is dominated by earlier years and one writer; no quota or universal style rule follows."
+  ],
+  "profiler_commit": "26afc9106806607f2ecc503e83456bd2479e3a17",
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b063cdbd0582cfbbefd6544",
+  "derived_report_license": "CC BY-SA 4.0"
+}

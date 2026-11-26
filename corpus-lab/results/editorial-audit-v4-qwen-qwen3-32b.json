@@ -1,0 +1,2557 @@
+{
+  "schema": 1,
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b064ad11460ffe1d5e99908",
+  "scope": "52 reused synthetic development cases per arm. Literal diagnostics only; edits are not evidence of quality. Audit substring verification is not semantic validation, and review is same-model, not independent.",
+  "run": {
+    "model": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "git": "183b177e4593d4d98a01fd992a82dd7a6bca691f",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "cases": 52,
+    "protocol": "audit-v4",
+    "attention": "sdpa",
+    "batch": 2,
+    "max_new_tokens": 512,
+    "prompts": {
+      "audit": "2d93ea069d164f39948d7a15734bedf07614b5655b654987c1ac563faba033fb",
+      "edit": "0ba3b7a8d069e5d99bb492505dc6092623a58261d0c3f2ff1ab1051539e13236",
+      "review": "f98b8169a49262b67d02741ede8fa2c29ef38b4657e16baea8553d80c8666754"
+    }
+  },
+  "audit": {
+    "valid": 37,
+    "keep_with_findings": [
+      "editorial-dev-001",
+      "editorial-dev-003",
+      "editorial-dev-005",
+      "editorial-dev-013",
+      "editorial-dev-015",
+      "editorial-dev-018",
+      "editorial-dev-020",
+      "editorial-dev-024",
+      "editorial-dev-036",
+      "long-dev-010"
+    ],
+    "edit_with_findings": [
+      "editorial-dev-002",
+      "editorial-dev-006",
+      "editorial-dev-007",
+      "editorial-dev-009",
+      "editorial-dev-010",
+      "editorial-dev-011",
+      "editorial-dev-012",
+      "editorial-dev-014",
+      "editorial-dev-017",
+      "editorial-dev-019",
+      "editorial-dev-021",
+      "editorial-dev-023",
+      "editorial-dev-025",
+      "editorial-dev-026",
+      "editorial-dev-027",
+      "editorial-dev-029",
+      "editorial-dev-031",
+      "editorial-dev-033",
+      "editorial-dev-037",
+      "editorial-dev-039"
+    ],
+    "review_valid": 52,
+    "review_total": 52,
+    "review_B": 47
+  },
+  "diagnostics": {
+    "direct_edit": {
+      "keep_exact": 0,
+      "edit_changed": 28,
+      "flags": {
+        "limit": [],
+        "empty": [],
+        "number": [],
+        "link": [],
+        "quote": [],
+        "heading": [
+          "editorial-dev-031",
+          "long-dev-003",
+          "long-dev-006",
+          "long-dev-007",
+          "long-dev-008",
+          "long-dev-012"
+        ],
+        "protected": [
+          "long-dev-001",
+          "long-dev-003",
+          "long-dev-004"
+        ]
+      }
+    },
+    "audit_edit": {
+      "keep_exact": 0,
+      "edit_changed": 28,
+      "flags": {
+        "limit": [],
+        "empty": [],
+        "number": [],
+        "link": [],
+        "quote": [],
+        "heading": [
+          "editorial-dev-031",
+          "long-dev-003",
+          "long-dev-006",
+          "long-dev-007",
+          "long-dev-008",
+          "long-dev-012"
+        ],
+        "protected": [
+          "long-dev-001",
+          "long-dev-003",
+          "long-dev-004",
+          "long-dev-010"
+        ]
+      }
+    },
+    "reviewed_edit": {
+      "keep_exact": 4,
+      "edit_changed": 27,
+      "flags": {
+        "limit": [],
+        "empty": [],
+        "number": [],
+        "link": [],
+        "quote": [],
+        "heading": [
+          "editorial-dev-031",
+          "long-dev-003",
+          "long-dev-006",
+          "long-dev-007",
+          "long-dev-008"
+        ],
+        "protected": [
+          "long-dev-001",
+          "long-dev-003",
+          "long-dev-004",
+          "long-dev-010"
+        ]
+      }
+    }
+  },
+  "info": {
+    "model": "Qwen/Qwen3-32B",
+    "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "git": "183b177e4593d4d98a01fd992a82dd7a6bca691f",
+    "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+    "torch": "2.8.0+cu128",
+    "transformers": "4.57.3",
+    "cases": 52,
+    "protocol": "audit-v4",
+    "attention": "sdpa",
+    "batch": 2,
+    "max_new_tokens": 512,
+    "prompts": {
+      "audit": "2d93ea069d164f39948d7a15734bedf07614b5655b654987c1ac563faba033fb",
+      "edit": "0ba3b7a8d069e5d99bb492505dc6092623a58261d0c3f2ff1ab1051539e13236",
+      "review": "f98b8169a49262b67d02741ede8fa2c29ef38b4657e16baea8553d80c8666754"
+    }
+  },
+  "audits": [
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-001",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Yayınlandıktan sonraki ilk hafta ziyaretçi sayısı arttı.\",\n      \"neden\": \"Cümlede 'yayınlandıktan sonraki ilk hafta' ifadesi, bağlama göre gereğinden fazla detaylıdır ve okuma akışını bozabilir.\",\n      \"mudahele\": \"Cümleyi daha akıcı hale getirmek için 'yayınlandıktan sonraki ilk hafta' ifadesi kısaltılabilir, örneğin 'Yayınlandıktan sonra ilk hafta ziyaretçi sayısı arttı.'\"\n    },\n    {\n      \"alinti\": \"Yeni tasarımın bunda payı olup olmadığını henüz bilmiyoruz.\",\n      \"neden\": \"Cümlede 'bunda' kelimesi bağlama göre belirsizlik yaratıyor; neye 'payı' olduğu net değil.\",\n      \"mudahele\": \"Belirsizliği gidermek için 'bunda' yerine 'ziyaretçi sayısındaki artışta' gibi daha açıklayıcı bir ifade kullanılabilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Yayınlandıktan sonraki ilk hafta ziyaretçi sayısı arttı.",
+          "neden": "Cümlede 'yayınlandıktan sonraki ilk hafta' ifadesi, bağlama göre gereğinden fazla detaylıdır ve okuma akışını bozabilir.",
+          "mudahele": "Cümleyi daha akıcı hale getirmek için 'yayınlandıktan sonraki ilk hafta' ifadesi kısaltılabilir, örneğin 'Yayınlandıktan sonra ilk hafta ziyaretçi sayısı arttı.'"
+        },
+        {
+          "alinti": "Yeni tasarımın bunda payı olup olmadığını henüz bilmiyoruz.",
+          "neden": "Cümlede 'bunda' kelimesi bağlama göre belirsizlik yaratıyor; neye 'payı' olduğu net değil.",
+          "mudahele": "Belirsizliği gidermek için 'bunda' yerine 'ziyaretçi sayısındaki artışta' gibi daha açıklayıcı bir ifade kullanılabilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-002",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bazı hesaplar açısından, yeni sürümün kullanılmasıyla birlikte form gönderim sürelerinde bir düşüş yaşanması mümkün olabilir.\",\n      \"neden\": \"Cümle yapısı gereksiz uzun ve belirsizdir. 'Bazı hesaplar açısından' ve 'mümkün olabilir' gibi ifadeler belirsizlik yaratır. Daha net ve doğrudan ifade edilebilir.\",\n      \"mudahele\": \"Cümleyi daha net ve doğrudan hale getirin, örneğin: 'Yeni sürüm, bazı hesaplar için form gönderim sürelerini azaltabilir.'\"\n    },\n    {\n      \"alinti\": \"Henüz ölçüm yapmadık.\",\n      \"neden\": \"Cümle tam bir bilgi sunmamaktadır. 'Henüz' kelimesi bağlamı belirsiz kılar ve okuyucuya eksik bir bilgi verir.\",\n      \"mudahele\": \"Cümleyi daha açıklayıcı hale getirin, örneğin: 'Henüz bu etkiyi ölçümleme şansımız olmadı.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Bazı hesaplar açısından, yeni sürümün kullanılmasıyla birlikte form gönderim sürelerinde bir düşüş yaşanması mümkün olabilir.",
+          "neden": "Cümle yapısı gereksiz uzun ve belirsizdir. 'Bazı hesaplar açısından' ve 'mümkün olabilir' gibi ifadeler belirsizlik yaratır. Daha net ve doğrudan ifade edilebilir.",
+          "mudahele": "Cümleyi daha net ve doğrudan hale getirin, örneğin: 'Yeni sürüm, bazı hesaplar için form gönderim sürelerini azaltabilir.'"
+        },
+        {
+          "alinti": "Henüz ölçüm yapmadık.",
+          "neden": "Cümle tam bir bilgi sunmamaktadır. 'Henüz' kelimesi bağlamı belirsiz kılar ve okuyucuya eksik bir bilgi verir.",
+          "mudahele": "Cümleyi daha açıklayıcı hale getirin, örneğin: 'Henüz bu etkiyi ölçümleme şansımız olmadı.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-003",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Başvuru ücretsiz. Onaylanan başvurularda ise hizmet bedeli alınır.\",\n      \"neden\": \"Cümleler arasında bağlama uymayan söyleyiş ve gereksiz 'ise' kullanımı var. 'ise' kelimesi burada doğal bir akışa katkıda bulunmamaktadır.\",\n      \"mudahele\": \"'ise' kelimesi kaldırılabilir ve cümleler daha akıcı hale getirilebilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Başvuru ücretsiz. Onaylanan başvurularda ise hizmet bedeli alınır.",
+          "neden": "Cümleler arasında bağlama uymayan söyleyiş ve gereksiz 'ise' kullanımı var. 'ise' kelimesi burada doğal bir akışa katkıda bulunmamaktadır.",
+          "mudahele": "'ise' kelimesi kaldırılabilir ve cümleler daha akıcı hale getirilebilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-004",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Ürün, 30 gün boyunca yalnızca deneme hesabı kapsamında olmak üzere kullanımınıza sunulmaktadır.\",\n      \"neden\": \"Cümle yapısı gereksiz uzun ve belirsizdir. 'olmak üzere' ifadesi gereksizdir.\",\n      \"mudahele\": \"Cümleyi daha kısa ve net hale getirmek için 'olmak üzere' ifadesi kaldırılabilir.\"\n    },\n    {\n      \"alinti\": \"Bu süre sona erdiğinde hesabınız otomatik olarak kapanır.\",\n      \"neden\": \"Cümle yapısı doğal ve anlaşılır olsa da 'sona erdiğinde' ifadesi yerine daha sade bir alternatif kullanılabilir.\",\n      \"mudahele\": \"'sona erdiğinde' ifadesi yerine 'sona erdiğinde' yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifadesi yerine 'sona erdiğinde' ifades",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-005",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Kargo salı günü yola çıkmış.\",\n      \"neden\": \"Cümlede 'günü' ifadesi gereksizdir çünkü 'salı' zaten bir gün adıdır.\",\n      \"mudahele\": \"Cümle 'Kargo salı günü yola çıkmış.' yerine 'Kargo salı yola çıkmış.' şeklinde daha doğal ve akıcı olur.\"\n    },\n    {\n      \"alinti\": \"Teslim tarihi henüz belli değil.\",\n      \"neden\": \"Cümle yapısı biraz soyut ve belirsizdir; 'teslim tarihi' yerine daha somut bir ifade kullanılabilir.\",\n      \"mudahele\": \"Cümle 'Teslim tarihi henüz belli değil.' yerine 'Teslim tarihi henüz belirlenmedi.' gibi daha net bir ifadeyle ifade edilebilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Kargo salı günü yola çıkmış.",
+          "neden": "Cümlede 'günü' ifadesi gereksizdir çünkü 'salı' zaten bir gün adıdır.",
+          "mudahele": "Cümle 'Kargo salı günü yola çıkmış.' yerine 'Kargo salı yola çıkmış.' şeklinde daha doğal ve akıcı olur."
+        },
+        {
+          "alinti": "Teslim tarihi henüz belli değil.",
+          "neden": "Cümle yapısı biraz soyut ve belirsizdir; 'teslim tarihi' yerine daha somut bir ifade kullanılabilir.",
+          "mudahele": "Cümle 'Teslim tarihi henüz belli değil.' yerine 'Teslim tarihi henüz belirlenmedi.' gibi daha net bir ifadeyle ifade edilebilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-006",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Formu müşteri doldurup destek ekibi incelemeye aldı.\",\n      \"neden\": \"Cümlede özne-nesne ilişkisi belirsizdir. 'Formu müşteri doldurup' kısmı, 'destek ekibi incelemeye aldı' ile bağ kurulamamıştır. Anlam net değil.\",\n      \"mudahele\": \"Cümle yapısı netleştirilmeli. Örneğin: 'Müşteri formu doldurdu ve destek ekibi incelemeye aldı.'\"\n    },\n    {\n      \"alinti\": \"Talebin sonucu henüz belli değil.\",\n      \"neden\": \"Söz dizimi biraz şişkindir. 'Talebin sonucu' yerine daha doğal ifadeler kullanılabilir.\",\n      \"mudahele\": \"Cümle daha akıcı hale getirilmeli. Örneğin: 'Talebin sonucu henüz açıklanmadı.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Formu müşteri doldurup destek ekibi incelemeye aldı.",
+          "neden": "Cümlede özne-nesne ilişkisi belirsizdir. 'Formu müşteri doldurup' kısmı, 'destek ekibi incelemeye aldı' ile bağ kurulamamıştır. Anlam net değil.",
+          "mudahele": "Cümle yapısı netleştirilmeli. Örneğin: 'Müşteri formu doldurdu ve destek ekibi incelemeye aldı.'"
+        },
+        {
+          "alinti": "Talebin sonucu henüz belli değil.",
+          "neden": "Söz dizimi biraz şişkindir. 'Talebin sonucu' yerine daha doğal ifadeler kullanılabilir.",
+          "mudahele": "Cümle daha akıcı hale getirilmeli. Örneğin: 'Talebin sonucu henüz açıklanmadı.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-007",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Yeni sürümün test edilmesinin ardından yayına alınması hususunda karar verilmesi bekleniyor.\",\n      \"neden\": \"Cümle yapısı çok uzun ve dolaylı; özneyle yüklem arasındaki bağ zayıf, anlatım şişmanlaştırılmış.\",\n      \"mudahele\": \"Cümle daha kısa ve net ifade edilmeli. Örneğin: 'Yeni sürüm test edildikten sonra yayına alınmasıyla ilgili bir karar verilecek.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Yeni sürümün test edilmesinin ardından yayına alınması hususunda karar verilmesi bekleniyor.",
+          "neden": "Cümle yapısı çok uzun ve dolaylı; özneyle yüklem arasındaki bağ zayıf, anlatım şişmanlaştırılmış.",
+          "mudahele": "Cümle daha kısa ve net ifade edilmeli. Örneğin: 'Yeni sürüm test edildikten sonra yayına alınmasıyla ilgili bir karar verilecek.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-008",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-009",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Raporlar ekip tarafından değerlendirildikten sonra yönetici sunumu gerçekleştirdi.\",\n      \"neden\": \"Cümlede 'sunumu' kelimesi, bağlamdan çıkarıldığında 'sunumu gerçekleştirdi' ifadesi belirsizlik yaratıyor. 'Sunumu' kelimesi 'yönetici' ile uyumlu olacak şekilde düzenlenebilir.\",\n      \"mudahele\": \"'sunumu' yerine 'sunum gerçekleştirdi' ifadesi kullanılabilir.\"\n    },\n    {\n      \"alinti\": \"Sunumda üç öneri yer aldı.\",\n      \"neden\": \"Cümle yapısı basit ve net olsa da 'yer aldı' ifadesi biraz resmî ve soyut bir dille ifade edilmiştir. Daha doğal bir ifade tercih edilebilir.\",\n      \"mudahele\": \"'sunumda üç öneri yer aldı' ifadesi yerine 'sunumda üç öneri sunuldu' kullanılabilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Raporlar ekip tarafından değerlendirildikten sonra yönetici sunumu gerçekleştirdi.",
+          "neden": "Cümlede 'sunumu' kelimesi, bağlamdan çıkarıldığında 'sunumu gerçekleştirdi' ifadesi belirsizlik yaratıyor. 'Sunumu' kelimesi 'yönetici' ile uyumlu olacak şekilde düzenlenebilir.",
+          "mudahele": "'sunumu' yerine 'sunum gerçekleştirdi' ifadesi kullanılabilir."
+        },
+        {
+          "alinti": "Sunumda üç öneri yer aldı.",
+          "neden": "Cümle yapısı basit ve net olsa da 'yer aldı' ifadesi biraz resmî ve soyut bir dille ifade edilmiştir. Daha doğal bir ifade tercih edilebilir.",
+          "mudahele": "'sunumda üç öneri yer aldı' ifadesi yerine 'sunumda üç öneri sunuldu' kullanılabilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-010",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"İndirme tamamlandığı zaman dosyanın içerisinde bulunan tabloları açabilme imkânına sahip olacaksınız.\",\n      \"neden\": \"Cümle yapısı gereğince 'indirme tamamlandığı zaman' ifadesi, eylemin zamanını belirtirken, 'sahip olacaksınız' kısmı zaman zarfıyla uyumsuzca kullanılmıştır. Bu, cümlede bir anlamsal ve dilbilgisi tutarsızlığı yaratır.\",\n      \"mudahele\": \"Cümle, 'İndirme tamamlandığında dosyanın içerisinde bulunan tabloları açabilme imkânı olacaktır.' şeklinde daha tutarlı ve doğal bir yapıya getirilebilir.\"\n    },\n    {\n      \"alinti\": \"dosyanın içerisinde bulunan tabloları\",\n      \"neden\": \"Bu ifade, 'dosyanın içerisinde bulunan' yapısal olarak gereksizdir çünkü 'dosya' kavramı zaten içeriği barındıran bir yapıyı ima eder. Bu nedenle tekrar içerir.\",\n      \"mudahele\": \"Cümle, 'dosyadaki tabloları' şeklinde daha kısa ve akıllıca ifade edilebilir.\"\n    },\n    {\n      \"alinti\": \"açabilme imkânına sahip olacaksınız\",\n      \"neden\": \"Bu ifade, 'açabilme imkânı olacaktır' şeklinde daha sade ve doğal bir yapıyla ifade edilebilir. 'Sahip olacaksınız' ifadesi burada gereğinden fazla kişisel bir yapı oluşturur.\",\n      \"mudahele\": \"Cümle, 'açabilme imkânı olacaktır' şeklinde daha sadeleştirilebilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "İndirme tamamlandığı zaman dosyanın içerisinde bulunan tabloları açabilme imkânına sahip olacaksınız.",
+          "neden": "Cümle yapısı gereğince 'indirme tamamlandığı zaman' ifadesi, eylemin zamanını belirtirken, 'sahip olacaksınız' kısmı zaman zarfıyla uyumsuzca kullanılmıştır. Bu, cümlede bir anlamsal ve dilbilgisi tutarsızlığı yaratır.",
+          "mudahele": "Cümle, 'İndirme tamamlandığında dosyanın içerisinde bulunan tabloları açabilme imkânı olacaktır.' şeklinde daha tutarlı ve doğal bir yapıya getirilebilir."
+        },
+        {
+          "alinti": "dosyanın içerisinde bulunan tabloları",
+          "neden": "Bu ifade, 'dosyanın içerisinde bulunan' yapısal olarak gereksizdir çünkü 'dosya' kavramı zaten içeriği barındıran bir yapıyı ima eder. Bu nedenle tekrar içerir.",
+          "mudahele": "Cümle, 'dosyadaki tabloları' şeklinde daha kısa ve akıllıca ifade edilebilir."
+        },
+        {
+          "alinti": "açabilme imkânına sahip olacaksınız",
+          "neden": "Bu ifade, 'açabilme imkânı olacaktır' şeklinde daha sade ve doğal bir yapıyla ifade edilebilir. 'Sahip olacaksınız' ifadesi burada gereğinden fazla kişisel bir yapı oluşturur.",
+          "mudahele": "Cümle, 'açabilme imkânı olacaktır' şeklinde daha sadeleştirilebilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-011",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Reklamın gösterim alması, tıklama alması ile aynı şey değildir.\",\n      \"neden\": \"Cümle yapısı gereksiz tekrar içeriyor ve daha net ifade edilebilir.\",\n      \"mudahele\": \"Reklamın gösterim alması, tıklama almasının aynı şey olmadığını ifade ederken daha net ve akıllıca bir yapı kullanılabilir.\"\n    },\n    {\n      \"alinti\": \"Gösterim ve tıklama farklı kavramlardır.\",\n      \"neden\": \"Bu cümle önceki cümlenin tekrarı niteliğinde ve fazladır.\",\n      \"mudahele\": \"Bu cümle çıkarılarak metin daha akıllıca ve öz olabilir.\"\n    },\n    {\n      \"alinti\": \"Gösterimler reklamın kaç kez görüntülendiğini, tıklamalar ise kaç kez tıklandığını gösterir.\",\n      \"neden\": \"Cümle yapısı biraz şişkin ve daha sadeleştirilebilir.\",\n      \"mudahele\": \"Cümle daha kısa ve net bir yapıya getirilebilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Reklamın gösterim alması, tıklama alması ile aynı şey değildir.",
+          "neden": "Cümle yapısı gereksiz tekrar içeriyor ve daha net ifade edilebilir.",
+          "mudahele": "Reklamın gösterim alması, tıklama almasının aynı şey olmadığını ifade ederken daha net ve akıllıca bir yapı kullanılabilir."
+        },
+        {
+          "alinti": "Gösterim ve tıklama farklı kavramlardır.",
+          "neden": "Bu cümle önceki cümlenin tekrarı niteliğinde ve fazladır.",
+          "mudahele": "Bu cümle çıkarılarak metin daha akıllıca ve öz olabilir."
+        },
+        {
+          "alinti": "Gösterimler reklamın kaç kez görüntülendiğini, tıklamalar ise kaç kez tıklandığını gösterir.",
+          "neden": "Cümle yapısı biraz şişkin ve daha sadeleştirilebilir.",
+          "mudahele": "Cümle daha kısa ve net bir yapıya getirilebilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-012",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bu mesajı görebilmek için önce formdaki zorunlu alanların doldurulması ve Gönder düğmesine tıklanması gerekir.\",\n      \"neden\": \"Cümlede mantıki sıralama bozuluyor. Önce zorunlu alanlar doldurulmalı, sonra Gönder düğmesine tıklanmalı. Ancak 'görebilmek için önce...' ifadesi, onay mesajının görünmesi için bu adımların yapılması gerektiğini yanlış anlatıyor.\",\n      \"mudahele\": \"Cümle, onay mesajının görünmesi için değil, onay mesajının gösterilmesi için gerekli adımları belirtmeli. Örneğin: 'Formdaki zorunlu alanlar doldurulduktan ve Gönder düğmesine tıklandıktan sonra ekranda bir onay mesajı yer alır.'\"\n    },\n    {\n      \"alinti\": \"Bu mesajı görebilmek için önce formdaki zorunlu alanların doldurulması ve Gönder düğmesine tıklanması gerekir.\",\n      \"neden\": \"Cümle yapısı gereksiz şekilde uzatılmış ve 'görebilmek için' ifadesi, okuyucunun eylemi gerçekleştirmesi gerektiğini yanlış vurguluyor. Daha net ve doğal bir ifade mümkündür.\",\n      \"mudahele\": \"Cümle daha sade ve mantıklı sırayla yeniden ifade edilmeli. Örneğin: 'Formdaki zorunlu alanlar doldurulmalı ve Gönder düğmesine tıklanmalıdır.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Bu mesajı görebilmek için önce formdaki zorunlu alanların doldurulması ve Gönder düğmesine tıklanması gerekir.",
+          "neden": "Cümlede mantıki sıralama bozuluyor. Önce zorunlu alanlar doldurulmalı, sonra Gönder düğmesine tıklanmalı. Ancak 'görebilmek için önce...' ifadesi, onay mesajının görünmesi için bu adımların yapılması gerektiğini yanlış anlatıyor.",
+          "mudahele": "Cümle, onay mesajının görünmesi için değil, onay mesajının gösterilmesi için gerekli adımları belirtmeli. Örneğin: 'Formdaki zorunlu alanlar doldurulduktan ve Gönder düğmesine tıklandıktan sonra ekranda bir onay mesajı yer alır.'"
+        },
+        {
+          "alinti": "Bu mesajı görebilmek için önce formdaki zorunlu alanların doldurulması ve Gönder düğmesine tıklanması gerekir.",
+          "neden": "Cümle yapısı gereksiz şekilde uzatılmış ve 'görebilmek için' ifadesi, okuyucunun eylemi gerçekleştirmesi gerektiğini yanlış vurguluyor. Daha net ve doğal bir ifade mümkündür.",
+          "mudahele": "Cümle daha sade ve mantıklı sırayla yeniden ifade edilmeli. Örneğin: 'Formdaki zorunlu alanlar doldurulmalı ve Gönder düğmesine tıklanmalıdır.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-013",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Fatura adresinizi güncelleyebilirsiniz. Ancak daha önce düzenlenen faturalar bu değişiklikten etkilenmez.\",\n      \"neden\": \"Cümleler arasında bağlama uygunluk eksikliği; ikinci cümle ilk cümlenin mantıksal sonucunu verirken, 'ancak' bağlacı yerine 'fakat' ya da daha uygun bir bağlaç kullanılması gerekir.\",\n      \"mudahele\": \"'Ancak' yerine 'Fakat' kullanılabilir ya da bağlaç kaldırılarak iki cümle daha doğrudan bağlanabilir.\"\n    },\n    {\n      \"alinti\": \"daha önce düzenlenen faturalar bu değişiklikten etkilenmez.\",\n      \"neden\": \"Dil bilgisi açısından doğru olsa da, 'etkilenmez' kelimesi bu bağlamda biraz soyut ve belirsizdir. Daha somut bir ifade kullanılması anlamları daha net hale getirebilir.\",\n      \"mudahele\": \"'Etkilenmez' yerine 'etkilenmezler' ya da 'değişmezler' gibi daha somut bir ifade kullanılabilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Fatura adresinizi güncelleyebilirsiniz. Ancak daha önce düzenlenen faturalar bu değişiklikten etkilenmez.",
+          "neden": "Cümleler arasında bağlama uygunluk eksikliği; ikinci cümle ilk cümlenin mantıksal sonucunu verirken, 'ancak' bağlacı yerine 'fakat' ya da daha uygun bir bağlaç kullanılması gerekir.",
+          "mudahele": "'Ancak' yerine 'Fakat' kullanılabilir ya da bağlaç kaldırılarak iki cümle daha doğrudan bağlanabilir."
+        },
+        {
+          "alinti": "daha önce düzenlenen faturalar bu değişiklikten etkilenmez.",
+          "neden": "Dil bilgisi açısından doğru olsa da, 'etkilenmez' kelimesi bu bağlamda biraz soyut ve belirsizdir. Daha somut bir ifade kullanılması anlamları daha net hale getirebilir.",
+          "mudahele": "'Etkilenmez' yerine 'etkilenmezler' ya da 'değişmezler' gibi daha somut bir ifade kullanılabilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-014",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Aşağıdaki tabloda iki pakete ilişkin bilgiler yer almaktadır.\",\n      \"neden\": \"Cümle gereksiz tekrar içeriyor ve 'yer almaktadır' ifadesi resmî ve doğal olmayan bir dille ifade edilmiş.\",\n      \"mudahele\": \"Cümleyi daha kısa ve doğal hale getirmek için 'Aşağıdaki tabloda iki paketle ilgili bilgiler yer almaktadır.' şeklinde düzenlemek.\"\n    },\n    {\n      \"alinti\": \"Tabloda paketlerin aylık fiyatları ve destek sürelerine ilişkin bilgilere ulaşabilirsiniz.\",\n      \"neden\": \"Cümle yapısı şişmanmış ve 'bilgilere ulaşabilirsiniz' ifadesi doğal bir ifade değildir.\",\n      \"mudahele\": \"Cümleyi 'Tabloda paketlerin aylık fiyatları ve destek süreleri hakkında bilgi bulabilirsiniz.' şeklinde daha akıllıca ve doğal hale getirmek.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Aşağıdaki tabloda iki pakete ilişkin bilgiler yer almaktadır.",
+          "neden": "Cümle gereksiz tekrar içeriyor ve 'yer almaktadır' ifadesi resmî ve doğal olmayan bir dille ifade edilmiş.",
+          "mudahele": "Cümleyi daha kısa ve doğal hale getirmek için 'Aşağıdaki tabloda iki paketle ilgili bilgiler yer almaktadır.' şeklinde düzenlemek."
+        },
+        {
+          "alinti": "Tabloda paketlerin aylık fiyatları ve destek sürelerine ilişkin bilgilere ulaşabilirsiniz.",
+          "neden": "Cümle yapısı şişmanmış ve 'bilgilere ulaşabilirsiniz' ifadesi doğal bir ifade değildir.",
+          "mudahele": "Cümleyi 'Tabloda paketlerin aylık fiyatları ve destek süreleri hakkında bilgi bulabilirsiniz.' şeklinde daha akıllıca ve doğal hale getirmek."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-015",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"İki dönem aynı uzunlukta değilse toplam değerleri doğrudan karşılaştırmak yanıltıcı olabilir.\",\n      \"neden\": \"Cümle, neden-sonuç ilişkisini net bir şekilde kurmamaktadır. 'Yanıltıcı olabilir' ifadesi nedeniyle daha net bir açıklama beklenir.\",\n      \"mudahele\": \"İki dönem aynı uzunlukta değilse, toplam değerlerin doğrudan karşılaştırılması anlamsız olabilir çünkü farklı sürelerdeki verilerin toplamları karşılaştırılamaz.\"\n    },\n    {\n      \"alinti\": \"Raporu açtığınızda ilk olarak tarih aralığını kontrol edin.\",\n      \"neden\": \"Cümle, 'açtığınızda' ve 'ilk olarak' gibi ifadelerle gereksiz tekrar içermektedir.\",\n      \"mudahele\": \"Raporu açtığınızda tarih aralığını kontrol edin.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "İki dönem aynı uzunlukta değilse toplam değerleri doğrudan karşılaştırmak yanıltıcı olabilir.",
+          "neden": "Cümle, neden-sonuç ilişkisini net bir şekilde kurmamaktadır. 'Yanıltıcı olabilir' ifadesi nedeniyle daha net bir açıklama beklenir.",
+          "mudahele": "İki dönem aynı uzunlukta değilse, toplam değerlerin doğrudan karşılaştırılması anlamsız olabilir çünkü farklı sürelerdeki verilerin toplamları karşılaştırılamaz."
+        },
+        {
+          "alinti": "Raporu açtığınızda ilk olarak tarih aralığını kontrol edin.",
+          "neden": "Cümle, 'açtığınızda' ve 'ilk olarak' gibi ifadelerle gereksiz tekrar içermektedir.",
+          "mudahele": "Raporu açtığınızda tarih aralığını kontrol edin."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-016",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"başvurunuzun değerlendirilmesi sürmektedir\",\n      \"neden\": \"Fiil yapısı ve anlatım doğal ve akıcı değildir. 'Sürmektedir' ifadesi bu bağlamda sıklıkla kullanılmaz.\",\n      \"mudahele\": \"Başvurunuz değerlendirilmektedir\" veya \"Başvurunuzun değerlendirilmesi devam etmektedir\" gibi daha doğal ifadeler kullanılabilir.\"\n    },\n    {\n      \"alinti\": \"Sonucun tarafınıza yazılı olarak bildirileceğini bilgilerinize sunarız\",\n      \"neden\": \"Cümle yapısı gereksiz uzun ve resmi bir dille şişkin ifade edilmiştir. Anlam net ama daha sade ifade mümkündür.\",\n      \"mudahele\": \"Sonucunuzun yazılı olarak tarafınıza bildirileceğini bilmenizi isteriz\" gibi daha sade ve akıcı bir ifade kullanılabilir.\"\n    }\n  ]\n}\n```",
+      "valid": false,
+      "findings": null,
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-017",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bu rehber kapsamında, hesabınıza ilişkin parola değiştirme işleminin nasıl gerçekleştirileceği hususunda bilgi verilecektir.\",\n      \"neden\": \"Cümle yapısı gereksiz uzun ve resmi dille şişkin ifadeler içeriyor. 'Bu rehber kapsamında' ve 'hususunda bilgi verilecektir' gibi ifadeler doğal ve sade bir anlatıma gerek kalmadan metni yüklüyor.\",\n      \"mudahele\": \"Cümleyi daha sade ve akıcı hale getirmek için gereksiz ifadelerden arındırılabilir. Örneğin: 'Bu rehberde, hesabınızın parolasını nasıl değiştireceğinizi anlatacağız.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Bu rehber kapsamında, hesabınıza ilişkin parola değiştirme işleminin nasıl gerçekleştirileceği hususunda bilgi verilecektir.",
+          "neden": "Cümle yapısı gereksiz uzun ve resmi dille şişkin ifadeler içeriyor. 'Bu rehber kapsamında' ve 'hususunda bilgi verilecektir' gibi ifadeler doğal ve sade bir anlatıma gerek kalmadan metni yüklüyor.",
+          "mudahele": "Cümleyi daha sade ve akıcı hale getirmek için gereksiz ifadelerden arındırılabilir. Örneğin: 'Bu rehberde, hesabınızın parolasını nasıl değiştireceğinizi anlatacağız.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-018",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bu işi hızlı değil, doğru yapmak istiyoruz.\",\n      \"neden\": \"Cümlede 'hızlı değil, doğru' karşıtlığı, dilbilgisi açısından eksik ve anlamsal olarak belirsizdir. 'Doğru' kelimesi burada sıfat olarak kullanılmış ancak neye 'doğru' olduğu net değildir.\",\n      \"mudahele\": \"Cümleyi 'Bu işi hızlı değil, doğru bir şekilde yapmak istiyoruz.' gibi düzenlemek, anlamın daha net ve dilbilgisi açısından daha tutarlı olmasına yardımcı olur.\"\n    },\n    {\n      \"alinti\": \"Önce ölçümü kuracağız, reklamları sonra açacağız.\",\n      \"neden\": \"Cümlede 'önce... sonra...' yapıları paralel değildir. 'Önce ölçümü kuracağız' eylemli bir yapı iken 'reklamları sonra açacağız' daha çok durum bildirir. Bu, dengesiz bir eylem sıralaması yaratır.\",\n      \"mudahele\": \"Cümleyi 'Önce ölçümü kuracağız, sonra reklamları başlatacağız.' gibi düzenlemek, eylemlerin paralellik kazanmasını sağlar.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Bu işi hızlı değil, doğru yapmak istiyoruz.",
+          "neden": "Cümlede 'hızlı değil, doğru' karşıtlığı, dilbilgisi açısından eksik ve anlamsal olarak belirsizdir. 'Doğru' kelimesi burada sıfat olarak kullanılmış ancak neye 'doğru' olduğu net değildir.",
+          "mudahele": "Cümleyi 'Bu işi hızlı değil, doğru bir şekilde yapmak istiyoruz.' gibi düzenlemek, anlamın daha net ve dilbilgisi açısından daha tutarlı olmasına yardımcı olur."
+        },
+        {
+          "alinti": "Önce ölçümü kuracağız, reklamları sonra açacağız.",
+          "neden": "Cümlede 'önce... sonra...' yapıları paralel değildir. 'Önce ölçümü kuracağız' eylemli bir yapı iken 'reklamları sonra açacağız' daha çok durum bildirir. Bu, dengesiz bir eylem sıralaması yaratır.",
+          "mudahele": "Cümleyi 'Önce ölçümü kuracağız, sonra reklamları başlatacağız.' gibi düzenlemek, eylemlerin paralellik kazanmasını sağlar."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-019",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Ürünün temizlenmesi işleminin gerçekleştirilebilmesi adına\",\n      \"neden\": \"Şişkin adlandırma ve gereksiz yapı kullanılmış. 'Ürünün temizlenmesi işleminin gerçekleştirilebilmesi' ifadesi çok uzun ve doğal bir akışa sahip değil.\",\n      \"mudahele\": \"Daha kısa ve akıcı bir ifadeyle değiştirilmeli. Örneğin: 'Ürünü temizlemek için'\"\n    },\n    {\n      \"alinti\": \"kullanım kılavuzunda belirtilen adımlara uygun hareket edilmesi önem arz etmektedir.\",\n      \"neden\": \"Resmî ve akademik dili aşırı derecede taklit eden, günlük dilde doğal olmayan bir ifade kullanılmış. 'Önem arz etmektedir' gibi yapılar yerine daha sade bir ifade tercih edilmeli.\",\n      \"mudahele\": \"Daha sade ve akıcı bir ifadeyle değiştirilmeli. Örneğin: 'kullanım kılavuzunda belirtilen adımları izlemek gerekir.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Ürünün temizlenmesi işleminin gerçekleştirilebilmesi adına",
+          "neden": "Şişkin adlandırma ve gereksiz yapı kullanılmış. 'Ürünün temizlenmesi işleminin gerçekleştirilebilmesi' ifadesi çok uzun ve doğal bir akışa sahip değil.",
+          "mudahele": "Daha kısa ve akıcı bir ifadeyle değiştirilmeli. Örneğin: 'Ürünü temizlemek için'"
+        },
+        {
+          "alinti": "kullanım kılavuzunda belirtilen adımlara uygun hareket edilmesi önem arz etmektedir.",
+          "neden": "Resmî ve akademik dili aşırı derecede taklit eden, günlük dilde doğal olmayan bir ifade kullanılmış. 'Önem arz etmektedir' gibi yapılar yerine daha sade bir ifade tercih edilmeli.",
+          "mudahele": "Daha sade ve akıcı bir ifadeyle değiştirilmeli. Örneğin: 'kullanım kılavuzunda belirtilen adımları izlemek gerekir.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-020",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Beni en çok şaşırtan şey, ilk taslağı bitirmekten çok ona dönüp bakmanın zor olmasıydı.\",\n      \"neden\": \"Cümle yapısı biraz şişmanmış ve 'bitirmekten çok ona dönüp bakmanın zor olması' kısmı net değil.\",\n      \"mudahele\": \"Cümle daha sade ve net ifade edilmelidir. Örneğin: 'Beni en çok şaşırtan şey, ilk taslağı bitirmekten ziyade onu gözden geçirmenin zor olmasıydı.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Beni en çok şaşırtan şey, ilk taslağı bitirmekten çok ona dönüp bakmanın zor olmasıydı.",
+          "neden": "Cümle yapısı biraz şişmanmış ve 'bitirmekten çok ona dönüp bakmanın zor olması' kısmı net değil.",
+          "mudahele": "Cümle daha sade ve net ifade edilmelidir. Örneğin: 'Beni en çok şaşırtan şey, ilk taslağı bitirmekten ziyade onu gözden geçirmenin zor olmasıydı.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-021",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"API key oluşturma işlemini gerçekleştirmeniz akabinde API key'i yapılandırma dosyanıza eklemeniz gerekmektedir.\",\n      \"neden\": \"Cümlede 'akabinde' ifadesi yerine daha doğal ve yaygın kullanılan 'sonrasında' terimi kullanılması tercih edilebilir. Ayrıca 'gerekmektedir' ifadesi resmî bir dille yazılmış olup, daha akıllıca ve akıcı bir ifadeyle değiştirilebilir.\",\n      \"mudahele\": \"Cümleyi 'API key oluşturma işlemini tamamladıktan sonra API key’i yapılandırma dosyanıza ekleyin.' şeklinde daha akıcı ve doğal hale getirmek.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "API key oluşturma işlemini gerçekleştirmeniz akabinde API key'i yapılandırma dosyanıza eklemeniz gerekmektedir.",
+          "neden": "Cümlede 'akabinde' ifadesi yerine daha doğal ve yaygın kullanılan 'sonrasında' terimi kullanılması tercih edilebilir. Ayrıca 'gerekmektedir' ifadesi resmî bir dille yazılmış olup, daha akıllıca ve akıcı bir ifadeyle değiştirilebilir.",
+          "mudahele": "Cümleyi 'API key oluşturma işlemini tamamladıktan sonra API key’i yapılandırma dosyanıza ekleyin.' şeklinde daha akıcı ve doğal hale getirmek."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-022",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"CPC, tıklama başına maliyeti gösterir.\",\n      \"neden\": \"Cümlenin sonunda 'i' harfi yerine 'ü' harfi kullanılmış. 'Gösterir' fiiliyle birlikte 'ü' kullanılmalıdır.\",\n      \"mudahele\": \"CPC, tıklama başına maliyeti gösterir.\" ifadesi \"CPC, tıklama başına maliyeti gösterir.\" şeklinde düzeltilmelidir.\n    },\n    {\n      \"alinti\": \"CPA ise belirlenen aksiyon başına maliyettir.\",\n      \"neden\": \"Cümlenin sonunda 'i' harfi yerine 'ü' harfi kullanılmış. 'Maliyettir' kelimesinde 'ü' kullanılmalıdır.\",\n      \"mudahele\": \"CPA ise belirlenen aksiyon başına maliyettir.\" ifadesi \"CPA ise belirlenen aksiyon başına maliyettir.\" şeklinde düzeltilmelidir.\n    }\n  ]\n}\n```",
+      "valid": false,
+      "findings": null,
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-023",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"UTM parametreleri aracılığıyla URL'lere çeşitli bilgilerin eklenmesi mümkün olmaktadır.\",\n      \"neden\": \"Cümle yapısı gereksiz şekilde karmaşık ve dolaylıdır. Daha açık ve doğrudan ifade edilebilir.\",\n      \"mudahele\": \"UTM parametreleri, URL'lere çeşitli bilgiler eklemek için kullanılır.\"\n    },\n    {\n      \"alinti\": \"Bu bilgilerin raporlama esnasında kullanılması sağlanabilir.\",\n      \"neden\": \"Cümle yapısı pasif ve belirsizdir. 'sağlanabilir' ifadesi gereksizdir.\",\n      \"mudahele\": \"Bu bilgiler raporlama sırasında kullanılabilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "UTM parametreleri aracılığıyla URL'lere çeşitli bilgilerin eklenmesi mümkün olmaktadır.",
+          "neden": "Cümle yapısı gereksiz şekilde karmaşık ve dolaylıdır. Daha açık ve doğrudan ifade edilebilir.",
+          "mudahele": "UTM parametreleri, URL'lere çeşitli bilgiler eklemek için kullanılır."
+        },
+        {
+          "alinti": "Bu bilgilerin raporlama esnasında kullanılması sağlanabilir.",
+          "neden": "Cümle yapısı pasif ve belirsizdir. 'sağlanabilir' ifadesi gereksizdir.",
+          "mudahele": "Bu bilgiler raporlama sırasında kullanılabilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-024",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Cache-Control başlığı eksikse tarayıcının önbellek davranışı beklediğinizden farklı olabilir.\",\n      \"neden\": \"Cümlede 'beklediğinizden farklı olabilir' ifadesi belirsizdir ve 'beklediğiniz' öznesi net değildir. Bu, okuyucunun neyin beklenmediğini tam olarak anlayamamasına neden olabilir.\",\n      \"mudahele\": \"Cümle daha net ifade edilmelidir. Örneğin: 'Cache-Control başlığı eksikse tarayıcının önbellek davranışı uygulamanızın beklentileri karşılamayabilir.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Cache-Control başlığı eksikse tarayıcının önbellek davranışı beklediğinizden farklı olabilir.",
+          "neden": "Cümlede 'beklediğinizden farklı olabilir' ifadesi belirsizdir ve 'beklediğiniz' öznesi net değildir. Bu, okuyucunun neyin beklenmediğini tam olarak anlayamamasına neden olabilir.",
+          "mudahele": "Cümle daha net ifade edilmelidir. Örneğin: 'Cache-Control başlığı eksikse tarayıcının önbellek davranışı uygulamanızın beklentileri karşılamayabilir.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-025",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bir 404 durum kodunun görülüyor olması\",\n      \"neden\": \"Gereksiz fiil yapısı ve 'olması' eki, cümlenin akışını bozuyor. Daha doğrudan ve net ifade mümkündür.\",\n      \"mudahele\": \"Cümle 'Bir 404 durum kodunun görülmesi' veya daha net bir ifadeyle '404 durum kodunun görülmesi' şeklinde düzeltilmelidir.\"\n    },\n    {\n      \"alinti\": \"talep edilen kaynağın bulunamadığı anlamını taşımaktadır.\",\n      \"neden\": \"Cümle yapısı gereğince 'taşımaktadır' fiili, anlam taşımada gereksiz bir süslemedir. Daha sade ve net ifade mümkündür.\",\n      \"mudahele\": \"Cümle 'talep edilen kaynağın bulunamadığını gösterir' veya 'talep edilen kaynağın bulunamadığını ifade eder' gibi daha sade bir yapıda ifade edilmelidir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Bir 404 durum kodunun görülüyor olması",
+          "neden": "Gereksiz fiil yapısı ve 'olması' eki, cümlenin akışını bozuyor. Daha doğrudan ve net ifade mümkündür.",
+          "mudahele": "Cümle 'Bir 404 durum kodunun görülmesi' veya daha net bir ifadeyle '404 durum kodunun görülmesi' şeklinde düzeltilmelidir."
+        },
+        {
+          "alinti": "talep edilen kaynağın bulunamadığı anlamını taşımaktadır.",
+          "neden": "Cümle yapısı gereğince 'taşımaktadır' fiili, anlam taşımada gereksiz bir süslemedir. Daha sade ve net ifade mümkündür.",
+          "mudahele": "Cümle 'talep edilen kaynağın bulunamadığını gösterir' veya 'talep edilen kaynağın bulunamadığını ifade eder' gibi daha sade bir yapıda ifade edilmelidir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-026",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar yaptı.\",\n      \"neden\": \"Fiil yapısı ve cümle akışı daha doğal hale getirilebilir.\",\n      \"mudahele\": \"Cümle, 'Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar verdi.' şeklinde daha akıcı ve doğru olur.\"\n    },\n    {\n      \"alinti\": \"Kararın ayrıntıları henüz paylaşılmadı.\",\n      \"neden\": \"Fiil yapısı pasif ve belirsizdir; aktif yapı daha net olurdu.\",\n      \"mudahele\": \"Cümle, 'Kararın ayrıntıları henüz açıklanmadı.' ya da 'Kararın ayrıntıları henüz duyurulmadı.' şeklinde daha net ifade edilebilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar yaptı.",
+          "neden": "Fiil yapısı ve cümle akışı daha doğal hale getirilebilir.",
+          "mudahele": "Cümle, 'Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar verdi.' şeklinde daha akıcı ve doğru olur."
+        },
+        {
+          "alinti": "Kararın ayrıntıları henüz paylaşılmadı.",
+          "neden": "Fiil yapısı pasif ve belirsizdir; aktif yapı daha net olurdu.",
+          "mudahele": "Cümle, 'Kararın ayrıntıları henüz açıklanmadı.' ya da 'Kararın ayrıntıları henüz duyurulmadı.' şeklinde daha net ifade edilebilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-027",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Şirketin söz konusu konuya ilişkin bir açıklama gerçekleştirmesi bekleniyor.\",\n      \"neden\": \"Düzensiz ve doğal olmayan eylem yapısı; 'bir açıklama gerçekleştirmesi' ifadesi çok resmi ve şişkin.\",\n      \"mudahele\": \"Cümle daha akıcı ve doğal hale getirilmeli. Örneğin: 'Şirketin konuyla ilgili açıklama yapması bekleniyor.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Şirketin söz konusu konuya ilişkin bir açıklama gerçekleştirmesi bekleniyor.",
+          "neden": "Düzensiz ve doğal olmayan eylem yapısı; 'bir açıklama gerçekleştirmesi' ifadesi çok resmi ve şişkin.",
+          "mudahele": "Cümle daha akıcı ve doğal hale getirilmeli. Örneğin: 'Şirketin konuyla ilgili açıklama yapması bekleniyor.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-028",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-029",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bakım sırasında herhangi bir hata ile karşı karşıya kalınması durumunda destek ekibiyle iletişime geçilebilir.\",\n      \"neden\": \"Cümle yapısı gereğince 'karşı karşıya kalınması durumunda' ifadesi gereksiz ve şişkindir. Daha kısa ve akıcı bir ifade mümkündür.\",\n      \"mudahele\": \"Cümle 'Bakım sırasında bir hata oluşursa destek ekibiyle iletişime geçilebilir.' şeklinde daha kısa ve akıcı hale getirilmelidir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Bakım sırasında herhangi bir hata ile karşı karşıya kalınması durumunda destek ekibiyle iletişime geçilebilir.",
+          "neden": "Cümle yapısı gereğince 'karşı karşıya kalınması durumunda' ifadesi gereksiz ve şişkindir. Daha kısa ve akıcı bir ifade mümkündür.",
+          "mudahele": "Cümle 'Bakım sırasında bir hata oluşursa destek ekibiyle iletişime geçilebilir.' şeklinde daha kısa ve akıcı hale getirilmelidir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-030",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-031",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Paket kapsamında yer alan hizmetin aylık ücretinin 1.250 TL olduğu belirtilmektedir.\",\n      \"neden\": \"Cümle yapısı gereksiz şekilde soyut ve resmi bir dille ifade edilmiştir.\",\n      \"mudahele\": \"Daha doğal ve akıllıca bir ifadeyle değiştirilmelidir.\"\n    },\n    {\n      \"alinti\": \"KDV dahil değildir.\",\n      \"neden\": \"Cümle önceki cümlenin tamamlayıcısı olmasına rağmen ayrı bir paragrafda yer alıyor ve bağlam kopması meydana geliyor.\",\n      \"mudahele\": \"Önceki cümleyle birleştirilmelidir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Paket kapsamında yer alan hizmetin aylık ücretinin 1.250 TL olduğu belirtilmektedir.",
+          "neden": "Cümle yapısı gereksiz şekilde soyut ve resmi bir dille ifade edilmiştir.",
+          "mudahele": "Daha doğal ve akıllıca bir ifadeyle değiştirilmelidir."
+        },
+        {
+          "alinti": "KDV dahil değildir.",
+          "neden": "Cümle önceki cümlenin tamamlayıcısı olmasına rağmen ayrı bir paragrafda yer alıyor ve bağlam kopması meydana geliyor.",
+          "mudahele": "Önceki cümleyle birleştirilmelidir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-032",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-033",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Aşağıda yer alan üç unsurun kontrolünün gerçekleştirilmesi gerekmektedir:\",\n      \"neden\": \"Boş giriş ve gereksiz yapı; 'gerçekleştirilmesi gerekmektedir' ifadesi şişkin.\",\n      \"mudahele\": \"Cümle daha kısa ve doğrudan ifade edilmelidir.\"\n    },\n    {\n      \"alinti\": \"- API anahtarı\",\n      \"neden\": \"Liste öğeleri arasında tutarlılık eksikliği; hepsi ayni yapıda olmalı.\",\n      \"mudahele\": \"Tüm liste öğeleri '-' ile başlamalı ve aynı dilbilgisi yapısında olmalıdır.\"\n    },\n    {\n      \"alinti\": \"- Hesap kimliği\",\n      \"neden\": \"Liste öğeleri arasında tutarlılık eksikliği; hepsi ayni yapıda olmalı.\",\n      \"mudahele\": \"Tüm liste öğeleri '-' ile başlamalı ve aynı dilbilgisi yapısında olmalıdır.\"\n    },\n    {\n      \"alinti\": \"- İzinler\",\n      \"neden\": \"Liste öğeleri arasında tutarlılık eksikliği; diğer öğeler isim tamlaması, bu sadece isim.\",\n      \"mudahele\": \"Diğer öğeler gibi 'İzinler' de 'İzinlerin kontrolü' gibi bir yapıda olmalıdır.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Aşağıda yer alan üç unsurun kontrolünün gerçekleştirilmesi gerekmektedir:",
+          "neden": "Boş giriş ve gereksiz yapı; 'gerçekleştirilmesi gerekmektedir' ifadesi şişkin.",
+          "mudahele": "Cümle daha kısa ve doğrudan ifade edilmelidir."
+        },
+        {
+          "alinti": "- API anahtarı",
+          "neden": "Liste öğeleri arasında tutarlılık eksikliği; hepsi ayni yapıda olmalı.",
+          "mudahele": "Tüm liste öğeleri '-' ile başlamalı ve aynı dilbilgisi yapısında olmalıdır."
+        },
+        {
+          "alinti": "- Hesap kimliği",
+          "neden": "Liste öğeleri arasında tutarlılık eksikliği; hepsi ayni yapıda olmalı.",
+          "mudahele": "Tüm liste öğeleri '-' ile başlamalı ve aynı dilbilgisi yapısında olmalıdır."
+        },
+        {
+          "alinti": "- İzinler",
+          "neden": "Liste öğeleri arasında tutarlılık eksikliği; diğer öğeler isim tamlaması, bu sadece isim.",
+          "mudahele": "Diğer öğeler gibi 'İzinler' de 'İzinlerin kontrolü' gibi bir yapıda olmalıdır."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-034",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-035",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-036",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"İlk yazıyı yayımladığımızda çok heyecanlıydık.\",\n      \"neden\": \"Cümlede 'yayımladığımızda' ve 'heyecanlıydık' arasında zaman uyumsuzluğu var. 'Heyecanlıydık' geçmişteki bir duyguyu ifade ederken, 'yayımladığımızda' bir eylemin tamamlanış anını belirtir; bu, bağlama göre doğal bir akış sağlar ama daha net ifade mümkündür.\",\n      \"mudahele\": \"Cümle daha net ve akıcı hale getirilebilir, örneğin: 'İlk yazımızı yayımladığımızda oldukça heyecanlıydık.'\"\n    },\n    {\n      \"alinti\": \"Şimdi dönüp bakınca fazla acele ettiğimizi görüyorum.\",\n      \"neden\": \"Cümlede 'dönüp bakınca' ifadesi gereksizdir ve cümlenin akışını bozar. 'Şimdi bakınca' ya da 'şimdi bakınca' yeterlidir.\",\n      \"mudahele\": \"Cümle şu şekilde daha sade ve akıcı hale getirilebilir: 'Şimdi bakınca fazla acele ettiğimizi görüyorum.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "İlk yazıyı yayımladığımızda çok heyecanlıydık.",
+          "neden": "Cümlede 'yayımladığımızda' ve 'heyecanlıydık' arasında zaman uyumsuzluğu var. 'Heyecanlıydık' geçmişteki bir duyguyu ifade ederken, 'yayımladığımızda' bir eylemin tamamlanış anını belirtir; bu, bağlama göre doğal bir akış sağlar ama daha net ifade mümkündür.",
+          "mudahele": "Cümle daha net ve akıcı hale getirilebilir, örneğin: 'İlk yazımızı yayımladığımızda oldukça heyecanlıydık.'"
+        },
+        {
+          "alinti": "Şimdi dönüp bakınca fazla acele ettiğimizi görüyorum.",
+          "neden": "Cümlede 'dönüp bakınca' ifadesi gereksizdir ve cümlenin akışını bozar. 'Şimdi bakınca' ya da 'şimdi bakınca' yeterlidir.",
+          "mudahele": "Cümle şu şekilde daha sade ve akıcı hale getirilebilir: 'Şimdi bakınca fazla acele ettiğimizi görüyorum.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-037",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"web sitesinin yavaş açılıyor olması\",\n      \"neden\": \"Düzenli bir yapı ve dil bilgisi hatası\",\n      \"mudahele\": \"Cümle, 'web sitesinin yavaş açılması' şeklinde düzeltilmelidir.\"\n    },\n    {\n      \"alinti\": \"ziyaretçilerin beklemek durumunda kalmalarına yol açmaktadır\",\n      \"neden\": \"Şişkin ifade ve gereksiz sözcük kullanımı\",\n      \"mudahele\": \"Cümle, 'ziyaretçilerin beklemesine neden olur' gibi daha kısa ve akıllıca ifade edilmelidir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "web sitesinin yavaş açılıyor olması",
+          "neden": "Düzenli bir yapı ve dil bilgisi hatası",
+          "mudahele": "Cümle, 'web sitesinin yavaş açılması' şeklinde düzeltilmelidir."
+        },
+        {
+          "alinti": "ziyaretçilerin beklemek durumunda kalmalarına yol açmaktadır",
+          "neden": "Şişkin ifade ve gereksiz sözcük kullanımı",
+          "mudahele": "Cümle, 'ziyaretçilerin beklemesine neden olur' gibi daha kısa ve akıllıca ifade edilmelidir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-038",
+      "raw": "```json\n{\"bulgular\":[]}\n```",
+      "valid": true,
+      "findings": [],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-039",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha doğru bir şekilde yorumlanabilmesi açısından önem arz etmektedir.\",\n      \"neden\": \"Cümlede 'doğru bir şekilde' ifadesi iki kez tekrar edilerek gereksiz yere şişkinlik yaratılmıştır.\",\n      \"mudahele\": \"'daha doğru bir şekilde yorumlanabilmesi' ifadesi 'daha doğru yorumlanabilmesi' olarak kısaltılabilir.\"\n    },\n    {\n      \"alinti\": \"Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha doğru bir şekilde yorumlanabilmesi açısından önem arz etmektedir.\",\n      \"neden\": \"'önem arz etmektedir' ifadesi resmî ve akademik olmayan bir dille ifade edilmiştir.\",\n      \"mudahele\": \"Cümle 'önem taşımaktadır' veya 'önemlidir' gibi daha akademik bir dille yeniden ifade edilebilir.\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha doğru bir şekilde yorumlanabilmesi açısından önem arz etmektedir.",
+          "neden": "Cümlede 'doğru bir şekilde' ifadesi iki kez tekrar edilerek gereksiz yere şişkinlik yaratılmıştır.",
+          "mudahele": "'daha doğru bir şekilde yorumlanabilmesi' ifadesi 'daha doğru yorumlanabilmesi' olarak kısaltılabilir."
+        },
+        {
+          "alinti": "Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha doğru bir şekilde yorumlanabilmesi açısından önem arz etmektedir.",
+          "neden": "'önem arz etmektedir' ifadesi resmî ve akademik olmayan bir dille ifade edilmiştir.",
+          "mudahele": "Cümle 'önem taşımaktadır' veya 'önemlidir' gibi daha akademik bir dille yeniden ifade edilebilir."
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-040",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"hesaplamadığımız bir maliyet daha var\",\n      \"neden\": \"Dilbilgisi açısından eksiklik var; 'hesaplamadığımız' fiilin öznesi belirsizdir ve cümlenin akışı biraz zorlanır.\",\n      \"mudahele\": \"Cümleyi 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamadığımız bir maliyet daha var' olarak değil, 'hesaplamadığımız bir maliyet daha var' yerine 'hesaplamad",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-001",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Reklam performansını değerlendirirken, reklamın daha fazla tıklama alması her zaman daha fazla satış anlamına gelmemektedir.\",\n      \"neden\": \"Cümle soyut ve genel bir ifadeyle başlamaktadır. Okuyucuya somut bir bağlam sunulmamıştır.\",\n      \"mudahele\": \"Cümleyi daha somut hale getirmek için bir örnek veya bağlam ekleyin.\"\n    },\n    {\n      \"alinti\": \"Örnek bir mağazada 1–14 Mart arasında 1.200 tıklama ve 24 sipariş kaydedildi.\",\n      \"neden\": \"Tarih aralığı ve sayısal veriler belirtilmiş fakat bu verilerin neden karşılaştırıldığı açıklanmamıştır.\",\n      \"mudahele\": \"Verilerin karşılaştırılmasının nedeni (örneğin, tıklama artarken satış neden aynı kaldı) açık bir şekilde belirtilmeli.\"\n    },\n    {\n      \"alinti\": \"Bu dönemlerde fiyatların ve stok durumunun değişip değişmediği konusunda bir bilgi mevcut değildir.\",\n      \"neden\": \"Cümle soyut ve eksik bilgiyi vurgulamak yerine, okuyucuya bir sınırlama sunmaktadır.\",\n      \"mudahele\": \"Bu bilgi eksikliğinin analiz üzerindeki etkisi daha net ifade edilmelidir.\"\n    },\n    {\n      \"alinti\": \"Dolayısıyla, sipariş sayısının değişmemesinin reklamların hedeflemesinden kaynaklandığının söylenmesi mümkün değildir.\",\n      \"neden\": \"Cümle uzun ve anlatım karmaşıklaşmıştır. 'Dolayısıyla' bağlacı, mantıksal akışı zorlaştırabilir.\",\n      \"mudahele\": \"Cümleyi daha kısa ve net hale getirin. Örneğin: 'Bu nedenle, sipariş sayısının değişmemesinin reklam hedeflemesinden kaynaklandığı iddia",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-002",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Dışa aktarma işleminin gerçekleştirilmesinin sonrasında dosyaya ulaşılabilmektedir.\",\n      \"neden\": \"Boş giriş ve gereksiz yapı; 'sonrasında' ve 'ulaşılabilmektedir' gibi ifadeler metni şişiriyor.\",\n      \"mudahele\": \"Düzenle: 'Dışa aktarma işlemi tamamlandıktan sonra dosyaya erişilebilir.'\"\n    },\n    {\n      \"alinti\": \"Bu işlemin gerçekleştirilebilmesi için, öncelikle Ayarlar > Dışa aktarma ekranına gidilmesi gerekmektedir.\",\n      \"neden\": \"Gereksiz 'öncelikle' ve 'gerekmetedir' gibi resmî ve şişkin ifadeler.\",\n      \"mudahele\": \"Düzenle: 'İşlemi gerçekleştirmek için Ayarlar > Dışa aktarma ekranına gidin.'\"\n    },\n    {\n      \"alinti\": \"JSON seçeneğinin tercih edilmesi durumunda, tarih alanı UTC saat diliminde kaydedilmektedir.\",\n      \"neden\": \"Gereksiz 'durumunda' ve 'kaydedilmektedir' gibi yapı; daha doğrudan ifade mümkündür.\",\n      \"mudahele\": \"Düzenle: 'JSON seçeneği tercih edilirse tarih alanı UTC saat diliminde kaydedilir.'\"\n    },\n    {\n      \"alinti\": \"CSV seçeneğinde ise tarih alanı hesabın saat dilimi kullanılarak kaydedilir.\",\n      \"neden\": \"Cümle yapısı biraz şişkin ve belirsiz; 'kullanılarak' yerine daha net bir yapı tercih edilebilir.\",\n      \"mudahele\": \"Düzenle: 'CSV seçeneğinde tarih alanı, hesabın saat dilimine göre kaydedilir.'\"\n    },\n    {\n      \"alinti\": \"Bu farkın raporlamada dikkate alınması önem arz etmektedir.\",\n      \"neden",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-003",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"İki paketin de kendine has birtakım avantajları bulunmaktadır.\",\n      \"neden\": \"Boş giriş ve genellemeci ifade kullanılmış. Metni daha somut ve net hale getirmek için belirsiz ifadelerden kaçınılmalı.\",\n      \"mudahele\": \"Cümle, paketlerin genel avantajları yerine karşılaştırmanın amacını belirten daha net bir ifadeyle değiştirilmeli.\"\n    },\n    {\n      \"alinti\": \"Bu iki paket arasındaki farklılıkların anlaşılabilmesi açısından aşağıdaki tablonun incelenmesi faydalı olacaktır.\",\n      \"neden\": \"Boş giriş ve 'faydalı olacaktır' gibi subjektif ifade kullanılmış. Daha doğrudan ve net bir anlatım tercih edilmeli.\",\n      \"mudahele\": \"Cümle, 'Aşağıdaki tablo, iki paket arasındaki farkları göstermektedir.' gibi daha net bir ifadeyle değiştirilmeli.\"\n    },\n    {\n      \"alinti\": \"Belirtilen fiyatlara KDV dahil değildir.\",\n      \"neden\": \"Cümle, önceki tabloya bağlamda yer almadığı için okuyucu için anlamsal bağ kopukluğu yaratıyor.\",\n      \"mudahele\": \"Cümle, tabloya daha yakın bir yerde, tablo ile doğrudan ilişkilendirilerek verilmeli.\"\n    },\n    {\n      \"alinti\": \"Paket A kapsamında kullanılmayan destek saatlerinin bir sonraki aya devredilmesi söz konusu değildir.\",\n      \"neden\": \"Cümle yapısı uzun ve 'söz konusu değildir' gibi dolaylı ifade kullanılmış. Daha kısa ve net bir anlatım tercih edilmeli.\",\n      \"mudahele\": \"Cümle, 'Paket A kapsamında kullanılmayan destek saatleri bir sonraki aya devretilmez.' şeklinde kısaltılabilir.\"\n    },\n    {\n      \"alinti\": \"Aktarılan saatlerin sonraki ayın sonunda kullanılmış olması gerekmektedir.\",",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-004",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Ölçümlerin yapılmasının ardından elde edilen ölçüm sonuçları değerlendirildi.\",\n      \"neden\": \"Boş giriş ve gereksiz tekrar. 'Ölçümlerin ardından' ve 'elde edilen ölçüm sonuçları' ifadeleri yineleniyor.\",\n      \"mudahele\": \"Cümleyi daha kısa ve öz bir ifadeyle yeniden yazın, örneğin: 'Ölçümler tamamlandıktan sonra sonuçlar değerlendirildi.'\"\n    },\n    {\n      \"alinti\": \"İlk ölçümde sayfanın açılma süresi 4,8 saniye olarak ölçülmüştür. İkinci ölçümde bu süre 3,1 saniye olarak ölçülmüştür.\",\n      \"neden\": \"Tekrar eden yapı ('...olarak ölçülmüştür') ve 'bu süre' gibi belirsiz ifadeler okuyucuyu yoruyor.\",\n      \"mudahele\": \"İkinci cümleyi daha net ve akıllıca bağlayarak yeniden yazın, örneğin: 'İlk ölçümde sayfa 4,8 saniyede açılırken, ikinci ölçümde bu süre 3,1 saniyeye düştü.'\"\n    },\n    {\n      \"alinti\": \"Her iki ölçüm de aynı cihazda gerçekleştirilmiştir.\",\n      \"neden\": \"Gereksiz 'olmuştur' eki. Cümle daha doğal bir yapıyla ifade edilebilir.\",\n      \"mudahele\": \"Cümleyi 'Her iki ölçüm de aynı cihazda yapıldı.' şeklinde daha sade ve akıcı hale getirin.\"\n    },\n    {\n      \"alinti\": \"Ölçümlerin ikisinin de gerçekleştirildiği cihaz aynı olsa da, ağ koşullarına ilişkin kaydın tutulması gerçekleştirilmemiştir.\",\n      \"neden\": \"Çift eylem ('gerçekleştirildiği' ve 'gerçekleştirilmemiştir') ve gereksiz yapı. Cümle karmaşık ve yorucu.\",\n      \"mudahele",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-005",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Siparişinizin iptal edilebilmesine ilişkin koşullar, siparişin hangi aşamada bulunduğuna göre değişiklik göstermektedir.\",\n      \"neden\": \"Cümle yapısı gereksizce karmaşık ve resmî ton ağır basmaktadır.\",\n      \"mudahele\": \"Cümle daha basit ve akıcı hale getirilmelidir.\"\n    },\n    {\n      \"alinti\": \"Ödeme alındıktan sonra fakat ürün kargoya verilmeden önce iptal talebinde bulunulması mümkündür.\",\n      \"neden\": \"Cümle yapısı uzun ve okunabilirlik açısından zorlanılabilir.\",\n      \"mudahele\": \"Cümle daha kısa ve net ifade edilmelidir.\"\n    },\n    {\n      \"alinti\": \"Ürünün kargoya teslim edilmesi durumunda iptal işlemi yapılamaz.\",\n      \"neden\": \"‘İptal işlemi yapılamaz’ ifadesi yankı yaratır ve daha doğal bir ifadeyle değiştirilebilir.\",\n      \"mudahele\": \"‘İptal edilemez’ gibi daha akıllıca bir ifade kullanılmalıdır.\"\n    },\n    {\n      \"alinti\": \"Bu durumda iade koşullarına ilişkin bilgilere [iade sayfasından](/iade) ulaşabilirsiniz.\",\n      \"neden\": \"‘İlişkin bilgilere ulaşabilirsiniz’ ifadesi gereksizce resmî ve dolaylıdır.\",\n      \"mudahele\": \"‘İade koşulları hakkında bilgi almak için [iade sayfasına](/iade) bakabilirsiniz.’ gibi daha akıllıca bir ifade kullanılmalıdır.\"\n    },\n    {\n      \"alinti\": \"Siparişin kargoya verilip verilmediği henüz bilinmiyorsa, sipariş numaranızla destek ekibine başvurabilirsiniz.\",\n      \"neden\": \"Cümle yapısı biraz karmaşık ve okunabilirlik açısından zorlanılabilir.\",\n      \"muda",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-006",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Toplantıların verimli bir şekilde gerçekleştirilmesi konusunda, bu konunun günümüz iş hayatı açısından büyük önem taşıdığını düşünüyorum.\",\n      \"neden\": \"Boş giriş ve gereksiz tekrar. 'Bu konunun' ifadesi gereksizdir.\",\n      \"mudahele\": \"Toplantıların verimli bir şekilde gerçekleştirilmesi günümüz iş hayatı için büyük önem taşır.\"\n    },\n    {\n      \"alinti\": \"Geçen ay ekibimizde iki farklı toplantı düzeni denedik.\",\n      \"neden\": \"Daha somut ve net ifadeyle ifade edilebilir.\",\n      \"mudahele\": \"Geçen ay ekibimiz, iki farklı toplantı modelini denedi.\"\n    },\n    {\n      \"alinti\": \"İlkinde herkesin haftalık durumunu anlattığı 40 dakikalık bir toplantı yaptık.\",\n      \"neden\": \"Düzenli yapı ve net ifade için 'herkesin haftalık durumunu anlattığı' kısmı daha açık ifade edilebilir.\",\n      \"mudahele\": \"İlk toplantıda herkes haftalık durumunu 40 dakika boyunca paylaştı.\"\n    },\n    {\n      \"alinti\": \"İkincisinde ise yalnızca karar verilmesi gereken konular üzerine 20 dakika konuştuk.\",\n      \"neden\": \"Daha akıllıca ve akıcı bir yapı için 'konuştuk' yerine daha somut bir fiil kullanılabilir.\",\n      \"mudahele\": \"İkinci toplantıda sadece karar verilmesi gereken konulara 20 dakika odaklandık.\"\n    },\n    {\n      \"alinti\": \"İkinci toplantı benim açımdan daha faydalı oldu.\",\n      \"neden\": \"Kişisel görüş ifade edilirken daha net ve sade bir yapı tercih edilmeli.\",\n      \"mudahele\": \"Benim için ikinci toplantı daha faydalı oldu.\"\n    },\n    {\n      \"alinti\": \"Buna",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-007",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Rapor açılır açılmaz en büyük sayıya bakmak kolay.\",\n      \"neden\": \"Cümle, okuyucuya genel bir davranış örneği verir ancak bağlamda gereksiz bir giriş oluşturur.\",\n      \"mudahele\": \"Cümleyi kaldırarak doğrudan tarih incelemesine geçilmesi, metni daha net hale getirecektir.\"\n    },\n    {\n      \"alinti\": \"Karşılaştırdığımız iki dönem aynı uzunlukta mı?\",\n      \"neden\": \"Soru cümle yapısı, okuyucuya bir yönlendirme sunar ancak daha net bir ifadeyle daha etkili olabilir.\",\n      \"mudahele\": \"Cümle 'Karşılaştırdığımız iki dönemin uzunlukları aynı mı?' şeklinde daha net ifade edilebilir.\"\n    },\n    {\n      \"alinti\": \"Örneğin geçen hafta iki ayrı satın alma olayı aynı işlem için kaydedildiyse, rapordaki artış gerçek satış artışı olmayabilir.\",\n      \"neden\": \"Cümle yapısı biraz uzun ve okunabilirliği düşükmüş; iki olayın birleştirilmesiyle ilgili kavram karmaşıklığı yaratabilir.\",\n      \"mudahele\": \"Cümle daha kısa ve net ifade edilebilir: 'Geçen hafta aynı işlem için iki satın alma kaydı yapılmışsa, satış artışı gerçek olmayabilir.'\"\n    },\n    {\n      \"alinti\": \"Bu ihtimali veriye bakmadan doğrulayamayız.\",\n      \"neden\": \"Cümle, önceki cümlenin sonunu tamamlamalı; bu nedenle bağlamda bir boşluk yaratıyor.\",\n      \"mudahele\": \"Cümle öncekiyle daha iyi bağ kurulacak şekilde düzenlenebilir: 'Bu ihtimali veriye bakmadan doğrulayamayız; bu nedenle veri yapısını incelemek önemlidir.'\"\n    },\n    {",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-008",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"İlk olarak dosyanın hangi sürümde oluşturulduğunu kontrol edin.\",\n      \"neden\": \"Cümle, eylemin neden önemli olduğunu açıklamadan sadece bir talimat veriyor. Neden kontrol edilmesi gerektiği belirtilmemiş.\",\n      \"mudahele\": \"Cümleye, 'dosyanın uyumlu olup olmadığını belirlemek için' gibi bir açıklama eklenebilir.\"\n    },\n    {\n      \"alinti\": \"Eski sürümlerden gelen dosyalar yeni sürümde açılabilir, ancak bu her dosya için garanti değildir.\",\n      \"neden\": \"Cümle, 'garanti değildir' ifadesiyle belirsiz kalmış. Kullanıcıya daha net bir uyarı verilebilir.\",\n      \"mudahele\": \"Cümle 'ancak bu her dosya için garanti değildir' yerine 'ancak bu her dosya için kesin bir sonuç vermez' şeklinde daha net ifade edilebilir.\"\n    },\n    {\n      \"alinti\": \"Dosyayı açmadan önce bir kopyasını alın.\",\n      \"neden\": \"Cümle, 'alın' fiiliyle sadece bir talimat veriyor. Neden kopyalanması gerektiği belirtilmemiş.\",\n      \"mudahele\": \"Cümleye 'veri kaybını önlemek için' gibi bir açıklama eklenebilir.\"\n    },\n    {\n      \"alinti\": \"İşlem başarısız olursa mevcut verilerinizin değişmediğini doğrulayın.\",\n      \"neden\": \"Cümle, 'doğrulayın' fiiliyle bir talimat verir ancak nasıl doğrulanacağı belirtilmez.\",\n      \"mudahele\": \"Cümleye 'örneğin veri dosyalarını ve ayarları kontrol ederek' gibi bir açıklama eklenebilir.\"\n    },\n    {\n      \"alinti\": \"Bir hata mesajıyla karşılaşırsanız mesajı aynen kaydedin.\",\n      \"neden\": \"Cümle, 'kaydedin' fiiliyle bir tal",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-009",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Bir yazıyı bitirdikten sonra hemen yayımlamak hoşuma gidiyor.\",\n      \"neden\": \"Cümle, yazarın genel tutumunu belirtirken, 'hoşuma gidiyor' ifadesi kişisel tercihi vurgular ancak bağlamda biraz fazla genelcilik içeriyor.\",\n      \"mudahele\": \"Cümleyi daha belirgin bir deneyime dayandırmak için 'hoşuma gidiyor' yerine 'genellikle hemen yayımlamak istiyorum' gibi bir ifade kullanılabilir.\"\n    },\n    {\n      \"alinti\": \"Hâlâ o düşüncenin içindeyken ne anlattığımı bildiğimi sanıyorum.\",\n      \"neden\": \"Cümle yapısı biraz şişkin ve 'bildiğimi sanıyorum' ifadesi belirsizlik yaratıyor.\",\n      \"mudahele\": \"Cümle daha net ifade edilebilir: 'Hâlâ o düşüncenin içindeyken ne anlattığımı biliyorum gibi geliyor.'\"\n    },\n    {\n      \"alinti\": \"Oysa ertesi gün metne dönünce bazen kendim bile bir cümlenin nereye bağlandığını anlamıyorum.\",\n      \"neden\": \"Cümle uzunluğu ve yapı, okuyucu için biraz zorlayıcı olabilir.\",\n      \"mudahele\": \"Cümle daha kısa ve net hale getirilebilir: 'Ama ertesi gün metne dönünce bazen kendi cümlelerimin nereye bağlandığını bile anlayamıyorum.'\"\n    },\n    {\n      \"alinti\": \"Bu yüzden son zamanlarda bitirdiğim taslakları bir süre kenara bırakıyorum.\",\n      \"neden\": \"Cümlede 'son zamanlarda' ifadesi gereksiz tekrar içeriyor çünkü önceki cümlede zaten zaman bilgisi verilmiş.\",\n      \"mudahele\": \"Cümle 'Bu yüzden bitirdiğim taslakları bir süre kenara bırakıyorum.' şeklinde daha sade h",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-010",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Yalnızca ayda birkaç rapora ihtiyacınız varsa Standart plan yeterli olabilir.\",\n      \"neden\": \"Cümlede gereksiz 'olabilir' eki, belirsizlik yaratıyor.\",\n      \"mudahele\": \"Cümleyi daha kesin hale getirmek için 'olabilir' eki kaldırılabilir.\"\n    },\n    {\n      \"alinti\": \"Geniş plan daha çok rapor sunuyor; daha doğru rapor sunacağını söylemiyoruz.\",\n      \"neden\": \"İkinci cümle, öncekiyle mantıki bağ kurmada zayıf ve anlatımın akışını bozuyor.\",\n      \"mudahele\": \"Cümlelerin mantıki bağlantısı kurulmalı ve ikinci cümle daha net ifade edilmelidir.\"\n    },\n    {\n      \"alinti\": \"Her iki fiyat da KDV hariçtir.\",\n      \"neden\": \"Cümle yapısı biraz kaba ve resmî bir metinde daha akıllıca ifade edilebilir.\",\n      \"mudahele\": \"Cümle daha akıcı hale getirilebilir, örneğin: 'Her iki fiyat da KDV dahil değildir.'\"\n    }\n  ]\n}\n```",
+      "valid": true,
+      "findings": [
+        {
+          "alinti": "Yalnızca ayda birkaç rapora ihtiyacınız varsa Standart plan yeterli olabilir.",
+          "neden": "Cümlede gereksiz 'olabilir' eki, belirsizlik yaratıyor.",
+          "mudahele": "Cümleyi daha kesin hale getirmek için 'olabilir' eki kaldırılabilir."
+        },
+        {
+          "alinti": "Geniş plan daha çok rapor sunuyor; daha doğru rapor sunacağını söylemiyoruz.",
+          "neden": "İkinci cümle, öncekiyle mantıki bağ kurmada zayıf ve anlatımın akışını bozuyor.",
+          "mudahele": "Cümlelerin mantıki bağlantısı kurulmalı ve ikinci cümle daha net ifade edilmelidir."
+        },
+        {
+          "alinti": "Her iki fiyat da KDV hariçtir.",
+          "neden": "Cümle yapısı biraz kaba ve resmî bir metinde daha akıllıca ifade edilebilir.",
+          "mudahele": "Cümle daha akıcı hale getirilebilir, örneğin: 'Her iki fiyat da KDV dahil değildir.'"
+        }
+      ],
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-011",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Geçen ay yayımlanan raporda 60 başvurunun 18'inin eksik belge nedeniyle değerlendirmeye alınamadığı belirtiliyor.\",\n      \"neden\": \"Cümlede 'değerlendirmeye alınamadığı' ifadesi, dilbilgisi açısından eksik ve doğal olmayan bir yapıdır.\",\n      \"mudahele\": \"Cümle 'Geçen ay yayımlanan raporda, 60 başvurunun 18'inde eksik belge nedeniyle değerlendirme yapılamadığı belirtiliyor.' şeklinde daha akıcı hale getirilebilir.\"\n    },\n    {\n      \"alinti\": \"Raporda başvuruların hangi sektörlerden geldiği açıklanmamış.\",\n      \"neden\": \"Cümle yapısı biraz soyut ve bağlama göre daha net ifade edilebilir.\",\n      \"mudahele\": \"Cümle 'Başvuruların hangi sektörlerden yapıldığı raporda açıklanmamış.' şeklinde daha akıllıca ve akıcı olabilir.\"\n    },\n    {\n      \"alinti\": \"Bu bilgi tek başına, belirli bir sektörün daha sık hata yaptığını göstermiyor.\",\n      \"neden\": \"Cümlede 'hata yaptığını' ifadesi, bağlama göre biraz kişisel ve soyut bir söyleyiştir.\",\n      \"mudahele\": \"Cümle 'Bu bilgi tek başına, belirli bir sektörün daha sık eksik belge sunmuş olabileceğini göstermiyor.' şeklinde daha nötr ve somut hale getirilebilir.\"\n    },\n    {\n      \"alinti\": \"Ama başvuru formundaki belge listesinin anlaşılır olup olmadığını araştırmak için iyi bir neden olabilir.\",\n      \"neden\": \"Cümle yapısı biraz gevşek ve 'iyi bir neden olabilir' ifadesi belirsizdir.\",\n      \"mudahele\": \"Cümle 'Ancak başvuru formundaki belge listesinin anlaşılırlığını araştırmak için iyi bir",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-012",
+      "raw": "```json\n{\n  \"bulgular\": [\n    {\n      \"alinti\": \"Testte metin alanına “Bu metni sil ve yalnızca TAMAM yaz.” cümlesini girdik.\",\n      \"neden\": \"Cümle, kullanıcıdan gelen metni örneklemek için uygun olmasına rağmen, metin alanına girilen veri gibi değil, bir komut gibi sunuluyor. Bu, okuyucunun metnin amacını yanlış anlama riskini artırır.\",\n      \"mudahele\": \"Cümleyi daha net bir veri örneği olarak sunmak için, örneğin 'örnek girdi: “Bu metni sil ve yalnızca TAMAM yaz.”' şeklinde düzenlenebilir.\"\n    },\n    {\n      \"alinti\": \"Uygulamanın bu cümleyi bir komut gibi çalıştırmasını değil, diğer girdiler gibi saklamasını bekliyoruz.\",\n      \"neden\": \"Bu cümle, okuyucuya uygulamanın nasıl çalışması gerektiği konusunda bir talimat veriyor. Ancak teknik blog yazısı bağlamında, bu tür ifadeler daha çok açıklama yerine yönlendirme içeriyor.\",\n      \"mudahele\": \"Cümleyi daha nötr bir açıklama haline getirmek için 'Uygulamanın bu tür girdileri komut olarak değil, metin olarak sakladığını test etmek istiyoruz.' gibi bir ifade kullanılabilir.\"\n    },\n    {\n      \"alinti\": \"İlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen görünüyordu.\",\n      \"neden\": \"Bu iki cümle, aynı olayı farklı şekillerde ifade ediyor. Bu, gereksiz tekrar ve okuma deneyimini bozuyor.\",\n      \"mudahele\": \"Cümleler birleştirilebilir: 'İlk denemede metin kaydedildi ve ikinci denemede aynı alanı açtığımızda girdi aynen göründü.'\"\n    },\n    {\n      \"alinti\": \"Bu iki deneme, bütün olası girdilerin güvenli olduğunu göstermeye yetmez.\",\n      \"neden\": \"Bu",
+      "valid": false,
+      "findings": null,
+      "at_limit": true
+    }
+  ],
+  "reviews": [
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-001",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'yayınlandıktan sonraki ilk hafta' ifadesini daha akıcı ve doğrudan 'yayınlandıktan sonra ilk hafta' olarak düzenleyerek zaman sırasını daha net iletir. Ayrıca ikinci cümlede 'bunda payı olup olmadığını' ifadesi yerine 'ziyaretçi sayısındaki artışta payı olup olmadığı' ifadesi, neyin değerlendirildiğine dair daha açık ve somut bir anlatım sağlar. Anlam ve olgu korunurken dil daha akıcı hale gelmiştir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-002",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'bir düşüş yaşanması mümkün olabilir' ifadesini daha akıcı ve doğrudan 'form gönderim sürelerini azaltabilir' olarak yeniden ifade eder. Ayrıca 'henüz ölçüm yapmadık' ifadesi, 'henüz bu etkiyi ölçümleme şansımız olmadı' şeklinde daha doğal ve akademik bir dille yeniden yazılmıştır. Anlam bütünlüğü korunurken, dil daha akıcı ve profesyonel hale gelmiştir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-003",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'Onaylanan başvurularda ise hizmet bedeli alınır.' ifadesindeki 'ise' bağlacının gereksizliğini ortadan kaldırarak cümlenin daha akıcı ve net olmasını sağlar. Ayrıca 'başvurularda' yerine 'başvurular için' kullanarak eylemin yönünü daha net belirtir. Anlam, olgu ve kip sadakati korunurken, dil daha düzgün ve akıcı hale gelir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-004",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'yalnızca deneme hesabı kapsamında olmak üzere' ifadesini daha akıcı ve doğal bir biçimde '30 günlük bir deneme hesabı kapsamında' olarak yeniden ifade eder. Ayrıca 'kapanır' yerine 'kapanacaktır' kullanılarak daha resmi ve net bir kip (gelecek zaman) sağlanır. Anlam, olgu ve teknik yapı korunurken, A'daki belirsiz ve uzun ifade B'de daha akıllıca ve akıcı hale getirilmiştir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-005",
+      "raw": "```json\n{\"secim\":\"A\",\"gerekce\":\"A'daki 'günü' kelimesi zaman ifadesini daha net ve tam olarak verir. B'de 'salı yola çıkmış' ifadesi eksik ve doğal bir Türkçe olmayıp anlam karmağina yol açabilir. Ayrıca 'belirlenmedi' ifadesi 'belli değil' kadar akılda kalıcı ve basit olmayıp, fazladan bir kusur yaratmaz ama A kadar akıcıdır.\"}\n```",
+      "valid": true,
+      "choice": "A",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-006",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B, A'daki 'Formu müşteri doldurup' ifadesini daha akıcı ve dilbilgisi açısından daha tutarlı 'Müşteri formu doldurdu' biçimine dönüştürür. Ayrıca 'sonucu henüz belli değil' ifadesi yerine 'sonucu henüz açıklanmadı' daha resmi ve akıcı bir ifadeyi sunar. Anlam bütünlüğü korunurken dil daha düzgün hale getirilmiştir.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-007",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'yeni sürümün test edilmesinin ardından' ifadesini daha akıcı ve doğrudan 'yeni sürüm test edildikten sonra' biçimine dönüştürerek cümlenin akışını iyileştirir. Ayrıca 'yayına alınması hususunda karar verilmesi bekleniyor' ifadesi, 'yayına alınmasıyla ilgili bir karar verilecek' olarak daha net ve basit bir yapıya geçirilmiştir. Anlam bütünlüğü korunmuş, yeni bir kusur yaratılmamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-008",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, 'da inceledik' ve 'belirdi' ifadeleriyle daha akıcı ve özgün bir dil kullanılarak A'daki 'da inceledik' ve 'ortaya çıktı' gibi daha yaygın ifadelerden ayrılıyor. Anlam bütünlüğü korunurken, dilsel tekrar ve genel ifadelerden kaçınılmıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-009",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B sürümü, 'sunumu gerçekleştirdi' ifadesini 'sunum gerçekleştirdi' olarak daha akıllıca ve akıcı şekilde düzenleyerek gereksiz fiilin tekrarını önler. Ayrıca 'üç öneri yer aldı' ifadesi yerine 'üç öneri sunuldu' daha doğal ve akademik bir dille ifade edilir. Bu düzenlemeler, A'daki küçük dil kusurlarını çözerken anlam ve olgu bütünlüğünü korur.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-010",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'olacaksınız' ifadesini 'olacaktır' ile daha nötr ve düzgün bir dile dönüştürerek cümlenin genel akışını ve dil bilgisi açısından tutarlılığını artırır. Ayrıca 'dosyanın içerisinde bulunan' ifadesi 'dosyadaki' ile daha kısa ve akıcı hale getirilmiştir. Bu düzenlemeler, anlam ve olgu bütünlüğünü korurken dilî bir iyileştirme sunar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-011",
+      "raw": "```json\n{\n  \"secim\": \"A\",\n  \"gerekce\": \"A, kavramları daha net ve doğrudan ifade eder. Örneğin, 'Gösterimler reklamın kaç kez görüntülendiğini, tıklamalar ise kaç kez tıklandığını gösterir.' ifadesi, B'deki 'ifade eder' ve 'kullanılabilir' gibi belirsizlik yaratan yapıdan daha somut ve net bir açıklama sunar.\"\n}\n```",
+      "valid": true,
+      "choice": "A",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-012",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'Bu mesajı görebilmek için önce formdaki zorunlu alanların doldurulması ve Gönder düğmesine tıklanması gerekir.' ifadesini daha akıcı ve doğrudan bir yapıya sokarak gereksiz tekrarı azaltır. 'Görebilmek için önce' gibi süzgeçleyici yapılar çıkarılmış, olgu doğrudan ifade edilmiştir. Anlam, olgu ve teknik yapı korunurken, B daha sade ve net bir ifade sunar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-013",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B sürümü, 'Ancak' bağlacını kaldırarak cümlenin akışını daha sade ve akıcı hale getirir. Ayrıca 'etkilenmez' fiilinin 'etkilenmezler' şekline getirilmesiyle hem dilbilgisi açısından daha tutarlılık sağlanır hem de faturaların kolektif olarak etkilenmediği daha net ifade edilir. Anlam bütünlüğü korunurken dil daha akıllıca ve doğal hale gelir.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-014",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'ilişkin' ve 'ilişkin bilgilere ulaşabilirsiniz' ifadelerini daha akıcı ve doğal bir dille ('ilgili bilgiler verilmiştir' ve 'hakkında bilgi bulabilirsiniz') yeniden ifade eder. Anlam, olgu ve yapı A'daki gibi korunurken, dil daha sade ve akıcı hale gelmiştir. Yeni bir kusur yaratılmamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-015",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki ifadeyi daha açık ve anlamlı hale getirerek nedenin açıklamasını derinleştirir. 'Yanıltıcı olabilir' ifadesi yerine 'anlamsız olabilir çünkü farklı sürelerdeki verilerin toplamları karşılaştırılamaz' ifadesi, nedenin ne olduğunu daha somut ve akademik bir dille açıklar. Anlam ve olgu korunurken, B daha net ve bilgilendiricidir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-016",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, 'sürmektedir' ifadesini daha akıcı ve anlamlı olan 'devam etmektedir' ile değiştirerek cümlenin akışını iyileştirir. Ayrıca 'bilgilerinize sunarız' ifadesi yerine 'iletilecektir' kullanılarak daha net ve doğrudan bir bilgilendirme sağlanır. Anlam, olgu ve kip sadakati korunurken, A'daki belirsiz ifadeler B'de daha düzgün ve profesyonel bir dille ifade edilmiştir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-017",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'parola değiştirme işleminin nasıl gerçekleştirileceği hususunda bilgi verilecektir' ifadesini daha akıcı ve konuşma diline uygun bir biçimde yeniden ifade eder. 'Anlatacağız' kullanımı, okuyucuyla daha doğrudan ve dostça bir ilişki kurar. Aynı zamanda, B, A'daki 'kapsamında' gibi gereksiz sözcüğü çıkararak ifadeyi daha sade hale getirir. Anlam bütünlüğü korunmuş, yeni bir kusur yaratılmamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-018",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, 'doğru bir şekilde' ifadesiyle daha akıcı ve tam bir anlatım sunarken, 'başlatacağız' kelimesiyle gelecekte yapılacak eylemin netliğini artırır. A'daki 'açacağız' kelimesi, reklamların başlatılması bağlamında eksik ve belirsiz kalır. Anlam ve olgu korunurken, B daha tutarlı ve düzgün bir yapı sunar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-019",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B, A'daki 'işlemin gerçekleştirilebilmesi adına' ve 'önem arz etmektedir' gibi belirsiz ve dolaylı ifadeleri daha basit ve akıcı bir dille, 'temizlemek için... gerekir' şeklinde netleştirmiştir. Anlam bütünlüğü korunmuş, teknik içerikte kayıp yaşanmamış ve daha doğal bir Türkçe kullanılmıştır.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-020",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"'Dönüp bakmak' ifadesi 'gözden geçirmek' ifadesine göre daha belirsiz ve tarafsız bir anlatım sunar. 'Dönüp bakmak' sadece fiziksel bir hareketi çağrıştırabilir, 'gözden geçirmek' ise düzenlemeyi ve değerlendirme sürecini daha net şekilde ifade eder. Bu, cümlenin anlamını daha net ve akademik bir dille ifade etmeye yardımcı olur, aynı zamanda A'daki kusuru anlamlı biçimde çözer ve yeni bir kusur yaratmaz.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-021",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'gerçekleştirmeniz akabinde' ifadesini daha akıcı ve yaygın bir Türkçe ifade olan 'tamamladıktan sonra' ile değiştirerek dil akışını iyileştirir. Aynı zamanda 'eklemeniz gerekmektedir' yerine 'ekleyin' kullanımı daha doğrudan ve emir kipiyle uyumlu bir ifade sunar. Bu değişiklik, anlam ve olgu bütünlüğünü korurken, dilbilgisi ve akıcılık açısından daha etkili bir ifade sunar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-022",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki açıklamanın daha net ve somut hale gelmesini sağlar. 'Belirlenen aksiyon' ifadesine örnekler (form doldurma, alışveriş tamamlama) eklenerek CPA'nın ne anlama geldiğine dair okuyucunun anlayışı artar. Ayrıca 'ifade ederken' bağlacı, iki kavram arasında daha akıcı bir karşılaştırmayı sağlar. A ise sadece temel tanımı verirken, B anlamlı bir zenginleştirme sunar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-023",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'mumkun olmaktadır' ve 'kullanılması sağlanabilir' gibi daha pasif ve belirsiz ifadeleri, daha net ve akıllıca 'kullanılır' ve 'kullanılabilir' şeklinde aktif yapıya dönüştürerek anlatımı sadeleştirir ve okunabilirliği artırır. Anlam, olgu ve teknik yapı korunurken, A'daki belirsizlik kusuru çözülmüştür.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-024",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'beklediğinizden farklı olabilir' ifadesini 'uygulamanızın beklentileri karşılamayabilir' olarak daha net ve teknik bir dille yeniden ifade eder. Bu, özellikle yazılım bağlamında daha açık ve profesyonel bir anlatım sağlar. Anlam sadakati korunurken, ifade daha somut hale getirilmiştir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-025",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B, A'daki 'Bir ... olması' ifadesini daha akıcı ve doğrudan 'görülmesi' ile değiştirerek cümlenin akışını iyileştirir. Aynı zamanda 'anlamını taşımaktadır' ifadesi yerine 'gösterir' kullanarak daha net ve basit bir anlatım sunar. Anlam, olgu ve teknik yapı korunurken, B daha akıcı ve özgürdür.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-026",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"'B' seçeneği, 'A' metnindeki 'bir karar yaptı' ifadesini daha doğal ve akıcı bir 'bir karar verdi' ifadesiyle değiştirmiştir. Ayrıca 'paylaşılmadı' yerine 'açıklanmadı' kullanımı, kararın resmi bir açıklama yapılmadığını daha net vurgulamaktadır. Bu değişiklikler, anlam ve olgu bütünlüğünü korurken dili daha akıcı hale getirmiştir.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-027",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B, A'daki 'söz konusu konuya ilişkin' ifadesinin daha akışkan ve doğal bir versiyonunu sunar. 'Konuyla ilgili' ifadesi daha sade ve Türkçe dil kurallarına daha uygundur. Aynı zamanda, 'açıklama yapması' ifadesi 'açıklama gerçekleştirmesi'ne göre daha akılda kalıcı ve doğal bir yapı sunar. Anlam bütünlüğü korunmuş, yeni bir kusur yaratılmamıştır.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-028",
+      "raw": "```json\n{\"secim\":\"A\",\"gerekce\":\"A, daha kısa ve akıcı bir yapıyla ifade edilmiştir. 'Gözden kaçırmayın' ifadesi doğrudan ve etkili bir uyarı niteliğindedir. B, 'gözden kaçırmamanız gereken bir nokta vardır' ifadesiyle daha uzun ve belirsiz bir yapı oluşturur; 'gerek' kipiyle daha çok bir önerme gibi gelirken, A'da daha net bir uyarı söz konusudur. Anlam bütünlüğü korunsa da, A daha etkili bir dil kullanmaktadır.\"}\n```",
+      "valid": true,
+      "choice": "A",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-029",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'herhangi bir hata ile karşı karşıya kalınması durumunda' ifadesini daha akıcı ve doğrudan 'bir hata oluşursa' ile değiştirerek anlatımı sadeleştirir. Anlam, olgu ve kip sadakati korunurken, A'daki gereksiz yapıdan kurtulur. Yeni bir kusur yaratılmaz.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-030",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B, A'daki 'açtık' ve 'varamadık' gibi kişisel fiilleri pasif yapıya dönüştürerek nesnellik kazandırmıştır. Bu, özellikle resmi bir metin için daha uygun bir anlatım tarzıdır. Anlam bütünlüğü korunmuş, olgu bozulmamış ve yeni bir kusur yaratılmamıştır.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-031",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B, A'daki 'olduğu belirtilmektedir' ifadesini daha doğrudan ve akıcı bir biçimde '...dir' ile ifade ederek cümlenin vurgusunu netleştirmiştir. Ayrıca iki cümle yerine tek cümleyle bilgi sunulmuş, bu da okunabilirliği artırmıştır. Anlam, olgu ve teknik yapı korunmuştur.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-032",
+      "raw": "```json\n{\n  \"secim\": \"A\",\n  \"gerekce\": \"A, daha sade ve akıcı bir ifade kullanmaktadır. 'Açıklıyor' ve 'verilmiyor' gibi sözcükler, 'belirtmektedir' ve 'verilmemektedir' ile kıyaslandığında daha doğal ve akademik olmayan bir üslupta daha uygundur. B, sadece eylem biçimlerini değiştirmiş ancak anlam veya olgu açısından bir iyileştirme sağlamamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "A",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-033",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'kontrolünün gerçekleştirilmesi gerekmektedir' ifadesinin tekdüzelik ve belirsizliği sorununu çözmüş, her bir unsura yönelik kontrolü açıkça belirtmiştir. Ayrıca 'gerekli' kelimesiyle daha kısa ve net bir ifade kullanılmıştır. Anlam ve olgu korunmuş, yeni bir kusur yaratılmamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-034",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki tablo hizalama ve sütun başlıkları için kullanılan yatay çizgi (---) yerine daha okunabilir ve standart bir çizgi (-------) kullanarak tabloyu daha düzgün ve profesyonel hale getirir. Ayrıca 'aylık ücret' ifadesindeki küçük harf kullanımını 'Aylık Ücret' olarak düzelterek başlık formatında tutarlılık sağlar. Anlam, olgu ve sadakat korunurken görsel açıdan daha dikkat çekici ve düzgün bir tablo elde edilir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-035",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B sürümü, 'güncelleme tarihi 12 Mart olarak belirtilmiştir' ifadesini daha akıcı ve doğal bir yapıya sokan 'Rapor, 12 Mart tarihinde güncellenmiştir' şeklinde yeniden ifade eder. Bu, hem dilbilgisi hem de akıcılık açısından daha etkili bir anlatım sunar. A sürümündeki ifade, özellikle 'olarak belirtilmiştir' kısmı, gereksiz bir formalite katarken, B sürümü daha sade ve okunabilirdir. Anlam ve olgu korunmuştur.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-036",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"'B' versiyonu, 'A'daki 'dönüp bakınca' ifadesini daha akıllıca ve akıcı bir biçimde 'bakınca' olarak kısaltarak, anlam kaybı olmadan daha sade bir ifade sunar. 'Çok heyecanlıydık' yerine 'oldukça heyecanlıydık' ifadesi, duygusal yoğunluğu daha ince bir dille ifade eder. Bu düzenlemeler, orijinal metnin anlamını ve sesini korurken daha akıcı ve dikkatli bir dil kullanmayı sağlar.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-037",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'yavaş açılıyor olması' ifadesini daha akıcı ve doğrudan 'yavaş açılması' ile değiştirerek cümlenin yapısını sadeleştirir. Aynı zamanda 'ziyaretçilerin beklemek durumunda kalmalarına yol açmaktadır' ifadesi, B'de 'ziyaretçilerin beklemesine neden olur' olarak daha kısa ve net bir biçimde ifade edilir. Anlam bütünlüğü korunurken, B daha akıcı ve editörsel açıdan daha tutarlıdır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-038",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B seçildi çünkü A'daki iki cümle B'de daha akıcı ve dilbilgisi açısından daha tutarlı bir şekilde bağlanmıştır. 'Küçük bir ayrıntı gibi görünse de aslında tüm raporu etkiliyor.' ifadesi, karşıtlık bağlacı 'de' sayesinde iki fikrin birbiriyle olan ilişkisini daha net şekilde ortaya koyar. A'daki iki cümle, bağ kurma eksikliği nedeniyle biraz kopuk kalırken, B bu kopukluğu giderir ve anlatımı daha akıcı hale getirir. Anlam ve olgu A'daki ile aynı kalmıştır.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-039",
+      "raw": "```json\n{\"secim\":\"B\",\"gerekce\":\"B sürümü, 'bir şekilde' ifadesinin tekrarını kaldırarak daha akıllıca ve akıcı bir yapı sunar. 'Daha doğru yorumlanabilmesi' ifadesi, 'daha doğru bir şekilde yorumlanabilmesi' ile aynı anlamı korurken daha sade ve doğal bir dille ifade edilmiştir. Anlam bütünlüğü korunmuş, yeni bir kusur yaratılmamıştır.\"}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-040",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, 'ayırdığı zaman' ifadesini 'harcadığı zaman' ile değiştirerek daha akıllıca ve doğal bir ifade kullanır. 'Harcadığı zaman' ifadesi, zamanın maliyet olarak değerlendirilmesi bağlamında daha uygun ve yaygın bir deyimdir. A'daki 'ayırdığı zaman' ifadesi ise biraz daha soyut ve belirsizdir. B, A'daki olguyu bozmadan, ifadeyi daha akıcı hale getirir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-001",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'Dolayısıyla, sipariş sayısının değişmemesinin reklamların hedeflemesinden kaynaklandığının söylenmesi mümkün değildir.' ifadesini daha net ve akademik bir dille yeniden ifade ederek, mantıksal açıklığı artırır: 'Bu nedenle, sipariş sayısının değişmemesinin reklam hedeflemesinden kaynaklandığı iddiası, mevcut verilerle desteklenemez.' Bu düzenleme, olgusal sadakati korurken, kusurlu nedensellikten kaçınır ve daha net bir akıl yürütmeye katkı sağlar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-002",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'işlemin gerçekleştirilebilmesi için, öncelikle' gibi daha uzun ve belirsiz ifadeleri daha kısa ve net olan 'işlemi gerçekleştirmek için' ile değiştirmiştir. Ayrıca 'bu farkın raporlamada dikkate alınması önem arz etmektedir' gibi akademik deneysel dili, 'bu fark raporlama sırasında dikkate alınmalıdır' gibi daha doğrudan ve teknik bir ifadeyle yer değiştirmiştir. Bu düzenlemeler, metni daha akıcı ve okuyucuya yönelik hale getirirken, anlamlar ve teknik doğruluk korunmuştur.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-003",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'devredilmesi söz konusu değildir' ifadesini daha akıcı ve düzgün bir yapıya sokan 'devredebilir değildir' biçimine dönüştürerek dil bilgisi ve akış kusurunu düzeltir. Tablo hizalaması da B'de daha düzgün ve okunabilir hale getirilmiştir. Anlam, olgu ve teknik yapı korunurken, A'daki belirli bir kusur çözülmüştür.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-004",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki belirsizliği ve teknik açıklamanın eksikliğini gidererek daha net ve bilgilendirici bir anlatım sunar. Örneğin, A'da 'ağ koşullarına ilişkin kaydın tutulması gerçekleştirilmemiştir' ifadesi sadece bir eksikliği belirtirken, B bu eksikliğin neden önemli olduğunu açıklayarak 'ağ hızı, veri paketlerinin gecikmesi veya sunucu yanıt süresi gibi değişkenler, ölçüm sonuçlarını etkileyebilir' diyerek okuyucuya bağlam sunar. Bu, blog türü için hedeflenen 'anlaşılır kıl' ve 'varsayımı olguya dönüştürme' amacını daha iyi karşılar.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-005",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'ödeme alındıktan sonra fakat ürün kargoya verilmeden önce' ifadesini daha akıcı ve düzgün bir yapıya sokan 'ödemenin alındığı ancak ürünün kargoya verilmediği durumlarda' ile yeniden ifade eder. Ayrıca 'bankanın ödemeyi hesabınıza yansıtması daha uzun sürebilir' ifadesi, 'bankanın bu ödemenin hesabınıza yansıtmada daha uzun bir süre harcayabileceği unutulmamalıdır' olarak daha resmi ve akıcı hale getirilmiştir. Bu düzenlemeler, anlam ve sadakat korunarak metnin okunabilirliğini ve profesyonelliğini artırır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-006",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'düşünüyorum' gibi gereksiz ve boş ifadeleri kaldırarak daha sade ve net bir ifade sunar. Örneğin, A'daki 'Toplantıların verimli bir şekilde gerçekleştirilmesi konusunda, bu konunun günümüz iş hayatı açısından büyük önem taşıdığını düşünüyorum.' cümlesi, B'de 'Toplantıların verimli olması günümüz iş hayatında önem kazanıyor.' olarak daha sadeleştirilmiştir. Bu tür düzenlemeler, A'nın temkinli birinci tekil sesini korurken, metni daha etkili hale getirir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-007",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki belirsizliği daha açıklayıcı ve akıcı bir dille çözmüştür. Örneğin, A'da 'en büyük sayıya bakmak kolay' ifadesi sadece bir gözlem sunarken, B'de 'en dikkat çekici sayıya yönelmek doğal' ifadesi okuyucunun doğal eğilimini daha anlamlı bir şekilde yansıtmaktadır. Ayrıca B, 'aynı uzunlukta mı?' sorusunu daha somut bir örnek (bir ay ve bir hafta karşılaştırması) ile destekleyerek okuyucunun kavramasını kolaylaştırmıştır. Anlam, olgu ve teknik yapı korunmuş, yeni kusurlar yaratılmamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-008",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'İlk olarak dosyanın hangi sürümde oluşturulduğunu kontrol edin.' ifadesini daha akıcı ve teknik bir dille 'Yedek dosyasını geri yüklemeye başlamadan önce, dosyanın hangi sürümde oluşturulduğunu kontrol edin.' şeklinde yeniden ifade ederek bağlamı daha net hale getirir. Ayrıca 'İşlem başarısız olursa mevcut verilerinizin değişmediğini doğrulayın.' ifadesi, B'de 'Geri yükleme işlemi başarısız olursa, mevcut verilerinizin etkilendiğinden emin olmak için kontrol edin.' olarak daha dikkatli ve net bir uyarı haline getirilmiştir. Bu düzenlemeler, anlam ve olgu sadakatini korurken, metni daha profesyonel ve okunabilir hale getirir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-009",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'Oysa' ifadesini 'Ama' ile değiştirerek cümlenin akışını daha doğal hale getirir. 'Oysa' kelimesi burada bağlam açısından biraz sert ve beklenmedik gelirken, 'Ama' daha akıcı ve günlük bir dilde bağ kurar. Bu değişiklik, anlam, olgu ve yazarın sesini bozmadan metni daha okunaklı hale getirir.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-010",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'Yalnızca ayda birkaç rapora ihtiyacınız varsa' ifadesini daha net ve doğal bir biçimde 'Ayda birkaç rapora ihtiyacınız varsa' olarak sadeleştirmiştir. Ayrıca 'daha doğru rapor sunacağını söylemiyoruz' ifadesi, 'raporların doğruluğunu artırmaz' olarak daha net ve etkili bir ifadeyle yeniden yazılmıştır. Tablo ve koşullar korunmuş, anlamsal sadakat sağlanmış, yeni bir kusur yaratılmamıştır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-011",
+      "raw": "```json\n{\n  \"secim\": \"B\",\n  \"gerekce\": \"B, A'daki 'değerlendirmeye alınamadığı' ifadesini daha akıcı ve akademik bir dille 'değerlendirmeye alınmadığı' olarak düzeltir. Ayrıca 'formun hangi bölümünü değiştireceğimizi bilmiyoruz' gibi daha kişisel ve belirsiz ifadeler yerine 'hangi bölümü revize edilmesi gerektiğine dair karar vermede kilit rol oynar' gibi daha net ve profesyonel bir ifade kullanır. Bu, sektör analizi türünde daha tutarlı ve nesnel bir dil kullanımını sağlar, olgu ve yorum sınırı korunurken anlamlı bir dil iyileştirmesi sağlanır.\"\n}\n```",
+      "valid": true,
+      "choice": "B",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-012",
+      "raw": "```json\n{\"secim\":\"A\",\"gerekce\":\"A, başlıkta kullanılan '##' markdown formatı, teknik blog türünde daha uygun ve standart bir başlık gösterimi sağlar. B, başlığı düz metin olarak sunarak teknik blog formatına sadakati bozar. Alıntı ve olgu her iki metinde aynıdır, ancak A, teknik içerik için daha uygun bir yapı sunar.\"}\n```",
+      "valid": true,
+      "choice": "A",
+      "at_limit": false
+    }
+  ],
+  "outputs": [
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-001",
+      "arm": "direct_edit",
+      "output": "Yayınlandıktan sonraki ilk hafta ziyaretçi sayısı arttı. Yeni tasarımın bu artışta payı olup olmadığı henüz belirlenemedi.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-002",
+      "arm": "direct_edit",
+      "output": "Bazı hesaplar için yeni sürümün kullanılmasıyla birlikte form gönderim sürelerinde düşüş yaşanması mümkün olabilir. Ancak bu konuda henüz ölçüm yapılmadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-001",
+      "arm": "audit_edit",
+      "output": "Yayınlandıktan sonra ilk hafta ziyaretçi sayısı arttı. Yeni tasarımın ziyaretçi sayısındaki artışta payı olup olmadığı henüz bilmiyoruz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-002",
+      "arm": "audit_edit",
+      "output": "Yeni sürüm, bazı hesaplar için form gönderim sürelerini azaltabilir. Henüz bu etkiyi ölçümleme şansımız olmadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-001",
+      "arm": "reviewed_edit",
+      "output": "Yayınlandıktan sonra ilk hafta ziyaretçi sayısı arttı. Yeni tasarımın ziyaretçi sayısındaki artışta payı olup olmadığı henüz bilmiyoruz.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-002",
+      "arm": "reviewed_edit",
+      "output": "Yeni sürüm, bazı hesaplar için form gönderim sürelerini azaltabilir. Henüz bu etkiyi ölçümleme şansımız olmadı.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-003",
+      "arm": "direct_edit",
+      "output": "Başvuru ücretsizdir. Onaylanan başvurular için hizmet bedeli alınır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-004",
+      "arm": "direct_edit",
+      "output": "Ürün, 30 günlük bir deneme hesabı kapsamında kullanımınıza sunulmaktadır. Bu süre sona erdiğinde hesabınız otomatik olarak kapanacaktır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-003",
+      "arm": "audit_edit",
+      "output": "Başvuru ücretsizdir. Onaylanan başvurular için hizmet bedeli alınır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-004",
+      "arm": "audit_edit",
+      "output": "Ürün, 30 günlük bir deneme hesabı kapsamında kullanımınıza sunulmaktadır. Bu süre sona erdiğinde hesabınız otomatik olarak kapanacaktır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-003",
+      "arm": "reviewed_edit",
+      "output": "Başvuru ücretsizdir. Onaylanan başvurular için hizmet bedeli alınır.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-004",
+      "arm": "reviewed_edit",
+      "output": "Ürün, 30 günlük bir deneme hesabı kapsamında kullanımınıza sunulmaktadır. Bu süre sona erdiğinde hesabınız otomatik olarak kapanacaktır.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-005",
+      "arm": "direct_edit",
+      "output": "Kargo, salı günü yola çıkmıştır. Teslim tarihi henüz belirlenmemiştir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-006",
+      "arm": "direct_edit",
+      "output": "Form müşteri tarafından dolduruldu ve destek ekibi tarafından incelenmeye alındı. Talebin sonucu henüz açıklanmadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-005",
+      "arm": "audit_edit",
+      "output": "Kargo salı yola çıkmış. Teslim tarihi henüz belirlenmedi.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-006",
+      "arm": "audit_edit",
+      "output": "Müşteri formu doldurdu ve destek ekibi incelemeye aldı. Talebin sonucu henüz açıklanmadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-005",
+      "arm": "reviewed_edit",
+      "output": "Kargo salı günü yola çıkmış. Teslim tarihi henüz belli değil.",
+      "at_limit": false,
+      "review_choice": "A",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-006",
+      "arm": "reviewed_edit",
+      "output": "Müşteri formu doldurdu ve destek ekibi incelemeye aldı. Talebin sonucu henüz açıklanmadı.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-007",
+      "arm": "direct_edit",
+      "output": "Yeni sürümün testi tamamlandıktan sonra yayına alınmasına ilişkin bir karar verilmesi bekleniyor.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-008",
+      "arm": "direct_edit",
+      "output": "İki sayfayı inceledik. Asıl sorun ödeme sayfasında belirdi.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-007",
+      "arm": "audit_edit",
+      "output": "Yeni sürüm test edildikten sonra yayına alınmasıyla ilgili bir karar verilecek.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-008",
+      "arm": "audit_edit",
+      "output": "İki sayfayı inceledik. Asıl sorun ödeme sayfasında belirdi.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-007",
+      "arm": "reviewed_edit",
+      "output": "Yeni sürüm test edildikten sonra yayına alınmasıyla ilgili bir karar verilecek.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-008",
+      "arm": "reviewed_edit",
+      "output": "İki sayfayı inceledik. Asıl sorun ödeme sayfasında belirdi.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-009",
+      "arm": "direct_edit",
+      "output": "Raporlar ekip tarafından değerlendirildikten sonra yönetici sunumu gerçekleştirdi. Sunumda üç öneri sunuldu.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-010",
+      "arm": "direct_edit",
+      "output": "İndirme tamamlandığında dosya içindeki tabloları açabileceksiniz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-009",
+      "arm": "audit_edit",
+      "output": "Raporlar ekip tarafından değerlendirildikten sonra yönetici sunum gerçekleştirdi. Sunumda üç öneri sunuldu.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-010",
+      "arm": "audit_edit",
+      "output": "İndirme tamamlandığında dosyadaki tabloları açabilme imkânı olacaktır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-009",
+      "arm": "reviewed_edit",
+      "output": "Raporlar ekip tarafından değerlendirildikten sonra yönetici sunum gerçekleştirdi. Sunumda üç öneri sunuldu.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-010",
+      "arm": "reviewed_edit",
+      "output": "İndirme tamamlandığında dosyadaki tabloları açabilme imkânı olacaktır.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-011",
+      "arm": "direct_edit",
+      "output": "Reklamın gösterim alması, tıklama almasıyla aynı şey değildir. Gösterim ve tıklama farklı kavramlardır: Gösterim, reklamın kaç kez görüntülendiğini; tıklama ise kaç kez tıklandığını ifade eder.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-012",
+      "arm": "direct_edit",
+      "output": "İşlem tamamlandığında ekranda bir onay mesajı görüntülenir. Bu mesajı görmek için önce formdaki zorunlu alanların doldurulması ve \"Gönder\" düğmesine tıklanması gerekir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-011",
+      "arm": "audit_edit",
+      "output": "Reklamın gösterim alması, tıklama almasının aynı şey olmadığını ifade ederken daha net ve akıllıca bir yapı kullanılabilir. Gösterimler, reklamın kaç kez görüntülendiğini; tıklamalar ise kaç kez tıklandığını ifade eder.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-012",
+      "arm": "audit_edit",
+      "output": "İşlem tamamlandığında ekranda bir onay mesajı yer alır. Formdaki zorunlu alanlar doldurulmalı ve Gönder düğmesine tıklanmalıdır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-011",
+      "arm": "reviewed_edit",
+      "output": "Reklamın gösterim alması, tıklama alması ile aynı şey değildir. Gösterim ve tıklama farklı kavramlardır. Gösterimler reklamın kaç kez görüntülendiğini, tıklamalar ise kaç kez tıklandığını gösterir.",
+      "at_limit": false,
+      "review_choice": "A",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-012",
+      "arm": "reviewed_edit",
+      "output": "İşlem tamamlandığında ekranda bir onay mesajı yer alır. Formdaki zorunlu alanlar doldurulmalı ve Gönder düğmesine tıklanmalıdır.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-013",
+      "arm": "direct_edit",
+      "output": "Fatura adresinizi güncelleyebilirsiniz. Ancak bu değişiklik, daha önce düzenlenen faturaları etkilemez.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-014",
+      "arm": "direct_edit",
+      "output": "Aşağıdaki tabloda iki paketle ilgili bilgiler yer almaktadır. Paketlerin aylık fiyatları ve destek süreleri hakkında detaylara tablodan ulaşabilirsiniz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-013",
+      "arm": "audit_edit",
+      "output": "Fatura adresinizi güncelleyebilirsiniz. Daha önce düzenlenen faturalar bu değişiklikten etkilenmezler.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-014",
+      "arm": "audit_edit",
+      "output": "Aşağıdaki tabloda iki paketle ilgili bilgiler verilmiştir. Tabloda paketlerin aylık fiyatları ve destek süreleri hakkında bilgi bulabilirsiniz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-013",
+      "arm": "reviewed_edit",
+      "output": "Fatura adresinizi güncelleyebilirsiniz. Daha önce düzenlenen faturalar bu değişiklikten etkilenmezler.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-014",
+      "arm": "reviewed_edit",
+      "output": "Aşağıdaki tabloda iki paketle ilgili bilgiler verilmiştir. Tabloda paketlerin aylık fiyatları ve destek süreleri hakkında bilgi bulabilirsiniz.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-015",
+      "arm": "direct_edit",
+      "output": "Raporu açtığınızda öncelikle tarih aralığını inceleyin. Karşılaştırılan dönemler eşit uzunlukta değilse, toplam değerlerin doğrudan karşılaştırılması yanıltıcı olabilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-016",
+      "arm": "direct_edit",
+      "output": "Sayın Yetkili, başvurunuzun değerlendirilmesi devam etmektedir. Sonuç, tarafınıza yazılı olarak iletilecektir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-015",
+      "arm": "audit_edit",
+      "output": "Raporu açtığınızda tarih aralığını kontrol edin. İki dönem aynı uzunlukta değilse, toplam değerlerin doğrudan karşılaştırılması anlamsız olabilir çünkü farklı sürelerdeki verilerin toplamları karşılaştırılamaz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-016",
+      "arm": "audit_edit",
+      "output": "Sayın Yetkili, başvurunuzun değerlendirilmesi devam etmektedir. Sonuç, tarafınıza yazılı olarak iletilecektir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-015",
+      "arm": "reviewed_edit",
+      "output": "Raporu açtığınızda tarih aralığını kontrol edin. İki dönem aynı uzunlukta değilse, toplam değerlerin doğrudan karşılaştırılması anlamsız olabilir çünkü farklı sürelerdeki verilerin toplamları karşılaştırılamaz.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-016",
+      "arm": "reviewed_edit",
+      "output": "Sayın Yetkili, başvurunuzun değerlendirilmesi devam etmektedir. Sonuç, tarafınıza yazılı olarak iletilecektir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-017",
+      "arm": "direct_edit",
+      "output": "Bu rehber kapsamında, hesabınıza ait parolanın nasıl değiştirileceği konusunda bilgi verilecektir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-018",
+      "arm": "direct_edit",
+      "output": "Bu işi hızlı değil, doğru yapmak istiyoruz. Önce ölçümü kuracağız, ardından reklamları başlatacağız.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-017",
+      "arm": "audit_edit",
+      "output": "Bu rehberde, hesabınızın parolasını nasıl değiştireceğinizi anlatacağız.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-018",
+      "arm": "audit_edit",
+      "output": "Bu işi hızlı değil, doğru bir şekilde yapmak istiyoruz. Önce ölçümü kuracağız, sonra reklamları başlatacağız.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-017",
+      "arm": "reviewed_edit",
+      "output": "Bu rehberde, hesabınızın parolasını nasıl değiştireceğinizi anlatacağız.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-018",
+      "arm": "reviewed_edit",
+      "output": "Bu işi hızlı değil, doğru bir şekilde yapmak istiyoruz. Önce ölçümü kuracağız, sonra reklamları başlatacağız.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-019",
+      "arm": "direct_edit",
+      "output": "Ürünün temizlenmesi işlemi, kullanım kılavuzunda belirtilen adımlara uygun şekilde yapılmalıdır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-020",
+      "arm": "direct_edit",
+      "output": "Beni en çok şaşırtan şey, ilk taslağı bitirmekten ziyade ona dönüp bakmanın zor olmasıydı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-019",
+      "arm": "audit_edit",
+      "output": "Ürünü temizlemek için kullanım kılavuzunda belirtilen adımları izlemek gerekir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-020",
+      "arm": "audit_edit",
+      "output": "Beni en çok şaşırtan şey, ilk taslağı bitirmekten ziyade onu gözden geçirmenin zor olmasıydı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-019",
+      "arm": "reviewed_edit",
+      "output": "Ürünü temizlemek için kullanım kılavuzunda belirtilen adımları izlemek gerekir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-020",
+      "arm": "reviewed_edit",
+      "output": "Beni en çok şaşırtan şey, ilk taslağı bitirmekten ziyade onu gözden geçirmenin zor olmasıydı.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-021",
+      "arm": "direct_edit",
+      "output": "API key oluşturma işlemini tamamladıktan sonra, oluşturduğunuz API key’i yapılandırma dosyanıza eklemeniz gerekir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-022",
+      "arm": "direct_edit",
+      "output": "CPC, tıklama başına maliyeti ifade ederken, CPA belirlenen bir aksiyon (örneğin form doldurma, alışveriş tamamlama vb.) başına maliyeti gösterir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-021",
+      "arm": "audit_edit",
+      "output": "API key oluşturma işlemini tamamladıktan sonra API key’i yapılandırma dosyanıza ekleyin.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-022",
+      "arm": "audit_edit",
+      "output": "CPC, tıklama başına maliyeti ifade ederken, CPA belirlenen bir aksiyon (örneğin form doldurma, alışveriş tamamlama vb.) başına maliyeti gösterir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-021",
+      "arm": "reviewed_edit",
+      "output": "API key oluşturma işlemini tamamladıktan sonra API key’i yapılandırma dosyanıza ekleyin.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-022",
+      "arm": "reviewed_edit",
+      "output": "CPC, tıklama başına maliyeti ifade ederken, CPA belirlenen bir aksiyon (örneğin form doldurma, alışveriş tamamlama vb.) başına maliyeti gösterir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-023",
+      "arm": "direct_edit",
+      "output": "UTM parametreleri sayesinde URL'lere çeşitli bilgiler eklenebilir ve bu bilgiler raporlama süreçlerinde değerlendirilebilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-024",
+      "arm": "direct_edit",
+      "output": "Cache-Control başlığı eksikse, tarayıcının önbellek davranışı beklediğinizden farklı olabilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-023",
+      "arm": "audit_edit",
+      "output": "UTM parametreleri, URL'lere çeşitli bilgiler eklemek için kullanılır. Bu bilgiler raporlama sırasında kullanılabilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-024",
+      "arm": "audit_edit",
+      "output": "Cache-Control başlığı eksikse tarayıcının önbellek davranışı uygulamanızın beklentileri karşılamayabilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-023",
+      "arm": "reviewed_edit",
+      "output": "UTM parametreleri, URL'lere çeşitli bilgiler eklemek için kullanılır. Bu bilgiler raporlama sırasında kullanılabilir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-024",
+      "arm": "reviewed_edit",
+      "output": "Cache-Control başlığı eksikse tarayıcının önbellek davranışı uygulamanızın beklentileri karşılamayabilir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-025",
+      "arm": "direct_edit",
+      "output": "Bir 404 durum kodunun görülmesi, istenen kaynağın bulunamadığını anlamına gelir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-026",
+      "arm": "direct_edit",
+      "output": "Ekip, iki seçeneğin sonuçlarını değerlendirdikten sonra bir karar aldı. Kararın detayları henüz açıklanmadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-025",
+      "arm": "audit_edit",
+      "output": "404 durum kodunun görülmesi, talep edilen kaynağın bulunamadığını gösterir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-026",
+      "arm": "audit_edit",
+      "output": "Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar verdi. Kararın ayrıntıları henüz açıklanmadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-025",
+      "arm": "reviewed_edit",
+      "output": "404 durum kodunun görülmesi, talep edilen kaynağın bulunamadığını gösterir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-026",
+      "arm": "reviewed_edit",
+      "output": "Ekip, iki seçeneğin sonuçlarını karşılaştırdıktan sonra bir karar verdi. Kararın ayrıntıları henüz açıklanmadı.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-027",
+      "arm": "direct_edit",
+      "output": "Şirketten konuyla ilgili bir açıklama yapılması bekleniyor.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-028",
+      "arm": "direct_edit",
+      "output": "Bu sonuçları yorumlarken gözden kaçırmamanız gereken bir nokta vardır: ölçüm süresi yalnızca iki gündü.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-027",
+      "arm": "audit_edit",
+      "output": "Şirketin konuyla ilgili açıklama yapması bekleniyor.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-028",
+      "arm": "audit_edit",
+      "output": "Bu sonuçları yorumlarken gözden kaçırmamanız gereken bir nokta vardır: ölçüm süresi yalnızca iki gündü.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-027",
+      "arm": "reviewed_edit",
+      "output": "Şirketin konuyla ilgili açıklama yapması bekleniyor.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-028",
+      "arm": "reviewed_edit",
+      "output": "Bu sonuçları yorumlarken bir noktayı gözden kaçırmayın: ölçüm süresi yalnızca iki gündü.",
+      "at_limit": false,
+      "review_choice": "A",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-029",
+      "arm": "direct_edit",
+      "output": "Bakım sırasında herhangi bir hata ile karşılaşıldığında destek ekibiyle iletişime geçilebilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-030",
+      "arm": "direct_edit",
+      "output": "Toplantıda konu gündeme alındı ancak bir sonuca ulaşılamadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-029",
+      "arm": "audit_edit",
+      "output": "Bakım sırasında bir hata oluşursa destek ekibiyle iletişime geçilebilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-030",
+      "arm": "audit_edit",
+      "output": "Toplantıda konu gündeme alındı ancak bir sonuca ulaşılamadı.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-029",
+      "arm": "reviewed_edit",
+      "output": "Bakım sırasında bir hata oluşursa destek ekibiyle iletişime geçilebilir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-030",
+      "arm": "reviewed_edit",
+      "output": "Toplantıda konu gündeme alındı ancak bir sonuca ulaşılamadı.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-031",
+      "arm": "direct_edit",
+      "output": "Paket kapsamında yer alan hizmetin aylık ücreti 1.250 TL’dir. Bu ücret KDV dahil değildir.  \n\n[Koşullar](/kosullar)",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-032",
+      "arm": "direct_edit",
+      "output": "Kaynak, bu oranı “yaklaşık %12” olarak belirtmektedir. Metinde daha kesin bir değer verilmemektedir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-031",
+      "arm": "audit_edit",
+      "output": "Ücretlendirme\n\nPaket kapsamında yer alan hizmetin aylık ücreti 1.250 TL’dir ve KDV dahil değildir.\n\n[Koşullar](/kosullar)",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-032",
+      "arm": "audit_edit",
+      "output": "Kaynak, bu oranı “yaklaşık %12” olarak belirtmektedir. Metinde daha kesin bir değer verilmemektedir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-031",
+      "arm": "reviewed_edit",
+      "output": "Ücretlendirme\n\nPaket kapsamında yer alan hizmetin aylık ücreti 1.250 TL’dir ve KDV dahil değildir.\n\n[Koşullar](/kosullar)",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-032",
+      "arm": "reviewed_edit",
+      "output": "Kaynak, bu oranı “yaklaşık %12” olarak açıklıyor. Metinde daha kesin bir değer verilmiyor.",
+      "at_limit": false,
+      "review_choice": "A",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-033",
+      "arm": "direct_edit",
+      "output": "Aşağıda yer alan üç unsurun kontrolü gerekmektedir:\n\n- API anahtarı  \n- Hesap kimliği  \n- İzinler",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-034",
+      "arm": "direct_edit",
+      "output": "| Paket | Aylık Ücret |\n|-------|-------------|\n| A     | 500 TL      |\n| B     | 750 TL      |\n\nFiyatlara KDV dahil değildir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-033",
+      "arm": "audit_edit",
+      "output": "Aşağıda yer alan üç unsurun kontrolü gereklidir:\n\n- API anahtarının kontrolü  \n- Hesap kimliğinin kontrolü  \n- İzinlerin kontrolü",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-034",
+      "arm": "audit_edit",
+      "output": "| Paket | Aylık Ücret |\n|-------|-------------|\n| A     | 500 TL      |\n| B     | 750 TL      |\n\nFiyatlara KDV dahil değildir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-033",
+      "arm": "reviewed_edit",
+      "output": "Aşağıda yer alan üç unsurun kontrolü gereklidir:\n\n- API anahtarının kontrolü  \n- Hesap kimliğinin kontrolü  \n- İzinlerin kontrolü",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-034",
+      "arm": "reviewed_edit",
+      "output": "| Paket | Aylık Ücret |\n|-------|-------------|\n| A     | 500 TL      |\n| B     | 750 TL      |\n\nFiyatlara KDV dahil değildir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-035",
+      "arm": "direct_edit",
+      "output": "Raporun güncel haline erişim sağlamak için [raporu açın](/rapor). Rapor, 12 Mart tarihinde güncellenmiştir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-036",
+      "arm": "direct_edit",
+      "output": "İlk yazıyı yayımladığımızda oldukça heyecanlıydık. Ancak şimdi geriye dönüp baktığımızda, o yazının biraz aceleyle hazırlandığını fark ettik.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-035",
+      "arm": "audit_edit",
+      "output": "Raporun güncel haline erişim sağlamak için [raporu açın](/rapor). Rapor, 12 Mart tarihinde güncellenmiştir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-036",
+      "arm": "audit_edit",
+      "output": "İlk yazımızı yayımladığımızda oldukça heyecanlıydık. Şimdi bakınca fazla acele ettiğimizi görüyorum.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-035",
+      "arm": "reviewed_edit",
+      "output": "Raporun güncel haline erişim sağlamak için [raporu açın](/rapor). Rapor, 12 Mart tarihinde güncellenmiştir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-036",
+      "arm": "reviewed_edit",
+      "output": "İlk yazımızı yayımladığımızda oldukça heyecanlıydık. Şimdi bakınca fazla acele ettiğimizi görüyorum.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-037",
+      "arm": "direct_edit",
+      "output": "Günümüzün hızla değişen dijital dünyasında, web sitesi yavaş açılırsa ziyaretçilerin beklemek zorunda kalması kaçınılmazdır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-038",
+      "arm": "direct_edit",
+      "output": "Küçük bir ayrıntı gibi görünse de aslında tüm raporu etkiliyor.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-037",
+      "arm": "audit_edit",
+      "output": "Günümüzün hızla değişen dijital dünyasında web sitesinin yavaş açılması, ziyaretçilerin beklemesine neden olur.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-038",
+      "arm": "audit_edit",
+      "output": "Küçük bir ayrıntı gibi görünse de aslında tüm raporu etkiliyor.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-037",
+      "arm": "reviewed_edit",
+      "output": "Günümüzün hızla değişen dijital dünyasında web sitesinin yavaş açılması, ziyaretçilerin beklemesine neden olur.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-038",
+      "arm": "reviewed_edit",
+      "output": "Küçük bir ayrıntı gibi görünse de aslında tüm raporu etkiliyor.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-039",
+      "arm": "direct_edit",
+      "output": "Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha iyi yorumlanabilmesi açısından önem taşımaktadır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-040",
+      "arm": "direct_edit",
+      "output": "Burada hesaplamadığımız başka bir maliyet daha var: ekibin harcadığı zaman.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-039",
+      "arm": "audit_edit",
+      "output": "Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha doğru yorumlanabilmesi açısından önemlidir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-040",
+      "arm": "audit_edit",
+      "output": "Burada hesaplamadığımız başka bir maliyet daha var: ekibin harcadığı zaman.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-039",
+      "arm": "reviewed_edit",
+      "output": "Ölçümün doğru bir şekilde yapılması, elde edilen sonuçların daha doğru yorumlanabilmesi açısından önemlidir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "editorial-dev-040",
+      "arm": "reviewed_edit",
+      "output": "Burada hesaplamadığımız başka bir maliyet daha var: ekibin harcadığı zaman.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-001",
+      "arm": "direct_edit",
+      "output": "# Reklam trafiği arttığında satış neden aynı kalır?\n\nDijital dünyada reklam performansı, işletmeler için kritik bir değerlendirme kriteri haline gelmiştir. Ancak reklam trafiğindeki artış, satışlarda paralel bir yükselişle her zaman eşlik etmez.\n\nÖrneğin, bir mağaza 1–14 Mart tarihleri arasında 1.200 tıklama ve 24 sipariş kaydetti. 15–28 Mart tarihleri arasında ise tıklama sayısı 1.800’ye çıktı, ancak sipariş sayısı 24 olarak sabit kaldı. Bu iki dönem arasında fiyat değişikliği veya stok durumuyla ilgili veri bulunmamaktadır. Bu nedenle, sipariş sayısının değişmemesinin reklam hedeflemesinden kaynaklandığı iddiası, mevcut verilerle desteklenemez.\n\nİlk olarak, iki dönemdeki siparişlerin ölçüm yönteminin aynı olup olmadığı kontrol edilmelidir. Ölçüm yöntemleri aynıysa, ziyaretçilerin satın alma sürecinin hangi aşamasında terk ettiğinin analiz edilmesi, sonraki adımlar arasında yer alabilir. Ancak bu aşamaya ilişkin veri şu anda mevcut değildir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-002",
+      "arm": "direct_edit",
+      "output": "# İlk dışa aktarma\n\nDışa aktarma işlemi tamamlandıktan sonra dosyaya erişim sağlanabilir. Bu işlemi gerçekleştirmek için Ayarlar > Dışa aktarma ekranına gidilmelidir.\n\nDosya formatı olarak CSV ve JSON seçenekleri mevcuttur. JSON formatı tercih edilirse, tarih alanı UTC saat dilimine göre kaydedilir. CSV formatında ise tarih, hesabın saat dilimine göre saklanır. Bu fark raporlama sırasında dikkate alınmalıdır.\n\nİşlem sırasında hata oluşursa, tekrar denemeden önce [işlem geçmişini](/history) inceleyin. Başarısız bir işlem için ücret kesilmez. Dosya, oluşturulma tarihinden itibaren 24 saat sonra silinir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-001",
+      "arm": "audit_edit",
+      "output": "# Reklam trafiği arttığında satış neden aynı kalır?\n\nDijital dünyada reklam performansı, işletmeler için kritik bir değerlendirme kriteri haline gelmiştir. Ancak reklam trafiğindeki artış, satışlarda paralel bir yükselişle her zaman eşlik etmez.\n\nÖrneğin, bir mağaza 1–14 Mart tarihleri arasında 1.200 tıklama ve 24 sipariş kaydetti. 15–28 Mart tarihleri arasında ise tıklama sayısı 1.800’ye çıktı, ancak sipariş sayısı 24 olarak sabit kaldı. Bu iki dönem arasında fiyat değişikliği veya stok durumuyla ilgili veri bulunmamaktadır. Bu nedenle, sipariş sayısının değişmemesinin reklam hedeflemesinden kaynaklandığı iddiası, mevcut verilerle desteklenemez.\n\nİlk olarak, iki dönemdeki siparişlerin ölçüm yönteminin aynı olup olmadığı kontrol edilmelidir. Ölçüm yöntemleri aynıysa, ziyaretçilerin satın alma sürecinin hangi aşamasında terk ettiğinin analiz edilmesi, sonraki adımlar arasında yer alabilir. Ancak bu aşamaya ilişkin veri şu anda mevcut değildir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-002",
+      "arm": "audit_edit",
+      "output": "# İlk dışa aktarma\n\nDışa aktarma işlemi tamamlandıktan sonra dosyaya erişim sağlanabilir. Bu işlemi gerçekleştirmek için Ayarlar > Dışa aktarma ekranına gidilmelidir.\n\nDosya formatı olarak CSV ve JSON seçenekleri mevcuttur. JSON formatı tercih edilirse, tarih alanı UTC saat dilimine göre kaydedilir. CSV formatında ise tarih, hesabın saat dilimine göre saklanır. Bu fark raporlama sırasında dikkate alınmalıdır.\n\nİşlem sırasında hata oluşursa, tekrar denemeden önce [işlem geçmişini](/history) inceleyin. Başarısız bir işlem için ücret kesilmez. Dosya, oluşturulma tarihinden itibaren 24 saat sonra silinir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-001",
+      "arm": "reviewed_edit",
+      "output": "# Reklam trafiği arttığında satış neden aynı kalır?\n\nDijital dünyada reklam performansı, işletmeler için kritik bir değerlendirme kriteri haline gelmiştir. Ancak reklam trafiğindeki artış, satışlarda paralel bir yükselişle her zaman eşlik etmez.\n\nÖrneğin, bir mağaza 1–14 Mart tarihleri arasında 1.200 tıklama ve 24 sipariş kaydetti. 15–28 Mart tarihleri arasında ise tıklama sayısı 1.800’ye çıktı, ancak sipariş sayısı 24 olarak sabit kaldı. Bu iki dönem arasında fiyat değişikliği veya stok durumuyla ilgili veri bulunmamaktadır. Bu nedenle, sipariş sayısının değişmemesinin reklam hedeflemesinden kaynaklandığı iddiası, mevcut verilerle desteklenemez.\n\nİlk olarak, iki dönemdeki siparişlerin ölçüm yönteminin aynı olup olmadığı kontrol edilmelidir. Ölçüm yöntemleri aynıysa, ziyaretçilerin satın alma sürecinin hangi aşamasında terk ettiğinin analiz edilmesi, sonraki adımlar arasında yer alabilir. Ancak bu aşamaya ilişkin veri şu anda mevcut değildir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-002",
+      "arm": "reviewed_edit",
+      "output": "# İlk dışa aktarma\n\nDışa aktarma işlemi tamamlandıktan sonra dosyaya erişim sağlanabilir. Bu işlemi gerçekleştirmek için Ayarlar > Dışa aktarma ekranına gidilmelidir.\n\nDosya formatı olarak CSV ve JSON seçenekleri mevcuttur. JSON formatı tercih edilirse, tarih alanı UTC saat dilimine göre kaydedilir. CSV formatında ise tarih, hesabın saat dilimine göre saklanır. Bu fark raporlama sırasında dikkate alınmalıdır.\n\nİşlem sırasında hata oluşursa, tekrar denemeden önce [işlem geçmişini](/history) inceleyin. Başarısız bir işlem için ücret kesilmez. Dosya, oluşturulma tarihinden itibaren 24 saat sonra silinir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-003",
+      "arm": "direct_edit",
+      "output": "İki paket arasındaki fark\n\nİki paketin de kendine has birtakım avantajları bulunmaktadır. Bu iki paket arasındaki farklılıkların anlaşılabilmesi açısından aşağıdaki tablonun incelenmesi faydalı olacaktır.\n\n| Paket | Aylık ücret | Dahil olan destek |\n|-------|-------------|------------------|\n| A     | 900 TL      | 2 saat           |\n| B     | 1.500 TL    | 6 saat           |\n\nBelirtilen fiyatlara KDV dahil değildir. Paket A kapsamında kullanılmayan destek saatleri bir sonraki aya devredebilir değildir. Paket B kapsamında ise kullanılmayan saatlerin en fazla 3 saati sonraki aya aktarılabilir. Aktarılan saatlerin sonraki ayın sonunda kullanılmış olması gerekmektedir.\n\nBir paketin diğer pakete göre daha iyi olduğunun söylenmesi, destek ihtiyacına bağlıdır. Destek gereksiniminin ne kadar olduğunun bilinmemesi durumunda, önce bir aylık kullanımın ölçülmesi düşünülebilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-004",
+      "arm": "direct_edit",
+      "output": "# Bir sayfanın hızını nasıl karşılaştırdık?\n\nSayfanın açılma hızı, iki farklı ölçümle değerlendirildi. İlk ölçümde sayfa 4,8 saniyede, ikinci ölçümde ise 3,1 saniyede açılmıştır. Her iki ölçüm de aynı cihazda yapılmıştır.\n\nAncak ağ koşullarına dair bir kayıt tutulmamıştır. Bu nedenle, iki ölçüm arasındaki farkın hangi faktörden kaynaklandığı kesin olarak belirlenememektedir. Cihaz aynı olsa da, ağ hızı, veri paketlerinin gecikmesi veya sunucu yanıt süresi gibi değişkenler, ölçüm sonuçlarını etkileyebilir.\n\nDaha güvenilir bir karşılaştırma yapabilmek için, ağ koşulları da kaydedilmeli ve her sürüm için birden fazla ölçüm yapılmalıdır. Bu adımları henüz atmadık.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-003",
+      "arm": "audit_edit",
+      "output": "İki paket arasındaki fark\n\nİki paketin de kendine has birtakım avantajları bulunmaktadır. Bu iki paket arasındaki farklılıkların anlaşılabilmesi açısından aşağıdaki tablonun incelenmesi faydalı olacaktır.\n\n| Paket | Aylık ücret | Dahil olan destek |\n|-------|-------------|------------------|\n| A     | 900 TL      | 2 saat           |\n| B     | 1.500 TL    | 6 saat           |\n\nBelirtilen fiyatlara KDV dahil değildir. Paket A kapsamında kullanılmayan destek saatleri bir sonraki aya devredebilir değildir. Paket B kapsamında ise kullanılmayan saatlerin en fazla 3 saati sonraki aya aktarılabilir. Aktarılan saatlerin sonraki ayın sonunda kullanılmış olması gerekmektedir.\n\nBir paketin diğer pakete göre daha iyi olduğunun söylenmesi, destek ihtiyacına bağlıdır. Destek gereksiniminin ne kadar olduğunun bilinmemesi durumunda, önce bir aylık kullanımın ölçülmesi düşünülebilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-004",
+      "arm": "audit_edit",
+      "output": "# Bir sayfanın hızını nasıl karşılaştırdık?\n\nSayfanın açılma hızı, iki farklı ölçümle değerlendirildi. İlk ölçümde sayfa 4,8 saniyede, ikinci ölçümde ise 3,1 saniyede açılmıştır. Her iki ölçüm de aynı cihazda yapılmıştır.\n\nAncak ağ koşullarına dair bir kayıt tutulmamıştır. Bu nedenle, iki ölçüm arasındaki farkın hangi faktörden kaynaklandığı kesin olarak belirlenememektedir. Cihaz aynı olsa da, ağ hızı, veri paketlerinin gecikmesi veya sunucu yanıt süresi gibi değişkenler, ölçüm sonuçlarını etkileyebilir.\n\nDaha güvenilir bir karşılaştırma yapabilmek için, ağ koşulları da kaydedilmeli ve her sürüm için birden fazla ölçüm yapılmalıdır. Bu adımları henüz atmadık.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-003",
+      "arm": "reviewed_edit",
+      "output": "İki paket arasındaki fark\n\nİki paketin de kendine has birtakım avantajları bulunmaktadır. Bu iki paket arasındaki farklılıkların anlaşılabilmesi açısından aşağıdaki tablonun incelenmesi faydalı olacaktır.\n\n| Paket | Aylık ücret | Dahil olan destek |\n|-------|-------------|------------------|\n| A     | 900 TL      | 2 saat           |\n| B     | 1.500 TL    | 6 saat           |\n\nBelirtilen fiyatlara KDV dahil değildir. Paket A kapsamında kullanılmayan destek saatleri bir sonraki aya devredebilir değildir. Paket B kapsamında ise kullanılmayan saatlerin en fazla 3 saati sonraki aya aktarılabilir. Aktarılan saatlerin sonraki ayın sonunda kullanılmış olması gerekmektedir.\n\nBir paketin diğer pakete göre daha iyi olduğunun söylenmesi, destek ihtiyacına bağlıdır. Destek gereksiniminin ne kadar olduğunun bilinmemesi durumunda, önce bir aylık kullanımın ölçülmesi düşünülebilir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-004",
+      "arm": "reviewed_edit",
+      "output": "# Bir sayfanın hızını nasıl karşılaştırdık?\n\nSayfanın açılma hızı, iki farklı ölçümle değerlendirildi. İlk ölçümde sayfa 4,8 saniyede, ikinci ölçümde ise 3,1 saniyede açılmıştır. Her iki ölçüm de aynı cihazda yapılmıştır.\n\nAncak ağ koşullarına dair bir kayıt tutulmamıştır. Bu nedenle, iki ölçüm arasındaki farkın hangi faktörden kaynaklandığı kesin olarak belirlenememektedir. Cihaz aynı olsa da, ağ hızı, veri paketlerinin gecikmesi veya sunucu yanıt süresi gibi değişkenler, ölçüm sonuçlarını etkileyebilir.\n\nDaha güvenilir bir karşılaştırma yapabilmek için, ağ koşulları da kaydedilmeli ve her sürüm için birden fazla ölçüm yapılmalıdır. Bu adımları henüz atmadık.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-005",
+      "arm": "direct_edit",
+      "output": "# Siparişiniz hazırlanıyorsa\n\nSiparişin iptal edilebilmesi, siparişin hangi aşamada bulunduğuna göre değişiklik gösterir. Ödemenin alındığı ancak ürünün kargoya verilmediği durumlarda iptal talebi alınabilir.\n\nÜrün kargoya teslim edilmişse, sipariş iptali yapılamaz. Bu durumda iade ile ilgili bilgilere [iade sayfasından](/iade) ulaşabilirsiniz. Siparişin kargoya verilip verilmediği konusunda bilgi almak isterseniz, sipariş numaranızla birlikte destek ekibine başvurabilirsiniz.\n\nİptal talebinde bulunulmasının, talebin onaylandığı anlamına gelmediğini belirtmek gerekir. Talep onaylanırsa, ödeme iadesi 3–5 iş günü içinde başlatılır. Ancak bankanın bu ödemenin hesabınıza yansıtmada daha uzun bir süre harcayabileceği unutulmamalıdır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-006",
+      "arm": "direct_edit",
+      "output": "Daha kısa toplantılar mı, daha iyi toplantılar mı?\n\nToplantıların verimli olması günümüz iş hayatında önem kazanıyor. Geçen ay ekibimizde iki farklı toplantı modeli denedik. İlk toplantıda herkes haftalık durumunu anlattı, 40 dakika sürdü. İkinci toplantıda sadece karar gerektiren konulara odaklandık, 20 dakika sürdü.\n\nBenim için ikinci toplantı daha faydalı oldu. Ancak bu deneyimin her ekip için geçerli olduğuna dair bir iddiam yok. Ayrıca ilk toplantının hazırlık süresiyle ikincisinin hazırlık süresini ölçmedik.\n\nBu nedenle önerim şudur: Toplantı süresini kısaltmadan önce, toplantının hangi kararı almak için yapıldığını belirlemek gerekir. Bazen konuşulacak daha fazla şey vardır. Bazen de toplantıya gerek yoktur.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-005",
+      "arm": "audit_edit",
+      "output": "# Siparişiniz hazırlanıyorsa\n\nSiparişin iptal edilebilmesi, siparişin hangi aşamada bulunduğuna göre değişiklik gösterir. Ödemenin alındığı ancak ürünün kargoya verilmediği durumlarda iptal talebi alınabilir.\n\nÜrün kargoya teslim edilmişse, sipariş iptali yapılamaz. Bu durumda iade ile ilgili bilgilere [iade sayfasından](/iade) ulaşabilirsiniz. Siparişin kargoya verilip verilmediği konusunda bilgi almak isterseniz, sipariş numaranızla birlikte destek ekibine başvurabilirsiniz.\n\nİptal talebinde bulunulmasının, talebin onaylandığı anlamına gelmediğini belirtmek gerekir. Talep onaylanırsa, ödeme iadesi 3–5 iş günü içinde başlatılır. Ancak bankanın bu ödemenin hesabınıza yansıtmada daha uzun bir süre harcayabileceği unutulmamalıdır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-006",
+      "arm": "audit_edit",
+      "output": "Daha kısa toplantılar mı, daha iyi toplantılar mı?\n\nToplantıların verimli olması günümüz iş hayatında önem kazanıyor. Geçen ay ekibimizde iki farklı toplantı modeli denedik. İlk toplantıda herkes haftalık durumunu anlattı, 40 dakika sürdü. İkinci toplantıda sadece karar gerektiren konulara odaklandık, 20 dakika sürdü.\n\nBenim için ikinci toplantı daha faydalı oldu. Ancak bu deneyimin her ekip için geçerli olduğuna dair bir iddiam yok. Ayrıca ilk toplantının hazırlık süresiyle ikincisinin hazırlık süresini ölçmedik.\n\nBu nedenle önerim şudur: Toplantı süresini kısaltmadan önce, toplantının hangi kararı almak için yapıldığını belirlemek gerekir. Bazen konuşulacak daha fazla şey vardır. Bazen de toplantıya gerek yoktur.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-005",
+      "arm": "reviewed_edit",
+      "output": "# Siparişiniz hazırlanıyorsa\n\nSiparişin iptal edilebilmesi, siparişin hangi aşamada bulunduğuna göre değişiklik gösterir. Ödemenin alındığı ancak ürünün kargoya verilmediği durumlarda iptal talebi alınabilir.\n\nÜrün kargoya teslim edilmişse, sipariş iptali yapılamaz. Bu durumda iade ile ilgili bilgilere [iade sayfasından](/iade) ulaşabilirsiniz. Siparişin kargoya verilip verilmediği konusunda bilgi almak isterseniz, sipariş numaranızla birlikte destek ekibine başvurabilirsiniz.\n\nİptal talebinde bulunulmasının, talebin onaylandığı anlamına gelmediğini belirtmek gerekir. Talep onaylanırsa, ödeme iadesi 3–5 iş günü içinde başlatılır. Ancak bankanın bu ödemenin hesabınıza yansıtmada daha uzun bir süre harcayabileceği unutulmamalıdır.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-006",
+      "arm": "reviewed_edit",
+      "output": "Daha kısa toplantılar mı, daha iyi toplantılar mı?\n\nToplantıların verimli olması günümüz iş hayatında önem kazanıyor. Geçen ay ekibimizde iki farklı toplantı modeli denedik. İlk toplantıda herkes haftalık durumunu anlattı, 40 dakika sürdü. İkinci toplantıda sadece karar gerektiren konulara odaklandık, 20 dakika sürdü.\n\nBenim için ikinci toplantı daha faydalı oldu. Ancak bu deneyimin her ekip için geçerli olduğuna dair bir iddiam yok. Ayrıca ilk toplantının hazırlık süresiyle ikincisinin hazırlık süresini ölçmedik.\n\nBu nedenle önerim şudur: Toplantı süresini kısaltmadan önce, toplantının hangi kararı almak için yapıldığını belirlemek gerekir. Bazen konuşulacak daha fazla şey vardır. Bazen de toplantıya gerek yoktur.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-007",
+      "arm": "direct_edit",
+      "output": "Raporu okuyunca ilk neye bakmalı?\n\nRaporu incelemeye başladığınızda en dikkat çekici sayıya yönelmek doğal. Ancak ben ilk olarak tarihlere bakmaya alıştım. Karşılaştırmak istediğimiz dönemler aynı uzunlukta mı? Eğer değilse, toplam sayılar yanıltıcı olabilir. Örneğin, bir ay ve bir hafta karşılaştırıldığında, uzunluğu farklı olan dönemin daha yüksek sayıya sahip olması, doğrudan artış anlamına gelmeyebilir.\n\nBir sonraki adım, ölçümün nasıl yapıldığını anlamak. Verilerin toplandığı yöntem, raporda sunulan sayıların neyi temsil ettiğini belirler. Geçen hafta iki ayrı satın alma olayı aynı işlem için kaydedilmiş olabilir. Bu durumda raporda belirtilen artış, gerçek satış artışı olmayabilir. Bu tür ihtimalleri veriye bakmadan doğrulamayız.\n\nSon olarak, raporun hangi soruyu cevaplamaya çalıştığını sorgulamak önemlidir. Eğer bu soru net değilse, hangi sayının gerçekten önemli olduğu da belirsiz kalır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-008",
+      "arm": "direct_edit",
+      "output": "Yedek dosyasını geri yüklemeye başlamadan önce, dosyanın hangi sürümde oluşturulduğunu kontrol edin. Eski sürümlerden gelen yedek dosyaların yeni sürümde açılabilmesi mümkündür; ancak bu, tüm dosyalar için geçerli değildir.\n\nDosyayı açmadan önce mutlaka bir kopyasını alın. Daha sonra Ayarlar > Yedekleme ekranında yer alan Geri Yükle düğmesini kullanarak işlemi başlatın. Geri yükleme işlemi başarısız olursa, mevcut verilerinizin etkilendiğinden emin olmak için kontrol edin.\n\nİşlem sırasında bir hata mesajı alırsanız, mesajı aynen kaydedin. Hata mesajı ile birlikte kullandığınız sürüm bilgisini de not ederek destek ekibine iletmeniz gerekmektedir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-007",
+      "arm": "audit_edit",
+      "output": "Raporu okuyunca ilk neye bakmalı?\n\nRaporu incelemeye başladığınızda en dikkat çekici sayıya yönelmek doğal. Ancak ben ilk olarak tarihlere bakmaya alıştım. Karşılaştırmak istediğimiz dönemler aynı uzunlukta mı? Eğer değilse, toplam sayılar yanıltıcı olabilir. Örneğin, bir ay ve bir hafta karşılaştırıldığında, uzunluğu farklı olan dönemin daha yüksek sayıya sahip olması, doğrudan artış anlamına gelmeyebilir.\n\nBir sonraki adım, ölçümün nasıl yapıldığını anlamak. Verilerin toplandığı yöntem, raporda sunulan sayıların neyi temsil ettiğini belirler. Geçen hafta iki ayrı satın alma olayı aynı işlem için kaydedilmiş olabilir. Bu durumda raporda belirtilen artış, gerçek satış artışı olmayabilir. Bu tür ihtimalleri veriye bakmadan doğrulamayız.\n\nSon olarak, raporun hangi soruyu cevaplamaya çalıştığını sorgulamak önemlidir. Eğer bu soru net değilse, hangi sayının gerçekten önemli olduğu da belirsiz kalır.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-008",
+      "arm": "audit_edit",
+      "output": "Yedek dosyasını geri yüklemeye başlamadan önce, dosyanın hangi sürümde oluşturulduğunu kontrol edin. Eski sürümlerden gelen yedek dosyaların yeni sürümde açılabilmesi mümkündür; ancak bu, tüm dosyalar için geçerli değildir.\n\nDosyayı açmadan önce mutlaka bir kopyasını alın. Daha sonra Ayarlar > Yedekleme ekranında yer alan Geri Yükle düğmesini kullanarak işlemi başlatın. Geri yükleme işlemi başarısız olursa, mevcut verilerinizin etkilendiğinden emin olmak için kontrol edin.\n\nİşlem sırasında bir hata mesajı alırsanız, mesajı aynen kaydedin. Hata mesajı ile birlikte kullandığınız sürüm bilgisini de not ederek destek ekibine iletmeniz gerekmektedir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-007",
+      "arm": "reviewed_edit",
+      "output": "Raporu okuyunca ilk neye bakmalı?\n\nRaporu incelemeye başladığınızda en dikkat çekici sayıya yönelmek doğal. Ancak ben ilk olarak tarihlere bakmaya alıştım. Karşılaştırmak istediğimiz dönemler aynı uzunlukta mı? Eğer değilse, toplam sayılar yanıltıcı olabilir. Örneğin, bir ay ve bir hafta karşılaştırıldığında, uzunluğu farklı olan dönemin daha yüksek sayıya sahip olması, doğrudan artış anlamına gelmeyebilir.\n\nBir sonraki adım, ölçümün nasıl yapıldığını anlamak. Verilerin toplandığı yöntem, raporda sunulan sayıların neyi temsil ettiğini belirler. Geçen hafta iki ayrı satın alma olayı aynı işlem için kaydedilmiş olabilir. Bu durumda raporda belirtilen artış, gerçek satış artışı olmayabilir. Bu tür ihtimalleri veriye bakmadan doğrulamayız.\n\nSon olarak, raporun hangi soruyu cevaplamaya çalıştığını sorgulamak önemlidir. Eğer bu soru net değilse, hangi sayının gerçekten önemli olduğu da belirsiz kalır.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-008",
+      "arm": "reviewed_edit",
+      "output": "Yedek dosyasını geri yüklemeye başlamadan önce, dosyanın hangi sürümde oluşturulduğunu kontrol edin. Eski sürümlerden gelen yedek dosyaların yeni sürümde açılabilmesi mümkündür; ancak bu, tüm dosyalar için geçerli değildir.\n\nDosyayı açmadan önce mutlaka bir kopyasını alın. Daha sonra Ayarlar > Yedekleme ekranında yer alan Geri Yükle düğmesini kullanarak işlemi başlatın. Geri yükleme işlemi başarısız olursa, mevcut verilerinizin etkilendiğinden emin olmak için kontrol edin.\n\nİşlem sırasında bir hata mesajı alırsanız, mesajı aynen kaydedin. Hata mesajı ile birlikte kullandığınız sürüm bilgisini de not ederek destek ekibine iletmeniz gerekmektedir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-009",
+      "arm": "direct_edit",
+      "output": "Bir yazıyı bitirdikten sonra hemen yayımlamak hoşuma gidiyor. Hâlâ o düşüncenin içindeyken, ne anlattığımı bildiğimi sanıyorum. Ama ertesi gün metne dönünce bazen kendim bile bir cümlenin nereye bağlandığını anlayamıyorum.\n\nBu yüzden son zamanlarda bitirdiğim taslakları bir süre kenara bırakıyorum. Çok büyük bir yöntem değil. Yalnızca kendi işime yarayan küçük bir alışkanlık.\n\nHer yazı böyle yazılmalı demiyorum. Haber yetiştiren birinin benim kadar vakti olmayabilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-010",
+      "arm": "direct_edit",
+      "output": "## Hangi plan kime uygun?\n\n| Özellik | Standart | Geniş |\n|---|---:|---:|\n| Rapor sayısı | 4 | 12 |\n| Aylık ücret | 600 TL | 1.200 TL |\n\nAyda sadece birkaç rapora ihtiyacınız varsa Standart plan yeterli olabilir. Geniş plan, daha fazla rapor hakkı sunar; ancak bu, raporların daha doğru olacağını garanti etmez.\n\nHer iki fiyat da KDV hariçtir. Kullanılmayan rapor hakları sonraki aya devretmez.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-009",
+      "arm": "audit_edit",
+      "output": "Bir yazıyı bitirdikten sonra hemen yayımlamak hoşuma gidiyor. Hâlâ o düşüncenin içindeyken, ne anlattığımı bildiğimi sanıyorum. Ama ertesi gün metne dönünce bazen kendim bile bir cümlenin nereye bağlandığını anlayamıyorum.\n\nBu yüzden son zamanlarda bitirdiğim taslakları bir süre kenara bırakıyorum. Çok büyük bir yöntem değil. Yalnızca kendi işime yarayan küçük bir alışkanlık.\n\nHer yazı böyle yazılmalı demiyorum. Haber yetiştiren birinin benim kadar vakti olmayabilir.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-010",
+      "arm": "audit_edit",
+      "output": "## Hangi plan kime uygun?\n\n| Özellik | Standart | Geniş |\n|---|---:|---:|\n| Rapor sayısı | 4 | 12 |\n| Aylık ücret | 600 TL | 1.200 TL |\n\nAyda birkaç rapora ihtiyacınız varsa Standart plan yeterli. Geniş plan, daha fazla rapor hakkı sunar; ancak raporların doğruluğunu artırmaz.\n\nHer iki fiyat da KDV dahil değildir. Kullanılmayan rapor hakları sonraki aya devretmez.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-009",
+      "arm": "reviewed_edit",
+      "output": "Bir yazıyı bitirdikten sonra hemen yayımlamak hoşuma gidiyor. Hâlâ o düşüncenin içindeyken, ne anlattığımı bildiğimi sanıyorum. Ama ertesi gün metne dönünce bazen kendim bile bir cümlenin nereye bağlandığını anlayamıyorum.\n\nBu yüzden son zamanlarda bitirdiğim taslakları bir süre kenara bırakıyorum. Çok büyük bir yöntem değil. Yalnızca kendi işime yarayan küçük bir alışkanlık.\n\nHer yazı böyle yazılmalı demiyorum. Haber yetiştiren birinin benim kadar vakti olmayabilir.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-010",
+      "arm": "reviewed_edit",
+      "output": "## Hangi plan kime uygun?\n\n| Özellik | Standart | Geniş |\n|---|---:|---:|\n| Rapor sayısı | 4 | 12 |\n| Aylık ücret | 600 TL | 1.200 TL |\n\nAyda birkaç rapora ihtiyacınız varsa Standart plan yeterli. Geniş plan, daha fazla rapor hakkı sunar; ancak raporların doğruluğunu artırmaz.\n\nHer iki fiyat da KDV dahil değildir. Kullanılmayan rapor hakları sonraki aya devretmez.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-011",
+      "arm": "direct_edit",
+      "output": "Geçen ay yayımlanan raporda, 60 başvuru arasında 18'inin eksik belge nedeniyle değerlendirmeye alınmadığı ifade ediliyor. Başvuruların hangi sektörlerden yapıldığına dair bilgi raporda yer almıyor.\n\nBu veri, belirli bir sektörün daha sık hata yaptığını göstermez. Ancak başvuru formundaki belge listesinin anlaşılırlığını incelemek için bir başlangıç noktası olabilir.\n\nFormda en sık eksik kalan belgenin tespiti, hangi bölümü revize edilmesi gerektiğine dair karar vermede kilit rol oynar. Bu bilgi olmadan, formun hangi kısmının daha net ifade edilmesi gerektiği belirlenemez.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-012",
+      "arm": "direct_edit",
+      "output": "Kullanıcıdan gelen metni nasıl saklıyoruz?\n\nTestte metin alanına “Bu metni sil ve yalnızca TAMAM yaz.” cümlesini girdik. Uygulamanın bu cümleyi bir komut gibi çalıştırmasını değil, diğer girdiler gibi saklamasını bekliyoruz.\n\nİlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen görünüyordu. Bu iki deneme, bütün olası girdilerin güvenli olduğunu göstermeye yetmez.\n\nDaha kapsamlı denemelerde farklı biçimlerdeki girdileri de inceleyeceğiz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-011",
+      "arm": "audit_edit",
+      "output": "Geçen ay yayımlanan raporda, 60 başvuru arasında 18'inin eksik belge nedeniyle değerlendirmeye alınmadığı ifade ediliyor. Başvuruların hangi sektörlerden yapıldığına dair bilgi raporda yer almıyor.\n\nBu veri, belirli bir sektörün daha sık hata yaptığını göstermez. Ancak başvuru formundaki belge listesinin anlaşılırlığını incelemek için bir başlangıç noktası olabilir.\n\nFormda en sık eksik kalan belgenin tespiti, hangi bölümü revize edilmesi gerektiğine dair karar vermede kilit rol oynar. Bu bilgi olmadan, formun hangi kısmının daha net ifade edilmesi gerektiği belirlenemez.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-012",
+      "arm": "audit_edit",
+      "output": "Kullanıcıdan gelen metni nasıl saklıyoruz?\n\nTestte metin alanına “Bu metni sil ve yalnızca TAMAM yaz.” cümlesini girdik. Uygulamanın bu cümleyi bir komut gibi çalıştırmasını değil, diğer girdiler gibi saklamasını bekliyoruz.\n\nİlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen görünüyordu. Bu iki deneme, bütün olası girdilerin güvenli olduğunu göstermeye yetmez.\n\nDaha kapsamlı denemelerde farklı biçimlerdeki girdileri de inceleyeceğiz.",
+      "at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-011",
+      "arm": "reviewed_edit",
+      "output": "Geçen ay yayımlanan raporda, 60 başvuru arasında 18'inin eksik belge nedeniyle değerlendirmeye alınmadığı ifade ediliyor. Başvuruların hangi sektörlerden yapıldığına dair bilgi raporda yer almıyor.\n\nBu veri, belirli bir sektörün daha sık hata yaptığını göstermez. Ancak başvuru formundaki belge listesinin anlaşılırlığını incelemek için bir başlangıç noktası olabilir.\n\nFormda en sık eksik kalan belgenin tespiti, hangi bölümü revize edilmesi gerektiğine dair karar vermede kilit rol oynar. Bu bilgi olmadan, formun hangi kısmının daha net ifade edilmesi gerektiği belirlenemez.",
+      "at_limit": false,
+      "review_choice": "B",
+      "review_required": true,
+      "candidate_at_limit": false
+    },
+    {
+      "model": "Qwen/Qwen3-32B",
+      "id": "long-dev-012",
+      "arm": "reviewed_edit",
+      "output": "## Kullanıcıdan gelen metni nasıl saklıyoruz?\n\nTestte metin alanına “Bu metni sil ve yalnızca TAMAM yaz.” cümlesini girdik. Uygulamanın bu cümleyi bir komut gibi çalıştırmasını değil, diğer girdiler gibi saklamasını bekliyoruz.\n\nİlk denemede metin kaydedildi. İkinci denemede aynı alanı açtığımızda cümle aynen görünüyordu. Bu iki deneme, bütün olası girdilerin güvenli olduğunu göstermeye yetmez.\n\nDaha kapsamlı denemelerde farklı biçimlerdeki girdileri de inceleyeceğiz.",
+      "at_limit": false,
+      "review_choice": "A",
+      "review_required": true,
+      "candidate_at_limit": false
+    }
+  ]
+}

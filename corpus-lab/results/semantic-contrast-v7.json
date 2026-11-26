@@ -1,0 +1,2709 @@
+{
+  "job_id": "6b068b10d0582cfbbefde303",
+  "job_url": "https://huggingface.co/jobs/lovefengis/6b068b10d0582cfbbefde303",
+  "scope": "16 synthetic development pairs; not independent evaluation or proof of editorial quality",
+  "completed_markers": 3,
+  "reports": [
+    {
+      "info": {
+        "model": "Qwen/Qwen3-8B",
+        "revision": "b968826d9c46dd6066d109eabc6255188de91218",
+        "git": "47db1152c043db722bcb1292496cee5dbf1ce9bb",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.3",
+        "trials": 64,
+        "cases": 16,
+        "protocol": "semantic-contrast-v7",
+        "attention": "sdpa",
+        "batch": 8,
+        "max_new_tokens": 24,
+        "prompt_sha256": {
+          "general": "fa0e773ee0ee4f9fea4a182b40e391fe8b7895bae61b2546a3ef04e00a44b2d0",
+          "semantic_checklist": "043b1dd126253117809417822e8a4511cc83474c324b2b6ad1b1674876dc4fb0"
+        }
+      },
+      "arms": {
+        "general": {
+          "correct": 29,
+          "wrong": 3,
+          "invalid": 0,
+          "tie": 0,
+          "both_orders_correct": 13,
+          "errors": [
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A",
+              "choice": "A"
+            },
+            {
+              "id": "semantic-dev-004",
+              "category": "scope",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A",
+              "choice": "A"
+            },
+            {
+              "id": "semantic-dev-001",
+              "category": "direction",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "B",
+              "choice": "B"
+            }
+          ]
+        },
+        "semantic_checklist": {
+          "correct": 28,
+          "wrong": 3,
+          "invalid": 1,
+          "tie": 0,
+          "both_orders_correct": 12,
+          "errors": [
+            {
+              "id": "semantic-dev-012",
+              "category": "ability",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "B\n\nAçıklama: Kaynak metinde \"incelenemedi\" ifadesi, köprüyü",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-014",
+              "category": "voice",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A",
+              "choice": "A"
+            },
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A",
+              "choice": "A"
+            },
+            {
+              "id": "semantic-dev-004",
+              "category": "scope",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A",
+              "choice": "A"
+            }
+          ]
+        }
+      },
+      "rows": [
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-014",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e5f31f1dcee7ef016773ebb944c6fc53116d0bec412fbd32ffb7b690b677433f"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-015",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "697929755bbcb266066c4d19301a97e08869971421bfe33f383dcf482455212a"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-015",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1ab0a34ff3244514c44dd71f0c9c2dd1ebc31cda6b94c76b020a5812f760808b"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-008",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "eae3e4b16270d0529fbfd8bd46d58248d616df57eccca54ffc38c43c62ad9d8d"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-011",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3cd048e05aaee6ff8da627db352c222616fa7dc942379885a04723d78c87355f"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-010",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "bd0b0214b4e8300484decab3fa0772085323d01267c2c93779a2cc6de7918ebc"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-002",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "dbd563f0452fb6a61b55a759efe05e4b2752a010811e5b14be43470d44879853"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-006",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e986c483b12ea058ef98a6fa85b4e1762acdc444d931846598fc7c69c4c2da23"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-008",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3ee8aeb7cbbf9f5027b689d1dd76749b5e685557659da7687199aff8e035577e"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-003",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "deb1ef841c6a94f882831a0934cc8824e2f198e6b0c2988f479b8e99a7ece4e4"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-004",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5978731c2a98d9505a147e007b0c98dc40b73e8dda947c87c684afc81f4c8940"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-013",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "8ece607276ac161d690ea7776cb7d964a4e26c32b7a0dcf664026334dc4e9733"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-002",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6b278709df6f6ff2741d81df0af15aac8542bb6ac0419e8d5ac824a7e921ccce"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-005",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "58ae1f9adc644c9eeebdab6b1306bc87bc36a2dad26a638ca8d424268f2d87b4"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-014",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "f390b66a60395e9e2d190873e8004fe8112e7fb527866d66372f885eb5ed7297"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-009",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "27a9fabaf2d209afde8d1c6ccb7eb7d035ee87ae9bb21eaaeefed39c6a15720f"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-012",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B\n\nAçıklama: Kaynak metinde \"incelenemedi\" ifadesi, köprüyü",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "4a6d8231ddf9aa10cccf0b6a63bb3375d33ccd1a31181a44e6309c66856917ed"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-006",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b469d6c9a69b3e24ebfc2025caa3088744746910707eb5817ef148c3b6998afa"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-004",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "7172868d6defb68db31183d96881a00189d704d48f9bab1bda4cd91aa253df9d"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-004",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6f710c3c3033b6a66004fbe2ea0e2588ffbe9fe4c31d21479dea6cb73b5a8aa9"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-012",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "69b8e16961d9266c1d6523a14b5fcf355cb0723c346edda75a46aff6f5fc327d"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-009",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "f4ae8be0c17a0d0b1d568df586d44d202db66907e60408d47c5d540e5da11b14"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-007",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1fc5653dab8929f3b9b7094d247dcf11d46715712c4a1a87d9077acddb762b9c"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-001",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "d70b9349414632820d54f8070b6a2d2891827159272be7c71edaf29df87366fb"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-003",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "a56493e0346c1a472c4bca9e74eaa16e6de01028ab2dafe7a1795feb195520c3"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-011",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "4ccc209997aae02821c73411b2ea24197a2f0177b274c19bcf4e0268713339a7"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-007",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "606bd8a9af845eb33b1660eae5e17aca5f5465261d95e6aec93773704b3abab8"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-003",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "98b45145b63810946ee6bea42d03d2802e50aa9aa4d6d6606f01d839b154af1f"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-006",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1157facb3b300123c072fc4f0fe74fc7201b0d8b4dfb3580ed4390a92014674d"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-014",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "fd16a48b052429c209194c421c051edd8509b97cdde0338c12030f9447dbf1a5"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-010",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "9994b190ac1dbeab154ab1a9fd613143952dfb5d4b7f26b4794b0cee84b34b32"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-016",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b9028e22ff76e110c3dbe8d0fea4ddab557791295b218328a66552c72dfa021e"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-016",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "a2b501ebdfbfb773fb281750acafc6c5dbf243711953bdcee15e548b74828c19"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-007",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "7c21e23e63668aeeabaee63cfbc0cbfa9256895836399bda428b0b85af6cb2dc"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-005",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b3e417afeb35c27cf8efdfb55bd9ab392b422a00163c99b716c1fc89f5f5ace7"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-015",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "7b7e06b028bdf631aae7555ae292fd0f1e33f13008060955a602061922b5ecde"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-002",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "96a333a74993239a1f71a078e8fbb058252a899a3e0eee42f2ffc403b93ec312"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-014",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "8c9912101f00315d160e77ca18f0c9009086f3b25702fd62897bbbb28a26e89a"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-010",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "bfea23dfe6c3bae7575e21ad29a4144575db82eb61458dfe4769bbbec3c8c063"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-005",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "a129de6c6b2ec44880ed0d3bdb3d9859e10f8d11dcf916a0c7666fc30d0398fe"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-012",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "219255840a2b7c20b3fca871d5039f52711ebe05fb074b9c400c54ee4cce0c83"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-016",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "811dc19f1e104bf60ab52b38c89840acfc6f425a42f1b7344133a2174e1fa4df"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-015",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "df495aa774c2d7e17b3c6f078d4dccdb9a5160174d46ebb988a6d55b42b3806f"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-012",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "c57d00f2447af4e763371f16e2fe9dd90c142ecd3f2b12005872034432688241"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-013",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5e13c553a64b66b50399da4719401eaad449ae8e23ef0fac85bac44ab28b92af"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-011",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "90324f0cec339c0617951a3579f4efbaf2d46d08701f49ea85c7130fddcd72cc"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-013",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5b0e7615558a487e6542114dc4e82a0ad9127fe631ea4c1868096cd0942d9f5f"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-001",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "538e19d2fb9817c035b5cdf8108143982bb09351fed450475872a59bd4098708"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-016",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "0e26bca2b8e70fc1c43297f8869abf6ea68b873d0586447695c1bf6847627a04"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-010",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "ec66c99424c450d04a31fb9e1cc60a08d9c43454599d426dfb49f0ffbd2e9287"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-005",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "c00def6ab0f018ea0d9c06d67457d84cb6eea8b839f3c97569bf4e85e14eea95"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-002",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1db657bef2ae9d0b6872624e364988b939dbf80bf6f7f663c16d8e500f106f79"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-013",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "23c5df51ceba66510dfe1f2b83b852f22577d446a12e3e8898a3c0f1c890c146"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-008",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "21779873429ce0c20743af7fa408d5679027d2b8016dbe8555f3a2cc55ca0e58"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-011",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "bfcbf579747f3b48418df4c5f274bb6442f982245008ba111aa2082cef45db72"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-003",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e9c61287cb1912cf1a6dd6f3365599f3dbf314859f0e19b621cd8112e97c3561"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-007",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b2a19cfe5162c5aee3c6b2d01f8ef3dc71d7edcc8ff2024d860676b7f6f1e30b"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-009",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6b206b91bc1c27eee8f32d024a1a87e19ab03fc38173f887654f25d3e2c91ce4"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-001",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "c2ede199e0a1fbc0f9c58cbde4f1955fe5bd1be8fa20a8efa5fee72b8752bd92"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-004",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "0338d85a5494ba4506a967a9ce1f1724c2620c84ff81f099af7c148ace5707b2"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-009",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "dc97fd51c2b77c8e4bebdc7f0f76e7f59446fd3a5dfeb619688366c40b4330e9"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-008",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "ee20cdd03ef85a1ccb5294b3ff78fd75f0125ff6e7569b5a8bf31103fa05c018"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-006",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "9a22a265c04e014ed69eb42753b54ff73a040a2f34c0a126a1a9313d28108800"
+        },
+        {
+          "model": "Qwen/Qwen3-8B",
+          "id": "semantic-dev-001",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "931941ea069d675ac358168e10a0ec526b92f104fbe8eece10fe0ba44bf3e8cd"
+        }
+      ]
+    },
+    {
+      "info": {
+        "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+        "revision": "1bbe9f19a26a70dc4d0c709e1a816e6a9378a7f5",
+        "git": "47db1152c043db722bcb1292496cee5dbf1ce9bb",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.3",
+        "trials": 64,
+        "cases": 16,
+        "protocol": "semantic-contrast-v7",
+        "attention": "eager",
+        "batch": 4,
+        "max_new_tokens": 24,
+        "prompt_sha256": {
+          "general": "fa0e773ee0ee4f9fea4a182b40e391fe8b7895bae61b2546a3ef04e00a44b2d0",
+          "semantic_checklist": "043b1dd126253117809417822e8a4511cc83474c324b2b6ad1b1674876dc4fb0"
+        }
+      },
+      "arms": {
+        "general": {
+          "correct": 15,
+          "wrong": 1,
+          "invalid": 14,
+          "tie": 2,
+          "both_orders_correct": 5,
+          "errors": [
+            {
+              "id": "semantic-dev-014",
+              "category": "voice",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "B",
+              "choice": "B"
+            },
+            {
+              "id": "semantic-dev-015",
+              "category": "quantity",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-015",
+              "category": "quantity",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-002",
+              "category": "epistemic",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki belirsizlik ve bilgi eksikliğini korur. Ancak:",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-004",
+              "category": "scope",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-006",
+              "category": "agent",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgiyi (öğrencinin çizim teslim et",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-004",
+              "category": "scope",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-012",
+              "category": "ability",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT",
+              "choice": "ESIT"
+            },
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-014",
+              "category": "voice",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT",
+              "choice": "ESIT"
+            },
+            {
+              "id": "semantic-dev-016",
+              "category": "duration",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgileri (onay sonrası işlem başlangıcı ve tamam",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-010",
+              "category": "comparison",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki bilgileri doğru aktarıyor. Ancak:\n\n- **A",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-011",
+              "category": "attribution",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki bilgileri doğru bir şekilde aktarıyor. Sadece cüm",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-013",
+              "category": "causal",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgiyi (sıcaklık ve çatlak sayısının",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-013",
+              "category": "causal",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki bilgiyi doğru aktarıyor: Fırının sıcaklığı ve",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-006",
+              "category": "agent",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgiyi (öğrencinin çizim teslim et",
+              "choice": null
+            }
+          ]
+        },
+        "semantic_checklist": {
+          "correct": 2,
+          "wrong": 2,
+          "invalid": 27,
+          "tie": 1,
+          "both_orders_correct": 0,
+          "errors": [
+            {
+              "id": "semantic-dev-008",
+              "category": "conditional",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: Dikim öncesi toprak kuruy",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-010",
+              "category": "comparison",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki tüm bilgileri içeriyor:\n- İkinci düzenek daha az",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-006",
+              "category": "agent",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de öğrencinin çizimi teslim ettiği ve danışmanın çizimi yeniden değer",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-013",
+              "category": "causal",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Fırının sıcaklığı ve çat",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-002",
+              "category": "epistemic",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki belirsizlik (\"bilinmiyor\") ifadesini korur ve le",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-014",
+              "category": "voice",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgileri (ses kaydının unutulduğu, bir sonra",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-009",
+              "category": "temporal",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: Soğutma tamamlandıktan sonra kapağı açın",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-012",
+              "category": "ability",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A",
+              "choice": "A"
+            },
+            {
+              "id": "semantic-dev-004",
+              "category": "scope",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: Ücretsiz prova yalnızca ilk kez",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgiyi (kil türünün uygun koşullarda daha az çat",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-011",
+              "category": "attribution",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Restorasyon raporunun tamamlan",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-006",
+              "category": "agent",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de öğrencinin çizimi teslim ettiği ve danışmanın çizimi yeniden değer",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-016",
+              "category": "duration",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgileri (onay sonrası işlem başlangıcı ve tamamlan",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-007",
+              "category": "obligation",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: Çatlakların fotoğraflanması *yararlı* (ol",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-015",
+              "category": "quantity",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: En fazla üç raf ayarlanabilir",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-014",
+              "category": "voice",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: İlk denemede ses kaydedil",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-005",
+              "category": "negation",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "B",
+              "choice": "B"
+            },
+            {
+              "id": "semantic-dev-012",
+              "category": "ability",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT",
+              "choice": "ESIT"
+            },
+            {
+              "id": "semantic-dev-016",
+              "category": "duration",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: \"Onay verilirse iade işlemi iki gün",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-015",
+              "category": "quantity",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor:\n- En fazla üç raf ayar",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-013",
+              "category": "causal",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Fırının sıcaklığı ve çat",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-001",
+              "category": "direction",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: Ziyaretçi sayısının *azalmış olabileceği",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-010",
+              "category": "comparison",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: \"İkinci düzenek daha az yer kaplıyor; daha",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-005",
+              "category": "negation",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: \"Renk değişimi saptanmadı\" (Ol",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-008",
+              "category": "conditional",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: Dikim öncesi toprak kuruysa",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-011",
+              "category": "attribution",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri (restorasyon raporunun tamamlanmamış olması ve kole",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgiyi (kil türünün uygun koşullarda daha az çat",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-001",
+              "category": "direction",
+              "order": "faithful_A",
+              "expected": "A",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel iddiayı (\"giriş kayıtlarını henüz karşılaştırmad",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-004",
+              "category": "scope",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Ücretsiz prova sadece ilk kez",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-009",
+              "category": "temporal",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgileri (soğutma sonrası kapak açılması, ön",
+              "choice": null
+            }
+          ]
+        }
+      },
+      "rows": [
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-014",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "36e0d436773fb033a37215224d2978d4cd17cba8dec2a33f0ec4c80d6dd61a38"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-015",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "0978660367cbe6d19e6d0ce563f77c9a06e2e50089eedc3b2ba905ebff8677e8"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-015",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "524fd9ad9e5099211097b9d06a246032455b4bfa4184145c00e70a95e1a79dd9"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-008",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: Dikim öncesi toprak kuruy",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "e7e06d1d582f3d74adc506c219e4314c0e483eba991a437f0e61e19021c274d3"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-011",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "06192127495de6a778272af2340922d130218cde50fb7af31aef65b8d76adf7e"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-010",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki tüm bilgileri içeriyor:\n- İkinci düzenek daha az",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "2cc6ba7125d2f246542338f80037afdd4c2ff60795e45e7638bcc01f0573e833"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-002",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki belirsizlik ve bilgi eksikliğini korur. Ancak:",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "c42fcdab6ba3e6a615975f53da3347c521663ebf7d5a147f6585910b0192e037"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-006",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de öğrencinin çizimi teslim ettiği ve danışmanın çizimi yeniden değer",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "a8306559648c24a6039feb9361d4b13191d5715318805ecdac10694f05022f2f"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-008",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "8b8ad3bded8b1baff8c16e802bbf1c7f817eaec708348eeba837f9b0a676a7dc"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-003",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "84285e81a7eff0a13f68bf5a9257c6c7262eed071b93b4ef7ca7414f7a4fa75c"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-004",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "b3988ca2844ffbf7af514721170ea699f6ac273d9d25040198d77d92bd806d32"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-013",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Fırının sıcaklığı ve çat",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "2fad483db5d36f72ebdf3aa04f828caef7defa7af5b379c9e3fea387aeb7e7ae"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-002",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki belirsizlik (\"bilinmiyor\") ifadesini korur ve le",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "486a621d8add3e55524e22a6eafeed6f410cc908206bd8a154f198d9a1637641"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-005",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "d728e5e873326f3adb1b0b96b2f4018368ad161dff171eaf71500b2bb67be200"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-014",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgileri (ses kaydının unutulduğu, bir sonra",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "2060cca73ad0df8c52f33ad13f808b056b5e0fb6cd93fe08d0221f37c004c2da"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-009",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: Soğutma tamamlandıktan sonra kapağı açın",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "a9645ee1d13714fc942d35f687a95dab5f599778725c0b41ad5d5aff7ff5ddf6"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-012",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3c1c8c38b20e3933eda04d278f41dddad9d12e8cc7ff3172ba81d73a6b18ac49"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-006",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgiyi (öğrencinin çizim teslim et",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "ee2ac5382aa95b3f5e1f1c88bbd7583a95564b3970403cfb0893cce8ad72670d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-004",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "26c934462e21f9c16343e0729864c07d1aff8784f470805bda2e23582ad83ddd"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-004",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: Ücretsiz prova yalnızca ilk kez",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "ac5b8f88c20d5113d12ef097942e0af96f2cd9c129a669f21a883282160c46b1"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-012",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT",
+          "choice": "ESIT",
+          "at_limit": false,
+          "rendered_prompt_sha256": "57a0e3b84be57960cb7a8f41711937ecfe1e62fe9045dc728bcc3027ad12dfc8"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-009",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5ebd13943d4f3bae9e7c2dd27d2b8f148cf5cb789a865784110abc2d66b8a527"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-007",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "671745cfcf56314439836820f7b5f8d98e011e628a700a35e4e75e7bc5cd164d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-001",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e0f3e5fdec6a25be9e51a1be017b5cccd3308055375c0ac23759a30724aa3803"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-003",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgiyi (kil türünün uygun koşullarda daha az çat",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "2d6455ad49826d2c0942ee9385492b2cd66a01eeeca9f88eb1fbc0d8b119f41d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-011",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Restorasyon raporunun tamamlan",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "480d671e7932944dc75e7e00eb2c446578c8f2c42da40472c967eebec3e14e0f"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-007",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5590f4987cf90f6a24110a768d968b186ad7ec1f0fe6e423d59ef9eb8d9aa614"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-003",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki anlamı eşit derecede sadık bir şekilde yansıt",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "853e2d9924e46fec4543341e17f5665143e2a8895a875a691e44943d952e81a6"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-006",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de öğrencinin çizimi teslim ettiği ve danışmanın çizimi yeniden değer",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "fafe4a8a4a68439c984c5bbc1b19991df79e3bbec6d866b4d15d05702113dda6"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-014",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT",
+          "choice": "ESIT",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3ae216d2e12fc7e96e03c0e6ab9706e4eb184dc9c4fe0531175ba8e4c726926d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-010",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "9cbf1e5c7a6d1736560a77442373619c7397459530a371720e53e8d363a9dd41"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-016",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgileri (onay sonrası işlem başlangıcı ve tamam",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "ac68b54b013ae5a4d055bc2e360888b945b37dcbf6f8e92d2ce5fee25781f06c"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-016",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgileri (onay sonrası işlem başlangıcı ve tamamlan",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "b028a95e4c141f051d4e31cc4b1bc51771298b18e553183c910562933fa691b5"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-007",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: Çatlakların fotoğraflanması *yararlı* (ol",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "9299ed3d7ddb449081c0943664e5dd65a6de131bbeae10839b72c37e7d7e741d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-005",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "8f21c0b766732fe405286a1c50f8fe1b755041b1809b8bbd0c84423090ef6df7"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-015",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: En fazla üç raf ayarlanabilir",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "924f263c9d4111774cf32d79d0a7c98b34be84a010a7b431e61e3c9e90942b69"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-002",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6b434eacfd369dae561b1b6f6d8cea73a20f0031eea978bd3f5e7ca2ee2d5fe3"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-014",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: İlk denemede ses kaydedil",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "98e2db83325930be39a9148b83b3ed20f379b27910c1c736399ea3a2869dc91d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-010",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki bilgileri doğru aktarıyor. Ancak:\n\n- **A",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "de7c35db9e750aeafd73690019e0d13a23390f003656f4d7aafb81b74976652b"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-005",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "236ec1bc88127e0e956f0821ed9c1a27d27ad29ef598cbdd2dcd04f571d74110"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-012",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT",
+          "choice": "ESIT",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e75ac5999d42d05d4a78e40b3f5131b2b180582c63b32b91da98454efdad273f"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-016",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: \"Onay verilirse iade işlemi iki gün",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "dc2a98cef0a6f029e9847fe963bbeeff22c2a5667ef1ab0721865474d5af54f4"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-015",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor:\n- En fazla üç raf ayar",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "d58d4974b620204c266ef0ee576d27e4d3582d3530c716587ee0daf9588f6d62"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-012",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b6a49cdfcda6cc75cbb50683865021c2753396d388ad49fbba8780dbec2d9186"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-013",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Fırının sıcaklığı ve çat",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "58a28bbeb1d6f3fb08d3227bcea151d85ac62166586f2311528e0b1121225ce0"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-011",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki bilgileri doğru bir şekilde aktarıyor. Sadece cüm",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "e5385c2dcbb3776bc14bc479b67df42514b3819958d144ed288d5e09adae3115"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-013",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgiyi (sıcaklık ve çatlak sayısının",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "a905bfe2e6e6a6971d20e734152cca1aec61f787c1bebb444759505862934041"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-001",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: Ziyaretçi sayısının *azalmış olabileceği",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "f7b5d2b10a86b6601262f454455ae444b1ed153658e9c1e2e9da60f2f5b6cefd"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-016",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "2956338927738237835ea04b1448c4e88908052032901b3ffbd90675289d41cf"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-010",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: \"İkinci düzenek daha az yer kaplıyor; daha",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "873c470f4b216cde74c6280fadffe58c93a9a6fbe7db9a6910787052628f9d44"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-005",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B \n\n**Açıklama:**\n\n- **Kaynak**: \"Renk değişimi saptanmadı\" (Ol",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "d880056ff4a82529178bb0951bb828de5ea881cc4d3d09c88f363bee12208208"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-002",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "7b9646d63126dffee904b326ce3f1b387cb9a76359923b1ba18e19437d72e508"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-013",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki bilgiyi doğru aktarıyor: Fırının sıcaklığı ve",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "b847a56b0328b0606a63157f5d24a2a22d1e8505cc49a18d0c2c8a750fd281b8"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-008",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgiyi doğru aktarıyor: Dikim öncesi toprak kuruysa",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "401d7b188be72d89d7c1edcc39e3802accbba8ff7c6a3663975447c8a3843f5d"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-011",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri (restorasyon raporunun tamamlanmamış olması ve kole",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "2b4a5d3ae203c8b8c73a67c51679a4a105c9f33dc7f149eedee5433ca4593746"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-003",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgiyi (kil türünün uygun koşullarda daha az çat",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "40697829082a2b6e0d1f03859036adbabeeec81f8c14a5139696b175e2eca8be"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-007",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b8fd4723dc340069bf50331e551f6a6389dab535bec4c059290c6476fcdbc906"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-009",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "45d671e5fd06768b7df9ca1766d17d95b3907bc4ed3ca968c26b890e31e0d36e"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-001",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel iddiayı (\"giriş kayıtlarını henüz karşılaştırmad",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "1605f2fe06f6820b8e33c88ad13fa72b3b860eecfe4c3d66231eea6daddd25ed"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-004",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki bilgileri doğru aktarıyor: Ücretsiz prova sadece ilk kez",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "dbe437936a864472aa2c7b1f8933951499b231dcb4f5db7a7ccd75c7cb405f95"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-009",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "ESIT \n\nHer iki seçenek de kaynaktaki temel bilgileri (soğutma sonrası kapak açılması, ön",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "391477d0d5e588f939b2b4555294c1250804938b93231c1315600732d96c6389"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-008",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e1041ece4139495f1b8632f0c7dbf1c8231b0f7540189260f4e86ba346ce3592"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-006",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "ESIT \n\nHer iki seçenek de kaynak metindeki temel bilgiyi (öğrencinin çizim teslim et",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "23ed32b46006e1c4245e11ffeb7d642eaf2c4df673b7932263c7a902af7196ad"
+        },
+        {
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "id": "semantic-dev-001",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3e3877c712d4c26f053ade926d302dc6151855b1c3c2d2f63cee218e6e235813"
+        }
+      ]
+    },
+    {
+      "info": {
+        "model": "Qwen/Qwen3-32B",
+        "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+        "git": "47db1152c043db722bcb1292496cee5dbf1ce9bb",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.3",
+        "trials": 64,
+        "cases": 16,
+        "protocol": "semantic-contrast-v7",
+        "attention": "sdpa",
+        "batch": 2,
+        "max_new_tokens": 24,
+        "prompt_sha256": {
+          "general": "fa0e773ee0ee4f9fea4a182b40e391fe8b7895bae61b2546a3ef04e00a44b2d0",
+          "semantic_checklist": "043b1dd126253117809417822e8a4511cc83474c324b2b6ad1b1674876dc4fb0"
+        }
+      },
+      "arms": {
+        "general": {
+          "correct": 32,
+          "wrong": 0,
+          "invalid": 0,
+          "tie": 0,
+          "both_orders_correct": 16,
+          "errors": []
+        },
+        "semantic_checklist": {
+          "correct": 28,
+          "wrong": 0,
+          "invalid": 4,
+          "tie": 0,
+          "both_orders_correct": 12,
+          "errors": [
+            {
+              "id": "semantic-dev-008",
+              "category": "conditional",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A ve B seçeneklerini kaynak metne sadakat açısından karşılaştıralım:\n\n### Kaynak",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-007",
+              "category": "obligation",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A seçeneği, kaynak metinle çelişmektedir çünkü \"yapmanız zorun",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-015",
+              "category": "quantity",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A ve B seçenekleri, kaynak metinle aynı iddiaları içerir. Her iki seçenek de",
+              "choice": null
+            },
+            {
+              "id": "semantic-dev-003",
+              "category": "certainty",
+              "order": "faithful_B",
+              "expected": "B",
+              "raw": "A ve B seçenekleri arasındaki fark, \"azalır\" ile \"azalabilir\" arasındaki olasılık",
+              "choice": null
+            }
+          ]
+        }
+      },
+      "rows": [
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-014",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e5f31f1dcee7ef016773ebb944c6fc53116d0bec412fbd32ffb7b690b677433f"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-015",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "697929755bbcb266066c4d19301a97e08869971421bfe33f383dcf482455212a"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-015",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1ab0a34ff3244514c44dd71f0c9c2dd1ebc31cda6b94c76b020a5812f760808b"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-008",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A ve B seçeneklerini kaynak metne sadakat açısından karşılaştıralım:\n\n### Kaynak",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "eae3e4b16270d0529fbfd8bd46d58248d616df57eccca54ffc38c43c62ad9d8d"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-011",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3cd048e05aaee6ff8da627db352c222616fa7dc942379885a04723d78c87355f"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-010",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "bd0b0214b4e8300484decab3fa0772085323d01267c2c93779a2cc6de7918ebc"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-002",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "dbd563f0452fb6a61b55a759efe05e4b2752a010811e5b14be43470d44879853"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-006",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "e986c483b12ea058ef98a6fa85b4e1762acdc444d931846598fc7c69c4c2da23"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-008",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "3ee8aeb7cbbf9f5027b689d1dd76749b5e685557659da7687199aff8e035577e"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-003",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "deb1ef841c6a94f882831a0934cc8824e2f198e6b0c2988f479b8e99a7ece4e4"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-004",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5978731c2a98d9505a147e007b0c98dc40b73e8dda947c87c684afc81f4c8940"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-013",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "8ece607276ac161d690ea7776cb7d964a4e26c32b7a0dcf664026334dc4e9733"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-002",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6b278709df6f6ff2741d81df0af15aac8542bb6ac0419e8d5ac824a7e921ccce"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-005",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "58ae1f9adc644c9eeebdab6b1306bc87bc36a2dad26a638ca8d424268f2d87b4"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-014",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "f390b66a60395e9e2d190873e8004fe8112e7fb527866d66372f885eb5ed7297"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-009",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "27a9fabaf2d209afde8d1c6ccb7eb7d035ee87ae9bb21eaaeefed39c6a15720f"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-012",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "4a6d8231ddf9aa10cccf0b6a63bb3375d33ccd1a31181a44e6309c66856917ed"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-006",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b469d6c9a69b3e24ebfc2025caa3088744746910707eb5817ef148c3b6998afa"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-004",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "7172868d6defb68db31183d96881a00189d704d48f9bab1bda4cd91aa253df9d"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-004",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6f710c3c3033b6a66004fbe2ea0e2588ffbe9fe4c31d21479dea6cb73b5a8aa9"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-012",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "69b8e16961d9266c1d6523a14b5fcf355cb0723c346edda75a46aff6f5fc327d"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-009",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "f4ae8be0c17a0d0b1d568df586d44d202db66907e60408d47c5d540e5da11b14"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-007",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1fc5653dab8929f3b9b7094d247dcf11d46715712c4a1a87d9077acddb762b9c"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-001",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "d70b9349414632820d54f8070b6a2d2891827159272be7c71edaf29df87366fb"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-003",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "a56493e0346c1a472c4bca9e74eaa16e6de01028ab2dafe7a1795feb195520c3"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-011",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "4ccc209997aae02821c73411b2ea24197a2f0177b274c19bcf4e0268713339a7"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-007",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "606bd8a9af845eb33b1660eae5e17aca5f5465261d95e6aec93773704b3abab8"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-003",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "98b45145b63810946ee6bea42d03d2802e50aa9aa4d6d6606f01d839b154af1f"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-006",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1157facb3b300123c072fc4f0fe74fc7201b0d8b4dfb3580ed4390a92014674d"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-014",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "fd16a48b052429c209194c421c051edd8509b97cdde0338c12030f9447dbf1a5"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-010",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "9994b190ac1dbeab154ab1a9fd613143952dfb5d4b7f26b4794b0cee84b34b32"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-016",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b9028e22ff76e110c3dbe8d0fea4ddab557791295b218328a66552c72dfa021e"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-016",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "a2b501ebdfbfb773fb281750acafc6c5dbf243711953bdcee15e548b74828c19"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-007",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A seçeneği, kaynak metinle çelişmektedir çünkü \"yapmanız zorun",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "7c21e23e63668aeeabaee63cfbc0cbfa9256895836399bda428b0b85af6cb2dc"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-005",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b3e417afeb35c27cf8efdfb55bd9ab392b422a00163c99b716c1fc89f5f5ace7"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-015",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A ve B seçenekleri, kaynak metinle aynı iddiaları içerir. Her iki seçenek de",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "7b7e06b028bdf631aae7555ae292fd0f1e33f13008060955a602061922b5ecde"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-002",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "96a333a74993239a1f71a078e8fbb058252a899a3e0eee42f2ffc403b93ec312"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-014",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "8c9912101f00315d160e77ca18f0c9009086f3b25702fd62897bbbb28a26e89a"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-010",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "bfea23dfe6c3bae7575e21ad29a4144575db82eb61458dfe4769bbbec3c8c063"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-005",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "a129de6c6b2ec44880ed0d3bdb3d9859e10f8d11dcf916a0c7666fc30d0398fe"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-012",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "219255840a2b7c20b3fca871d5039f52711ebe05fb074b9c400c54ee4cce0c83"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-016",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "811dc19f1e104bf60ab52b38c89840acfc6f425a42f1b7344133a2174e1fa4df"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-015",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "df495aa774c2d7e17b3c6f078d4dccdb9a5160174d46ebb988a6d55b42b3806f"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-012",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "c57d00f2447af4e763371f16e2fe9dd90c142ecd3f2b12005872034432688241"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-013",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5e13c553a64b66b50399da4719401eaad449ae8e23ef0fac85bac44ab28b92af"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-011",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "90324f0cec339c0617951a3579f4efbaf2d46d08701f49ea85c7130fddcd72cc"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-013",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "5b0e7615558a487e6542114dc4e82a0ad9127fe631ea4c1868096cd0942d9f5f"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-001",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "538e19d2fb9817c035b5cdf8108143982bb09351fed450475872a59bd4098708"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-016",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "0e26bca2b8e70fc1c43297f8869abf6ea68b873d0586447695c1bf6847627a04"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-010",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "ec66c99424c450d04a31fb9e1cc60a08d9c43454599d426dfb49f0ffbd2e9287"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-005",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "c00def6ab0f018ea0d9c06d67457d84cb6eea8b839f3c97569bf4e85e14eea95"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-002",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "1db657bef2ae9d0b6872624e364988b939dbf80bf6f7f663c16d8e500f106f79"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-013",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "23c5df51ceba66510dfe1f2b83b852f22577d446a12e3e8898a3c0f1c890c146"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-008",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "21779873429ce0c20743af7fa408d5679027d2b8016dbe8555f3a2cc55ca0e58"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-011",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "bfcbf579747f3b48418df4c5f274bb6442f982245008ba111aa2082cef45db72"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-003",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "A ve B seçenekleri arasındaki fark, \"azalır\" ile \"azalabilir\" arasındaki olasılık",
+          "choice": null,
+          "at_limit": true,
+          "rendered_prompt_sha256": "e9c61287cb1912cf1a6dd6f3365599f3dbf314859f0e19b621cd8112e97c3561"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-007",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "b2a19cfe5162c5aee3c6b2d01f8ef3dc71d7edcc8ff2024d860676b7f6f1e30b"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-009",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "6b206b91bc1c27eee8f32d024a1a87e19ab03fc38173f887654f25d3e2c91ce4"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-001",
+          "arm": "semantic_checklist",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "c2ede199e0a1fbc0f9c58cbde4f1955fe5bd1be8fa20a8efa5fee72b8752bd92"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-004",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "0338d85a5494ba4506a967a9ce1f1724c2620c84ff81f099af7c148ace5707b2"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-009",
+          "arm": "semantic_checklist",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "dc97fd51c2b77c8e4bebdc7f0f76e7f59446fd3a5dfeb619688366c40b4330e9"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-008",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "ee20cdd03ef85a1ccb5294b3ff78fd75f0125ff6e7569b5a8bf31103fa05c018"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-006",
+          "arm": "general",
+          "order": "faithful_A",
+          "expected": "A",
+          "raw": "A",
+          "choice": "A",
+          "at_limit": false,
+          "rendered_prompt_sha256": "9a22a265c04e014ed69eb42753b54ff73a040a2f34c0a126a1a9313d28108800"
+        },
+        {
+          "model": "Qwen/Qwen3-32B",
+          "id": "semantic-dev-001",
+          "arm": "general",
+          "order": "faithful_B",
+          "expected": "B",
+          "raw": "B",
+          "choice": "B",
+          "at_limit": false,
+          "rendered_prompt_sha256": "931941ea069d675ac358168e10a0ec526b92f104fbe8eece10fe0ba44bf3e8cd"
+        }
+      ]
+    }
+  ]
+}

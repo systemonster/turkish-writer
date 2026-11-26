@@ -1,0 +1,21 @@
+{
+  "dataset": "corpus-lab/longform-v10.jsonl",
+  "frozen_commit": "eeea2d17431016c2829c6d1fa19643b31529cedf",
+  "recorded_at": "2026-11-25",
+  "applied_to_frozen_run": false,
+  "frozen_dataset_sha256": "6faa16a13d01b81dbb077a5ee2bdd0429f17b4109666d8694888413a7e46641c",
+  "entries": [
+    {
+      "source_id": "lf10-03-flawed",
+      "location": "seeded_defects[1].after and matching source span",
+      "original": "Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik.",
+      "proposed": "Bu kez de yalnız sayıya güvenmedik. Sadece elde ettiğimiz sayıyı güvenmek için yeterli bir dayanak olarak kabul etmedik.",
+      "rationale": "The controlled redundancy seed also contains an unintended case/government error (sayının kendisini güvenmek). A future corpus revision can remove that grammatical distraction while preserving the seeded repetition. Keep the frozen experiment unchanged.",
+      "original_word_count": 680,
+      "proposed_word_count": 684,
+      "original_source_sha256": "4784be92cb9e7527f8f91f99c858015fda75d672e5cb28c03461993bba374c5f",
+      "proposed_source_sha256": "833b9648aa5e92cde39d7d7bc1c0bb43c1f1776a9ccfdfd27838d7dd9e0a8f45"
+    }
+  ],
+  "status": "Original frozen JSONL restored; proposed correction is documented only. Interpret this case as redundancy plus an unintended grammatical defect."
+}

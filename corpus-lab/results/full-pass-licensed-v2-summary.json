@@ -1,0 +1,241 @@
+{
+  "as_of": "2026-11-25",
+  "scope": "Full eligible prose and BOUN train dependency pass; historical SUDO frozen sample and Wikipedia selected pairs only; aggregate observations, no human editorial gold",
+  "job_id": "6b06f3dfd91f621b93081777",
+  "code_commit": "45fb5b69231deaa70613a21bbf5d6505aea3c24f",
+  "private_artifact": "lovefengis/turkish-writer-historical-review-v10/editorial-corpus-v2/full-pass-licensed.json",
+  "artifact_sha256": "82e8f59d08fb554d63bcc094b9ec171742ffdadd3b349f15afbdf882a7d0a96d",
+  "license": "CC BY-SA 4.0",
+  "sources": [
+    {
+      "source": "Daron Yöndem, Türkçe Blog İçeriği",
+      "revision": "e5a5885a9f70d2f30519560a80c6de622aeac945",
+      "url": "https://github.com/daronyondem/daron-turkce-blog/tree/e5a5885a9f70d2f30519560a80c6de622aeac945",
+      "files": 1038,
+      "files_with_eligible_prose": 1035,
+      "excluded_no_eligible_prose": 3,
+      "paragraphs": 6766,
+      "words": 326604,
+      "heuristic_sentences": 23780,
+      "questions": 685,
+      "selected_marker_positions": {
+        "unmarked": {
+          "opening": 1030,
+          "paragraph_start": 5470,
+          "inside_paragraph": 14671
+        },
+        "contrast": {
+          "paragraph_start": 16,
+          "inside_paragraph": 511
+        },
+        "explanation": {
+          "paragraph_start": 2,
+          "inside_paragraph": 273
+        },
+        "condition": {
+          "opening": 3,
+          "paragraph_start": 84,
+          "inside_paragraph": 347
+        },
+        "inference": {
+          "paragraph_start": 36,
+          "inside_paragraph": 522
+        },
+        "sequence": {
+          "paragraph_start": 72,
+          "inside_paragraph": 173
+        },
+        "addition": {
+          "paragraph_start": 18,
+          "inside_paragraph": 269
+        },
+        "summary": {
+          "paragraph_start": 18,
+          "inside_paragraph": 77
+        },
+        "example": {
+          "opening": 2,
+          "paragraph_start": 15,
+          "inside_paragraph": 171
+        }
+      },
+      "after_question": {
+        "unmarked": 611,
+        "summary": 3,
+        "explanation": 26,
+        "condition": 8,
+        "addition": 6,
+        "inference": 4,
+        "sequence": 5,
+        "contrast": 8,
+        "example": 6
+      }
+    },
+    {
+      "source": "UD Turkish BOUN, TABILAB / Boğaziçi University and contributors",
+      "revision": "09521f40c90904df85524b8e0b43afba6e4c7823",
+      "url": "https://github.com/UniversalDependencies/UD_Turkish-BOUN/tree/09521f40c90904df85524b8e0b43afba6e4c7823",
+      "split": "train only; dev/test preserved",
+      "sentences": 7803,
+      "tokens": 100713,
+      "nonpunct_tokens": 83998,
+      "verbs": 17121,
+      "verb_nominal_dependencies": 15953,
+      "converb_tokens": 962,
+      "converb_advcl": 677,
+      "converb_compound_lvc": 54,
+      "converb_compound": 47,
+      "converb_conj": 31,
+      "relation_direction_counts": [
+        [
+          "obl",
+          "before",
+          6925
+        ],
+        [
+          "obj",
+          "before",
+          4415
+        ],
+        [
+          "nsubj",
+          "before",
+          4230
+        ],
+        [
+          "obl",
+          "after",
+          161
+        ],
+        [
+          "nsubj",
+          "after",
+          118
+        ],
+        [
+          "obj",
+          "after",
+          104
+        ]
+      ],
+      "selected_dependency_observations": [
+        [
+          "gel",
+          "obl:Dat",
+          126
+        ],
+        [
+          "gel",
+          "obl:Abl",
+          40
+        ],
+        [
+          "geç",
+          "obl:Abl",
+          36
+        ],
+        [
+          "geç",
+          "obl:Dat",
+          34
+        ],
+        [
+          "bak",
+          "obj:Dat",
+          26
+        ],
+        [
+          "bak",
+          "obl:Dat",
+          47
+        ],
+        [
+          "ver",
+          "obj:Acc",
+          116
+        ],
+        [
+          "ver",
+          "obl:Dat",
+          67
+        ],
+        [
+          "koy",
+          "obj:Acc",
+          26
+        ],
+        [
+          "koy",
+          "obl:Dat",
+          22
+        ]
+      ],
+      "selected_noun_verb_pairs": [
+        [
+          "ver",
+          "bilgi",
+          "obj",
+          "Acc",
+          8
+        ],
+        [
+          "ver",
+          "yanıt",
+          "obj",
+          "Acc",
+          5
+        ],
+        [
+          "gel",
+          "akıl",
+          "obl",
+          "Dat",
+          11
+        ],
+        [
+          "getir",
+          "hâl",
+          "obl",
+          "Dat",
+          10
+        ],
+        [
+          "kazan",
+          "para",
+          "obj",
+          "Acc",
+          7
+        ],
+        [
+          "oku",
+          "kitap",
+          "obj",
+          "Acc",
+          7
+        ]
+      ]
+    },
+    {
+      "source": "SUDO Portal authors",
+      "revision": "18cd8b55645f92578d120e9fb105487f236fed79",
+      "scope": "20 previously frozen excerpts, not complete archive",
+      "documents": 20,
+      "paragraphs": 66,
+      "words": 3925,
+      "heuristic_sentences": 286
+    },
+    {
+      "source": "Turkish Wikipedia contributors",
+      "scope": "50 previously recovered pairs, not complete revision history",
+      "pairs": 50,
+      "prior_artifact_hash_verified": true
+    }
+  ],
+  "limits": [
+    "Selected surface marker groups, not all connectors or validated discourse labels.",
+    "A question may end a document; adjacent sentence type does not prove that it answers the question.",
+    "Dependency case/relation frequencies may reflect adjuncts, annotation decisions, voice or polysemy, not lexical valency or normative preference.",
+    "No individual reading claim; no human verified quality; no source excerpts distributed."
+  ],
+  "quality_verified": false
+}

@@ -1,0 +1,61 @@
+name: Editorial corpus pilot (V2)
+on:
+  push:
+    branches: [native-turkish-editor-v2]
+    paths:
+      - '.github/workflows/editorial-corpus-pilot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: editorial-corpus-pilot
+  cancel-in-progress: false
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Existing and new tests
+        run: |
+          node --version
+          npm test
+      - name: Corpus Lab checks
+        if: ${{ always() }}
+        run: |
+          node --test corpus-lab/tests/*.test.mjs
+          python3 -m unittest discover -s corpus-lab/tests -p 'test_*.py'
+          node corpus-lab/collect-wiki-revisions.mjs --self-test
+          node corpus-lab/editorial-eval.mjs --fixture-check > /tmp/editorial-fixture-check.json
+  historical-pilot:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+        with:
+          persist-credentials: false
+      - name: Bounded historical revision sample
+        run: |
+          mkdir -p corpus-lab/work
+          printf '%s\n' 'Bilim' 'Bilgisayar' 'Matematik' 'Eğitim' 'İnternet' 'Tiyatro' 'Sinema' 'Müzik' > corpus-lab/work/pilot-titles.txt
+          node corpus-lab/collect-wiki-revisions.mjs --titles-file corpus-lab/work/pilot-titles.txt --contact https://github.com/systemonster/turkish-writer --out corpus-lab/work/wiki-pilot.jsonl --batches 1 --limit 100
+      - name: Aggregate-only report
+        run: |
+          python3 - <<'PY'
+          import collections, json, pathlib
+          path = pathlib.Path("corpus-lab/work/wiki-pilot.jsonl")
+          rows = [json.loads(line) for line in path.read_text(encoding="utf-8").splitlines() if line.strip()]
+          assert all(r["status"] == "candidate_not_editor_verified" for r in rows)
+          report = {
+              "candidate_count": len(rows),
+              "unique_source_groups": len({r["source_group"] for r in rows}),
+              "human_verified": 0,
+              "status_counts": dict(collections.Counter(r["status"] for r in rows))
+          }
+          print(json.dumps(report, ensure_ascii=False, indent=2))
+          PY
+      - name: Remove raw excerpts
+        if: ${{ always() }}
+        run: rm -f corpus-lab/work/wiki-pilot.jsonl

@@ -1,0 +1,2497 @@
+{
+  "schema": "turkish-writer-qwen-longform-ai-review-v10-1",
+  "created_at": "2026-11-25T10:30:02.696267+00:00",
+  "title": "AI editorial review of six flawed longform sources and 18 Qwen3-32B rewrites",
+  "provenance": {
+    "reviewer_type": "AI assistant",
+    "review_type": "Unblinded source-conditioned editorial review",
+    "unblinded": true,
+    "human_reviewed": false,
+    "human_gold": false,
+    "independent_human_evidence": false,
+    "single_reviewer": true,
+    "model_and_arm_labels_visible": true,
+    "seeded_defect_labels_visible": true,
+    "development_data": true,
+    "independent_holdout": false,
+    "reviewer_prior_cross_model_exposure": true,
+    "other_model_outputs_consulted_in_this_review": false,
+    "other_model_results_used_as_evidence": false,
+    "new_model_inference_launched_for_review": false,
+    "note": "The reviewer previously reviewed another model in the same project, so this is not blinded across models. Every Qwen judgment here is based on the frozen source and Qwen text itself; no error is inferred from another model. These are fallible single-reviewer AI judgments, not human gold, preference results, a release gate or proof of fidelity."
+  },
+  "inputs": [
+    {
+      "path": "corpus-lab/longform-v10.jsonl",
+      "sha256": "6faa16a13d01b81dbb077a5ee2bdd0429f17b4109666d8694888413a7e46641c",
+      "role": "Frozen source fixtures; only the six flawed source texts reviewed"
+    },
+    {
+      "path": "corpus-lab/work/v10/qwen-partial-040.jsonl",
+      "sha256": "8c4ab82b7664760aeb92d72f84f167bd0f8193b011e78962b828119f170c05e9",
+      "snapshot_rows": 40,
+      "role": "Exact 40-result snapshot; only 18 flawed-source longform outputs reviewed"
+    }
+  ],
+  "generation_provenance": {
+    "model": "Qwen/Qwen3-32B",
+    "model_revision": "9216db5781bf21249d130ec9da846c4624c16137",
+    "manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+    "git": "eeea2d17431016c2829c6d1fa19643b31529cedf",
+    "vllm_version": "0.11.0",
+    "reasoning": "qwen-thinking",
+    "seed": 1125,
+    "temperature": 0.6,
+    "top_p": 0.95,
+    "top_k": 20,
+    "max_model_len": 32768
+  },
+  "coverage": {
+    "reviewed_source_count": 6,
+    "reviewed_output_count": 18,
+    "per_seeded_defect_judgments": 72,
+    "reviewed_source_ids": [
+      "lf10-01-flawed",
+      "lf10-02-flawed",
+      "lf10-03-flawed",
+      "lf10-04-flawed",
+      "lf10-05-flawed",
+      "lf10-06-flawed"
+    ],
+    "reviewed_output_ids": [
+      "lf10-01-flawed:baseline",
+      "lf10-01-flawed:core",
+      "lf10-01-flawed:full",
+      "lf10-02-flawed:baseline",
+      "lf10-02-flawed:core",
+      "lf10-02-flawed:full",
+      "lf10-03-flawed:baseline",
+      "lf10-03-flawed:core",
+      "lf10-03-flawed:full",
+      "lf10-04-flawed:baseline",
+      "lf10-04-flawed:core",
+      "lf10-04-flawed:full",
+      "lf10-05-flawed:baseline",
+      "lf10-05-flawed:core",
+      "lf10-05-flawed:full",
+      "lf10-06-flawed:baseline",
+      "lf10-06-flawed:core",
+      "lf10-06-flawed:full"
+    ],
+    "all_requested_outputs_complete": true,
+    "clean_outputs_reviewed": false,
+    "unreviewed_material": "The 18 clean-source longform outputs and the other four task results in this snapshot; no other model outputs are evidence for this review.",
+    "no_aggregate_quality_score": true
+  },
+  "methodology": [
+    "Read every complete flawed source and its baseline/core/full Qwen outputs; evaluate each against its own full source context.",
+    "Judge functional repair of each seeded defect rather than exact matching to a fixture clean reference.",
+    "Check suspected changes in paragraph context and record exact excerpts with confidence, severity and rationale.",
+    "Separate unchanged inherited defects from newly introduced meaning or grammar problems.",
+    "Credit real local repairs even where the same output also introduces errors.",
+    "Treat exact copying as a descriptive observation, not as editing success on an input containing actionable defects.",
+    "Do not use edit distance, output length, completion status or preserved headline numbers as a quality score.",
+    "Do not count heading capitalization, emphasis, quotation typography, whitespace or equivalent numerical notation as factual errors.",
+    "The fictional cases are not external fact claims; faithfulness is assessed relative to their supplied text.",
+    "Absence of a recorded new defect is not an exhaustive certificate of optimal prose or semantic fidelity."
+  ],
+  "severity_definitions": {
+    "major": "Changes a substantive reported event, evidential limit, test coverage or decision, or removes fictional provenance.",
+    "moderate": "A local omission, role, qualifier, scope, grammar or precision change weakens the account; adjacent context may preserve part of the intended meaning.",
+    "minor": "A localized spelling or inflectional-form regression without a demonstrated change to reported facts."
+  },
+  "confidence_definitions": {
+    "high": "The exact text and paragraph context directly support the observation. This remains an AI judgment, not human validation.",
+    "medium": "A plausible editorial concern admits alternative readings and should not be used as a strict proven-error claim."
+  },
+  "seed_status_definitions": {
+    "corrected": "The main injected defect is functionally repaired locally; this does not certify the whole output.",
+    "partially_corrected": "Some substantive repair occurs, but residual construction problems or newly lost meaning prevent an unqualified local success.",
+    "cosmetically_rephrased": "Words, tense or punctuation change while the seeded defect remains.",
+    "retained": "The problematic construction survives verbatim or effectively unchanged."
+  },
+  "sources": [
+    {
+      "source_id": "lf10-01-flawed",
+      "source_sha256": "36c52ce582671f1538cb21ed7ef555cc86d87e5f20d82f5fbf83a7ff87b3a411",
+      "genre": "analitik-blog",
+      "purpose": "Kurmaca bir mağazanın raporunu, ölçüm sınırlarını koruyarak yorumlamak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "source_seeded_defects": [
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Mağazanın işlem listesini dışa aktardık.",
+          "after": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik."
+        },
+        {
+          "type": "redundancy",
+          "location": "exact-span",
+          "before": "Henüz aynı soruya cevap vermiyorlardı.",
+          "after": "Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi."
+        },
+        {
+          "type": "empty_transition",
+          "location": "exact-span",
+          "before": "Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "after": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı."
+        },
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Önce iki döneme de aynı takip kuralını uygulamak gerekiyordu.",
+          "after": "Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu."
+        }
+      ],
+      "source_reference_labels_are_human_gold": false,
+      "reviewed_output_ids": [
+        "lf10-01-flawed:baseline",
+        "lf10-01-flawed:core",
+        "lf10-01-flawed:full"
+      ]
+    },
+    {
+      "source_id": "lf10-02-flawed",
+      "source_sha256": "2e7d3b81aa372b446b1b6860088426cccc207c9d8af9eb03f041c8ed391f5591",
+      "genre": "kisisel-deneme",
+      "purpose": "Kurmaca bir anlatıcının not alma alışkanlığını, sesini ve belirsizliklerini korumak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "source_seeded_defects": [
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Sayfalarını taramadım, kapağını onarmadım.",
+          "after": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim."
+        },
+        {
+          "type": "redundancy",
+          "location": "exact-span",
+          "before": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım.",
+          "after": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim."
+        },
+        {
+          "type": "empty_transition",
+          "location": "exact-span",
+          "before": "Sonraki hafta başka bir notu yine bulamadım.",
+          "after": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olacaktır. Sonraki hafta başka bir notu yine bulamadım."
+        },
+        {
+          "type": "wordy_equivalent",
+          "location": "exact-span",
+          "before": "Sadece bir sonraki dönüşte yolumu kısaltacak bir işaret bırakmıştım.",
+          "after": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım."
+        }
+      ],
+      "source_reference_labels_are_human_gold": false,
+      "reviewed_output_ids": [
+        "lf10-02-flawed:baseline",
+        "lf10-02-flawed:core",
+        "lf10-02-flawed:full"
+      ]
+    },
+    {
+      "source_id": "lf10-03-flawed",
+      "source_sha256": "4784be92cb9e7527f8f91f99c858015fda75d672e5cb28c03461993bba374c5f",
+      "genre": "urun-deneyimi-rehberi",
+      "purpose": "Kurmaca bir uygulamada yedek geri yükleme deneyini, koşulları ve veri sınırlarını koruyarak anlatmak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "source_seeded_defects": [
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Başlangıç durumunu ayrı bir listede sakladık.",
+          "after": "Başlangıç durumunun ayrı bir listede saklanması işlemini gerçekleştirdik."
+        },
+        {
+          "type": "redundancy",
+          "location": "exact-span",
+          "before": "Bu kez de yalnız sayıya güvenmedik.",
+          "after": "Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik."
+        },
+        {
+          "type": "empty_transition",
+          "location": "exact-span",
+          "before": "Tarih alanında ise beklenmedik bir fark çıktı.",
+          "after": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur. Tarih alanında ise beklenmedik bir fark çıktı."
+        },
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Başarısız denemeyi silmedik.",
+          "after": "Başarısız denemenin silinmesi işlemini gerçekleştirmedik."
+        }
+      ],
+      "source_reference_labels_are_human_gold": false,
+      "reviewed_output_ids": [
+        "lf10-03-flawed:baseline",
+        "lf10-03-flawed:core",
+        "lf10-03-flawed:full"
+      ]
+    },
+    {
+      "source_id": "lf10-04-flawed",
+      "source_sha256": "9e0f2c6122fe7c2bd76a7b52dce3b243d1bf108e7bb8d9d0c4a3e419c6ead8cb",
+      "genre": "kultur-blogu",
+      "purpose": "Kurmaca bir mahalle arşivinin çalışma kararlarını, alıntıları ve yayın izinlerini korumak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "source_seeded_defects": [
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Bu karşılaşmadan sonra görüşme formunu değiştirdik.",
+          "after": "Bu karşılaşmanın sonrasında görüşme formunun değiştirilmesi işlemini gerçekleştirdik."
+        },
+        {
+          "type": "redundancy",
+          "location": "exact-span",
+          "before": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu.",
+          "after": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu. Her boş alanın aynı gün içerisinde tamamlanması zorunlu değildi."
+        },
+        {
+          "type": "empty_transition",
+          "location": "exact-span",
+          "before": "Sınıflandırmanın kendisi de karar içeriyordu.",
+          "after": "Günümüzün değişen koşullarında sınıflandırma konusunun taşıdığı önemin göz ardı edilmemesi gerekmektedir. Sınıflandırmanın kendisi de karar içeriyordu."
+        },
+        {
+          "type": "wordy_equivalent",
+          "location": "exact-span",
+          "before": "İlk listeyi sessizce düzeltmek yerine belirsizliği not ettik.",
+          "after": "İlk listede sessiz bir biçimde düzeltme yapılması yoluna gitmek yerine, mevcut belirsizliğin not edilmesini tercih ettik."
+        }
+      ],
+      "source_reference_labels_are_human_gold": false,
+      "reviewed_output_ids": [
+        "lf10-04-flawed:baseline",
+        "lf10-04-flawed:core",
+        "lf10-04-flawed:full"
+      ]
+    },
+    {
+      "source_id": "lf10-05-flawed",
+      "source_sha256": "5d2aa355edc2b62453fa62dd3bc4d63e5e07dfae48afea17e91c6d27bc76afa6",
+      "genre": "tasarim-vaka-yazisi",
+      "purpose": "Kurmaca bir atölyenin ürün fotoğrafı ve ölçü sunumu kararlarını, ticari sonuç iddiası eklemeden anlatmak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "source_seeded_defects": [
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Bunları görüntüden silmedik.",
+          "after": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik."
+        },
+        {
+          "type": "redundancy",
+          "location": "exact-span",
+          "before": "İnsanların kendi duvarlarını ölçmesi hâlâ gerekecekti; biz yalnızca karşılaştıracakları bilgiyi daha görünür yaptık.",
+          "after": "İnsanların kendi duvarlarını ölçmesi hâlâ gerekecekti; biz yalnızca karşılaştıracakları bilgiyi daha görünür yaptık. Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu."
+        },
+        {
+          "type": "empty_transition",
+          "location": "exact-span",
+          "before": "Yük taşıma konusunda da aynı dikkat gerekti.",
+          "after": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır. Yük taşıma konusunda da aynı dikkat gerekti."
+        },
+        {
+          "type": "wordy_equivalent",
+          "location": "exact-span",
+          "before": "Yerini değiştirdiğimiz bilgiler ölçü çizimi, kutu içeriği ve malzeme açıklamasıydı.",
+          "after": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi."
+        }
+      ],
+      "source_reference_labels_are_human_gold": false,
+      "reviewed_output_ids": [
+        "lf10-05-flawed:baseline",
+        "lf10-05-flawed:core",
+        "lf10-05-flawed:full"
+      ]
+    },
+    {
+      "source_id": "lf10-06-flawed",
+      "source_sha256": "406c1982fa2e21fc34ea26b7746352ce379b9c17f7af0f4db6d904eb484171ce",
+      "genre": "egitim-atolyesi-gozlemi",
+      "purpose": "Kurmaca bir seramik atölyesindeki akış deneyini, gözlem ve yorum ayrımını koruyarak anlatmak.",
+      "provenance": {
+        "kind": "generated_development",
+        "human_verified": false,
+        "independent_holdout": false,
+        "rights": "project-authored",
+        "created_at": "2026-11-25",
+        "author_type": "AI-generated for Turkish Writer diagnostic development",
+        "fictional": true
+      },
+      "source_seeded_defects": [
+        {
+          "type": "nominalization",
+          "location": "exact-span",
+          "before": "Cümleyi not aldık.",
+          "after": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik."
+        },
+        {
+          "type": "redundancy",
+          "location": "exact-span",
+          "before": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık.",
+          "after": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık. Başka bir ifadeyle, aynı kişilerden oluşmayan bu grupların iki haftasını doğrudan başarı açısından karşılaştırma olarak sunmamız mümkün değildi."
+        },
+        {
+          "type": "empty_transition",
+          "location": "exact-span",
+          "before": "Eğitmen için de bir güçlük ortaya çıktı.",
+          "after": "Sürecin çok boyutlu niteliği dikkate alındığında diğer paydaşların deneyimlerini de göz önünde bulundurmak büyük önem taşımaktadır. Eğitmen için de bir güçlük ortaya çıktı."
+        },
+        {
+          "type": "wordy_equivalent",
+          "location": "exact-span",
+          "before": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığını soran kısa bir alan ekledik.",
+          "after": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik."
+        }
+      ],
+      "source_reference_labels_are_human_gold": false,
+      "reviewed_output_ids": [
+        "lf10-06-flawed:baseline",
+        "lf10-06-flawed:core",
+        "lf10-06-flawed:full"
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "source_id": "lf10-01-flawed",
+      "arm": "baseline",
+      "seeded_defects": [
+        {
+          "status": "partially_corrected",
+          "output_excerpt": "Mağazanın işlem listesini dışa aktarıp incelemeye karar verdik.",
+          "rationale": "The inflated nominalization disappears, but the completed export action is folded into a decision to export/review; the following prepared-file sentence only partly recovers the completed-action context.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Aralarındaki fark, aradıkları sorunun henüz aynı olmamasındaydı. Başka bir ifadeyle, aynı hedefe ulaşmak için farklı verilere dayanılmıştı.",
+          "rationale": "An extra 'in other words' explanation remains. It now interprets the participants as pursuing the same target with different data instead of directly removing the repeated explanation.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Bu noktada ürün gruplarına baktığımızda başka bir boşluk tespit edildi.",
+          "rationale": "Drops the generic importance statement and moves directly to the concrete product-group gap.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Öncelikle her iki döneme uygulanan takip kurallarının eşit olması gerekirdi.",
+          "rationale": "Substantially simplifies the nested operation wording and retains the need for comparable rules.",
+          "seed_index_1based": 4,
+          "type": "nominalization",
+          "source_excerpt": "Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "unsupported_effectiveness_claim",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Reklamları yöneten kişi ise tıklama sayısını gösteriyordu.",
+          "output_excerpt": "980'den 1.470'e yükselen rakam, reklam grubunun etkinliğini artırdığını gösteriyordu.",
+          "rationale": "The source only says the advertising manager points to clicks and later explicitly withholds causal attribution. The rewrite states that the increased number demonstrates greater ad-group effectiveness.",
+          "finding_id": "lf10-01-flawed:baseline:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, nisan raporunu açtığında önce sipariş sayısına baktı. İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki. Reklamları yöneten kişi ise tıklama sayısını gösteriyordu. İkisi de kendi seçtiği sayıya bakınca yapılan işin iyi gittiğini düşünüyordu. Sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, Nisan raporunu açtığında öncelikle sipariş sayısına baktı. İlk dönem (7–20 Nisan) 35, ikinci dönem (21 Nisan–4 Mayıs) 42 siparişle sonuçlandı. Reklamları yöneten kişi ise tıklama sayısını ön plana çıkardı: 980'den 1.470'e yükselen rakam, reklam grubunun etkinliğini artırdığını gösteriyordu. İkisi de kendi seçtiği sayıya bakarak işin iyi gittiğini düşündü. Sorun, sayılardan birinin yanlış olması değildi. Aralarındaki fark, aradıkları sorunun henüz aynı olmamasındaydı. Başka bir ifadeyle, aynı hedefe ulaşmak için farklı verilere dayanılmıştı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_chronology_change",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük.",
+          "output_excerpt": "İkinci dönemin son günlerinde iptal edilen bir sipariş tespit edildi.",
+          "rationale": "The source dates the order's creation to the final day and cancellation to later. The rewrite dates cancellation itself to the last days of the period, changing the reported timeline.",
+          "finding_id": "lf10-01-flawed:baseline:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "Kontrol sırasında ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük. Ancak ilk dönem için aynı uzunlukta bir iptal takip süremiz henüz yoktu. Bu yüzden yalnız ikinci dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden sunmadık. Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu. Aksi hâlde daha temiz görünen tablo, farklı kurallarla hazırlanmış iki sayıyı karşılaştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "İkinci dönemin son günlerinde iptal edilen bir sipariş tespit edildi. Ancak ilk dönem için iptal süresi henüz aynı uzunlukta değildi. Bu yüzden sadece ikinci dönemin toplamından o kaydı çıkarıp karşılaştırmayı tekrar etmedik. Öncelikle her iki döneme uygulanan takip kurallarının eşit olması gerekirdi. Aksi halde \"temiz görünen\" tablo, farklı kurallarla hesaplanmış iki sayıya dayanacaktı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_precision_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "hangi günün toplamına girdiğini",
+          "output_excerpt": "hangi dönemin toplamına girdiğini",
+          "rationale": "Daily allocation becomes period-level allocation. The broader period does not preserve the original day-level reconciliation objective.",
+          "finding_id": "lf10-01-flawed:baseline:finding-03",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "Mağazanın işlem listesini dışa aktarıp incelemeye karar verdik. Hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşteri bilgileri (ad, telefon, adres) karşılaştırmaya gerekli olmadığı için dahil edilmedi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemin toplamına girdiğini anlamaktı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_orthography",
+          "severity": "minor",
+          "confidence": "high",
+          "source_excerpt": "anlayabilmesini istiyorduk.",
+          "output_excerpt": "anlayabilmesini sağlamaktu.",
+          "rationale": "The invented final form 'sağlamaktu' is malformed; the intended form here would be 'sağlamaktı'.",
+          "finding_id": "lf10-01-flawed:baseline:finding-04",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bu aşamada raporun üzerine küçük bir not ekledik: \"Siparişler ilk kayıt durumuna göre sayılmıştır.\" Notun amacı sonucu küçümsemek değildi. Tabloyu daha sonra açan kişinin, sayının hangi tanıma dayandığını anlayabilmesini istiyorduk. Tanım değiştiğinde eski raporu sessizce yenilemek yerine yeni sürümü ayrıca saklayacaktık. Böylece geçmişte neden başka bir sayı görüldüğü de açıklanabilecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "Bu aşamada rapora küçük ama kritik bir not eklendi: **\"Siparişler ilk kayıt durumuna göre sayılmıştır.\"** Bu notun amacı sonuçları küçültmek değil, sonradan raporu açan kişinin sayının tanımını anlayabilmesini sağlamaktu. Tanım değişirse, eski raporun yeniden hesaplanması yerine yeni sürüm ayrı saklanacak, böylece geçmişteki farklı sayılar açıklanabilecekti."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Böyle bir açıklamayı bulgu gibi yazmak yerine sonraki incelemenin sorusu olarak kaydettik.",
+          "output_excerpt": "Böyle bir yorum yerine, bu sorunun sonraki incelemenin odak noktası olarak kaydedildi.",
+          "rationale": "The genitive 'bu sorunun' cannot serve as the subject of 'kaydedildi' in this construction; a nominalized complement or nominative subject is missing.",
+          "finding_id": "lf10-01-flawed:baseline:finding-05",
+          "source_context": {
+            "paragraph_index_1based": 12,
+            "paragraph": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı. Siparişlerin hangi ürünlerden oluştuğunu biliyorduk ama tıklamaların tamamını aynı ayrıntıyla eşleştiremiyorduk. Genel dönüşüm oranını ürün bazında yorumlamak bu nedenle mümkün değildi. Yüksek fiyatlı bir ürüne daha çok ziyaretçi gelmesi, bütün mağazanın oranını değiştirmiş olabilir. Böyle bir açıklamayı bulgu gibi yazmak yerine sonraki incelemenin sorusu olarak kaydettik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 11,
+            "paragraph": "Bu noktada ürün gruplarına baktığımızda başka bir boşluk tespit edildi. Siparişlerin hangi ürünlerden oluştuğunu biliyorduk ama tıklamaların detaylı eşleştirilmesi sağlanamadı. Genel dönüşüm oranını ürün bazında yorumlamak mümkün değildi. Yüksek fiyatlı bir ürüne daha çok ziyaretçi gelmesi, mağazanın genel oranını değiştirebilirdi. Böyle bir yorum yerine, bu sorunun sonraki incelemenin odak noktası olarak kaydedildi."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Directly removes the generic product-group transition and greatly simplifies the follow-up-rule sentence.",
+        "Retains the numerical values and the concluding statement that profitability has not been calculated."
+      ],
+      "limitations": [
+        "Written numbers becoming digits, boldface and list formatting are not counted as errors.",
+        "The export/decision wording is treated as a partial repair rather than a proven reversal of whether a file existed."
+      ],
+      "output_id": "lf10-01-flawed:baseline",
+      "source_sha256": "36c52ce582671f1538cb21ed7ef555cc86d87e5f20d82f5fbf83a7ff87b3a411",
+      "output_sha256": "49c849c65a04f1e34a540b1e690d41c36daa9bcbad6ee305ab99b7fccee64c7a",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-01-flawed",
+      "arm": "core",
+      "seeded_defects": [
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Mağazanın işlem listesini dışa aktarmayı gerçekleştirdik.",
+          "rationale": "Replaces one nominalization with 'dışa aktarmayı gerçekleştirdik'; the inflated perform-an-action construction remains.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Henüz aynı soruya yanıt vermiyorlardı. Başka bir ifadeyle, aradıkları soru henüz aynı soru değildi.",
+          "rationale": "The second sentence repeats the first despite lexical substitutions.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Bu noktada konunun başka bir boyutunu ele almak büyük önem taşıyor.",
+          "rationale": "The generic importance transition remains with a changed adjective and tense ending.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Önce her iki döneme ilişkin aynı takip kuralının uygulanması gerekliydi.",
+          "rationale": "Removes the nested 'işleminin gerçekleştirilmesi' wording while retaining the need for the same rule.",
+          "seed_index_1based": 4,
+          "type": "nominalization",
+          "source_excerpt": "Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "meaning_precision_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "hangi günün toplamına girdiğini",
+          "output_excerpt": "hangi dönemin toplamına girdiğini",
+          "rationale": "The stated reconciliation target changes from a specific day's total to a whole period's total.",
+          "finding_id": "lf10-01-flawed:core:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesini dışa aktarmayı gerçekleştirdik. Hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşteri bilgileri bu karşılaştırmaya gerekli değildi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemin toplamına girdiğini anlamaktı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_omission",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Onları dosyaya eklemedik.",
+          "output_excerpt": "Müşteri bilgileri bu karşılaştırmaya gerekli değildi.",
+          "rationale": "The source explicitly says personal information was excluded. The rewrite only says it was unnecessary and omits the exclusion action. This does not prove any personal information was included; it loses the source's explicit assurance.",
+          "finding_id": "lf10-01-flawed:core:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesini dışa aktarmayı gerçekleştirdik. Hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşteri bilgileri bu karşılaştırmaya gerekli değildi. Amacımız kimin alışveriş yaptığını değil, aynı siparişin kaç kez sayıldığını ve hangi dönemin toplamına girdiğini anlamaktı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Simplifies the final follow-up-rule nominalization.",
+        "Preserves the source's tentative ad attribution, unequal follow-up duration, numerical values and uncalculated profitability."
+      ],
+      "limitations": [
+        "The omission finding concerns what the rewritten account states, not an actual privacy event.",
+        "Most seeded defects remain despite extensive rephrasing elsewhere."
+      ],
+      "output_id": "lf10-01-flawed:core",
+      "source_sha256": "36c52ce582671f1538cb21ed7ef555cc86d87e5f20d82f5fbf83a7ff87b3a411",
+      "output_sha256": "8883247dc12bb9ed1352acb0990a82800135cdd357c20023650d9a24097996ea",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-01-flawed",
+      "arm": "full",
+      "seeded_defects": [
+        {
+          "status": "corrected",
+          "output_excerpt": "Mağazanın işlem listesini dışa aktararak kontrol yaptık.",
+          "rationale": "Uses a direct export action instead of the nested nominalization.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "partially_corrected",
+          "output_excerpt": "Aradıkları cevap hâlâ aynı soru değildi.",
+          "rationale": "The duplicated sentences are compressed into one, but the replacement wrongly compares an answer with a question.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Ürün gruplarına baktığımızda başka bir boşluk belirdi:",
+          "rationale": "Drops the generic importance transition and starts with the actual observation.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Bu noktada konunun farklı bir boyutunu ele almak büyük önem taşımaktadır. Ürün gruplarına baktığımızda başka bir boşluk çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Önce her iki döneme aynı takip kuralının uygulanması gerekir.",
+          "rationale": "Substantially simplifies the need for a common rule.",
+          "seed_index_1based": 4,
+          "type": "nominalization",
+          "source_excerpt": "Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "new_semantic_incoherence",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Henüz aynı soruya cevap vermiyorlardı.",
+          "output_excerpt": "Aradıkları cevap hâlâ aynı soru değildi.",
+          "rationale": "The source compares which question the participants answer. The rewrite predicates 'same question' of an 'answer', creating an incoherent relation.",
+          "finding_id": "lf10-01-flawed:full:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi, nisan raporunu açtığında önce sipariş sayısına baktı. İlk dönemde otuz beş sipariş vardı, ikinci dönemde kırk iki. Reklamları yöneten kişi ise tıklama sayısını gösteriyordu. İkisi de kendi seçtiği sayıya bakınca yapılan işin iyi gittiğini düşünüyordu. Sorun, sayılardan birinin yanlış olması değildi. Henüz aynı soruya cevap vermiyorlardı. Başka bir ifadeyle, cevap aradıkları soru henüz aynı soru değildi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Kıyı Atölye adlı kurmaca mağazanın sahibi Nisan raporunu incelediğinde ilk olarak sipariş sayısına dikkat etti. İlk dönem 35, ikinci dönem 42 sipariş kaydı var. Reklamları yöneten kişi ise tıklama sayısına baktı: 980'den 1.470'e yükseldi. İkisi de kendi seçtiği sayıya göre işin iyi gittiğini düşündü. Ancak sorun, sayılardan birinin yanlış olması değildi. Aradıkları cevap hâlâ aynı soru değildi.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_fact_change",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Ancak ilk dönem için aynı uzunlukta bir iptal takip süremiz henüz yoktu.",
+          "output_excerpt": "Ancak ilk dönem için benzer bir iptal takibi yoktu.",
+          "rationale": "The lack of equally long follow-up becomes the absence of similar follow-up. The source allows a shorter follow-up period.",
+          "finding_id": "lf10-01-flawed:full:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "Kontrol sırasında ikinci dönemin son gününde açılan bir siparişin daha sonra iptal edildiğini gördük. Ancak ilk dönem için aynı uzunlukta bir iptal takip süremiz henüz yoktu. Bu yüzden yalnız ikinci dönemin toplamından o kaydı çıkarıp karşılaştırmayı yeniden sunmadık. Öncelikle her iki döneme ilişkin olarak aynı takip kuralının uygulanması işleminin gerçekleştirilmesi gerekiyordu. Aksi hâlde daha temiz görünen tablo, farklı kurallarla hazırlanmış iki sayıyı karşılaştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "İkinci dönemin son gününde açılan bir siparişin iptal edildiğini gördük. Ancak ilk dönem için benzer bir iptal takibi yoktu. Bu nedenle yalnızca ikinci dönemin toplamından o kaydı çıkartıp karşılaştırmayı yenilemedik. Önce her iki döneme aynı takip kuralının uygulanması gerekir. Aksi takdirde daha \"temiz\" görünen tablo, farklı kurallarla hazırlanmış sayılara dayanır.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_precision_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "hangi günün toplamına girdiğini",
+          "output_excerpt": "hangi dönemin toplamına girdiğini",
+          "rationale": "Day-level allocation is generalized to period-level allocation.",
+          "finding_id": "lf10-01-flawed:full:finding-03",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "Mağazanın işlem listesini dışa aktararak kontrol yaptık. Sipariş kimliği, oluşturulma zamanı ve son durum bilgilerini içeren bir dosya oluşturduk. Müşteri bilgileri bu karşılaştırmada gerekli değildi. Amaç, aynı siparişin kaç kez sayıldığını ve hangi dönemin toplamına girdiğini anlamak.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_omission",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Onları dosyaya eklemedik.",
+          "output_excerpt": "Müşteri bilgileri bu karşılaştırmada gerekli değildi.",
+          "rationale": "The explicit exclusion of personal information is no longer stated; calling it unnecessary does not preserve that action. No assertion is made that the rewrite actually contains such data.",
+          "finding_id": "lf10-01-flawed:full:finding-04",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "Mağazanın işlem listesinin dışa aktarılması işlemini gerçekleştirdik. İnceleme için hazırlanan dosyada sipariş kimliği, oluşturulma zamanı ve son durum yer aldı. Müşterinin adı, telefon numarası ve adresi bu karşılaştırma için gerekli değildi. Onları dosyaya eklemedik. Amacımız kimin alışveriş yaptığını öğrenmek değil, aynı siparişin kaç kez sayıldığını ve hangi günün toplamına girdiğini anlamaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "Mağazanın işlem listesini dışa aktararak kontrol yaptık. Sipariş kimliği, oluşturulma zamanı ve son durum bilgilerini içeren bir dosya oluşturduk. Müşteri bilgileri bu karşılaştırmada gerekli değildi. Amaç, aynı siparişin kaç kez sayıldığını ve hangi dönemin toplamına girdiğini anlamak.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Meaningfully repairs the export nominalization, empty transition and follow-up-rule construction.",
+        "Retains the main figures, the caveat about attribution and the uncalculated-profitability conclusion."
+      ],
+      "limitations": [
+        "Compression produces useful local repairs, but removal of text does not by itself establish fidelity.",
+        "A potential omission or meaning change is evaluated in its paragraph context, not inferred from edit distance."
+      ],
+      "output_id": "lf10-01-flawed:full",
+      "source_sha256": "36c52ce582671f1538cb21ed7ef555cc86d87e5f20d82f5fbf83a7ff87b3a411",
+      "output_sha256": "b6911bb1412ab2d9e54f486135c9f303f7f341d8c889ffca83b6846d1dd2ca6e",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-02-flawed",
+      "arm": "baseline",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim.",
+          "rationale": "The doubled nominalization is preserved verbatim.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim.",
+          "rationale": "Both equivalent sentences remain unchanged.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olacaktır.",
+          "rationale": "The injected generic transition is unchanged.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olacaktır. Sonraki hafta başka bir notu yine bulamadım.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım.",
+          "rationale": "The full inflated route-shortening expression remains unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's distinction between memory and written note, its unresolved uncertainty and its fictional framing are preserved."
+      ],
+      "limitations": [
+        "Preserving the source without new detected errors is not editorial success when the requested input contains known actionable defects.",
+        "Formatting or a changed verb ending is not credited as a substantive repair.",
+        "No high-confidence new meaning or grammar defect is recorded; this is a scoped review, not a proof that every aspect of the prose is ideal."
+      ],
+      "output_id": "lf10-02-flawed:baseline",
+      "source_sha256": "2e7d3b81aa372b446b1b6860088426cccc207c9d8af9eb03f041c8ed391f5591",
+      "output_sha256": "c5ba52f3f17d12490d2e292f3ec7ac9a807031e821ace28b3d15954614903d18",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-02-flawed",
+      "arm": "core",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim.",
+          "rationale": "The doubled nominalization is preserved verbatim.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim.",
+          "rationale": "Both equivalent sentences remain unchanged.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olacaktır.",
+          "rationale": "The injected generic transition is unchanged.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olacaktır. Sonraki hafta başka bir notu yine bulamadım.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım.",
+          "rationale": "The full inflated route-shortening expression remains unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's distinction between memory and written note, its unresolved uncertainty and its fictional framing are preserved."
+      ],
+      "limitations": [
+        "Preserving the source without new detected errors is not editorial success when the requested input contains known actionable defects.",
+        "Formatting or a changed verb ending is not credited as a substantive repair.",
+        "No high-confidence new meaning or grammar defect is recorded; this is a scoped review, not a proof that every aspect of the prose is ideal."
+      ],
+      "output_id": "lf10-02-flawed:core",
+      "source_sha256": "2e7d3b81aa372b446b1b6860088426cccc207c9d8af9eb03f041c8ed391f5591",
+      "output_sha256": "2e7d3b81aa372b446b1b6860088426cccc207c9d8af9eb03f041c8ed391f5591",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": true,
+      "whitespace_normalized_source_copy": true
+    },
+    {
+      "source_id": "lf10-02-flawed",
+      "arm": "full",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim.",
+          "rationale": "The doubled nominalization is preserved verbatim.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Sayfalarının taranması işlemini ve kapağının onarılması işlemini gerçekleştirmedim.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim.",
+          "rationale": "Both equivalent sentences remain unchanged.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Defterleri birbirine benzetmeye çalışmayı o gün bıraktım. O gün itibarıyla defterlerin birbirine benzemesi için çaba göstermeyi sürdürmedim.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olurdu.",
+          "rationale": "Only 'olacaktır' becomes 'olurdu'; the entire content-free transition remains.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Konunun bu önemli boyutunu da göz önünde bulundurarak bir sonraki aşamaya geçmek yerinde olacaktır. Sonraki hafta başka bir notu yine bulamadım.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım.",
+          "rationale": "The full inflated route-shortening expression remains unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Yalnızca bir sonraki geri dönüşüm sırasında izlemem gereken yolun daha kısa olmasını sağlayacak nitelikte bir işaret bırakmıştım.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's distinction between memory and written note, its unresolved uncertainty and its fictional framing are preserved."
+      ],
+      "limitations": [
+        "Preserving the source without new detected errors is not editorial success when the requested input contains known actionable defects.",
+        "Formatting or a changed verb ending is not credited as a substantive repair.",
+        "No high-confidence new meaning or grammar defect is recorded; this is a scoped review, not a proof that every aspect of the prose is ideal."
+      ],
+      "output_id": "lf10-02-flawed:full",
+      "source_sha256": "2e7d3b81aa372b446b1b6860088426cccc207c9d8af9eb03f041c8ed391f5591",
+      "output_sha256": "2ffa45b944ac82db9175fe2c10989ff7aa5230f1fe013e97acf7625e5385a04a",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-03-flawed",
+      "arm": "baseline",
+      "seeded_defects": [
+        {
+          "status": "corrected",
+          "output_excerpt": "Başlangıç listesi ayrı bir kaynakta saklanarak",
+          "rationale": "Replaces the nested operation wording with a direct storage action.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Başlangıç durumunun ayrı bir listede saklanması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Ancak sayıya güvenmek yeterli görülmedi.",
+          "rationale": "Removes the duplicate sentence and its inherited awkward case construction.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "## Tarih ve Zaman Dilimi Farkı",
+          "rationale": "Removes the generic importance transition and introduces the actual topic directly; the subsequent technical accuracy is evaluated separately.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur. Tarih alanında ise beklenmedik bir fark çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Başarısız denemeler silinmeden saklandı.",
+          "rationale": "Expresses retention directly instead of through a nested deletion-operation nominalization.",
+          "seed_index_1based": 4,
+          "type": "nominalization",
+          "source_excerpt": "Başarısız denemenin silinmesi işlemini gerçekleştirmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "meaning_verification_scope_loss",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık.",
+          "output_excerpt": "örnek dosyalar açılarak özetler (hash değerleri) karşılaştırıldı.",
+          "rationale": "The source explicitly distinguishes opening some examples from hashing every attachment. The rewrite no longer states that all attachment hashes were compared and reads as checks on example files.",
+          "finding_id": "lf10-03-flawed:baseline:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "ZIP dosyası yüklendiğinde 27 ekin tamamı listelendi. Ancak sayıya güvenmek yeterli görülmedi. Dosya adları eşleşse de içeriklerin aynen aktarıldığından emin olmak için örnek dosyalar açılarak özetler (hash değerleri) karşılaştırıldı. Aynı özetin bulunması, aktarımda içerik değişmediğini doğruladı.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "unsupported_verification_result",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi.",
+          "output_excerpt": "Aynı özetin bulunması, aktarımda içerik değişmediğini doğruladı.",
+          "rationale": "A possible indication becomes a confirmed result, and the limitation about original correctness disappears.",
+          "finding_id": "lf10-03-flawed:baseline:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "ZIP dosyası yüklendiğinde 27 ekin tamamı listelendi. Ancak sayıya güvenmek yeterli görülmedi. Dosya adları eşleşse de içeriklerin aynen aktarıldığından emin olmak için örnek dosyalar açılarak özetler (hash değerleri) karşılaştırıldı. Aynı özetin bulunması, aktarımda içerik değişmediğini doğruladı.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_time_zone_change",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Dosyada gece yarısından önce görünen bir not, ekranda ertesi günün tarihiyle görünebiliyordu.",
+          "output_excerpt": "gece yarısından önce kaydedilen bir not, UTC’ye göre ertesi günün tarihiyle ekranda görünebilir.",
+          "rationale": "The source places UTC in the file and the account time zone on screen. The new example attributes the screen's next-day display to UTC, conflicting with the preceding sentence's account-zone explanation.",
+          "finding_id": "lf10-03-flawed:baseline:finding-03",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur. Tarih alanında ise beklenmedik bir fark çıktı. JSON dosyasında zaman UTC olarak saklanmıştı. Ekran, hesabın seçili saat dilimine göre gösterim yapıyordu. Dosyada gece yarısından önce görünen bir not, ekranda ertesi günün tarihiyle görünebiliyordu. Bu iki değer aynı anı ifade ediyorsa kayıt değişmiş sayılmayacaktı. Farkı açıklamadan \"tarihler uyuşmuyor\" demek, gösterimle veriyi birbirine karıştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "JSON dosyasında zaman UTC formatında saklanırken, ekranda hesabın saat dilimine göre gösterilir. Örneğin, gece yarısından önce kaydedilen bir not, UTC’ye göre ertesi günün tarihiyle ekranda görünebilir. Bu fark veri bütünlüğü açısından problem yaratmaz; yalnızca gösterimle ilgilidir.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "condition_omission",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Bu iki değer aynı anı ifade ediyorsa kayıt değişmiş sayılmayacaktı.",
+          "output_excerpt": "Bu fark veri bütünlüğü açısından problem yaratmaz; yalnızca gösterimle ilgilidir.",
+          "rationale": "The source requires the two timestamps to represent the same instant. The rewrite drops that condition and makes an unconditional integrity assurance.",
+          "finding_id": "lf10-03-flawed:baseline:finding-04",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur. Tarih alanında ise beklenmedik bir fark çıktı. JSON dosyasında zaman UTC olarak saklanmıştı. Ekran, hesabın seçili saat dilimine göre gösterim yapıyordu. Dosyada gece yarısından önce görünen bir not, ekranda ertesi günün tarihiyle görünebiliyordu. Bu iki değer aynı anı ifade ediyorsa kayıt değişmiş sayılmayacaktı. Farkı açıklamadan \"tarihler uyuşmuyor\" demek, gösterimle veriyi birbirine karıştıracaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "JSON dosyasında zaman UTC formatında saklanırken, ekranda hesabın saat dilimine göre gösterilir. Örneğin, gece yarısından önce kaydedilen bir not, UTC’ye göre ertesi günün tarihiyle ekranda görünebilir. Bu fark veri bütünlüğü açısından problem yaratmaz; yalnızca gösterimle ilgilidir.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_version_scope_loss",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Bu yazı yalnızca denediğimiz 2.4 sürümündeki kuralları anlatıyor.",
+          "output_excerpt": "Bu kuralların gelecekte değişip değişmeyeceğini ölçmek için deneyin aynısının yeni sürümlerde tekrarlanması önerilir.",
+          "rationale": "The exact tested version and explicit scope restriction disappear. Advice to retest future versions remains, so this is loss of present evidence scope rather than a claim that future versions are guaranteed.",
+          "finding_id": "lf10-03-flawed:baseline:finding-05",
+          "source_context": {
+            "paragraph_index_1based": 10,
+            "paragraph": "CSV dosyasında zamanın hesabın saat dilimiyle yazıldığını da not ettik. JSON ve CSV sonuçlarını kıyaslarken aynı dönüşümü uygulamak gerekiyordu. Uygulamanın gelecekte bu davranışı değiştirip değiştirmeyeceğini bilmiyoruz. Bu yazı yalnızca denediğimiz 2.4 sürümündeki kuralları anlatıyor. Yeni sürüm için aynı sonuca otomatik olarak güvenmek yerine örneği yeniden çalıştırmak gerekir."
+          },
+          "output_context": {
+            "paragraph_index_1based": 10,
+            "paragraph": "CSV dosyasında zaman, hesabın saat dilimine göre kaydedilir. JSON ve CSV sonuçlarının kıyaslanmasında zaman dönüşümüne dikkat edilmesi gerekir. Bu kuralların gelecekte değişip değişmeyeceğini ölçmek için deneyin aynısının yeni sürümlerde tekrarlanması önerilir.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_scope_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "kontrol listesindeki kutuyu işaretledi.",
+          "output_excerpt": "kontrol listesini tamamladı.",
+          "rationale": "Checking one box becomes completing the checklist, overstating what the initial download established.",
+          "finding_id": "lf10-03-flawed:baseline:finding-06",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Koru Defter, bu yazı için tasarlanmış kurmaca bir not uygulaması. Ürün ekibi, yeni dışa aktarma ekranını hazırladığında ilk denemede bir dosya indirdi ve kontrol listesindeki kutuyu işaretledi. Dosya bilgisayarda duruyordu; adı doğru, boyutu da makul görünüyordu. Bir süre sonra aynı dosyayı boş bir hesaba geri yüklemeyi denedik. Asıl inceleme o sırada başladı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Koru Defter, bu deney için tasarlanmış kurmaca bir not alma uygulamasıdır. Ürün ekibi, yeni dışa aktarma ekranını test etmek amacıyla bir dosya indirip kontrol listesini tamamladı. Dosya bilgisayarda mevcuttu; adı ve boyutu beklenen aralıklarda görünüyordu. Daha sonra bu dosyayı boş bir hesaba geri yüklemeyi denedi. Gerçek kullanıcı verileri yerine ekibin oluşturduğu 180 not, 12 klasör ve 27 dosya ekli test verileri kullanıldı. Başlangıç listesi ayrı bir kaynakta saklanarak geri yükleme sonrası yalnızca görsel kontrol değil, sayısal ve ilişkisel doğrulama da mümkün hale getirildi.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_untested_case_change",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Ancak başlığı aynı, kimliği farklı olan notları ayrıca denememiştik.",
+          "output_excerpt": "Ancak başlık ve içerik aynı olan fakat kimliği farklı notlar için ayrı bir test yapılmadı.",
+          "rationale": "Adds an equal-content requirement to the untested case, narrowing the original same-title/different-ID limitation.",
+          "finding_id": "lf10-03-flawed:baseline:finding-07",
+          "source_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Tekrar yükleme sonunda toplam yine 180 not oldu. Bu örnekte not kimlikleri sayesinde önceki kayıtlar ikinci kez oluşturulmamıştı. Ancak başlığı aynı, kimliği farklı olan notları ayrıca denememiştik. Sonucu \"uygulama hiçbir durumda tekrar üretmez\" diye yazmadık. Böyle bir cümle, yaptığımız tek kesinti denemesinden çok daha geniş bir davranışı garanti edecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "İkinci yükleme sonrası toplam 180 not ulaşıldı. Not kimlikleri sayesinde tekrar üretme problemi tespit edilmedi. Ancak başlık ve içerik aynı olan fakat kimliği farklı notlar için ayrı bir test yapılmadı. Bu nedenle \"uygulama hiçbir durumda tekrar üretmez\" gibi genellemeler yapılmadı.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Tekrar yükleme sonunda toplam yine 180 not oldu.",
+          "output_excerpt": "İkinci yükleme sonrası toplam 180 not ulaşıldı.",
+          "rationale": "The verb 'ulaşıldı' requires the dative '180 nota'; the rewritten sentence has a case error.",
+          "finding_id": "lf10-03-flawed:baseline:finding-08",
+          "source_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "Tekrar yükleme sonunda toplam yine 180 not oldu. Bu örnekte not kimlikleri sayesinde önceki kayıtlar ikinci kez oluşturulmamıştı. Ancak başlığı aynı, kimliği farklı olan notları ayrıca denememiştik. Sonucu \"uygulama hiçbir durumda tekrar üretmez\" diye yazmadık. Böyle bir cümle, yaptığımız tek kesinti denemesinden çok daha geniş bir davranışı garanti edecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 13,
+            "paragraph": "İkinci yükleme sonrası toplam 180 not ulaşıldı. Not kimlikleri sayesinde tekrar üretme problemi tespit edilmedi. Ancak başlık ve içerik aynı olan fakat kimliği farklı notlar için ayrı bir test yapılmadı. Bu nedenle \"uygulama hiçbir durumda tekrar üretmez\" gibi genellemeler yapılmadı.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Locally repairs all four seeded constructions, including the repeated and already ungrammatical count explanation.",
+        "Keeps the headline counts, fictional framing, separate ZIP requirement, limited no-duplication conclusion and tentative interface benefit."
+      ],
+      "limitations": [
+        "The substantial rewrite is not judged by its length or added headings.",
+        "The restricted successful-restore recap is supported by the source's successful limited test and is not itself treated as an invented universal guarantee."
+      ],
+      "output_id": "lf10-03-flawed:baseline",
+      "source_sha256": "4784be92cb9e7527f8f91f99c858015fda75d672e5cb28c03461993bba374c5f",
+      "output_sha256": "3bebf0e6d301eb810e9d1d6fefbd236080b8f65c666a0697c0fbc029b97a9b2f",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-03-flawed",
+      "arm": "core",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Başlangıç durumunun ayrı bir listede saklanması işlemini gerçekleştirdik.",
+          "rationale": "The injected nominalization is unchanged.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Başlangıç durumunun ayrı bir listede saklanması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik.",
+          "rationale": "Both equivalent statements remain, including the source's awkward case construction.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur.",
+          "rationale": "The generic importance transition is unchanged.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur. Tarih alanında ise beklenmedik bir fark çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Başarısız denemenin silinmesi işlemini gerçekleştirmedik.",
+          "rationale": "The final nested nominalization is unchanged.",
+          "seed_index_1based": 4,
+          "type": "nominalization",
+          "source_excerpt": "Başarısız denemenin silinmesi işlemini gerçekleştirmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's counts, UTC/account-zone distinction, tested version 2.4, all-attachment hash scope, tentative benefits and limited no-duplication claim are preserved."
+      ],
+      "limitations": [
+        "The inherited 'sayının kendisini güvenmek' construction is not counted as a newly introduced grammar error.",
+        "Near-copying the source preserves evidence but does not fulfil the requested repair of known defects.",
+        "No high-confidence new meaning or grammar defect is recorded in this scoped review."
+      ],
+      "output_id": "lf10-03-flawed:core",
+      "source_sha256": "4784be92cb9e7527f8f91f99c858015fda75d672e5cb28c03461993bba374c5f",
+      "output_sha256": "6d92d3af70ec94e12a949ec4bc4e42f35a01a1b56a0fd01a3f69ca1909782a57",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-03-flawed",
+      "arm": "full",
+      "seeded_defects": [
+        {
+          "status": "partially_corrected",
+          "output_excerpt": "Başlangıç durumunun ayrı bir listede saklanması, geri yükleme sonrası yalnızca ekranda bir şeyler görünüp görünmediğine değil, sayısal ve yapısal ilişkileri de karşılaştırmamıza olanak sağladı.",
+          "rationale": "Removes the nested 'işlemini gerçekleştirdik' phrase but introduces faulty parallel syntax; the direct action remains nominalized.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Başlangıç durumunun ayrı bir listede saklanması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Ancak yalnızca sayıya güvenmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamazdı.",
+          "rationale": "Deletes the repeated count explanation while preserving the need for content checks.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Tarih konusunda beklenmedik bir farkla karşılaştık.",
+          "rationale": "Replaces the generic importance lead with the concrete observation.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Bu bağlamda, üzerinde ayrıca durulması gereken önemli noktalardan biri de tarih konusudur. Tarih alanında ise beklenmedik bir fark çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Başarısız denemenin silinmesi işlemini gerçekleştirmedik.",
+          "rationale": "The final nominalization is unchanged.",
+          "seed_index_1based": 4,
+          "type": "nominalization",
+          "source_excerpt": "Başarısız denemenin silinmesi işlemini gerçekleştirmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "yalnızca ekranda bir şeyler görünüp görünmediğine bakmakla kalmayacak, sayıları ve ilişkileri de karşılaştırabilecektik.",
+          "output_excerpt": "yalnızca ekranda bir şeyler görünüp görünmediğine değil, sayısal ve yapısal ilişkileri de karşılaştırmamıza olanak sağladı.",
+          "rationale": "The first side of the parallel construction lacks a compatible verb such as 'bakmamıza'; a dative whether-clause is improperly coordinated with comparison of relationships.",
+          "finding_id": "lf10-03-flawed:full:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Deneme hesabında 180 not, 12 klasör ve 27 dosya eki bulunuyordu. Bunlar gerçek kullanıcılara ait değildi. Ekibin oluşturduğu örnek notları kullandık; kişisel iletişim bilgisi veya müşteri belgesi eklemedik. Başlangıç durumunun ayrı bir listede saklanması işlemini gerçekleştirdik. Böylece geri yükleme sonunda yalnızca ekranda bir şeyler görünüp görünmediğine bakmakla kalmayacak, sayıları ve ilişkileri de karşılaştırabilecektik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Deneme hesabında 180 not, 12 klasör ve 27 dosya eki vardı. Bu veriler gerçek kullanıcılara ait değildi. Ekibin hazırladığı örnek notları kullandık; kişisel iletişim bilgisi veya müşteri belgesi eklemedik. Başlangıç durumunun ayrı bir listede saklanması, geri yükleme sonrası yalnızca ekranda bir şeyler görünüp görünmediğine değil, sayısal ve yapısal ilişkileri de karşılaştırmamıza olanak sağladı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "unsupported_test_action_claim",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi.",
+          "output_excerpt": "ilk başta doğru içerikle oluşturulduğunu ayrı bir kanıtla doğrulamadık.",
+          "rationale": "A limitation on what matching hashes establish becomes a new claim that the team did not verify original correctness using separate evidence. The source does not state whether such another verification occurred.",
+          "finding_id": "lf10-03-flawed:full:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Ancak yalnızca sayıya güvenmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamazdı. Örneklerin bir kısmını açarak kontrol ettik ve tüm eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterse de, ilk başta doğru içerikle oluşturulduğunu ayrı bir kanıtla doğrulamadık."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "certainty_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "dosyanın bu aktarımda değişmediğini gösterebilirdi;",
+          "output_excerpt": "dosyanın bu aktarımda değişmediğini gösterse de,",
+          "rationale": "Removes the source's possibility qualifier; this is recorded as a textual certainty shift rather than an external claim about cryptographic guarantees.",
+          "finding_id": "lf10-03-flawed:full:finding-03",
+          "source_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Bu kez de yalnız sayıya güvenmedik. Yalnızca sayının kendisini güvenmek için yeterli kabul etmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamıyordu. Örneklerin bir bölümünü açıp kontrol ettik ve bütün eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterebilirdi; dosyanın ilk başta doğru içerikle oluşturulduğunu ayrıca söylemezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 7,
+            "paragraph": "ZIP dosyasını yükledikten sonra 27 ekin tamamı listelendi. Ancak yalnızca sayıya güvenmedik. Dosya adlarının eşleşmesi, içeriğin aynı olduğunu kanıtlamazdı. Örneklerin bir kısmını açarak kontrol ettik ve tüm eklerin dosya özetlerini karşılaştırdık. Aynı özetin bulunması dosyanın bu aktarımda değişmediğini gösterse de, ilk başta doğru içerikle oluşturulduğunu ayrı bir kanıtla doğrulamadık."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Removes the redundant count explanation and the empty date transition.",
+        "Retains opening a subset versus comparing hashes for all attachments, version 2.4, count values, and the explicit unmeasured support-effect caveat."
+      ],
+      "limitations": [
+        "The shortened interruption/retry narrative still retains 63 then 180 notes and the untested same-title/different-ID case; compression alone is not called a factual error.",
+        "No cross-model result is used as evidence for these judgments."
+      ],
+      "output_id": "lf10-03-flawed:full",
+      "source_sha256": "4784be92cb9e7527f8f91f99c858015fda75d672e5cb28c03461993bba374c5f",
+      "output_sha256": "7f6496ebd41ba23da8edcaafc3272d361e29dddd4165508fe9a27b7a2c08064d",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-04-flawed",
+      "arm": "baseline",
+      "seeded_defects": [
+        {
+          "status": "corrected",
+          "output_excerpt": "Bu durum, görüşme formunun yeniden tasarlanmasını gerektirdi.",
+          "rationale": "Removes the nested change-operation construction. The following sentence still reports the concrete addition to the form, though 'redesign' is broader wording.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Bu karşılaşmanın sonrasında görüşme formunun değiştirilmesi işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Arşivin her boşluğunu aynı gün doldurmak gerekmiyordu.",
+          "rationale": "Combines the duplicate statements into one and repairs the inherited awkward grammar.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu. Her boş alanın aynı gün içerisinde tamamlanması zorunlu değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Günümüzde sınıflandırmanın taşıdığı önemin göz ardı edilmemesi gerekiyor.",
+          "rationale": "Shortens the generic importance claim but keeps it instead of moving directly to the concrete classification choice.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Günümüzün değişen koşullarında sınıflandırma konusunun taşıdığı önemin göz ardı edilmemesi gerekmektedir. Sınıflandırmanın kendisi de karar içeriyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "İlk listede sessizce düzeltme yapmak yerine, belirsizliği not etmeyi tercih ettik.",
+          "rationale": "Uses direct actions and preserves the choice to record uncertainty instead of silently changing names.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "İlk listede sessiz bir biçimde düzeltme yapılması yoluna gitmek yerine, mevcut belirsizliğin not edilmesini tercih ettik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "fiction_provenance_omission",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü,",
+          "output_excerpt": "Mahalle Arşivi adını verdikten sonra ilk günümüz,",
+          "rationale": "The explicit fictional status disappears from the opening and is not restored anywhere in the output. The rewritten case can be read as an actual project report.",
+          "finding_id": "lf10-04-flawed:baseline:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü, masaya on dokuz fotoğraf bırakıldı. İçlerinde okul gezisi, dükkân önü ve bir düğün sofrası vardı. Fotoğrafların sahibi hepsini aynı zarfta saklamıştı. Biz de ilk anda aynı yılda çekildiklerini düşündük. Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi. Sonradan tarihin fotoğrafların çekildiği günü değil, zarfın satın alındığı günü anlattığını öğrendik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdikten sonra ilk günümüz, masaya bırakılan on dokuz fotoğrafın ardından başladı. Okul gezisi, dükkân önü ve bir düğün sofrası gibi görüntüler, sahibi tarafından tek bir zarf içinde saklanmıştı. İlk anda hepsinin aynı yılda çekildiğini düşündük. Zarfın üzerindeki tarih bu varsayımı destekliyordu. Ancak daha sonra bu tarihin zarfın satın alındığı günü yansıttığını öğrendik.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Arşivi kuran ekip olarak ilk hatamız,",
+          "output_excerpt": "Arşiv ekipteki ilk hata,",
+          "rationale": "The noun phrase is malformed; a construction such as 'arşiv ekibindeki ilk hata' or the source's 'ekip olarak ilk hatamız' is needed.",
+          "finding_id": "lf10-04-flawed:baseline:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşivi kuran ekip olarak ilk hatamız, nesnenin üzerindeki her işareti doğrudan olayın bilgisi saymak olmuştu. Bunu düzeltmek için eski kaydı silmedik. Zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihinin henüz doğrulanmadığını yazdık. Böylece aynı zarfa daha sonra bakacak kişi hem ilk gözlemimizi hem de neden vazgeçtiğimizi görebilecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşiv ekipteki ilk hata, nesnenin işaretlerini doğrudan olayın bilgisi saymak olmuştu. Bu hatayı düzeltmek için eski kaydı silmeden, zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihi henüz doğrulanmadığını not ettik. Böylece, gelecekteki gözlemciler ilk gözlemimizi ve neden vazgeçtiğimizi aynı anda görebilecekti.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "fotoğrafların çekim tarihinin henüz doğrulanmadığını",
+          "output_excerpt": "fotoğrafların çekim tarihi henüz doğrulanmadığını",
+          "rationale": "The genitive 'tarihinin' is replaced by 'tarihi', breaking the embedded clause governed by 'not ettik'.",
+          "finding_id": "lf10-04-flawed:baseline:finding-03",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşivi kuran ekip olarak ilk hatamız, nesnenin üzerindeki her işareti doğrudan olayın bilgisi saymak olmuştu. Bunu düzeltmek için eski kaydı silmedik. Zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihinin henüz doğrulanmadığını yazdık. Böylece aynı zarfa daha sonra bakacak kişi hem ilk gözlemimizi hem de neden vazgeçtiğimizi görebilecekti."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Arşiv ekipteki ilk hata, nesnenin işaretlerini doğrudan olayın bilgisi saymak olmuştu. Bu hatayı düzeltmek için eski kaydı silmeden, zarf tarihini ayrı bir alana taşıdık ve fotoğrafların çekim tarihi henüz doğrulanmadığını not ettik. Böylece, gelecekteki gözlemciler ilk gözlemimizi ve neden vazgeçtiğimizi aynı anda görebilecekti.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "certainty_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi.",
+          "output_excerpt": "Zarfın üzerindeki tarih bu varsayımı destekliyordu.",
+          "rationale": "The source describes apparent support for the mistaken date assumption. The rewrite removes the appearance qualifier; the later correction is retained, so this is a local certainty shift rather than deletion of the eventual correction.",
+          "finding_id": "lf10-04-flawed:baseline:finding-04",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü, masaya on dokuz fotoğraf bırakıldı. İçlerinde okul gezisi, dükkân önü ve bir düğün sofrası vardı. Fotoğrafların sahibi hepsini aynı zarfta saklamıştı. Biz de ilk anda aynı yılda çekildiklerini düşündük. Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi. Sonradan tarihin fotoğrafların çekildiği günü değil, zarfın satın alındığı günü anlattığını öğrendik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdikten sonra ilk günümüz, masaya bırakılan on dokuz fotoğrafın ardından başladı. Okul gezisi, dükkân önü ve bir düğün sofrası gibi görüntüler, sahibi tarafından tek bir zarf içinde saklanmıştı. İlk anda hepsinin aynı yılda çekildiğini düşündük. Zarfın üzerindeki tarih bu varsayımı destekliyordu. Ancak daha sonra bu tarihin zarfın satın alındığı günü yansıttığını öğrendik.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Repairs three seeded constructions, including removal of the duplicate archive-gap statement and its inherited grammar problem.",
+        "Preserves the 46/31/15 split, lack of permission for the whole recording, uncertainty over names and unmeasured explanation of repeated location questions."
+      ],
+      "limitations": [
+        "The changed folder sentence is not treated as a proven reversal because the source's negation scope is ambiguous.",
+        "The stronger 'redesign' wording and 'temporary records' phrasing are not used as strict headline errors in this review."
+      ],
+      "output_id": "lf10-04-flawed:baseline",
+      "source_sha256": "9e0f2c6122fe7c2bd76a7b52dce3b243d1bf108e7bb8d9d0c4a3e419c6ead8cb",
+      "output_sha256": "a3c257778226ed667a814a576eb3f23eae16b314fccb0f65b028fc250fd6702a",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-04-flawed",
+      "arm": "core",
+      "seeded_defects": [
+        {
+          "status": "corrected",
+          "output_excerpt": "Bu karşılaşmanın ardından görüşme formunu değiştirdik.",
+          "rationale": "Replaces the inflated nominalization with a direct active action.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Bu karşılaşmanın sonrasında görüşme formunun değiştirilmesi işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Arşivin her boşluğunu aynı gün doldurmak zorunda değildik.",
+          "rationale": "Removes the duplicate and replaces the inherited awkward construction with a grammatical first-person action.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu. Her boş alanın aynı gün içerisinde tamamlanması zorunlu değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "cosmetically_rephrased",
+          "output_excerpt": "Günümüzün değişen koşullarında sınıflandırmanın taşıdığı önemin göz ardı edilmemesi gerekiyordu.",
+          "rationale": "The generic importance lead remains with shortened wording and a different tense.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Günümüzün değişen koşullarında sınıflandırma konusunun taşıdığı önemin göz ardı edilmemesi gerekmektedir. Sınıflandırmanın kendisi de karar içeriyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "İlk listede sessiz bir biçimde düzeltme yapmak yerine, mevcut belirsizliği not etmeyi tercih ettik.",
+          "rationale": "Removes the nested passives while retaining the action and uncertainty.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "İlk listede sessiz bir biçimde düzeltme yapılması yoluna gitmek yerine, mevcut belirsizliğin not edilmesini tercih ettik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "meaning_quantifier_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "İzin belgesinin kapsamı da her fotoğraf için aynı değildi.",
+          "output_excerpt": "İzin belgesinin kapsamı her fotoğraf için farklıydı.",
+          "rationale": "The source establishes that permission scope was not uniform across all photos. The rewrite attributes a different scope to every photo, a stronger quantifier statement than the source supplies.",
+          "finding_id": "lf10-04-flawed:core:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "İzin belgesinin kapsamı da her fotoğraf için aynı değildi. Bazı sahipler küçük boyutlu web gösterimine izin verirken basılı bir sergide kullanılmasını istemiyordu. Bu tercihleri, ileride değişmeyecek genel bir yasak gibi anlatmadık. Eldeki izinlerin o tarihte neyi kapsadığını kaydettik. Yeni bir kullanım düşünülürse yeniden görüşmek gerekecekti. İletişim için tutulan bilgiler ise ziyaretçilerin göreceği sayfalara taşınmadı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 8,
+            "paragraph": "İzin belgesinin kapsamı her fotoğraf için farklıydı. Bazı sahipler küçük boyutlu web gösterimine izin verirken, basılı bir sergide kullanılmasını istemiyordu. Bu tercihleri genel bir yasak gibi anlatmadık. Eldeki izinlerin o tarihte neyi kapsadığını kaydettik. Yeni bir kullanım düşünülürse yeniden görüşmek gerekecekti. İletişim için tutulan bilgiler ise ziyaretçilerin göreceği sayfalara taşınmadı."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "certainty_strengthening",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi.",
+          "output_excerpt": "Zarfın üzerindeki tarih bu düşünceyi destekliyordu.",
+          "rationale": "Removes the appearance qualifier from the initial date inference. The eventual discovery that it is the envelope-purchase date remains intact.",
+          "finding_id": "lf10-04-flawed:core:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü, masaya on dokuz fotoğraf bırakıldı. İçlerinde okul gezisi, dükkân önü ve bir düğün sofrası vardı. Fotoğrafların sahibi hepsini aynı zarfta saklamıştı. Biz de ilk anda aynı yılda çekildiklerini düşündük. Zarfın üzerindeki tarih, bu düşünceyi destekliyor gibiydi. Sonradan tarihin fotoğrafların çekildiği günü değil, zarfın satın alındığı günü anlattığını öğrendik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 2,
+            "paragraph": "Mahalle Arşivi adını verdiğimiz kurmaca çalışmanın ilk günü, masaya on dokuz fotoğraf bırakılmıştı. İçlerinde okul gezisi, dükkân önü ve bir düğün sofrası vardı. Fotoğrafların sahibi hepsini aynı zarfta saklamıştı. İlk anda, hepsinin aynı yılda çekildiğini düşündük. Zarfın üzerindeki tarih bu düşünceyi destekliyordu. Sonradan, tarihin fotoğrafların çekildiği günü değil, zarfın satın alındığı günü anlattığını öğrendik."
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Repairs the first nominalization, repeated archive-gap explanation and final wordy equivalent.",
+        "Preserves fictional framing, all scan/permission counts, uncertain names, restricted recording permission and the hypothesis-only status of the directions explanation."
+      ],
+      "limitations": [
+        "The permission-scope finding concerns the change from not-all-the-same to every-photo-different; it is not a claim that any publication was actually unauthorized.",
+        "Three useful local repairs do not establish complete semantic fidelity."
+      ],
+      "output_id": "lf10-04-flawed:core",
+      "source_sha256": "9e0f2c6122fe7c2bd76a7b52dce3b243d1bf108e7bb8d9d0c4a3e419c6ead8cb",
+      "output_sha256": "c28ff86eedb6a2223e24d9f9ab132a0c79464c89865e58a62bcc2f61a4d4568a",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-04-flawed",
+      "arm": "full",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Bu karşılaşmanın sonrasında görüşme formunun değiştirilmesi işlemini gerçekleştirdik.",
+          "rationale": "The injected nominalization is unchanged.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Bu karşılaşmanın sonrasında görüşme formunun değiştirilmesi işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu. Her boş alanın aynı gün içerisinde tamamlanması zorunlu değildi.",
+          "rationale": "The duplicate explanation and inherited awkward first clause remain.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Arşivin her boşluğu aynı gün doldurması gerekmiyordu. Her boş alanın aynı gün içerisinde tamamlanması zorunlu değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Günümüzün değişen koşullarında sınıflandırma konusunun taşıdığı önemin göz ardı edilmemesi gerekmektedir.",
+          "rationale": "The empty transition is unchanged.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Günümüzün değişen koşullarında sınıflandırma konusunun taşıdığı önemin göz ardı edilmemesi gerekmektedir. Sınıflandırmanın kendisi de karar içeriyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "İlk listede sessiz bir biçimde düzeltme yapılması yoluna gitmek yerine, mevcut belirsizliğin not edilmesini tercih ettik.",
+          "rationale": "The full inflated wording remains.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "İlk listede sessiz bir biçimde düzeltme yapılması yoluna gitmek yerine, mevcut belirsizliğin not edilmesini tercih ettik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "Fictional status, permission boundaries, uncertainty, counts and the quoted participant wording are preserved."
+      ],
+      "limitations": [
+        "Title casing and apostrophe typography do not count as editorial repair of the injected defects.",
+        "The source's awkward archive-gap grammar is inherited, not newly introduced.",
+        "No high-confidence new meaning or grammar defect is recorded in this scoped review."
+      ],
+      "output_id": "lf10-04-flawed:full",
+      "source_sha256": "9e0f2c6122fe7c2bd76a7b52dce3b243d1bf108e7bb8d9d0c4a3e419c6ead8cb",
+      "output_sha256": "b9cd4ae107e5239db7c3efda1f9f5f74083384911dcb8ad6a41b8098b6587ff2",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-05-flawed",
+      "arm": "baseline",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik.",
+          "rationale": "The complete nested removal-operation construction remains.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu.",
+          "rationale": "The preceding sentence already states that users still need to measure their own walls; the duplicate explanation is unchanged.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "İnsanların kendi duvarlarını ölçmesi hâlâ gerekecekti; biz yalnızca karşılaştıracakları bilgiyi daha görünür yaptık. Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır.",
+          "rationale": "The whole generic transition is retained.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır. Yük taşıma konusunda da aynı dikkat gerekti.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi.",
+          "rationale": "The inflated statement about relocated information is unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's dimension values, hanger spacing, box-content exclusions, six-person nonrepresentative sample, untested capacity, lack of sales comparison and fictional status are preserved."
+      ],
+      "limitations": [
+        "Heading capitalization, emphasis, whitespace or quotation-mark style are presentation changes, not fixes for the seeded defects.",
+        "No high-confidence new meaning or grammar defect is recorded; preserving already supplied prose does not establish successful editing of this flawed input."
+      ],
+      "output_id": "lf10-05-flawed:baseline",
+      "source_sha256": "5d2aa355edc2b62453fa62dd3bc4d63e5e07dfae48afea17e91c6d27bc76afa6",
+      "output_sha256": "ef4332c40b4462d26878478d57144b80f86c581dd47c9f8d69ef4ab100e94f18",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-05-flawed",
+      "arm": "core",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik.",
+          "rationale": "The complete nested removal-operation construction remains.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu.",
+          "rationale": "The preceding sentence already states that users still need to measure their own walls; the duplicate explanation is unchanged.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "İnsanların kendi duvarlarını ölçmesi hâlâ gerekecekti; biz yalnızca karşılaştıracakları bilgiyi daha görünür yaptık. Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır.",
+          "rationale": "The whole generic transition is retained.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır. Yük taşıma konusunda da aynı dikkat gerekti.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi.",
+          "rationale": "The inflated statement about relocated information is unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's dimension values, hanger spacing, box-content exclusions, six-person nonrepresentative sample, untested capacity, lack of sales comparison and fictional status are preserved."
+      ],
+      "limitations": [
+        "Heading capitalization, emphasis, whitespace or quotation-mark style are presentation changes, not fixes for the seeded defects.",
+        "No high-confidence new meaning or grammar defect is recorded; preserving already supplied prose does not establish successful editing of this flawed input."
+      ],
+      "output_id": "lf10-05-flawed:core",
+      "source_sha256": "5d2aa355edc2b62453fa62dd3bc4d63e5e07dfae48afea17e91c6d27bc76afa6",
+      "output_sha256": "2e08967412d157a27e4dc2813e3c852cfe1ad74c22c97577b484660bfb8fbd9c",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-05-flawed",
+      "arm": "full",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik.",
+          "rationale": "The complete nested removal-operation construction remains.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Bunların görüntüden silinmesi işleminin gerçekleştirilmesi yoluna gitmedik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu.",
+          "rationale": "The preceding sentence already states that users still need to measure their own walls; the duplicate explanation is unchanged.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "İnsanların kendi duvarlarını ölçmesi hâlâ gerekecekti; biz yalnızca karşılaştıracakları bilgiyi daha görünür yaptık. Başka bir deyişle, karşılaştırma bilgisini görünür kılmamız kendi duvarlarını ölçme gereğini ortadan kaldırmıyordu.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır.",
+          "rationale": "The whole generic transition is retained.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Ürün deneyiminin bütüncül bir yaklaşımla ele alınması bağlamında bir diğer önemli hususa değinmek faydalı olacaktır. Yük taşıma konusunda da aynı dikkat gerekti.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi.",
+          "rationale": "The inflated statement about relocated information is unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Konumlarının değiştirilmesini gerçekleştirdiğimiz bilgiler, ölçü çizimine, kutu içeriğine ve malzeme açıklamasına ilişkin bilgilerdi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's dimension values, hanger spacing, box-content exclusions, six-person nonrepresentative sample, untested capacity, lack of sales comparison and fictional status are preserved."
+      ],
+      "limitations": [
+        "Heading capitalization, emphasis, whitespace or quotation-mark style are presentation changes, not fixes for the seeded defects.",
+        "No high-confidence new meaning or grammar defect is recorded; preserving already supplied prose does not establish successful editing of this flawed input."
+      ],
+      "output_id": "lf10-05-flawed:full",
+      "source_sha256": "5d2aa355edc2b62453fa62dd3bc4d63e5e07dfae48afea17e91c6d27bc76afa6",
+      "output_sha256": "3f51f1d183ee7fb0457ae171a0e4f8251ef6fe06ddcb5398b6c452eddeb2edd4",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-06-flawed",
+      "arm": "baseline",
+      "seeded_defects": [
+        {
+          "status": "partially_corrected",
+          "output_excerpt": "Bu cümlenin not alınması, onu grubun genel görüşü gibi sunmamıza engel oldu.",
+          "rationale": "Removes the nested 'işlemini gerçekleştirdik' structure but keeps a nominalization and invents a causal link between recording the quote and not generalizing it.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan başarı açısından karşılaştıramadık.",
+          "rationale": "States the noncomparability point once and removes the duplicated explanation.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık. Başka bir ifadeyle, aynı kişilerden oluşmayan bu grupların iki haftasını doğrudan başarı açısından karşılaştırma olarak sunmamız mümkün değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Eğitmen için de zorluklar çıktı.",
+          "rationale": "Removes the generic stakeholder/importance transition and goes directly to the instructor's difficulty.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Sürecin çok boyutlu niteliği dikkate alındığında diğer paydaşların deneyimlerini de göz önünde bulundurmak büyük önem taşımaktadır. Eğitmen için de bir güçlük ortaya çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "corrected",
+          "output_excerpt": "Bir sonraki kayıt formuna, katılımcıların daha önce kil veya benzeri bir malzemeyle çalışıp çalışmadığına dair kısa bir alan ekledik.",
+          "rationale": "Replaces the nested field-addition phrase with a direct active action.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [
+        {
+          "category": "negation_reversal",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Bir grubun daha konuşkan olması, yöntemin her durumda daha iyi çalıştığını göstermeye yetmezdi.",
+          "output_excerpt": "Daha konuşkan bir grubun yöntemin her durumda daha iyi çalıştığını kanıtlamak için yeterliydi.",
+          "rationale": "The source says greater talkativeness is insufficient evidence that the method always works better. Despite also having faulty syntax, the rewrite's positive 'yeterliydi' states sufficiency, reversing the evidential limit.",
+          "finding_id": "lf10-06-flawed:baseline:finding-01",
+          "source_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "İkinci haftada daha fazla soru soruldu. Soruları tek tek kaydetmediğimizden kesin bir sayı veremiyoruz. Eğitmenin izlenimi, soruların çoğunun katılımcının o anda yaptığı işe bağlı olduğu yönündeydi. Bu bir gözlem notuydu, ölçülmüş bir öğrenme puanı değildi. Bir grubun daha konuşkan olması, yöntemin her durumda daha iyi çalıştığını göstermeye yetmezdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 6,
+            "paragraph": "İkinci haftada daha fazla soru soruldu. Soruları kaydetmediğimizden kesin bir sayı veremiyoruz. Eğitmenin izlenimi, soruların çoğunun o andaki işle ilişkili olduğunu gösterdi. Bu bir gözlem notuydu; ölçülmüş bir öğrenme puanı değildi. Daha konuşkan bir grubun yöntemin her durumda daha iyi çalıştığını kanıtlamak için yeterliydi.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "decision_negation_loss",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Üçüncü oturum için bütün düzeni yeniden değiştirmemeye karar verdik.",
+          "output_excerpt": "Üçüncü oturumda düzeni yeniden değiştirmeyi tercih ettik.",
+          "rationale": "The source decides against changing the whole arrangement again. The rewrite removes the negation and says they preferred changing it. Later preservation of the initial demonstration does not restore the omitted decision.",
+          "finding_id": "lf10-06-flawed:baseline:finding-02",
+          "source_context": {
+            "paragraph_index_1based": 15,
+            "paragraph": "Üçüncü oturum için bütün düzeni yeniden değiştirmemeye karar verdik. Başlangıçtaki kısa gösterimi koruyacak, ara açıklamaların hangi anda yapıldığını kaydedecektik. Aynı anda süreyi, grup büyüklüğünü ve görevi değiştirmek, hangi kararın neye yol açtığını anlamamızı zorlaştıracaktı. Değişikliği küçük tutmak, yöntemin kesinlikle doğru olduğuna inandığımız için değil, bir sonraki gözlemi daha açık okuyabilmek içindi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 15,
+            "paragraph": "Üçüncü oturumda düzeni yeniden değiştirmeyi tercih ettik. Başlangıç gösterimini korurken, ara açıklamaların zamanlarını kaydedecektik. Aynı anda süre, grup büyüklüğü ve görevi değiştirmek, kararların etkisini anlamayı zorlaştırırdı. Değişikliği küçük tutmak, gözlemleri daha net okumak içindi.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "unsupported_observed_result",
+          "severity": "major",
+          "confidence": "high",
+          "source_excerpt": "Bu kısa sorular, sonraki derste nereden başlayabileceğimize dair ipucu sağlayabilirdi.",
+          "output_excerpt": "Bu sorular, sonraki derste nereden başlanabileceğine ipucu verdi.",
+          "rationale": "A possible future use of the questions becomes an achieved result.",
+          "finding_id": "lf10-06-flawed:baseline:finding-03",
+          "source_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Bu yüzden değerlendirmeye yalnız bitmiş görünen nesneyi koymadık. Katılımcıya hangi hareketi tekrar yapabileceğini düşündüğünü ve nerede yardım istediğini sorduk. Verilen cevabın gerçek beceriyi eksiksiz ölçtüğünü de kabul etmedik. Kişinin kendini rahat hissetmesiyle bir işlemi yardımsız yapabilmesi farklı şeylerdi. Bu kısa sorular, sonraki derste nereden başlayabileceğimize dair ipucu sağlayabilirdi."
+          },
+          "output_context": {
+            "paragraph_index_1based": 14,
+            "paragraph": "Değerlendirmede yalnız bitmiş görünen nesneye değil, katılımcılara da döndük. Hangi hareketin tekrarlanabileceğini ve nerede yardım istendiğini sorduk. Verilen cevabın beceriyi eksiksiz ölçtüğünü kabul etmedik. Kendini rahat hissetmekle, bir işlemi yardımsız yapabilme farklıydı. Bu sorular, sonraki derste nereden başlanabileceğine ipucu verdi.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "unsupported_causality",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik. Onu bütün grubun görüşü gibi sunmadık;",
+          "output_excerpt": "Bu cümlenin not alınması, onu grubun genel görüşü gibi sunmamıza engel oldu.",
+          "rationale": "The source reports two actions: recording a quote and choosing not to generalize it. The rewrite invents recording as the cause that prevented overgeneralization.",
+          "finding_id": "lf10-06-flawed:baseline:finding-04",
+          "source_context": {
+            "paragraph_index_1based": 10,
+            "paragraph": "Katılımcılardan biri ikinci hafta çıkarken \"Bu kez sorumu ne zaman soracağımı bildim\" dedi. Söz konusu cümlenin not alınması işlemini gerçekleştirdik. Onu bütün grubun görüşü gibi sunmadık; aynı oturumdan başka biri başlangıçta daha uzun bir gösterim istediğini söylemişti. Bu iki geri bildirim aynı anda geçerliydi. Herkesin aynı hızda ve aynı sırayla bilgi istediğini varsaymak, atölyenin gerçekte nasıl yaşandığını daraltacaktı."
+          },
+          "output_context": {
+            "paragraph_index_1based": 10,
+            "paragraph": "Katılımcılardan biri ikinci hafta, \\\"Bu kez sorumu ne zaman soracağımı bildim\\\" dedi. Bu cümlenin not alınması, onu grubun genel görüşü gibi sunmamıza engel oldu. Aynı oturumda başlangıçta daha uzun bir gösterim isteyen biri daha vardı. Herkesin aynı hızda bilgi istediğini varsaymak, süreci daraltacaktı.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "meaning_role_change",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Sessizliği hemen anlaşılmış olmanın işareti saymak kolaydı.",
+          "output_excerpt": "Sessizliğin hemen anlaşılması, herkesin ne yapacağını bildiğini göstermedi.",
+          "rationale": "The source warns about treating silence as evidence that instructions were understood. The rewrite instead describes silence itself being understood, changing what 'understanding' refers to.",
+          "finding_id": "lf10-06-flawed:baseline:finding-05",
+          "source_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Sessizliği hemen anlaşılmış olmanın işareti saymak kolaydı. Fakat masanın bir ucunda iki kişi eğitmenin el hareketini tekrar etmeye çalışıyor, diğer uçta biri arkadaşının yaptığına bakıyordu. Sorunun duyulmaması, herkesin ne yapacağını bildiğini göstermiyordu. Bazı insanlar nerede takıldığını henüz söyleyememiş olabilir; bazıları da kendi başına denemeyi tercih etmiş olabilir. O sabah bu olasılıkları birbirinden ayıracak veri toplamadık."
+          },
+          "output_context": {
+            "paragraph_index_1based": 3,
+            "paragraph": "Sessizliğin hemen anlaşılması, herkesin ne yapacağını bildiğini göstermedi. Masanın bir ucunda iki kişi eğitmenin el hareketlerini tekrar ediyordu; diğer uçta biri arkadaşının çalışmasına bakıyordu. Sorunun duyulmaması, bazı katılımcıların takıldıkları noktayı anlatamamasından, bazılarının ise kendi başına denemeyi tercih etmesinden kaynaklanabilirdi. O sabah bu olasılıkları ayırt edecek veri toplamadık.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_grammar",
+          "severity": "moderate",
+          "confidence": "high",
+          "source_excerpt": "Eğitmenin, hangi açıklamaya daha fazla zaman ayırması gerektiğini anlamasına yardımcı olmasını bekliyorduk.",
+          "output_excerpt": "Bu bilgi, sıralama için değil, eğitmenin açıklamalara zaman ayırmasına yardımcı olmak için kullanılsaydı.",
+          "rationale": "The sentence ends in the conditional 'kullanılsaydı' without a completing main clause, replacing the source's complete expectation statement.",
+          "finding_id": "lf10-06-flawed:baseline:finding-06",
+          "source_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik. Bu bilgiyi katılımcıları sıralamak için kullanmayacaktık. Eğitmenin, hangi açıklamaya daha fazla zaman ayırması gerektiğini anlamasına yardımcı olmasını bekliyorduk. Beklentiyi sonuç gibi yazmadık; formun ne işe yaradığını birkaç oturum sonra ayrıca değerlendirecektik."
+          },
+          "output_context": {
+            "paragraph_index_1based": 9,
+            "paragraph": "Bir sonraki kayıt formuna, katılımcıların daha önce kil veya benzeri bir malzemeyle çalışıp çalışmadığına dair kısa bir alan ekledik. Bu bilgi, sıralama için değil, eğitmenin açıklamalara zaman ayırmasına yardımcı olmak için kullanılsaydı. Beklentiyi sonuç gibi sunmadık; formun işlevi birkaç oturum sonra ayrı değerlendirilecekti.  "
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        },
+        {
+          "category": "new_turkish_orthography",
+          "severity": "minor",
+          "confidence": "high",
+          "source_excerpt": "bu kayıtta yerini koruyor.",
+          "output_excerpt": "bu kayıta yansır.",
+          "rationale": "The dative form of 'kayıt' here is 'kayda'; 'kayıta' is a new inflectional spelling error.",
+          "finding_id": "lf10-06-flawed:baseline:finding-07",
+          "source_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Atölye günlüğünün son sayfasında başarı puanı yok. Kimlerin geldiği, neyin denendiği ve hangi soruların açık kaldığı var. İlk haftanın sessizliği de ikinci haftanın konuşkanlığı da bu kayıtta yerini koruyor. Birini başarısızlık, diğerini başarı diye etiketlemedik. Bundan sonra bakacağımız şey daha belirli: Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu; kullanılamıyorsa o anda masada ne oluyor?"
+          },
+          "output_context": {
+            "paragraph_index_1based": 16,
+            "paragraph": "Atölye günlüğünde başarı puanı yoktur. Kimlerin katıldığı, ne denendiği ve hangi soruların açık kaldığı vardır. İlk haftanın sessizliği ve ikinci haftanın konuşkanlığı bu kayıta yansır. Birini başarısızlık, diğerini başarı diye etiketlemedik. Artık odak noktası daha belirli: Verilen açıklama, katılımcının ihtiyaç duyduğu anda kullanılabiliyor mu? Kullanılamıyorsa masada ne oluyor?"
+          },
+          "evidence_type": "Exact source-output comparison plus fallible AI editorial interpretation"
+        }
+      ],
+      "improvements": [
+        "Removes the repeated comparison disclaimer and generic transition, and directly simplifies the form-field addition.",
+        "Keeps the group sizes, introductory durations, three returning participants, 90-minute plan, fictional framing and two different participant opinions."
+      ],
+      "limitations": [
+        "The positive 'yeterliydi' finding is based on the actual generated phrase, not an inference from another model.",
+        "The source's 'bütün düzeni' qualifier is retained in the evidence: the issue is that the rewrite loses the explicit decision against another whole-arrangement change.",
+        "Retained numerical values do not compensate for reversed evidential or action claims."
+      ],
+      "output_id": "lf10-06-flawed:baseline",
+      "source_sha256": "406c1982fa2e21fc34ea26b7746352ce379b9c17f7af0f4db6d904eb484171ce",
+      "output_sha256": "408e1d8e77480711b1dc84c31c941f684b1e44b9ad4260c147efa183ad3c1712",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-06-flawed",
+      "arm": "core",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik.",
+          "rationale": "The injected note-taking nominalization is unchanged.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık. Başka bir ifadeyle, aynı kişilerden oluşmayan bu grupların iki haftasını doğrudan başarı açısından karşılaştırma olarak sunmamız mümkün değildi.",
+          "rationale": "The same noncomparability point is repeated verbatim.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık. Başka bir ifadeyle, aynı kişilerden oluşmayan bu grupların iki haftasını doğrudan başarı açısından karşılaştırma olarak sunmamız mümkün değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Sürecin çok boyutlu niteliği dikkate alındığında diğer paydaşların deneyimlerini de göz önünde bulundurmak büyük önem taşımaktadır.",
+          "rationale": "The whole empty stakeholder/importance transition remains.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Sürecin çok boyutlu niteliği dikkate alındığında diğer paydaşların deneyimlerini de göz önünde bulundurmak büyük önem taşımaktadır. Eğitmen için de bir güçlük ortaya çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik.",
+          "rationale": "The entire inflated form-field construction survives unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's group noncomparability, insufficient-evidence claim, decision against changing the whole arrangement, possible future clue, distinct feedback and counts are preserved."
+      ],
+      "limitations": [
+        "Heading changes, whitespace or changes to the opening description are not substantive repairs of these seeded defects.",
+        "No high-confidence new meaning or grammar defect is recorded; that does not make a near-copy a successful edit of this flawed input."
+      ],
+      "output_id": "lf10-06-flawed:core",
+      "source_sha256": "406c1982fa2e21fc34ea26b7746352ce379b9c17f7af0f4db6d904eb484171ce",
+      "output_sha256": "1ef6bf62a5b164b2a8b3b523ab924d7e5f5630dabf5dfb097ab414d2d0b1c706",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    },
+    {
+      "source_id": "lf10-06-flawed",
+      "arm": "full",
+      "seeded_defects": [
+        {
+          "status": "retained",
+          "output_excerpt": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik.",
+          "rationale": "The injected note-taking nominalization is unchanged.",
+          "seed_index_1based": 1,
+          "type": "nominalization",
+          "source_excerpt": "Söz konusu cümlenin not alınması işlemini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık. Başka bir ifadeyle, aynı kişilerden oluşmayan bu grupların iki haftasını doğrudan başarı açısından karşılaştırma olarak sunmamız mümkün değildi.",
+          "rationale": "The same noncomparability point is repeated verbatim.",
+          "seed_index_1based": 2,
+          "type": "redundancy",
+          "source_excerpt": "Fakat gruplar aynı olmadığı için iki haftayı doğrudan bir başarı karşılaştırması olarak sunamazdık. Başka bir ifadeyle, aynı kişilerden oluşmayan bu grupların iki haftasını doğrudan başarı açısından karşılaştırma olarak sunmamız mümkün değildi.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Sürecin çok boyutlu niteliği dikkate alındığında diğer paydaşların deneyimlerini de göz önünde bulundurmak büyük önem taşımaktadır.",
+          "rationale": "The whole empty stakeholder/importance transition remains.",
+          "seed_index_1based": 3,
+          "type": "empty_transition",
+          "source_excerpt": "Sürecin çok boyutlu niteliği dikkate alındığında diğer paydaşların deneyimlerini de göz önünde bulundurmak büyük önem taşımaktadır. Eğitmen için de bir güçlük ortaya çıktı.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        },
+        {
+          "status": "retained",
+          "output_excerpt": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik.",
+          "rationale": "The entire inflated form-field construction survives unchanged.",
+          "seed_index_1based": 4,
+          "type": "wordy_equivalent",
+          "source_excerpt": "Bir sonraki kayıt formuna, daha önce kil veya benzeri bir malzemeyle çalışılıp çalışılmadığı konusuna ilişkin sorunun sorulmasını sağlayan kısa bir alanın eklenmesini gerçekleştirdik.",
+          "confidence": "high",
+          "clean_reference_is_human_gold": false
+        }
+      ],
+      "findings": [],
+      "improvements": [
+        "No substantive repair of the four seeded defects is identified.",
+        "The source's group noncomparability, insufficient-evidence claim, decision against changing the whole arrangement, possible future clue, distinct feedback and counts are preserved."
+      ],
+      "limitations": [
+        "Heading changes, whitespace or changes to the opening description are not substantive repairs of these seeded defects.",
+        "No high-confidence new meaning or grammar defect is recorded; that does not make a near-copy a successful edit of this flawed input."
+      ],
+      "output_id": "lf10-06-flawed:full",
+      "source_sha256": "406c1982fa2e21fc34ea26b7746352ce379b9c17f7af0f4db6d904eb484171ce",
+      "output_sha256": "1756d7f890c4e4f62e597e792a91ca8d17a8299c7d8e8d55e38cd0c5cf1aa9ac",
+      "result_status": {
+        "status": "complete",
+        "complete": true,
+        "finish_reason": "stop",
+        "parse_error": null
+      },
+      "review_complete_for_requested_scope": true,
+      "semantic_fidelity_proved": false,
+      "review_basis": "Full frozen flawed source and all three full Qwen outputs read; suspected changes checked in paragraph context.",
+      "exact_source_copy": false,
+      "whitespace_normalized_source_copy": false
+    }
+  ],
+  "descriptive_seed_status_counts": {
+    "interpretation": "Counts of this reviewer's local judgments on 24 known injected defects per arm. They are not model accuracy, overall writing quality, a preference ranking or release readiness.",
+    "by_arm": {
+      "baseline": {
+        "partially_corrected": 2,
+        "cosmetically_rephrased": 2,
+        "corrected": 12,
+        "retained": 8
+      },
+      "core": {
+        "cosmetically_rephrased": 4,
+        "corrected": 4,
+        "retained": 16
+      },
+      "full": {
+        "corrected": 5,
+        "partially_corrected": 2,
+        "retained": 16,
+        "cosmetically_rephrased": 1
+      }
+    },
+    "by_arm_and_defect_type": {
+      "baseline": {
+        "nominalization": {
+          "partially_corrected": 2,
+          "corrected": 4,
+          "retained": 2
+        },
+        "redundancy": {
+          "cosmetically_rephrased": 1,
+          "retained": 2,
+          "corrected": 3
+        },
+        "empty_transition": {
+          "corrected": 3,
+          "retained": 2,
+          "cosmetically_rephrased": 1
+        },
+        "wordy_equivalent": {
+          "retained": 2,
+          "corrected": 2
+        }
+      },
+      "core": {
+        "nominalization": {
+          "cosmetically_rephrased": 1,
+          "corrected": 2,
+          "retained": 5
+        },
+        "redundancy": {
+          "cosmetically_rephrased": 1,
+          "retained": 4,
+          "corrected": 1
+        },
+        "empty_transition": {
+          "cosmetically_rephrased": 2,
+          "retained": 4
+        },
+        "wordy_equivalent": {
+          "retained": 3,
+          "corrected": 1
+        }
+      },
+      "full": {
+        "nominalization": {
+          "corrected": 2,
+          "retained": 5,
+          "partially_corrected": 1
+        },
+        "redundancy": {
+          "partially_corrected": 1,
+          "retained": 4,
+          "corrected": 1
+        },
+        "empty_transition": {
+          "corrected": 2,
+          "cosmetically_rephrased": 1,
+          "retained": 3
+        },
+        "wordy_equivalent": {
+          "retained": 4
+        }
+      }
+    },
+    "outputs_with_no_substantive_repair_of_any_seeded_defect": [
+      "lf10-02-flawed:baseline",
+      "lf10-02-flawed:core",
+      "lf10-02-flawed:full",
+      "lf10-03-flawed:core",
+      "lf10-04-flawed:full",
+      "lf10-05-flawed:baseline",
+      "lf10-05-flawed:core",
+      "lf10-05-flawed:full",
+      "lf10-06-flawed:core",
+      "lf10-06-flawed:full"
+    ],
+    "outputs_with_no_substantive_repair_count": 10,
+    "exact_source_copy_ids": [
+      "lf10-02-flawed:core"
+    ]
+  },
+  "key_findings": [
+    {
+      "id": "known-defects-left-intact",
+      "evidence_level": "High-confidence AI editorial observation",
+      "finding": "Ten of the 18 outputs make no substantive repair to any of their four seeded defects; all four are retained or only cosmetically rephrased.",
+      "output_ids": [
+        "lf10-02-flawed:baseline",
+        "lf10-02-flawed:core",
+        "lf10-02-flawed:full",
+        "lf10-03-flawed:core",
+        "lf10-04-flawed:full",
+        "lf10-05-flawed:baseline",
+        "lf10-05-flawed:core",
+        "lf10-05-flawed:full",
+        "lf10-06-flawed:core",
+        "lf10-06-flawed:full"
+      ],
+      "concrete_example": "All three arms on lf10-05-flawed preserve the nominalization, duplicate explanation, empty transition and inflated relocation sentence.",
+      "important_limit": "This is a diagnosis of missed editing in these fixtures, not an argument that every input must be changed."
+    },
+    {
+      "id": "exact-copy-is-not-edit-success",
+      "evidence_level": "Exact text equality plus AI assessment of the known defects",
+      "finding": "lf10-02-flawed:core is exactly equal to its source text, including all four injected defects.",
+      "output_ids": [
+        "lf10-02-flawed:core"
+      ],
+      "implication": "A preservation-only measure would miss the failure to perform a needed edit."
+    },
+    {
+      "id": "meaning-can-regress-during-real-repairs",
+      "evidence_level": "High-confidence AI editorial observation",
+      "finding": "Useful local repairs sometimes coexist with substantial new meaning changes.",
+      "examples": [
+        {
+          "output_id": "lf10-01-flawed:baseline",
+          "issue": "Adds an ad-effectiveness assertion and moves cancellation into the period's final days."
+        },
+        {
+          "output_id": "lf10-03-flawed:baseline",
+          "issue": "Removes all four seeded defects but loses all-attachment verification scope, strengthens hash evidence, drops version 2.4 and introduces a conflicting UTC example."
+        },
+        {
+          "output_id": "lf10-04-flawed:baseline",
+          "issue": "Repairs three seeded defects but removes fictional provenance and adds clause/noun-phrase errors."
+        },
+        {
+          "output_id": "lf10-06-flawed:baseline",
+          "issue": "Repairs redundancy, the empty transition and the form-field phrase, but reverses an evidential negation, loses the decision negation and turns a possible clue into an observed result."
+        }
+      ],
+      "implication": "Repair success and new error introduction must be tracked separately."
+    },
+    {
+      "id": "strong-negation-and-evidence-failures",
+      "evidence_level": "High-confidence AI editorial observation",
+      "output_ids": [
+        "lf10-06-flawed:baseline"
+      ],
+      "examples": [
+        {
+          "source_excerpt": "göstermeye yetmezdi.",
+          "output_excerpt": "kanıtlamak için yeterliydi.",
+          "issue": "Insufficient evidence becomes sufficient evidence."
+        },
+        {
+          "source_excerpt": "bütün düzeni yeniden değiştirmemeye karar verdik.",
+          "output_excerpt": "düzeni yeniden değiştirmeyi tercih ettik.",
+          "issue": "The explicit decision against another whole-arrangement change is lost."
+        },
+        {
+          "source_excerpt": "ipucu sağlayabilirdi.",
+          "output_excerpt": "ipucu verdi.",
+          "issue": "Potential usefulness becomes an observed result."
+        }
+      ],
+      "limit": "All numeric group sizes and durations can remain correct while these relationships change."
+    },
+    {
+      "id": "balanced-local-improvements",
+      "evidence_level": "High-confidence AI editorial observation",
+      "finding": "Qwen does make substantive local repairs in several cases. Core lf10-04 removes the redundant archive-gap explanation and simplifies two inflated actions. Full lf10-03 removes the count redundancy and date transition while preserving all-attachment hash coverage and version 2.4.",
+      "output_ids": [
+        "lf10-04-flawed:core",
+        "lf10-03-flawed:full"
+      ],
+      "limitation": "Both have other recorded local issues; no arm is declared a general winner."
+    }
+  ],
+  "candidate_hypothesis": {
+    "status": "Untested candidate hypothesis based on these diagnostic observations",
+    "hypothesis": "Separating defect detection from the smallest possible revision may help avoid both copying actionable defects and rewriting sound context into new claims.",
+    "candidate_behavior": [
+      "First identify an exact source span and a concrete repair reason; allow keep when no defect is found.",
+      "For redundancy and empty transitions, prefer deletion or a direct merge over paraphrasing the whole passage.",
+      "Before returning a changed clause, compare source and output for negation, subject/object roles, time, quantifiers, evidence status and explicit fictional/test-scope qualifications.",
+      "Check Turkish case and complement endings after joining or shortening clauses."
+    ],
+    "validation_needed": [
+      "Use new held-out flawed and clean sources with labels, reference edits and fixture identifiers kept out of model input.",
+      "Count missed repairs and newly introduced semantic/grammar defects separately; do not reward changes merely for existing.",
+      "Test the candidate against unchanged conditions with independent blinded editorial confirmation; these six visible development sources cannot establish general superiority."
+    ],
+    "causal_limit": "A single sample per arm and six generated sources do not establish why near-copying or meaning changes occurred, or which instruction caused them."
+  },
+  "release_implication": {
+    "auto_promote": false,
+    "semantic_fidelity_proved": false,
+    "human_gate_satisfied": false,
+    "statement": "Diagnostic AI review only. The artifact supports concrete debugging and further experiments, not automatic promotion or a final-quality claim."
+  }
+}

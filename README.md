@@ -4,36 +4,30 @@
 
 Bu beceriyi İzmir'de bir yazılım stüdyosu olan [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer) geliştirdi ve açık kaynak yaptı.
 
-Türkçe site içeriği ve blog yazısı için bir yapay zekâ becerisi (Claude Code / Agent
-Skills). Yapay zekânın Türkçe yazdığı metnin iki ortak kusurunu giderir: sesli okununca
-**yanlış yerde vurgulu** olması ve **İngilizceden çevrilmiş gibi** durması. Metin TDK
-yazım kurallarına da uyar.
+Roman, öykü, kitap, deneme, şiir, diyalog, akademik ve kurumsal metin, blog, rehber ve diğer Türkçe metin türleri için bir yazarlık ve editörlük Agent Skill'i. Metni okurun ihtiyacına, türüne ve yazarın sesine göre düzenler; doğal Türkiye Türkçesi, anlam sadakati, düşünce akışı ve yazım üzerinde çalışır.
 
-İngilizce için bu işi yapan çok araç var. Türkçeye uyarlananlar genellikle İngilizce
-listeyi çevirip bırakıyor. Oysa Türkçe metni ele veren şeylerin bir kısmı İngilizcede hiç
-yok: vurgunun yüklemden önceki öğeye düşmesi, "bir"in *a/an* gibi her cümleye girmesi,
-ulaç yerine "ve", "karar vermek adına" gibi edat kalıpları. Bu beceri bunları ayrı bir
-katman olarak ele alıyor ve hepsini ölçüyor.
+**V2 önizleme — `2.0.0-rc.1`:** Varsayılan dal üzerinden gerçek yazarlık ve editörlük işlerinde denenebilen teknik aday. Bağımsız insan editör değerlendirmesi henüz tamamlanmadı; bu bir final 2.0.0 sürümü veya GitHub Release değildir. [Önceki V1.1.0 kodu](https://github.com/systemonster/turkish-writer/tree/0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab) korunur.
+
+V2'de editör, çalıştığı ajanın kendisidir. Ayrı bir API, model, sunucu veya çalışma zamanı zorunlu değildir. Amaç bir sınıflandırıcıdan geçmek değil, gerçek okur için daha iyi Türkçe yazmaktır. Editoryal üstünlük henüz bağımsız insan değerlendirmesiyle doğrulanmış değildir.
 
 ## Ne yapar
 
 Üç kipi var:
 
-- **Yaz:** yeni site ya da blog metni.
+- **Yaz:** özgün kurmaca, kurmaca dışı metin veya kullanıcının istediği başka bir türde yeni taslak.
 - **Düzelt:** verilen metni doğallaştırır, TDK hatalarını giderir, anlamı ve olguları korur.
-- **Denetle:** metni değiştirmeden izleri satır satır listeler. "Bunu yapay zekâ yazdı"
-  hükmü vermez.
+- **Denetle:** metni değiştirmeden somut dil ve anlatım sorunlarını, gerekçelerini ve düzeltme önerilerini gösterir. Yazarlık hakkında hüküm vermez.
 
-Altı geçiş sırayla uygulanır: yüzey (klişe, şişirme, noktalama), Türkçe söz dizimi (vurgu,
-ritim, "ve"/"bir", söylem parçacıkları, çeviri kokusu), yapı, mantık kapısı, TDK, son okuma.
+V2 akışı: kısa brif, tür ve ses, taslak, editör okuması, isteğe bağlı araçlar ve son kontrol.
 Ayrıntı: [`skills/turkish-writer/SKILL.md`](skills/turkish-writer/SKILL.md).
 
 ## Kurulum
 
-Claude Code'da kişisel beceri olarak:
+V2 önizlemesini Claude Code'da kişisel beceri olarak kurmak için (yeni kurulum):
 
 ```bash
 git clone https://github.com/systemonster/turkish-writer.git
+mkdir -p ~/.claude/skills
 cp -r turkish-writer/skills/turkish-writer ~/.claude/skills/
 ```
 
@@ -41,37 +35,36 @@ Ya da yalnız bir projede kullanmak için `.claude/skills/` altına kopyalayın.
 [Agent Skills](https://agentskills.io) biçimindedir; bu biçimi okuyan başka ajanlarda da
 çalışır.
 
-Yaz kipinde beceri cümleyi kendisi kurmaz; taslağı OpenAI yazar, beceri de onu düzeltme
-geçişlerinden ve tarayıcıdan geçirir. Bu kip için `OPENAI_API_KEY` gerekir. Betik anahtarı
-önce ortam değişkeninde arar, bulamazsa çalışılan dizindeki `.env.local` ya da `.env`
-dosyasından okur. Anahtar yoksa beceri yeni metin yazmaz; düzeltme ve denetleme kipleri
-anahtarsız da çalışır. Varsayılan model `gpt-5.6-sol`, `TW_OPENAI_MODEL` ortam
-değişkeniyle değişir. Bu model, altı adaya aynı iki brif yazdırılıp sonuçlar tarayıcıyla
-ölçülerek seçildi.
+### Ayrı projede V2'yi deneme
+
+Aşağıdaki kurulum yalnız geliştirme adayını ayrı bir proje dizininde denemek içindir:
 
 ```bash
-node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --out taslak.md
-node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur blog --out taslak.md   # çıpalı
-node ~/.claude/skills/turkish-writer/scripts/openai-taslak.mjs brif.md --katı --out taslak.md       # ad hatası = çıkış kodu 4
+git clone https://github.com/systemonster/turkish-writer.git turkish-writer-v2
+cd turkish-writer-v2
+mkdir -p .claude/skills
+cp -r skills/turkish-writer .claude/skills/
 ```
 
-Taslak betiğinin yaptıkları:
+Mevcut bir kurulumu korumak istiyorsanız ayrı bir deneme ortamı kullanın. Proje yerelindeki `.claude/skills/turkish-writer` dizinini hâlihazırda kullanıyorsanız önce yedekleyin; eski ve yeni dosyaları karıştırmayın.
 
-- **Brif:** sayfa türü, okur, hitap, olgu listesi ve uzunluk aralığı ("Uzunluk: 400-480
-  kelime"). Kurum, hizmet ve duyuru metninde olgunun altına "Okur için anlamı", "Nasıl işler",
-  "Ne yapması gerekir" alt maddeleri yazılabilir; model olguyu bunlarla açar, yeni olgu eklemez.
-  Metin hedefin %70'inin altında kalırsa betik "brifte olgu az" uyarısı verir; dolguyla uzatmaz.
-- **Ritim:** sistem istemi editörden geçmiş Türkçe dergi ve kurum metninin ritmini ister
-  (cümle ortalaması 17-21 kelime, uzun ve kısa cümle karışık, "ve" doğal sıklıkta), dolguyu,
-  özet cümlesini ve "fazla düzgün" paragraf kalıbını yasaklar.
-- **Çıpa:** `--tur <site|blog|reklam|whatsapp|teklif|hukuk>` ile o türden en çok 3 gerçek
-  insan metni ses örneği olarak girer (`skills/turkish-writer/cipa/`, açık lisanslı; teklif
-  boş). `--cipa <yol>` projenin kendi örneklerini önce koyar.
-- **Olgu sadakati:** taslaktaki özel adlar brifle karşılaştırılır; bozuk yazım ("Süyman" /
-  brifte "Süleyman") ya da brifte olmayan ad stderr'e `UYARI` yazar, `--katı` ile çıkış kodu 4.
-- **Hakem döngüsü (deneysel):** `scripts/hakem-dongusu.mjs` taslağı bir LLM hakemine okutup
-  işaretlediği cümleleri yeniden yazdırır. Ölçümde kendi hakemine aşırı uyum gösterdi, ayrı bir
-  hakemi yanıltmadı; varsayılan yol değildir.
+### İlk yazı
+
+Ajanınıza `turkish-writer` becerisini kullanmasını söyleyin. Örneğin: “Küçük işletmelerin reklam bütçesini planlaması hakkında 600 kelimelik bir Türkçe blog yazısı hazırla. Hedef okur işletme sahibi. Kaynakla doğrulanmamış sayılar, uydurma deneyimler ve gereksiz dolgu kullanma. Teslimden önce editör okumasını yap.” Son metni gerçek editoryal ihtiyaçlarınıza göre inceleyin.
+
+V2'nin varsayılanı model bağımsız editoryal filtredir. Var olan metni veya yeni üretilen taslağı çalıştığı ajanla düzeltir; zorunlu API, yerel model veya çalışma zamanı yoktur. OpenAI API ve Codex taslak yolları isteğe bağlıdır. Tek yazım motoru [yazım-motoru.md](skills/turkish-writer/references/yazim-motoru.md) içinde bulunur. Sabit cümle/paragraf kotaları ve bağlamdan bağımsız sözcük yasakları yerine okur, amaç, tür, doğal söz dizimi ve olgu sadakati belirleyicidir. Eski ölçümler V1.1'e aittir; V2 için ilk geliştirme deneyleri çalıştırılmıştır, ancak bağımsız editör doğrulaması tamamlanmamıştır. [Doğrulama planı](docs/V2-DOGRULAMA.md).
+
+```bash
+node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur site --out taslak.md
+node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur eposta --codex --out taslak.md
+```
+
+İsteğe bağlı [yerleşik Unicode denetimi ve kontrollü biçim düzeltmesi](skills/turkish-writer/references/unicode-denetimi.md), Guillaume Meyer ve katkıcılarının MIT lisanslı watermarks-remover bileşenini kullanır. Varsayılan denetim salt okunurdur. `--temizle --out` seçeneği kodlama ve satır sonu kusurlarını yeni dosyada düzeltir; editörün tek tek onayladığı olağan yapıştırma kusurları da düzeltilebilir. Kaynak, telif, atıf ve anlamlı Unicode korunur; bu bir yapay zekâ filigranı veya telif hakkı kaldırma özelliği değildir.
+
+```bash
+python3 skills/turkish-writer/scripts/unicode-denetle.py metin.txt
+python3 skills/turkish-writer/scripts/unicode-denetle.py metin.txt --temizle --out duzeltilmis.txt
+```
 
 İsteğe bağlı, resmî TDK dizin denetimi için bir kez:
 
@@ -94,7 +87,9 @@ LLM öncesi 142 milyon kelimelik Türkçe web metninden (OSCAR 2019) isim + fiil
 fiillerle geçer: vermek (%71), almak (%23)" önerisi gelir. Ayrıntı:
 [`tests/kalibrasyon/SONUC-ESDIZIM.md`](tests/kalibrasyon/SONUC-ESDIZIM.md).
 
-## Tarayıcı
+## İsteğe bağlı tarayıcı (V1.1 mirası)
+
+Bu araç geriye uyumluluk için korunur; V2'nin yazarlık ve editörlük kalitesini ölçmez. Eski dedektör ve müdahale kılavuzları [tarihsel arşivde](docs/archive/v1.1/README.md), testlerle kullanılan eski komutlar ise paket içindedir.
 
 Beceri, bağımlılıksız bir Node betiğiyle gelir (Node 18+):
 
@@ -112,7 +107,33 @@ sık yanlışlar, eş dizim). Skoru etkilemeyen iki bölüm daha vardır: **söz
 sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama) ve **ritim bilgisi**
 (cümle boyu sapması, kısa cümle, "ve" yoğunluğu; JSON'da `bilgi` alanı).
 
-## Ne kadar güvenilir
+## Blog editörlüğü ve isteğe bağlı yerel araçlar
+
+[Filtre kararları](skills/turkish-writer/references/filtre-kararlari.md) ve [model bağımsız filtre değerlendirme planı](docs/FILTRE-DEGERLENDIRME.md), iyi cümleyi koruma ve farklı ajanlarda çalışabilirlik ölçütlerini tanımlar.
+
+[Blog editörü kılavuzu](skills/turkish-writer/references/blog-editoru.md) araştırmayı, editoryal savı, kaynak sadakatini ve seri yayın tutarlılığını ele alır. [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar. [Kaynak incelemesi ve blog doğrulama planı](docs/BLOG-EDITORU-ARASTIRMA.md) geliştirme dalına aittir; ilk canlı model deneyleri Corpus Lab'da kayıtlıdır.
+
+## Edebî Türkçe ve uzun eserler
+
+[Türkçe kullanım atlası](skills/turkish-writer/references/turkce-kullanim-atlasi.md) ifade, kip, odak ve anlam farklarını; [uzun anlatı ve kitap yazarlığı](skills/turkish-writer/references/uzun-anlati.md) kurmaca, diyalog, anlatıcı, bölüm sürekliliği, anı ve kurmaca dışı eserlerin çalışma biçimini ele alır. Bu kılavuzlar geliştirme adayına dahildir; roman veya kitap ölçeğinde bağımsız editoryal kalite doğrulaması henüz yapılmamıştır.
+
+## Corpus Lab (geliştirici araştırması)
+
+[Corpus Lab](corpus-lab/README.md) skill'in veri temelli geliştirme hattıdır. İlk BOUN eğitim pilotunda 7.803 işaretlenmiş cümle incelendi; [istatistikler](corpus-lab/results/boun-train-v1.json) ve [Türkçe derlem notları](skills/turkish-writer/references/derlem-bulgulari.md) ayrı CC BY-SA 4.0 lisansıyla sunuluyor. İlk bir milyon satırlık üst veri pilotunun ardından FineWeb'in sabit Türkçe veri kümesindeki 203 parçanın tümü denetlendi: 63.260.614 satır, filtreleri karşılayan 42.831.847 metinde önceden belirlenmiş yüzey işaretlerinin toplu sayımı ([tam kapsam özeti](corpus-lab/results/fineweb-text-000-202-v3-summary.json)). Bu sayılar benzersiz makale, insan yazarlığı, belge lisansı veya editoryal kalite kanıtı değildir. Daron Yöndem'in tek yazarlı arşivinde 1.035 uygun düzyazı dosyası ve 326.604 sözcük, SUDO Portal'da 103 yazı incelendi ([tam derlem özeti](corpus-lab/results/full-pass-licensed-v2-summary.json), [SUDO özeti](corpus-lab/results/sudo-full-text-v3-summary.json)). 2.643 tarihsel Vikipedi revizyonundan 50 düzenleme adayı seçildi. İlk model deneyleri, sentetik geliştirme vakaları ve sonuçları [Corpus Lab](corpus-lab/README.md) altında kayıtlıdır; V2 henüz yayına hazır ilan edilmemiştir. Son kullanıcı hiçbir derlem indirmek zorunda değildir.
+
+**26 Kasım 2026 teknik olarak test edilmiş önizleme adayı:** [sabit skill](https://github.com/systemonster/turkish-writer/commit/2ada5dd393ff361bbf0ed7e2b7d1208a24960cb1); son [V31 geliştirme karşılaştırmasında](corpus-lab/results/clean-prose-v31-terminal.json) Qwen 8/8, Mistral 4/8 tamamlanmış çıktı verdi. Bu sayılar protokol kapsamıdır, kalite puanı değildir. İki ailede tekrarlanabilir iyileşme gösterilmedi; bağımsız kaynak seçimi ve insan editör incelemesi bekleniyor.
+
+Derlemden çıkarılan kararlar [bağlamlı Türkçe](skills/turkish-writer/references/baglamli-turkce.md) kılavuzunda kullanılabilir hale getirildi. İlk yakın okuma pilotunda 503 tarihsel blog, 20 SUDO yazısı ve BOUN eğitim bölümü üzerinden 126 seçilmiş bağlam incelendi; bunlar insan onaylı düzeltme çifti değildir. [Yöntem ve kanıt kimlikleri](corpus-lab/results/context-evidence-v1-summary.json). [Bağımsız editör değerlendirme protokolü](corpus-lab/HOLDOUT.md) yayın kapısı olarak duruyor.
+
+## V2 önizleme teknik kontrolü
+
+[26 Kasım regresyonu](https://huggingface.co/jobs/lovefengis/6b0803a8b6a90bbe997fc4a2) tamamlandı: Unicode için 7 test, derlem Python için 9 test, mevcut npm ve Corpus Lab Node test komutları ve 85 dosyalı paket/ayrı kurulum kontrolü başarılı. Kaynak dosyanın korunması, ayrı temiz kopyanın gerçekten üretilmesi, atıflar ve anlamlı Unicode'un korunması sınandı. Sonuç teknik doğrulamadır; bağımsız yazarlık ve editörlük değerlendirmesi değildir.
+
+## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
+
+<details>
+<summary>V1.1 tarayıcı ve taslak deneylerinin ayrıntılarını aç</summary>
+
 
 Tarayıcının ağırlıkları tahminle değil ölçümle seçildi. LLM öncesi yazılmış 180 Türkçe
 metin (haber, forum, şirket sitesi, blog) aynı konularda üretilmiş 180 GPT metniyle
@@ -152,14 +173,16 @@ dil modeli onu hâlâ tanıyor.
   çıkabilir.
 - İnsan metinlerinin beşte biri de gri bölgeye düşebiliyor. Skor bir işarettir, hüküm değil.
 - Hiçbir yöntem "hiçbir denetleyici anlayamaz" garantisi vermez. Bu beceri de vermiyor.
-  Hedefi, metni iyi Türkçe yazan bir insanın metninden ayırt edilemez kılmak.
+  V2 hedefi, iyi Türkçe yazmak ve metni gerçek okur için daha kullanışlı kılmaktır.
+
+</details>
 
 ## Neyi yapmaz
 
 - Denetleyiciyi kandırmak için yazım hatası, görünmez karakter, harf benzeri Kiril
   karakteri ya da rastgele eş anlamlı değiştirme kullanmaz.
 - Uydurma deneyim, müşteri, sayı ya da alıntı eklemez.
-- Hukuki metin, akademik makale ve kurmaca için tasarlanmadı.
+- Hukuki hüküm oluşturmaz; gerekli açıklama ve atıfları kaldırmaz. Hukuki metinde yalnız yazım incelemesi veya ayrı açıklama yapar.
 
 ## Testler
 
@@ -167,7 +190,9 @@ dil modeli onu hâlâ tanıyor.
 npm test
 ```
 
-## Kaynaklar
+## Kaynaklar ve teşekkür
+
+Daron Yöndem'e, SUDO Portal yazarlarına, Boğaziçi Üniversitesi/TABILAB UD Turkish BOUN ekibine ve katkıcılarına, TurkishFineweb2-Cleaned veri kümesinin hazırlayıcılarına, Vikipedi/Vikikaynak katkıcılarına, İlkay Holt ve Creative Commons Türkiye'ye, Mirasium'a; ayrıca yerleşik Unicode bileşeni için Guillaume Meyer ve watermarks-remover katkıcılarına teşekkür ederiz. [Derlem kaynakları ve lisanslar](corpus-lab/LICENSE-DATA.md) ayrı kayıttadır.
 
 Wikipedia'nın "Signs of AI writing" sayfası, blader/humanizer, no-ai-slop,
 avoid-ai-writing, insanca, turkish-humanify, TDK Yazım Kılavuzu, Güncel Türkçe Sözlük,
@@ -188,11 +213,13 @@ panel, entegrasyon, çok dilli site ve otomasyon işleri yapıyor. Hata ya da ö
 
 ## Lisans
 
-MIT. İstisnalar: `references/evrensel-izler.md` içindeki Wikipedia kaynaklı bölümler CC BY-SA
+MIT. watermarks-remover'ın ayrı MIT lisansı ve atfı vendor dizinindedir. İstisnalar: `references/evrensel-izler.md` içindeki Wikipedia kaynaklı bölümler CC BY-SA
 4.0'dır. `skills/turkish-writer/cipa/` altındaki çıpa metinleri her dosyanın başındaki lisansla
 dağıtılır (Creative Commons Türkiye metinleri CC BY 4.0, Türkçe Vikipedi metinleri CC BY-SA 4.0,
 yasa metinleri ve Sabahattin Ali kamu malı). `tests/ornekler/nitelikli-insan.md` Türkçe Vikipedi
 kaynaklıdır, CC BY-SA 3.0.
+
+Derlemden türetilen ayrı lisanslı dosyalar: [veri lisansları](corpus-lab/LICENSE-DATA.md).
 
 Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
@@ -200,17 +227,14 @@ Sürümler [`CHANGELOG.md`](CHANGELOG.md)'de; semver kuralı orada yazılı.
 
 ## English
 
-`turkish-writer` is an Agent Skill for writing and editing Turkish website copy and blog
-posts so they read as written by a Turkish speaker, not translated from English or
-generated by an LLM. It covers Turkish-specific tells that English humanizers miss
-(misplaced focus/stress, *bir* as an article calque, *ve* instead of converbs,
-calqued postpositions), follows the official TDK spelling rules, and ships a
-dependency-free Node scanner. Calibrated on 180 pre-LLM Turkish texts vs 180 GPT texts;
-see `tests/kalibrasyon/`. It does not use invisible characters, homoglyphs or deliberate
-typos, and it does not invent facts. In write mode the skill does not compose sentences
-itself: it prepares a brief, gets the draft from OpenAI (`scripts/openai-taslak.mjs`,
-needs `OPENAI_API_KEY`, default model `gpt-5.6-sol`, chosen by scanning six models on
-the same briefs) and then runs its editing passes; edit and audit modes need no key.
+Turkish Writer is an Agent Skill for Turkish authorship and editing across genres, including novels, short stories, books, essays, poetry, dialogue, nonfiction, academic and business writing, blog posts and guides. The V2 preview includes a long-form writing guide and a contextual usage atlas; literary and book-length quality has not yet been independently validated. V2 emphasizes natural Turkish expression, meaningful editorial improvements, coherent paragraphs, factual fidelity and preservation of the author's voice. It does not attempt to establish authorship or optimize detector scores.
 
-Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer),
-an İzmir studio for custom panels, integrations, multilingual sites and automation.
+**Current status:** `2.0.0-rc.1` is a public source-code preview on the default branch for real-world trials, not a final 2.0.0 release or an independently validated upgrade. Clone the repository for the preview; the [previous V1.1.0 code](https://github.com/systemonster/turkish-writer/tree/0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab) remains available. Its default editorial workflow runs in the active agent; no separate model, API, cloud service or runtime is required. The optional Node scanner and local Unicode inspection provide additional evidence, not editorial verdicts. The explicit clean-copy mode repairs encoding and line-ending defects and individually confirmed ordinary paste/layout defects; original files, meaningful Unicode, attribution and provenance are preserved. No statistical watermark or copyright removal is provided. Historical V1.1 measurements do not validate V2. The [frozen candidate](https://github.com/systemonster/turkish-writer/commit/2ada5dd393ff361bbf0ed7e2b7d1208a24960cb1) awaits independent source selection and human editorial review. The [V31 development comparison](corpus-lab/results/clean-prose-v31-terminal.json) yielded 8/8 complete Qwen outputs and 4/8 complete Mistral outputs; protocol completion is not an editorial quality score, and repeatable improvement was not demonstrated.
+
+The Turkish guide [Contextual Turkish](skills/turkish-writer/references/baglamli-turkce.md) translates observations from licensed historical prose and annotated Turkish syntax into contextual editorial decisions. See [research provenance](corpus-lab/LICENSE-DATA.md), [context evidence](corpus-lab/results/context-evidence-v1-summary.json), and the [independent evaluation protocol](corpus-lab/HOLDOUT.md). The completed [FineWeb aggregate](corpus-lab/results/fineweb-text-000-202-v3-summary.json) covered 63,260,614 rows across 203 shards, with 42,831,847 eligible texts processed for fixed descriptive cue counts; it is not proof of human authorship, document rights or editorial quality. No third-party raw research corpus or model weights are required by the skill.
+
+### Acknowledgements / Teşekkür
+
+We thank Daron Yöndem, the contributing SUDO Portal writers, and the UD Turkish BOUN team at Boğaziçi University/TABILAB for their licensed works. We acknowledge the TurkishFineweb2-Cleaned dataset authors, Wikipedia/Wikisource contributors, İlkay Holt and Creative Commons Türkiye, and Mirasium for the documented research use. We also acknowledge Guillaume Meyer and the contributors to watermarks-remover for the vendored MIT-licensed Unicode component used for inspection and individually confirmed layout repairs. Other project, research and language-resource attributions, including materials reviewed but not incorporated, are listed in [sources and licenses](skills/turkish-writer/references/kaynaklar.md) and [data provenance](corpus-lab/LICENSE-DATA.md). Their contributions do not imply endorsement of Turkish Writer.
+
+Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer), an İzmir studio.

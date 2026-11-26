@@ -1,0 +1,322 @@
+{
+  "job_id": "6b06c542d91f621b9307756e",
+  "terminal": "COMPLETED",
+  "finished_at": "2026-11-25T11:26:30.735Z",
+  "code_commit": "cc1c2a7a8cef4ce3182575adcd5354a260f05a04",
+  "scope": "development replay; source and output text private; metrics are not quality scores",
+  "totals": {
+    "Qwen/Qwen3-32B": {
+      "cases": 8,
+      "selected": 1,
+      "invalid_review": 6,
+      "kept_source": 1,
+      "eligible_blocks": 23,
+      "accepted_blocks": 1
+    },
+    "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1": {
+      "cases": 8,
+      "selected": 4,
+      "invalid_review": 0,
+      "kept_source": 4,
+      "eligible_blocks": 8,
+      "accepted_blocks": 4
+    }
+  },
+  "rows": [
+    {
+      "id": "sudo-42d0f0b13b707362",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+      "draft_sha256": "4e05226b134bf45927a13c03fc91b5bc27ad7ac0c612ced4412b569c666da4a7",
+      "v10_reviewed_sha256": "4e05226b134bf45927a13c03fc91b5bc27ad7ac0c612ced4412b569c666da4a7",
+      "status": "kept-source",
+      "accepted": [],
+      "eligible": 0,
+      "rejected": [
+        {
+          "source_block": 0,
+          "reason": "protected-literal-change"
+        }
+      ],
+      "output_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-3dc45336d810812b",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "draft_sha256": "ec1e2e16d080e04c1a663019ece8a5ddb8471ca8db29358e62737ff97598fc1d",
+      "v10_reviewed_sha256": "6529577f2453e8ef4ceff6985721e2147dfa0429e0ec3f60cd524eb0eedc5dbd",
+      "status": "invalid-review",
+      "accepted": [],
+      "eligible": 4,
+      "rejected": [],
+      "output_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-0191b6cb1680889a",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+      "draft_sha256": "6a61c24a919bb1dc91b1ba37aa5cae35b26ecbc356759a1e16031af1af1c412a",
+      "v10_reviewed_sha256": "6a61c24a919bb1dc91b1ba37aa5cae35b26ecbc356759a1e16031af1af1c412a",
+      "status": "invalid-review",
+      "accepted": [],
+      "eligible": 5,
+      "rejected": [],
+      "output_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-17c17668853b5918",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+      "draft_sha256": "47dc85deab31bc95abc322e86e9f1cb23da9980ccab36b57cc77288f14c13062",
+      "v10_reviewed_sha256": "47dc85deab31bc95abc322e86e9f1cb23da9980ccab36b57cc77288f14c13062",
+      "status": "selected",
+      "accepted": [
+        1
+      ],
+      "eligible": 2,
+      "rejected": [
+        {
+          "source_block": 2,
+          "reason": "protected-literal-change"
+        }
+      ],
+      "output_sha256": "0de56f0032697e76f6d9c503c869e71f37e150412f5c3e1fdb7b7c0f54faf886",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-275024ea30cc6cd8",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+      "draft_sha256": "d78417e3b8829936a5fb4dc0e2a3925b6558c2bfaa197194a9f4378fa0032203",
+      "v10_reviewed_sha256": "d78417e3b8829936a5fb4dc0e2a3925b6558c2bfaa197194a9f4378fa0032203",
+      "status": "invalid-review",
+      "accepted": [],
+      "eligible": 3,
+      "rejected": [],
+      "output_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-3568afa3aa382fe6",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+      "draft_sha256": "d1d0f7e0043d9060c571a4d6c754f4d7ac119d9aeef4b279ec5c797b845e5131",
+      "v10_reviewed_sha256": "d1d0f7e0043d9060c571a4d6c754f4d7ac119d9aeef4b279ec5c797b845e5131",
+      "status": "invalid-review",
+      "accepted": [],
+      "eligible": 3,
+      "rejected": [
+        {
+          "source_block": 1,
+          "reason": "protected-literal-change"
+        }
+      ],
+      "output_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-494acdea301a431d",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+      "draft_sha256": "00429c0b8bae14a005d0f5082d6102d19f3ad149f35074029f1bb8fad30a71e5",
+      "v10_reviewed_sha256": "00429c0b8bae14a005d0f5082d6102d19f3ad149f35074029f1bb8fad30a71e5",
+      "status": "invalid-review",
+      "accepted": [],
+      "eligible": 3,
+      "rejected": [],
+      "output_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-4a55f3cd291f0f5c",
+      "model": "Qwen/Qwen3-32B",
+      "arm": "selection_only_v11",
+      "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+      "draft_sha256": "84b5aee5771cf1043dedc5b38691821ac0dc75b30cfae761cdf29549f951ed9c",
+      "v10_reviewed_sha256": "84b5aee5771cf1043dedc5b38691821ac0dc75b30cfae761cdf29549f951ed9c",
+      "status": "invalid-review",
+      "accepted": [],
+      "eligible": 3,
+      "rejected": [],
+      "output_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-42d0f0b13b707362",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+      "draft_sha256": "326ad14ef46b8ea47e576fd969c53c46c08bd98bdbd3bb823bc9d0a343acf208",
+      "v10_reviewed_sha256": "90432dfd948e1d3844d4804cb876e1db2ea8cff9d9d4ea48ef7da93c4cbe8d45",
+      "status": "selected",
+      "accepted": [
+        0
+      ],
+      "eligible": 1,
+      "rejected": [],
+      "output_sha256": "326ad14ef46b8ea47e576fd969c53c46c08bd98bdbd3bb823bc9d0a343acf208",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-3dc45336d810812b",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "draft_sha256": "20cb502fbc6c3cc20dd0917f30bb09e6f3fb6b4dc22b6b7e4205115397edafa0",
+      "v10_reviewed_sha256": "ed0ebff6d5f68859af75eab233dfe017a4b3fffddfe15cfef3eb6a6afdfdfab7",
+      "status": "kept-source",
+      "accepted": [],
+      "eligible": 0,
+      "rejected": [
+        {
+          "source_block": 0,
+          "source_count": 5,
+          "draft_count": 11,
+          "reason": "unaligned-structure"
+        }
+      ],
+      "output_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-0191b6cb1680889a",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+      "draft_sha256": "c8a76e0f951dea510f787a83579e0e562dc14ed9999051fdc3635896e7ab3897",
+      "v10_reviewed_sha256": "e1bb471c3e040f37ccb4624bdd559608d62a2087615ec1a36e70ae0532147413",
+      "status": "kept-source",
+      "accepted": [],
+      "eligible": 0,
+      "rejected": [
+        {
+          "source_block": 0,
+          "source_count": 5,
+          "draft_count": 10,
+          "reason": "unaligned-structure"
+        }
+      ],
+      "output_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-17c17668853b5918",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+      "draft_sha256": "9cefcbb0f48f90a93e9a945cbe2c22a38c4077e19228c67a5a02513afa2d8583",
+      "v10_reviewed_sha256": "65999f146952f08813ed374cb72be56e9e2bbb8ba9123c0136f6ee8e7d34b660",
+      "status": "selected",
+      "accepted": [
+        0
+      ],
+      "eligible": 1,
+      "rejected": [
+        {
+          "source_block": 2,
+          "source_count": 1,
+          "draft_count": 12,
+          "reason": "unaligned-structure"
+        }
+      ],
+      "output_sha256": "304cde61ad51f47a43507feff8e321f51dc2143f0147dee37b3ceb091fc412a4",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-275024ea30cc6cd8",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+      "draft_sha256": "0253ea11b49888c60b23f1a281eceb5bbc0cbfd4e565c640c9010a2a117a5fb6",
+      "v10_reviewed_sha256": "0253ea11b49888c60b23f1a281eceb5bbc0cbfd4e565c640c9010a2a117a5fb6",
+      "status": "selected",
+      "accepted": [
+        2
+      ],
+      "eligible": 3,
+      "rejected": [],
+      "output_sha256": "322c0b4345e8457eec7ac3b8e4905ea3ea95573ff1acdf0c44ff7fe6976d2c6f",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-3568afa3aa382fe6",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+      "draft_sha256": "9007d41d61c514dd4f33f1a9a9c4677d94968ea0a88ea63f6f7a6b2edc73ac44",
+      "v10_reviewed_sha256": "ae391ae625b0e5aebab801aac71c1397f2991ee55e57ddd73229ff75a20b22ee",
+      "status": "selected",
+      "accepted": [
+        2
+      ],
+      "eligible": 3,
+      "rejected": [
+        {
+          "source_block": 1,
+          "reason": "protected-literal-change"
+        }
+      ],
+      "output_sha256": "097f1d37febe00891353ddfaf1175f0b67c35228655deb97f8ab95d7cfad46cb",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-494acdea301a431d",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+      "draft_sha256": "718a63a63098881827a637bb483acfeaf2dba744f6535f75299f3b8c6aba2c66",
+      "v10_reviewed_sha256": "76b9c80c6c1a9bdd09ba843556dbc432a215b1c83bf0914b616033f96afd81ee",
+      "status": "kept-source",
+      "accepted": [],
+      "eligible": 0,
+      "rejected": [
+        {
+          "source_block": 0,
+          "source_count": 3,
+          "draft_count": 5,
+          "reason": "unaligned-structure"
+        }
+      ],
+      "output_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+      "license": "CC BY-SA 4.0"
+    },
+    {
+      "id": "sudo-4a55f3cd291f0f5c",
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "arm": "selection_only_v11",
+      "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+      "draft_sha256": "e41b458812c55930684427fe4f200e6d88afd3249fd17c9e106cedb0e4f032cf",
+      "v10_reviewed_sha256": "21425cd6541320696979acd2534f1b4f809ad29c66fc39fd75e4db8d1bd9604d",
+      "status": "kept-source",
+      "accepted": [],
+      "eligible": 0,
+      "rejected": [
+        {
+          "source_block": 0,
+          "source_count": 1,
+          "draft_count": 2,
+          "reason": "unaligned-structure"
+        },
+        {
+          "source_block": 3,
+          "source_count": 0,
+          "draft_count": 14,
+          "reason": "unaligned-structure"
+        }
+      ],
+      "output_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+      "license": "CC BY-SA 4.0"
+    }
+  ]
+}

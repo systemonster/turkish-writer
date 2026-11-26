@@ -1,6 +1,6 @@
-# Sayfa türüne göre ayar
+# Tür ve sicil: sayfa metinleri
 
-Bu beceri iki tür metin için yazıldı: **site içeriği** ve **blog yazısı**. Aynı kurallar
+Bu kılavuz site ve blog türlerinin tarihsel karşılaştırmasını içerir. V2 geliştirme adayı farklı türleri ve yazar seslerini de kapsar. Bu dosyadaki sayfa ve satış metni tercihlerini roman, şiir, deneme, kurmaca diyalog veya anı metnine taşıma. Bu türlerde [uzun anlatı](uzun-anlati.md) ve [Türkçe kullanım atlası](turkce-kullanim-atlasi.md) kılavuzları kullanılır. [Bağlamlı Türkçe](baglamli-turkce.md) ile çekirdek filtre önceliklidir; aşağıdaki tür örnekleri biçim veya ifade kotası değildir. Aynı kurallar
 ikisine de uygulanır, ama doz farklıdır. Site metni kısa ve satış odaklıdır; okur tarar.
 Blog yazısı uzundur; okur bir sorunun cevabını arar ve yazanın kim olduğunu hisseder.
 humanify'ın dört sicilinden site metni "kurumsal", blog "blog" hücresine oturur.
@@ -8,7 +8,7 @@ humanify'ın dört sicilinden site metni "kurumsal", blog "blog" hücresine otur
 Her sayfa için üç soru:
 
 1. **İlk cümlede ne var?** Okurun bu sayfaya gelme nedeni ilk cümlede karşılanmalı.
-2. **Kim konuşuyor?** "Biz" mi "ben" mi? Sayfa boyunca değişmez.
+2. **Kim konuşuyor?** "Biz" mi "ben" mi? Anlatıcı değişimi, alıntı veya birden çok eyleyen varsa bunu koru.
 3. **Okur ne yapacak?** Arayacak mı, form mu dolduracak, okumaya mı devam edecek?
 
 **Biçim kapısı.** Sicilden önce bak: metnin ne kadarı düzyazı? İçerik zaten listede,
@@ -24,17 +24,15 @@ tabloda ya da adım adım talimatta duruyorsa iskelet kullanıcınındır; liste
 - **Konuşan.** Kurumsal sitede "biz". Serbest çalışan ya da kişisel markada "ben".
   Bir sayfada ikisi birden olmaz. "Firmamız", "şirketimiz", "tarafımızca" yerine
   kişi ekini kullan: "kuruyoruz", "teslim ediyoruz".
-- **Sicil kayması yok.** Argo iki sicilde de yasak (abi, kanka, valla, efsane, resmen
-  olay). Argo ile bürokratik dilin aynı metinde durması ayrı bir izdir: "Kanka bu
+- **Sicil kaymasını değerlendir.** Argo veya konuşma dili kurumsal bir sayfaya uymayabilir; kişisel anlatıda, alıntıda veya kullanıcı sesi gerektiriyorsa korunur. Argo ile bürokratik dilin aynı metinde durması ayrı bir izdir: "Kanka bu
   uygulama resmen olay, kullanıcılara geniş olanaklar tanımaktadır." Samimi bir blogun
   bir paragrafta resmî yazışma diline geçmesi de aynı kusurdur (insanca §21).
   "Uygulama resmen efsane, kayıt işlemleri kolaylıkla gerçekleştirilebilmektedir." →
-  "Uygulamaya iki dakikada kaydoldum." (Süre olgu listesinden.)
+  "Uygulama çok iyi, üstelik kaydolmak kolay." (Kişisel beğeni ve kolaylık korunur; süre veya gerçekleşmiş bir kayıt deneyimi eklenmez.)
 - **Olgu.** Fiyat, süre, garanti, iade, kapsam, müşteri sayısı, sonuç iddiası yalnız
   kullanıcının verdiği olgu listesinden gelir. Listede yoksa metinde de yok.
 - **Olguyu açarak yaz, sıkıştırarak değil.** Hedef uzunluğu süs, ders ve yorum
-  cümlesiyle değil, olgunun kendisiyle doldur: her olguya en az bir cümle, sayı, saat
-  ve yer yerinde. Olgu yetmiyorsa uzunluğu doldurma, kullanıcıya sor. Fark derleminde
+  cümlesiyle değil, olgunun kendisiyle doldur: cümleleri olguların ilişkisine göre kur; kaynakta varsa sayı, saat ve yeri yerinde koru. Olgu yetmiyorsa uzunluğu doldurma, kullanıcıya sor. Fark derleminde
   (`tests/kalibrasyon/SONUC-FARK.md`) gpt-4o "yaklaşık N kelime" istemine rağmen insan
   uzunluğunun %68'ini yazdı (28/28 çift); aynı olgu insanda 18,2, GPT'de 14,6 kelimelik
   cümleyle verildi, kalan yeri süs doldurdu.

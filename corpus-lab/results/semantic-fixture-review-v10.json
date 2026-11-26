@@ -1,0 +1,533 @@
+{
+  "schema_version": 1,
+  "review_id": "semantic-fixture-review-v10",
+  "reviewed_at_utc": "2026-11-25T09:51:09.446260+00:00",
+  "reviewer": {
+    "type": "ai_assistant",
+    "agent": "/root/hf_status",
+    "human": false,
+    "human_reviewed": false,
+    "blinded": false,
+    "gold_labels_visible": true,
+    "original_fixture_author": false,
+    "independence_scope": "Separate AI reviewer from fixture creation; shares project context and saw frozen gold labels. Not a human or blinded adjudication."
+  },
+  "scope": "Read-only comparison of all 24 source/A/B pairs against their visible frozen gold. No external detector or model job was run.",
+  "fixture_path": "corpus-lab/semantic-mutations-v10.jsonl",
+  "fixture_sha256_before": "d8190312d6e01ea98b6ada9477f5491494a5cb0915bdeb4cbb27e9a3b5dda211",
+  "fixture_sha256_after": "d8190312d6e01ea98b6ada9477f5491494a5cb0915bdeb4cbb27e9a3b5dda211",
+  "parent_reported_frozen_manifest_sha256": "bde08b49f2fba7526708cf92c63575412131b041e465dc62d2ead92a271fbdc9",
+  "parent_reported_manifest_hash_independently_verified": false,
+  "review_rule": "Preserve source facts, persons, negation, modality, scope, time, causality and attribution; choose ESIT when both are faithful. Ordinary paraphrase differences are not defects by themselves.",
+  "summary": {
+    "cases_reviewed": 24,
+    "supported_without_material_caveat": 20,
+    "supported_with_caveat": 2,
+    "ambiguous_tie_count": 2,
+    "ambiguous_tie_ids": [
+      "semantic-v10-021",
+      "semantic-v10-024"
+    ],
+    "other_caveat_ids": [
+      "semantic-v10-009",
+      "semantic-v10-023"
+    ],
+    "unambiguous_incorrect_gold_found": false,
+    "frozen_gold_modified": false,
+    "benchmark_or_model_accuracy_claim": null
+  },
+  "interpretation_tr": "16 karşıt örneğin tercih yönü kaynakla destekleniyor; 009 için zaman başlangıcı notu var. Sekiz ESIT kontrolünden 021 ve 024, sıkı sadakat okumasında B yanıtını da savunulabilir kılıyor. 023 için düşük öncelikli dolaylı anlatım notu var. Bu sonuç bağımsız bir insan doğrulaması değildir.",
+  "recommended_reporting": [
+    "Keep the frozen 24-case result and manifest unchanged for comparability.",
+    "Report a conservative 23-case sensitivity view excluding only semantic-v10-024, the clearest agency ambiguity.",
+    "Optionally also report the predeclared strict 22-case view excluding semantic-v10-021 and semantic-v10-024. Explain that 021 is arguable and the stricter view is not corrected human gold.",
+    "Retain 009 and 023 in both sensitivity views and keep their wording caveats visible.",
+    "Publish denominators and the exact exclusion IDs; do not select the favorable view after seeing model scores.",
+    "For future fixtures, clarify the time anchor in 009, exact simultaneity and causal direction in 021, reporting-event requirements in 023, and the assembly actor in 024.",
+    "Obtain human adjudication before treating disputed choices as validated gold or estimating editor quality from them."
+  ],
+  "reviews": [
+    {
+      "id": "semantic-v10-001",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "modality",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A, -abilir olasılığını koruyor. B, olası yavaşlamayı kesin veya genel bir etki olarak sunuyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "dce80eff5b9ab192ba58d3ca0268b8636d093189dcdabb5b8d8e5e1f36a69983",
+      "candidate_sha256": {
+        "A": "f103fdb731b15e4263b79f269ba618ae4d9ed3161a0eb5d083636e2bb78fb1a1",
+        "B": "34dabaf4d15e503f95b62f0d27e49880d68d212cc0c2bf4af4d18ad487126512"
+      }
+    },
+    {
+      "id": "semantic-v10-002",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "negation",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B, zil sesinin duyulmaması bilgisini koruyor. A olumsuzluğu kaldırarak bunun tersini söylüyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "18d7b3517a19e679f0b3be759c7bd31636e54f49860beb3add5cebf628e5126a",
+      "candidate_sha256": {
+        "A": "0ed368d71c912161aff3dbfb7caa5a034254ad57a4b90217c410db95db5b3865",
+        "B": "97909e44c03552efa2169233a038ad1c4bbba9335aef5ae68105e679e932e50d"
+      }
+    },
+    {
+      "id": "semantic-v10-003",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "agent",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A, çizimi düzeltenin Ece, yalnız yeniden kaydedenin Mert olduğunu koruyor. B hem kişileri hem çizimin sahibini değiştiriyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "dd9d5c0f0fd1e787ce91488cb4c5e26a2f79463819847f30aefa08696a1bf67b",
+      "candidate_sha256": {
+        "A": "73f806d22517c852a8f543c8a5f9e3440641a78d3ca6d94633e6fa262bb85836",
+        "B": "f12c24c0c9a5cd60dba6df4f50a3cdce15308a22fce084b48c1c4112d9655b63"
+      }
+    },
+    {
+      "id": "semantic-v10-004",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "time",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B ilk ölçümü cumartesiye, ikinci ölçümün ertelenmesini pazartesiye bağlı tutuyor. A günleri ölçümler arasında değiştiriyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "f0f32a83e04e71e435ffd6321b101dfea1db8eb1fd2e5c182f2153fbab7cf43e",
+      "candidate_sha256": {
+        "A": "91636ab66e0f8570fbb8775168078fe1e1a42a9d91be6edd0fd6c27fd868b41d",
+        "B": "fb5e619b81427da6621c8c9e62bb2a3bbde936b37bb16ce089da805f993986a2"
+      }
+    },
+    {
+      "id": "semantic-v10-005",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "causality",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A, kapı açılırken sinyal gelmesi ile nedenin bilinmemesini birlikte koruyor. B, kaynakta doğrulanmamış nedenselliği kesinleştiriyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "f55d02b03c025651c314612f029fde13f11d4db4cdf3d24e16ebe44eebee797f",
+      "candidate_sha256": {
+        "A": "135b581ce8cda768a7d4d2580dbcc0d309d91cf94d8ae95a81bab64a9bb1ee8f",
+        "B": "39fd0a23013401d38518ff2da8d71c1e141de80d1cd1960ee7ef85347a7901e7"
+      }
+    },
+    {
+      "id": "semantic-v10-006",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "scope",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B boya işlemini kapaklarla sınırlıyor. A, kaynakta kapsanmayan gövdeleri de ekliyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "0aeea94a3e67a9aaafa860ca08f619180fcc7541546a23ad500861afd9fa4ccc",
+      "candidate_sha256": {
+        "A": "ee3ea21fe844e4a163aeb4675689df4939dd4dd7f465c9a5040aae0809ca9588",
+        "B": "8e62fb6bffbe338890c2cb36a87d8ce296c56fafd7084814f2470feb30527be1"
+      }
+    },
+    {
+      "id": "semantic-v10-007",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "attribution",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A yargıyı Deniz’e atfediyor. B atfı kaldırarak serginin en güçlü bölümünü anlatıcının doğrudan hükmü gibi bildiriyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "82b6daa2206b91fa937d82928570bc86e6a5f3a098f06511eec192dfe142ee87",
+      "candidate_sha256": {
+        "A": "0047b6e7a6f45dcf0b8b0ab83c7075a2cb50d0bc23077206ec65085d67d2054e",
+        "B": "746cdb9f624dc1e61878e11ca3bed40e3b499cfdbc41bda63e2d88ba189f487e"
+      }
+    },
+    {
+      "id": "semantic-v10-008",
+      "context": "short",
+      "test_kind": "contrast",
+      "category": "number",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B toplam 18 sayfayı ve etkilenen 6 sayfayı koruyor. A etkilenen sayıyı 8 yapıyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "889e253f21a8273ffcffeed5a7812587cb695926e8b442acf04c6a68851a71d4",
+      "candidate_sha256": {
+        "A": "68f4b77f6a6a5bfa0796aec3b1ad95fc9ae44a9826d72017b72959747b1bea82",
+        "B": "1bfa14c13d6fb017b61c7adae00de6729cdbbf2cf78ecd6f352bf7c43bd1a9b2"
+      }
+    },
+    {
+      "id": "semantic-v10-009",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "unit",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported_with_timing_caveat",
+      "reason_tr": "A, 5 ml bilgisini koruduğu için B’den belirgin biçimde daha sadık. B aynı 5 sayısına L birimini bağlayarak miktarı değiştiriyor. Ancak bir saatin başlangıcı kaynakta açık tanımlanmıyor; A’daki bekletildikten bir saat sonra ifadesi, bekletme tamamlandıktan sonra ek bir saat okumasına da açık.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "285e78b4e49eff83d2b4c34b8e32d0b9e4320adb92fa02c438c96278297c4745",
+      "candidate_sha256": {
+        "A": "482f788e855b6ff8d8dfe2be1e911dd9fd310be6154fd58e9c6b24072096d642",
+        "B": "c346f58fffcb2fd9aa24bfd8c93c33391de5ac62147bace2061eac1d627763f6"
+      },
+      "caveat": {
+        "priority": "medium",
+        "ambiguous_dimension": "start_of_one_hour_interval",
+        "source_excerpt": "Kaplar aynı rafta bekletildi ve bir saat sonra yüzeyleri karşılaştırıldı.",
+        "candidate_excerpt": "Kaplar aynı rafta bekletildikten bir saat sonra yüzeyleri karşılaştırıldı.",
+        "label_dispute": false,
+        "strict_alternative_choice": null,
+        "recommended_handling": "Mevcut donmuş koşuda A/B etiketini değiştirme. Zaman başlangıcının belirsizliğini not et; sonraki fixture sürümünde başlangıç anını kaynakta ve iki adayda açıkça sabitle."
+      }
+    },
+    {
+      "id": "semantic-v10-010",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "comparison",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B, eşit açık kalma süresini, A’nın daha düşük tüketimini ve parlaklık konusunda ölçüm bulunmamasını koruyor. A tüketim karşılaştırmasını tersine çeviriyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "96d209ba3adc0d5ee2790a8c546a8755b9a0685e83fa51da02ef7fabd71c60e2",
+      "candidate_sha256": {
+        "A": "c91c9183434d6ef0e71742000256d604e8e2dd6eb60dc672a0061da53a293e4c",
+        "B": "9e0053dd1f5023f59ce7d25633b1bcae608341e2dbd7e88acdcb76766d737c19"
+      }
+    },
+    {
+      "id": "semantic-v10-011",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "obligation",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A olası yararı zorunluluğa dönüştürmüyor; aktarım ve kontrol sırası da korunuyor. B, kaynakta olmayan zorunluluk ekliyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "b5fffe769100432b09e438dc352d20dc6981fceeaa968a5179fdb88e100898bd",
+      "candidate_sha256": {
+        "A": "bba517bb0408123b7843eb54b3cebbd8a0a73c4dd179527f349ab889d5d5fda3",
+        "B": "9778f2ee2ed14d4982fe0998b5c952df2c4e946fc750c4629c4de44531ca1c70"
+      }
+    },
+    {
+      "id": "semantic-v10-012",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "ability",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B kurtaramama sonucunu koruyor. A, kaynakta söylenmeyen hiç denememe iddiasını ekliyor; kurtaramamak ile denememek aynı bilgi değil.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "f82b4f857da35904fa2db4fe2d8e7f9437d8ab8fc5388dbfb58ec6dbaa13d209",
+      "candidate_sha256": {
+        "A": "9d7c91b0cc91fc7bd13409b64c7335bfe4ea8fe23f2a67501fc32dab8b97c596",
+        "B": "55913cb70c07cf93624dd310cd46428dc587a154283ae4072aebd3931bf60f6f"
+      }
+    },
+    {
+      "id": "semantic-v10-013",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "condition",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A, renk onayını baskının koşulu olarak tutuyor; henüz onay gelmediğini ve paketlemenin baskıdan sonra başlayacağını koruyor. B onay koşulunu kaldırıyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "9adab19578ab12852dd2d397987cd44a01c7b9a8991068d9c658de8d8246f380",
+      "candidate_sha256": {
+        "A": "7397ddcaed286e1b8577552dac7424c24b6fc1acf5f6e7de08a62616e478be46",
+        "B": "50f4eb43baf3a0a13095b73f12db62c089bfce7738b419b90570c0d0e1ba2efb"
+      }
+    },
+    {
+      "id": "semantic-v10-014",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "uncertainty",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B yeniden durma durumunun bilinmediğini koruyor. A, geri getirilmeme bilgisinden kaynakta bulunmayan kesin bir arıza tekrarlamaması sonucu çıkarıyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "1a668a467d18df9e12424fa5879526a50242a6e800b4c81e90f30f36dbf841b4",
+      "candidate_sha256": {
+        "A": "db3224e8d4380cc4625c638033ded42c6d3e0e8c12e2a83c2f91afc513e7ad61",
+        "B": "77e6ecdaa5b397fbe729e44589ac275d4b5f941e7229c40366784870727f5422"
+      }
+    },
+    {
+      "id": "semantic-v10-015",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "sequence",
+      "frozen_gold_choice": "A",
+      "review_choice": "A",
+      "assessment": "supported",
+      "reason_tr": "A önce kopyalama ve tamamlanmasını bekleme, sonra silme, ardından listeye ekleme sırasını koruyor. B silmeyi kopyalamanın önüne alıyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "3c4c25ed04485f637bd738c2a43b7d4a7cf36b649bc54ae3ef91b5a760ef2dd9",
+      "candidate_sha256": {
+        "A": "d372c759e057976bdd9adf0a07865598d6789e9ac2c2c0b7382cd323de339650",
+        "B": "e8ef7fec2fae1eb00bcfa23a82bb8095adf98c5a45c88e24e47a89a2ef2042b9"
+      }
+    },
+    {
+      "id": "semantic-v10-016",
+      "context": "paragraph",
+      "test_kind": "contrast",
+      "category": "duration",
+      "frozen_gold_choice": "B",
+      "review_choice": "B",
+      "assessment": "supported",
+      "reason_tr": "B iki günlük süreyi son katın sürüldüğü anda başlatıyor. A süre başlangıcını ilk kata taşıyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "97da09d104be0117a724eff0e5af4f386b30093b90cb8800c32378ecf085d551",
+      "candidate_sha256": {
+        "A": "c0ffddd73fd136ec975e89209e9d2bf24e2487242758c0128aa7597f725a1c16",
+        "B": "1a459e2482ac8a7754624087fea201d01148dce558ff5f3eec07a9e2310fb541"
+      }
+    },
+    {
+      "id": "semantic-v10-017",
+      "context": "short",
+      "test_kind": "paraphrase_control",
+      "category": "modality",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": "ESIT",
+      "assessment": "supported",
+      "reason_tr": "İki aday da yeni yerleşimin geçişi kolaylaştırmasını olasılık olarak bırakıyor. İfade farkı olguyu veya modal gücü değiştirmiyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "6dbc3a7847f2c6156d26e8d8a813fd487a6b3d102b84100b18f4d918fe47909d",
+      "candidate_sha256": {
+        "A": "a778a338afce05328895326fe43af999878feb0ce1ab8e4ea0e9f27eef752b32",
+        "B": "e7d3284f5f739bbf7191a808e80a5cf4de869251917e37ec68dc9cdd367e0571"
+      }
+    },
+    {
+      "id": "semantic-v10-018",
+      "context": "short",
+      "test_kind": "paraphrase_control",
+      "category": "negation",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": "ESIT",
+      "assessment": "supported",
+      "reason_tr": "İki aday anahtar çıkmaması ve kilitli bölmenin açılmaması bilgilerini koruyor. Kaynakta açık bir neden veya zorunlu olay sırası belirtilmediğinden cümleleri ters çevirmek tek başına anlam kusuru değil.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "3877b01504f224cbb4729168dd3ae44736a47bcad0a9b0852c1a1f08982825de",
+      "candidate_sha256": {
+        "A": "c1a8774858a4d5a658745330c2b1a919f46851526c965f43c35f8eb48b3850be",
+        "B": "be1a159c8e6a5b40f68ef1419e026f33004bce0f1d6212cd066615888bd5051e"
+      }
+    },
+    {
+      "id": "semantic-v10-019",
+      "context": "short",
+      "test_kind": "paraphrase_control",
+      "category": "agent",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": "ESIT",
+      "assessment": "supported",
+      "reason_tr": "Her iki aday fotoğrafı Aslı’nın çektiğini ve aynı fotoğrafın dosyasını Cem’in arşivlediğini koruyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "97b250658f255af620286695c8a6283ca6e55e113453d12ceac8df3d8c8b04bb",
+      "candidate_sha256": {
+        "A": "e3be8dff909c1fe957984fd103570c85de4af283bb03f69b767f606a6eaf5f1a",
+        "B": "50ca118978bb24e13eb669db72b4a3517805be7111b3410d79b89c7c96ee4ae8"
+      }
+    },
+    {
+      "id": "semantic-v10-020",
+      "context": "short",
+      "test_kind": "paraphrase_control",
+      "category": "number_and_unit",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": "ESIT",
+      "assessment": "supported",
+      "reason_tr": "Her iki aday şişenin kapasitesini 250 ml, ölçümde kullanılan miktarı 200 ml olarak ayırıyor; sayılar ve birimler korunuyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "690f6cbec21e324b8d797478d8d04072e83ce518928a67e79bec7b05951d4995",
+      "candidate_sha256": {
+        "A": "757dbd851aa3e6e6d6782b72bf902b8efe887f0cbd81f72f5c6eee264f2af588",
+        "B": "f18fd40078190ef9ba8e8f7cf1224199d6c39183313d533b4160df9f52ac3fe1"
+      }
+    },
+    {
+      "id": "semantic-v10-021",
+      "context": "paragraph",
+      "test_kind": "paraphrase_control",
+      "category": "causality",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": null,
+      "assessment": "ambiguous_tie",
+      "reason_tr": "B, aynı saatlerde ifadesini ve ziyaretçilerden sıcaklığa doğru sorgulanan nedenselliği daha açık koruyor. A yalnız öğleden sonra hem ... hem ... yükseldi diyerek iki artışın tam zaman örtüşmesini gevşetebilir; nedensel ilişkisi ifadesi de kaynaktaki tek yönlü sorudan daha geniş okunabilir. Olağan özetleme okumasında ESIT savunulabilir; tüm zaman ve nedensellik ayrıntılarını koruyan sıkı okumada B savunulabilir.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "f34dfc3ae36a7716043829217360de37e0a75ced5eea866db88b5ee14d77ac7f",
+      "candidate_sha256": {
+        "A": "10359d28e5a837126b448fa43e0c0a2130c5080c1bbf5fef1be98e50f67df1ce",
+        "B": "35881cdd47bbc317084fbf8f9f63c8206a3df0e795713bac29b6ec1de187b128"
+      },
+      "caveat": {
+        "priority": "medium",
+        "ambiguous_dimension": "temporal_precision_and_causal_direction",
+        "source_excerpt": "Aynı saatlerde ziyaretçi sayısı da yükseldi. Sıcaklık artışının ziyaretçilerden kaynaklanıp kaynaklanmadığı ölçülmedi.",
+        "candidate_excerpt": "Öğleden sonra hem salon sıcaklığı hem ziyaretçi sayısı yükseldi. Sıcaklık artışının ziyaretçilerle nedensel ilişkisi ise ölçülmedi.",
+        "label_dispute": true,
+        "strict_alternative_choice": "B",
+        "recommended_handling": "ESIT etiketini donmuş ana sonuçta koru; B yanıtını bu örnekte tartışmasız model hatası diye sunma. Belirsiz bağları dışarıda bırakan duyarlılık özetini ayrıca raporla; insan incelemesi sonrası yeni fixture sürümünde zaman örtüşmesini ve nedensellik yönünü eşitle."
+      }
+    },
+    {
+      "id": "semantic-v10-022",
+      "context": "paragraph",
+      "test_kind": "paraphrase_control",
+      "category": "scope",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": "ESIT",
+      "assessment": "supported",
+      "reason_tr": "İki aday da erişimi sergi ekibiyle sınırlıyor, fotoğrafların henüz yayımlanmadığını ve ziyaretçiler için ayrı sayfa hazırlanacağını koruyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "6468a177d45cb6175b4fe1fec7c12efd2f1e577c87842fedeb6f5437261fb05e",
+      "candidate_sha256": {
+        "A": "0e2b373921e3306b2716c641b979d9b208dfccbaadfee5caa5ecf77b74af41b0",
+        "B": "447f9154567ce7c517dbabd28ac978ee2ffb798685c468047c2ccceb9058034f"
+      }
+    },
+    {
+      "id": "semantic-v10-023",
+      "context": "paragraph",
+      "test_kind": "paraphrase_control",
+      "category": "attribution",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": "ESIT",
+      "assessment": "supported_with_reporting_caveat",
+      "reason_tr": "Her iki aday görüşü küratöre bağlıyor, ziyaretçi araştırması yapılmadığını ve cuma günkü yeniden görüşmeyi koruyor. A, söyledi olayını açıkça tekrar etmeyip küratöre göre biçimine geçiyor; konuşma olayı ve geçmiş zamanın kendisi ölçülmek isteniyorsa B daha tamdır. Sıradan dolaylı anlatım ölçütünde ESIT makul.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "4805719334cbcaf28f4caacc6cb71a6535c79c5fc639537a63dfc5726a5a4441",
+      "candidate_sha256": {
+        "A": "e847a6a8865c70eee0a916f33d8764df32cdcceacba2433462b89a2caa32ff9b",
+        "B": "9f1715c86165827ab2e94f6e0e6c08bb665fa89834b120b66178aff9dfe6bdb5"
+      },
+      "caveat": {
+        "priority": "low",
+        "ambiguous_dimension": "reported_speech_event_and_tense",
+        "source_excerpt": "Küratör, küçük salondaki düzenlemenin daha sakin göründüğünü söyledi.",
+        "candidate_excerpt": "Küratöre göre küçük salonun düzeni daha sakin görünüyor.",
+        "label_dispute": false,
+        "strict_alternative_choice": "B",
+        "recommended_handling": "Mevcut genel atıf/parafraz ölçütünde ESIT etiketini koru. Sonraki tasarımda sözün söylenme olayını ve zamanını da koruma gerekip gerekmediğini rubrikte açıkla; gerekirse adayları buna göre hizala."
+      }
+    },
+    {
+      "id": "semantic-v10-024",
+      "context": "paragraph",
+      "test_kind": "paraphrase_control",
+      "category": "sequence",
+      "frozen_gold_choice": "ESIT",
+      "review_choice": null,
+      "assessment": "ambiguous_tie",
+      "reason_tr": "B, parçaların birleştirilmesini edilgen önkoşul olarak koruyor. A’nın önce parçaları birleştirin buyruğu, kaynağın açıkça atamadığı birleştirme işini muhataba atıyor. İş akışının doğal varsayımı altında ESIT savunulabilir; kişi ve eyleyen eklenmemesi ölçütü sıkı uygulanırsa B savunulabilir. İşlem sırası her ikisinde de korunuyor.",
+      "review_choice_is_adjudicated_gold": false,
+      "label_change_applied": false,
+      "source_sha256": "fe30f43156d1d76e272ff02aaed1bd2f1dd04f315d7579220cfb1c7af48f3f93",
+      "candidate_sha256": {
+        "A": "90faa000bb63a5c0d50d62d7b361159c61bd7e3daf3ff3051477a11c6446fce5",
+        "B": "92b193de967777cd99c4d9fff31cdae2adcff015e992e66911285edec62384f9"
+      },
+      "caveat": {
+        "priority": "medium",
+        "ambiguous_dimension": "added_agent_for_prerequisite_action",
+        "source_excerpt": "Parçalar birleştirildikten sonra etiketi yapıştırın.",
+        "candidate_excerpt": "Önce parçaları birleştirin, ardından etiketi yapıştırın.",
+        "label_dispute": true,
+        "strict_alternative_choice": "B",
+        "recommended_handling": "ESIT etiketini donmuş ana sonuçta koru; B seçimini belirsizliğe duyarlı olarak yorumla. Yeni fixture sürümünde ya kaynakta birleştirmeyi muhataba ver ya A’da edilgen önkoşulu koru. Mevcut dosyayı değiştirerek koşu kimliğini bozma."
+      }
+    }
+  ],
+  "pre_result_sensitivity_plan": {
+    "recorded_at_utc": "2026-11-25T09:52:07.571881+00:00",
+    "model_outputs_consulted": false,
+    "status_basis": "Reviewer has not seen model outputs. Parent reported corrected GPU job 6b06af281460ffe1d5ea5b34 starting without outputs at the time of this decision; not independently queried by this reviewer.",
+    "views": [
+      {
+        "name": "frozen_full_set",
+        "excluded_ids": [],
+        "case_count": 24,
+        "purpose": "Retain the original experiment and gold without changes."
+      },
+      {
+        "name": "conservative_sensitivity",
+        "excluded_ids": [
+          "semantic-v10-024"
+        ],
+        "case_count": 23,
+        "purpose": "Remove the clearest agency ambiguity; A assigns assembly to the addressee where the source leaves the assembler unspecified."
+      },
+      {
+        "name": "strict_fidelity_sensitivity",
+        "excluded_ids": [
+          "semantic-v10-021",
+          "semantic-v10-024"
+        ],
+        "case_count": 22,
+        "purpose": "Additionally remove the arguable loss of exact simultaneity and directional causal scope in 021; this is a stricter interpretation, not a proven gold correction."
+      }
+    ],
+    "retain_in_all_views": [
+      "semantic-v10-009",
+      "semantic-v10-023"
+    ],
+    "rationale_for_retaining_009": "The unit mutation makes B clearly worse and supports A. The source itself leaves the one-hour clock anchor underspecified; this caveat does not make the A/B winner materially ambiguous.",
+    "rationale_for_retaining_023": "Both candidates retain the curator attribution and main content. Removing an explicit speech-event verb through according-to paraphrase is ordinary indirect-reporting variation; the strict event/tense nuance does not establish a material label defect.",
+    "decision_must_not_depend_on_observed_model_scores": true,
+    "human_adjudication_completed": false
+  }
+}

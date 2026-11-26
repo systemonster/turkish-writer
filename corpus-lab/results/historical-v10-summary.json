@@ -1,0 +1,3555 @@
+{
+  "schema": 1,
+  "as_of": "2026-11-25",
+  "scope": "Development-only historical pilot. Source text, edited output and working notes remain private; public rows contain identifiers, hashes, flags and metrics only. All 160 final-arm records exist; 33 of 40 notes reached the token cap and one Gemma skill output reached the cap. No independent human ratings; no final quality claim. Numeric and structural indicators are diagnostics, not semantic labels.",
+  "job_id": "6b06b6af1460ffe1d5ea6ab4",
+  "job_status": "COMPLETED",
+  "supervisor_id": "6b06b46a1460ffe1d5ea6601",
+  "private_dataset_revision": "0b1b8308559a935e6f3be060fe42bc00ed556f02",
+  "source_sha256": "e7ecd643614bde335854a5a19f20b7061cb1aa85b9f7022fc8a39e4c2ded8e05",
+  "verification": "CPU preflight 6b06c523b6a90bbe997d096b validated the frozen source, all 200 row identities and all 160 publication-arm output hashes.",
+  "models": [
+    {
+      "run": {
+        "model": "Qwen/Qwen3-32B",
+        "revision": "9216db5781bf21249d130ec9da846c4624c16137",
+        "git": "e855943131ebd9f471614593ca5068a3a11bd6aa",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.3",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "cases": 20,
+        "manifest_sha256": "e7ecd643614bde335854a5a19f20b7061cb1aa85b9f7022fc8a39e4c2ded8e05",
+        "scope": "source-disjoint external historical pilot; no gold labels, no human verdict",
+        "batch": 2,
+        "attention": "sdpa",
+        "prompt_sha256": {
+          "baseline": "1e582e4cb1fad527c13b6d689597a92d543b3e0cfdfde396f7afe5cc2b7a4052",
+          "skill": "f3519f1ce1ae95547f979095414fdcda4a9287ac76552b59ace538cf7315100b",
+          "plan": "004838dc9ddd6c43eae205b5415b7c84e041fd6d6516b035bff395d393bb99d8",
+          "revision": "6b8a1da2f977722e8a8720be27b00fa8ee3ef64238571c0554f0ca8d20ce0a11",
+          "review": "4cf2b8f8da5d80644c571df82ccbf326a774aaa7f4fa6f34e34f00bac6c79e35"
+        }
+      },
+      "complete": true,
+      "rows": 100,
+      "arms": {
+        "baseline": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 0,
+          "number_review": 2,
+          "paragraph_changed": 1,
+          "wrapper": 0
+        },
+        "skill": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 1,
+          "number_review": 3,
+          "paragraph_changed": 3,
+          "wrapper": 0
+        },
+        "candidate_draft": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 0,
+          "number_review": 1,
+          "paragraph_changed": 2,
+          "wrapper": 0
+        },
+        "candidate_reviewed": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 0,
+          "number_review": 1,
+          "paragraph_changed": 2,
+          "wrapper": 0
+        },
+        "working_note": {
+          "n": 20,
+          "at_limit": 20,
+          "exact": 0,
+          "number_review": 0,
+          "paragraph_changed": 0,
+          "wrapper": 0
+        }
+      },
+      "review_changed_cases": [
+        "sudo-7703aecdf8a7be14",
+        "sudo-3dc45336d810812b"
+      ],
+      "cases": [
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "c4ab75996dc35cc578c0c49e9ecb0bfa49f908f6ddb8ddd47f32d9bfac0e47ca",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "a16c83b2af2c583c3bdc92ae0c53b30639c772282bfc2a23034ef99f8254d2c2",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "6a61c24a919bb1dc91b1ba37aa5cae35b26ecbc356759a1e16031af1af1c412a",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.977,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "6a61c24a919bb1dc91b1ba37aa5cae35b26ecbc356759a1e16031af1af1c412a",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.977,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "77a556fa4737799a5cc2335cfc1662ddb721ff6a9cdb809edef6ae3dc3795c21",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.988,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "00b232dd9eaf27fb7ec8b3698cbd9af3637eb8c6e2625bc47a920c500c5c3a90",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.988,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "d78417e3b8829936a5fb4dc0e2a3925b6558c2bfaa197194a9f4378fa0032203",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.988,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "d78417e3b8829936a5fb4dc0e2a3925b6558c2bfaa197194a9f4378fa0032203",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.988,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "59985b6d09ef2e64ef8ea1ac9ef1b7b8704b7ff8db1c572affa6c63b631d849c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.994,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "at_limit": false,
+          "metrics": {
+            "exact": true,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": false
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "4e05226b134bf45927a13c03fc91b5bc27ad7ac0c612ced4412b569c666da4a7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.968,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "4e05226b134bf45927a13c03fc91b5bc27ad7ac0c612ced4412b569c666da4a7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.968,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "81f35aeb2c5c1f3d18b66dfc3f669ace6631e6278e369d999b0f1cdf1df074e7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.006,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "346a3acf3cf00dc02f83193003ba97b40d470ee1313f83304f972ae3e68c5555",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.006,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "2d9176ecaff4a9f70b257b1c54b42d410a911c59d8b116543ab7b0aa0bfb8f16",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "2cf1e10f54daa2408d5f11b8b043b14c3983137aa38d5c47dc9cc1bec01799f1",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.994,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "b6a52ac85aa84035e02bf4271f530f57eec85377d6a32cbacbc07fc5f85f7a9b",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "0448a51fb005a5295cc4247afe5677cf94e6f0ff0848d8543446db7f85801cdf",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.051,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "47dc85deab31bc95abc322e86e9f1cb23da9980ccab36b57cc77288f14c13062",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.969,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "47dc85deab31bc95abc322e86e9f1cb23da9980ccab36b57cc77288f14c13062",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.969,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "b3d73961d20ad7867bb8ef5bddb8153bfd79a0b0d79b1dda5fe0b8d1a3ad6e4e",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "b33046ba81b008ca663eb38c8fc539634846f027bb486e8301e51d9072a37fed",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.986,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "2e7724e91a6fc102fdb55045e3fa5ae07731e7ef23726e263d7e88b2859c4729",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "2e7724e91a6fc102fdb55045e3fa5ae07731e7ef23726e263d7e88b2859c4729",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "07047a0013c2faa178529becca8cf65e55f69387ace8b90f748537167312d5a1",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.088,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "b6e82566715768604b8420a922a47f133d6ab46fa723661f0efc4fdba4af0845",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.01,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "ec1e2e16d080e04c1a663019ece8a5ddb8471ca8db29358e62737ff97598fc1d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "6529577f2453e8ef4ceff6985721e2147dfa0429e0ec3f60cd524eb0eedc5dbd",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "1e81bff1db40b37d97f53f47ddbfc0447aa8c370f997d39a68c43e2731f88a3e",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "3da7e926f2991d8c2a6235bf6f5b3554fae26014a54d9eae3aca0ec7af62c4fe",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 1.116,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "1f90da904d4b87b364a365b31116a9e886c36d24afc65f5fb6133bef3e16679c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "1f90da904d4b87b364a365b31116a9e886c36d24afc65f5fb6133bef3e16679c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "91dfbfe41cbbd1d3dbd14b62fc6d78f1261fa88c64079651c99012e45abc7034",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "ae0ddad89dbf9d542807f4fba3112db6bb0b5d9b1bfa7acbeedb5c050e3c5fd2",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.957,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "af4f0850cea7722a3f997b4791f120cd40bcaf6e9596c9e5f3a3b1ed992df05b",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "af4f0850cea7722a3f997b4791f120cd40bcaf6e9596c9e5f3a3b1ed992df05b",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "041c5efb8e26a6c3f8ecaa7c318ab795d89a7d414f2f278b89df2d55308dc72a",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.994,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "9833177dbf891b3f60f9e77696b374b5bac4fc2a5e5493692c1d1b058bb86418",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "bc158a16447484c3c9e0e1b8b304211899b0b663714e2ac14d2c0061bb2c2fd9",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.961,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "bc158a16447484c3c9e0e1b8b304211899b0b663714e2ac14d2c0061bb2c2fd9",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.961,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "4e3b585c60046bf8111de11a0cc88e6d8a42b63d0f6edf764383744706d4c8a0",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "a412de773ba3574cfd19e9665b7ade858f84b08b1fde0f4dd4b1030a2a263ce0",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.992,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "0757b2a50008fd52fbaf3b2ace9c98929dde61027ff431d7d098b364159b44ea",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.988,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "0757b2a50008fd52fbaf3b2ace9c98929dde61027ff431d7d098b364159b44ea",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.988,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "4dd7b0d169265c504f3a6b132d60a8386f66d891b2c1c19f4cb4fa30202f6215",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.005,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "76fc206153b7ecd1f972505ffc19683592ee23313bbbd2a992c1ffcbfb4e5964",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "3eb07e78ea6b2cd53d4c170c1942d266f429664ee1f9b49299df577689574057",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "3eb07e78ea6b2cd53d4c170c1942d266f429664ee1f9b49299df577689574057",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "310e202a4796b5ff928fa5f8b0977a8b2ec259ad24656b69f3c4abc99363b86a",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "9175191393e90f351a64c8f5c516a9a298b610eccf3b9d9735216b1a3ba460b6",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.98,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "8ae9cf9acc226fb1ac0f29c06669d1cdc6e24a396ce27ed8b337a0cd86bee5db",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.951,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "8ae9cf9acc226fb1ac0f29c06669d1cdc6e24a396ce27ed8b337a0cd86bee5db",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.951,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "d07404881a3888c0088e8bdf14d6ebeaed416200ac8204b443697ba13961b38d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.03,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "3f19b0bd147a71d6611cfc477ccb1c7364db6f047463f04819ef2bfb0ccb83b6",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.018,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "84b5aee5771cf1043dedc5b38691821ac0dc75b30cfae761cdf29549f951ed9c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.006,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "84b5aee5771cf1043dedc5b38691821ac0dc75b30cfae761cdf29549f951ed9c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.006,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "27a72a7747e315384c5d0704bc15feb4cdedf8e71c2f2ded15ca1a00c42755a7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "e76669164f8aae336bede7145a595d47824a62399aa73a22521e588993ce1532",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "00429c0b8bae14a005d0f5082d6102d19f3ad149f35074029f1bb8fad30a71e5",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "00429c0b8bae14a005d0f5082d6102d19f3ad149f35074029f1bb8fad30a71e5",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "9208b5904dab144af799c611c7232269641c18112bb661ac8682f5c9ba232870",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.011,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "b14cbec6dde9f9c9a84bdabf6f8ec961a86572c48b59aca14df141c519e95a7b",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.011,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "a9a110c4d8d07f0677a45358465da800631a6b866f20ea1794bfb8a04206d2c1",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "a9a110c4d8d07f0677a45358465da800631a6b866f20ea1794bfb8a04206d2c1",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "5e209994278a9a31781643b57aa7a404cbdc1d9ca38bb7d93c1ae1691b84fc4b",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.019,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "5868e1936d8f3d8482c506649ffb69da047e8f6741ae01c39e1867a677686923",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.987,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "d1d0f7e0043d9060c571a4d6c754f4d7ac119d9aeef4b279ec5c797b845e5131",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.006,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "d1d0f7e0043d9060c571a4d6c754f4d7ac119d9aeef4b279ec5c797b845e5131",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.006,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "e797bc6ba2f0955535f5f5699c13c08c4017747381e08668967328c8de48e3bb",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.984,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "04b17c9c9eac6d3afb14fcab93f2e7d1f189bf1786e9a061337b803e0bff7c6c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.969,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "6e6e54f61ea37afae1079885275e69a27beb7f9fa5f7adc9ac923793d8c35332",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.959,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "6e6e54f61ea37afae1079885275e69a27beb7f9fa5f7adc9ac923793d8c35332",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.959,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "50763fecb3b6f6c414d810e134a73673fb458e571820b0c344e39c956ad43aa8",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.053,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "cd5e2b5e60680a05027f98b7ffbaa1b3039bf6fba899f6c4f08cd92426bb0f8d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 1,
+            "word_ratio": 1.06,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "d6d189979dfbb123b1a1e33632b103b88c87d27a3120e956f05678abdf237994",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.05,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "d6d189979dfbb123b1a1e33632b103b88c87d27a3120e956f05678abdf237994",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.05,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "baseline",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "d4dc04105ca94f048af5b0a8e18b1618d488cd53517df243a17606e1acea89fd",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "skill",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "1280fd62abbd889548b0772e7f8a16bdb58246867925216bccc00eb69b6dc562",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_draft",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "6949b5d05714e4572dafe79276e49c558e1553804e1caaffcfb80a26675d54c9",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "candidate_reviewed",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "6949b5d05714e4572dafe79276e49c558e1553804e1caaffcfb80a26675d54c9",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.989,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "Qwen/Qwen3-32B",
+          "arm": "working_note",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        }
+      ]
+    },
+    {
+      "run": {
+        "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+        "revision": "1bbe9f19a26a70dc4d0c709e1a816e6a9378a7f5",
+        "git": "e855943131ebd9f471614593ca5068a3a11bd6aa",
+        "torch": "2.8.0+cu128",
+        "transformers": "4.57.3",
+        "gpu": "NVIDIA RTX PRO 6000 Blackwell Server Edition",
+        "cases": 20,
+        "manifest_sha256": "e7ecd643614bde335854a5a19f20b7061cb1aa85b9f7022fc8a39e4c2ded8e05",
+        "scope": "source-disjoint external historical pilot; no gold labels, no human verdict",
+        "batch": 4,
+        "attention": "eager",
+        "prompt_sha256": {
+          "baseline": "1e582e4cb1fad527c13b6d689597a92d543b3e0cfdfde396f7afe5cc2b7a4052",
+          "skill": "f3519f1ce1ae95547f979095414fdcda4a9287ac76552b59ace538cf7315100b",
+          "plan": "004838dc9ddd6c43eae205b5415b7c84e041fd6d6516b035bff395d393bb99d8",
+          "revision": "6b8a1da2f977722e8a8720be27b00fa8ee3ef64238571c0554f0ca8d20ce0a11",
+          "review": "4cf2b8f8da5d80644c571df82ccbf326a774aaa7f4fa6f34e34f00bac6c79e35"
+        }
+      },
+      "complete": true,
+      "rows": 100,
+      "arms": {
+        "baseline": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 0,
+          "number_review": 6,
+          "paragraph_changed": 8,
+          "wrapper": 0
+        },
+        "skill": {
+          "n": 20,
+          "at_limit": 1,
+          "exact": 0,
+          "number_review": 8,
+          "paragraph_changed": 13,
+          "wrapper": 0
+        },
+        "candidate_draft": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 0,
+          "number_review": 13,
+          "paragraph_changed": 13,
+          "wrapper": 0
+        },
+        "candidate_reviewed": {
+          "n": 20,
+          "at_limit": 0,
+          "exact": 0,
+          "number_review": 14,
+          "paragraph_changed": 14,
+          "wrapper": 0
+        },
+        "working_note": {
+          "n": 20,
+          "at_limit": 13,
+          "exact": 0,
+          "number_review": 0,
+          "paragraph_changed": 0,
+          "wrapper": 0
+        }
+      },
+      "review_changed_cases": [
+        "sudo-0191b6cb1680889a",
+        "sudo-42d0f0b13b707362",
+        "sudo-17c17668853b5918",
+        "sudo-50d6ece31d55717e",
+        "sudo-3dc45336d810812b",
+        "sudo-683964dac133b5a7",
+        "sudo-e16e34a2f54e9e12",
+        "sudo-ade6216058d9725b",
+        "sudo-50e8feac5ded1d05",
+        "sudo-acca8e35954043cb",
+        "sudo-4a55f3cd291f0f5c",
+        "sudo-494acdea301a431d",
+        "sudo-3568afa3aa382fe6",
+        "sudo-8bcf95d244c79cb9",
+        "sudo-55d641e04d2b137d"
+      ],
+      "cases": [
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "23f6e4736a75ad14267ba3ce38bb5eaf706307a40e3187324002c3f4798ce65d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.052,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "ce2b6996dc174992d1f24a6df02088710669d32d6cc62639bfb75c24cc8235a6",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 1.139,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "c8a76e0f951dea510f787a83579e0e562dc14ed9999051fdc3635896e7ab3897",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 5,
+            "word_ratio": 1.035,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "output_sha256": "e1bb471c3e040f37ccb4624bdd559608d62a2087615ec1a36e70ae0532147413",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 5,
+            "word_ratio": 1.058,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-0191b6cb1680889a",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "0191b6cb1680889ab96add8a4b1283ab288e1890790048042730196ef6131d66",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "dad7fb97195802e1cab439a523242256af11115cdd55e2573b8db36f29069aff",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 1.012,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "b85a555df80021d210cf15c1c03a0a24f8070c7212a6e55f660458bf8f9f3ea9",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 2,
+            "word_ratio": 0.965,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "0253ea11b49888c60b23f1a281eceb5bbc0cbfd4e565c640c9010a2a117a5fb6",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.087,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "output_sha256": "0253ea11b49888c60b23f1a281eceb5bbc0cbfd4e565c640c9010a2a117a5fb6",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.087,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-275024ea30cc6cd8",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "275024ea30cc6cd8f1e8a2fffeb820d362107afbc0ed88d6bae2c3aad1fea35e",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "4c59444d7fd30936785c278783f76dfe1ad7a54877fc7e2dbcef8a9305c8ed2d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.968,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "936d5fbbdcf3fad0a7e1a9e010f981dfdea6b687cd7f95314b73a239bf5b4ad7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.994,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "326ad14ef46b8ea47e576fd969c53c46c08bd98bdbd3bb823bc9d0a343acf208",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.994,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "output_sha256": "90432dfd948e1d3844d4804cb876e1db2ea8cff9d9d4ea48ef7da93c4cbe8d45",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 2,
+            "word_ratio": 1.102,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-42d0f0b13b707362",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "42d0f0b13b70736280ce2a4e881f2f366f60ae5caf5b5ceb521455fc84ef416f",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "f8bcbf1fa7b87ca34e54c7a96c8c78592cd7f8468e7baf941d9d7fd5ff3915a1",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.882,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "6cbd4e83c4628c1bcd4afef0721089cc54e277b866383c9fd62916db5ba3d5c4",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.845,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "013529bee5f0f23eef6020f89e7bbc0ea2816c2c24414197ad67e7a48d9e8fcd",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "output_sha256": "013529bee5f0f23eef6020f89e7bbc0ea2816c2c24414197ad67e7a48d9e8fcd",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-7703aecdf8a7be14",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "7703aecdf8a7be1447fa160d9bb8cca39bd106cd0395007c0e75def31cf3b44e",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "3f9fe8f3a23b6721d3fc18a4ada0c4bcaf4b8e96744d74d726e8623f669e8f43",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.893,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "053105153234f2bb259f959dc70aca783406a0a4a3975ab8edf8b64e2003e1f2",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.801,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "9cefcbb0f48f90a93e9a945cbe2c22a38c4077e19228c67a5a02513afa2d8583",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 11,
+            "word_ratio": 2.602,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "output_sha256": "65999f146952f08813ed374cb72be56e9e2bbb8ba9123c0136f6ee8e7d34b660",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 11,
+            "word_ratio": 2.607,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-17c17668853b5918",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "17c17668853b5918710c20d2c390f81d032b7228c8062681d3fc1dd0820fb1fd",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "293ab091dbfc8074a837d5d8e1db23e5b3c45a55267be4a07cabb8c6475c8734",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "c69acd92bf48ad08ff6aca7e5b22826c3f33c4b649b93447e059f3b3dd3f4c4a",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 0.981,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "f23108b9d50dec9e2c77be0e669d719600d7eebe11992292c1fa7600288fbd3b",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 14,
+            "word_ratio": 2.355,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "output_sha256": "55fd9ff5b66662999448b36edff3d22c7706ae109ac900a1708334ae08aa6ef3",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.896,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50d6ece31d55717e",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "50d6ece31d55717e8ae2c9e9a96a877ed0ca2062e8585a9d08760d257686be9c",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "30d4688cb5f770d979b7feb5b23c6f57dd76e2e1334bb654e531ef120c6a1557",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.736,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "41ab9ae213a639e80774a2153b56fca2cc25ce8ef77bd5b9d64bd2ed1580144f",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 3,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "20cb502fbc6c3cc20dd0917f30bb09e6f3fb6b4dc22b6b7e4205115397edafa0",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 6,
+            "word_ratio": 1.052,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "output_sha256": "ed0ebff6d5f68859af75eab233dfe017a4b3fffddfe15cfef3eb6a6afdfdfab7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 8,
+            "word_ratio": 1.492,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3dc45336d810812b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "3dc45336d810812bf7e756ea2d5b7c12ac613e55051c81af18e3ef1e3dfe5900",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "85f786929b437200882ac7a3fc74b13fe77c95179b405a0e5a6851e7d122365c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.836,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "4311aa784754480b3dbcb2e0cbe91b8f6ca5e20991db63f78ccc4921156de0cf",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 6,
+            "word_ratio": 1.065,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "9c9927e7218f997e98f492c65b07aa118569db382f7849d493ed3d13a4e97052",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 3,
+            "word_ratio": 1.106,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "output_sha256": "1dcf59d8936ec0c2962976546056003033b5460416a10fafdff0eb40672a5dd3",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 3,
+            "word_ratio": 1.099,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-683964dac133b5a7",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "683964dac133b5a76169f5d00803e54a0a461379c911c544bd987c88c4030f86",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "c75fff05b02e0d7f593b3ae2a453dd7386517c7d6047a84e01986dfe2cdf1325",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.005,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "29349a1d7de50be8656448ad7122817416d0bad18d5fc3ecc799ae42225ec704",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.011,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "c2fb68846904c0ffe3bb60617c6cae99e68c481cc1aabc993b77c32490647568",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 2,
+            "word_ratio": 1.005,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "output_sha256": "d11d8e2a689e6beb209550c9605af0a644b07a94e64263672b62e218646b731c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 2,
+            "word_ratio": 1.005,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-e16e34a2f54e9e12",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "e16e34a2f54e9e120f1ec05dec187efd276a44c0bd14de49a16e6972effaeb93",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "c2e59a6cd178714f5e8b3ed3a6453b4df4d1869ad3cb69835175759a7e7ebe08",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.871,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "8c7c16e5d879acf0ea3531415652574534a798304519b292664d477978919042",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 18,
+            "word_ratio": 1.798,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "68e3c96275fcb0e906fb125806cd36d509f947c5e2883bfd1ec7059c10d07928",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 11,
+            "word_ratio": 2.449,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "output_sha256": "08df37216ca69153c6246aa7e7b043abc86b33b697c180a0ad3015f0add17ca0",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 12,
+            "word_ratio": 2.449,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-ade6216058d9725b",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "ade6216058d9725b65b7e6e55194094f44c414e480b5065643fe3743cdb43e6d",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "44361f4b9a17b105ed02327017e11b7a0630bf1220a543606ea2eaa2b80e5533",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 1,
+            "word_ratio": 0.692,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "bb14f25eb7c471e9b2b09e4c354a14c6e8c0582c4e756094e226fafe3a711aec",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.964,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "4c865d9aa3fa46cf96d1ad671f6b0bee1b8f1148b74d546688550ef58ee25d86",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.992,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "output_sha256": "4c865d9aa3fa46cf96d1ad671f6b0bee1b8f1148b74d546688550ef58ee25d86",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.992,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-aae107bfbfb4130c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "aae107bfbfb4130cc6b9ae667ef979917e00097fc43526201cd061593b7a0d48",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "077b020bad208c36465b6e98960adff6db9252092614efa4360ce2c2a3ef5841",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.925,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "c2ff708d3151ed72af885903435705becd4def18e5bb9d8b7430e2d811802304",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 4,
+            "word_ratio": 1.201,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "1f165f12a4cf366ae28dd121af1fc27ec0836c51a3038cb73284f1255995edd3",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 19,
+            "word_ratio": 2.589,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "output_sha256": "19fdc04e0632307e1754e79ca6b06008faa5dd603d1abb3d9ade4f51c4b1a645",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 19,
+            "word_ratio": 2.57,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-50e8feac5ded1d05",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "50e8feac5ded1d05a238a1a5a4bd194ab554db5654a19bf138e0659fb8b4a6d4",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "906548635769d74a00c0067b7a962c14169cdbe688ffedc12eb5153742a9fa90",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 1.015,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "d3acaecc01fd22317fa44d1fadeadb4a924905da88505f6f3246585b5076453f",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.911,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "c6a5347c9b12c80107210b4276e1f514a3be41c3d810e7fc532491d83a388d4c",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 9,
+            "word_ratio": 2.433,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "output_sha256": "1631ad8550876e411b58315c0294c14beb283929df38e42980abdd6cc3a925d8",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 9,
+            "word_ratio": 2.433,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-acca8e35954043cb",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "acca8e35954043cbad84c44b96f30723b8a75b1e975c5b4c80eb42e02abfdeb1",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "77f6c362fada96182c1e9e16a5d8dd379c114c7c101ae25ea390c00d26e00eec",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.787,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "47b6284488cebfb3b7c6e6400c54279a3afc56d5b016dfe58b50f704c917c1f8",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 3,
+            "word_ratio": 1.373,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "e41b458812c55930684427fe4f200e6d88afd3249fd17c9e106cedb0e4f032cf",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 15,
+            "word_ratio": 2.728,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "output_sha256": "21425cd6541320696979acd2534f1b4f809ad29c66fc39fd75e4db8d1bd9604d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 15,
+            "word_ratio": 2.728,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-4a55f3cd291f0f5c",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "4a55f3cd291f0f5c6f6f7eb3c7996734072c00eae5781411a917dd1bf7f37d74",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "8d867ddc4353683b5051efdc8bb37d72d07ba5274a1458b379b18c8a45c29fd7",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.883,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "49e8666a310c2176a9bef0a8434094bc35b14c80d83ef4a157eb84e3290a0327",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.957,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "718a63a63098881827a637bb483acfeaf2dba744f6535f75299f3b8c6aba2c66",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 1.053,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "output_sha256": "76b9c80c6c1a9bdd09ba843556dbc432a215b1c83bf0914b616033f96afd81ee",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 1.032,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-494acdea301a431d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "494acdea301a431d283891871ea14d0704ec18b614d094405365ed0a76c26829",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "6cec1dd077509ed382fd6de1908c40f14993b1f4dbfc529441cf2648a6486ca0",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.943,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "055f1062074c2cacdf135f9c93c76e3ac7d67ad574c702ebc5abe0faf502be47",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 1.776,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "acd5c179ea8a723f2bc9ed8947eaa38242ee42fee0685c346a9152158620c3cf",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 1.161,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "output_sha256": "acd5c179ea8a723f2bc9ed8947eaa38242ee42fee0685c346a9152158620c3cf",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 2,
+            "word_ratio": 1.161,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-741970d6fea3f9b1",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "741970d6fea3f9b1d3097f976207ec1cf2db08ef24b8ba27b1887505dc9a9de3",
+          "at_limit": false,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "244e342e4b687af88661a23bbebae6b5cae524a40e050c95c9eb4a6076bc7eac",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.87,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "cf59e5829391201ce705d948782d5a0cee456941d28f8eb1737866065e000f28",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.974,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "9007d41d61c514dd4f33f1a9a9c4677d94968ea0a88ea63f6f7a6b2edc73ac44",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.851,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "output_sha256": "ae391ae625b0e5aebab801aac71c1397f2991ee55e57ddd73229ff75a20b22ee",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 0.851,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-3568afa3aa382fe6",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "3568afa3aa382fe61042295fd0234cf7c0f2b0ac407bdbb12f8a3d844951f174",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "861fabd4bab84afa12f046d516963edc539ec270733f5ac3a7a1104f0b43f54d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 1,
+            "word_ratio": 0.995,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "5b04cd09f54d6280a8d1ba090c67b5090eca9b4fa0265dc35a567de0ff1497f5",
+          "at_limit": true,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": true,
+            "number_review": true,
+            "paragraph_delta": 13,
+            "word_ratio": 3.482,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "a10b50d44b32a89774e0b76c52148f17438bbaf69879ac2aedbac87d212a54cc",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.751,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "output_sha256": "a10b50d44b32a89774e0b76c52148f17438bbaf69879ac2aedbac87d212a54cc",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": 0,
+            "word_ratio": 0.751,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-9b1316ace778f57f",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "9b1316ace778f57f8234d9a607eb07336c06b74f84fb7a3f81ae9525d4eb3ad4",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "7c2f6cbdf2900926399b8b80882275c3d095f8c1d61e0bfc5ce2abd2f17fb6cc",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 3,
+            "word_ratio": 0.823,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "006d2b540d193ff9d29127288bdf047cf497341a1823c08245883f4dbcaf589e",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 1,
+            "word_ratio": 0.957,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "50700a0a770b757a53be32bae2d5a7cf7f8915979f7a1ea7906cac94805dea06",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.035,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "output_sha256": "150a233148728a9fb2c900200fb90ba80d0b14c79d79d4e750bf4b84ee0eab54",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 0,
+            "word_ratio": 1.035,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-8bcf95d244c79cb9",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "8bcf95d244c79cb9fe67acddcc3f5dc9dac9d2f35b02e12f33acea27c096393b",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "baseline",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "377e876b21fa774c2c59a6b09ff8bdda3b95e74d1076082d2fcdf4629e39fa0d",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": -1,
+            "word_ratio": 0.55,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "skill",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "392f7870f154c04691ceafc4115be378a50f7e1f955b6fb835986b07eae08777",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": false,
+            "paragraph_delta": -1,
+            "word_ratio": 0.561,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_draft",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "d7bca34e85f7561ef77b08779c62d163ae211a9244e37afcec0b4bec231c53c4",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 1,
+            "word_ratio": 0.939,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "candidate_reviewed",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "output_sha256": "c244b481371745a0aaa7ad2e3429de4bee190361a56dfa0ce00adab66267982f",
+          "at_limit": false,
+          "metrics": {
+            "exact": false,
+            "empty": false,
+            "limit": false,
+            "number_review": true,
+            "paragraph_delta": 4,
+            "word_ratio": 1.711,
+            "wrapper": false
+          },
+          "license": "CC BY-SA 4.0",
+          "adaptation": true
+        },
+        {
+          "id": "sudo-55d641e04d2b137d",
+          "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+          "arm": "working_note",
+          "source_sha256": "55d641e04d2b137d6c3acfcc6b8c1f1a3fad1fa0173e850dc1a1eff2f5796317",
+          "at_limit": true,
+          "license": "CC BY-SA 4.0"
+        }
+      ]
+    }
+  ],
+  "qualitative_findings": [
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "case_id": "sudo-42d0f0b13b707362",
+      "arm": "candidate_reviewed",
+      "finding": "Review added a numbered change log and formatting to the publication text. It restored an aspect of the original task/process relationship but introduced extraneous publication content. Source/draft/review texts retained privately."
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "case_id": "sudo-3dc45336d810812b",
+      "arm": "candidate_draft",
+      "finding": "Draft introduced unsupported technical claims and contemporary device references; it also added headings and paragraphs."
+    },
+    {
+      "model": "ytu-ce-cosmos/Turkish-Gemma-9b-v0.1",
+      "case_id": "sudo-3dc45336d810812b",
+      "arm": "candidate_reviewed",
+      "finding": "Free-text review retained unsupported claims and appended a numbered change log. Original wrapper heuristic did not flag this because the wrapper was at the end."
+    }
+  ],
+  "limitations": [
+    "The 33 capped working notes invalidate an unqualified end-to-end candidate success claim; the saved draft can still be used for a controlled review-only replay.",
+    "Prose output containing a trailing change log is not detected by the original leading-wrapper heuristic.",
+    "The observed examples are AI development review, not independent human judgments."
+  ]
+}
