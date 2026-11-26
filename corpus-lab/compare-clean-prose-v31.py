@@ -66,26 +66,47 @@ def paragraph(p,url):
     def render(n):
         if isinstance(n,NavigableString):return str(n)
         if not isinstance(n,Tag):return ""
+        if n.name=="br":return "\n"
         s="".join(render(c) for c in n.children)
         if n.name=="a" and n.get("href"):
             u=urljoin(url,n["href"])
             assert u.startswith(("http://","https://"))
             return "["+s+"]("+u+")"
         return s
-    return norm(render(p))
+    return "\n".join(norm(line) for line in render(p).splitlines() if norm(line))
 def extract(raw,m):
     from bs4 import BeautifulSoup
     s=BeautifulSoup(raw,"html.parser")
     assert m["marker"].casefold() in norm(s.get_text(" ",strip=True)).casefold(),m["id"]+":license"
-    ps=s.find_all("p");selected=[]
+    # The real source DOM sometimes puts two visible paragraphs in one
+    # element separated by BR. Identify the ordered anchors by containment,
+    # then retain the contiguous block range, including intervening lists.
+    nodes=s.find_all(["p","li","h2","h3","h4"])
+    positions=[]
     for anchor in m["anchors"]:
-        hits=[(i,p) for i,p in enumerate(ps) if norm(p.get_text(" ",strip=True)).startswith(anchor)]
-        assert len(hits)==1,m["id"]+":"+anchor
-        i,p=hits[0];selected.append((i,paragraph(p,m["url"])))
-    assert [i for i,_ in selected]==sorted({i for i,_ in selected})
-    source=m["title"]+"\n\n"+"\n\n".join(p for _,p in selected)
+        hits=[i for i,p in enumerate(nodes) if anchor in norm(p.get_text(" ",strip=True))]
+        assert len(hits)==1,m["id"]+":anchor"
+        positions.append(hits[0])
+    assert positions==sorted(positions) and positions[0]<positions[-1]
+    root=nodes[positions[0]].parent
+    assert nodes[positions[-1]].parent is root
+    blocks=[]; counts={}
+    for p in nodes[positions[0]:positions[-1]+1]:
+        assert root in p.parents
+        # Reject nested text blocks instead of silently duplicating content.
+        assert not p.find(["p","li","h2","h3","h4"])
+        t=paragraph(p,m["url"])
+        assert t
+        if p.name=="li":
+            assert p.parent.name=="ul", "unexpected ordered list"
+            t="- "+t
+        elif p.name.startswith("h"):
+            t="#"*int(p.name[1])+" "+t
+        counts[p.name]=counts.get(p.name,0)+1
+        blocks.append(t)
+    source=m["title"]+"\n\n"+"\n\n".join(blocks)
     assert len(source.split())>=150
-    return dict(id=m["id"],source=source,source_sha256=h(source.encode()),html_sha256=h(raw),attribution=m,scope="selected published paragraphs, markup simplified; not fact checked or independently human verified")
+    return dict(id=m["id"],source=source,source_sha256=h(source.encode()),html_sha256=h(raw),block_counts=counts,anchor_positions=positions,attribution=m,scope="contiguous excerpt of prose blocks including lists, BR preserved, simplified markup; no media; not fact checked or independently human verified")
 def prompts(b):
     ts=[]
     for i,c in enumerate(b["cases"]):
@@ -108,6 +129,13 @@ def tokens(model,rev,ts):
 def preflight():
     from bs4 import BeautifulSoup
     assert paragraph(BeautifulSoup('<p>Bir <a href="/a">bağ</a>.</p>',"html.parser").p,"https://example.org/")=="Bir [bağ](https://example.org/a)."
+    # Regression for the exact failure mode: two anchors in one P with BR,
+    # plus an intervening unordered list. No duplication, no missing list.
+    example="<div><p>Birinci başlangıç. "+("sözcük "*80)+"<br>İkinci başlangıç.</p><ul><li>Korunan madde.</li></ul><p>Son başlangıç. "+("sözcük "*80)+"</p></div><footer>CC BY</footer>"
+    e=extract(example.encode(),dict(id="test",marker="CC BY",anchors=["Birinci başlangıç","İkinci başlangıç","Son başlangıç"],title="Başlık",url="https://example.org/"))
+    assert e["anchor_positions"]==[0,0,2] and e["block_counts"]=={"p":2,"li":1}
+    assert "\nİkinci başlangıç." in e["source"] and "\n\n- Korunan madde." in e["source"]
+    assert e["source"].count("İkinci başlangıç.")==1
     a=private();g={k:gitfile(v) for k,v in FILES.items()}
     added=[p for p in g["after"].split("\n\n") if p.startswith("**Temiz metinde değişiklik gerekçesi.")]
     assert len(added)==1 and g["after"].replace(added[0]+"\n\n","",1)==g["before"]
