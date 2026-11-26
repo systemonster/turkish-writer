@@ -36,3 +36,10 @@ test('reject unreviewed row',()=>assert.equal(validateHoldout([a,{...b,review_st
 test('reject short text',()=>assert.equal(validateHoldout([a,{...b,words:100}]).valid,false));
 test('reject absent test partition',()=>assert.equal(validateHoldout([a]).valid,false));
 test('reject empty inventory',()=>assert.equal(validateHoldout([]).valid,false));
+
+const legacy={...a,review_status:'development_unreviewed',reviewer_id:'not_reviewed',paragraphs:1,words:12};
+test('retain unreviewed short development inputs in exclusion ledger',()=>assert.equal(validateHoldout([legacy,b]).valid,true));
+test('unreviewed development still excludes identical source/author/topic/hash groups',()=>{for(const k of ['source_group','author_group','topic_group','source_sha256'])assert.equal(validateHoldout([legacy,{...b,[k]:legacy[k]}]).valid,false)});
+test('do not allow unreviewed status in independent test or validation',()=>{for(const split of ['test','validation'])assert.equal(validateHoldout([legacy,b,{...legacy,id:'c',source_group:'s3',author_group:'a3',topic_group:'t3',source_sha256:'c'.repeat(64),split,paragraphs:3,words:200}]).valid,false)});
+test('do not allow not_reviewed to stand in for real editor declaration',()=>assert.equal(validateHoldout([legacy,{...b,reviewer_id:'not_reviewed'}]).valid,false));
+test('unreviewed development must not pretend to have reviewer',()=>assert.equal(validateHoldout([{...legacy,reviewer_id:'some-reviewer'},b]).valid,false));
