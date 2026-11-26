@@ -3,7 +3,7 @@ import { readFileSync, existsSync, statSync } from 'node:fs'
 import { homedir } from 'node:os'
 import { join, resolve } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { tdkAra } from './tdk-baglan.mjs'
+import { tdkAra, tdkKaynak } from './tdk-baglan.mjs'
 
 export const KENET_REV = '09ebb811b08eedaedc4abb9cfde2d08eadfe71e4'
 const KENET_BLOB = '2cdf2a59e524764cfe2c11a03fa9623495df21bb'
@@ -122,9 +122,10 @@ export function editorRaporu(src,scan,options={}) {
 if (process.argv[1] && resolve(process.argv[1])===fileURLToPath(import.meta.url)) {
   const argv=process.argv.slice(2), value=flag=>{const i=argv.indexOf(flag);return i>=0?argv[i+1]:undefined}
   const word=value('--kelime'), chosen=value('--anlam')??null
-  const tdkSource=value('--tdk-kaynak')||process.env.TW_TDK_KAYNAK
+  const tdkDisabled=argv.includes('--tdk-yok')
+  const tdkSource=tdkDisabled?null:tdkKaynak(value('--tdk-kaynak'))
   const examples=argv.includes('--tdk-ornek')
-  if (!word || word.startsWith('--') || (argv.includes('--tdk-kaynak') && (!value('--tdk-kaynak') || value('--tdk-kaynak').startsWith('--'))) || (examples&&!tdkSource)) {console.error('Kullanım: node sozcuk-muhakemesi.mjs --kelime KELIME [--anlam ID] [--kenet DOSYA] [--tdk-kaynak YEREL_DOSYA] [--tdk-ornek]');process.exitCode=2}
+  if (!word || word.startsWith('--') || (argv.includes('--tdk-kaynak') && (!value('--tdk-kaynak') || value('--tdk-kaynak').startsWith('--'))) || (examples&&!tdkSource) || (tdkDisabled&&argv.includes('--tdk-kaynak'))) {console.error('Kullanım: node sozcuk-muhakemesi.mjs --kelime KELIME [--anlam ID] [--kenet DOSYA] [--tdk-kaynak YEREL_DOSYA] [--tdk-ornek] [--tdk-yok]');process.exitCode=2}
   else try {
     const {data}=kenetYukle(value('--kenet')||KENET_PATH)
     const result=anlamAra(data,word,chosen)

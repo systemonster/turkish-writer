@@ -119,7 +119,7 @@ node skills/turkish-writer/scripts/sozcuk-muhakemesi.mjs --kelime yüz
 
 ### Yerel TDK sözlüğü (isteğe bağlı)
 
-Kullanım hakkına sahip olduğunuz, sizin sağladığınız SQLite veya desteklenen mobil sözlük kopyasından TDK tanım ve anlam kayıtları sorgulanabilir. KeNet adaylarıyla birlikte, ayrı kaynak kimlikleriyle sunulur; otomatik eş anlamlı değişimi yoktur. Dosya repo dışında kalır. Python yalnız bu araç için gereklidir; API veya internet gerekmez.
+Kullanım hakkına sahip olduğunuz, sizin sağladığınız SQLite veya desteklenen mobil sözlük kopyasından TDK tanım ve anlam kayıtları sorgulanabilir. Kişisel, paylaşılmayan kurulumda `scripts/data/private/tdk.sqlite` otomatik tanınır; ek ortam değişkeni gerekmez. Özel veri klasörü Git/npm dağıtımına dahil edilmez. KeNet adaylarıyla birlikte, ayrı kaynak kimlikleriyle sunulur; otomatik eş anlamlı değişimi yoktur. Dosya repo dışında kalır. Python yalnız bu araç için gereklidir; API veya internet gerekmez.
 
 ```powershell
 $env:TW_TDK_KAYNAK = 'C:\Sozluk\Turkce-Sozluk.apks'

@@ -60,3 +60,8 @@ node scripts/sozcuk-muhakemesi.mjs --kelime yüz --tdk-ornek
 `--tdk-kaynak` ile yerel `.db`, `.sqlite`, `.sqlite3`, `.apk`, `.apks` dosyasını da açıkça seçebilirsiniz. Python okuyucu tek başına `--bilgi` ile tablo sayıları/bütünlük; `--kelime` ile en çok sekiz açık madde başı; `--ornek` ile anlam başına en çok iki örnek döndürür. Tanım, anlam sırası ve kimliği, köken, söyleyiş, özellik ilişkileri ve mevcut yazar atfı korunur. Eksik kayıt doldurulmaz. `madde_duz` üzerinden şapka veya Türkçe harfleri yok sayan eşleştirme yapılmaz. Kaynakta bir madde bulunmaması yazım hatası değildir.
 
 KeNet'te anlam seçilmeden aday verilmez; seçildikten sonra TDK'ya yalnız ilgili madde ve en çok üç ham aday sorulur. İki sözlüğün numaraları eşit değildir. TDK tanımı ve örneği, aynı bağlamda çekim, duygu, şiddet ve üslup uygunluğunu kendiliğinden kanıtlamaz. Ajan kararı verir; kaynak veriyi veya örnekleri dışarı yayımlamaz. Sözlük yoksa normal skill/tr-scan çalışma akışı değişmez.
+
+
+### Kullanıcıya özel, dosya yolu gerektirmeyen kurulum
+
+Kullanma hakkınız olan yerel SQLite kopyasını yalnız kendi kurulumunuzda `scripts/data/private/tdk.sqlite` konumuna yerleştirebilirsiniz. `--kelime` sorgusu bu sabit yolu kendiliğinden bulur; Python okuyucu da aynı varsayılanı kullanır. Açık `--tdk-kaynak`, sonra `TW_TDK_KAYNAK` önceliklidir. `--tdk-yok` ile bir Node sorgusunda TDK kapatılabilir. Bu özel veri klasörü hem Git hem npm paketinden dışlanır. Paylaşılan kaynak deposu ve yayımlanan paket TDK sözlüğünü içermez. Kaynak yoksa mevcut normal akış devam eder; sözlük bulunmuş gibi davranılmaz.

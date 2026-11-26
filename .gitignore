@@ -83,3 +83,6 @@ corpus-lab/work/
 *.sqlite
 *.sqlite3
 *.db
+
+# Private installation only: exclude the entire directory, including metadata
+/skills/turkish-writer/scripts/data/private/

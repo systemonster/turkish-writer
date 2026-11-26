@@ -13,6 +13,8 @@ değiştiren sürüm **minör**, bayrak/dosya biçimini kıran sürüm **majör*
 
 - İsteğe bağlı yerel TDK sözlük okuyucusu ve KeNet sorgusuna bağlantısı: madde, anlam, dilsel özellik, isteğe bağlı örnek ve yazar bilgisi; ayrı kaynak kimlikleri, salt okunur sorgu, veri dağıtımı yok.
 
+- Kullanıcıya özel kurulum içinde sabit konumdaki TDK SQLite kopyasının otomatik tanınması; açık kaynak/ortam değişkeni önceliği, `--tdk-yok` seçeneği. Özel veri klasörü dağıtım dışıdır.
+
 ## [2.0.0-rc.1] — 2026-11-26 (kaynak kod önizlemesi)
 
 Depo sahibinin gerçek blog yazılarıyla bizzat deneme isteği üzerine bu aday varsayılan dala alınmak üzere hazırlanmıştır. Kararlı 2.0.0, git etiketi, npm yayını veya GitHub Release değildir. Bağımsız editoryal doğrulama tamamlanmadan final kalite iddiası yapılmaz.

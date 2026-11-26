@@ -145,7 +145,8 @@ def run(path, terms, examples=False, info=False):
 
 def main():
     p = argparse.ArgumentParser(description=__doc__)
-    p.add_argument('--kaynak', default=os.environ.get('TW_TDK_KAYNAK'))
+    private = Path(__file__).resolve().parent / 'data/private/tdk.sqlite'
+    p.add_argument('--kaynak', default=os.environ.get('TW_TDK_KAYNAK') or (str(private) if private.is_file() else None))
     p.add_argument('--kelime', action='append', default=[])
     p.add_argument('--ornek', action='store_true', help='En çok iki kaynak örneği/anlam; yazar kaydı korunur')
     p.add_argument('--bilgi', action='store_true', help='Yalnız tablo sayıları ve bütünlük denetimi')

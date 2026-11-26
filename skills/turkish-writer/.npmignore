@@ -14,3 +14,5 @@ scripts/data/tdk-dizin.json
 scripts/data/esdizim.json
 scripts/data/esdizim-onbellek/
 references/ornekler/yerel/
+
+/scripts/data/private/
