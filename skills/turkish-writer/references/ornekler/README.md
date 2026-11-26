@@ -1,5 +1,7 @@
 # Ses örnekleri
 
+**V2 bağlamı:** Bu dizin tarihsel V1.1 geliştirme örneklerini de içerir. Bunlar bağımsız insan yazarlığı veya kalite kanıtı değildir; kullanıcı açıkça istemedikçe zorunlu ses şablonu olarak kullanılmaz. Güncel SKILL.md ve kaynak sadakati önceliklidir.
+
 Bu dizin, becerinin yazarken taklit edeceği **doğru sesin** örneklerini tutar. Kural
 listesi kötüyü ayıklar; iyi cümleyi örnek öğretir.
 

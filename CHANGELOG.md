@@ -19,6 +19,8 @@ Bu kayıt yeni yayımlanmış sürüm değildir. Paket sürümü ve git etiketi 
 
 - Kapsam, blog ve site metninden türler arası Türkçe yazarlık ve editörlüğe genişletildi. Kullanım atlası ile roman, öykü, uzun anlatı, diyalog ve kitap sürekliliği kılavuzu eklendi. Edebî kalite ayrıca doğrulanmalıdır.
 
+- V1.1'in eski denetleyici ve müdahale kılavuzları içerikleri korunarak `docs/archive/v1.1/` altına taşındı; eski yollar yalnız yönlendirmedir. Tarayıcı ve geriye uyumlu CLI'lar, referanslar ve testler korunur.
+
 ### Doğrulama sınırı
 
 [Corpus Lab](corpus-lab/README.md) geliştirme deneyleri, olumlu ve olumsuz sonuçlarıyla kayıtlıdır. Teknik regresyon başarıları editoryal üstünlüğü kanıtlamaz. [Bağımsız insan editör değerlendirmesi](corpus-lab/HOLDOUT.md) tamamlanmadan final yayın yapılmaz.

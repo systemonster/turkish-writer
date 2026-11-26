@@ -83,7 +83,9 @@ LLM öncesi 142 milyon kelimelik Türkçe web metninden (OSCAR 2019) isim + fiil
 fiillerle geçer: vermek (%71), almak (%23)" önerisi gelir. Ayrıntı:
 [`tests/kalibrasyon/SONUC-ESDIZIM.md`](tests/kalibrasyon/SONUC-ESDIZIM.md).
 
-## Tarayıcı
+## İsteğe bağlı tarayıcı (V1.1 mirası)
+
+Bu araç geriye uyumluluk için korunur; V2'nin yazarlık ve editörlük kalitesini ölçmez. Eski dedektör ve müdahale kılavuzları [tarihsel arşivde](docs/archive/v1.1/README.md), testlerle kullanılan eski komutlar ise paket içindedir.
 
 Beceri, bağımlılıksız bir Node betiğiyle gelir (Node 18+):
 
@@ -120,6 +122,10 @@ sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama)
 Derlemden çıkarılan kararlar [bağlamlı Türkçe](skills/turkish-writer/references/baglamli-turkce.md) kılavuzunda kullanılabilir hale getirildi. İlk yakın okuma pilotunda 503 tarihsel blog, 20 SUDO yazısı ve BOUN eğitim bölümü üzerinden 126 seçilmiş bağlam incelendi; bunlar insan onaylı düzeltme çifti değildir. [Yöntem ve kanıt kimlikleri](corpus-lab/results/context-evidence-v1-summary.json). [Bağımsız editör değerlendirme protokolü](corpus-lab/HOLDOUT.md) yayın kapısı olarak duruyor.
 
 ## V1.1 ölçümleri (tarihsel; V2 sonucu değildir)
+
+<details>
+<summary>V1.1 tarayıcı ve taslak deneylerinin ayrıntılarını aç</summary>
+
 
 Tarayıcının ağırlıkları tahminle değil ölçümle seçildi. LLM öncesi yazılmış 180 Türkçe
 metin (haber, forum, şirket sitesi, blog) aynı konularda üretilmiş 180 GPT metniyle
@@ -160,6 +166,8 @@ dil modeli onu hâlâ tanıyor.
 - İnsan metinlerinin beşte biri de gri bölgeye düşebiliyor. Skor bir işarettir, hüküm değil.
 - Hiçbir yöntem "hiçbir denetleyici anlayamaz" garantisi vermez. Bu beceri de vermiyor.
   V2 hedefi, iyi Türkçe yazmak ve metni gerçek okur için daha kullanışlı kılmaktır.
+
+</details>
 
 ## Neyi yapmaz
 
