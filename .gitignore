@@ -72,3 +72,7 @@ tests/kalibrasyon/derlem-tekli-c/
 # Developer corpus inputs, permission records and raw samples
 corpus-lab/work/
 **/__pycache__/
+
+# Optional local lexical resource; never ship derived KeNet data in the MIT package
+**/kenet-*.json
+**/kenet.xml

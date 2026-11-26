@@ -107,6 +107,16 @@ sık yanlışlar, eş dizim). Skoru etkilemeyen iki bölüm daha vardır: **söz
 sonra virgül, gövde metninde eksiltili yüklem, iyelik eki düşmüş tamlama) ve **ritim bilgisi**
 (cümle boyu sapması, kısa cümle, "ve" yoğunluğu; JSON'da `bilgi` alanı).
 
+## Sözcüksel muhakeme (V2 geliştirme özelliği)
+
+[Sözcüksel muhakeme](skills/turkish-writer/references/sozcuk-muhakemesi.md) Yaz, Düzelt ve Denetle kiplerine bağlam, kelime seçimi, çağrışım ve tür denetimi ekler. `tr-scan --editor` TDK bulgularını ve editör inceleme ipuçlarını eski iz skorundan ayrı gösterir. İsteğe bağlı yerel KeNet anlam dizini ayrı CC BY-SA 4.0 veri kaynağıdır; TDK'nın tamamı veya KeNet ham verisi dağıtılmaz. Tekrar, nadir kelime veya dedektör puanı optimizasyon hedefi değildir. Yeni özellik bağımsız editör değerlendirmesinden geçmemiştir.
+
+```bash
+node skills/turkish-writer/scripts/tr-scan.mjs icerik.json --json --editor
+python3 skills/turkish-writer/scripts/kenet-derle.py --indir
+node skills/turkish-writer/scripts/sozcuk-muhakemesi.mjs --kelime yüz
+```
+
 ## Blog editörlüğü ve isteğe bağlı yerel araçlar
 
 [Filtre kararları](skills/turkish-writer/references/filtre-kararlari.md) ve [model bağımsız filtre değerlendirme planı](docs/FILTRE-DEGERLENDIRME.md), iyi cümleyi koruma ve farklı ajanlarda çalışabilirlik ölçütlerini tanımlar.
@@ -238,3 +248,6 @@ The Turkish guide [Contextual Turkish](skills/turkish-writer/references/baglamli
 We thank Daron Yöndem, the contributing SUDO Portal writers, and the UD Turkish BOUN team at Boğaziçi University/TABILAB for their licensed works. We acknowledge the TurkishFineweb2-Cleaned dataset authors, Wikipedia/Wikisource contributors, İlkay Holt and Creative Commons Türkiye, and Mirasium for the documented research use. We also acknowledge Guillaume Meyer and the contributors to watermarks-remover for the vendored MIT-licensed Unicode component used for inspection and individually confirmed layout repairs. Other project, research and language-resource attributions, including materials reviewed but not incorporated, are listed in [sources and licenses](skills/turkish-writer/references/kaynaklar.md) and [data provenance](corpus-lab/LICENSE-DATA.md). Their contributions do not imply endorsement of Turkish Writer.
 
 Built and open-sourced by [lovefengis](https://lovefengis.com/?utm_source=github&utm_medium=readme&utm_campaign=turkish-writer), an İzmir studio.
+
+
+**Lexical judgment (development):** The optional `--editor` scanner mode adds separate spelling and contextual review signals without changing the legacy score. A pinned, locally built CC BY-SA KeNet index supports explicit sense lookup. Synset membership is not permission for automatic substitution. See [lexical judgment](skills/turkish-writer/references/sozcuk-muhakemesi.md).
