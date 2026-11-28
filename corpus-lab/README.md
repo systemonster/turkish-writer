@@ -448,3 +448,13 @@ Kullanıcı yerleşik Unicode bileşeninin isteğe bağlı düzeltme de yapması
 ## 26 Kasım — master önizleme kararı
 
 Depo sahibi V2 adayının master'a alınmasını ve gerçek blog yazılarıyla kendisinin değerlendirmesini açıkça istedi. Önizleme paket numarası `2.0.0-rc.1`, sabit teknik ürün kodu 2ada5dd393ff361bbf0ed7e2b7d1208a24960cb1; bu değişiklik yalnız README, paket sürümü, changelog ve doğrulama belgeleridir. [PR #1](https://github.com/systemonster/turkish-writer/pull/1) normal merge akışı için hazırlanır. Önceki master 0d2a2c6fc1a03ac3b2eb23f61f0e1903eb5bc0ab korunur. Bu kayıt merge sonucu veya final yayın kanıtı değildir. Yeni GPU veya model deneyi yoktur; gerçek bağımsız kalite sonuçları henüz mevcut değildir.
+
+
+## 26 Kasım — sözcüksel muhakeme geliştirmesi
+
+Ayrı `ozellik/esanlam-onerisi` dalında [teknik deney ve açık kalite koşulları](LEXICAL-JUDGMENT.md) kayıtlıdır. Kullanıcı blog ve site taraması için mevcut tr-scan'i korumayı istedi. Puan değişmedi; ayrı editör kipi ve yerel KeNet indeksleme/lookup eklendi. Kaynak kapsamı 78.327 anlam kümesi ve 82.155 farklı lemma, gerçek paket/kurulum kontrolü başarılı. İki CPU işinin wall-rate tahmini 0,0001330639 USD, GPU yok. Önceki kısmi toplamla 12,6007301695 USD (fatura değil; ayrı defterler ve bilinmeyenler hariç). Bağımsız %90 doğruluk ve düşük yanlış alarm hedefleri henüz ölçülmedi. Master ve final yayın değişmedi.
+
+
+## 26 Kasım — yerel TDK sözlüğü
+
+[Sabit kullanıcı kopyasıyla yerel sorgu ve teknik doğrulama](TDK-LOCAL.md): 98.738 madde, 132.548 anlam ve 45.362 örnek kaydı; gerçek APKS/SQLite ve Node köprüsü yerel ortamda okundu. Kullanıcı tarafından yapılandırılan kaynakla KeNet sorgusu birleştirildi; gerçek sözlük verisi repoya/HF'ye yüklenmedi. 289 başarılı, 7 atlanan test ve ayrı paket/kurulum doğrulaması. CPU wall-rate ek 0,000068375 USD; önceki bilinen kısmi toplam 12,6007985445 USD (fatura değil). GPU yok. Master ve final kalite kapısı değişmedi.

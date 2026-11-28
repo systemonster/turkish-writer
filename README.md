@@ -89,6 +89,23 @@ node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur eposta --code
 
 **Yerel dil araçları.** [Dil araçları](skills/turkish-writer/references/dil-araclari.md) Zemberek ve VNLP adapterlerini, ayrıca loopback adresinde çalışan yerel modelden editör önerisi alma komutunu açıklar.
 
+**Sözcüksel muhakeme (V2 geliştirme özelliği).** [Sözcüksel muhakeme](skills/turkish-writer/references/sozcuk-muhakemesi.md) Yaz, Düzelt ve Denetle kiplerine bağlam, kelime seçimi, çağrışım ve tür denetimi ekler. `tr-scan --editor` TDK bulgularını ve editör inceleme ipuçlarını eski iz skorundan ayrı gösterir. İsteğe bağlı yerel KeNet anlam dizini ayrı CC BY-SA 4.0 veri kaynağıdır; TDK'nın tamamı veya KeNet ham verisi dağıtılmaz. Tekrar, nadir kelime veya dedektör puanı optimizasyon hedefi değildir. Sabit KeNet verisiyle teknik ön kontrol 78.327 anlam kümesi ve 82.155 farklı lemma doğruladı. Dokuz yeni Node ve iki yeni Python testi, mevcut npm/Corpus Lab testleri ve 89 dosyalı paket/ayrı kurulum geçti. Yeni özellik bağımsız editör değerlendirmesinden geçmemiştir. [Deney kaydı](corpus-lab/LEXICAL-JUDGMENT.md).
+
+```bash
+node skills/turkish-writer/scripts/tr-scan.mjs icerik.json --json --editor
+python3 skills/turkish-writer/scripts/kenet-derle.py --indir
+node skills/turkish-writer/scripts/sozcuk-muhakemesi.mjs --kelime yüz
+```
+
+**Yerel TDK sözlüğü (isteğe bağlı).** Kullanım hakkına sahip olduğunuz, sizin sağladığınız SQLite veya desteklenen mobil sözlük kopyasından TDK tanım ve anlam kayıtları sorgulanabilir. Kişisel, paylaşılmayan kurulumda `scripts/data/private/tdk.sqlite` otomatik tanınır; ek ortam değişkeni gerekmez. Özel veri klasörü Git/npm dağıtımına dahil edilmez. KeNet adaylarıyla birlikte, ayrı kaynak kimlikleriyle sunulur; otomatik eş anlamlı değişimi yoktur. Dosya repo dışında kalır. Python yalnız bu araç için gereklidir; API veya internet gerekmez.
+
+```powershell
+$env:TW_TDK_KAYNAK = 'C:\Sozluk\Turkce-Sozluk.apks'
+node skills/turkish-writer/scripts/sozcuk-muhakemesi.mjs --kelime kötü
+```
+
+[Ayrıntılar ve sınırlar](skills/turkish-writer/references/sozcuk-muhakemesi.md#isteğe-bağlı-yerel-tdk-sözlük-kanıtı).
+
 ## Kılavuzlar
 
 - [Filtre kararları](skills/turkish-writer/references/filtre-kararlari.md) ve [model bağımsız filtre değerlendirme planı](docs/FILTRE-DEGERLENDIRME.md): iyi cümleyi koruma ve farklı ajanlarda çalışabilirlik ölçütleri.
@@ -108,7 +125,6 @@ node skills/turkish-writer/scripts/openai-taslak.mjs brif.md --tur eposta --code
 
 <details>
 <summary>V1.1 tarayıcı ve taslak deneylerinin ayrıntılarını aç</summary>
-
 
 Tarayıcının ağırlıkları tahminle değil ölçümle seçildi. LLM öncesi yazılmış 180 Türkçe
 metin (haber, forum, şirket sitesi, blog) aynı konularda üretilmiş 180 GPT metniyle
@@ -228,6 +244,10 @@ For a single project, copy the directory into that project's `.claude/skills/` f
 ### Optional tools
 
 None is required; their output is evidence, not an editorial verdict. The Node scanner (`tr-scan`, a V1.1 legacy kept for compatibility), local Unicode inspection, the TDK index, collocation counts and the OpenAI/Codex draft paths are listed with their commands in the Turkish section above. The Unicode clean-copy mode repairs encoding and line-ending defects and individually confirmed paste/layout defects in a new file, preserving meaningful Unicode, attribution and provenance. No statistical watermark or copyright removal is provided.
+
+**Lexical judgment (development):** The optional `--editor` scanner mode adds separate spelling and contextual review signals without changing the legacy score. A pinned, locally built CC BY-SA KeNet index supports explicit sense lookup. Synset membership is not permission for automatic substitution. See [lexical judgment](skills/turkish-writer/references/sozcuk-muhakemesi.md).
+
+**Optional local TDK evidence:** Users may point the lexical lookup at their own lawfully usable local dictionary snapshot. The reader is offline and read-only; the dictionary is not included or downloaded. TDK sense identifiers are not automatically aligned to KeNet synsets. No Python requirement for the default skill.
 
 ### Research and validation records
 

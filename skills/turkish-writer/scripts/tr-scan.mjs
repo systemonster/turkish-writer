@@ -33,6 +33,7 @@ const anaModulMu = () => {
 import { esdizimDenetle } from './esdizim.mjs'
 import { sozDizimiDenetle, SOZ_DIZIMI_TURLERI } from './soz-dizimi.mjs'
 import { yinelemeDenetle } from './yineleme.mjs'
+import { editorRaporu, kenetYukle } from './sozcuk-muhakemesi.mjs'
 
 // Sözlük: sık yazım yanlışları ve bozuk eş dizimler. Dosya yoksa bu denetim
 // sessizce atlanır; tarayıcı yine çalışır.
@@ -659,7 +660,9 @@ function denetle(src, secenek = {}) {
   })
 
   const puanli = tekil.filter((b) => !b.bilgi).sort((a, b) => a.satir - b.satir)
-  return { olcum, bulgular: puanli, bilgi: tekil.filter((b) => b.bilgi), skor: skorla(puanli, olcum) }
+  const sonuc = { olcum, bulgular: puanli, bilgi: tekil.filter((b) => b.bilgi), skor: skorla(puanli, olcum) }
+  if (secenek.editor) sonuc.editor = editorRaporu(src, sonuc, { ...secenek, tdkDizin: Boolean(DIZIN) })
+  return sonuc
 }
 
 // Skor: 100'den düşülür. Ağırlıklar, turkce-parmak-izi.md ve denetleyici.md'deki
@@ -736,11 +739,11 @@ function rapor(ad, s) {
       `-DIr %${Math.round(o.dirOran * 100)} · hece ${o.heceOrt.toFixed(2)} · cümle ${o.cumleOrt.toFixed(1)}±${o.cumleSapma.toFixed(1)} (CV ${o.cumleCV.toFixed(2)})`,
   )
   if (iz.length) {
-    satirlar.push('  yapay zekâ izleri:')
+    satirlar.push(s.editor ? '  tarihsel tarayıcı işaretleri (bağlamda incele):' : '  yapay zekâ izleri:')
     for (const b of iz) satirlar.push(`    ${b.satir ? String(b.satir).padStart(4) + ':' : '  --:'} [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 80) : ''}`)
   }
   if (uslup.length) {
-    satirlar.push('  üslup (skoru etkilemez, site metninde yine de düzelt):')
+    satirlar.push(s.editor ? '  üslup (yalnız gerçek kusuru düzelt):' : '  üslup (skoru etkilemez, site metninde yine de düzelt):')
     for (const b of uslup) satirlar.push(`    ${String(b.satir).padStart(4)}: [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 80) : ''}`)
   }
   if (yin.length) {
@@ -759,7 +762,11 @@ function rapor(ad, s) {
     satirlar.push('  bilgi (ritim; skoru etkilemez, kalibrasyon bekliyor):')
     for (const b of s.bilgi) satirlar.push(`      --: [${b.tur}] ${b.not}`)
   }
-  if (!iz.length && !tdk.length && !uslup.length && !soz.length && !yin.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
+  if (s.editor) {
+    satirlar.push('  Editör denetimi (iz skorundan bağımsız): TDK ' + s.editor.tdk.bulgu_sayisi + ' aday bulgu, kapsam: ' + s.editor.tdk.kapsam)
+    for (const b of s.editor.sozcuk) satirlar.push('    [' + b.tur + '] ' + b.parca + ' → ' + b.not)
+  }
+  if (!iz.length && !tdk.length && !uslup.length && !soz.length && !yin.length && !s.editor?.sozcuk.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok. Okuma geçişlerini yine de yap.')
   return satirlar.join('\n')
 }
 
@@ -769,19 +776,28 @@ function main() {
   const tipografi = argv.includes('--tipografi')
   const etiket = argv.includes('--etiket')
   const yineleme = argv.includes('--yineleme')
+  const editor = argv.includes('--editor')
   const deger = (ad) => { const i = argv.indexOf(ad); return i > -1 ? argv[i + 1] : undefined }
   const etiketAlan = deger('--etiket-alan') && new RegExp(deger('--etiket-alan'))
   const govdeAlan = deger('--govde-alan') && new RegExp(deger('--govde-alan'))
-  const dosyalar = argv.filter((a, i) => !a.startsWith('--') && !['--etiket-alan', '--govde-alan'].includes(argv[i - 1]))
+  const dosyalar = argv.filter((a, i) => !a.startsWith('--') && !['--etiket-alan', '--govde-alan', '--kenet'].includes(argv[i - 1]))
+  let kenet = null
+  if (argv.includes('--kenet') && (!editor || !deger('--kenet') || deger('--kenet').startsWith('--'))) {
+    console.error('--kenet DOSYA için --editor ve geçerli dosya yolu gerekli'); process.exit(2)
+  }
+  if (editor) {
+    try { const k = kenetYukle(deger('--kenet')); if (deger('--kenet') && !k.data) throw new Error('Belirtilen KeNet dizini bulunamadı'); kenet = k.data }
+    catch (e) { console.error(e.message); process.exit(2) }
+  }
   if (!dosyalar.length) {
-    console.error('kullanım: node tr-scan.mjs <dosya...> [--json]   (stdin için: -)')
+    console.error('kullanım: node tr-scan.mjs <dosya...> [--json] [--editor] [--kenet DOSYA]   (stdin için: -)')
     process.exit(2)
   }
 
   const sonuc = dosyalar.flatMap((f) => {
     const src = (f === '-' ? readFileSync(0, 'utf8') : readFileSync(f, 'utf8')).replace(/\r\n/g, '\n')
-    if (f.endsWith('.json')) return jsonDenetle(f, src, { tipografi, etiketAlan, govdeAlan, yineleme })
-    return [{ dosya: f, ...denetle(src, { tipografi, etiket }) }]
+    if (f.endsWith('.json')) return jsonDenetle(f, src, { tipografi, etiketAlan, govdeAlan, yineleme, editor, kenet })
+    return [{ dosya: f, ...denetle(src, { tipografi, etiket, editor, kenet }) }]
   })
 
   if (json) console.log(JSON.stringify(sonuc, null, 2))
@@ -844,9 +860,9 @@ function jsonDenetle(dosya, src, secenek) {
       gorulen.add(k)
       return true
     })
-    return { yol, metin, bulgular }
+    return { yol, metin, bulgular, ...(secenek.editor ? { editor: d.editor } : {}) }
   })
-  const butun = denetle(alanlar.map((a) => a.metin).join('\n\n'), secenek)
+  const butun = denetle(alanlar.map((a) => a.metin).join('\n\n'), { ...secenek, editor: false })
   return [{ dosya, alanlar, skor: butun.skor, olcum: butun.olcum, bulgular: alanlar.flatMap((a) => a.bulgular), butunBulgular: butun.bulgular.filter((b) => b.satir === 0), bilgi: butun.bilgi }]
 }
 
@@ -856,15 +872,19 @@ function jsonRapor(s) {
   for (const b of s.butunBulgular) satirlar.push(`    [bütün] [${b.tur}] ${b.not}`)
   for (const b of s.bilgi ?? []) satirlar.push(`    [bütün, bilgi] [${b.tur}] ${b.not}`)
   for (const a of s.alanlar) {
-    if (!a.bulgular.length) continue
+    if (!a.bulgular.length && !a.editor?.sozcuk.length) continue
     satirlar.push(`  ${a.yol}: "${a.metin.slice(0, 70)}${a.metin.length > 70 ? '…' : ''}"`)
+    if (a.editor) {
+      satirlar.push('    Editör: TDK ' + a.editor.tdk.bulgu_sayisi + ' aday bulgu')
+      for (const b of a.editor.sozcuk) satirlar.push('    [' + b.tur + '] ' + b.parca + ' → ' + b.not)
+    }
     for (const b of a.bulgular) {
       satirlar.push(b.tur.startsWith('tdk-')
         ? `    [${b.tur}] ${b.parca} → ${b.not}`
         : `    [${b.tur}] ${b.not}${b.parca ? ' → ' + b.parca.slice(0, 60) : ''}`)
     }
   }
-  if (!s.bulgular.length && !s.butunBulgular.length) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok.')
+  if (!s.bulgular.length && !s.butunBulgular.length && !s.alanlar.some(a=>a.editor?.sozcuk.length)) satirlar.push('  temiz: tarayıcının yakalayabildiği iz yok.')
   return satirlar.join('\n')
 }
 
